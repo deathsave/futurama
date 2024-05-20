@@ -1,0 +1,118 @@
+2024-05-13 09:24:16,951 : kivy : Factory: 186 symbols loaded
+2024-05-13 09:24:17,117 : kivy : ImageLoaderFFPy: Using ffpyplayer 4.3.2
+2024-05-13 09:24:17,117 : kivy : Image: Providers: img_tex, img_dds, img_sdl2, img_pil, img_ffpyplayer 
+2024-05-13 09:24:17,150 : kivy : VideoFFPy: Using ffpyplayer 4.3.2
+2024-05-13 09:24:17,150 : kivy : Video: Provider: ffpyplayer(['video_ffmpeg'] ignored)
+2024-05-13 09:24:17,293 : kivy : Loading MPF-MC controller
+2024-05-13 09:24:17,295 : YamlMultifileConfigLoader : Machine config file #1: config
+2024-05-13 09:24:17,295 : ConfigProcessor : Loading config from file /usr/local/lib/python3.7/dist-packages/mpfmc/mcconfig.yaml.
+2024-05-13 09:24:17,320 : ConfigProcessor : Loading config: /usr/local/lib/python3.7/dist-packages/mpfmc/mcconfig.yaml
+2024-05-13 09:24:17,320 : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama337/config/config.
+2024-05-13 09:24:17,423 : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama337/config/config
+2024-05-13 09:24:17,424 : ConfigProcessor : Config file cache created: /tmp/849869058eb403283a3d9f690d7cd3ef.mpf_cache
+2024-05-13 09:24:17,424 : ConfigProcessor : Loading config from cache: /tmp/d2309f45f00263c22cb8c5b4ec4cc881.mpf_cache
+2024-05-13 09:24:17,424 : ConfigProcessor : Loading config from cache: /tmp/7559345efe69122f4d6fb5f65214b482.mpf_cache
+2024-05-13 09:24:17,424 : ConfigProcessor : Loading config from cache: /tmp/1705bafe70d7ed166ffa6fbc6eff32b6.mpf_cache
+2024-05-13 09:24:17,425 : ConfigProcessor : Loading config from cache: /tmp/f4afb52e5a81c0586c038bffbccda3a8.mpf_cache
+2024-05-13 09:24:17,425 : mpfmc : Mission Pinball Framework Media Controller v0.55.0
+2024-05-13 09:24:17,425 : mpfmc : Mission Pinball Framework Game Engine v0.55.0
+2024-05-13 09:24:17,425 : mpfmc : Machine path: /home/mpfuser/pinball/Futurama337
+2024-05-13 09:24:17,425 : mpfmc : Starting clock at 60.0Hz
+2024-05-13 09:24:17,433 : kivy : Text: Provider: sdl2
+2024-05-13 09:24:17,459 : kivy : Window: Provider: sdl2
+2024-05-13 09:24:17,535 : kivy : GL: Using the "OpenGL" graphics system
+2024-05-13 09:24:17,535 : kivy : GL: Backend used <sdl2>
+2024-05-13 09:24:17,535 : kivy : GL: OpenGL version <b'3.0 Mesa 18.3.6'>
+2024-05-13 09:24:17,536 : kivy : GL: OpenGL vendor <b'Intel Open Source Technology Center'>
+2024-05-13 09:24:17,536 : kivy : GL: OpenGL renderer <b'Mesa DRI Intel(R) UHD Graphics 610 (Coffeelake 2x6 GT1) '>
+2024-05-13 09:24:17,536 : kivy : GL: OpenGL parsed version: 3, 0
+2024-05-13 09:24:17,536 : kivy : GL: Shading version <b'1.30'>
+2024-05-13 09:24:17,536 : kivy : GL: Texture max size <16384>
+2024-05-13 09:24:17,536 : kivy : GL: Texture max units <32>
+2024-05-13 09:24:17,557 : kivy : Window: auto add sdl2 input provider
+2024-05-13 09:24:17,557 : kivy : Window: virtual keyboard not allowed, single mode, not docked
+2024-05-13 09:24:17,562 : AudioInterface : NOTE: You may experience noise and other undesirable sound artifacts when you set your buffer at 1024 or smaller.
+2024-05-13 09:24:17,830 : AudioInterface : Initialized
+2024-05-13 09:24:17,830 : AudioInterface : Loaded SDL 2.0.9
+2024-05-13 09:24:17,830 : AudioInterface : Loaded SDL_Mixer 2.0.4
+2024-05-13 09:24:17,831 : AudioInterface : Loaded GStreamer 1.14.4.0
+2024-05-13 09:24:17,831 : AudioInterface : Loaded GLib 2.58.3
+2024-05-13 09:24:17,831 : AudioInterface : Settings requested - rate: 44100, channels: 1, buffer: 1024 samples
+2024-05-13 09:24:17,831 : AudioInterface : Settings in use - rate: 44100, channels: 1, buffer: 1024 samples (2048 bytes @ 2 bytes per sample)
+2024-05-13 09:24:17,831 : SoundSystem : Setting master volume to 0.0
+2024-05-13 09:24:17,831 : SoundSystem : master_volume in sound_system is deprecated and will be removed in the future.
+2024-05-13 09:24:17,831 : AudioInterface : Enabling audio playback
+2024-05-13 09:24:17,840 : kivy : Base: Start application main loop
+2024-05-13 09:24:17,841 : EventManager : Event: ======'display_window_initialized'====== Args={}
+2024-05-13 09:24:17,853 : mpfmc : Display: Setting 'window' as default display
+2024-05-13 09:24:17,860 : mpfmc : ASPECT RATIO MISMATCH: The on-screen window is not the same aspect ratio as the display called 'window'. The logical display will be scaled from 1920x1080 to the window size 800x600, and a black bar will make up the difference
+2024-05-13 09:24:17,860 : EventManager : Event: ======'displays_initialized'====== Args={}
+2024-05-13 09:24:17,861 : EventManager : Event: ======'slide_window_blank_created'====== Args={}
+2024-05-13 09:24:17,862 : EventManager : Event: ======'display_window_ready'====== Args={}
+2024-05-13 09:24:17,867 : EventManager : Event: ======'init_phase_1'====== Args={}
+2024-05-13 09:24:17,873 : EventManager : Event: ======'mc_ready'====== Args={}
+2024-05-13 09:24:17,873 : EventManager : Event: ======'init_phase_2'====== Args={}
+2024-05-13 09:24:17,875 : ConfigValidator : Your config contains a value for the setting "sound_player:loop", but this is not a valid setting name.
+2024-05-13 09:24:17,875 : kivy : Base: Leaving application in progress...
+2024-05-13 09:24:17,875 : kivy : Exception while processing RegisteredHandler(callback=<bound method ModeController._load_modes of <mpfmc.core.mode_controller.ModeController object at 0x7f2abfdb16a0>>, priority=1, kwargs={}, key=UUID('938a32ed-635c-4b3a-beb7-ad999dbc2ef4'), condition=None, blocking_facility=None) for event init_phase_2. Config File Error in ConfigValidator: Error while loading mode 'base' >> Your config contains a value for the setting "sound_player:loop", but this is not a valid setting name. Error Code: CFE-ConfigValidator-2 (https://docs.missionpinball.org/en/0.55/logs/CFE-ConfigValidator-2.html)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/mpf/core/events.py", line 695, in _run_handlers
+    result = handler.callback(**merged_kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/mpfmc/core/mode_controller.py", line 74, in _load_modes
+    raise e
+  File "/usr/local/lib/python3.7/dist-packages/mpfmc/core/mode_controller.py", line 71, in _load_modes
+    **item.kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/mpf/core/config_player.py", line 132, in process_mode_config
+    config = self.validate_config(config)
+  File "/usr/local/lib/python3.7/dist-packages/mpfmc/config_players/sound_player.py", line 232, in validate_config
+    self._validate_config_item(sound, sound_settings))
+  File "/usr/local/lib/python3.7/dist-packages/mpf/config_players/device_config_player.py", line 79, in _validate_config_item
+    device_settings = self._parse_config(device_settings, device)
+  File "/usr/local/lib/python3.7/dist-packages/mpf/core/config_player.py", line 126, in _parse_config
+    return self.get_full_config(config)
+  File "/usr/local/lib/python3.7/dist-packages/mpf/core/config_player.py", line 199, in get_full_config
+    self.config_file_section, value, base_spec='config_player_common')
+  File "/usr/local/lib/python3.7/dist-packages/mpf/core/config_validator.py", line 180, in validate_config
+    validation_failure_info=validation_failure_info)
+  File "/usr/local/lib/python3.7/dist-packages/mpf/core/config_validator.py", line 192, in _validate_config
+    self.check_for_invalid_sections(this_spec, source, validation_failure_info)
+  File "/usr/local/lib/python3.7/dist-packages/mpf/core/config_validator.py", line 359, in check_for_invalid_sections
+    'setting name.', 2, self.log.name)
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in ConfigValidator: Error while loading mode 'base' >> Your config contains a value for the setting "sound_player:loop", but this is not a valid setting name. Error Code: CFE-ConfigValidator-2 (https://docs.missionpinball.org/en/0.55/logs/CFE-ConfigValidator-2.html)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/mpfmc/commands/mc.py", line 227, in __init__
+    thread_stopper=thread_stopper).run()
+  File "/usr/local/lib/python3.7/dist-packages/kivy/app.py", line 950, in run
+    runTouchApp()
+  File "/usr/local/lib/python3.7/dist-packages/kivy/base.py", line 582, in runTouchApp
+    EventLoop.mainloop()
+  File "/usr/local/lib/python3.7/dist-packages/kivy/base.py", line 347, in mainloop
+    self.idle()
+  File "/usr/local/lib/python3.7/dist-packages/kivy/base.py", line 387, in idle
+    Clock.tick()
+  File "/usr/local/lib/python3.7/dist-packages/kivy/clock.py", line 733, in tick
+    self.post_idle(ts, self.idle())
+  File "/usr/local/lib/python3.7/dist-packages/kivy/clock.py", line 776, in post_idle
+    self._process_events()
+  File "kivy/_clock.pyx", line 616, in kivy._clock.CyClockBase._process_events
+  File "kivy/_clock.pyx", line 649, in kivy._clock.CyClockBase._process_events
+  File "kivy/_clock.pyx", line 645, in kivy._clock.CyClockBase._process_events
+  File "kivy/_clock.pyx", line 218, in kivy._clock.ClockEvent.tick
+  File "/usr/local/lib/python3.7/dist-packages/mpfmc/uix/display.py", line 211, in _displays_initialized
+    self.mc.displays_initialized()
+  File "/usr/local/lib/python3.7/dist-packages/mpfmc/core/mc.py", line 349, in displays_initialized
+    self._init()
+  File "/usr/local/lib/python3.7/dist-packages/mpfmc/core/mc.py", line 394, in _init
+    self.events.process_event_queue()
+  File "/usr/local/lib/python3.7/dist-packages/mpf/core/events.py", line 782, in process_event_queue
+    **event[3])
+  File "/usr/local/lib/python3.7/dist-packages/mpf/core/events.py", line 741, in _process_event
+    result = self._run_handlers(event, ev_type, kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/mpf/core/events.py", line 697, in _run_handlers
+    raise Exception("Exception while processing {} for event {}. {}".format(handler, event, e)) from e
+Exception: Exception while processing RegisteredHandler(callback=<bound method ModeController._load_modes of <mpfmc.core.mode_controller.ModeController object at 0x7f2abfdb16a0>>, priority=1, kwargs={}, key=UUID('938a32ed-635c-4b3a-beb7-ad999dbc2ef4'), condition=None, blocking_facility=None) for event init_phase_2. Config File Error in ConfigValidator: Error while loading mode 'base' >> Your config contains a value for the setting "sound_player:loop", but this is not a valid setting name. Error Code: CFE-ConfigValidator-2 (https://docs.missionpinball.org/en/0.55/logs/CFE-ConfigValidator-2.html)
+2024-05-13 09:24:17,879 : kivy : Stopping child threads... (1 remaining)
+2024-05-13 09:24:18,885 : kivy : All child threads stopped.

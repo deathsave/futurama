@@ -1,0 +1,16 @@
+2024-05-19 13:39:52,472 : INFO : root : Loading config.
+2024-05-19 13:39:52,474 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2024-05-19 13:39:52,474 : INFO : ConfigProcessor : Loading config from file /usr/local/lib/python3.7/dist-packages/mpf/mpfconfig.yaml.
+2024-05-19 13:39:52,558 : INFO : ConfigProcessor : Loading config: /usr/local/lib/python3.7/dist-packages/mpf/mpfconfig.yaml
+2024-05-19 13:39:52,559 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/config/config.yaml.
+2024-05-19 13:39:52,665 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/config/config.yaml
+2024-05-19 13:39:52,666 : INFO : ConfigProcessor : Config file cache created: /tmp/8981e3cdf5e0d182bcc6125823dde8c1.mpf_cache
+2024-05-19 13:39:52,691 : INFO : ConfigProcessor : Loading config from file /usr/local/lib/python3.7/dist-packages/mpf/modes/attract/config/attract.yaml.
+2024-05-19 13:39:52,692 : INFO : ConfigProcessor : Loading config: /usr/local/lib/python3.7/dist-packages/mpf/modes/attract/config/attract.yaml
+2024-05-19 13:39:52,692 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/modes/attract/config/attract.yaml.
+2024-05-19 13:39:52,693 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/modes/attract/config/attract.yaml
+2024-05-19 13:39:52,693 : INFO : ConfigProcessor : Config file cache created: /tmp/de1c812805b1a8d31c8d5081a8fd5ff0.mpf_cache
+2024-05-19 13:39:52,693 : INFO : ConfigProcessor : Loading config from cache: /tmp/7559345efe69122f4d6fb5f65214b482.mpf_cache
+2024-05-19 13:39:52,694 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/modes/base/config/base.yaml.
+2024-05-19 13:39:52,753 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/modes/base/config/base.yaml
+2024-05-19 13:39:52,754 : INFO : ConfigProcessor : Config file cache created: /tmp/81fc9816eeab5cee4f0a60de6bc404c0.mpf_cache

@@ -1,0 +1,111 @@
+#config_version=5
+mode_settings:
+    display_delay_ms: 1500
+    bonus_entries:
+    - event: bonus_caps
+      score: (current_player.slurm_caps * (1 + current_player.fry_level))
+    - event: bonus_hypnotoad_saves
+      score: (current_player.hypnotoad_saves * 50)
+    - event: bonus_dark_matter
+      score: (current_player.dark_matter * (1 + current_player.nibbler_level))
+
+slides:
+    bonus_start_slide:
+        widgets:
+            - type: text
+              text: BONUS
+              font_size: 60
+              color: black
+              y: 672
+              x: 1170
+              anchor_x: left
+              anchor_y: bottom
+            - type: image
+              image: bonus_blank
+    slurm_bonus:
+        widgets:
+            - type: text
+              text: Slurm Caps
+              font_size: 60
+              color: black
+              y: 774
+              x: 1370
+              anchor_x: left
+              anchor_y: bottom
+            - type: text
+              text: (score)
+              font_size: 50
+              color: black
+              y: 674
+              x: 1370
+              anchor_x: left
+              anchor_y: bottom
+            - type: image
+              image: bonus_slurm_slide
+    hypnotoad_bonus:
+        widgets:
+            - type: text
+              text: Hypnotoad Saves Bonus
+              font_size: 60
+              color: black
+              y: 774
+              x: 1370
+              anchor_x: left
+              anchor_y: bottom
+            - type: text
+              text: (score)
+              font_size: 50
+              color: black
+              y: 674
+              x: 1370
+              anchor_x: left
+              anchor_y: bottom
+            - type: image
+              image: bonus_hypnotoad_slide
+    dark_matter_bonus:
+        widgets:
+            - type: text
+              text: Dark Matter
+              font_size: 60
+              color: black
+              y: 774
+              x: 1370
+              anchor_x: left
+              anchor_y: bottom
+            - type: text
+              text: (score)
+              font_size: 50
+              color: black
+              y: 674
+              x: 1370
+              anchor_x: left
+              anchor_y: bottom
+            - type: image
+              image: bonus_dark_matter_slide
+    bonus_total_slide:
+        widgets:
+            - type: text
+              text: BONUS TOTAL
+              font_size: 42
+              color: black
+              y: 672
+              x: 1170
+              anchor_x: left
+              anchor_y: bottom
+            - type: text
+              text: (score)
+              font_size: 42
+              color: black
+              y: 572
+              x: 1170
+              anchor_x: left
+              anchor_y: bottom
+            - type: image
+              image: bonus_blank
+
+slide_player:
+    mode_bonus_started: bonus_start_slide
+    bonus_caps: slurm_bonus
+    bonus_hypnotoad_saves: hypnotoad_bonus
+    bonus_dark_matter: dark_matter_bonus
+    bonus_total: bonus_total_slide

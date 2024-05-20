@@ -1,0 +1,1030 @@
+#config_version=5
+keyboard:
+    shift+l:
+        event: zoidberg_left
+    shift+r:
+        event: zoidberg_right
+    shift+0:
+        event: zoidberg_reset
+    r:
+        event: post_left_down
+
+hardware:
+    platform: p3_roc
+    stepper_controllers: pololu_tic
+
+p_roc:
+    driverboards: pdb
+
+steppers:
+    zoidberg_stepper:
+        number: 00427235
+        pos_max: 50000
+        pos_min: -50000
+        reset_events: zoidberg_reset
+        named_positions:
+            -1000: zoidberg_l1
+            1000: zoidberg_r1
+            -3000: zoidberg_l2
+            3000: zoidberg_r2
+            -5000: zoidberg_l3
+            5000: zoidberg_r3
+        platform_settings:
+            current_limit: 1000
+
+event_player:
+    ball_ending: zoidberg_reset
+    mode_attract_started: zoidberg_reset
+
+light_settings:
+    default_fade_ms: 40
+
+lights:
+    l_right_corner:
+        number: 1-0-1-2
+        platform_settings:
+            polarity: false
+        tags: lamps, gi
+    l_right_upper_wedge:
+        number: 1-3-4-5
+        platform_settings:
+            polarity: false
+        tags: lamps, gi
+    l_zapp_indicator:
+        number: 1-6-7-8
+        platform_settings:
+            polarity: false
+        tags: lamps, test
+    l_mom_indicator:
+        number: 1-9-10-11
+        platform_settings:
+            polarity: false
+        tags: lamps, test
+    l_PE_spinner1:
+        number: 1-12-13-14
+        platform_settings:
+            polarity: false
+        tags: lamps, ship, feature
+    l_PE_spinner2:
+        number: 1-15-16-17
+        platform_settings:
+            polarity: false
+        tags: lamps, ship, feature
+    l_PE_spinner3:
+        number: 1-18-19-20
+        platform_settings:
+            polarity: false
+        tags: lamps, ship, feature
+    l_PE_spinner4:
+        number: 1-21-22-23
+        platform_settings:
+            polarity: false
+        tags: lamps, ship, feature
+    l_left_loop:
+        number: 1-24-25-26
+        platform_settings:
+            polarity: false
+        tags: lamps, feature, loops
+    l_nibbler_lamp:
+        number: 1-27-28-29
+        platform_settings:
+            polarity: false
+        tags: lamps, feature
+    l_left_corner_plastic:
+        number: 1-30-31-32
+        platform_settings:
+            polarity: false
+        tags: lamps, gi
+    l_slurm_can:
+        number: 1-33-34-35
+        platform_settings:
+            polarity: false
+        tags: lamps, gi
+    l_DTbank1:
+        number: 1-36-37-38
+        platform_settings:
+            polarity: false
+        tags: lamps, gi, DTbank
+    l_DTbank2:
+        number: 1-39-40-41
+        platform_settings:
+            polarity: false
+        tags: lamps, gi, DTbank
+    l_DTbank3:
+        number: 1-42-43-44
+        platform_settings:
+            polarity: false
+        tags: lamps, gi, DTbank
+    l_left_spotlight:
+        number: 1-45-46-47
+        platform_settings:
+            polarity: false
+        tags: lamps, spotlights
+    l_VUK1:
+        number: 1-48-49-50
+        platform_settings:
+            polarity: false
+        tags: lamps, tubes
+    l_VUK2:
+        number: 1-51-52-53
+        platform_settings:
+            polarity: false
+        tags: lamps, tubes
+    l_scoop:
+        number: 1-54-55-56
+        platform_settings:
+            polarity: false
+        tags: lamps, feature
+    l_under_HQ:
+        number: 1-57-58-59
+        platform_settings:
+            polarity: false
+        tags: lamps, gi
+    l_tube2:
+        number: 1-60-61-62
+        platform_settings:
+            polarity: false
+        tags: lamps, tubes
+    l_tube1:
+        number: 1-63-64-65
+        platform_settings:
+            polarity: false
+        tags: lamps, tubes
+    l_tube3:
+        number: 1-66-67-68
+        platform_settings:
+            polarity: false
+        tags: lamps, tubes
+    l_tube4:
+        number: 1-69-70-71
+        platform_settings:
+            polarity: false
+        tags: lamps, tubes
+    l_PEHQ1:
+        number: 1-72-73-74
+        platform_settings:
+            polarity: false
+        tags: lamps, HQ
+    l_PEHQ2:
+        number: 1-75-76-77
+        platform_settings:
+            polarity: false
+        tags: lamps, HQ
+    l_PEHQ3:
+        number: 1-78-79-80
+        platform_settings:
+            polarity: false
+        tags: lamps, HQ
+    l_right_loop:
+        number: 1-81-82-83
+        platform_settings:
+            polarity: false
+        tags: lamps, feature, loops
+    l_shoot_again:
+        number: 2-0-1-2
+        platform_settings:
+            polarity: false
+        tags: lamps, indicator
+    lamp30:
+        number: 2-3-4-5
+        platform_settings:
+            polarity: false
+        tags: lamps, test
+    l_cap1:
+        number: 2-6-7-8
+        platform_settings:
+            polarity: false
+        tags: lamps, caps
+    lamp32:
+        number: 2-9-10-11
+        platform_settings:
+            polarity: false
+        tags: lamps, test
+    l_right_sling:
+        number: 2-12-13-14
+        platform_settings:
+            polarity: false
+        tags: lamps, gi, slings
+    l_2x:
+        number: 2-15-16-17
+        platform_settings:
+            polarity: false
+        tags: lamps, indicator
+    l_3x:
+        number: 2-18-19-20
+        platform_settings:
+            polarity: false
+        tags: lamps, indicator
+    l_cap2:
+        number: 2-21-22-23
+        platform_settings:
+            polarity: false
+        tags: lamps, caps
+    l_right_outlane:
+        number: 2-24-25-26
+        platform_settings:
+            polarity: false
+        tags: lamps, indicator
+    l_right_inlane:
+        number: 2-27-28-29
+        platform_settings:
+            polarity: false
+        tags: lamps, caps
+    l_right_ballguide1:
+        number: 2-30-31-32
+        platform_settings:
+            polarity: false
+        tags: lamps, gi, ballguide
+    l_right_ballguide2:
+        number: 2-33-34-35
+        platform_settings:
+            polarity: false
+        tags: lamps, gi, ballguide
+    l_cap3:
+        number: 2-36-37-38
+        platform_settings:
+            polarity: false
+        tags: lamps, caps
+    l_pop_bumper:
+        number: 2-39-40-41
+        platform_settings:
+            polarity: false
+        tags: lamps, feature
+    l_right_wedge:
+        number: 2-42-43-44
+        platform_settings:
+            polarity: false
+        tags: lamps, gi
+    l_right_spotlight:
+        number: 2-45-46-47
+        platform_settings:
+            polarity: false
+        tags: lamps, spotlights
+    l_drain:
+        number: 2-48-49-50
+        platform_settings:
+            polarity: false
+        tags: lamps, apron
+    l_apron3:
+        number: 2-51-52-53
+        platform_settings:
+            polarity: false
+        tags: lamps, apron
+    l_apron2:
+        number: 2-54-55-56
+        platform_settings:
+            polarity: false
+        tags: lamps, apron
+    l_apron1:
+        number: 2-57-58-59
+        platform_settings:
+            polarity: false
+        tags: lamps, apron
+    l_apron4:
+        number: 2-60-61-62
+        platform_settings:
+            polarity: false
+        tags: lamps, apron
+    l_apron5:
+        number: 2-63-64-65
+        platform_settings:
+            polarity: false
+        tags: lamps, apron
+    l_apron6:
+        number: 2-66-67-68
+        platform_settings:
+            polarity: false
+        tags: lamps, apron
+    l_cryopod:
+        number: 2-69-70-71
+        platform_settings:
+            polarity: false
+        tags: lamps, apron
+    l_left_sling:
+        number: 2-72-73-74
+        platform_settings:
+            polarity: false
+        tags: lamps, gi, slings
+    l_left_inlane:
+        number: 2-75-76-77
+        platform_settings:
+            polarity: false
+        tags: lamps, indicator
+    l_left_ballguide1:
+        number: 2-78-79-80
+        platform_settings:
+            polarity: false
+        tags: lamps, gi, ballguide
+    l_left_ballguide2:
+        number: 2-81-82-83
+        platform_settings:
+            polarity: false
+        tags: lamps, gi, ballguide
+
+switches:
+    s_left_flipper:
+        number: A2-B0-6
+        tags: left_flipper
+    s_right_flipper:
+        number: A2-B0-5
+        tags: right_flipper
+    s_mag_button:
+        number: A2-B0-4
+    s_hedonism_bot:
+        number: A2-B0-3
+        ignore_window_ms: 2000
+    s_trough_jam:
+        number: A1-B1-7
+        type: NC
+    s_trough1:
+        number: A1-B1-6
+        type: NC
+    s_trough2:
+        number: A0-B0-2
+        type: NC
+    s_trough3:
+        number: A0-B0-0
+        type: NC
+    s_shooter_lane:
+        number: A0-B0-1
+    s_start:
+        number: A2-B0-7
+        tags: start
+    s_cap1:
+        number: A0-B1-4
+        tags: playfield_active
+        debounce: normal
+    s_cap2:
+        number: A0-B1-5
+        tags: playfield_active
+        debounce: normal
+    s_cap3:
+        number: A0-B0-5
+        tags: playfield_active
+        debounce: normal
+    s_cap4:
+        number: A0-B0-3
+        tags: playfield_active
+        debounce: normal
+    s_r_outlane:
+        number: A0-B0-4
+        tags: playfield_active
+    s_left_outlane:
+        number: A0-B1-0
+        tags: playfield_active
+    s_left_inlane:
+        number: A0-B1-1
+        tags: playfield_active
+    s_pop_bumper:
+        number: A0-B0-6
+    s_left_sling:
+        number: A0-B1-2
+    s_right_sling:
+        number: A0-B1-3
+    s_VUK:
+        number: A1-B1-5
+        type: NC
+    s_pe_platter:
+        number: A1-B1-4
+        tags: playfield_active
+    s_r_orbit:
+        number: A1-B1-3
+        tags: playfield_active
+        type: NC
+    s_left_ramp:
+        number: A1-B1-2
+        tags: playfield_active
+        type: NC
+    s_left_loop:
+        number: A1-B1-1
+        type: NC
+    s_right_loop:
+        number: A1-B1-0
+        type: NC
+    s_dt_nibbler:
+        number: A1-B0-7
+    s_dt_zoidberg:
+        number: A1-B0-6
+    s_dt_professor:
+        number: A1-B0-5
+    s_dt_hermes:
+        number: A1-B0-4
+    s_dt_amy:
+        number: A1-B0-3
+    s_t_leela:
+        number: A1-B0-2
+        tags: playfield_active
+        debounce: normal
+    s_t_fry:
+        number: A1-B0-1
+        tags: playfield_active
+        debounce: normal
+    s_t_bender:
+        number: A1-B0-0
+        tags: playfield_active
+        debounce: normal
+    s_right_ramp:
+        number: A0-B0-7
+        tags: playfield_active
+        debounce: normal
+
+coils:
+    c_flipper_left_main:
+        number: A0-B0-0
+        default_pulse_ms: 22
+    c_flipper_left_hold:
+        number: A0-B0-1
+        allow_enable: true
+    c_flipper_right_main:
+        number: A0-B0-2
+        default_pulse_ms: 22
+    c_flipper_right_hold:
+        number: A0-B0-3
+        allow_enable: true
+    c_plunger:
+        number: A0-B0-4
+        default_pulse_ms: 18
+    c_trough_eject:
+        number: A0-B0-5
+        default_pulse_ms: 12
+    c_sling_left:
+        number: A0-B0-6
+        default_pulse_ms: 8
+    c_sling_right:
+        number: A0-B0-7
+        default_pulse_ms: 8
+    c_post_right:
+        number: A0-B1-1
+        default_pulse_ms: 10
+        default_hold_power: .3
+    c_dt_reset:
+        number: A0-B1-2
+        default_pulse_ms: 20
+    c_pop_bumper:
+        number: A0-B1-3
+        default_pulse_ms: 20
+    c_VUK:
+        number: A0-B1-4
+        default_pulse_ms: 15
+    c_post_left:
+        number: A0-B1-5
+        default_pulse_ms: 10
+        default_hold_power: .3
+    c_magnet:
+        number: A0-B1-7
+        default_pulse_ms: 20
+        default_hold_power: 0.40
+
+diverters:
+    post_left:
+        activation_coil: c_post_left
+        type: hold
+        activation_switches: s_right_loop
+        deactivate_events: post_left_down
+        enable_events: left_post_enable
+        disable_events: left_post_disable
+        targets_when_active: bd_left_post
+        targets_when_inactive: playfield
+    post_right:
+        activation_coil: c_post_right
+        type: hold
+        activation_switches: s_left_loop
+        deactivate_events: post_right_down
+        enable_events: right_post_enable
+        disable_events: right_post_disable
+        targets_when_active: bd_right_post
+        targets_when_inactive: playfield
+
+ball_devices:
+    bd_trough:
+        ball_switches: s_trough1, s_trough2, s_trough3, s_trough_jam
+        eject_coil: c_trough_eject
+        eject_targets: bd_plunger
+        eject_timeouts: 3s
+        tags: trough, home, drain
+        jam_switch: s_trough_jam
+        eject_coil_jam_pulse: 15ms
+        debug: true
+    bd_plunger:
+        ball_switches: s_shooter_lane
+        eject_coil: c_plunger
+        mechanical_eject: true
+        eject_timeouts: 3s
+    bd_VUK:
+        ball_switches: s_VUK
+        eject_coil: c_VUK
+        eject_timeouts: 2s
+    bd_left_post:
+        ball_switches: s_left_loop
+        eject_targets: playfield
+        entrance_count_delay: 2000ms
+        mechanical_eject: true
+    bd_right_post:
+        ball_switches: s_right_loop
+        eject_targets: playfield
+        entrance_count_delay: 2000ms
+        mechanical_eject: true
+
+drop_targets:
+    nibbler:
+        switch: s_dt_nibbler
+    professor:
+        switch: s_dt_professor
+    amy:
+        switch: s_dt_amy
+    hermes:
+        switch: s_dt_hermes
+    zoidberg:
+        switch: s_dt_zoidberg
+
+drop_target_banks:
+    crew_bank:
+        drop_targets: nibbler, professor, amy, hermes, zoidberg
+        reset_coils: c_dt_reset
+        reset_on_complete: 1s
+        reset_coil_max_wait_ms: 500ms
+
+autofire_coils:
+    ac_slingshot_left:
+        coil: c_sling_left
+        switch: s_left_sling
+    ac_slingshot_right:
+        coil: c_sling_right
+        switch: s_right_sling
+    ac_pop_bumper:
+        coil: c_pop_bumper
+        switch: s_pop_bumper
+
+playfields:
+    playfield:
+        tags: default
+        default_source_device: bd_plunger
+
+flippers:
+    left_flipper:
+        main_coil: c_flipper_left_main
+        hold_coil: c_flipper_left_hold
+        activation_switch: s_left_flipper
+    right_flipper:
+        main_coil: c_flipper_right_main
+        hold_coil: c_flipper_right_hold
+        activation_switch: s_right_flipper
+    hypnotoad_magnet_flipper:
+        main_coil: c_magnet
+        activation_switch: s_mag_button
+
+displays:
+    window:
+        width: 1920
+        height: 1080
+
+sound_system:
+    buffer: 1024
+    channels: 1
+    enabled: true
+    frequency: 44100
+    tracks:
+        music:
+            type: standard
+            simultaneous_sounds: 1
+            volume: 0.5
+        voice:
+            type: standard
+            simultaneous_sounds: 1
+            volume: 0.9
+        sfx:
+            type: standard
+            simultaneous_sounds: 8
+            volume: 0.6
+
+machine_vars:
+    master_volume:
+        initial_value: 0.8
+
+player_vars:
+    leela_level:
+        initial_value: 0
+    leela_xp:
+        initial_value: 0
+    leela_multiplier:
+        initial_value: 1
+    fry_level:
+        initial_value: 0
+    fry_xp:
+        initial_value: 0
+    fry_multiplier:
+        initial_value: 1
+    bender_level:
+        initial_value: 0
+    bender_xp:
+        initial_value: 0
+    bender_multiplier:
+        initial_value: 1
+    amy_level:
+        initial_value: 0
+    amy_xp:
+        initial_value: 0
+    amy_multiplier:
+        initial_value: 1
+    hermes_level:
+        initial_value: 0
+    hermes_xp:
+        initial_value: 0
+    hermes_multiplier:
+        initial_value: 1
+    zoidberg_level:
+        initial_value: 0
+    zoidberg_xp:
+        initial_value: 0
+    zoidberg_multiplier:
+        initial_value: 1
+    nibbler_level:
+        initial_value: 0
+    nibbler_xp:
+        initial_value: 0
+    nibbler_multiplier:
+        initial_value: 1
+    professor_level:
+        initial_value: 0
+    professor_xp:
+        initial_value: 0
+    professor_multiplier:
+        initial_value: 1
+    dark_matter:
+        initial_value: 1
+    crew_multiplier:
+        initial_value: 1
+    platter_long_counter:
+        initial_value: 1
+    platter_short_counter:
+        initial_value: 1
+    slurm_caps:
+        initial_value: 0
+    pop_bumper_hits:
+        initial_value: 1
+    fuel_level:
+        value_type: str
+        initial_value: "empty_gauge"
+    hypnotoad_saves:
+        initial_value: 0
+    whaler_shots:
+        initial_value: 0
+    moon_delivery_status:
+        value_type: str
+        initial_value: "ready"
+
+modes:
+    - base
+    - delivery_manager
+    - moon_delivery
+    - bonus
+
+slides:
+    welcome_slide:
+        widgets:
+            - type: text
+              text: IF YOU SEE THIS, SOMETHING IS WRONG!
+              font_size: 50
+              color: red
+            - type: rectangle
+              width: 240
+              height: 60
+    attract_started:
+        widgets:
+            - type: image
+              image: titlecard
+    final_score_slide:
+        widgets:
+            - type: text
+              text: FINAL SCORE
+              font_size: 42
+              color: black
+              y: 900
+              x: 1120
+              anchor_x: left
+              anchor_y: top
+            - type: image
+              image: final_score
+    base_slide:
+        widgets:
+            - type: text
+              text: (player1|score)
+              number_grouping: true
+              min_digits: 2
+              font_size: 45
+              color: black
+              y: 108
+              x: 413
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: PLAYER (number)
+              y: 365
+              x: 20
+              font_size: 50
+              anchor_x: left
+              anchor_y: bottom
+            - type: text
+              text: BALL (ball)
+              y: 295
+              x: 20
+              anchor_x: left
+              anchor_y: bottom
+              font_size: 50
+            - type: text
+              text: (player|bender_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 520
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|leela_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 650
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|fry_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 780
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|nibbler_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 910
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|professor_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 1040
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|amy_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 1170
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|hermes_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 1300
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|zoidberg_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 1430
+              anchor_x: right
+              anchor_y: bottom
+            - type: image
+              image: crew_level_indicators
+              x: 450
+              y: 1080
+              anchor_x: left
+              anchor_y: top
+            - type: image
+              image: base_background1
+
+widget_player:
+    player_added{num==2}:
+        player2_scoring:
+            slide: base_slide
+    player_added{num==3}:
+        player3_scoring:
+            slide: base_slide
+    player_added{num==4}:
+        player4_scoring:
+            slide: base_slide
+
+widgets:
+    player2_scoring:
+        - type: text
+          text: (player2|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 45
+          color: black
+          y: 108
+          x: 875
+          z: 5
+          anchor_x: right
+          anchor_y: bottom
+    player3_scoring:
+        - type: text
+          text: (player3|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 45
+          color: black
+          y: 108
+          x: 1335
+          z: 5
+          anchor_x: right
+          anchor_y: bottom
+    player4_scoring:
+        - type: text
+          text: (player4|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 45
+          color: black
+          y: 108
+          x: 1795
+          z: 5
+          anchor_x: right
+          anchor_y: bottom
+    empty_gauge:
+        - type: image
+          image: empty_gauge
+          z: 5
+    quarter_gauge:
+        - type: image
+          image: quarter_gauge
+          z: 6
+    half_gauge:
+        - type: image
+          image: half_gauge
+          z: 7
+    3quarter_gauge:
+        - type: image
+          image: 3quarter_gauge
+          z: 8
+    full_gauge:
+        - type: image
+          image: full_gauge
+          z: 9
+
+assets:
+    sounds:
+        default:
+            load: on_demand
+        music:
+            track: music
+        sfx:
+            track: sfx
+        voice:
+            track: voice
+
+images:
+    base_background1:
+        load: preload
+    empty_gauge:
+        load: preload
+    quarter_gauge:
+        load: preload
+    half_gauge:
+        load: preload
+    3quarter_gauge:
+        load: preload
+    full_gauge:
+        load: preload
+    titlecard:
+        load: preload
+    crew_level_indicators:
+        load: preload
+
+sound_pools:
+    lrrr_pop_bumper:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - lrrr_short1
+            - lrrr_short2
+            - lrrr_short3
+    people_tubes:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - tube1
+            - tube2
+            - tube3
+            - tube4
+            - tube5
+    ship_short:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - ship_short1
+            - ship_short2
+            - ship_short3
+            - ship_short4
+            - ship_short5
+    leela_short:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - leela_short1
+            - leela_short2
+    fry_short:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - fry_short1
+            - fry_short2
+            - fry_short3
+            - fry_short4
+            - fry_short5
+            - fry_short6
+    nibbler_short:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - nibbler_short1
+            - nibbler_short2
+    zoidberg_short:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - zoidberg_short1
+            - zoidberg_short2
+            - zoidberg_short3
+    amy_short:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - amy_short1
+            - amy_short2
+            - amy_short3
+    hermes_short:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - hermes_short1
+            - hermes_short2
+    bender_short:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - bender_short1
+            - bender_short2
+    professor_short:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - professor_short1
+            - professor_short2
+            - professor_short3
+    hypnotoad_short:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - hypnotoad1
+            - hypnotoad2
+            - hypnotoad3
+    hedonismbot_sounds:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - hedonismbot1
+            - hedonismbot2
+    drain_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - does_it_always_do_that
+            - im_an_appalling_failure
+            - amy_swears
+            - what_was_that
+            - professor_laughing1
+            - a_thing_called_showmanship
+            - have_a_nice_future
+            - doomed_harmony
+    ball_save_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - dont_giveup_crybabies
+            - were_safe
+            - not_gonna_be_loser
+
+
+sound_player:
+    s_hedonism_bot_active:
+        hedonismbot_sounds:
+            action: play
+
+slide_player:
+    init_done: welcome_slide
+    mode_attract_started: attract_started
+    game_ending:
+        final_score_slide:
+            expire: 30s

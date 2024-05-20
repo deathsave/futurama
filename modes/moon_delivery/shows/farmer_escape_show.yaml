@@ -1,0 +1,6 @@
+#show_version=5
+##! show: farmer_escape_show
+
+- time: 0
+  widgets: farmer_escape_clip
+      

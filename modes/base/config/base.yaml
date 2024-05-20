@@ -1,0 +1,542 @@
+#config_version=5
+mode:
+    start_events: ball_started
+    priority: 100
+
+state_machines:
+    fuel_gauge_state:
+        persist_state: false
+        states:
+            start:
+                label: Start state
+                events_when_started: empty_tank
+            quarter:
+                events_when_started: quarter_tank
+            half:
+                events_when_started: half_tank
+            3quarter:
+                events_when_started: 3quarter_tank
+            full:
+                events_when_started: full_tank
+        transitions:
+            - source: start
+              target: quarter
+              events: s_right_ramp_active
+            - source: quarter
+              target: half
+              events: s_right_ramp_active
+            - source: half
+              target: 3quarter
+              events: s_right_ramp_active
+            - source: 3quarter
+              target: full
+              events: s_right_ramp_active
+            - source: full
+              target: 3quarter
+              events: use_dark_matter
+            - source: 3quarter
+              target: half
+              events: use_dark_matter
+            - source: half
+              target: quarter
+              events: use_dark_matter
+            - source: quarter
+              target: start
+              events: use_dark_matter
+
+ball_saves:
+    ball_start_ball_save:
+        active_time: 10s
+        hurry_up_time: 6s
+        timer_start_events: s_shooter_lane_inactive
+        auto_launch: true
+        balls_to_save: 1
+
+shows:
+    zoidberg_happy_show:
+        - duration: 5
+          events: zoidberg_l1
+        - duration: 5
+          events: zoidberg_l2
+        - duration: 5
+          events: zoidberg_l3
+        - duration: 10
+          events: zoidberg_reset
+        - duration: 1
+          events: zoidberg_neutral
+    zoidberg_sad_show:
+        - duration: 5
+          events: zoidberg_r1
+        - duration: 5
+          events: zoidberg_r2
+        - duration: 5
+          events: zoidberg_r3
+        - duration: 10
+          events: zoidberg_reset
+        - duration: 1
+          events: zoidberg_neutral
+    zoidberg_neutral_show:
+        - duration: 10
+          events: zoidberg_l1
+        - duration: 20
+          events: zoidberg_r1
+        - duration: 10
+          events: zoidberg_reset
+
+light_player:
+    mode_base_started:
+        indicator: ffffff
+        ship: ffffff
+
+show_player:
+    mode_base_started:
+        zoidberg_neutral_show:
+            loops: 0
+    s_shooter_lane_active:
+        shoot_the_ball_show:
+            loops: -1
+    s_shooter_lane_inactive:
+        shoot_the_ball_show: stop
+    zoidberg_happy:
+        zoidberg_happy_show: play
+        zoidberg_neutral_show: stop
+        zoidberg_sad_show: stop
+    zoidberg_sad:
+        zoidberg_happy_show: stop
+        zoidberg_neutral_show: stop
+        zoidberg_sad_show: play
+    zoidberg_neutral:
+        zoidberg_happy_show: stop
+        zoidberg_neutral_show: play
+        zoidberg_sad_show: stop
+    ball_save_ball_start_ball_save_saving_ball:
+        ball_save_indicator_show: play
+    balldevice_bd_right_post_ball_entered:
+        right_post_lock_show:
+            loops: 0
+    s_mag_button_active:
+        hypnotoad_light_pulse_show:
+            loops: -1
+    s_mag_button_inactive:
+        hypnotoad_light_pulse_show: stop
+    ship_spinning_hit:
+        pe_platter_rotary_show:
+            loops: 0
+            priority: 100
+    s_pop_bumper_active:
+        lrrr_pulse_show:
+            loops: 0
+    fry_level1:
+        fry_level_up_show:
+            loops: 0
+    fry_level2:
+        fry_level_up_show:
+            loops: 0
+    fry_level3:
+        fry_level_up_show:
+            loops: 0
+    leela_level1:
+        leela_level_up_show:
+            loops: 0
+    leela_level2:
+        leela_level_up_show:
+            loops: 0
+    leela_level3:
+        leela_level_up_show:
+            loops: 0
+    bender_level1:
+        bender_level_up_show:
+            loops: 0
+    bender_level2:
+        bender_level_up_show:
+            loops: 0
+    bender_level3:
+        bender_level_up_show:
+            loops: 0
+    s_left_ramp_active:
+        tube_light_show:
+            loops: 0
+
+slide_player:
+    mode_base_started: base_slide
+
+widget_player:
+    mode_base_started:
+        empty_gauge:
+            slide: base_slide
+    empty_tank:
+        empty_gauge:
+            slide: base_slide
+    quarter_tank:
+        quarter_gauge:
+            slide: base_slide
+    half_tank:
+        half_gauge:
+            slide: base_slide
+    3quarter_tank:
+        3quarter_gauge:
+            slide: base_slide
+    full_tank:
+        full_gauge:
+            slide: base_slide
+
+variable_player:
+    s_t_fry_active:
+        score: 100 * current_player.fry_multiplier
+        fry_xp: 1
+    s_t_leela_active:
+        score: 100 * current_player.leela_multiplier
+        leela_xp: 1
+    s_t_bender_active:
+        score: 100 * current_player.bender_multiplier
+        bender_xp: 1
+    s_dt_amy_active:
+        score: 500 * current_player.amy_multiplier
+        amy_xp: 1
+    s_dt_hermes_active:
+        score: 500 * current_player.hermes_multiplier
+        hermes_xp: 1
+    s_dt_nibbler_active:
+        score: 500 * current_player.nibbler_multiplier
+        nibbler_xp: 1
+    s_dt_zoidberg_active:
+        score: 500 * current_player.zoidberg_multiplier
+        zoidberg_xp: 1
+    s_dt_professor_active:
+        score: 500 * current_player.professor_multiplier
+        professor_xp: 1
+    s_right_orbit_active:
+        score: 150
+    s_pe_platter_active:
+        score: 33 * current_player.crew_multiplier
+        platter_short_counter: 1
+        platter_long_counter: 1
+    s_cap1_active:
+        score: 50
+        slurm_caps: 1
+    s_cap2_active:
+        score: 50
+        slurm_caps: 1
+    s_cap3_active:
+        score: 50
+        slurm_caps: 1
+    s_cap4_active:
+        score: 10
+        slurm_caps: 1
+    leela_level1:
+        leela_level: 1
+        leela_multiplier: 1
+    leela_level2:
+        leela_level: 1
+        leela_multiplier: 1
+        crew_multiplier: 1
+    leela_level3:
+        leela_level: 1
+        leela_multiplier: 1
+    fry_level1:
+        fry_level: 1
+        fry_multiplier: 1
+    fry_level2:
+        fry_level: 1
+        fry_multiplier: 1
+        crew_multiplier: 1
+    fry_level3:
+        fry_level: 1
+        fry_multiplier: 1
+    bender_level1:
+        bender_level: 1
+        bender_multiplier: 1
+    bender_level2:
+        bender_level: 1
+        bender_multiplier: 1
+        crew_multiplier: 1
+    bender_level3:
+        bender_level: 1
+        bender_multiplier: 1
+    amy_level1:
+        amy_level: 1
+        amy_multiplier: 1
+    amy_level2:
+        amy_level: 1
+        amy_multiplier: 1
+        crew_multiplier: 1
+    amy_level3:
+        amy_level: 1
+        amy_multiplier: 1
+    hermes_level1:
+        hermes_level: 1
+        hermes_multiplier: 1
+    hermes_level2:
+        hermes_level: 1
+        hermes_multiplier: 1
+        crew_multiplier: 1
+    hermes_level3:
+        hermes_level: 1
+        hermes_multiplier: 1
+    nibbler_level1:
+        nibbler_level: 1
+        nibbler_multiplier: 1
+    nibbler_level2:
+        nibbler_level: 1
+        nibbler_multiplier: 1
+        crew_multiplier: 1
+    nibbler_level3:
+        nibbler_level: 1
+        nibbler_multiplier: 1
+    zoidberg_level1:
+        zoidberg_level: 1
+        zoidberg_multiplier: 1
+    zoidberg_level2:
+        zoidberg_level: 1
+        zoidberg_multiplier: 1
+        crew_multiplier: 1
+    zoidberg_level3:
+        zoidberg_level: 1
+        zoidberg_multiplier: 1
+    professor_level1:
+        proefessor_level: 1
+        professor_multiplier: 1
+    professor_level2:
+        professor_level: 1
+        professor_multiplier: 1
+        crew_multiplier: 1
+    professor_level3:
+        professor_level: 1
+        professor_multiplier: 1
+    right_loop_hit:
+        score: 150
+    left_loop_hit:
+        score: 150
+    left_right_double_loop_hit:
+        score: 500
+    right_left_double_loop_hit:
+        score: 500
+    double_left_loop_hit:
+        score: 500
+    double_right_loop_hit:
+        score: 500
+    s_pop_bumper_active:
+        score: 50 * current_player.pop_bumper_hits
+        pop_bumper_hits: 1
+    s_right_ramp_active:
+        dark_matter: 1
+        score: 75 * current_player.nibbler_level
+    hypnotoad_save_hit:
+        hypnotoad_saves: 1
+        score: 1000
+    mode_base_started:
+        platter_short_counter:
+            int: 0
+            action: set
+    s_left_ramp_active:
+        score: 25 * (current_player.fry_level + 1) * (current_player.leela_level + 1) * (current_player.bender_level + 1)
+
+
+sound_player:
+    s_mag_button_active:
+        hypnotoad_short:
+            loops: -1
+    s_mag_button_inactive:
+        hypnotoad_short: stop
+    s_pop_bumper_active:
+        lrrr_pop_bumper:
+            action: play
+    s_left_ramp_active:
+        people_tubes:
+            action: play
+    s_right_loop_active:
+        crew_whoa1:
+            action: play
+    s_left_loop_active:
+        crew_whoa2:
+            action: play
+    s_pe_platter_active:
+        ship_short:
+            action: play
+    mode_base_started:
+        theme_full:
+            action: play
+    ball_will_end:
+        theme_full:
+            action: stop
+        drain_sounds:
+            action: play
+    s_t_fry_active:
+        fry_short:
+            action: play
+    s_t_leela_active:
+        leela_short:
+            action: play
+    s_t_bender_active:
+        bender_short:
+            action: play
+    s_dt_zoidberg_active:
+        zoidberg_short:
+            action: play
+    s_dt_professor_active:
+        professor_short:
+            action: play
+    s_dt_amy_active:
+        amy_short:
+            action: play
+    s_dt_hermes_active:
+        hermes_short:
+            action: play
+    s_dt_nibbler_active:
+        nibbler_short:
+            action: play
+    quarter_tank:
+        ding:
+            action: play
+    half_tank:
+        ding:
+            action: play
+    3quarter_tank:
+        ding:
+            action: play
+    ball_save_ball_start_ball_save_saving_ball:
+        ball_save_sounds:
+            action: play
+    s_r_outlane_active:
+        woop_woop:
+            action: play
+    leela_level1:
+        level_up:
+            action: play
+    leela_level2:
+        level_up:
+            action: play
+    leela_level3:
+        level_up:
+            action: play
+    fry_level1:
+        level_up:
+            action: play
+    fry_level2:
+        level_up:
+            action: play
+    fry_level3:
+        level_up:
+            action: play
+    bender_level1:
+        level_up:
+            action: play
+    bender_level2:
+        level_up:
+            action: play
+    bender_level3:
+        level_up:
+            action: play
+    amy_level1:
+        level_up:
+            action: play
+    amy_level2:
+        level_up:
+            action: play
+    amy_level3:
+        level_up:
+            action: play
+    hermes_level1:
+        level_up:
+            action: play
+    hermes_level2:
+        level_up:
+            action: play
+    hermes_level3:
+        level_up:
+            action: play
+    nibbler_level1:
+        level_up:
+            action: play
+    nibbler_level2:
+        level_up:
+            action: play
+    nibbler_level3:
+        level_up:
+            action: play
+    zoidberg_level1:
+        level_up:
+            action: play
+    zoidberg_level2:
+        level_up:
+            action: play
+    zoidberg_level3:
+        level_up:
+            action: play
+    professor_level1:
+        level_up:
+            action: play
+    professor_level2:
+        level_up:
+            action: play
+    professor_level3:
+        level_up:
+            action: play
+
+event_player:
+    s_t_leela_active{current_player.leela_xp == 4}: leela_level1
+    s_t_leela_active{current_player.leela_xp == 12}: leela_level2
+    s_t_leela_active{current_player.leela_xp == 25}: leela_level3
+    s_t_fry_active{current_player.fry_xp == 4}: fry_level1
+    s_t_fry_active{current_player.fry_xp == 12}: fry_level2
+    s_t_fry_active{current_player.fry_xp == 25}: fry_level3
+    s_t_bender_active{current_player.bender_xp == 4}: bender_level1
+    s_t_bender_active{current_player.bender_xp == 12}: bender_level2
+    s_t_bender_active{current_player.bender_xp == 25}: bender_level3
+    s_dt_amy_active{current_player.amy_xp == 2}: amy_level1
+    s_dt_amy_active{current_player.amy_xp == 5}: amy_level2
+    s_dt_amy_active{current_player.amy_xp == 15}: amy_level3
+    s_dt_hermes_active{current_player.hermes_xp == 2}: hermes_level1
+    s_dt_hermes_active{current_player.hermes_xp == 5}: hermes_level2
+    s_dt_hermes_active{current_player.hermes_xp == 15}: hermes_level3
+    s_dt_nibbler_active{current_player.nibbler_xp == 2}: nibbler_level1
+    s_dt_nibbler_active{current_player.nibbler_xp == 5}: nibbler_level2
+    s_dt_nibbler_active{current_player.nibbler_xp == 15}: nibbler_level3
+    s_dt_zoidberg_active{current_player.zoidberg_xp == 2}: zoidberg_level1
+    s_dt_zoidberg_active{current_player.zoidberg_xp == 5}: zoidberg_level2
+    s_dt_zoidberg_active{current_player.zoidberg_xp == 15}: zoidberg_level3
+    s_dt_professor_active{current_player.professor_xp == 2}: professor_level1
+    s_dt_professor_active{current_player.professor_xp == 5}: professor_level2
+    s_dt_professor_active{current_player.professor_xp == 15}: professor_level3
+    s_cap4_active: start_left_loop_lock_hurry
+    start_left_loop_lock_hurry: right_post_enable
+    timer_left_loop_lock_hurry_complete: right_post_disable
+    right_post_lock_show_stopped: post_right_down
+    post_right_down: right_post_disable
+
+timers:
+    left_loop_lock_hurry:
+        start_value: 8
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: start_left_loop_lock_hurry
+shots:
+    ship_spinning:
+        switch: s_pe_platter
+        delay_switch:
+            s_pe_platter: 500ms
+
+sequence_shots:
+    right_loop:
+        switch_sequence: s_right_loop, s_left_loop
+        sequence_timeout: 1s
+    left_loop:
+        switch_sequence: s_left_loop, s_right_loop
+        sequence_timeout: 1s
+    left_right_double_loop:
+        event_sequence: left_loop_hit, right_loop_hit
+        sequence_timeout: 5s
+    right_left_double_loop:
+        event_sequence: right_loop_hit, left_loop_hit
+        sequence_timeout: 5s
+    double_right_loop:
+        event_sequence: right_loop_hit, right_loop_hit
+        sequence_timeout: 5s
+    double_left_loop:
+        event_sequence: left_loop_hit, left_loop_hit
+        sequence_timeout: 5s
+    hypnotoad_save:
+        switch_sequence: s_mag_button, s_left_inlane
+        sequence_timeout: 5s

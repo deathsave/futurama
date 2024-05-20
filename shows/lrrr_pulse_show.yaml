@@ -1,0 +1,10 @@
+#show_version=5
+##! show: lrrr_pulse_show
+
+    - duration: 500ms
+      lights:
+          l_pop_bumper: 0029ff
+    - duration: 500ms
+      lights:
+          l_pop_bumper: ffffff
+          

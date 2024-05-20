@@ -1,0 +1,5 @@
+#show_version=5
+##! show: crate_delivered_show
+
+- time: 0
+  widgets: crate_delivered_video

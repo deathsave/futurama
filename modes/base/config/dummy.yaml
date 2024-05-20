@@ -1,0 +1,5 @@
+#config_version=5
+
+coils:
+  number: A1-B2-00
+  

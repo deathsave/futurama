@@ -1,0 +1,15 @@
+2024-05-19 13:39:52,640 : kivy : Factory: 186 symbols loaded
+2024-05-19 13:39:52,713 : kivy : ImageLoaderFFPy: Using ffpyplayer 4.3.2
+2024-05-19 13:39:52,713 : kivy : Image: Providers: img_tex, img_dds, img_sdl2, img_pil, img_ffpyplayer 
+2024-05-19 13:39:52,726 : kivy : VideoFFPy: Using ffpyplayer 4.3.2
+2024-05-19 13:39:52,727 : kivy : Video: Provider: ffpyplayer(['video_ffmpeg'] ignored)
+2024-05-19 13:39:52,831 : kivy : Loading MPF-MC controller
+2024-05-19 13:39:52,832 : YamlMultifileConfigLoader : Machine config file #1: config
+2024-05-19 13:39:52,832 : ConfigProcessor : Loading config from file /usr/local/lib/python3.7/dist-packages/mpfmc/mcconfig.yaml.
+2024-05-19 13:39:52,858 : ConfigProcessor : Loading config: /usr/local/lib/python3.7/dist-packages/mpfmc/mcconfig.yaml
+2024-05-19 13:39:52,858 : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/config/config.
+2024-05-19 13:39:52,962 : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/config/config
+2024-05-19 13:39:52,963 : ConfigProcessor : Config file cache created: /tmp/99e4eac360d55de2457969ceb764a8dc.mpf_cache
+2024-05-19 13:39:52,964 : ConfigProcessor : Loading config from cache: /tmp/de1c812805b1a8d31c8d5081a8fd5ff0.mpf_cache
+2024-05-19 13:39:52,964 : ConfigProcessor : Loading config from cache: /tmp/7559345efe69122f4d6fb5f65214b482.mpf_cache
+2024-05-19 13:39:52,964 : ConfigProcessor : Loading config from cache: /tmp/81fc9816eeab5cee4f0a60de6bc404c0.mpf_cache

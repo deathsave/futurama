@@ -1,0 +1,12 @@
+2024-05-19 12:06:14,907 : INFO : root : Loading config.
+2024-05-19 12:06:14,909 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2024-05-19 12:06:14,909 : INFO : ConfigProcessor : Loading config from cache: /tmp/1fb8672a7b1f574d2a68cc1fd7061d4e.mpf_cache
+2024-05-19 12:06:14,936 : INFO : ConfigProcessor : Loading config from cache: /tmp/fe71e392613673d9d3357950779c7123.mpf_cache
+2024-05-19 12:06:14,936 : INFO : ConfigProcessor : Loading config from cache: /tmp/7559345efe69122f4d6fb5f65214b482.mpf_cache
+2024-05-19 12:06:14,937 : INFO : ConfigProcessor : Loading config from cache: /tmp/6a69c4465e21725e3f8685a4d3753cc4.mpf_cache
+2024-05-19 12:06:14,937 : INFO : ConfigProcessor : Loading config from cache: /tmp/50e83c0050a4a566a69a14c571796e91.mpf_cache
+2024-05-19 12:06:14,937 : INFO : ConfigProcessor : Loading config from cache: /tmp/e03e7c37e48607d19a80cfced003c39b.mpf_cache
+2024-05-19 12:06:14,937 : INFO : ConfigProcessor : Loading config from cache: /tmp/951d792a2bc4483363ca8f0610ac0552.mpf_cache
+2024-05-19 12:06:14,938 : INFO : ConfigProcessor : Loading config from cache: /tmp/bef5b941d62667d3683d1d5627db689f.mpf_cache
+2024-05-19 12:06:14,938 : INFO : ConfigProcessor : Loading config from cache: /tmp/ee9aee9b7d367fedcc24d98326938135.mpf_cache
+2024-05-19 12:06:14,938 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama34/shows/./moon_delivery_intro_show.yaml.

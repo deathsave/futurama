@@ -1,0 +1,27 @@
+#show_version=5
+##! show: right_post_lock_show
+
+    - duration: 500ms
+      lights:
+          l_right_loop: 000000
+    - duration: 500ms
+      lights:
+          l_right_loop: ffffff
+    - duration: 500ms
+      lights:
+          l_right_loop: 000000
+    - duration: 500ms
+      lights:
+          l_right_loop: ffffff
+    - duration: 500ms
+      lights:
+          l_right_loop: 000000
+    - duration: 500ms
+      lights:
+          l_right_loop: ffffff
+    - duration: 500ms
+      lights:
+          l_right_loop: 000000
+    - duration: 500ms
+      lights:
+          l_right_loop: ffffff
