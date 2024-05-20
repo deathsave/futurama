@@ -1,0 +1,9 @@
+#show_version=5
+##! show: hypnotoad_light_pulse_show
+
+    - duration: 300ms
+      lights:
+          l_left_spotlight: 00ffff
+    - duration: 300ms
+      lights:
+          l_left_spotlight: ffffff

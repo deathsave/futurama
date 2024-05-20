@@ -1,0 +1,5 @@
+#show_version=5
+##! show: moon_delivery_success_show
+
+- time: 0
+  widgets: moon_delivery_success_clip

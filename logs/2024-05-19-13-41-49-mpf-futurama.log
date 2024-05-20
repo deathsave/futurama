@@ -1,0 +1,60 @@
+2024-05-19 13:41:49,868 : INFO : root : Loading config.
+2024-05-19 13:41:49,871 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2024-05-19 13:41:49,871 : INFO : ConfigProcessor : Loading config from cache: /tmp/8981e3cdf5e0d182bcc6125823dde8c1.mpf_cache
+2024-05-19 13:41:49,909 : INFO : ConfigProcessor : Loading config from cache: /tmp/de1c812805b1a8d31c8d5081a8fd5ff0.mpf_cache
+2024-05-19 13:41:49,909 : INFO : ConfigProcessor : Loading config from cache: /tmp/7559345efe69122f4d6fb5f65214b482.mpf_cache
+2024-05-19 13:41:49,909 : INFO : ConfigProcessor : Loading config from cache: /tmp/81fc9816eeab5cee4f0a60de6bc404c0.mpf_cache
+2024-05-19 13:41:49,910 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/modes/delivery_manager/config/delivery_manager.yaml.
+2024-05-19 13:41:49,926 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/modes/delivery_manager/config/delivery_manager.yaml
+2024-05-19 13:41:49,926 : INFO : ConfigProcessor : Config file cache created: /tmp/8a29d13d68ac77d4d43d1f5fa03150e1.mpf_cache
+2024-05-19 13:41:49,926 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/modes/moon_delivery/config/moon_delivery.yaml.
+2024-05-19 13:41:50,023 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/modes/moon_delivery/config/moon_delivery.yaml
+2024-05-19 13:41:50,024 : INFO : ConfigProcessor : Config file cache created: /tmp/62ad7a4ea646d1a0c117cb2cc3a7ec39.mpf_cache
+2024-05-19 13:41:50,024 : INFO : ConfigProcessor : Loading config from file /usr/local/lib/python3.7/dist-packages/mpf/modes/bonus/config/bonus.yaml.
+2024-05-19 13:41:50,025 : INFO : ConfigProcessor : Loading config: /usr/local/lib/python3.7/dist-packages/mpf/modes/bonus/config/bonus.yaml
+2024-05-19 13:41:50,026 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/modes/bonus/config/bonus.yaml.
+2024-05-19 13:41:50,041 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/modes/bonus/config/bonus.yaml
+2024-05-19 13:41:50,042 : INFO : ConfigProcessor : Config file cache created: /tmp/32356d566a81b84c0205f8d958385718.mpf_cache
+2024-05-19 13:41:50,042 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./hypnotoad_light_pulse_show.yaml.
+2024-05-19 13:41:50,043 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./hypnotoad_light_pulse_show.yaml
+2024-05-19 13:41:50,043 : INFO : ConfigProcessor : Config file cache created: /tmp/7874cb2613c04365c5eb78a5aedc55e7.mpf_cache
+2024-05-19 13:41:50,043 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./ball_save_indicator_show.yaml.
+2024-05-19 13:41:50,047 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./ball_save_indicator_show.yaml
+2024-05-19 13:41:50,047 : INFO : ConfigProcessor : Config file cache created: /tmp/bd6359a8aac2e9dc844cb326ed06d216.mpf_cache
+2024-05-19 13:41:50,047 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./delivery_lit_show.yaml.
+2024-05-19 13:41:50,048 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./delivery_lit_show.yaml
+2024-05-19 13:41:50,048 : INFO : ConfigProcessor : Config file cache created: /tmp/6cdf6a4b33e0468a1e44f8ff954190c7.mpf_cache
+2024-05-19 13:41:50,049 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./tube_light_show.yaml.
+2024-05-19 13:41:50,053 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./tube_light_show.yaml
+2024-05-19 13:41:50,053 : INFO : ConfigProcessor : Config file cache created: /tmp/5a2e351e1af13e2e58941b4c96bd6e81.mpf_cache
+2024-05-19 13:41:50,053 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./moon_delivery_intro_show.yaml.
+2024-05-19 13:41:50,054 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./moon_delivery_intro_show.yaml
+2024-05-19 13:41:50,054 : INFO : ConfigProcessor : Config file cache created: /tmp/50a4a4dec55b73dba99499d92010baec.mpf_cache
+2024-05-19 13:41:50,055 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./right_post_lock_show.yaml.
+2024-05-19 13:41:50,060 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./right_post_lock_show.yaml
+2024-05-19 13:41:50,061 : INFO : ConfigProcessor : Config file cache created: /tmp/d1ed63dee9d221e232fe0002903da525.mpf_cache
+2024-05-19 13:41:50,061 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./bender_level_up_show.yaml.
+2024-05-19 13:41:50,068 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./bender_level_up_show.yaml
+2024-05-19 13:41:50,068 : INFO : ConfigProcessor : Config file cache created: /tmp/afb4cd942a683f516005cc4b860a03a9.mpf_cache
+2024-05-19 13:41:50,068 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./pe_platter_rotary_show.yaml.
+2024-05-19 13:41:50,073 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./pe_platter_rotary_show.yaml
+2024-05-19 13:41:50,073 : INFO : ConfigProcessor : Config file cache created: /tmp/3605ac87c023c05bb2b32f7336c1db38.mpf_cache
+2024-05-19 13:41:50,073 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./attract_show.yaml.
+2024-05-19 13:41:50,096 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./attract_show.yaml
+2024-05-19 13:41:50,097 : INFO : ConfigProcessor : Config file cache created: /tmp/5e72dd9e54dddcec6721b888ddddaf90.mpf_cache
+2024-05-19 13:41:50,097 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./shoot_the_ball_show.yaml.
+2024-05-19 13:41:50,099 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./shoot_the_ball_show.yaml
+2024-05-19 13:41:50,099 : INFO : ConfigProcessor : Config file cache created: /tmp/0fdb178f1b3349c5bf14b26a02253acc.mpf_cache
+2024-05-19 13:41:50,099 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./lrrr_pulse_show.yaml.
+2024-05-19 13:41:50,101 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./lrrr_pulse_show.yaml
+2024-05-19 13:41:50,101 : INFO : ConfigProcessor : Config file cache created: /tmp/f812b986ad9b7c4dc439199d4d7ea56d.mpf_cache
+2024-05-19 13:41:50,101 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./leela_level_up_show.yaml.
+2024-05-19 13:41:50,107 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./leela_level_up_show.yaml
+2024-05-19 13:41:50,107 : INFO : ConfigProcessor : Config file cache created: /tmp/5063dc36d89848850bf8e704747be15d.mpf_cache
+2024-05-19 13:41:50,108 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/shows/./fry_level_up_show.yaml.
+2024-05-19 13:41:50,111 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/shows/./fry_level_up_show.yaml
+2024-05-19 13:41:50,112 : INFO : ConfigProcessor : Config file cache created: /tmp/4322c6c944dd6bb34a2654a61849ff2a.mpf_cache
+2024-05-19 13:41:50,112 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/modes/attract/shows/./attract_loop_show.yaml.
+2024-05-19 13:41:50,186 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/modes/attract/shows/./attract_loop_show.yaml
+2024-05-19 13:41:50,187 : INFO : ConfigProcessor : Config file cache created: /tmp/55605188a15e2159f49b6f01e14d58f6.mpf_cache
+2024-05-19 13:41:50,187 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/modes/moon_delivery/shows/./rover_escape_show.yaml.

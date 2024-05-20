@@ -1,0 +1,75 @@
+#config_version=5
+##! mode: delivery_manager
+
+mode:
+    start_events: ball_started
+    priority: 101
+
+state_machines:
+    next_delivery:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: set_next_delivery_moon
+            cannibalon:
+                events_when_started: set_next_delivery_cannibalon
+            trisol:
+                events_when_started: set_next_delivery_trisol
+            robot_homeworld:
+                events_when_started: set_next_delivery_robot_homeworld
+            roswell:
+                events_when_started: set_next_delivery_roswell
+        transitions:
+            - source: start
+              target: cannibalon
+              events: moon_delivery_done
+            - source: cannibalon
+              target: trisol
+              events: stop_cannibalon_delivery_mode
+            - source: trisol
+              target: robot_homeworld
+              events: stop_trisol_delivery_mode
+            - source: robot_homeworld
+              target: roswell
+              events: stop_robot_homeworld_delivery_mode
+    moon_delivery_handler:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+            moon_delivery_enable:
+                events_when_started: moon_delivery_lit
+            moon_delivery_active:
+                events_when_started: moon_delivery_active
+            moon_delivery_done:
+                events_when_started: moon_delivery_done
+        transitions:
+            - source: start
+              target: moon_delivery_enable
+              events: half_tank
+            - source: moon_delivery_enable
+              target: moon_delivery_active
+              events: start_moon_delivery_mode
+            - source: moon_delivery_active
+              target: moon_delivery_done
+              events: stop_moon_delivery_mode
+
+shots:
+    moon_delivery_start_shot:
+        switch: s_VUK
+        enable_events: moon_delivery_lit
+        disable_events: mode_moon_delivery_started
+
+event_player:
+    moon_delivery_start_shot_hit: start_moon_delivery_mode
+
+show_player:
+    mode_moon_delivery_started:
+        moon_delivery_intro_show:
+            loops: 0
+    moon_delivery_lit:
+        delivery_lit_show:
+            loops: -1
+    moon_delivery_start_shot_hit:
+        delivery_lit_show: stop

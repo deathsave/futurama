@@ -1,0 +1,63 @@
+2024-05-19 13:59:39,243 : INFO : root : Loading config.
+2024-05-19 13:59:39,245 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2024-05-19 13:59:39,245 : INFO : ConfigProcessor : Loading config from cache: /tmp/8981e3cdf5e0d182bcc6125823dde8c1.mpf_cache
+2024-05-19 13:59:39,272 : INFO : ConfigProcessor : Loading config from cache: /tmp/de1c812805b1a8d31c8d5081a8fd5ff0.mpf_cache
+2024-05-19 13:59:39,272 : INFO : ConfigProcessor : Loading config from cache: /tmp/7559345efe69122f4d6fb5f65214b482.mpf_cache
+2024-05-19 13:59:39,272 : INFO : ConfigProcessor : Loading config from cache: /tmp/81fc9816eeab5cee4f0a60de6bc404c0.mpf_cache
+2024-05-19 13:59:39,273 : INFO : ConfigProcessor : Loading config from cache: /tmp/8a29d13d68ac77d4d43d1f5fa03150e1.mpf_cache
+2024-05-19 13:59:39,273 : WARNING : ConfigProcessor : Config file in cache changed: /home/mpfuser/pinball/Futurama35/modes/moon_delivery/config/moon_delivery.yaml
+2024-05-19 13:59:39,273 : INFO : ConfigProcessor : Loading config from file /home/mpfuser/pinball/Futurama35/modes/moon_delivery/config/moon_delivery.yaml.
+2024-05-19 13:59:39,323 : INFO : ConfigProcessor : Loading config: /home/mpfuser/pinball/Futurama35/modes/moon_delivery/config/moon_delivery.yaml
+2024-05-19 13:59:39,324 : INFO : ConfigProcessor : Config file cache created: /tmp/62ad7a4ea646d1a0c117cb2cc3a7ec39.mpf_cache
+2024-05-19 13:59:39,324 : INFO : ConfigProcessor : Loading config from cache: /tmp/32356d566a81b84c0205f8d958385718.mpf_cache
+2024-05-19 13:59:39,324 : INFO : ConfigProcessor : Loading config from cache: /tmp/7874cb2613c04365c5eb78a5aedc55e7.mpf_cache
+2024-05-19 13:59:39,324 : INFO : ConfigProcessor : Loading config from cache: /tmp/bd6359a8aac2e9dc844cb326ed06d216.mpf_cache
+2024-05-19 13:59:39,324 : INFO : ConfigProcessor : Loading config from cache: /tmp/6cdf6a4b33e0468a1e44f8ff954190c7.mpf_cache
+2024-05-19 13:59:39,325 : INFO : ConfigProcessor : Loading config from cache: /tmp/5a2e351e1af13e2e58941b4c96bd6e81.mpf_cache
+2024-05-19 13:59:39,325 : INFO : ConfigProcessor : Loading config from cache: /tmp/50a4a4dec55b73dba99499d92010baec.mpf_cache
+2024-05-19 13:59:39,325 : INFO : ConfigProcessor : Loading config from cache: /tmp/d1ed63dee9d221e232fe0002903da525.mpf_cache
+2024-05-19 13:59:39,325 : INFO : ConfigProcessor : Loading config from cache: /tmp/afb4cd942a683f516005cc4b860a03a9.mpf_cache
+2024-05-19 13:59:39,325 : INFO : ConfigProcessor : Loading config from cache: /tmp/3605ac87c023c05bb2b32f7336c1db38.mpf_cache
+2024-05-19 13:59:39,325 : INFO : ConfigProcessor : Loading config from cache: /tmp/5e72dd9e54dddcec6721b888ddddaf90.mpf_cache
+2024-05-19 13:59:39,326 : INFO : ConfigProcessor : Loading config from cache: /tmp/0fdb178f1b3349c5bf14b26a02253acc.mpf_cache
+2024-05-19 13:59:39,326 : INFO : ConfigProcessor : Loading config from cache: /tmp/f812b986ad9b7c4dc439199d4d7ea56d.mpf_cache
+2024-05-19 13:59:39,326 : INFO : ConfigProcessor : Loading config from cache: /tmp/5063dc36d89848850bf8e704747be15d.mpf_cache
+2024-05-19 13:59:39,326 : INFO : ConfigProcessor : Loading config from cache: /tmp/4322c6c944dd6bb34a2654a61849ff2a.mpf_cache
+2024-05-19 13:59:39,326 : INFO : ConfigProcessor : Loading config from cache: /tmp/55605188a15e2159f49b6f01e14d58f6.mpf_cache
+2024-05-19 13:59:39,327 : INFO : ConfigProcessor : Loading config from cache: /tmp/16cf2ad93e12f5d8fcdbabd96ad1717a.mpf_cache
+2024-05-19 13:59:39,327 : INFO : ConfigProcessor : Loading config from cache: /tmp/43b01bd367733269010ccbb47e0f316c.mpf_cache
+2024-05-19 13:59:39,327 : INFO : ConfigProcessor : Loading config from cache: /tmp/797eb398a3a8a17e68e20c879b5f6064.mpf_cache
+2024-05-19 13:59:39,327 : INFO : ConfigProcessor : Loading config from cache: /tmp/eee85c52866a64179a8a4bb8599e2060.mpf_cache
+2024-05-19 13:59:39,327 : INFO : Machine : Mission Pinball Framework Core Engine v0.55.0
+2024-05-19 13:59:39,327 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'force_assets_load': False, 'jsonlogging': False, 'logfile': 'logs/2024-05-19-13-59-39-mpf-futurama.log', 'pause': False, 'production': False, 'text_ui': True, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': None, 'syslog_address': None, 'mc_file_name': None, 'no_sound': False}
+2024-05-19 13:59:39,327 : INFO : Machine : MPF path: /usr/local/lib/python3.7/dist-packages/mpf
+2024-05-19 13:59:39,327 : INFO : Machine : Machine path: /home/mpfuser/pinball/Futurama35
+2024-05-19 13:59:39,327 : INFO : Machine : Platform: linux
+2024-05-19 13:59:39,327 : INFO : Machine : Python executable location: /usr/bin/python3
+2024-05-19 13:59:39,327 : INFO : Machine : Python version: 3.7.3 (64-bit)
+2024-05-19 13:59:39,328 : INFO : Machine : Initialise MPF.
+2024-05-19 13:59:39,355 : INFO : P-Roc : Connecting to P-ROC
+2024-05-19 13:59:39,410 : INFO : P-Roc : Successfully connected to P-ROC/P3-ROC. Firmware Version: 2. Firmware Revision: 14. Hardware Board ID: 1
+2024-05-19 13:59:39,419 : INFO : EventManager : Event: ======'machine_var_p_roc_version'====== Args={'value': 2, 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,419 : INFO : EventManager : Event: ======'machine_var_p_roc_revision'====== Args={'value': 14, 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,419 : INFO : EventManager : Event: ======'machine_var_p_roc_hardware_version'====== Args={'value': 1, 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,419 : INFO : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,449 : INFO : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.9, 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,449 : INFO : EventManager : Event: ======'machine_var_player1_score'====== Args={'value': 2641, 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,449 : INFO : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'MPF v0.55.0', 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,449 : INFO : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'MPF v0.55.0, Config version:5, Show version: 5, BCP version:1.1', 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,449 : INFO : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.7.3', 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,450 : INFO : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Linux-4.19.0-20-amd64-x86_64-with-debian-10.12', 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,450 : INFO : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Linux', 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,450 : INFO : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '4.19.0-20-amd64', 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,450 : INFO : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '#1 SMP Debian 4.19.235-1 (2022-03-17)', 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,450 : INFO : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'x86_64', 'prev_value': None, 'change': True}
+2024-05-19 13:59:39,450 : INFO : EventManager : Event: ======'init_phase_1'====== Args={}
+2024-05-19 13:59:39,501 : INFO : EventManager : Event: ======'drop_target_bank_crew_bank_up'====== Args={}
+2024-05-19 13:59:39,530 : INFO : EventManager : Event: ======'init_phase_2'====== Args={}
+2024-05-19 13:59:39,547 : INFO : SwitchController : Found active switch: (30, <Platform.P3-ROC>) <switch.s_trough1>
+2024-05-19 13:59:39,548 : INFO : SwitchController : Found active switch: (23, <Platform.P3-ROC>) <switch.s_dt_nibbler>
+2024-05-19 13:59:39,548 : INFO : SwitchController : Found active switch: (21, <Platform.P3-ROC>) <switch.s_dt_professor>
+2024-05-19 13:59:39,548 : INFO : SwitchController : Found active switch: (19, <Platform.P3-ROC>) <switch.s_dt_amy>
+2024-05-19 13:59:39,568 : INFO : EventManager : Event: ======'bcp_connection_attempt'====== Args={'name': 'local_display', 'host': 'localhost', 'port': 5050}
+2024-05-19 13:59:39,571 : INFO : BCPClientSocket : Connecting BCP to 'local_display' at localhost:5050...

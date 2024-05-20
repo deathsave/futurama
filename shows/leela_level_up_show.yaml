@@ -1,0 +1,36 @@
+#show_version=5
+##! show: leela_level_up_show
+
+    - duration: 250ms
+      lights:
+          l_under_HQ: b4ffe1
+          l_drain: b4ffe1
+          l_DTbank1: b4ffe1
+          l_DTbank2: b4ffe1
+          l_DTbank3: b4ffe1
+          l_pop_bumper: b4ffe1
+          l_left_sling: b4ffe1
+          l_right_sling: b4ffe1
+          l_left_spotlight: b4ffe1
+    - duration: 250ms
+      lights:
+          l_under_HQ: ffffff
+          l_drain: ffffff
+          l_DTbank1: ffffff
+          l_DTbank2: ffffff
+          l_DTbank3: ffffff
+          l_pop_bumper: ffffff
+          l_left_sling: ffffff
+          l_right_sling: ffffff
+          l_left_spotlight: ffffff
+    - duration: 500ms
+      lights:
+          l_under_HQ: 0029ff
+          l_drain: b4ffe1
+          l_DTbank1: b4ffe1
+          l_DTbank2: b4ffe1
+          l_DTbank3: b4ffe1
+          l_pop_bumper: b4ffe1
+          l_left_sling: b4ffe1
+          l_right_sling: b4ffe1
+          l_left_spotlight: b4ffe1
