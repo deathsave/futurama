@@ -1,12 +1,176 @@
 #show_version=5
 ##! show: attract_loop_show
 
-    - duration: 500ms
+    - time: +1
+      slides:
+          show_final_scores:
+              widgets:
+              - type: Text
+                text: FINAL SCORES
+                font_size: 80
+                bold: true
+                anchor_x: center
+                anchor_y: center
+                x: center
+                y: top-100
+              - type: Text
+                text: PLAYER 1
+                style: attract_mode_final_score_display_player_number
+                y: top-250
+              - type: Text
+                text: PLAYER 2
+                style: attract_mode_final_score_display_player_number
+                y: top-320
+              - type: Text
+                text: PLAYER 3
+                style: attract_mode_final_score_display_player_number
+                y: top-390
+              - type: Text
+                text: PLAYER 4
+                style: attract_mode_final_score_display_player_number
+                y: top-460
+              - type: Text
+                text: (machine|player1_score)
+                style: attract_mode_final_score_display_score
+                y: top-250
+              - type: Text
+                text: (machine|player2_score)
+                style: attract_mode_final_score_display_score
+                y: top-320
+              - type: Text
+                text: (machine|player3_score)
+                style: attract_mode_final_score_display_score
+                y: top-390
+              - type: Text
+                text: (machine|player4_score)
+                style: attract_mode_final_score_display_score
+                y: top-460
+    - time: +10
+      slides:
+          show_high_scores:
+              widgets:
+              - type: Text
+                text: HIGH SCORES
+                font_size: 80
+                bold: true
+                anchor_x: center
+                anchor_y: center
+                x: center
+                y: top-100
+              - type: Text
+                text: (machine|score1_label)
+                style: attract_mode_high_score_display_label
+                y: top-250
+              - type: Text
+                text: (machine|score1_name)
+                style: attract_mode_high_score_display_name
+                y: top-250
+              - type: Text
+                text: (machine|score1_value)
+                style: attract_mode_high_score_display_score
+                y: top-250
+              - type: Text
+                text: (machine|score2_label)
+                style: attract_mode_high_score_display_label
+                y: top-330
+              - type: Text
+                text: (machine|score2_name)
+                style: attract_mode_high_score_display_name
+                y: top-330
+              - type: Text
+                text: (machine|score2_value)
+                style: attract_mode_high_score_display_score
+                y: top-330
+              - type: Text
+                text: (machine|score3_label)
+                style: attract_mode_high_score_display_label
+                y: top-380
+              - type: Text
+                text: (machine|score3_name)
+                style: attract_mode_high_score_display_name
+                y: top-380
+              - type: Text
+                text: (machine|score3_value)
+                style: attract_mode_high_score_display_score
+                y: top-380
+              - type: Text
+                text: (machine|score4_label)
+                style: attract_mode_high_score_display_label
+                y: top-430
+              - type: Text
+                text: (machine|score4_name)
+                style: attract_mode_high_score_display_name
+                y: top-430
+              - type: Text
+                text: (machine|score4_value)
+                style: attract_mode_high_score_display_score
+                y: top-430
+              - type: Text
+                text: (machine|score5_label)
+                style: attract_mode_high_score_display_label
+                y: top-480
+              - type: Text
+                text: (machine|score5_name)
+                style: attract_mode_high_score_display_name
+                y: top-480
+              - type: Text
+                text: (machine|score5_value)
+                style: attract_mode_high_score_display_score
+                y: top-480
+              - type: Text
+                text: (machine|score6_label)
+                style: attract_mode_high_score_display_label
+                y: top-530
+              - type: Text
+                text: (machine|score6_name)
+                style: attract_mode_high_score_display_name
+                y: top-530
+              - type: Text
+                text: (machine|score6_value)
+                style: attract_mode_high_score_display_score
+                y: top-530
+              - type: Text
+                text: (machine|score7_label)
+                style: attract_mode_high_score_display_label
+                y: top-580
+              - type: Text
+                text: (machine|score7_name)
+                style: attract_mode_high_score_display_name
+                y: top-580
+              - type: Text
+                text: (machine|score7_value)
+                style: attract_mode_high_score_display_score
+                y: top-580
+              - type: Text
+                text: (machine|score8_label)
+                style: attract_mode_high_score_display_label
+                y: top-630
+              - type: Text
+                text: (machine|score8_name)
+                style: attract_mode_high_score_display_name
+                y: top-630
+              - type: Text
+                text: (machine|score8_value)
+                style: attract_mode_high_score_display_score
+                y: top-630
+              - type: Text
+                text: (machine|score9_label)
+                style: attract_mode_high_score_display_label
+                y: top-680
+              - type: Text
+                text: (machine|score9_name)
+                style: attract_mode_high_score_display_name
+                y: top-680
+              - type: Text
+                text: (machine|score9_value)
+                style: attract_mode_high_score_display_score
+                y: top-680
+    - time: +500ms
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
           l_zapp_indicator: off
-          l_mom_indicator: off
+          l_right_orbit: off
           l_PE_spinner1: off
           l_PE_spinner2: off
           l_PE_spinner3: off
@@ -57,12 +221,12 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - duration: 500ms
+    - time: +500ms
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
           l_zapp_indicator: white
-          l_mom_indicator: white
+          l_right_orbit: white
           l_PE_spinner1: white
           l_PE_spinner2: white
           l_PE_spinner3: white
@@ -113,12 +277,12 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - duration: 500ms
+    - time: +500ms
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
           l_zapp_indicator: off
-          l_mom_indicator: off
+          l_right_orbit: off
           l_PE_spinner1: off
           l_PE_spinner2: off
           l_PE_spinner3: off
@@ -169,12 +333,12 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - duration: 500ms
+    - time: +500ms
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
           l_zapp_indicator: white
-          l_mom_indicator: white
+          l_right_orbit: white
           l_PE_spinner1: white
           l_PE_spinner2: white
           l_PE_spinner3: white
@@ -225,12 +389,12 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - duration: 500ms
+    - time: +500ms
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
           l_zapp_indicator: off
-          l_mom_indicator: off
+          l_right_orbit: off
           l_PE_spinner1: off
           l_PE_spinner2: off
           l_PE_spinner3: off
@@ -281,12 +445,12 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - duration: 3000ms
+    - time: +500ms
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
           l_zapp_indicator: white
-          l_mom_indicator: white
+          l_right_orbit: white
           l_PE_spinner1: white
           l_PE_spinner2: white
           l_PE_spinner3: white
@@ -337,165 +501,170 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - duration: 100ms
+    - time: +1
+      slides:
+          doop_warning_slide:
+              action: play
+              priority: 200
+    - time: +8
       lights:
           l_left_loop: off
           l_right_loop: off
-    - duration: 100ms
+    - time: +200ms
       lights:
           l_left_loop: white
           l_right_loop: white
-    - duration: 100ms
+    - time: +200ms
       lights:
           l_left_loop: off
           l_right_loop: off
-    - duration: 1000ms
+    - time: +200ms
       lights:
           l_PEHQ1: off
           l_PEHQ2: off
           l_PEHQ3: off
-    - duration: 2000ms
+    - time: +1
       lights:
           l_left_loop: white
           l_right_loop: white
-    - duration: 500ms
+    - time: +1
       lights:
           l_scoop: off
-    - duration: 400ms
+    - time: +500ms
       lights:
           l_VUK1: 670467
-    - duration: 300ms
+    - time: +400ms
       lights:
           l_VUK2: 670467
-    - duration: 200ms
+    - time: +300ms
       lights:
           l_tube1: 670467
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_tube2: 670467
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_tube3: 670467
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_tube4: 670467
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_left_spotlight: 00ffff
-    - duration: 100ms
+    - time: +700ms
       lights:
           l_left_sling: off
-    - duration: 100ms
+    - time: +200ms
       lights:
           l_right_sling: off
           l_left_sling: white
-    - duration: 100ms
+    - time: +200ms
       lights:
           l_right_sling: white
           l_left_sling: off
-    - duration: 100ms
+    - time: +200ms
       lights:
           l_right_sling: off
           l_left_sling: white
-    - duration: 500ms
+    - time: +200ms
       lights:
           l_left_sling: off
           l_DTbank1: off
           l_DTbank2: off
           l_DTbank3: off
-    - duration: 200ms
+    - time: +500ms
       lights:
           l_PE_spinner1: off
           l_DTbank1: white
           l_DTbank2: white
           l_DTbank3: white
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
           l_pop_bumper: 0029ff
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
           l_cap1: off
           l_pop_bumper: white
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
           l_cap1: white
           l_cap2: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
           l_cap2: white
           l_cap3: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
           l_cap3: white
           l_pop_bumper: 0029ff
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
           l_cap1: off
           l_pop_bumper: white
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
           l_cap1: white
           l_cap2: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
           l_cap2: white
           l_cap3: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
           l_cap3: white
           l_pop_bumper: 0029ff
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - duration: 2500ms
+    - time: +200ms
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
           l_zapp_indicator: white
-          l_mom_indicator: white
+          l_right_orbit: white
           l_PE_spinner1: white
           l_PE_spinner2: white
           l_PE_spinner3: white
@@ -546,53 +715,37 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - duration: 100ms
+    - time: +1
       lights:
           l_apron1: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron1: white
           l_apron2: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron2: white
           l_apron3: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron3: white
           l_apron4: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron4: white
           l_apron5: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron5: white
           l_apron6: off
-    - duration: 200ms
+    - time: +100ms
       lights:
           l_apron1: off
           l_apron2: off
           l_apron3: off
           l_apron4: off
           l_apron5: off
-    - duration: 200ms
-      lights:
-          l_apron1: white
-          l_apron2: white
-          l_apron3: white
-          l_apron4: white
-          l_apron5: white
-          l_apron6: white
-    - duration: 200ms
-      lights:
-          l_apron1: off
-          l_apron2: off
-          l_apron3: off
-          l_apron4: off
-          l_apron5: off
-          l_apron6: off
-    - duration: 200ms
+    - time: +200ms
       lights:
           l_apron1: white
           l_apron2: white
@@ -600,73 +753,89 @@
           l_apron4: white
           l_apron5: white
           l_apron6: white
-    - duration: 100ms
+    - time: +200ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: +200ms
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: +200ms
       lights:
           l_apron6: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron6: white
           l_apron5: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron5: white
           l_apron4: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron4: white
           l_apron3: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron3: white
           l_apron2: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron2: white
           l_apron1: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron1: white
           l_apron2: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron2: white
           l_apron3: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron3: white
           l_apron4: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron4: white
           l_apron5: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron5: white
           l_apron6: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron6: white
           l_apron5: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron5: white
           l_apron4: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron4: white
           l_apron3: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron3: white
           l_apron2: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron2: white
           l_apron1: off
-    - duration: 100ms
+    - time: +100ms
       lights:
           l_apron1: white
-    - duration: 200ms
+    - time: +100ms
       lights:
           l_apron1: off
           l_apron2: off
@@ -674,3 +843,2942 @@
           l_apron4: off
           l_apron5: off
           l_apron6: off
+    - time: +1
+      slides:
+          doop_warning_slide:
+              action: remove
+    - time: +500ms
+      shows:
+          PE_commercial_show:
+              loops: 0
+              priority: 500
+    - time: +30.5
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +300ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +300ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +300ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +300ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +300ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +300ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +300ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +300ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +300ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +300ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +300ms
+      lights:
+          l_apron1: white
+    - time: +800ms
+      lights:
+          l_apron2: orange
+          l_apron1: off
+    - time: +800ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +800ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +800ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +800ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +800ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +800ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +800ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +800ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +800ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +800ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +800ms
+      lights:
+          l_apron1: white
+    - time: +800ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +800ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +800ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +800ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +800ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +800ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +800ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +800ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +800ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +800ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +800ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +800ms
+      lights:
+          l_apron1: white
+    - time: +200ms
+      lights:
+          l_apron2: orange
+          l_apron1: off
+    - time: +2
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +200ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +800ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +500ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +300ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +200ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+    - time: +5
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +500ms
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +500ms
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +1
+      slides:
+          doop_warning_slide:
+              action: play
+              priority: 200
+    - time: +2
+      lights:
+          l_left_loop: off
+          l_right_loop: off
+    - time: +200ms
+      lights:
+          l_left_loop: white
+          l_right_loop: white
+    - time: +200ms
+      lights:
+          l_left_loop: off
+          l_right_loop: off
+    - time: +200ms
+      lights:
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+    - time: +1
+      lights:
+          l_left_loop: white
+          l_right_loop: white
+    - time: +1
+      lights:
+          l_scoop: off
+    - time: +500ms
+      lights:
+          l_VUK1: 670467
+    - time: +400ms
+      lights:
+          l_VUK2: 670467
+    - time: +300ms
+      lights:
+          l_tube1: 670467
+    - time: +200ms
+      lights:
+          l_tube2: 670467
+    - time: +200ms
+      lights:
+          l_tube3: 670467
+    - time: +200ms
+      lights:
+          l_tube4: 670467
+    - time: +200ms
+      lights:
+          l_left_spotlight: 00ffff
+    - time: +700ms
+      lights:
+          l_left_sling: off
+    - time: +200ms
+      lights:
+          l_right_sling: off
+          l_left_sling: white
+    - time: +200ms
+      lights:
+          l_right_sling: white
+          l_left_sling: off
+    - time: +200ms
+      lights:
+          l_right_sling: off
+          l_left_sling: white
+    - time: +200ms
+      lights:
+          l_left_sling: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+    - time: +500ms
+      lights:
+          l_PE_spinner1: off
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+          l_cap1: off
+          l_pop_bumper: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+          l_cap1: off
+          l_pop_bumper: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: +200ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +1
+      lights:
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+    - time: +200ms
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: +200ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: +200ms
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: +200ms
+      lights:
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+    - time: +100ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: +1
+      slides:
+          doop_warning_slide:
+              action: remove
+    - time: +500ms
+      shows:
+          homemade_intro_show:
+              loops: 0
+              priority: 500
+    - time: +30
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +500ms
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +500ms
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +3
+      lights:
+          l_left_loop: off
+          l_right_loop: off
+    - time: +200ms
+      lights:
+          l_left_loop: white
+          l_right_loop: white
+    - time: +200ms
+      lights:
+          l_left_loop: off
+          l_right_loop: off
+    - time: +200ms
+      lights:
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+    - time: +1
+      lights:
+          l_left_loop: white
+          l_right_loop: white
+    - time: +1
+      lights:
+          l_scoop: off
+    - time: +500ms
+      lights:
+          l_VUK1: 670467
+    - time: +400ms
+      lights:
+          l_VUK2: 670467
+    - time: +300ms
+      lights:
+          l_tube1: 670467
+    - time: +200ms
+      lights:
+          l_tube2: 670467
+    - time: +200ms
+      lights:
+          l_tube3: 670467
+    - time: +200ms
+      lights:
+          l_tube4: 670467
+    - time: +200ms
+      lights:
+          l_left_spotlight: 00ffff
+    - time: +700ms
+      lights:
+          l_left_sling: off
+    - time: +200ms
+      lights:
+          l_right_sling: off
+          l_left_sling: white
+    - time: +200ms
+      lights:
+          l_right_sling: white
+          l_left_sling: off
+    - time: +200ms
+      lights:
+          l_right_sling: off
+          l_left_sling: white
+    - time: +200ms
+      lights:
+          l_left_sling: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+    - time: +500ms
+      lights:
+          l_PE_spinner1: off
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+          l_cap1: off
+          l_pop_bumper: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+          l_cap1: off
+          l_pop_bumper: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: +200ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +1
+      lights:
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+    - time: +200ms
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: +200ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: +200ms
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: +200ms
+      lights:
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+    - time: +100ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: +500ms
+      shows:
+          glagnars_commercial_show:
+              loops: 0
+              priority: 500
+    - time: +10
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +500ms
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +500ms
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +1
+      slides:
+          doop_warning_slide:
+              action: play
+              priority: 200
+    - time: +2
+      lights:
+          l_left_loop: off
+          l_right_loop: off
+    - time: +200ms
+      lights:
+          l_left_loop: white
+          l_right_loop: white
+    - time: +200ms
+      lights:
+          l_left_loop: off
+          l_right_loop: off
+    - time: +200ms
+      lights:
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+    - time: +1
+      lights:
+          l_left_loop: white
+          l_right_loop: white
+    - time: +1
+      lights:
+          l_scoop: off
+    - time: +500ms
+      lights:
+          l_VUK1: 670467
+    - time: +400ms
+      lights:
+          l_VUK2: 670467
+    - time: +300ms
+      lights:
+          l_tube1: 670467
+    - time: +200ms
+      lights:
+          l_tube2: 670467
+    - time: +200ms
+      lights:
+          l_tube3: 670467
+    - time: +200ms
+      lights:
+          l_tube4: 670467
+    - time: +200ms
+      lights:
+          l_left_spotlight: 00ffff
+    - time: +700ms
+      lights:
+          l_left_sling: off
+    - time: +200ms
+      lights:
+          l_right_sling: off
+          l_left_sling: white
+    - time: +200ms
+      lights:
+          l_right_sling: white
+          l_left_sling: off
+    - time: +200ms
+      lights:
+          l_right_sling: off
+          l_left_sling: white
+    - time: +200ms
+      lights:
+          l_left_sling: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+    - time: +500ms
+      lights:
+          l_PE_spinner1: off
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+          l_cap1: off
+          l_pop_bumper: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+          l_cap1: off
+          l_pop_bumper: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: +200ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +1
+      lights:
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+    - time: +200ms
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: +200ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: +200ms
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: +200ms
+      lights:
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+    - time: +100ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: +1
+      slides:
+          doop_warning_slide:
+              action: remove
+    - time: +500ms
+      shows:
+          teeth_commercial_show:
+              loops: 0
+              priority: 500
+    - time: +10
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +500ms
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +500ms
+      lights:
+          l_right_corner: off
+          l_right_upper_wedge: off
+          l_zapp_indicator: off
+          l_right_orbit: off
+          l_PE_spinner1: off
+          l_PE_spinner2: off
+          l_PE_spinner3: off
+          l_PE_spinner4: off
+          l_left_loop: off
+          l_nibbler_lamp: off
+          l_left_corner_plastic: off
+          l_slurm_can: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+          l_left_spotlight: off
+          l_VUK1: off
+          l_VUK2: off
+          l_scoop: off
+          l_under_HQ: off
+          l_tube1: off
+          l_tube2: off
+          l_tube3: off
+          l_tube4: off
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+          l_right_loop: off
+          l_shoot_again: off
+          l_cap1: off
+          l_left_sling: off
+          l_right_sling: off
+          l_2x: off
+          l_3x: off
+          l_cap2: off
+          l_right_outlane: off
+          l_right_inlane: off
+          l_left_ballguide1: off
+          l_left_ballguide2: off
+          l_right_ballguide1: off
+          l_right_ballguide2: off
+          l_cap3: off
+          l_pop_bumper: off
+          l_right_wedge: off
+          l_right_spotlight: off
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+          l_drain: off
+          l_cryopod: off
+          l_left_inlane: off
+    - time: +500ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +1
+      slides:
+          doop_warning_slide:
+              action: play
+              priority: 200
+    - time: +2
+      lights:
+          l_left_loop: off
+          l_right_loop: off
+    - time: +200ms
+      lights:
+          l_left_loop: white
+          l_right_loop: white
+    - time: +200ms
+      lights:
+          l_left_loop: off
+          l_right_loop: off
+    - time: +200ms
+      lights:
+          l_PEHQ1: off
+          l_PEHQ2: off
+          l_PEHQ3: off
+    - time: +1
+      lights:
+          l_left_loop: white
+          l_right_loop: white
+    - time: +1
+      lights:
+          l_scoop: off
+    - time: +500ms
+      lights:
+          l_VUK1: 670467
+    - time: +400ms
+      lights:
+          l_VUK2: 670467
+    - time: +300ms
+      lights:
+          l_tube1: 670467
+    - time: +200ms
+      lights:
+          l_tube2: 670467
+    - time: +200ms
+      lights:
+          l_tube3: 670467
+    - time: +200ms
+      lights:
+          l_tube4: 670467
+    - time: +200ms
+      lights:
+          l_left_spotlight: 00ffff
+    - time: +700ms
+      lights:
+          l_left_sling: off
+    - time: +200ms
+      lights:
+          l_right_sling: off
+          l_left_sling: white
+    - time: +200ms
+      lights:
+          l_right_sling: white
+          l_left_sling: off
+    - time: +200ms
+      lights:
+          l_right_sling: off
+          l_left_sling: white
+    - time: +200ms
+      lights:
+          l_left_sling: off
+          l_DTbank1: off
+          l_DTbank2: off
+          l_DTbank3: off
+    - time: +500ms
+      lights:
+          l_PE_spinner1: off
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+          l_cap1: off
+          l_pop_bumper: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+          l_cap1: off
+          l_pop_bumper: white
+    - time: +200ms
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: +200ms
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: +200ms
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: 0029ff
+    - time: +200ms
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: +200ms
+      lights:
+          l_right_corner: white
+          l_right_upper_wedge: white
+          l_zapp_indicator: white
+          l_right_orbit: white
+          l_PE_spinner1: white
+          l_PE_spinner2: white
+          l_PE_spinner3: white
+          l_PE_spinner4: white
+          l_left_loop: white
+          l_nibbler_lamp: white
+          l_left_corner_plastic: white
+          l_slurm_can: white
+          l_DTbank1: white
+          l_DTbank2: white
+          l_DTbank3: white
+          l_left_spotlight: white
+          l_VUK1: white
+          l_VUK2: white
+          l_scoop: white
+          l_under_HQ: white
+          l_tube1: white
+          l_tube2: white
+          l_tube3: white
+          l_tube4: white
+          l_PEHQ1: white
+          l_PEHQ2: white
+          l_PEHQ3: white
+          l_right_loop: white
+          l_shoot_again: white
+          l_cap1: white
+          l_left_sling: white
+          l_right_sling: white
+          l_2x: white
+          l_3x: white
+          l_cap2: white
+          l_right_outlane: white
+          l_right_inlane: white
+          l_left_ballguide1: white
+          l_left_ballguide2: white
+          l_right_ballguide1: white
+          l_right_ballguide2: white
+          l_cap3: white
+          l_pop_bumper: white
+          l_right_wedge: white
+          l_right_spotlight: white
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+          l_drain: white
+          l_cryopod: white
+          l_left_inlane: white
+    - time: +1
+      lights:
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+    - time: +200ms
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: +200ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: +200ms
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: +200ms
+      lights:
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron6: off
+    - time: +100ms
+      lights:
+          l_apron6: white
+          l_apron5: off
+    - time: +100ms
+      lights:
+          l_apron5: white
+          l_apron4: off
+    - time: +100ms
+      lights:
+          l_apron4: white
+          l_apron3: off
+    - time: +100ms
+      lights:
+          l_apron3: white
+          l_apron2: off
+    - time: +100ms
+      lights:
+          l_apron2: white
+          l_apron1: off
+    - time: +100ms
+      lights:
+          l_apron1: white
+    - time: +100ms
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: +1
+      slides:
+          doop_warning_slide:
+              action: remove
+    - time: +500ms
+      shows:
+          slurm_factory_commercial_show:
+              loops: 0
+              priority: 500
+    - time: +49
+      lights:
+          l_left_spotlight: ffffff

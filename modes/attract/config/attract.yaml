@@ -1,4 +1,7 @@
 #config_version=5
 
 show_player:
-    mode_attract_started: attract_loop_show
+    mode_attract_started:
+        attract_loop_show:
+            priority: 300
+            
