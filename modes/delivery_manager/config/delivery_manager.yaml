@@ -2,8 +2,9 @@
 ##! mode: delivery_manager
 
 mode:
-    start_events: ball_started
-    priority: 101
+    start_events: ball_started, mode_slurm_factory_stopped
+    stop_events: found_golden_cap
+    priority: 102
 
 state_machines:
     next_delivery:
@@ -53,23 +54,133 @@ state_machines:
               events: start_moon_delivery_mode
             - source: moon_delivery_active
               target: moon_delivery_done
-              events: stop_moon_delivery_mode
+              events: mode_moon_delivery_stopped
+    cannibalon_delivery_handler:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+            cannibalon_delivery_next:
+                events_when_started: cannibalon_delivery_next
+            cannibalon_delivery_enable:
+                events_when_started: cannibalon_delivery_lit
+            cannibalon_delivery_active:
+                events_when_started: cannibalon_delivery_active
+            cannibalon_delivery_done:
+                events_when_started: cannibalon_delivery_done
+        transitions:
+            - source: start
+              target: cannibalon_delivery_next
+              events: set_next_delivery_cannibalon
+            - source: cannibalon_delivery_next
+              target: cannibalon_delivery_enable
+              events: half_tank, 3quarter_tank, full_tank
+            - source: cannibalon_delivery_enable
+              target: cannibalon_delivery_active
+              events: cannibalon_delivery_start_shot_hit
+            - source: cannibalon_delivery_active
+              target: cannibalon_delivery_done
+              events: cannibalon_delivery_show_ended
+
+widgets:
+    cannibalon_delivery_video:
+        - type: video
+          video: cannibalon_delivery_clip
+          z: 10
 
 shots:
+    collect_dark_matter_fuel:
+        switch: s_right_ramp
+        enable_events: mode_delivery_manager_started, mode_moon_delivery_stopped
+        disable_events: mode_moon_delivery_started
+        hit_events: s_dt_nibbler_active
     moon_delivery_start_shot:
         switch: s_VUK
         enable_events: moon_delivery_lit
         disable_events: mode_moon_delivery_started
+        persist_enable: true
+    cannibalon_delivery_start_shot:
+        switch: s_VUK
+        enable_events: cannibalon_delivery_lit
+        disable_events: cannibalon_delivery_show_ended
+        persist_enable: true
+
+ball_holds:
+    cannibalon_delivery_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: cannibalon_delivery_lit
+        disable_events: cannibalon_delivery_show_ended
+        release_one_events: cannibalon_delivery_show_ended
+
+widget_player:
+    mode_moon_delivery_stopped:
+        full_gauge:
+            slide: base_slide
+            action: remove
+        3quarter_gauge:
+            slide: base_slide
+            action: remove
+        half_gauge:
+            slide: base_slide
+            action: remove
+        quarter_gauge:
+            slide: base_slide
+            action: remove
+    cannibalon_delivery_show_ended:
+        full_gauge:
+            slide: base_slide
+            action: remove
+        3quarter_gauge:
+            slide: base_slide
+            action: remove
+        half_gauge:
+            slide: base_slide
+            action: remove
+        quarter_gauge:
+            slide: base_slide
+            action: remove
+
+variable_player:
+    cannibalon_delivery_start_shot_hit:
+        score: 5000
+        deliveries_completed: 1
+
+sound_player:
+    delivery_started:
+        theme_full:
+            action: stop
+    mode_moon_delivery_stopped:
+        old_moon_song:
+            action: stop
+    delivery_ended:
+        theme_full:
+            action: play
 
 event_player:
     moon_delivery_start_shot_hit: start_moon_delivery_mode
+    start_moon_delivery_mode: delivery_started
+    mode_moon_delivery_stopped: use_half_tank, delivery_ended
+    cannibalon_delivery_start_shot_hit: delivery_started
+    cannibalon_delivery_show_ended: use_half_tank, delivery_ended
 
 show_player:
     mode_moon_delivery_started:
         moon_delivery_intro_show:
             loops: 0
+            priority: 500
+            events_when_stopped: moon_delivery_intro_show_ended
+    cannibalon_delivery_start_shot_hit:
+        cannibalon_delivery_show:
+            loops: 0
+            priority: 500
+            events_when_stopped: cannibalon_delivery_show_ended
+        delivery_lit_show: stop
     moon_delivery_lit:
         delivery_lit_show:
             loops: -1
     moon_delivery_start_shot_hit:
         delivery_lit_show: stop
+    cannibalon_delivery_lit:
+        delivery_lit_show:
+            loops: -1
