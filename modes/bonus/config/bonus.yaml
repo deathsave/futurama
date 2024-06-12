@@ -1,13 +1,13 @@
 #config_version=5
 mode_settings:
-    display_delay_ms: 1500
+    display_delay_ms: 2000
     bonus_entries:
     - event: bonus_caps
-      score: (current_player.slurm_caps * (1 + current_player.fry_level))
+      score: (current_player.slurm_caps_total * 25 * (1 + current_player.fry_level))
     - event: bonus_hypnotoad_saves
-      score: (current_player.hypnotoad_saves * 50)
+      score: (current_player.hypnotoad_saves * 250)
     - event: bonus_dark_matter
-      score: (current_player.dark_matter * (1 + current_player.nibbler_level))
+      score: (current_player.dark_matter * 200 * (1 + current_player.nibbler_level))
 
 slides:
     bonus_start_slide:
@@ -85,7 +85,7 @@ slides:
     bonus_total_slide:
         widgets:
             - type: text
-              text: BONUS TOTAL
+              text: TOTAL BONUS
               font_size: 42
               color: black
               y: 672
