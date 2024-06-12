@@ -19,18 +19,55 @@ p_roc:
 steppers:
     zoidberg_stepper:
         number: 00427235
-        pos_max: 50000
-        pos_min: -50000
+        pos_max: 4000
+        pos_min: -4000
         reset_events: zoidberg_reset
         named_positions:
-            -1000: zoidberg_l1
-            1000: zoidberg_r1
-            -3000: zoidberg_l2
-            3000: zoidberg_r2
-            -5000: zoidberg_l3
-            5000: zoidberg_r3
+            -200: zoidberg_r1
+            200: zoidberg_l1
+            -400: zoidberg_r2
+            400: zoidberg_l2
+            -600: zoidberg_r3
+            600: zoidberg_l3
+            -800: zoidberg_r4
+            800: zoidberg_l4
+            -1000: zoidberg_r5
+            1000: zoidberg_l5
+            -1200: zoidberg_r6
+            1200: zoidberg_l6
+            -1400: zoidberg_r7
+            1400: zoidberg_l7
+            -1600: zoidberg_r8
+            1600: zoidberg_l8
+            -1800: zoidberg_r9
+            1800: zoidberg_l9
+            -2000: zoidberg_r10
+            2000: zoidberg_l10
+            -2200: zoidberg_r11
+            2200: zoidberg_l11
+            -2400: zoidberg_r12
+            2400: zoidberg_l12
+            -2600: zoidberg_r13
+            2600: zoidberg_l13
+            -2800: zoidberg_r14
+            2800: zoidberg_l14
+            -3000: zoidberg_r15
+            3000: zoidberg_l15
+            -3200: zoidberg_r16
+            3200: zoidberg_l16
+            -3400: zoidberg_r17
+            3400: zoidberg_l17
+            -3600: zoidberg_r18
+            3600: zoidberg_l18
+            -3800: zoidberg_r19
+            3800: zoidberg_l19
+            -4000: zoidberg_r20
+            4000: zoidberg_l20
         platform_settings:
-            current_limit: 1000
+            current_limit: 880
+            max_acceleration: 10000
+            max_speed: 4000000
+            starting_speed: 1000000
 
 event_player:
     ball_ending: zoidberg_reset
@@ -55,11 +92,11 @@ lights:
         platform_settings:
             polarity: false
         tags: lamps, test
-    l_mom_indicator:
+    l_right_orbit:
         number: 1-9-10-11
         platform_settings:
             polarity: false
-        tags: lamps, test
+        tags: lamps, indicator
     l_PE_spinner1:
         number: 1-12-13-14
         platform_settings:
@@ -139,7 +176,7 @@ lights:
         number: 1-57-58-59
         platform_settings:
             polarity: false
-        tags: lamps, gi
+        tags: lamps, indicator
     l_tube2:
         number: 1-60-61-62
         platform_settings:
@@ -459,7 +496,7 @@ coils:
         default_hold_power: .3
     c_dt_reset:
         number: A0-B1-2
-        default_pulse_ms: 20
+        default_pulse_ms: 25
     c_pop_bumper:
         number: A0-B1-3
         default_pulse_ms: 20
@@ -524,6 +561,14 @@ ball_devices:
         eject_targets: playfield
         entrance_count_delay: 2000ms
         mechanical_eject: true
+
+ball_holds:
+    delivery_start_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: moon_delivery_lit
+        disable_events: moon_delivery_intro_show_ended
+        release_one_events: moon_delivery_intro_show_ended
 
 drop_targets:
     nibbler:
@@ -658,7 +703,7 @@ player_vars:
         initial_value: 1
     platter_short_counter:
         initial_value: 1
-    slurm_caps:
+    slurm_caps_total:
         initial_value: 0
     pop_bumper_hits:
         initial_value: 1
@@ -667,17 +712,22 @@ player_vars:
         initial_value: "empty_gauge"
     hypnotoad_saves:
         initial_value: 0
-    whaler_shots:
-        initial_value: 0
     moon_delivery_status:
         value_type: str
         initial_value: "ready"
+    deliveries_completed:
+        initial_value: 0
+    caps_collected:
+        initial_value: 0
 
 modes:
     - base
+    - slurm_caps
+    - slurm_factory
     - delivery_manager
     - moon_delivery
     - bonus
+    - high_score
 
 slides:
     welcome_slide:
@@ -705,6 +755,12 @@ slides:
               anchor_y: top
             - type: image
               image: final_score
+    hypnotoad_slide:
+        widgets:
+            - type: video
+              video: hypnotoad_clip
+              height: 1080
+              width: 1920
     base_slide:
         widgets:
             - type: text
@@ -803,6 +859,153 @@ slides:
               anchor_y: top
             - type: image
               image: base_background1
+    moon_delivery_slide:
+        widgets:
+            - type: text
+              text: (player1|score)
+              number_grouping: true
+              min_digits: 2
+              font_size: 45
+              color: black
+              y: 108
+              x: 413
+              z: 5
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: PLAYER (number)
+              y: 274
+              x: 240
+              z: 5
+              font_size: 50
+              anchor_x: left
+              anchor_y: bottom
+            - type: text
+              text: BALL (ball)
+              y: 274
+              x: 44
+              z: 5
+              anchor_x: left
+              anchor_y: bottom
+              font_size: 50
+            - type: text
+              text: (player|bender_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 757
+              z: 5
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|leela_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 887
+              z: 5
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|fry_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 1017
+              z: 5
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|nibbler_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 1147
+              z: 5
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|professor_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 1277
+              z: 5
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|amy_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 1407
+              z: 5
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|hermes_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 1537
+              z: 5
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|zoidberg_level)
+              font_size: 42
+              color: black
+              y: 856
+              x: 1667
+              z: 5
+              anchor_x: right
+              anchor_y: bottom
+            - type: image
+              image: luna_park_overlay
+              z: 4
+    moon_delivery_intro_slide:
+        widgets:
+            - type: video
+              video: moon_delivery_intro_clip
+    cannibalon_delivery_slide:
+        widgets:
+            - type: video
+              video: cannibalon_delivery_clip
+    crate_delivered_slide:
+        widgets:
+            - type: video
+              video: crate_delivered_clip
+    PE_commercial_slide:
+        widgets:
+            - type: video
+              video: PE_commercial_clip
+    homemade_intro_slide:
+        widgets:
+            - type: video
+              video: homemade_intro_silent_clip
+    glagnars_commercial_slide:
+        widgets:
+            - type: video
+              video: glagnars_commercial_clip
+    teeth_commercial_slide:
+        widgets:
+            - type: video
+              video: teeth_commercial_clip
+    slurm_factory_commercial_slide:
+        widgets:
+            - type: video
+              video: slurm_factory_commercial_clip
+    doop_warning_slide:
+        widgets:
+            - type: image
+              image: doop_warning
+# maybe depreciate this, I haven't been able to get it to work correctly yet
+# it's supposed to play random videos from a video_pool as part of attract mode
+    attract_video_slide:
+        widgets:
+            - type: video
+              video: attract_videos
+
 
 widget_player:
     player_added{num==2}:
@@ -872,7 +1075,42 @@ widgets:
         - type: image
           image: full_gauge
           z: 9
+    centered_scoreboxes:
+        - type: image
+          image: scoreboxes_overlay
 
+widget_styles:
+    attract_mode_high_score_display_label:
+        font_size: 40
+        anchor_x: right
+        anchor_y: top
+        x: center-110
+        bold: true
+    attract_mode_high_score_display_name:
+        font_size: 40
+        anchor_x: right
+        anchor_y: top
+        x: center+150
+    attract_mode_high_score_display_score:
+        font_size: 40
+        anchor_x: left
+        anchor_y: top
+        x: center+240
+        number_grouping: true
+        min_digits: 1
+    attract_mode_final_score_display_player_number:
+        font_size: 40
+        anchor_x: center
+        anchor_y: top
+        x: center-80
+        bold: true
+    attract_mode_final_score_display_score:
+        font_size: 40
+        anchor_x: left
+        anchor_y: top
+        x: center+60
+        number_grouping: true
+        min_digits: 1
 assets:
     sounds:
         default:
@@ -1016,6 +1254,12 @@ sound_pools:
             - were_safe
             - not_gonna_be_loser
 
+video_pools:
+    attract_videos:
+        type: random_force_all
+        videos:
+            - homemade_intro_silent_clip
+            - PE_commercial_clip
 
 sound_player:
     s_hedonism_bot_active:
