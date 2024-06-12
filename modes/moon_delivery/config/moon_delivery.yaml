@@ -3,7 +3,7 @@
 
 mode:
     start_events: start_moon_delivery_mode
-    stop_events: stop_moon_delivery_mode
+    stop_events: stop_moon_delivery_mode, ball_ending
     priority: 200
 
 state_machines:
@@ -55,6 +55,21 @@ state_machines:
               target: failed
               events: fail_moon_delivery
 
+light_player:
+    moon_delivery_waiting:
+        lights:
+            loops: ffffff
+            l_scoop: ffffff
+            l_nibbler_lamp: ffffff
+            l_right_orbit: ffffff
+ball_holds:
+    final_scene_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: lunar_lander_found_shot_lit
+        disable_events: stop_moon_delivery_mode, moon_delivery_success_show_ended
+        release_one_events: stop_moon_delivery_mode, moon_delivery_success_show_ended
+
 timers:
     crate_delivery_timer:
         start_value: 30
@@ -82,7 +97,7 @@ timers:
             - action: stop
               event: rode_whalers
     lunar_rover_timer:
-        start_value: 10
+        start_value: 25
         end_value: 0
         direction: down
         control_events:
@@ -91,7 +106,7 @@ timers:
             - action: stop
               event: rover_escape_shot_hit
     joyride_timer:
-        start_value: 20
+        start_value: 27
         end_value: 0
         direction: down
         control_events:
@@ -141,10 +156,14 @@ shots:
         switch: s_left_loop
         enable_events: timer_whalers_on_the_moon_timer_started
         disable_events: timer_whalers_on_the_moon_timer_complete, timer_whalers_on_the_moon_timer_stopped
+        delay_switch:
+            s_right_loop: 2s
     whalers_right_shot:
         switch: s_right_loop
         enable_events: timer_whalers_on_the_moon_timer_started
         disable_events: timer_whalers_on_the_moon_timer_complete, timer_whalers_on_the_moon_timer_stopped
+        delay_switch:
+            s_left_loop: 2s
     rover_escape_shot:
         switch: s_right_ramp
         enable_events: timer_lunar_rover_timer_started
@@ -177,9 +196,16 @@ shots:
         switch: s_VUK
         enable_events: timer_lunar_lander_found_timer_started
         disable_events: timer_lunar_lander_found_timer_stopped, lunar_lander_found_shot_hit
-        hit_events: lander_found
 
 sequences:
+    whalers_sequence:
+        enable_events: timer_whalers_on_the_moon_timer_started
+        events:
+            - whalers_right_shot_hit, whalers_left_shot_hit
+            - whalers_right_shot_hit, whalers_left_shot_hit
+            - whalers_right_shot_hit, whalers_left_shot_hit
+            - whalers_right_shot_hit, whalers_left_shot_hit
+        events_when_complete: rode_whalers
     all_farmer_escape_sequence:
         enable_events: moon_delivery_step5
         events:
@@ -187,6 +213,7 @@ sequences:
             - fry_farmer_escape_shot_hit, leela_farmer_escape_shot_hit, bender_farmer_escape_shot_hit
             - fry_farmer_escape_shot_hit, leela_farmer_escape_shot_hit, bender_farmer_escape_shot_hit
         events_when_complete: all_farmer_escape
+
     lunar_lander_search_sequence:
         enable_events: moon_delivery_step6
         events:
@@ -194,104 +221,10 @@ sequences:
             - lunar_lander_searching
         events_when_complete: lunar_lander_found_shot_lit
 
-slides:
-    moon_delivery_slide:
-        widgets:
-            - type: text
-              text: (player1|score)
-              number_grouping: true
-              min_digits: 2
-              font_size: 45
-              color: black
-              y: 108
-              x: 413
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: PLAYER (number)
-              y: 365
-              x: 20
-              font_size: 50
-              anchor_x: left
-              anchor_y: bottom
-            - type: text
-              text: BALL (ball)
-              y: 295
-              x: 20
-              anchor_x: left
-              anchor_y: bottom
-              font_size: 50
-            - type: text
-              text: (player|bender_level)
-              font_size: 42
-              color: black
-              y: 856
-              x: 520
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|leela_level)
-              font_size: 42
-              color: black
-              y: 856
-              x: 650
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|fry_level)
-              font_size: 42
-              color: black
-              y: 856
-              x: 780
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|nibbler_level)
-              font_size: 42
-              color: black
-              y: 856
-              x: 910
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|professor_level)
-              font_size: 42
-              color: black
-              y: 856
-              x: 1040
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|amy_level)
-              font_size: 42
-              color: black
-              y: 856
-              x: 1170
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|hermes_level)
-              font_size: 42
-              color: black
-              y: 856
-              x: 1300
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|zoidberg_level)
-              font_size: 42
-              color: black
-              y: 856
-              x: 1430
-              anchor_x: right
-              anchor_y: bottom
-            - type: image
-              image: moon_step1
-            - type: image
-              image: luna_park_overlay
-
 widget_player:
-    moon_delivery_intro_show_ended:
+    moon_delivery_step1:
+        moon_step1:
+            slide: moon_delivery_slide
         luna_park_background:
             slide: moon_delivery_slide
     moon_delivery_step2:
@@ -299,52 +232,85 @@ widget_player:
             action: remove
         moon_step2:
             slide: moon_delivery_slide
+        whalers_background:
+            slide: moon_delivery_slide
+        luna_park_background:
+            action: remove
     moon_delivery_step3:
         moon_step2:
             action: remove
+        whalers_background:
+            action: remove
+        rover_background:
+            slide: moon_delivery_slide
         moon_step3:
             slide: moon_delivery_slide
+    rover_escape_shot_hit:
+        rover_background:
+            action: remove
     moon_delivery_step4:
         moon_step3:
             action: remove
+        rover_background:
+            action: remove
+        joyride_background:
+            slide: moon_delivery_slide
         moon_step4:
             slide: moon_delivery_slide
     moon_delivery_step5:
         moon_step4:
             action: remove
+        joyride_background:
+            action: remove
+        farmer_background:
+            slide: moon_delivery_slide
         moon_step5:
             slide: moon_delivery_slide
+    all_farmer_escape:
+        farmer_background:
+            action: remove
     moon_delivery_step6:
         moon_step5:
             action: remove
+        farmer_background:
+            action: remove
+        lander_background:
+            slide: moon_delivery_slide
         moon_step6:
             slide: moon_delivery_slide
+    lunar_lander_found_shot_lit:
+        lander_background:
+            action: remove
+        lander_found_background:
+            slide: moon_delivery_slide
+    lunar_lander_found_shot_hit:
+        lander_found_background:
+            action: remove
     moon_delivery_steps_complete:
         moon_step6:
             action: remove
         moon_steps_complete:
-            slide: moon_delivery_slide
-    timer_escape_farmer_timer_started:
-        farmer_background:
             slide: moon_delivery_slide
 
 variable_player:
     deliver_crate_shot_hit:
         moon_delivery_status:
             string: success
+            action: set
+        deliveries_completed: 1
+        score: 2000
     fail_moon_delivery:
         moon_delivery_status:
             string: "fail"
+            action: set
     whalers_right_shot_hit:
-        whaler_shots: 1
         score: 1000
     whalers_left_shot_hit:
-        whaler_shots: 1
         score: 1000
     rover_escape_shot_hit:
         score: 5000
     joyride_platter_shot_hit:
-        score: 100 * current_player.fry_multiplier * current_player.leela_multiplier
+        score: 250 * current_player.fry_multiplier * current_player.leela_multiplier
     bender_farmer_escape_shot_hit:
         score: 2000 * current_player.bender_multiplier
     fry_farmer_escape_shot_hit:
@@ -353,12 +319,15 @@ variable_player:
         score: 2000 * current_player.leela_multiplier
     all_farmer_escape:
         score: 10000
-
+    lunar_lander_r_shot_hit:
+        score: 1000
+    lunar_lander_l_shot_hit:
+        score: 1000
+    lunar_lander_found_shot_hit:
+        score: 20000
 
 event_player:
-    whalers_right_shot_hit{current_player.whaler_shots == 6}: rode_whalers
-    whalers_left_shot_hit{current_player.whaler_shots == 6}: rode_whalers
-    timer_crate_delivery_timer_complete: fail_moon_delivery
+    timer_crate_delivery_timer_complete: end_moon_delivery
     timer_whalers_on_the_moon_timer_complete: end_moon_delivery
     timer_lunar_rover_timer_complete: end_moon_delivery
     timer_escape_farmer_timer_complete: end_moon_delivery
@@ -367,15 +336,9 @@ event_player:
     lunar_lander_r_shot_hit: lunar_lander_searching
     lunar_lander_l_shot_hit: lunar_lander_searching
     end_moon_delivery: stop_moon_delivery_mode
-
-
-
+    moon_delivery_success_show_ended: stop_moon_delivery_mode
 
 widgets:
-    luna_park_background:
-        - type: video
-          video: luna_park_background
-          z: 0
     moon_step1:
         - type: image
           image: moon_step1
@@ -404,32 +367,215 @@ widgets:
         - type: image
           image: moon_steps_complete
           z: 5
-    moon_delivery_intro_video:
+    whalers_background:
         - type: video
-          video: moon_delivery_intro_clip
-          z: 10
-    crate_delivered_video:
-        - type: video
-          video: crate_delivered_clip
+          video: whalers_on_the_moon_clip
+          x: 243
+          y: 0
+          z: 1
+          anchor_x: left
+          anchor_y: bottom
     rover_escape_video:
         - type: video
           video: lunar_rover_escape_clip
+          z: 10
+    rover_background:
+        - type: video
+          video: lunar_rover_clip
+          x: 243
+          y: 0
+          z: 1
+          anchor_x: left
+          anchor_y: bottom
+    luna_park_background:
+        - type: image
+          image: luna_park_background
+          x: 243
+          y: 0
+          z: 1
+          anchor_x: left
+          anchor_y: bottom
     farmer_background:
         - type: video
           video: farmer_clip
-          z: 0
+          x: 243
+          y: 0
+          z: 1
+          anchor_x: left
+          anchor_y: bottom
+    farmer_escape_video:
+        - type: video
+          video: farmer_escape_clip
+          z: 10
+    joyride_background:
+        - type: video
+          video: joyride_clip
+          x: 243
+          y: 0
+          z: 1
+          anchor_x: left
+          anchor_y: bottom
+    lander_background:
+        - type: video
+          video: lander_search_start_clip
+          x: 243
+          y: 0
+          z: 1
+          anchor_x: left
+          anchor_y: bottom
+    lander_found_background:
+        - type: video
+          video: lander_shot_lit_clip
+          x: 243
+          y: 0
+          z: 1
+          anchor_x: left
+          anchor_y: bottom
+    moon_delivery_success_video:
+        - type: video
+          video: moon_delivery_success_clip
+          z: 10
+
+sounds:
+    whalers_song1:
+        ducking:
+            target: music
+            delay: 0
+            attack: 10ms
+            attenuation: 1.0
+            release_point: 0
+            release: 10ms
+    whalers_song2:
+        ducking:
+            target: music
+            delay: 0
+            attack: 10ms
+            attenuation: 1.0
+            release_point: 0
+            release: 10ms
+    whalers_song3:
+        ducking:
+            target: music
+            delay: 0
+            attack: 10ms
+            attenuation: 1.0
+            release_point: 0
+            release: 10ms
+    whalers_song4:
+        ducking:
+            target: music
+            delay: 0
+            attack: 10ms
+            attenuation: 1.0
+            release_point: 0
+            release: 10ms
+
+sound_pools:
+    whalers_song:
+        track: voice
+        sounds:
+            - whalers_song1
+            - whalers_song2
+            - whalers_song3
+            - whalers_song4
+
+sound_player:
+    moon_delivery_step1:
+        old_moon_song:
+            action: play
+    deliver_crate_shot_hit:
+        old_moon_song:
+            action: stop
+    crate_delivered_show_ended:
+        old_moon_song:
+            action: play
+    rover_escape_shot_hit:
+        old_moon_song:
+            action: stop
+    timer_joyride_timer_complete:
+        old_moon_song:
+            action: play
+    whalers_right_shot_hit:
+        whalers_song:
+            action: play
+    whalers_left_shot_hit:
+        whalers_song:
+            action: play
+    s_left_loop_active: no_sound|block
+    s_right_loop_active: no_sound|block
+    lunar_lander_found_shot_lit:
+        old_moon_song:
+            action: stop
+    stop_moon_delivery_mode:
+        old_moon_song:
+            action: stop
+
 
 show_player:
+    timer_crate_delivery_timer_started:
+        deliver_crate_shot_lit_show:
+            loops: -1
+    timer_crate_delivery_timer_stopped:
+        deliver_crate_shot_lit_show: stop
+    timer_crate_delivery_timer_complete:
+        deliver_crate_shot_lit_show: stop
     deliver_crate_shot_hit:
         crate_delivered_show:
             loops: 0
+            priority: 500
+            events_when_stopped: crate_delivered_show_ended
+    timer_whalers_on_the_moon_timer_started:
+        whalers_shots_lit_show:
+            loops: -1
+    timer_whalers_on_the_moon_timer_stopped:
+        whalers_shots_lit_show: stop
+    timer_whalers_on_the_moon_timer_complete:
+        whalers_shots_lit_show: stop
+    timer_lunar_rover_timer_started:
+        right_ramp_lit_show:
+            loops: -1
+    timer_lunar_rover_timer_stopped:
+        right_ramp_lit_show: stop
     rover_escape_shot_hit:
         rover_escape_show:
             loops: 0
+            events_when_stopped: rover_escape_show_ended
+        right_ramp_lit_show: stop
+    timer_joyride_timer_started:
+        pe_platter_rotary_show:
+            loops: -1
+    timer_joyride_timer_stopped:
+        pe_platter_rotary_show: stop
+    timer_escape_farmer_timer_started:
+        PEHQ_pulse_show:
+            loops: -1
+            priority: 500
+    timer_escape_farmer_timer_complete:
+        PEHQ_pulse_show: stop
+    timer_escape_farmer_timer_stopped:
+        PEHQ_pulse_show: stop
     all_farmer_escape:
         farmer_escape_show:
             loops: 0
-    moon_delivery_steps_complete:
+            priority: 500
+            events_when_stopped: farmer_escape_show_ended
+    moon_delivery_step6:
+        lander_r_shot_show:
+            loops: -1
+        lander_l_shot_show:
+            loops: -1
+    lunar_lander_r_shot_hit:
+        lander_r_shot_show: stop
+    lunar_lander_l_shot_hit:
+        lander_l_shot_show: stop
+    timer_lunar_lander_timer_complete:
+        lander_r_shot_show: stop
+        lander_l_shot_show: stop
+    lunar_lander_found_shot_lit:
+        lander_found_shot_show:
+            loops: -1
+    lunar_lander_found_shot_hit:
+        lander_found_shot_show: stop
         moon_delivery_success_show:
             loops: 0
-            events_when_stopped: stop_moon_delivery_mode
+            events_when_stopped: moon_delivery_success_show_ended

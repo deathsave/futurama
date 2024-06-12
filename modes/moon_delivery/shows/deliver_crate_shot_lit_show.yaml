@@ -1,0 +1,9 @@
+#show_version=5
+##! show: deliver_crate_shot_lit_show
+
+    - duration: 300ms
+      lights:
+          l_right_orbit: 000000
+    - duration: 300ms
+      lights:
+          l_right_orbit: ffffff

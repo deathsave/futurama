@@ -1,0 +1,9 @@
+#show_version=5
+##! show: lander_found_shot_show
+
+    - duration: 200ms
+      lights:
+          l_scoop: 000000
+    - duration: 200ms
+      lights:
+          l_scoop: ffffff
