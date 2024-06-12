@@ -1,0 +1,44 @@
+#show_version=5
+##! show: next_level_shot_lit_show
+
+
+    - time: +900ms
+      lights:
+          l_left_loop:
+              color: ff0000
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_left_loop:
+              color: ffffff
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_left_loop:
+              color: ff0000
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_left_loop:
+              color: ffffff
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_left_loop:
+              color: ff0000
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_left_loop:
+              color: ffffff
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_left_loop:
+              color: ff0000
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_left_loop:
+              color: ffffff
+              fade: 800ms

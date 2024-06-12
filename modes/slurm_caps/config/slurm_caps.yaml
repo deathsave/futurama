@@ -1,0 +1,96 @@
+#config_version=5
+##! mode: slurm_caps
+
+mode:
+    start_events: mode_base_started, delivery_ended
+    stop_events: ball_ending, delivery_started
+    priority: 101
+
+shots:
+    slurm_caps:
+        switches: s_cap1, s_cap2, s_cap3, s_cap4
+    start_slurm_factory_shot:
+        switch: s_VUK
+        enable_events: found_golden_cap
+        disable_events: pure_imagination
+
+ball_holds:
+    slurm factory_start_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: found_golden_cap
+        disable_events: pure_imagination
+        release_one_events: pure_imagination
+
+variable_player:
+    slurm_caps_hit:
+        score: 100 * current_player.fry_multiplier
+    logicblock_collecting_caps_updated:
+        caps_collected:
+            int: value
+            action: set
+
+counters:
+    collecting_caps:
+        count_events: slurm_caps_hit
+        multiple_hit_window: 200ms
+        persist_state: true
+        disable_on_complete: true
+        count_complete_value: 30
+        events_when_complete: found_golden_cap
+        reset_on_complete: false
+
+sound_player:
+    slurm_caps_hit:
+        cap_sound:
+            action: play
+
+sound_pools:
+    cap_sound:
+        type: random_force_all
+        track: sfx
+        sounds:
+            - cap_sound1
+            - cap_sound2
+            - cap_sound3
+
+widgets:
+    slurm_cap_count:
+        - type: text
+          text: (caps_collected)
+          font_size: 80
+          color: black
+          x: 1775
+          y: 343
+          z: 6
+          anchor_x: center
+          anchor_y: bottom
+    slurm_cap:
+        - type: image
+          image: slurm_cap_overlay
+          z: 5
+    glurmo_speaks:
+        - type: image
+          image: glurmo_speaks
+          z: 10
+          expire: 10s
+widget_player:
+    found_golden_cap:
+        glurmo_speaks:
+            action: add
+
+light_player:
+    found_golden_cap:
+        lamps: ffffff
+
+show_player:
+    slurm_caps_hit:
+        cap_collected_show:
+            loops: 0
+            key: slurm_caps_indicator
+    found_golden_cap:
+        slurm_factory_lit_show:
+            priority: 100
+            loops: -1
+    start_slurm_factory_shot_hit:
+        slurm_factory_lit_show: stop

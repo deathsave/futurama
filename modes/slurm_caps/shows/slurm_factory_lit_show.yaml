@@ -1,0 +1,48 @@
+#show_version=5
+##! show: slurm_factory_lit_show
+
+
+    - time: +500ms
+      lights:
+          apron: ff00ff
+          spotlights: ff00ff
+    - time: +500ms
+      lights:
+          l_scoop: ff00ff
+          l_VUK1: ff00ff
+          l_VUK2: ff00ff
+    - time: +300ms
+      lights:
+          l_scoop: ffffff
+          l_VUK1: ffffff
+          l_VUK2: ffffff
+    - time: +500ms
+      lights:
+          l_scoop: ff00ff
+          l_VUK1: ff00ff
+          l_VUK2: ff00ff
+    - time: +300ms
+      lights:
+          l_scoop: ffffff
+          l_VUK1: ffffff
+          l_VUK2: ffffff
+    - time: +500ms
+      lights:
+          l_scoop: ff00ff
+          l_VUK1: ff00ff
+          l_VUK2: ff00ff
+    - time: +300ms
+      lights:
+          l_scoop: ffffff
+          l_VUK1: ffffff
+          l_VUK2: ffffff
+    - time: +500ms
+      lights:
+          l_scoop: ff00ff
+          l_VUK1: ff00ff
+          l_VUK2: ff00ff
+    - time: +300ms
+      lights:
+          l_scoop: ffffff
+          l_VUK1: ffffff
+          l_VUK2: ffffff
