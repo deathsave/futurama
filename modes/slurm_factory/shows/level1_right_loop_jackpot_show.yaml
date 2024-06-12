@@ -1,0 +1,44 @@
+#show_version=5
+##! show: level1_right_loop_jackpot_show
+
+
+    - time: +900ms
+      lights:
+          l_right_loop:
+              color: 0000ff
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_right_loop:
+              color: ffffff
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_right_loop:
+              color: 0000ff
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_right_loop:
+              color: ffffff
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_right_loop:
+              color: 0000ff
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_right_loop:
+              color: ffffff
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_right_loop:
+              color: 0000ff
+              fade: 800ms
+    - time: +900ms
+      lights:
+          l_right_loop:
+              color: ffffff
+              fade: 800ms

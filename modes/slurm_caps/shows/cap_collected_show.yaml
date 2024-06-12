@@ -1,0 +1,19 @@
+#show_version=5
+##! show: cap_collected_show
+
+- time: 0
+  widgets:
+      slurm_cap_count:
+          action: add
+      slurm_cap:
+          action: add
+  sounds:
+      cap_sound:
+          action: play
+
+- time: 2
+  widgets:
+      slurm_cap_count:
+          action: remove
+      slurm_cap:
+          action: remove
