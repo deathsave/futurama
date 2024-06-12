@@ -5,7 +5,7 @@ mode:
 
 state_machines:
     fuel_gauge_state:
-        persist_state: false
+        persist_state: true
         states:
             start:
                 label: Start state
@@ -21,16 +21,16 @@ state_machines:
         transitions:
             - source: start
               target: quarter
-              events: s_right_ramp_active
+              events: collect_dark_matter_fuel_hit
             - source: quarter
               target: half
-              events: s_right_ramp_active
+              events: collect_dark_matter_fuel_hit
             - source: half
               target: 3quarter
-              events: s_right_ramp_active
+              events: collect_dark_matter_fuel_hit
             - source: 3quarter
               target: full
-              events: s_right_ramp_active
+              events: collect_dark_matter_fuel_hit
             - source: full
               target: 3quarter
               events: use_dark_matter
@@ -43,6 +43,16 @@ state_machines:
             - source: quarter
               target: start
               events: use_dark_matter
+            - source: half
+              target: start
+              events: use_half_tank
+            - source: 3quarter
+              target: quarter
+              events: use_half_tank
+            - source: full
+              target: half
+              events: use_half_tank
+
 
 ball_saves:
     ball_start_ball_save:
@@ -55,46 +65,102 @@ ball_saves:
 shows:
     zoidberg_happy_show:
         - duration: 5
-          events: zoidberg_l1
-        - duration: 5
+          events: zoidberg_r5
+        - duration: 2
+          events: zoidberg_r4
+        - duration: 2
+          events: zoidberg_r3
+        - duration: 2
+          events: zoidberg_r2
+        - duration: 2
+          events: zoidberg_r1
+        - duration: 3
           events: zoidberg_l2
-        - duration: 5
+        - duration: 2
+          events: zoidberg_l1
+        - duration: 3
+          events: zoidberg_l4
+        - duration: 2
           events: zoidberg_l3
+        - duration: 5
+          events: zoidberg_l7
+        - duration: 2
+          events: zoidberg_l6
+        - duration: 5
+          events: zoidberg_l10
+        - duration: 2
+          events: zoidberg_l9
+        - duration: 5
+          events: zoidberg_l14
+        - duration: 2
+          events: zoidberg_l13
+        - duration: 5
+          events: zoidberg_l17
+        - duration: 2
+          events: zoidberg_l16
+        - duration: 5
+          events: zoidberg_l20
         - duration: 10
           events: zoidberg_reset
         - duration: 1
           events: zoidberg_neutral
     zoidberg_sad_show:
         - duration: 5
-          events: zoidberg_r1
-        - duration: 5
+          events: zoidberg_l5
+        - duration: 2
+          events: zoidberg_l4
+        - duration: 2
+          events: zoidberg_l3
+        - duration: 2
+          events: zoidberg_l2
+        - duration: 2
+          events: zoidberg_l1
+        - duration: 3
           events: zoidberg_r2
-        - duration: 5
+        - duration: 2
+          events: zoidberg_r1
+        - duration: 3
+          events: zoidberg_r4
+        - duration: 2
           events: zoidberg_r3
+        - duration: 5
+          events: zoidberg_r7
+        - duration: 2
+          events: zoidberg_r6
+        - duration: 5
+          events: zoidberg_r10
+        - duration: 2
+          events: zoidberg_r9
+        - duration: 5
+          events: zoidberg_r14
+        - duration: 2
+          events: zoidberg_r13
+        - duration: 5
+          events: zoidberg_r17
+        - duration: 2
+          events: zoidberg_r16
+        - duration: 5
+          events: zoidberg_r20
         - duration: 10
           events: zoidberg_reset
         - duration: 1
           events: zoidberg_neutral
-    zoidberg_neutral_show:
-        - duration: 10
-          events: zoidberg_l1
-        - duration: 20
-          events: zoidberg_r1
-        - duration: 10
-          events: zoidberg_reset
 
 light_player:
     mode_base_started:
         indicator: ffffff
         ship: ffffff
+        loops: ffffff
+    remove_hypnotoad_slide:
+        l_left_spotlight: ffffff
 
 show_player:
     mode_base_started:
         zoidberg_neutral_show:
-            loops: 0
+            loops: -1
     s_shooter_lane_active:
         shoot_the_ball_show:
-            loops: -1
+            loops: 0
     s_shooter_lane_inactive:
         shoot_the_ball_show: stop
     zoidberg_happy:
@@ -110,19 +176,23 @@ show_player:
         zoidberg_neutral_show: play
         zoidberg_sad_show: stop
     ball_save_ball_start_ball_save_saving_ball:
-        ball_save_indicator_show: play
+        ball_save_indicator_show:
+            loops: 0
     balldevice_bd_right_post_ball_entered:
         right_post_lock_show:
             loops: 0
     s_mag_button_active:
         hypnotoad_light_pulse_show:
             loops: -1
+            events_when_stopped: remove_hypnotoad_slide
     s_mag_button_inactive:
         hypnotoad_light_pulse_show: stop
-    ship_spinning_hit:
+    timer_ship_spinning_timer_started:
         pe_platter_rotary_show:
-            loops: 0
-            priority: 100
+            loops: -1
+            priority: 300
+    timer_ship_spinning_timer_stopped:
+        pe_platter_rotary_show: stop
     s_pop_bumper_active:
         lrrr_pulse_show:
             loops: 0
@@ -153,12 +223,25 @@ show_player:
     bender_level3:
         bender_level_up_show:
             loops: 0
-    s_left_ramp_active:
+    base_tube_shot_hit:
         tube_light_show:
             loops: 0
 
 slide_player:
     mode_base_started: base_slide
+    mode_moon_delivery_started:
+        base_slide:
+            action: remove
+        moon_delivery_slide:
+            action: play
+    mode_moon_delivery_stopped:
+        base_slide:
+            action: play
+        moon_delivery_slide:
+            action: remove
+    remove_hypnotoad_slide:
+        hypnotoad_slide:
+            action: remove
 
 widget_player:
     mode_base_started:
@@ -181,13 +264,13 @@ widget_player:
             slide: base_slide
 
 variable_player:
-    s_t_fry_active:
+    base_fry_target_shot_hit:
         score: 100 * current_player.fry_multiplier
         fry_xp: 1
-    s_t_leela_active:
+    base_leela_target_shot_hit:
         score: 100 * current_player.leela_multiplier
         leela_xp: 1
-    s_t_bender_active:
+    base_bender_target_shot_hit:
         score: 100 * current_player.bender_multiplier
         bender_xp: 1
     s_dt_amy_active:
@@ -211,18 +294,6 @@ variable_player:
         score: 33 * current_player.crew_multiplier
         platter_short_counter: 1
         platter_long_counter: 1
-    s_cap1_active:
-        score: 50
-        slurm_caps: 1
-    s_cap2_active:
-        score: 50
-        slurm_caps: 1
-    s_cap3_active:
-        score: 50
-        slurm_caps: 1
-    s_cap4_active:
-        score: 10
-        slurm_caps: 1
     leela_level1:
         leela_level: 1
         leela_multiplier: 1
@@ -308,9 +379,9 @@ variable_player:
     left_loop_hit:
         score: 150
     left_right_double_loop_hit:
-        score: 500
+        score: 1000
     right_left_double_loop_hit:
-        score: 500
+        score: 1000
     double_left_loop_hit:
         score: 500
     double_right_loop_hit:
@@ -328,26 +399,22 @@ variable_player:
         platter_short_counter:
             int: 0
             action: set
-    s_left_ramp_active:
+    base_tube_shot_hit:
         score: 25 * (current_player.fry_level + 1) * (current_player.leela_level + 1) * (current_player.bender_level + 1)
-
+    slurm_caps_total_shot_hit:
+        slurm_caps_total: 1
 
 sound_player:
-    s_mag_button_active:
-        hypnotoad_short:
-            loops: -1
-    s_mag_button_inactive:
-        hypnotoad_short: stop
     s_pop_bumper_active:
         lrrr_pop_bumper:
             action: play
-    s_left_ramp_active:
+    base_tube_shot_hit:
         people_tubes:
             action: play
-    s_right_loop_active:
+    right_loop_hit:
         crew_whoa1:
             action: play
-    s_left_loop_active:
+    left_loop_hit:
         crew_whoa2:
             action: play
     s_pe_platter_active:
@@ -356,18 +423,21 @@ sound_player:
     mode_base_started:
         theme_full:
             action: play
+    restart_theme_music:
+        theme_full:
+            action: play
     ball_will_end:
         theme_full:
             action: stop
         drain_sounds:
             action: play
-    s_t_fry_active:
+    base_fry_target_shot_hit:
         fry_short:
             action: play
-    s_t_leela_active:
+    base_leela_target_shot_hit:
         leela_short:
             action: play
-    s_t_bender_active:
+    base_bender_target_shot_hit:
         bender_short:
             action: play
     s_dt_zoidberg_active:
@@ -498,7 +568,6 @@ event_player:
     s_dt_professor_active{current_player.professor_xp == 2}: professor_level1
     s_dt_professor_active{current_player.professor_xp == 5}: professor_level2
     s_dt_professor_active{current_player.professor_xp == 15}: professor_level3
-    s_cap4_active: start_left_loop_lock_hurry
     start_left_loop_lock_hurry: right_post_enable
     timer_left_loop_lock_hurry_complete: right_post_disable
     right_post_lock_show_stopped: post_right_down
@@ -512,31 +581,65 @@ timers:
         control_events:
             - action: start
               event: start_left_loop_lock_hurry
+    ship_spinning_timer:
+        start_value: 6
+        end_value: 0
+        direction: down
+        tick_interval: 150ms
+        control_events:
+            - action: start
+              event: ship_spinning_hit
+            - action: add
+              event: s_pe_platter_active
+              value: 1
+
+
+
 shots:
     ship_spinning:
         switch: s_pe_platter
-        delay_switch:
-            s_pe_platter: 500ms
+        enable_events: timer_ship_spinning_timer_stopped, mode_base_started, delivery_ended
+        disable_events: timer_ship_spinning_timer_started, delivery_started
+    base_tube_shot:
+        switch: s_left_ramp
+        enable_events: mode_base_started, mode_moon_delivery_stopped
+        disable_events: mode_moon_delivery_started
+    base_fry_target_shot:
+        switch: s_t_fry
+        enable_events: mode_base_started, mode_moon_delivery_stopped
+        disable_events: mode_moon_delivery_started
+    base_bender_target_shot:
+        switch: s_t_bender
+        enable_events: mode_base_started, mode_moon_delivery_stopped
+        disable_events: mode_moon_delivery_started
+    base_leela_target_shot:
+        switch: s_t_leela
+        enable_events: mode_base_started, mode_moon_delivery_stopped
+        disable_events: mode_moon_delivery_started
+    slurm_caps_total_shot:
+        switches: s_cap1, s_cap2, s_cap3, s_cap4
+
+
 
 sequence_shots:
     right_loop:
         switch_sequence: s_right_loop, s_left_loop
-        sequence_timeout: 1s
+        sequence_timeout: 3s
     left_loop:
         switch_sequence: s_left_loop, s_right_loop
-        sequence_timeout: 1s
+        sequence_timeout: 3s
     left_right_double_loop:
         event_sequence: left_loop_hit, right_loop_hit
-        sequence_timeout: 5s
+        sequence_timeout: 8s
     right_left_double_loop:
         event_sequence: right_loop_hit, left_loop_hit
-        sequence_timeout: 5s
+        sequence_timeout: 8s
     double_right_loop:
         event_sequence: right_loop_hit, right_loop_hit
-        sequence_timeout: 5s
+        sequence_timeout: 8s
     double_left_loop:
         event_sequence: left_loop_hit, left_loop_hit
-        sequence_timeout: 5s
+        sequence_timeout: 8s
     hypnotoad_save:
         switch_sequence: s_mag_button, s_left_inlane
         sequence_timeout: 5s
