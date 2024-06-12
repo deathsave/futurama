@@ -2,4 +2,10 @@
 ##! show: crate_delivered_show
 
 - time: 0
-  widgets: crate_delivered_video
+  slides:
+      crate_delivered_slide:
+          priority: 500
+- time: 9
+  slides:
+      crate_delivered_slide:
+          action: remove

@@ -2,4 +2,9 @@
 ##! show: moon_delivery_success_show
 
 - time: 0
-  widgets: moon_delivery_success_clip
+  widgets: moon_delivery_success_video
+
+- time: 26
+  widgets:
+      moon_delivery_success_video:
+          action: remove

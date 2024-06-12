@@ -2,5 +2,9 @@
 ##! show: farmer_escape_show
 
 - time: 0
-  widgets: farmer_escape_clip
-      
+  widgets: farmer_escape_video
+
+- time: 12
+  widgets:
+      farmer_escape_video:
+          action: remove

@@ -1,0 +1,11 @@
+#show_version=5
+##! show: whalers_shots_lit_show
+
+    - duration: 300ms
+      lights:
+          l_left_loop: 000000
+          l_right_loop: 000000
+    - duration: 300ms
+      lights:
+          l_left_loop: ffffff
+          l_right_loop: ffffff

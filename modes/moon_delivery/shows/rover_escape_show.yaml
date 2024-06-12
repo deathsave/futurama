@@ -3,3 +3,8 @@
 
 - time: 0
   widgets: rover_escape_video
+
+- time: 22
+  widgets:
+      rover_escape_video:
+          action: remove
