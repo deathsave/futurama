@@ -109,3 +109,123 @@
 - time: 15
   lights:
     lamps: off
+- time: 16
+  shows:
+    PE_commercial_show:
+      loops: 0
+      priority: 500
+- time: +47
+  lights:
+    l_apron1: blue
+- time: +500ms
+  lights:
+    l_apron1: off
+    l_apron2: blue
+- time: +500ms
+  lights:
+    l_apron2: off
+    l_apron3: blue
+- time: +500ms
+  lights:
+    l_apron3: off
+    l_apron4: blue
+- time: +500ms
+  lights:
+    l_apron4: off
+    l_apron5: blue
+- time: +500ms
+  lights:
+    l_apron5: off
+    l_apron6: blue
+- time: +500ms
+  lights:
+    l_apron6: off
+- time: +500ms
+  lights:
+    apron: white
+- time: +250ms
+  lights:
+    apron: off
+- time: +250ms
+  lights:
+    apron: white
+- time: +250ms
+  lights:
+    apron: off
+- time: +250ms
+  lights:
+    apron: white
+- time: +500ms
+  lights:
+    ballguide: white
+- time: +250ms
+  lights:
+    ballguide: off
+- time: +250ms
+  lights:
+    ballguide: white
+- time: +500ms
+  lights:
+    slings: white
+- time: +500ms
+  lights:
+    l_left_spotlight: red
+- time: +250ms
+  lights:
+    l_right_spotlight: red
+- time: +250ms
+  lights:
+    spotlights: white
+- time: +500ms
+  lights:
+    DTbank: white
+- time: +500ms
+  lights:
+    l_pop_bumper: orange
+- time: +500ms
+  lights:
+    ship: teal
+- time: +500ms
+  lights:
+    loops: red
+- time: +500ms
+  lights:
+    l_tube4: green
+- time: +200ms
+  lights:
+    l_tube3: green
+- time: +200ms
+  lights:
+    l_tube2: green
+- time: +200ms
+  lights:
+    l_tube1: green
+- time: +200ms
+  lights:
+    l_VUK2: green
+- time: +200ms
+  lights:
+    l_VUK1: green
+- time: +500ms
+  lights:
+    HQ: white
+- time: +2.5
+  lights:
+    lamps: off
+- time: +250ms
+  lights:
+    lamps: white
+- time: +250ms
+  lights:
+    lamps: off
+- time: +250ms
+  lights:
+    lamps: white
+- time: +250ms
+  lights:
+    lamps: off
+- time: +1
+  shows:
+    homemade_intro_show:
+      loops: 0
+      priority: 500
