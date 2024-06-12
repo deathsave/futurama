@@ -1,0 +1,9 @@
+#show_version=5
+##! show: PEHQ_pulse_show
+
+    - duration: 300ms
+      lights:
+          l_under_HQ: off
+    - duration: 300ms
+      lights:
+          l_under_HQ: white

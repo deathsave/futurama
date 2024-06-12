@@ -1,0 +1,12 @@
+#show_version=5
+##! show: ball_end_score_show
+
+
+- time: 0
+  slides:
+      ball_end_score_slide:
+          priority: 500
+- time: 3
+  slides:
+      ball_end_score_slide:
+          action: remove

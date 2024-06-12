@@ -1,0 +1,35 @@
+#show_version=5
+##! show: zoidberg_neutral_show
+
+- duration: 5
+  events: zoidberg_l3
+- duration: 5
+  events: zoidberg_reset
+- duration: 5
+  events: zoidberg_r3
+- duration: 5
+  events: zoidberg_reset
+- duration: 5
+  events: zoidberg_l5
+- duration: 1
+  events: zoidberg_l4
+- duration: 6
+  events: zoidberg_l10
+- duration: 5
+  events: zoidberg_reset
+- duration: 1
+  events: zoidberg_l6
+- duration: 5
+  events: zoidberg_reset
+- duration: 5
+  events: zoidberg_r5
+- duration: 1
+  events: zoidberg_r4
+- duration: 6
+  events: zoidberg_r10
+- duration: 5
+  events: zoidberg_reset
+- duration: 1
+  events: zoidberg_r6
+- duration: 5
+  events: zoidberg_reset

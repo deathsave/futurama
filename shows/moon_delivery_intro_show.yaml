@@ -1,17 +1,12 @@
 #show_version=5
 ##! show: moon_delivery_intro_show
 
+
 - time: 0
   slides:
-      moon_delivery_slide:
-          priority: 200
-- time: 1
-  widgets:
-      moon_delivery_intro_video:
-          action: add
-          widget_settings:
-              z: 10
-- time: 26
-  widgets:
-      moon_delivery_intro_video:
+      moon_delivery_intro_slide:
+          priority: 500
+- time: 24
+  slides:
+      moon_delivery_intro_slide:
           action: remove
