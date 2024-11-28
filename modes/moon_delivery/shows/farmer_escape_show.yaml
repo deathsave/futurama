@@ -1,10 +1,10 @@
-#show_version=5
+#show_version=6
 ##! show: farmer_escape_show
 
 - time: 0
   widgets: farmer_escape_video
 
-- time: 12
+- time: "+12"
   widgets:
       farmer_escape_video:
           action: remove

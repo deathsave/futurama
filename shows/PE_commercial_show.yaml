@@ -1,4 +1,4 @@
-#show_version=5
+#show_version=6
 ##! show: PE_commercial_show
 
 
@@ -8,7 +8,7 @@
           action: remove
       PE_commercial_slide:
           priority: 500
-- time: 47
+- time: "+47"
   slides:
       PE_commercial_slide:
           action: remove

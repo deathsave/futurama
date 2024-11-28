@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 ##! mode: high_score
 
 mode:
@@ -86,11 +86,11 @@ slides:
         show_slide:
           - property: opacity
             value: 1
-            duration: 0.3s
+            duration: "0.3s"
             easing: in_out_quint
           - property: opacity
             value: 0
-            duration: 0.3s
+            duration: "0.3s"
             repeat: true
             easing: in_out_quint
   high_score_award_display:
@@ -102,15 +102,15 @@ slides:
       anchor_x: middle
       x: middle
       y: middle
-      color: 00ff00
+      color: "00ff00"
       animations:
         show_slide:
           - property: opacity
             value: 1
-            duration: 0.05s
+            duration: "0.05s"
           - property: opacity
             value: 0
-            duration: 0.05s
+            duration: "0.05s"
             repeat: true
     - type: text
       text: (award)
@@ -118,7 +118,7 @@ slides:
       style: big
       x: 105
       y: 110
-      color: 0000ff
+      color: "0000ff"
     - type: text
       text: (value)
       style: big

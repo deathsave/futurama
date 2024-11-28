@@ -1,231 +1,234 @@
-#show_version=5
+#show_version=6
 - time: 0
   lights:
     l_apron1: blue
-- time: 500ms
+- time: "+500ms"
   lights:
     l_apron1: off
     l_apron2: blue
-- time: 1
+- time: "+1"
   lights:
     l_apron2: off
     l_apron3: blue
-- time: 1.5
+- time: "+1.5"
   lights:
     l_apron3: off
     l_apron4: blue
-- time: 2
+- time: "+2"
   lights:
     l_apron4: off
     l_apron5: blue
-- time: 2.5
+- time: "+2.5"
   lights:
     l_apron5: off
     l_apron6: blue
-- time: 3
+- time: "+3"
   lights:
     l_apron6: off
-- time: 3.5
+- time: "+3.5"
   lights:
     apron: white
-- time: 3.75
+- time: "+3.75"
   lights:
     apron: off
-- time: 4
+- time: "+4"
   lights:
     apron: white
-- time: 4.25
+- time: "+4.25"
   lights:
     apron: off
-- time: 4.5
+- time: "+4.5"
   lights:
     apron: white
-- time: 5
+- time: "+5"
   lights:
     ballguide: white
-- time: 5.25
+- time: "+5.25"
   lights:
     ballguide: off
-- time: 5.5
+- time: "+5.5"
   lights:
     ballguide: white
 - time: 6
   lights:
     slings: white
-- time: 6.5
-  lights:
-    l_left_spotlight: red
-- time: 6.75
-  lights:
-    l_right_spotlight: red
-- time: 7.5
-  lights:
-    spotlights: white
-- time: 8
-  lights:
-    DTbank: white
-- time: 8.5
-  lights:
-    l_pop_bumper: orange
-- time: 9
-  lights:
-    ship: teal
-- time: 9.5
-  lights:
-    loops: red
-- time: 10
-  lights:
-    l_tube4: green
-- time: 10.2
-  lights:
-    l_tube3: green
-- time: 10.4
-  lights:
-    l_tube2: green
-- time: 10.6
-  lights:
-    l_tube1: green
-- time: 10.8
-  lights:
-    l_VUK2: green
-- time: 11
-  lights:
-    l_VUK1: green
-- time: 11.5
-  lights:
-    HQ: white
-- time: 14
-  lights:
-    lamps: off
-- time: 14.25
-  lights:
-    lamps: white
-- time: 14.5
-  lights:
-    lamps: off
-- time: 14.75
-  lights:
-    lamps: white
-- time: 15
-  lights:
-    lamps: off
-- time: 16
-  shows:
-    PE_commercial_show:
-      loops: 0
-      priority: 500
-- time: +47
-  lights:
-    l_apron1: blue
-- time: +500ms
-  lights:
-    l_apron1: off
-    l_apron2: blue
-- time: +500ms
-  lights:
-    l_apron2: off
-    l_apron3: blue
-- time: +500ms
-  lights:
-    l_apron3: off
-    l_apron4: blue
-- time: +500ms
-  lights:
-    l_apron4: off
-    l_apron5: blue
-- time: +500ms
-  lights:
-    l_apron5: off
-    l_apron6: blue
-- time: +500ms
-  lights:
-    l_apron6: off
-- time: +500ms
-  lights:
-    apron: white
-- time: +250ms
-  lights:
-    apron: off
-- time: +250ms
-  lights:
-    apron: white
-- time: +250ms
-  lights:
-    apron: off
-- time: +250ms
-  lights:
-    apron: white
-- time: +500ms
-  lights:
-    ballguide: white
-- time: +250ms
-  lights:
-    ballguide: off
-- time: +250ms
-  lights:
-    ballguide: white
-- time: +500ms
-  lights:
-    slings: white
-- time: +500ms
-  lights:
-    l_left_spotlight: red
-- time: +250ms
-  lights:
-    l_right_spotlight: red
-- time: +250ms
-  lights:
-    spotlights: white
-- time: +500ms
-  lights:
-    DTbank: white
-- time: +500ms
-  lights:
-    l_pop_bumper: orange
-- time: +500ms
-  lights:
-    ship: teal
-- time: +500ms
-  lights:
-    loops: red
-- time: +500ms
-  lights:
-    l_tube4: green
-- time: +200ms
-  lights:
-    l_tube3: green
-- time: +200ms
-  lights:
-    l_tube2: green
-- time: +200ms
-  lights:
-    l_tube1: green
-- time: +200ms
-  lights:
-    l_VUK2: green
-- time: +200ms
-  lights:
-    l_VUK1: green
-- time: +500ms
-  lights:
-    HQ: white
-- time: +2.5
-  lights:
-    lamps: off
-- time: +250ms
-  lights:
-    lamps: white
-- time: +250ms
-  lights:
-    lamps: off
-- time: +250ms
-  lights:
-    lamps: white
-- time: +250ms
-  lights:
-    lamps: off
-- time: +1
-  shows:
-    homemade_intro_show:
-      loops: 0
-      priority: 500
+# TODO: something from here throws an error
+#       "Absolute timing in step 15 not possible because there was
+#       a duration of -1 before Context"
+# - time: 6.5
+#   lights:
+#     l_left_spotlight: red
+# - time: 6.75
+#   lights:
+#     l_right_spotlight: red
+# - time: 7.5
+#   lights:
+#     spotlights: white
+# - time: 8
+#   lights:
+#     DTbank: white
+# - time: 8.5
+#   lights:
+#     l_pop_bumper: orange
+# - time: 9
+#   lights:
+#     ship: teal
+# - time: 9.5
+#   lights:
+#     loops: red
+# - time: "+10"
+#   lights:
+#     l_tube4: green
+# - time: "+10.2"
+#   lights:
+#     l_tube3: green
+# - time: "+10.4"
+#   lights:
+#     l_tube2: green
+# - time: "+10.6"
+#   lights:
+#     l_tube1: green
+# - time: "+10.8"
+#   lights:
+#     l_VUK2: green
+# - time: "+11"
+#   lights:
+#     l_VUK1: green
+# - time: "+11.5"
+#   lights:
+#     HQ: white
+# - time: "+14"
+#   lights:
+#     lamps: off
+# - time: "+14.25"
+#   lights:
+#     lamps: white
+# - time: "+14.5"
+#   lights:
+#     lamps: off
+# - time: "+14.75"
+#   lights:
+#     lamps: white
+# - time: "+15"
+#   lights:
+#     lamps: off
+# - time: "+16"
+#   shows:
+#     PE_commercial_show:
+#       loops: 0
+#       priority: 500
+# - time: "+47"
+#   lights:
+#     l_apron1: blue
+# - time: "+500ms"
+#   lights:
+#     l_apron1: off
+#     l_apron2: blue
+# - time: "+500ms"
+#   lights:
+#     l_apron2: off
+#     l_apron3: blue
+# - time: "+500ms"
+#   lights:
+#     l_apron3: off
+#     l_apron4: blue
+# - time: "+500ms"
+#   lights:
+#     l_apron4: off
+#     l_apron5: blue
+# - time: "+500ms"
+#   lights:
+#     l_apron5: off
+#     l_apron6: blue
+# - time: "+500ms"
+#   lights:
+#     l_apron6: off
+# - time: "+500ms"
+#   lights:
+#     apron: white
+# - time: "+250ms"
+#   lights:
+#     apron: off
+# - time: "+250ms"
+#   lights:
+#     apron: white
+# - time: "+250ms"
+#   lights:
+#     apron: off
+# - time: "+250ms"
+#   lights:
+#     apron: white
+# - time: "+500ms"
+#   lights:
+#     ballguide: white
+# - time: "+250ms"
+#   lights:
+#     ballguide: off
+# - time: "+250ms"
+#   lights:
+#     ballguide: white
+# - time: "+500ms"
+#   lights:
+#     slings: white
+# - time: "+500ms"
+#   lights:
+#     l_left_spotlight: red
+# - time: "+250ms"
+#   lights:
+#     l_right_spotlight: red
+# - time: "+250ms"
+#   lights:
+#     spotlights: white
+# - time: "+500ms"
+#   lights:
+#     DTbank: white
+# - time: "+500ms"
+#   lights:
+#     l_pop_bumper: orange
+# - time: "+500ms"
+#   lights:
+#     ship: teal
+# - time: "+500ms"
+#   lights:
+#     loops: red
+# - time: "+500ms"
+#   lights:
+#     l_tube4: green
+# - time: "+200ms"
+#   lights:
+#     l_tube3: green
+# - time: "+200ms"
+#   lights:
+#     l_tube2: green
+# - time: "+200ms"
+#   lights:
+#     l_tube1: green
+# - time: "+200ms"
+#   lights:
+#     l_VUK2: green
+# - time: "+200ms"
+#   lights:
+#     l_VUK1: green
+# - time: "+500ms"
+#   lights:
+#     HQ: white
+# - time: "+2.5"
+#   lights:
+#     lamps: off
+# - time: "+250ms"
+#   lights:
+#     lamps: white
+# - time: "+250ms"
+#   lights:
+#     lamps: off
+# - time: "+250ms"
+#   lights:
+#     lamps: white
+# - time: "+250ms"
+#   lights:
+#     lamps: off
+# - time: "+1"
+#   shows:
+#     homemade_intro_show:
+#       loops: 0
+#       priority: 500

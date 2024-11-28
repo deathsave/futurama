@@ -1,4 +1,4 @@
-#show_version=5
+#show_version=6
 ##! show: teeth_commercial_show
 
 
@@ -6,7 +6,7 @@
   slides:
       teeth_commercial_slide:
           priority: 500
-- time: 12
+- time: "+12"
   slides:
       teeth_commercial_slide:
           action: remove

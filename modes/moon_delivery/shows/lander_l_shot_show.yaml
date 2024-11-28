@@ -1,19 +1,19 @@
-#show_version=5
+#show_version=6
 ##! show: lander_l_shot_show
 
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube1: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube2: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube3: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube4: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube1: ffffff
           l_tube2: ffffff

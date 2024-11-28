@@ -1,4 +1,4 @@
-#show_version=5
+#show_version=6
 ##! show: homemade_intro_show
 
 
@@ -6,7 +6,7 @@
   slides:
       homemade_intro_slide:
           priority: 500
-- time: 30
+- time: "+30"
   slides:
       homemade_intro_slide:
           action: remove
