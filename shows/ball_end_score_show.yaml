@@ -1,4 +1,4 @@
-#show_version=5
+#show_version=6
 ##! show: ball_end_score_show
 
 
@@ -6,7 +6,7 @@
   slides:
       ball_end_score_slide:
           priority: 500
-- time: 3
+- time: "+3"
   slides:
       ball_end_score_slide:
           action: remove

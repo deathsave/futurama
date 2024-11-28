@@ -1,4 +1,4 @@
-#show_version=5
+#show_version=6
 ##! show: cap_collected_show
 
 - time: 0
@@ -11,7 +11,7 @@
       cap_sound:
           action: play
 
-- time: 2
+- time: "+2"
   widgets:
       slurm_cap_count:
           action: remove

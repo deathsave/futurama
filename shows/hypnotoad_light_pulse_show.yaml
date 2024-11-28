@@ -1,4 +1,4 @@
-#show_version=5
+#show_version=6
 ##! show: hypnotoad_light_pulse_show
 
     - time: 0
@@ -6,103 +6,103 @@
           hypnotoad_slide:
               priority: 600
       lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
       lights:
           l_left_spotlight: ffffff
-    - time: +300ms
+    - time: "+300ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: ffffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
       lights:
           l_left_spotlight: ffffff
-    - time: +300ms
+    - time: "+300ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: ffffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
       lights:
           l_left_spotlight: ffffff
-    - time: +300ms
+    - time: "+300ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: ffffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
       lights:
           l_left_spotlight: ffffff
-    - time: +300ms
+    - time: "+300ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: ffffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
       lights:
           l_left_spotlight: ffffff
-    - time: +300ms
+    - time: "+300ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: ffffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
       lights:
           l_left_spotlight: ffffff
-    - time: +300ms
+    - time: "+300ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: ffffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
       lights:
           l_left_spotlight: ffffff
-    - time: +300ms
+    - time: "+300ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: ffffff
-    - time: +300ms
-      lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
       lights:
           l_left_spotlight: ffffff
-    - time: +300ms
+    - time: "+300ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
       lights:
           l_left_spotlight: ffffff
-    - time: +300ms
+    - time: "+300ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +300ms
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: ffffff
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: ffffff
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: ffffff
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: ffffff
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: ffffff
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: ffffff
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: ffffff
+    - time: "+300ms"
+      lights:
+          l_left_spotlight: "00ffff"
+    - time: "+300ms"
       lights:
           l_left_spotlight: ffffff

@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 ##! mode: moon_delivery
 
 mode:
@@ -55,13 +55,13 @@ state_machines:
               target: failed
               events: fail_moon_delivery
 
+# TODO: needs update for config_version=6
 light_player:
     moon_delivery_waiting:
-        lights:
-            loops: ffffff
-            l_scoop: ffffff
-            l_nibbler_lamp: ffffff
-            l_right_orbit: ffffff
+        loops: ffffff
+        l_scoop: ffffff
+        l_nibbler_lamp: ffffff
+        l_right_orbit: ffffff
 ball_holds:
     final_scene_hold:
         balls_to_hold: 1
