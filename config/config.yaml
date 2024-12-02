@@ -473,70 +473,115 @@ switches:
 
 coils:
     c_flipper_left_main:
-        number: A0-B0-0
+        number: A0-B0-6
         default_pulse_ms: 22
     c_flipper_left_hold:
-        number: A0-B0-1
+        number: A0-B0-7
         allow_enable: true
     c_flipper_right_main:
-        number: A0-B0-2
+        number: A0-B1-6
         default_pulse_ms: 22
     c_flipper_right_hold:
-        number: A0-B0-3
+        number: A0-B1-7
         allow_enable: true
     c_plunger:
-        number: A0-B0-4
+        number: A1-B0-7
         default_pulse_ms: 18
     c_trough_eject:
-        number: A0-B0-5
+        number: A1-B0-6
         default_pulse_ms: 12
     c_sling_left:
-        number: A0-B0-6
+        number: A1-B0-3
         default_pulse_ms: 8
     c_sling_right:
-        number: A0-B0-7
+        number: A1-B0-4
         default_pulse_ms: 8
     c_post_right:
-        number: A0-B1-1
+        number: A1-B1-3
         default_pulse_ms: 10
         default_hold_power: .3
-    c_dt_reset:
+    c_dt_hermes_down:
+        number: A0-B0-0
+        default_pulse_ms: 10
+    c_dt_amy_down:
+        number: A0-B0-1
+        default_pulse_ms: 10
+    c_dt_professor_down:
+        number: A0-B0-2
+        default_pulse_ms: 10
+    c_dt_zoidberg_down:
+        number: A0-B0-3
+        default_pulse_ms: 10
+    c_dt_nibbler_down:
+        number: A0-B0-4
+        default_pulse_ms: 10
+    c_dt_hermes_up:
+        number: A0-B1-0
+        default_pulse_ms: 10
+    c_dt_amy_up:
+        number: A0-B1-1
+        default_pulse_ms: 10
+    c_dt_professor_up:
         number: A0-B1-2
-        default_pulse_ms: 25
-    c_pop_bumper:
+        default_pulse_ms: 10
+    c_dt_zoidberg_up:
         number: A0-B1-3
+        default_pulse_ms: 10
+    c_dt_nibbler_up:
+        number: A0-B1-4
+        default_pulse_ms: 10
+    c_pop_bumper:
+        number: A1-B0-2
         default_pulse_ms: 20
     c_VUK:
-        number: A0-B1-4
+        number: A1-B1-2
         default_pulse_ms: 15
     c_post_left:
-        number: A0-B1-5
+        number: A1-B1-4
         default_pulse_ms: 10
         default_hold_power: .3
     c_magnet:
-        number: A0-B1-7
+        number: A1-B1-1
         default_pulse_ms: 20
         default_hold_power: "0.40"
+    c_kickback:
+        number: A1-B0-5
+        default_pulse_ms: 20
+#need to verify coil number
+#    c_outlane_gate:
+#        number:
+#        default_pulse_ms: 15
+#        default_hold_power: "0.40"
 
 diverters:
     post_left:
         activation_coil: c_post_left
         type: hold
         activation_switches: s_right_loop
-        deactivate_events: post_left_down
+        deactivate_events: post_left_down, ball_ending
         enable_events: left_post_enable
-        disable_events: left_post_disable
+        disable_events: left_post_disable, ball_ending
         targets_when_active: bd_left_post
         targets_when_inactive: playfield
     post_right:
         activation_coil: c_post_right
         type: hold
         activation_switches: s_left_loop
-        deactivate_events: post_right_down
+        deactivate_events: post_right_down, ball_ending
         enable_events: right_post_enable
-        disable_events: right_post_disable
+        disable_events: right_post_disable, ball_ending
         targets_when_active: bd_right_post
         targets_when_inactive: playfield
+#outlane gate diverter waiting on coil, switch, and bd configuration
+#    outlane_gate:
+#        activation_coil: c_gate
+#        type: hold
+#        activation_switches: s_left_outlane
+#        deactivate_events: close_outlane_gate, ball_ending
+#        enable_events: outlane_gate_enable
+#        disable_events: outlane_gate_disable
+#        targets_when_active: bd_suicide_booth
+#        targets_when_inactive: playfield
 
 ball_devices:
     bd_trough:
@@ -567,6 +612,12 @@ ball_devices:
         eject_targets: playfield
         entrance_count_delay: 2000ms
         mechanical_eject: true
+#staging bd_suicide_booth
+#    bd_suicide_booth:
+#        ball_switches: s_suicide_booth
+#        eject_targets: playfield
+#        eject_coil: c_kickback
+#        eject_timeouts: 2s
 
 ball_holds:
     delivery_start_hold:
@@ -579,19 +630,29 @@ ball_holds:
 drop_targets:
     nibbler:
         switch: s_dt_nibbler
+        knockdown_coil: c_dt_nibbler_down
+        reset_coil: c_dt_nibbler_up
     professor:
         switch: s_dt_professor
+        knockdown_coil: c_dt_professor_down
+        reset_coil: c_dt_professor_up
     amy:
         switch: s_dt_amy
+        knockdown_coil: c_dt_amy_down
+        reset_coil: c_dt_amy_up
     hermes:
         switch: s_dt_hermes
+        knockdown_coil: c_dt_hermes_down
+        reset_coil: c_dt_hermes_up
     zoidberg:
         switch: s_dt_zoidberg
+        knockdown_coil: c_dt_zoidberg_down
+        reset_coil: c_dt_zoidberg_up
 
 drop_target_banks:
     crew_bank:
         drop_targets: nibbler, professor, amy, hermes, zoidberg
-        reset_coils: c_dt_reset
+        reset_coils: c_dt_amy_up, c_dt_hermes_up, c_dt_nibbler_up, c_dt_professor_up, c_dt_zoidberg_up
         reset_on_complete: 1s
         reset_coil_max_wait_ms: 500ms
 
