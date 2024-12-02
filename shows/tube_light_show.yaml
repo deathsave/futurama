@@ -1,4 +1,4 @@
-#show_version=5
+#show_version=6
 ##! show: tube_light_show
 
     - duration: 50ms
@@ -9,19 +9,19 @@
           l_tube4: ffffff
     - duration: 100ms
       lights:
-          l_tube1: 000000
+          l_tube1: "000000"
     - duration: 100ms
       lights:
           l_tube1: ffffff
-          l_tube2: 000000
+          l_tube2: "000000"
     - duration: 100ms
       lights:
           l_tube2: ffffff
-          l_tube3: 000000
+          l_tube3: "000000"
     - duration: 100ms
       lights:
           l_tube3: ffffff
-          l_tube4: 000000
+          l_tube4: "000000"
     - duration: 50ms
       lights:
           l_tube4: ffffff

@@ -1,10 +1,10 @@
-#show_version=5
+#show_version=6
 ##! show: moon_delivery_success_show
 
 - time: 0
   widgets: moon_delivery_success_video
 
-- time: 26
+- time: "+26"
   widgets:
       moon_delivery_success_video:
           action: remove

@@ -1,4 +1,4 @@
-#show_version=5
+#show_version=6
 ##! show: slurm_factory_commercial_show
 
 
@@ -6,7 +6,7 @@
   slides:
       slurm_factory_commercial_slide:
           priority: 500
-- time: 48.5
+- time: "+48.5"
   slides:
       slurm_factory_commercial_slide:
           action: remove

@@ -1,9 +1,9 @@
-#show_version=5
+#show_version=6
 ##! show: lander_r_shot_show
 
     - duration: 200ms
       lights:
-          l_nibbler_lamp: 000000
+          l_nibbler_lamp: "000000"
     - duration: 200ms
       lights:
           l_nibbler_lamp: ffffff
