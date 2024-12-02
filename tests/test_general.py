@@ -18,3 +18,5 @@ class TestGeneral(MpfMachineTestCase):
 
     def test_start(self):
         self.assertModeRunning('attract')
+        self.assertEqual(3,
+            self.machine.ball_devices.bd_trough.balls)
