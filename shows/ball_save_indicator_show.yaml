@@ -1,34 +1,33 @@
-#show_version=5
+#show_version=6
 ##! show: ball_save_indicator_show
 
     - duration: 500ms
       lights:
-          l_shoot_again: 000000
+          l_shoot_again: "000000"
     - duration: 500ms
       lights:
           l_shoot_again: ffffff
     - duration: 500ms
       lights:
-          l_shoot_again: 000000
+          l_shoot_again: "000000"
     - duration: 500ms
       lights:
           l_shoot_again: ffffff
     - duration: 500ms
       lights:
-          l_shoot_again: 000000
+          l_shoot_again: "000000"
     - duration: 500ms
       lights:
           l_shoot_again: ffffff
     - duration: 500ms
       lights:
-          l_shoot_again: 000000
+          l_shoot_again: "000000"
     - duration: 500ms
       lights:
           l_shoot_again: ffffff
     - duration: 500ms
       lights:
-          l_shoot_again: 000000
+          l_shoot_again: "000000"
     - duration: 500ms
       lights:
           l_shoot_again: ffffff
- 

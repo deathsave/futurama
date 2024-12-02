@@ -1,4 +1,4 @@
-#show_version=5
+#show_version=6
 ##! show: bender_level_up_show
 
     - duration: 250ms
@@ -25,7 +25,7 @@
           l_left_spotlight: ffffff
     - duration: 500ms
       lights:
-          l_under_HQ: 0029ff
+          l_under_HQ: "0029ff"
           l_drain: 3f3f3f
           l_DTbank1: 3f3f3f
           l_DTbank2: 3f3f3f

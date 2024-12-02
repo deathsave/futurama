@@ -1,7 +1,7 @@
-#show_version=5
+#show_version=6
 ##! show: attract_loop_show
 
-    - time: +1
+    - time: "+1"
       slides:
           show_final_scores:
               widgets:
@@ -45,7 +45,7 @@
                 text: (machine|player4_score)
                 style: attract_mode_final_score_display_score
                 y: top-460
-    - time: +10
+    - time: "+10"
       slides:
           show_high_scores:
               widgets:
@@ -165,7 +165,7 @@
                 text: (machine|score9_value)
                 style: attract_mode_high_score_display_score
                 y: top-680
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -221,7 +221,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -277,7 +277,7 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -333,7 +333,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -389,7 +389,7 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -445,7 +445,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -501,165 +501,165 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +1
+    - time: "+1"
       slides:
           doop_warning_slide:
               action: play
               priority: 200
-    - time: +8
+    - time: "+8"
       lights:
           l_left_loop: off
           l_right_loop: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_loop: white
           l_right_loop: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_loop: off
           l_right_loop: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PEHQ1: off
           l_PEHQ2: off
           l_PEHQ3: off
-    - time: +1
+    - time: "+1"
       lights:
           l_left_loop: white
           l_right_loop: white
-    - time: +1
+    - time: "+1"
       lights:
           l_scoop: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_VUK1: 670467
-    - time: +400ms
+    - time: "+400ms"
       lights:
           l_VUK2: 670467
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_tube1: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube2: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube3: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube4: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +700ms
+          l_left_spotlight: "00ffff"
+    - time: "+700ms"
       lights:
           l_left_sling: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: off
           l_left_sling: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: white
           l_left_sling: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: off
           l_left_sling: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_sling: off
           l_DTbank1: off
           l_DTbank2: off
           l_DTbank3: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_PE_spinner1: off
           l_DTbank1: white
           l_DTbank2: white
           l_DTbank3: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-          l_pop_bumper: 0029ff
-    - time: +200ms
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - time: +200ms
-      lights:
-          l_PE_spinner4: white
-          l_PE_spinner1: off
-          l_cap1: off
-          l_pop_bumper: white
-    - time: +200ms
-      lights:
-          l_PE_spinner1: white
-          l_PE_spinner2: off
-          l_cap1: white
-          l_cap2: off
-    - time: +200ms
-      lights:
-          l_PE_spinner2: white
-          l_PE_spinner3: off
-          l_cap2: white
-          l_cap3: off
-    - time: +200ms
-      lights:
-          l_PE_spinner3: white
-          l_PE_spinner4: off
-          l_cap3: white
-          l_pop_bumper: 0029ff
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
           l_cap1: off
           l_pop_bumper: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
           l_cap1: white
           l_cap2: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
           l_cap2: white
           l_cap3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
           l_cap3: white
-          l_pop_bumper: 0029ff
-    - time: +200ms
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - time: +200ms
+          l_cap1: off
+          l_pop_bumper: white
+    - time: "+200ms"
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: "+200ms"
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: "+200ms"
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: "+200ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -715,53 +715,37 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +1
+    - time: "+1"
       lights:
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: off
           l_apron2: off
           l_apron3: off
           l_apron4: off
           l_apron5: off
-    - time: +200ms
-      lights:
-          l_apron1: white
-          l_apron2: white
-          l_apron3: white
-          l_apron4: white
-          l_apron5: white
-          l_apron6: white
-    - time: +200ms
-      lights:
-          l_apron1: off
-          l_apron2: off
-          l_apron3: off
-          l_apron4: off
-          l_apron5: off
-          l_apron6: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_apron1: white
           l_apron2: white
@@ -769,73 +753,89 @@
           l_apron4: white
           l_apron5: white
           l_apron6: white
-    - time: +200ms
+    - time: "+200ms"
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: "+200ms"
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: "+200ms"
       lights:
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: off
           l_apron2: off
@@ -843,204 +843,204 @@
           l_apron4: off
           l_apron5: off
           l_apron6: off
-    - time: +1
+    - time: "+1"
       slides:
           doop_warning_slide:
               action: remove
-    - time: +500ms
+    - time: "+500ms"
       shows:
           PE_commercial_show:
               loops: 0
               priority: 500
-    - time: +30.5
+    - time: "+30.5"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron1: white
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron2: orange
           l_apron1: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron1: white
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron1: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_apron2: orange
           l_apron1: off
-    - time: +2
+    - time: "+2"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +800ms
+    - time: "+1"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
-    - time: +5
+    - time: "+5"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -1096,7 +1096,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -1152,7 +1152,7 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -1208,7 +1208,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -1264,7 +1264,7 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -1320,7 +1320,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -1376,165 +1376,165 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +1
+    - time: "+1"
       slides:
           doop_warning_slide:
               action: play
               priority: 200
-    - time: +2
+    - time: "+2"
       lights:
           l_left_loop: off
           l_right_loop: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_loop: white
           l_right_loop: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_loop: off
           l_right_loop: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PEHQ1: off
           l_PEHQ2: off
           l_PEHQ3: off
-    - time: +1
+    - time: "+1"
       lights:
           l_left_loop: white
           l_right_loop: white
-    - time: +1
+    - time: "+1"
       lights:
           l_scoop: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_VUK1: 670467
-    - time: +400ms
+    - time: "+400ms"
       lights:
           l_VUK2: 670467
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_tube1: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube2: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube3: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube4: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +700ms
+          l_left_spotlight: "00ffff"
+    - time: "+700ms"
       lights:
           l_left_sling: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: off
           l_left_sling: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: white
           l_left_sling: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: off
           l_left_sling: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_sling: off
           l_DTbank1: off
           l_DTbank2: off
           l_DTbank3: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_PE_spinner1: off
           l_DTbank1: white
           l_DTbank2: white
           l_DTbank3: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-          l_pop_bumper: 0029ff
-    - time: +200ms
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - time: +200ms
-      lights:
-          l_PE_spinner4: white
-          l_PE_spinner1: off
-          l_cap1: off
-          l_pop_bumper: white
-    - time: +200ms
-      lights:
-          l_PE_spinner1: white
-          l_PE_spinner2: off
-          l_cap1: white
-          l_cap2: off
-    - time: +200ms
-      lights:
-          l_PE_spinner2: white
-          l_PE_spinner3: off
-          l_cap2: white
-          l_cap3: off
-    - time: +200ms
-      lights:
-          l_PE_spinner3: white
-          l_PE_spinner4: off
-          l_cap3: white
-          l_pop_bumper: 0029ff
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
           l_cap1: off
           l_pop_bumper: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
           l_cap1: white
           l_cap2: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
           l_cap2: white
           l_cap3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
           l_cap3: white
-          l_pop_bumper: 0029ff
-    - time: +200ms
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - time: +200ms
+          l_cap1: off
+          l_pop_bumper: white
+    - time: "+200ms"
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: "+200ms"
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: "+200ms"
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: "+200ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -1590,53 +1590,37 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +1
+    - time: "+1"
       lights:
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: off
           l_apron2: off
           l_apron3: off
           l_apron4: off
           l_apron5: off
-    - time: +200ms
-      lights:
-          l_apron1: white
-          l_apron2: white
-          l_apron3: white
-          l_apron4: white
-          l_apron5: white
-          l_apron6: white
-    - time: +200ms
-      lights:
-          l_apron1: off
-          l_apron2: off
-          l_apron3: off
-          l_apron4: off
-          l_apron5: off
-          l_apron6: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_apron1: white
           l_apron2: white
@@ -1644,73 +1628,89 @@
           l_apron4: white
           l_apron5: white
           l_apron6: white
-    - time: +200ms
+    - time: "+200ms"
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: "+200ms"
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: "+200ms"
       lights:
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: off
           l_apron2: off
@@ -1718,16 +1718,16 @@
           l_apron4: off
           l_apron5: off
           l_apron6: off
-    - time: +1
+    - time: "+1"
       slides:
           doop_warning_slide:
               action: remove
-    - time: +500ms
+    - time: "+500ms"
       shows:
           homemade_intro_show:
               loops: 0
               priority: 500
-    - time: +30
+    - time: "+30"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -1783,7 +1783,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -1839,7 +1839,7 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -1895,7 +1895,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -1951,7 +1951,7 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -2007,7 +2007,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -2063,160 +2063,160 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +3
+    - time: "+3"
       lights:
           l_left_loop: off
           l_right_loop: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_loop: white
           l_right_loop: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_loop: off
           l_right_loop: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PEHQ1: off
           l_PEHQ2: off
           l_PEHQ3: off
-    - time: +1
+    - time: "+1"
       lights:
           l_left_loop: white
           l_right_loop: white
-    - time: +1
+    - time: "+1"
       lights:
           l_scoop: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_VUK1: 670467
-    - time: +400ms
+    - time: "+400ms"
       lights:
           l_VUK2: 670467
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_tube1: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube2: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube3: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube4: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +700ms
+          l_left_spotlight: "00ffff"
+    - time: "+700ms"
       lights:
           l_left_sling: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: off
           l_left_sling: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: white
           l_left_sling: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: off
           l_left_sling: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_sling: off
           l_DTbank1: off
           l_DTbank2: off
           l_DTbank3: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_PE_spinner1: off
           l_DTbank1: white
           l_DTbank2: white
           l_DTbank3: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-          l_pop_bumper: 0029ff
-    - time: +200ms
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - time: +200ms
-      lights:
-          l_PE_spinner4: white
-          l_PE_spinner1: off
-          l_cap1: off
-          l_pop_bumper: white
-    - time: +200ms
-      lights:
-          l_PE_spinner1: white
-          l_PE_spinner2: off
-          l_cap1: white
-          l_cap2: off
-    - time: +200ms
-      lights:
-          l_PE_spinner2: white
-          l_PE_spinner3: off
-          l_cap2: white
-          l_cap3: off
-    - time: +200ms
-      lights:
-          l_PE_spinner3: white
-          l_PE_spinner4: off
-          l_cap3: white
-          l_pop_bumper: 0029ff
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
           l_cap1: off
           l_pop_bumper: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
           l_cap1: white
           l_cap2: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
           l_cap2: white
           l_cap3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
           l_cap3: white
-          l_pop_bumper: 0029ff
-    - time: +200ms
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - time: +200ms
+          l_cap1: off
+          l_pop_bumper: white
+    - time: "+200ms"
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: "+200ms"
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: "+200ms"
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: "+200ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -2272,53 +2272,37 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +1
+    - time: "+1"
       lights:
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: off
           l_apron2: off
           l_apron3: off
           l_apron4: off
           l_apron5: off
-    - time: +200ms
-      lights:
-          l_apron1: white
-          l_apron2: white
-          l_apron3: white
-          l_apron4: white
-          l_apron5: white
-          l_apron6: white
-    - time: +200ms
-      lights:
-          l_apron1: off
-          l_apron2: off
-          l_apron3: off
-          l_apron4: off
-          l_apron5: off
-          l_apron6: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_apron1: white
           l_apron2: white
@@ -2326,73 +2310,89 @@
           l_apron4: white
           l_apron5: white
           l_apron6: white
-    - time: +200ms
+    - time: "+200ms"
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: "+200ms"
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: "+200ms"
       lights:
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: off
           l_apron2: off
@@ -2400,12 +2400,12 @@
           l_apron4: off
           l_apron5: off
           l_apron6: off
-    - time: +500ms
+    - time: "+500ms"
       shows:
           glagnars_commercial_show:
               loops: 0
               priority: 500
-    - time: +10
+    - time: "+10"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -2461,7 +2461,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -2517,7 +2517,7 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -2573,7 +2573,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -2629,7 +2629,7 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -2685,7 +2685,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -2741,165 +2741,165 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +1
+    - time: "+1"
       slides:
           doop_warning_slide:
               action: play
               priority: 200
-    - time: +2
+    - time: "+2"
       lights:
           l_left_loop: off
           l_right_loop: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_loop: white
           l_right_loop: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_loop: off
           l_right_loop: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PEHQ1: off
           l_PEHQ2: off
           l_PEHQ3: off
-    - time: +1
+    - time: "+1"
       lights:
           l_left_loop: white
           l_right_loop: white
-    - time: +1
+    - time: "+1"
       lights:
           l_scoop: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_VUK1: 670467
-    - time: +400ms
+    - time: "+400ms"
       lights:
           l_VUK2: 670467
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_tube1: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube2: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube3: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube4: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +700ms
+          l_left_spotlight: "00ffff"
+    - time: "+700ms"
       lights:
           l_left_sling: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: off
           l_left_sling: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: white
           l_left_sling: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: off
           l_left_sling: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_sling: off
           l_DTbank1: off
           l_DTbank2: off
           l_DTbank3: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_PE_spinner1: off
           l_DTbank1: white
           l_DTbank2: white
           l_DTbank3: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-          l_pop_bumper: 0029ff
-    - time: +200ms
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - time: +200ms
-      lights:
-          l_PE_spinner4: white
-          l_PE_spinner1: off
-          l_cap1: off
-          l_pop_bumper: white
-    - time: +200ms
-      lights:
-          l_PE_spinner1: white
-          l_PE_spinner2: off
-          l_cap1: white
-          l_cap2: off
-    - time: +200ms
-      lights:
-          l_PE_spinner2: white
-          l_PE_spinner3: off
-          l_cap2: white
-          l_cap3: off
-    - time: +200ms
-      lights:
-          l_PE_spinner3: white
-          l_PE_spinner4: off
-          l_cap3: white
-          l_pop_bumper: 0029ff
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
           l_cap1: off
           l_pop_bumper: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
           l_cap1: white
           l_cap2: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
           l_cap2: white
           l_cap3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
           l_cap3: white
-          l_pop_bumper: 0029ff
-    - time: +200ms
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - time: +200ms
+          l_cap1: off
+          l_pop_bumper: white
+    - time: "+200ms"
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: "+200ms"
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: "+200ms"
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: "+200ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -2955,53 +2955,37 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +1
+    - time: "+1"
       lights:
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: off
           l_apron2: off
           l_apron3: off
           l_apron4: off
           l_apron5: off
-    - time: +200ms
-      lights:
-          l_apron1: white
-          l_apron2: white
-          l_apron3: white
-          l_apron4: white
-          l_apron5: white
-          l_apron6: white
-    - time: +200ms
-      lights:
-          l_apron1: off
-          l_apron2: off
-          l_apron3: off
-          l_apron4: off
-          l_apron5: off
-          l_apron6: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_apron1: white
           l_apron2: white
@@ -3009,73 +2993,89 @@
           l_apron4: white
           l_apron5: white
           l_apron6: white
-    - time: +200ms
+    - time: "+200ms"
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: "+200ms"
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: "+200ms"
       lights:
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: off
           l_apron2: off
@@ -3083,16 +3083,16 @@
           l_apron4: off
           l_apron5: off
           l_apron6: off
-    - time: +1
+    - time: "+1"
       slides:
           doop_warning_slide:
               action: remove
-    - time: +500ms
+    - time: "+500ms"
       shows:
           teeth_commercial_show:
               loops: 0
               priority: 500
-    - time: +10
+    - time: "+10"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -3148,7 +3148,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -3204,7 +3204,7 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -3260,7 +3260,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -3316,7 +3316,7 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: off
           l_right_upper_wedge: off
@@ -3372,7 +3372,7 @@
           l_drain: off
           l_cryopod: off
           l_left_inlane: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -3428,165 +3428,165 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +1
+    - time: "+1"
       slides:
           doop_warning_slide:
               action: play
               priority: 200
-    - time: +2
+    - time: "+2"
       lights:
           l_left_loop: off
           l_right_loop: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_loop: white
           l_right_loop: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_loop: off
           l_right_loop: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PEHQ1: off
           l_PEHQ2: off
           l_PEHQ3: off
-    - time: +1
+    - time: "+1"
       lights:
           l_left_loop: white
           l_right_loop: white
-    - time: +1
+    - time: "+1"
       lights:
           l_scoop: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_VUK1: 670467
-    - time: +400ms
+    - time: "+400ms"
       lights:
           l_VUK2: 670467
-    - time: +300ms
+    - time: "+300ms"
       lights:
           l_tube1: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube2: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube3: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_tube4: 670467
-    - time: +200ms
+    - time: "+200ms"
       lights:
-          l_left_spotlight: 00ffff
-    - time: +700ms
+          l_left_spotlight: "00ffff"
+    - time: "+700ms"
       lights:
           l_left_sling: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: off
           l_left_sling: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: white
           l_left_sling: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_right_sling: off
           l_left_sling: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_left_sling: off
           l_DTbank1: off
           l_DTbank2: off
           l_DTbank3: off
-    - time: +500ms
+    - time: "+500ms"
       lights:
           l_PE_spinner1: off
           l_DTbank1: white
           l_DTbank2: white
           l_DTbank3: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-          l_pop_bumper: 0029ff
-    - time: +200ms
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
-    - time: +200ms
-      lights:
-          l_PE_spinner4: white
-          l_PE_spinner1: off
-          l_cap1: off
-          l_pop_bumper: white
-    - time: +200ms
-      lights:
-          l_PE_spinner1: white
-          l_PE_spinner2: off
-          l_cap1: white
-          l_cap2: off
-    - time: +200ms
-      lights:
-          l_PE_spinner2: white
-          l_PE_spinner3: off
-          l_cap2: white
-          l_cap3: off
-    - time: +200ms
-      lights:
-          l_PE_spinner3: white
-          l_PE_spinner4: off
-          l_cap3: white
-          l_pop_bumper: 0029ff
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
           l_cap1: off
           l_pop_bumper: white
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner1: white
           l_PE_spinner2: off
           l_cap1: white
           l_cap2: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner2: white
           l_PE_spinner3: off
           l_cap2: white
           l_cap3: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_PE_spinner3: white
           l_PE_spinner4: off
           l_cap3: white
-          l_pop_bumper: 0029ff
-    - time: +200ms
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
       lights:
           l_PE_spinner4: white
           l_PE_spinner1: off
-    - time: +200ms
+          l_cap1: off
+          l_pop_bumper: white
+    - time: "+200ms"
+      lights:
+          l_PE_spinner1: white
+          l_PE_spinner2: off
+          l_cap1: white
+          l_cap2: off
+    - time: "+200ms"
+      lights:
+          l_PE_spinner2: white
+          l_PE_spinner3: off
+          l_cap2: white
+          l_cap3: off
+    - time: "+200ms"
+      lights:
+          l_PE_spinner3: white
+          l_PE_spinner4: off
+          l_cap3: white
+          l_pop_bumper: "0029ff"
+    - time: "+200ms"
+      lights:
+          l_PE_spinner4: white
+          l_PE_spinner1: off
+    - time: "+200ms"
       lights:
           l_right_corner: white
           l_right_upper_wedge: white
@@ -3642,53 +3642,37 @@
           l_drain: white
           l_cryopod: white
           l_left_inlane: white
-    - time: +1
+    - time: "+1"
       lights:
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: off
           l_apron2: off
           l_apron3: off
           l_apron4: off
           l_apron5: off
-    - time: +200ms
-      lights:
-          l_apron1: white
-          l_apron2: white
-          l_apron3: white
-          l_apron4: white
-          l_apron5: white
-          l_apron6: white
-    - time: +200ms
-      lights:
-          l_apron1: off
-          l_apron2: off
-          l_apron3: off
-          l_apron4: off
-          l_apron5: off
-          l_apron6: off
-    - time: +200ms
+    - time: "+200ms"
       lights:
           l_apron1: white
           l_apron2: white
@@ -3696,73 +3680,89 @@
           l_apron4: white
           l_apron5: white
           l_apron6: white
-    - time: +200ms
+    - time: "+200ms"
+      lights:
+          l_apron1: off
+          l_apron2: off
+          l_apron3: off
+          l_apron4: off
+          l_apron5: off
+          l_apron6: off
+    - time: "+200ms"
+      lights:
+          l_apron1: white
+          l_apron2: white
+          l_apron3: white
+          l_apron4: white
+          l_apron5: white
+          l_apron6: white
+    - time: "+200ms"
       lights:
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron6: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron6: white
           l_apron5: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron5: white
           l_apron4: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron4: white
           l_apron3: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron3: white
           l_apron2: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron2: white
           l_apron1: off
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: white
-    - time: +100ms
+    - time: "+100ms"
       lights:
           l_apron1: off
           l_apron2: off
@@ -3770,15 +3770,15 @@
           l_apron4: off
           l_apron5: off
           l_apron6: off
-    - time: +1
+    - time: "+1"
       slides:
           doop_warning_slide:
               action: remove
-    - time: +500ms
+    - time: "+500ms"
       shows:
           slurm_factory_commercial_show:
               loops: 0
               priority: 500
-    - time: +49
+    - time: "+49"
       lights:
           l_left_spotlight: ffffff

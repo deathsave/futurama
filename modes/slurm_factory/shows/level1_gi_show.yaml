@@ -1,8 +1,8 @@
-#show_version=5
+#show_version=6
 ##! show: level1_gi_show
 
 
-    - time: +450ms
+    - time: "+450ms"
       lights:
           gi:
               color: ff22ff
@@ -23,7 +23,7 @@
               color: ffffff
           l_apron6:
               color: ffffff
-    - time: +450ms
+    - time: "+450ms"
       lights:
           l_apron1:
               color: ff00ff
@@ -31,7 +31,7 @@
           l_apron2:
               color: ff55ff
               fade: 400ms
-    - time: +450ms
+    - time: "+450ms"
       lights:
           gi:
               color: ffffff
@@ -48,7 +48,7 @@
           l_apron3:
               color: ff55ff
               fade: 400ms
-    - time: +450ms
+    - time: "+450ms"
       lights:
           l_apron1:
               color: ffffff
@@ -62,7 +62,7 @@
           l_apron4:
               color: ff55ff
               fade: 400ms
-    - time: +450ms
+    - time: "+450ms"
       lights:
           gi:
               color: ff22ff
@@ -82,7 +82,7 @@
           l_apron5:
               color: ff55ff
               fade: 400ms
-    - time: +450ms
+    - time: "+450ms"
       lights:
           l_apron3:
               color: ffffff
@@ -96,7 +96,7 @@
           l_apron6:
               color: ff55ff
               fade: 400ms
-    - time: +450ms
+    - time: "+450ms"
       lights:
           gi:
               color: ffffff
@@ -113,7 +113,7 @@
           l_apron6:
               color: ff00ff
               fade: 400ms
-    - time: +450ms
+    - time: "+450ms"
       lights:
           l_apron6:
               color: ff55ff
@@ -124,72 +124,7 @@
           l_apron4:
               color: ff55ff
               fade: 400ms
-    - time: +450ms
-      lights:
-          gi:
-              color: ff22ff
-              fade: 400ms
-          spotlights:
-              color: ff22ff
-              fade: 400ms
-          l_apron6:
-              color: ffffff
-              fade: 400ms
-          l_apron5:
-              color: ff55ff
-              fade: 400ms
-          l_apron4:
-              color: ff00ff
-              fade: 400ms
-          l_apron3:
-              color: ff55ff
-              fade: 400ms
-    - time: +450ms
-      lights:
-          l_apron5:
-              color: ffffff
-              fade: 400ms
-          l_apron4:
-              color: ff55ff
-              fade: 400ms
-          l_apron3:
-              color: ff00ff
-              fade: 400ms
-          l_apron2:
-              color: ff55ff
-              fade: 400ms
-    - time: +450ms
-      lights:
-          gi:
-              color: ffffff
-              fade: 400ms
-          spotlights:
-              color: ffffff
-              fade: 400ms
-          l_apron4:
-              color: ffffff
-              fade: 400ms
-          l_apron3:
-              color: ff55ff
-              fade: 400ms
-          l_apron2:
-              color: ff00ff
-              fade: 400ms
-          l_apron1:
-              color: ff55ff
-              fade: 400ms
-    - time: +450ms
-      lights:
-          l_apron3:
-              color: ffffff
-              fade: 400ms
-          l_apron2:
-              color: ff55ff
-              fade: 400ms
-          l_apron1:
-              color: ff00ff
-              fade: 400ms
-    - time: +450ms
+    - time: "+450ms"
       lights:
           gi:
               color: ff22ff
@@ -197,13 +132,78 @@
           spotlights:
               color: ff22ff
               fade: 400ms
+          l_apron6:
+              color: ffffff
+              fade: 400ms
+          l_apron5:
+              color: ff55ff
+              fade: 400ms
+          l_apron4:
+              color: ff00ff
+              fade: 400ms
+          l_apron3:
+              color: ff55ff
+              fade: 400ms
+    - time: "+450ms"
+      lights:
+          l_apron5:
+              color: ffffff
+              fade: 400ms
+          l_apron4:
+              color: ff55ff
+              fade: 400ms
+          l_apron3:
+              color: ff00ff
+              fade: 400ms
+          l_apron2:
+              color: ff55ff
+              fade: 400ms
+    - time: "+450ms"
+      lights:
+          gi:
+              color: ffffff
+              fade: 400ms
+          spotlights:
+              color: ffffff
+              fade: 400ms
+          l_apron4:
+              color: ffffff
+              fade: 400ms
+          l_apron3:
+              color: ff55ff
+              fade: 400ms
+          l_apron2:
+              color: ff00ff
+              fade: 400ms
+          l_apron1:
+              color: ff55ff
+              fade: 400ms
+    - time: "+450ms"
+      lights:
+          l_apron3:
+              color: ffffff
+              fade: 400ms
+          l_apron2:
+              color: ff55ff
+              fade: 400ms
+          l_apron1:
+              color: ff00ff
+              fade: 400ms
+    - time: "+450ms"
+      lights:
+          gi:
+              color: ff22ff
+              fade: 400ms
+          spotlights:
+              color: ff22ff
+              fade: 400ms
           l_apron2:
               color: ffffff
               fade: 400ms
           l_apron1:
               color: ff55ff
               fade: 400ms
-    - time: +450ms
+    - time: "+450ms"
       lights:
           l_apron1:
               color: ffffff
@@ -223,7 +223,7 @@
           l_apron6:
               color: ff00ff
               fade: 400ms
-    - time: +450ms
+    - time: "+450ms"
       lights:
           gi:
               color: ffffff
@@ -249,7 +249,7 @@
           l_apron6:
               color: ffffff
               fade: 400ms
-    - time: +450ms
+    - time: "+450ms"
       lights:
           l_apron1:
               color: ffffff

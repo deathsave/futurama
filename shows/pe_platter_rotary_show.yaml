@@ -1,21 +1,21 @@
-#show_version=5
+#show_version=6
 ##! show: pe_platter_rotary_show
 
     - duration: 100ms
       lights:
-          l_PE_spinner1: 000000
+          l_PE_spinner1: "000000"
     - duration: 100ms
       lights:
           l_PE_spinner1: ffffff
-          l_PE_spinner2: 000000
+          l_PE_spinner2: "000000"
     - duration: 100ms
       lights:
           l_PE_spinner2: ffffff
-          l_PE_spinner3: 000000
+          l_PE_spinner3: "000000"
     - duration: 100ms
       lights:
           l_PE_spinner3: ffffff
-          l_PE_spinner4: 000000
+          l_PE_spinner4: "000000"
     - duration: 50ms
       lights:
           l_PE_spinner4: ffffff

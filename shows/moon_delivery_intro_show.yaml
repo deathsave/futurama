@@ -1,4 +1,4 @@
-#show_version=5
+#show_version=6
 ##! show: moon_delivery_intro_show
 
 
@@ -6,7 +6,7 @@
   slides:
       moon_delivery_intro_slide:
           priority: 500
-- time: 24
+- time: "+24"
   slides:
       moon_delivery_intro_slide:
           action: remove

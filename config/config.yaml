@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 keyboard:
     shift+l:
         event: zoidberg_left
@@ -18,7 +18,7 @@ p_roc:
 
 steppers:
     zoidberg_stepper:
-        number: 00427235
+        number: "00427235"
         pos_max: 4000
         pos_min: -4000
         reset_events: zoidberg_reset
@@ -510,7 +510,7 @@ coils:
     c_magnet:
         number: A0-B1-7
         default_pulse_ms: 20
-        default_hold_power: 0.40
+        default_hold_power: "0.40"
 
 diverters:
     post_left:

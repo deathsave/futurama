@@ -1,9 +1,9 @@
-#show_version=5
+#show_version=6
 ##! show: right_ramp_lit_show
 
     - duration: 300ms
       lights:
-          l_nibbler_lamp: 000000
+          l_nibbler_lamp: "000000"
     - duration: 300ms
       lights:
           l_nibbler_lamp: ffffff
