@@ -3,7 +3,7 @@
 
     - duration: 300ms
       lights:
-          l_right_orbit: "000000"
+          orbit: "000000"
     - duration: 300ms
       lights:
-          l_right_orbit: ffffff
+          orbit: ffffff

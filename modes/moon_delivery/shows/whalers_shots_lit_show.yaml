@@ -3,9 +3,9 @@
 
     - duration: 300ms
       lights:
-          l_left_loop: "000000"
-          l_right_loop: "000000"
+          l_left_loop_insert: "000000"
+          l_right_loop_insert: "000000"
     - duration: 300ms
       lights:
-          l_left_loop: ffffff
-          l_right_loop: ffffff
+          l_left_loop_insert: ffffff
+          l_right_loop_insert: ffffff

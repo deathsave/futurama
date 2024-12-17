@@ -59,9 +59,9 @@ state_machines:
 light_player:
     moon_delivery_waiting:
         loops: ffffff
-        l_scoop: ffffff
-        l_nibbler_lamp: ffffff
-        l_right_orbit: ffffff
+        l_delivery_shot_insert: ffffff
+        l_right_ramp_insert: ffffff
+        l_right_corner1: ffffff
 ball_holds:
     final_scene_hold:
         balls_to_hold: 1

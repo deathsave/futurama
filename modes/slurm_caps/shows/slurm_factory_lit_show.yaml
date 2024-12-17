@@ -8,41 +8,41 @@
           spotlights: ff00ff
     - time: "+500ms"
       lights:
-          l_scoop: ff00ff
+          l_delivery_shot_insert: ff00ff
           l_VUK1: ff00ff
           l_VUK2: ff00ff
     - time: "+300ms"
       lights:
-          l_scoop: ffffff
+          l_delivery_shot_insert: ffffff
           l_VUK1: ffffff
           l_VUK2: ffffff
     - time: "+500ms"
       lights:
-          l_scoop: ff00ff
+          l_delivery_shot_insert: ff00ff
           l_VUK1: ff00ff
           l_VUK2: ff00ff
     - time: "+300ms"
       lights:
-          l_scoop: ffffff
+          l_delivery_shot_insert: ffffff
           l_VUK1: ffffff
           l_VUK2: ffffff
     - time: "+500ms"
       lights:
-          l_scoop: ff00ff
+          l_delivery_shot_insert: ff00ff
           l_VUK1: ff00ff
           l_VUK2: ff00ff
     - time: "+300ms"
       lights:
-          l_scoop: ffffff
+          l_delivery_shot_insert: ffffff
           l_VUK1: ffffff
           l_VUK2: ffffff
     - time: "+500ms"
       lights:
-          l_scoop: ff00ff
+          l_delivery_shot_insert: ff00ff
           l_VUK1: ff00ff
           l_VUK2: ff00ff
     - time: "+300ms"
       lights:
-          l_scoop: ffffff
+          l_delivery_shot_insert: ffffff
           l_VUK1: ffffff
           l_VUK2: ffffff
