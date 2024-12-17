@@ -4,41 +4,41 @@
 
     - time: +900ms
       lights:
-          l_nibbler_lamp:
+          l_right_ramp_insert:
               color: 0000ff
               fade: 800ms
     - time: +900ms
       lights:
-          l_nibbler_lamp:
+          l_right_ramp_insert:
               color: ffffff
               fade: 800ms
     - time: +900ms
       lights:
-          l_nibbler_lamp:
+          l_right_ramp_insert:
               color: 0000ff
               fade: 800ms
     - time: +900ms
       lights:
-          l_nibbler_lamp:
+          l_right_ramp_insert:
               color: ffffff
               fade: 800ms
     - time: +900ms
       lights:
-          l_nibbler_lamp:
+          l_right_ramp_insert:
               color: 0000ff
               fade: 800ms
     - time: +900ms
       lights:
-          l_nibbler_lamp:
+          l_right_ramp_insert:
               color: ffffff
               fade: 800ms
     - time: +900ms
       lights:
-          l_nibbler_lamp:
+          l_right_ramp_insert:
               color: 0000ff
               fade: 800ms
     - time: +900ms
       lights:
-          l_nibbler_lamp:
+          l_right_ramp_insert:
               color: ffffff
               fade: 800ms

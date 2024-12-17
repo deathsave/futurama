@@ -3,7 +3,7 @@
 
     - duration: 300ms
       lights:
-          l_scoop: "000000"
+          l_delivery_shot_insert: "000000"
     - duration: 300ms
       lights:
-          l_scoop: ffffff
+          l_delivery_shot_insert: ffffff
