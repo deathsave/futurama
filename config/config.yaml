@@ -357,113 +357,112 @@ lights:
             polarity: false
         tags: lamps, gi, ballguide
 
-#these numbers still need to be corrected
 switches:
     s_left_flipper:
-        number: A2-B0-6
+        number: A2-B0-5
         tags: left_flipper
     s_right_flipper:
-        number: A2-B0-5
+        number: A2-B0-0
         tags: right_flipper
     s_mag_button:
-        number: A2-B0-4
-    s_hedonism_bot:
         number: A2-B0-3
+    s_hedonism_bot:
+        number: A2-B0-2
         ignore_window_ms: 2000
     s_trough_jam:
-        number: A1-B1-7
+        number: A0-B1-7
         type: NC
     s_trough1:
-        number: A1-B1-6
+        number: A0-B1-6
         type: NC
     s_trough2:
-        number: A0-B0-2
+        number: A0-B0-1
         type: NC
     s_trough3:
         number: A0-B0-0
         type: NC
     s_shooter_lane:
-        number: A0-B0-1
+        number: A1-B1-0
     s_start:
-        number: A2-B0-7
+        number: A2-B0-6
         tags: start
     s_cap1:
-        number: A0-B1-4
-        tags: playfield_active
-        debounce: normal
-    s_cap2:
-        number: A0-B1-5
-        tags: playfield_active
-        debounce: normal
-    s_cap3:
-        number: A0-B0-5
-        tags: playfield_active
-        debounce: normal
-    s_cap4:
         number: A0-B0-3
         tags: playfield_active
         debounce: normal
+    s_cap2:
+        number: A1-B0-7
+        tags: playfield_active
+        debounce: normal
+    s_cap3:
+        number: A1-B0-6
+        tags: playfield_active
+        debounce: normal
+    s_cap4:
+        number: A1-B0-5
+        tags: playfield_active
+        debounce: normal
     s_r_outlane:
-        number: A0-B0-4
+        number: A0-B0-2
         tags: playfield_active
     s_left_outlane:
-        number: A0-B1-0
+        number: A0-B0-7
         tags: playfield_active
     s_suicide_booth:
-        number:
+        number: A0-B1-0
     s_left_inlane:
-        number: A0-B1-1
+        number: A0-B0-6
         tags: playfield_active
     s_pop_bumper:
-        number: A0-B0-6
+        number: A1-B0-4
     s_left_sling:
-        number: A0-B1-2
+        number: A0-B0-5
     s_right_sling:
-        number: A0-B1-3
+        number: A0-B0-4
     s_VUK:
-        number: A1-B1-5
+        number: A1-B1-4
         type: NC
     s_pe_platter:
-        number: A1-B1-4
+        number: A1-B1-7
         tags: playfield_active
     s_r_orbit:
-        number: A1-B1-3
-        tags: playfield_active
-        type: NC
-    s_left_ramp:
         number: A1-B1-2
         tags: playfield_active
         type: NC
+    s_left_ramp:
+        number: A1-B1-6
+        tags: playfield_active
+        type: NC
     s_left_loop:
-        number: A1-B1-1
+        number: A1-B1-5
         type: NC
     s_right_loop:
-        number: A1-B1-0
+        number: A1-B1-3
         type: NC
     s_dt_nibbler:
-        number: A1-B0-7
+        number: A0-B1-1
     s_dt_zoidberg:
-        number: A1-B0-6
+        number: A0-B1-2
     s_dt_professor:
-        number: A1-B0-5
+        number: A0-B1-3
     s_dt_hermes:
-        number: A1-B0-4
+        number: A0-B1-5
     s_dt_amy:
-        number: A1-B0-3
+        number: A0-B1-4
     s_t_leela:
-        number: A1-B0-2
+        number: A1-B0-3
         tags: playfield_active
         debounce: normal
     s_t_fry:
-        number: A1-B0-1
+        number: A1-B0-2
         tags: playfield_active
         debounce: normal
     s_t_bender:
-        number: A1-B0-0
+        number: A1-B0-1
         tags: playfield_active
         debounce: normal
     s_right_ramp:
-        number: A0-B0-7
+        number: A1-B0-0
         tags: playfield_active
         debounce: normal
 
