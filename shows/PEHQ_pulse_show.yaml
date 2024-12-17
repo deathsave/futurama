@@ -3,7 +3,7 @@
 
     - duration: 300ms
       lights:
-          l_under_HQ: off
+          HQ: off
     - duration: 300ms
       lights:
-          l_under_HQ: white
+          HQ: white

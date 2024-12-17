@@ -4,41 +4,41 @@
 
     - time: "+900ms"
       lights:
-          l_right_loop:
+          l_right_loop_insert:
               color: "0000ff"
               fade: 1
     - time: "+900ms"
       lights:
-          l_right_loop:
+          l_right_loop_insert:
               color: ffffff
               fade: 1
     - time: "+900ms"
       lights:
-          l_right_loop:
+          l_right_loop_insert:
               color: "0000ff"
               fade: 1
     - time: "+900ms"
       lights:
-          l_right_loop:
+          l_right_loop_insert:
               color: ffffff
               fade: 1
     - time: "+900ms"
       lights:
-          l_right_loop:
+          l_right_loop_insert:
               color: "0000ff"
               fade: 1
     - time: "+900ms"
       lights:
-          l_right_loop:
+          l_right_loop_insert:
               color: ffffff
               fade: 1
     - time: "+900ms"
       lights:
-          l_right_loop:
+          l_right_loop_insert:
               color: "0000ff"
               fade: 1
     - time: "+900ms"
       lights:
-          l_right_loop:
+          l_right_loop_insert:
               color: ffffff
               fade: 1

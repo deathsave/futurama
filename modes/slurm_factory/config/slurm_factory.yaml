@@ -295,9 +295,9 @@ show_player:
 light_player:
     slurm_factory_tour_begins:
         loops: ffffff
-        l_scoop: ffffff
-        l_nibbler_lamp: ffffff
-        l_right_orbit: ffffff
+        l_delivery_shot_insert: ffffff
+        l_right_corner2: ffffff
+        l_right_corner1: ffffff
 
 event_player:
     timer_slurm_factory_release_ball_timer_complete: pure_imagination

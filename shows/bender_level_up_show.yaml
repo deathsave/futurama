@@ -3,33 +3,30 @@
 
     - duration: 250ms
       lights:
-          l_under_HQ: 3f3f3f
+          HQ: 3f3f3f
           l_drain: 3f3f3f
-          l_DTbank1: 3f3f3f
-          l_DTbank2: 3f3f3f
-          l_DTbank3: 3f3f3f
+          l_DTGI1: 3f3f3f
+          l_DTGI2: 3f3f3f
           l_pop_bumper: 3f3f3f
           l_left_sling: 3f3f3f
           l_right_sling: 3f3f3f
           l_left_spotlight: 3f3f3f
     - duration: 250ms
       lights:
-          l_under_HQ: ffffff
+          HQ: ffffff
           l_drain: ffffff
-          l_DTbank1: ffffff
-          l_DTbank2: ffffff
-          l_DTbank3: ffffff
+          l_DTGI1: ffffff
+          l_DTGI2: ffffff
           l_pop_bumper: ffffff
           l_left_sling: ffffff
           l_right_sling: ffffff
           l_left_spotlight: ffffff
     - duration: 500ms
       lights:
-          l_under_HQ: "0029ff"
+          HQ: "0029ff"
           l_drain: 3f3f3f
-          l_DTbank1: 3f3f3f
-          l_DTbank2: 3f3f3f
-          l_DTbank3: 3f3f3f
+          l_DTGI1: 3f3f3f
+          l_DTGI2: 3f3f3f
           l_pop_bumper: 3f3f3f
           l_left_sling: 3f3f3f
           l_right_sling: 3f3f3f
