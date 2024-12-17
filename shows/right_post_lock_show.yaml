@@ -3,25 +3,25 @@
 
     - duration: 500ms
       lights:
-          l_right_loop: "000000"
+          l_right_loop_insert: "000000"
     - duration: 500ms
       lights:
-          l_right_loop: ffffff
+          l_right_loop_insert: ffffff
     - duration: 500ms
       lights:
-          l_right_loop: "000000"
+          l_right_loop_insert: "000000"
     - duration: 500ms
       lights:
-          l_right_loop: ffffff
+          l_right_loop_insert: ffffff
     - duration: 500ms
       lights:
-          l_right_loop: "000000"
+          l_right_loop_insert: "000000"
     - duration: 500ms
       lights:
-          l_right_loop: ffffff
+          l_right_loop_insert: ffffff
     - duration: 500ms
       lights:
-          l_right_loop: "000000"
+          l_right_loop_insert: "000000"
     - duration: 500ms
       lights:
-          l_right_loop: ffffff
+          l_right_loop_insert: ffffff

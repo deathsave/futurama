@@ -4,41 +4,41 @@
 
     - time: +900ms
       lights:
-          l_right_orbit:
+          orbit:
               color: 0000ff
               fade: 800ms
     - time: +900ms
       lights:
-          l_right_orbit:
+          orbit:
               color: ffffff
               fade: 800ms
     - time: +900ms
       lights:
-          l_right_orbit:
+          orbit:
               color: 0000ff
               fade: 800ms
     - time: +900ms
       lights:
-          l_right_orbit:
+          orbit:
               color: ffffff
               fade: 800ms
     - time: +900ms
       lights:
-          l_right_orbit:
+          orbit:
               color: 0000ff
               fade: 800ms
     - time: +900ms
       lights:
-          l_right_orbit:
+          orbit:
               color: ffffff
               fade: 800ms
     - time: +900ms
       lights:
-          l_right_orbit:
+          orbit:
               color: 0000ff
               fade: 800ms
     - time: +900ms
       lights:
-          l_right_orbit:
+          orbit:
               color: ffffff
               fade: 800ms
