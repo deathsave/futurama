@@ -96,7 +96,7 @@ lights:
             polarity: false
         tags: lamps, gi
     l_right_corner2:
-        number: 2-25-16-17
+        number: 2-15-16-17
         platform_settings:
             polarity: false
         tags: lamps, gi
@@ -191,12 +191,12 @@ lights:
             polarity: false
         tags: lamps, tubes
     l_HQGI1:
-        number: 2-1-2-3
+        number: 2-0-1-2
         platform_settings:
             polarity: false
         tags: lamps, HQ, gi
     l_HQGI2:
-        number: 2-4-5-6
+        number: 2-3-4-5
         platform_settings:
             polarity: false
         tags: lamps, HQ, gi
@@ -317,7 +317,7 @@ lights:
             polarity: false
         tags: lamps, apron
     l_apron1:
-        number: 0-1-2-3
+        number: 0-0-1-2
         platform_settings:
             polarity: false
         tags: lamps, apron
