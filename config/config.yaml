@@ -90,6 +90,8 @@ light_settings:
     default_fade_ms: 40
 
 lights:
+#remember, the reason the boards here are listed as 0 and 2 is because they are DRIVER BOARDS
+#0 and 2, since with P3 the driver and LED boards share address space.
     l_right_corner1:
         number: 2-12-13-14
         platform_settings:
@@ -410,6 +412,7 @@ switches:
         tags: playfield_active
     s_suicide_booth:
         number: A0-B1-0
+        type: NC
     s_left_inlane:
         number: A0-B0-6
         tags: playfield_active
@@ -441,14 +444,19 @@ switches:
         type: NC
     s_dt_nibbler:
         number: A0-B1-1
+        type: NC
     s_dt_zoidberg:
         number: A0-B1-2
+        type: NC
     s_dt_professor:
         number: A0-B1-3
+        type: NC
     s_dt_hermes:
         number: A0-B1-5
+        type: NC
     s_dt_amy:
         number: A0-B1-4
+        type: NC
     s_t_leela:
         number: A1-B0-3
         tags: playfield_active
