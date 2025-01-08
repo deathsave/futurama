@@ -1,0 +1,9 @@
+#show_version=6
+##! show: custom_flash_show
+
+    - duration: (pace)
+      lights:
+          (which): (color)
+    - duration: (pace)
+      lights:
+          (which): off
