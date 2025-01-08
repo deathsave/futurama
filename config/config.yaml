@@ -372,10 +372,10 @@ switches:
         number: A2-B0-2
         ignore_window_ms: 2000
     s_trough_jam:
-        number: A0-B1-7
+        number: A0-B1-0
         type: NC
     s_trough1:
-        number: A0-B1-6
+        number: A0-B1-1
         type: NC
     s_trough2:
         number: A0-B0-1
@@ -396,10 +396,8 @@ switches:
         number: A1-B0-7
         tags: playfield_active
         debounce: normal
-    s_cap3:
+    s_pop_bumper:
         number: A1-B0-6
-        tags: playfield_active
-        debounce: normal
     s_cap4:
         number: A1-B0-5
         tags: playfield_active
@@ -411,13 +409,15 @@ switches:
         number: A0-B0-7
         tags: playfield_active
     s_suicide_booth:
-        number: A0-B1-0
+        number: A0-B1-7
         type: NC
     s_left_inlane:
         number: A0-B0-6
         tags: playfield_active
-    s_pop_bumper:
+    s_cap3:
         number: A1-B0-4
+        tags: playfield_active
+        debounce: normal
     s_left_sling:
         number: A0-B0-5
     s_right_sling:
@@ -443,20 +443,15 @@ switches:
         number: A1-B1-3
         type: NC
     s_dt_nibbler:
-        number: A0-B1-1
-        type: NC
+        number: A0-B1-6
     s_dt_zoidberg:
-        number: A0-B1-2
-        type: NC
-    s_dt_professor:
-        number: A0-B1-3
-        type: NC
-    s_dt_hermes:
         number: A0-B1-5
-        type: NC
-    s_dt_amy:
+    s_dt_professor:
         number: A0-B1-4
-        type: NC
+    s_dt_hermes:
+        number: A0-B1-2
+    s_dt_amy:
+        number: A0-B1-3
     s_t_leela:
         number: A1-B0-3
         tags: playfield_active
