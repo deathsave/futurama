@@ -4,6 +4,35 @@ mode:
     priority: 100
 
 state_machines:
+    mom_zapp_toggle_state:
+        starting_state: mom
+        persist_state: true
+        states:
+            mom:
+                label: Start state
+                events_when_started: mom_shot_lit
+            zapp:
+                label: zapp
+                events_when_started: zapp_shot_lit
+            ignore:
+                label: off
+        transitions:
+            - source: mom
+              target: zapp
+              events: mom_zapp_toggle
+            - source: zapp
+              target: mom
+              events: mom_zapp_toggle 
+            - source: mom
+              target: ignore
+              events: mom_zapp_off
+            - source: zapp
+              target: ignore
+              events: mom_zapp_off 
+            - source: ignore
+              target: zapp
+              events: mom_zapp_on 
+
     fuel_gauge_state:
         persist_state: true
         states:
@@ -265,31 +294,29 @@ widget_player:
 
 variable_player:
     base_fry_target_shot_hit:
-        score: 100 * current_player.fry_multiplier
+        score: machine.target_points * current_player.fry_multiplier
         fry_xp: 1
     base_leela_target_shot_hit:
-        score: 100 * current_player.leela_multiplier
+        score: machine.target_points * current_player.leela_multiplier
         leela_xp: 1
     base_bender_target_shot_hit:
-        score: 100 * current_player.bender_multiplier
+        score: machine.target_points * current_player.bender_multiplier
         bender_xp: 1
     s_dt_amy_active:
-        score: 500 * current_player.amy_multiplier
+        score: machine.DT_points * current_player.amy_multiplier
         amy_xp: 1
     s_dt_hermes_active:
-        score: 500 * current_player.hermes_multiplier
+        score: machine.DT_points * current_player.hermes_multiplier
         hermes_xp: 1
     s_dt_nibbler_active:
-        score: 500 * current_player.nibbler_multiplier
+        score: machine.DT_points * current_player.nibbler_multiplier
         nibbler_xp: 1
     s_dt_zoidberg_active:
-        score: 500 * current_player.zoidberg_multiplier
+        score: machine.DT_points * current_player.zoidberg_multiplier
         zoidberg_xp: 1
     s_dt_professor_active:
-        score: 500 * current_player.professor_multiplier
+        score: machine.DT_points * current_player.professor_multiplier
         professor_xp: 1
-    s_right_orbit_active:
-        score: 150
     s_pe_platter_active:
         score: 33 * current_player.crew_multiplier
         platter_short_counter: 1
@@ -375,23 +402,23 @@ variable_player:
         professor_level: 1
         professor_multiplier: 1
     right_loop_hit:
-        score: 150
+        score: machine.loop_points * current_player.loop_multiplier
     left_loop_hit:
-        score: 150
+        score: machine.loop_points * current_player.loop_multiplier
     left_right_double_loop_hit:
-        score: 1000
+        score: machine.loop_points * current_player.loop_multiplier * 3
     right_left_double_loop_hit:
-        score: 1000
+        score: machine.loop_points * current_player.loop_multiplier * 3
     double_left_loop_hit:
-        score: 500
+        score: machine.loop_points * current_player.loop_multiplier * 2
     double_right_loop_hit:
-        score: 500
+        score: machine.loop_points * current_player.loop_multiplier * 2
     s_pop_bumper_active:
-        score: 50 * current_player.pop_bumper_hits
+        score: machine.pop_points * current_player.pop_bumper_hits
         pop_bumper_hits: 1
     s_right_ramp_active:
         dark_matter: 1
-        score: 75 * current_player.nibbler_level
+        score: machine.ramp_points * current_player.nibbler_level
     hypnotoad_save_hit:
         hypnotoad_saves: 1
         score: 1000
@@ -400,7 +427,7 @@ variable_player:
             int: 0
             action: set
     base_tube_shot_hit:
-        score: 25 * (current_player.fry_level + 1) * (current_player.leela_level + 1) * (current_player.bender_level + 1)
+        score: machine.ramp_points * (current_player.fry_level + 1) * (current_player.leela_level + 1) * (current_player.bender_level + 1)
     slurm_caps_total_shot_hit:
         slurm_caps_total: 1
 
@@ -544,6 +571,8 @@ sound_player:
             action: play
 
 event_player:
+#these need to be redone as state_machines instead, so I can use > values to advance 
+#instead of relying on catching the exact number
     s_t_leela_active{current_player.leela_xp == 4}: leela_level1
     s_t_leela_active{current_player.leela_xp == 12}: leela_level2
     s_t_leela_active{current_player.leela_xp == 25}: leela_level3
@@ -593,8 +622,6 @@ timers:
               event: s_pe_platter_active
               value: 1
 
-
-
 shots:
     ship_spinning:
         switch: s_pe_platter
@@ -618,7 +645,14 @@ shots:
         disable_events: mode_moon_delivery_started
     slurm_caps_total_shot:
         switches: s_cap1, s_cap2, s_cap3, s_cap4
-
+    mom_shot:
+        switch: s_r_orbit * current_player.mom_multiplier
+        enable_events: mom_shot_lit
+        disable_events: zapp_shot_lit, mom_zapp_off
+    zapp_shot:
+        switch: s_r_orbit * current_player.zapp_multiplier
+        enable_events: zapp_shot_lit
+        disable_events: mom_shot_lit, mom_zapp_off
 
 
 sequence_shots:
