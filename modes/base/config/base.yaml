@@ -646,11 +646,11 @@ shots:
     slurm_caps_total_shot:
         switches: s_cap1, s_cap2, s_cap3, s_cap4
     mom_shot:
-        switch: s_r_orbit * current_player.mom_multiplier
+        switch: s_r_orbit
         enable_events: mom_shot_lit
         disable_events: zapp_shot_lit, mom_zapp_off
     zapp_shot:
-        switch: s_r_orbit * current_player.zapp_multiplier
+        switch: s_r_orbit
         enable_events: zapp_shot_lit
         disable_events: mom_shot_lit, mom_zapp_off
 
