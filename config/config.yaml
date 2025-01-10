@@ -707,6 +707,21 @@ sound_system:
 machine_vars:
     master_volume:
         initial_value: 0.8
+#these variables set base scoring combined with multipliers to build shot scoring
+    ship_points:
+        initial_value: 10
+    pop_points:
+        initial_value: 50
+    target_points:
+        initial_value: 25
+    DT_points:
+        initial_value: 50
+    ramp_points:
+        initial_value: 100
+    loop_points:
+        initial_value: 10
+    orbit_points:
+        initial_value: 10
 
 player_vars:
     leela_level:
@@ -760,6 +775,12 @@ player_vars:
     dark_matter:
         initial_value: 1
     crew_multiplier:
+        initial_value: 1
+    loop_multiplier:
+        initial_value: 1
+    zapp_multiplier:
+        initial_value: 1
+    mom_multiplier: 
         initial_value: 1
     platter_long_counter:
         initial_value: 1
