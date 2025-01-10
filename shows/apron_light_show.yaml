@@ -1,63 +1,63 @@
 #show_version=6
 ##! show: apron_light_show
 
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron1: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron1: off
           l_apron2: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron2: off
           l_apron3: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron3: off
           l_drain: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_drain: off
           l_apron4: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron4: off
           l_apron5: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron5: off
           l_apron6: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron6: off
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron6: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron6: off
           l_apron5: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron5: off
           l_apron4: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron4: off
           l_drain: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_drain: off
           l_apron3: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron3: off
           l_apron2: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron2: off
           l_apron1: on
-    - duration: (pace)
+    - duration: 500ms
       lights:
           l_apron1: off

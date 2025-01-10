@@ -1,19 +1,19 @@
 #show_version=6
 ##! show: 4_lamp_show
 
-    - duration: (pace)
+    - duration: 500ms
       lights:
           (l4): off
           (l1): (color)
-    - duration: (pace)
+    - duration: 500ms
       lights:
           (l1): off
           (l2): (color)
-    - duration: (pace)
+    - duration: 500ms
       lights:
           (l2): off
           (l3): (color)
-    - duration: (pace)
+    - duration: 500ms
       lights:
           (l3): off
           (l4): (color)
