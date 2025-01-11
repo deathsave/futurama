@@ -3,7 +3,7 @@
 
 mode:
     start_events: ball_started, mode_slurm_factory_stopped
-    stop_events: found_golden_cap
+    stop_events: found_golden_cap, ball ending
     priority: 102
 
 state_machines:

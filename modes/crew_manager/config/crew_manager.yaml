@@ -1,0 +1,526 @@
+#config_version=6
+##! mode: crew_manager
+
+mode:
+    start_events: ball_started, mode_slurm_factory_stopped
+    stop_events: found_golden_cap, ball_ending
+    priority: 105
+
+state_machines:
+    fry_level_advancement:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: fry_level1
+            fry_level2:
+                events_when_started: fry_level2
+            fry_level3:
+                events_when_started: fry_level3
+            fry_level4:
+                events_when_started: fry_level4
+            fry_level5:
+                events_when_started: fry_level5
+            fry_level6:
+                events_when_started: fry_level6
+            fry_level7:
+                events_when_started: fry_level7
+        transitions:
+            - source: start
+              target: fry_level2
+              events: s_t_fry_active{current_player.fry_xp > machine.level_2_xp}
+            - source: fry_level2
+              target: fry_level3
+              events: s_t_fry_active{current_player.fry_xp > machine.level_3_xp}
+            - source: fry_level3
+              target: fry_level4
+              events: s_t_fry_active{current_player.fry_xp > machine.level_4_xp}
+            - source: fry_level4
+              target: fry_level5
+              events: s_t_fry_active{current_player.fry_xp > machine.level_5_xp}
+            - source: fry_level5
+              target: fry_level6
+              events: s_t_fry_active{current_player.fry_xp > machine.level_6_xp}
+            - source: fry_level6
+              target: fry_level7
+              events: s_t_fry_active{current_player.fry_xp > machine.level_7_xp}
+    leela_level_advancement:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: leela_level1
+            leela_level2:
+                events_when_started: leela_level2
+            leela_level3:
+                events_when_started: leela_level3
+            leela_level4:
+                events_when_started: leela_level4
+            leela_level5:
+                events_when_started: leela_level5
+            leela_level6:
+                events_when_started: leela_level6
+            leela_level7:
+                events_when_started: leela_level7
+        transitions:
+            - source: start
+              target: leela_level2
+              events: s_t_leela_active{current_player.leela_xp > machine.level_2_xp}
+            - source: leela_level2
+              target: leela_level3
+              events: s_t_leela_active{current_player.leela_xp > machine.level_3_xp}
+            - source: leela_level3
+              target: leela_level4
+              events: s_t_leela_active{current_player.leela_xp > machine.level_4_xp}
+            - source: leela_level4
+              target: leela_level5
+              events: s_t_leela_active{current_player.leela_xp > machine.level_5_xp}
+            - source: leela_level5
+              target: leela_level6
+              events: s_t_leela_active{current_player.leela_xp > machine.level_6_xp}
+            - source: leela_level6
+              target: leela_level7
+              events: s_t_leela_active{current_player.leela_xp > machine.level_7_xp}
+    bender_level_advancement:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: bender_level1
+            bender_level2:
+                events_when_started: bender_level2
+            bender_level3:
+                events_when_started: bender_level3
+            bender_level4:
+                events_when_started: bender_level4
+            bender_level5:
+                events_when_started: bender_level5
+            bender_level6:
+                events_when_started: bender_level6
+            bender_level7:
+                events_when_started: bender_level7
+        transitions:
+            - source: start
+              target: bender_level2
+              events: s_t_bender_active{current_player.bender_xp > machine.level_2_xp}
+            - source: bender_level2
+              target: bender_level3
+              events: s_t_bender_active{current_player.bender_xp > machine.level_3_xp}
+            - source: bender_level3
+              target: bender_level4
+              events: s_t_bender_active{current_player.bender_xp > machine.level_4_xp}
+            - source: bender_level4
+              target: bender_level5
+              events: s_t_bender_active{current_player.bender_xp > machine.level_5_xp}
+            - source: bender_level5
+              target: bender_level6
+              events: s_t_bender_active{current_player.bender_xp > machine.level_6_xp}
+            - source: bender_level6
+              target: bender_level7
+              events: s_t_bender_active{current_player.bender_xp > machine.level_7_xp}
+    nibbler_level_advancement:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: nibbler_level1
+            nibbler_level2:
+                events_when_started: nibbler_level2
+            nibbler_level3:
+                events_when_started: nibbler_level3
+            nibbler_level4:
+                events_when_started: nibbler_level4
+            nibbler_level5:
+                events_when_started: nibbler_level5
+            nibbler_level6:
+                events_when_started: nibbler_level6
+            nibbler_level7:
+                events_when_started: nibbler_level7
+        transitions:
+            - source: start
+              target: nibbler_level2
+              events: s_dt_nibbler_active{current_player.nibbler_xp > machine.level_2_xp}
+            - source: nibbler_level2
+              target: nibbler_level3
+              events: s_dt_nibbler_active{current_player.nibbler_xp > machine.level_3_xp}
+            - source: nibbler_level3
+              target: nibbler_level4
+              events: s_dt_nibbler_active{current_player.nibbler_xp > machine.level_4_xp}
+            - source: nibbler_level4
+              target: nibbler_level5
+              events: s_dt_nibbler_active{current_player.nibbler_xp > machine.level_5_xp}
+            - source: nibbler_level5
+              target: nibbler_level6
+              events: s_dt_nibbler_active{current_player.nibbler_xp > machine.level_6_xp}
+            - source: nibbler_level6
+              target: nibbler_level7
+              events: s_dt_nibbler_active{current_player.nibbler_xp > machine.level_7_xp}
+    zoidberg_level_advancement:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: zoidberg_level1
+            zoidberg_level2:
+                events_when_started: zoidberg_level2
+            zoidberg_level3:
+                events_when_started: zoidberg_level3
+            zoidberg_level4:
+                events_when_started: zoidberg_level4
+            zoidberg_level5:
+                events_when_started: zoidberg_level5
+            zoidberg_level6:
+                events_when_started: zoidberg_level6
+            zoidberg_level7:
+                events_when_started: zoidberg_level7
+        transitions:
+            - source: start
+              target: zoidberg_level2
+              events: s_dt_zoidberg_active{current_player.zoidberg_xp > machine.level_2_xp}
+            - source: zoidberg_level2
+              target: zoidberg_level3
+              events: s_dt_zoidberg_active{current_player.zoidberg_xp > machine.level_3_xp}
+            - source: zoidberg_level3
+              target: zoidberg_level4
+              events: s_dt_zoidberg_active{current_player.zoidberg_xp > machine.level_4_xp}
+            - source: zoidberg_level4
+              target: zoidberg_level5
+              events: s_dt_zoidberg_active{current_player.zoidberg_xp > machine.level_5_xp}
+            - source: zoidberg_level5
+              target: zoidberg_level6
+              events: s_dt_zoidberg_active{current_player.zoidberg_xp > machine.level_6_xp}
+            - source: zoidberg_level6
+              target: zoidberg_level7
+              events: s_dt_zoidberg_active{current_player.zoidberg_xp > machine.level_7_xp}
+    professor_level_advancement:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: professor_level1
+            professor_level2:
+                events_when_started: professor_level2
+            professor_level3:
+                events_when_started: professor_level3
+            professor_level4:
+                events_when_started: professor_level4
+            professor_level5:
+                events_when_started: professor_level5
+            professor_level6:
+                events_when_started: professor_level6
+            professor_level7:
+                events_when_started: professor_level7
+        transitions:
+            - source: start
+              target: professor_level2
+              events: s_dt_professor_active{current_player.professor_xp > machine.level_2_xp}
+            - source: professor_level2
+              target: professor_level3
+              events: s_dt_professor_active{current_player.professor_xp > machine.level_3_xp}
+            - source: professor_level3
+              target: professor_level4
+              events: s_dt_professor_active{current_player.professor_xp > machine.level_4_xp}
+            - source: professor_level4
+              target: professor_level5
+              events: s_dt_professor_active{current_player.professor_xp > machine.level_5_xp}
+            - source: professor_level5
+              target: professor_level6
+              events: s_dt_professor_active{current_player.professor_xp > machine.level_6_xp}
+            - source: professor_level6
+              target: professor_level7
+              events: s_dt_professor_active{current_player.professor_xp > machine.level_7_xp}
+    amy_level_advancement:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: amy_level1
+            amy_level2:
+                events_when_started: amy_level2
+            amy_level3:
+                events_when_started: amy_level3
+            amy_level4:
+                events_when_started: amy_level4
+            amy_level5:
+                events_when_started: amy_level5
+            amy_level6:
+                events_when_started: amy_level6
+            amy_level7:
+                events_when_started: amy_level7
+        transitions:
+            - source: start
+              target: amy_level2
+              events: s_dt_amy_active{current_player.amy_xp > machine.level_2_xp}
+            - source: amy_level2
+              target: amy_level3
+              events: s_dt_amy_active{current_player.amy_xp > machine.level_3_xp}
+            - source: amy_level3
+              target: amy_level4
+              events: s_dt_amy_active{current_player.amy_xp > machine.level_4_xp}
+            - source: amy_level4
+              target: amy_level5
+              events: s_dt_amy_active{current_player.amy_xp > machine.level_5_xp}
+            - source: amy_level5
+              target: amy_level6
+              events: s_dt_amy_active{current_player.amy_xp > machine.level_6_xp}
+            - source: amy_level6
+              target: amy_level7
+              events: s_dt_amy_active{current_player.amy_xp > machine.level_7_xp}
+    hermes_level_advancement:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: hermes_level1
+            hermes_level2:
+                events_when_started: hermes_level2
+            hermes_level3:
+                events_when_started: hermes_level3
+            hermes_level4:
+                events_when_started: hermes_level4
+            hermes_level5:
+                events_when_started: hermes_level5
+            hermes_level6:
+                events_when_started: hermes_level6
+            hermes_level7:
+                events_when_started: hermes_level7
+        transitions:
+            - source: start
+              target: hermes_level2
+              events: s_dt_hermes_active{current_player.hermes_xp > machine.level_2_xp}
+            - source: hermes_level2
+              target: hermes_level3
+              events: s_dt_hermes_active{current_player.hermes_xp > machine.level_3_xp}
+            - source: hermes_level3
+              target: hermes_level4
+              events: s_dt_hermes_active{current_player.hermes_xp > machine.level_4_xp}
+            - source: hermes_level4
+              target: hermes_level5
+              events: s_dt_hermes_active{current_player.hermes_xp > machine.level_5_xp}
+            - source: hermes_level5
+              target: hermes_level6
+              events: s_dt_hermes_active{current_player.hermes_xp > machine.level_6_xp}
+            - source: hermes_level6
+              target: hermes_level7
+              events: s_dt_hermes_active{current_player.hermes_xp > machine.level_7_xp}
+
+
+
+
+show_player:
+    fry_level1:
+        fry_level_up_show:
+            loops: 0
+    fry_level2:
+        fry_level_up_show:
+            loops: 0
+    fry_level3:
+        fry_level_up_show:
+            loops: 0
+    leela_level1:
+        leela_level_up_show:
+            loops: 0
+    leela_level2:
+        leela_level_up_show:
+            loops: 0
+    leela_level3:
+        leela_level_up_show:
+            loops: 0
+    bender_level1:
+        bender_level_up_show:
+            loops: 0
+    bender_level2:
+        bender_level_up_show:
+            loops: 0
+    bender_level3:
+        bender_level_up_show:
+
+
+            loops: 0
+
+
+variable_player:
+    leela_level1:
+        leela_level: 1
+        leela_multiplier: 1
+    leela_level2:
+        leela_level: 1
+        leela_multiplier: 1
+        crew_multiplier: 1
+    leela_level3:
+        leela_level: 1
+        leela_multiplier: 1
+    leela_level4:
+        leela_level: 1
+        leela_multiplier: 1
+    leela_level5:
+        leela_level: 1
+        leela_multiplier: 1
+        crew_multiplier: 1
+    leela_level6:
+        leela_level: 1
+        leela_multiplier: 1
+    leela_level7:
+        leela_level: 1
+        leela_multiplier: 1
+    fry_level1:
+        fry_level: 1
+        fry_multiplier: 1
+    fry_level2:
+        fry_level: 1
+        fry_multiplier: 1
+        crew_multiplier: 1
+    fry_level3:
+        fry_level: 1
+        fry_multiplier: 1
+    fry_level4:
+        fry_level: 1
+        fry_multiplier: 1
+    fry_level5:
+        fry_level: 1
+        fry_multiplier: 1
+        crew_multiplier: 1
+    fry_level6:
+        fry_level: 1
+        fry_multiplier: 1
+    fry_level7:
+        fry_level: 1
+        fry_multiplier: 1
+    bender_level1:
+        bender_level: 1
+        bender_multiplier: 1
+    bender_level2:
+        bender_level: 1
+        bender_multiplier: 1
+        crew_multiplier: 1
+    bender_level3:
+        bender_level: 1
+        bender_multiplier: 1
+    bender_level4:
+        bender_level: 1
+        bender_multiplier: 1
+    bender_level5:
+        bender_level: 1
+        bender_multiplier: 1
+        crew_multiplier: 1
+    bender_level6:
+        bender_level: 1
+        bender_multiplier: 1
+    bender_level7:
+        bender_level: 1
+        bender_multiplier: 1
+    amy_level1:
+        amy_level: 1
+        amy_multiplier: 1
+    amy_level2:
+        amy_level: 1
+        amy_multiplier: 1
+        crew_multiplier: 1
+    amy_level3:
+        amy_level: 1
+        amy_multiplier: 1
+    amy_level4:
+        amy_level: 1
+        amy_multiplier: 1
+    amy_level5:
+        amy_level: 1
+        amy_multiplier: 1
+        crew_multiplier: 1
+    amy_level6:
+        amy_level: 1
+        amy_multiplier: 1
+    amy_level7:
+        amy_level: 1
+        amy_multiplier: 1
+    hermes_level1:
+        hermes_level: 1
+        hermes_multiplier: 1
+    hermes_level2:
+        hermes_level: 1
+        hermes_multiplier: 1
+        crew_multiplier: 1
+    hermes_level3:
+        hermes_level: 1
+        hermes_multiplier: 1
+    hermes_level4:
+        hermes_level: 1
+        hermes_multiplier: 1
+    hermes_level5:
+        hermes_level: 1
+        hermes_multiplier: 1
+        crew_multiplier: 1
+    hermes_level6:
+        hermes_level: 1
+        hermes_multiplier: 1
+    hermes_level7:
+        hermes_level: 1
+        hermes_multiplier: 1
+    nibbler_level1:
+        nibbler_level: 1
+        nibbler_multiplier: 1
+    nibbler_level2:
+        nibbler_level: 1
+        nibbler_multiplier: 1
+        crew_multiplier: 1
+    nibbler_level3:
+        nibbler_level: 1
+        nibbler_multiplier: 1
+    nibbler_level4:
+        nibbler_level: 1
+        nibbler_multiplier: 1
+    nibbler_level5:
+        nibbler_level: 1
+        nibbler_multiplier: 1
+        crew_multiplier: 1
+    nibbler_level6:
+        nibbler_level: 1
+        nibbler_multiplier: 1
+    nibbler_level7:
+        nibbler_level: 1
+        nibbler_multiplier: 1
+    zoidberg_level1:
+        zoidberg_level: 1
+        zoidberg_multiplier: 1
+    zoidberg_level2:
+        zoidberg_level: 1
+        zoidberg_multiplier: 1
+        crew_multiplier: 1
+    zoidberg_level3:
+        zoidberg_level: 1
+        zoidberg_multiplier: 1
+    zoidberg_level4:
+        zoidberg_level: 1
+        zoidberg_multiplier: 1
+    zoidberg_level5:
+        zoidberg_level: 1
+        zoidberg_multiplier: 1
+        crew_multiplier: 1
+    zoidberg_level6:
+        zoidberg_level: 1
+        zoidberg_multiplier: 1
+    zoidberg_level7:
+        zoidberg_level: 1
+        zoidberg_multiplier: 1
+    professor_level1:
+        proefessor_level: 1
+        professor_multiplier: 1
+    professor_level2:
+        professor_level: 1
+        professor_multiplier: 1
+        crew_multiplier: 1
+    professor_level3:
+        professor_level: 1
+        professor_multiplier: 1
+    professor_level4:
+        professor_level: 1
+        professor_multiplier: 1
+    professor_level5:
+        professor_level: 1
+        professor_multiplier: 1
+        crew_multiplier: 1
+    professor_level6:
+        professor_level: 1
+        professor_multiplier: 1
+    professor_level7:
+        professor_level: 1
+        professor_multiplier: 1
