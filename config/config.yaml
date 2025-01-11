@@ -722,52 +722,65 @@ machine_vars:
         initial_value: 10
     orbit_points:
         initial_value: 10
+    level_2_xp:
+        initial_value: 4
+    level_3_xp:
+        initial_value: 10
+    level_4_xp:
+        initial_value: 25
+    level_5_xp:
+        initial_value: 50
+    level_6_xp:
+        initial_value: 100
+    level_7_xp:
+        initial_value: 250
+
 
 player_vars:
     leela_level:
-        initial_value: 0
+        initial_value: 1
     leela_xp:
         initial_value: 0
     leela_multiplier:
         initial_value: 1
     fry_level:
-        initial_value: 0
+        initial_value: 1
     fry_xp:
         initial_value: 0
     fry_multiplier:
         initial_value: 1
     bender_level:
-        initial_value: 0
+        initial_value: 1
     bender_xp:
         initial_value: 0
     bender_multiplier:
         initial_value: 1
     amy_level:
-        initial_value: 0
+        initial_value: 1
     amy_xp:
         initial_value: 0
     amy_multiplier:
         initial_value: 1
     hermes_level:
-        initial_value: 0
+        initial_value: 1
     hermes_xp:
         initial_value: 0
     hermes_multiplier:
         initial_value: 1
     zoidberg_level:
-        initial_value: 0
+        initial_value: 1
     zoidberg_xp:
         initial_value: 0
     zoidberg_multiplier:
         initial_value: 1
     nibbler_level:
-        initial_value: 0
+        initial_value: 1
     nibbler_xp:
         initial_value: 0
     nibbler_multiplier:
         initial_value: 1
     professor_level:
-        initial_value: 0
+        initial_value: 1
     professor_xp:
         initial_value: 0
     professor_multiplier:
@@ -808,6 +821,7 @@ modes:
     - slurm_caps
     - slurm_factory
     - delivery_manager
+    - crew_manager
     - moon_delivery
     - bonus
     - high_score
