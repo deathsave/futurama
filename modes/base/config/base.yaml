@@ -225,33 +225,6 @@ show_player:
     s_pop_bumper_active:
         lrrr_pulse_show:
             loops: 0
-    fry_level1:
-        fry_level_up_show:
-            loops: 0
-    fry_level2:
-        fry_level_up_show:
-            loops: 0
-    fry_level3:
-        fry_level_up_show:
-            loops: 0
-    leela_level1:
-        leela_level_up_show:
-            loops: 0
-    leela_level2:
-        leela_level_up_show:
-            loops: 0
-    leela_level3:
-        leela_level_up_show:
-            loops: 0
-    bender_level1:
-        bender_level_up_show:
-            loops: 0
-    bender_level2:
-        bender_level_up_show:
-            loops: 0
-    bender_level3:
-        bender_level_up_show:
-            loops: 0
     base_tube_shot_hit:
         tube_light_show:
             loops: 0
@@ -304,103 +277,23 @@ variable_player:
         bender_xp: 1
     s_dt_amy_active:
         score: machine.DT_points * current_player.amy_multiplier
-        amy_xp: 1
+        amy_xp: 2
     s_dt_hermes_active:
         score: machine.DT_points * current_player.hermes_multiplier
-        hermes_xp: 1
+        hermes_xp: 2
     s_dt_nibbler_active:
         score: machine.DT_points * current_player.nibbler_multiplier
-        nibbler_xp: 1
+        nibbler_xp: 2
     s_dt_zoidberg_active:
         score: machine.DT_points * current_player.zoidberg_multiplier
-        zoidberg_xp: 1
+        zoidberg_xp: 2
     s_dt_professor_active:
         score: machine.DT_points * current_player.professor_multiplier
-        professor_xp: 1
+        professor_xp: 2
     s_pe_platter_active:
-        score: 33 * current_player.crew_multiplier
+        score: machine.ship_points * current_player.crew_multiplier
         platter_short_counter: 1
         platter_long_counter: 1
-    leela_level1:
-        leela_level: 1
-        leela_multiplier: 1
-    leela_level2:
-        leela_level: 1
-        leela_multiplier: 1
-        crew_multiplier: 1
-    leela_level3:
-        leela_level: 1
-        leela_multiplier: 1
-    fry_level1:
-        fry_level: 1
-        fry_multiplier: 1
-    fry_level2:
-        fry_level: 1
-        fry_multiplier: 1
-        crew_multiplier: 1
-    fry_level3:
-        fry_level: 1
-        fry_multiplier: 1
-    bender_level1:
-        bender_level: 1
-        bender_multiplier: 1
-    bender_level2:
-        bender_level: 1
-        bender_multiplier: 1
-        crew_multiplier: 1
-    bender_level3:
-        bender_level: 1
-        bender_multiplier: 1
-    amy_level1:
-        amy_level: 1
-        amy_multiplier: 1
-    amy_level2:
-        amy_level: 1
-        amy_multiplier: 1
-        crew_multiplier: 1
-    amy_level3:
-        amy_level: 1
-        amy_multiplier: 1
-    hermes_level1:
-        hermes_level: 1
-        hermes_multiplier: 1
-    hermes_level2:
-        hermes_level: 1
-        hermes_multiplier: 1
-        crew_multiplier: 1
-    hermes_level3:
-        hermes_level: 1
-        hermes_multiplier: 1
-    nibbler_level1:
-        nibbler_level: 1
-        nibbler_multiplier: 1
-    nibbler_level2:
-        nibbler_level: 1
-        nibbler_multiplier: 1
-        crew_multiplier: 1
-    nibbler_level3:
-        nibbler_level: 1
-        nibbler_multiplier: 1
-    zoidberg_level1:
-        zoidberg_level: 1
-        zoidberg_multiplier: 1
-    zoidberg_level2:
-        zoidberg_level: 1
-        zoidberg_multiplier: 1
-        crew_multiplier: 1
-    zoidberg_level3:
-        zoidberg_level: 1
-        zoidberg_multiplier: 1
-    professor_level1:
-        proefessor_level: 1
-        professor_multiplier: 1
-    professor_level2:
-        professor_level: 1
-        professor_multiplier: 1
-        crew_multiplier: 1
-    professor_level3:
-        professor_level: 1
-        professor_multiplier: 1
     right_loop_hit:
         score: machine.loop_points * current_player.loop_multiplier
     left_loop_hit:
@@ -416,7 +309,7 @@ variable_player:
     s_pop_bumper_active:
         score: machine.pop_points * current_player.pop_bumper_hits
         pop_bumper_hits: 1
-    s_right_ramp_active:
+    base_right_ramp_shot_hit:
         dark_matter: 1
         score: machine.ramp_points * current_player.nibbler_level
     hypnotoad_save_hit:
@@ -571,32 +464,6 @@ sound_player:
             action: play
 
 event_player:
-#these need to be redone as state_machines instead, so I can use > values to advance 
-#instead of relying on catching the exact number
-    s_t_leela_active{current_player.leela_xp == 4}: leela_level1
-    s_t_leela_active{current_player.leela_xp == 12}: leela_level2
-    s_t_leela_active{current_player.leela_xp == 25}: leela_level3
-    s_t_fry_active{current_player.fry_xp == 4}: fry_level1
-    s_t_fry_active{current_player.fry_xp == 12}: fry_level2
-    s_t_fry_active{current_player.fry_xp == 25}: fry_level3
-    s_t_bender_active{current_player.bender_xp == 4}: bender_level1
-    s_t_bender_active{current_player.bender_xp == 12}: bender_level2
-    s_t_bender_active{current_player.bender_xp == 25}: bender_level3
-    s_dt_amy_active{current_player.amy_xp == 2}: amy_level1
-    s_dt_amy_active{current_player.amy_xp == 5}: amy_level2
-    s_dt_amy_active{current_player.amy_xp == 15}: amy_level3
-    s_dt_hermes_active{current_player.hermes_xp == 2}: hermes_level1
-    s_dt_hermes_active{current_player.hermes_xp == 5}: hermes_level2
-    s_dt_hermes_active{current_player.hermes_xp == 15}: hermes_level3
-    s_dt_nibbler_active{current_player.nibbler_xp == 2}: nibbler_level1
-    s_dt_nibbler_active{current_player.nibbler_xp == 5}: nibbler_level2
-    s_dt_nibbler_active{current_player.nibbler_xp == 15}: nibbler_level3
-    s_dt_zoidberg_active{current_player.zoidberg_xp == 2}: zoidberg_level1
-    s_dt_zoidberg_active{current_player.zoidberg_xp == 5}: zoidberg_level2
-    s_dt_zoidberg_active{current_player.zoidberg_xp == 15}: zoidberg_level3
-    s_dt_professor_active{current_player.professor_xp == 2}: professor_level1
-    s_dt_professor_active{current_player.professor_xp == 5}: professor_level2
-    s_dt_professor_active{current_player.professor_xp == 15}: professor_level3
     start_left_loop_lock_hurry: right_post_enable
     timer_left_loop_lock_hurry_complete: right_post_disable
     right_post_lock_show_stopped: post_right_down
@@ -653,7 +520,10 @@ shots:
         switch: s_r_orbit
         enable_events: zapp_shot_lit
         disable_events: mom_shot_lit, mom_zapp_off
-
+    base_right_ramp_shot:
+        switch: s_right_ramp
+        enable_events: mode_base_started
+        disable_events: mode_moon_delivery_started
 
 sequence_shots:
     right_loop:
