@@ -1,22 +1,31 @@
-"""Tests General/Base Functionality"""
-
-import os
 from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
 
 class TestGeneral(MpfMachineTestCase):
 
-    """Tests start-up sequence"""
+    def test_game_start(self):
+        self.assertModeRunning("attract")
+        self.assertModeNotRunning("base")
+        self.assertModeNotRunning("game")
 
-    def get_config_file(self):
-        return 'config.yaml'
+        # Player starts the game and puts a
+        # ball into the shooter lane
+        self.hit_and_release_switch("s_start")
+        self.advance_time_and_run(1)
+        self.assertEqual(2,
+            self.machine.ball_devices["bd_trough"].balls)
+        self.assertEqual(1,
+            self.machine.ball_devices["bd_plunger"].balls)
+        self.assertEqual(0, self.machine.playfield.balls)
+        self.assertModeRunning("base")
+        self.assertModeRunning("game")
 
-    def get_machine_path(self):
-        return os.path.abspath(os.path.join(
-            os.path.realpath(__file__),
-            os.pardir,os.pardir
-        ))
-
-    def test_start(self):
-        self.assertModeRunning('attract')
-        self.assertEqual(3,
-            self.machine.ball_devices.bd_trough.balls)
+        # Player puts the ball into play
+        self.hit_and_release_switch("s_shooter_lane")
+        self.advance_time_and_run(1)
+        self.hit_and_release_switch("s_cap1")
+        self.advance_time_and_run(1)
+        self.assertEqual(2,
+            self.machine.ball_devices["bd_trough"].balls)
+        self.assertEqual(0,
+            self.machine.ball_devices["bd_plunger"].balls)
+        self.assertEqual(1, self.machine.playfield.balls)

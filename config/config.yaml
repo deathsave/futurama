@@ -31,7 +31,6 @@ p_roc:
 
 steppers:
     zoidberg_stepper:
-        debug: true
         number: "00427235"
         pos_max: 4000
         pos_min: -4000
