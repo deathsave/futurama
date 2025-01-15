@@ -108,57 +108,57 @@ lights:
     l_right_orbit_insert1:
         number: 2-39-40-41
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, indicator, orbit
     l_right_orbit_insert2:
         number: 2-36-37-38
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, indicator, orbit
     l_left_ramp_insert:
         number: 2-48-49-50
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, indicator
     l_left_loop_insert:
         number: 2-51-52-53
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, indicator, loops
     l_delivery_shot_insert:
         number: 2-54-55-56
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, indicator
     l_right_ramp_insert:
         number: 2-42-43-44
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, indicator
     l_right_loop_insert:
         number: 2-45-46-47
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, indicator, loops
     l_PE_spinner1:
         number: 2-24-25-26
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, ship, feature
     l_PE_spinner2:
         number: 2-27-28-29
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, ship, feature
     l_PE_spinner3:
         number: 2-30-31-32
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, ship, feature
     l_PE_spinner4:
         number: 2-33-34-35
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, ship, feature
     l_DTGI1:
         number: 2-60-61-62
@@ -273,12 +273,12 @@ lights:
     l_zoidberg_rotor:
         number: 0-36-37-38
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, feature
     l_right_ballguide:
         number: 0-72-73-74
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, gi, ballguide
     l_cap3:
         number: 0-54-55-56
@@ -304,42 +304,42 @@ lights:
     l_drain:
         number: 0-18-19-20
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, apron
     l_apron3:
         number: 0-6-7-8
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, apron
     l_apron2:
         number: 0-3-4-5
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, apron
     l_apron1:
         number: 0-0-1-2
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, apron
     l_apron4:
         number: 0-9-10-11
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, apron
     l_apron5:
         number: 0-12-13-14
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, apron
     l_apron6:
         number: 0-15-16-17
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, apron
     l_cryopod:
         number: 0-21-22-23
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, apron
     l_left_sling:
         number: 0-27-28-29
@@ -354,7 +354,7 @@ lights:
     l_left_ballguide:
         number: 0-33-34-35
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, gi, ballguide
 
 switches:
