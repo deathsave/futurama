@@ -15,12 +15,6 @@ keyboard:
         event: zoidberg_reset
     s:
         switch: s_start
-    b+l:
-        switch: s_shooter_lane
-    c+1:
-        switch: s_cap1
-    c+2:
-        switch: s_cap2
 
 hardware:
     platform: p3_roc
@@ -32,10 +26,13 @@ p_roc:
 steppers:
     zoidberg_stepper:
         number: "00427235"
-        pos_max: 4000
-        pos_min: -4000
+        pos_max: 5000
+        pos_min: -5000
+        homing_mode: switch
+        homing_switch: s_zoidberg_home
         reset_events: zoidberg_reset
-        named_positions:
+        reset_position: 0
+        relative_positions:
             -200: zoidberg_r1
             200: zoidberg_l1
             -400: zoidberg_r2
@@ -83,8 +80,9 @@ steppers:
             starting_speed: 1000000
 
 event_player:
-    ball_ending: zoidberg_reset
-    mode_attract_started: zoidberg_reset
+    ball_ending: s_zoidberg_home_active
+    mode_attract_started: s_zoidberg_home_active
+    zoidberg_reset: s_zoidberg_home_inactive
 
 light_settings:
     default_fade_ms: 40
@@ -360,16 +358,19 @@ lights:
         tags: lamps, gi, ballguide
 
 switches:
+    s_zoidberg_home:
+        number: A2-B1-0
+        events_when_activated: zoidberg_reset
     s_left_flipper:
-        number: A2-B0-5
+        number: A2-B0-6
         tags: left_flipper
     s_right_flipper:
-        number: A2-B0-0
+        number: A2-B0-1
         tags: right_flipper
     s_mag_button:
-        number: A2-B0-3
+        number: A2-B0-4
     s_hedonism_bot:
-        number: A2-B0-2
+        number: A2-B0-3
         ignore_window_ms: 2000
     s_trough_jam:
         number: A0-B1-0
@@ -386,7 +387,7 @@ switches:
     s_shooter_lane:
         number: A1-B1-0
     s_start:
-        number: A2-B0-6
+        number: A2-B0-7
         tags: start
     s_cap1:
         number: A0-B0-3
@@ -487,7 +488,7 @@ coils:
         default_pulse_ms: 18
     c_trough_eject:
         number: A3-B0-6
-        default_pulse_ms: 12
+        default_pulse_ms: 20
     c_sling_left:
         number: A3-B0-3
         default_pulse_ms: 8
@@ -515,19 +516,19 @@ coils:
         default_pulse_ms: 10
     c_dt_hermes_up:
         number: A1-B1-0
-        default_pulse_ms: 10
+        default_pulse_ms: 25
     c_dt_amy_up:
         number: A1-B1-1
-        default_pulse_ms: 10
+        default_pulse_ms: 25
     c_dt_professor_up:
         number: A1-B1-2
-        default_pulse_ms: 10
+        default_pulse_ms: 25
     c_dt_zoidberg_up:
         number: A1-B1-3
-        default_pulse_ms: 10
+        default_pulse_ms: 25
     c_dt_nibbler_up:
         number: A1-B1-4
-        default_pulse_ms: 10
+        default_pulse_ms: 25
     c_pop_bumper:
         number: A3-B0-2
         default_pulse_ms: 20
@@ -1369,3 +1370,4 @@ slide_player:
     game_ending:
         final_score_slide:
             expire: 30s
+
