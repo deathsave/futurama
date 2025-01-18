@@ -681,9 +681,37 @@ flippers:
         main_coil: c_magnet
         activation_switch: s_mag_button
 
+kivy_config:
+    kivy:
+        desktop: 1
+        exit_on_escape: true
+        pause_on_minimize: 0
+    graphics:
+        borderless: true
+        window_state: visible # visible, hidden, maximized, minimized
+        fbo: hardware # hardware, software, force-hardware
+        fullscreen: false
+        left: 0
+        top: 0
+        width: 3840   # width of display1 + display2
+        height: 1080  # common height (or the maximum of both)
+        maxfps: 30
+        multisamples: 2
+        position: custom # auto, custom
+        show_cursor: true
+        resizable: false
+        rotation: 0
+
 displays:
-    window:
+    display1:
         width: 1920
+        height: 1080
+        default: true
+    display2:
+        width: 1920
+        height: 1080
+    combined_display:
+        width: 3840
         height: 1080
 
 sound_system:
@@ -828,6 +856,19 @@ modes:
     - high_score
 
 slides:
+    dual_screen_slide:
+        - type: display
+          source_display: display1
+          width: 1920
+          height: 1080
+          x: left
+          anchor_x: left
+        - type: display
+          source_display: display2
+          width: 1920
+          height: 1080
+          x: right
+          anchor_x: right
     welcome_slide:
         widgets:
             - type: text
@@ -1365,6 +1406,9 @@ sound_player:
             action: play
 
 slide_player:
+    mc_ready:
+        dual_screen_slide:
+            target: combined_display
     init_done: welcome_slide
     mode_attract_started: attract_started
     game_ending:
