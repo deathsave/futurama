@@ -230,15 +230,19 @@ show_player:
             loops: 0
 
 slide_player:
-    mode_base_started: base_slide
+    mode_base_started:
+        base_slide:
+            target: display1
     mode_moon_delivery_started:
         base_slide:
             action: remove
         moon_delivery_slide:
             action: play
+            target: display1
     mode_moon_delivery_stopped:
         base_slide:
             action: play
+            target: display1
         moon_delivery_slide:
             action: remove
     remove_hypnotoad_slide:

@@ -6,6 +6,7 @@
   slides:
       slurm_factory_commercial_slide:
           priority: 500
+          target: display1
 - time: "+48.5"
   slides:
       slurm_factory_commercial_slide:

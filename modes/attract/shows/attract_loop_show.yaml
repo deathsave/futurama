@@ -4,6 +4,7 @@
     - time: "+1"
       slides:
           show_final_scores:
+              target: display1
               widgets:
               - type: Text
                 text: FINAL SCORES
@@ -48,6 +49,7 @@
     - time: "+10"
       slides:
           show_high_scores:
+              target: display1
               widgets:
               - type: Text
                 text: HIGH SCORES
@@ -168,13 +170,13 @@
     - time: "+1"
       slides:
           doop_warning_slide:
-              action: remove
-    - time: "+500ms"
+              target: display2    
+    - time: "+5"
       shows:
           PE_commercial_show:
               loops: 0
               priority: 500
-    - time: "+30.5"
+    - time: "+35"
       slides:
           doop_warning_slide:
               action: remove
