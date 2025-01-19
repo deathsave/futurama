@@ -689,11 +689,11 @@ kivy_config:
     graphics:
         borderless: true
         window_state: visible # visible, hidden, maximized, minimized
-        fbo: hardware # hardware, software, force-hardware
+        fbo: software # hardware, software, force-hardware
         fullscreen: false
         left: 0
         top: 0
-        width: 3840   # width of display1 + display2
+        width: 3840  # width of display1 + display2
         height: 1080  # common height (or the maximum of both)
         maxfps: 30
         multisamples: 2
@@ -706,7 +706,6 @@ displays:
     display1:
         width: 1920
         height: 1080
-        default: true
     display2:
         width: 1920
         height: 1080
@@ -1409,8 +1408,12 @@ slide_player:
     mc_ready:
         dual_screen_slide:
             target: combined_display
-    init_done: welcome_slide
-    mode_attract_started: attract_started
+    init_done: 
+        welcome_slide:
+            target: display1
+    mode_attract_started: 
+        attract_started:
+            target: display1
     game_ending:
         final_score_slide:
             expire: 30s

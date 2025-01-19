@@ -104,8 +104,18 @@ slides:
               image: bonus_blank
 
 slide_player:
-    mode_bonus_started: bonus_start_slide
-    bonus_caps: slurm_bonus
-    bonus_hypnotoad_saves: hypnotoad_bonus
-    bonus_dark_matter: dark_matter_bonus
-    bonus_total: bonus_total_slide
+    mode_bonus_started:
+        bonus_start_slide:
+            target: display1
+    bonus_caps:
+        slurm_bonus:
+            target: display1
+    bonus_hypnotoad_saves:
+        hypnotoad_bonus:
+            target: display1
+    bonus_dark_matter: 
+        dark_matter_bonus:
+            target: display1
+    bonus_total: 
+        bonus_total_slide:
+            target: display1

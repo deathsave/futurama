@@ -8,6 +8,7 @@
           action: remove
       PE_commercial_slide:
           priority: 500
+          target: display1
 - time: "+47"
   slides:
       PE_commercial_slide:

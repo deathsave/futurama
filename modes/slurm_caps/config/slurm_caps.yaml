@@ -15,7 +15,7 @@ shots:
         disable_events: pure_imagination
 
 ball_holds:
-    slurm factory_start_hold:
+    slurm_factory_start_hold:
         balls_to_hold: 1
         hold_devices: bd_VUK
         enable_events: found_golden_cap
