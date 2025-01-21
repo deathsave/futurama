@@ -5,6 +5,7 @@
       slides:
           hypnotoad_slide:
               priority: 600
+              target: display2
       lights:
           l_hypnotoad_spotlight: "00ffff"
     - time: "+300ms"

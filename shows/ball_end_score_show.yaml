@@ -6,6 +6,7 @@
   slides:
       ball_end_score_slide:
           priority: 500
+          target: display1
 - time: "+3"
   slides:
       ball_end_score_slide:

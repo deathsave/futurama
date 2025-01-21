@@ -78,6 +78,7 @@ widget_player:
     found_golden_cap:
         glurmo_speaks:
             action: add
+            slide: base_slide
 
 light_player:
     found_golden_cap:
