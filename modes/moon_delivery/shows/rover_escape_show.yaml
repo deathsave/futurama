@@ -2,7 +2,9 @@
 ##! show: rover_escape_show
 
 - time: 0
-  widgets: rover_escape_video
+  widgets:
+      rover_escape_video:
+          slide: moon_delivery_slide
 
 - time: "+22"
   widgets:

@@ -6,6 +6,7 @@
   slides:
       moon_delivery_intro_slide:
           priority: 500
+          target: display1
 - time: "+24"
   slides:
       moon_delivery_intro_slide:

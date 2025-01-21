@@ -2,7 +2,9 @@
 ##! show: moon_delivery_success_show
 
 - time: 0
-  widgets: moon_delivery_success_video
+  widgets:
+      moon_delivery_success_video:
+          slide: moon_delivery_slide
 
 - time: "+26"
   widgets:

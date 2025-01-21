@@ -615,14 +615,6 @@ ball_devices:
         eject_coil: c_kickback
         eject_timeouts: 2s
 
-ball_holds:
-    delivery_start_hold:
-        balls_to_hold: 1
-        hold_devices: bd_VUK
-        enable_events: moon_delivery_lit
-        disable_events: moon_delivery_intro_show_ended
-        release_one_events: moon_delivery_intro_show_ended
-
 drop_targets:
     nibbler:
         switch: s_dt_nibbler
@@ -821,7 +813,7 @@ player_vars:
         initial_value: 1
     zapp_multiplier:
         initial_value: 1
-    mom_multiplier: 
+    mom_multiplier:
         initial_value: 1
     platter_long_counter:
         initial_value: 1
@@ -1137,12 +1129,6 @@ slides:
         widgets:
             - type: image
               image: doop_warning
-# maybe depreciate this, I haven't been able to get it to work correctly yet
-# it's supposed to play random videos from a video_pool as part of attract mode
-    attract_video_slide:
-        widgets:
-            - type: video
-              video: attract_videos
 
 
 widget_player:
@@ -1392,13 +1378,6 @@ sound_pools:
             - were_safe
             - not_gonna_be_loser
 
-video_pools:
-    attract_videos:
-        type: random_force_all
-        videos:
-            - homemade_intro_silent_clip
-            - PE_commercial_clip
-
 sound_player:
     s_hedonism_bot_active:
         hedonismbot_sounds:
@@ -1408,13 +1387,13 @@ slide_player:
     mc_ready:
         dual_screen_slide:
             target: combined_display
-    init_done: 
+    init_done:
         welcome_slide:
             target: display1
-    mode_attract_started: 
+    mode_attract_started:
         attract_started:
             target: display1
     game_ending:
         final_score_slide:
             expire: 30s
-
+            target: display1

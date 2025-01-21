@@ -5,6 +5,7 @@
   slides:
       crate_delivered_slide:
           priority: 500
+          target: display1
 - time: 9
   slides:
       crate_delivered_slide:
