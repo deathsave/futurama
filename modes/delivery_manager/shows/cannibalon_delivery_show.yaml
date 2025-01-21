@@ -6,6 +6,7 @@
   slides:
       cannibalon_delivery_slide:
           priority: 500
+          target: display1
 - time: "+20"
   slides:
       cannibalon_delivery_slide:

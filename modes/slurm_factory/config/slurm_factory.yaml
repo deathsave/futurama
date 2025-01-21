@@ -256,7 +256,9 @@ slides:
               volume: .9
 
 slide_player:
-    slurm_factory_tour_begins: slurm_factory_slide
+    slurm_factory_tour_begins:
+        slurm_factory_slide:
+            target: display1
     stop_slurm_factory:
         slurm_factory_slide:
             action: remove

@@ -509,6 +509,9 @@ sound_player:
     stop_moon_delivery_mode:
         old_moon_song:
             action: stop
+    ball_ending:
+        old_moon_song:
+            action: stop
 
 
 show_player:
@@ -579,3 +582,6 @@ show_player:
         moon_delivery_success_show:
             loops: 0
             events_when_stopped: moon_delivery_success_show_ended
+    ball_ending:
+        crate_delivered_show:
+            action: stop
