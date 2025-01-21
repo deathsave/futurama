@@ -2,7 +2,9 @@
 ##! show: farmer_escape_show
 
 - time: 0
-  widgets: farmer_escape_video
+  widgets:
+      farmer_escape_video:
+          slide: moon_delivery_slide
 
 - time: "+12"
   widgets:

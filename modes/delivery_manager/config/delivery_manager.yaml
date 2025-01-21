@@ -7,6 +7,54 @@ mode:
     priority: 102
 
 state_machines:
+    fuel_gauge_state:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: empty_tank
+            quarter:
+                events_when_started: quarter_tank
+            half:
+                events_when_started: half_tank
+            3quarter:
+                events_when_started: 3quarter_tank
+            full:
+                events_when_started: full_tank
+        transitions:
+            - source: start
+              target: quarter
+              events: collect_dark_matter_fuel_hit
+            - source: quarter
+              target: half
+              events: collect_dark_matter_fuel_hit
+            - source: half
+              target: 3quarter
+              events: collect_dark_matter_fuel_hit
+            - source: 3quarter
+              target: full
+              events: collect_dark_matter_fuel_hit
+            - source: full
+              target: 3quarter
+              events: use_dark_matter
+            - source: 3quarter
+              target: half
+              events: use_dark_matter
+            - source: half
+              target: quarter
+              events: use_dark_matter
+            - source: quarter
+              target: start
+              events: use_dark_matter
+            - source: half
+              target: start
+              events: use_half_tank
+            - source: 3quarter
+              target: quarter
+              events: use_half_tank
+            - source: full
+              target: half
+              events: use_half_tank
     next_delivery:
         persist_state: true
         states:
@@ -112,7 +160,29 @@ ball_holds:
         enable_events: cannibalon_delivery_lit
         disable_events: cannibalon_delivery_show_ended
         release_one_events: cannibalon_delivery_show_ended
+        debug: true
+    moon_delivery_start_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: moon_delivery_lit
+        disable_events: moon_delivery_intro_show_ended
+        release_one_events: moon_delivery_intro_show_ended
+        debug: true
 
+slide_player:
+    mode_moon_delivery_started:
+        base_slide:
+            action: remove
+        moon_delivery_slide:
+            action: play
+            target: display1
+    mode_moon_delivery_stopped:
+        base_slide:
+            action: play
+            target: display1
+        moon_delivery_slide:
+            action: remove
+            
 widget_player:
     mode_moon_delivery_stopped:
         full_gauge:
@@ -147,6 +217,18 @@ variable_player:
         deliveries_completed: 1
 
 sound_player:
+    quarter_tank:
+        ding:
+            action: play
+    half_tank:
+        ding:
+            action: play
+    3quarter_tank:
+        ding:
+            action: play
+    full_tank:
+        ding:
+            action: play
     delivery_started:
         theme_full:
             action: stop

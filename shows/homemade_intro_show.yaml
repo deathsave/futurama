@@ -6,6 +6,7 @@
   slides:
       homemade_intro_slide:
           priority: 500
+          target: display1
 - time: "+30"
   slides:
       homemade_intro_slide:
