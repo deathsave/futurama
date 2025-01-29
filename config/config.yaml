@@ -828,6 +828,9 @@ player_vars:
         initial_value: "empty_gauge"
     hypnotoad_saves:
         initial_value: 0
+    cryolab_delivery_status:
+        value_type: str
+        initial_value: "ready"
     moon_delivery_status:
         value_type: str
         initial_value: "ready"
@@ -835,7 +838,14 @@ player_vars:
         initial_value: 0
     caps_collected:
         initial_value: 0
-
+#cryolab delivery variables used later for random effect
+    dumped_by_michelle:
+        value_type: str
+        initial_value: "no"
+    chose_to_be_frozen:
+        value_type: str
+        initial_value: "not frozen yet"
+        
 modes:
     - base
     - slurm_caps
@@ -843,6 +853,7 @@ modes:
     - delivery_manager
     - crew_manager
     - moon_delivery
+    - cryolab_delivery
     - bonus
     - high_score
 
@@ -1129,6 +1140,10 @@ slides:
         widgets:
             - type: image
               image: doop_warning
+    slurm_ad_slide:
+        widgets:
+            - type: image
+              image: slurm_ad
 
 
 widget_player:

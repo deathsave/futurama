@@ -1,0 +1,16 @@
+#show_version=6
+##! show: to_the_future_show
+
+    - duration: 5s
+      widgets:
+          to_the_future_video:
+              slide: cryolab_delivery_slide
+    - duration: 38s
+      widgets:
+        cryolab_awards:
+              slide: 1999_slide
+    - duration: 1s
+      widgets:
+          to_the_future_video:
+              action: remove
+      events: wake_up_in_the_future

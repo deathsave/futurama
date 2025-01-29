@@ -4,6 +4,7 @@ mode:
     priority: 100
 
 state_machines:
+  #delivery_started will set this to ignore, delivery_ended will restart it
     mom_zapp_toggle_state:
         starting_state: mom
         persist_state: true
@@ -267,6 +268,9 @@ variable_player:
         slurm_caps_total: 1
 
 sound_player:
+    delivery_started:
+        theme_full:
+            action: stop
     s_pop_bumper_active:
         lrrr_pop_bumper:
             action: play
@@ -429,22 +433,24 @@ shots:
         disable_events: timer_ship_spinning_timer_started, delivery_started
     base_tube_shot:
         switch: s_left_ramp
-        enable_events: mode_base_started, mode_moon_delivery_stopped
-        disable_events: mode_moon_delivery_started
+        enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended
+        disable_events: mode_moon_delivery_started, delivery_started
     base_fry_target_shot:
         switch: s_t_fry
-        enable_events: mode_base_started, mode_moon_delivery_stopped
-        disable_events: mode_moon_delivery_started
+        enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended
+        disable_events: mode_moon_delivery_started, delivery_started
     base_bender_target_shot:
         switch: s_t_bender
-        enable_events: mode_base_started, mode_moon_delivery_stopped
-        disable_events: mode_moon_delivery_started
+        enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended
+        disable_events: mode_moon_delivery_started, delivery_started
     base_leela_target_shot:
         switch: s_t_leela
-        enable_events: mode_base_started, mode_moon_delivery_stopped
-        disable_events: mode_moon_delivery_started
+        enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended
+        disable_events: mode_moon_delivery_started, delivery_started
     slurm_caps_total_shot:
         switches: s_cap1, s_cap2, s_cap3, s_cap4
+        enable_events: mode_cryolab_delivery_stopped
+        disable_events: mode_cryolab_delivery_started
     mom_shot:
         switch: s_r_orbit
         enable_events: mom_shot_lit
@@ -455,8 +461,8 @@ shots:
         disable_events: mom_shot_lit, mom_zapp_off
     base_right_ramp_shot:
         switch: s_right_ramp
-        enable_events: mode_base_started
-        disable_events: mode_moon_delivery_started
+        enable_events: mode_base_started, mode_cryolab_delivery_stopped
+        disable_events: mode_moon_delivery_started, mode_cryolab_delivery_started
 
 sequence_shots:
     right_loop:

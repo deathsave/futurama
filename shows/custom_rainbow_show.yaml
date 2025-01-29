@@ -1,0 +1,24 @@
+#show_version=6
+##! show: custom_rainbow_show
+
+    - duration: 250ms
+      lights:
+          (which): red
+    - duration: 250ms
+      lights:
+          (which): orange
+    - duration: 250ms
+      lights:
+          (which): yellow
+    - duration: 250ms
+      lights:
+          (which): blue
+    - duration: 250ms
+      lights:
+          (which): green
+    - duration: 250ms
+      lights:
+          (which): white
+    - duration: 250ms
+      lights:
+          (which): purple

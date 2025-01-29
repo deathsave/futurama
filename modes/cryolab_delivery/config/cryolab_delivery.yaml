@@ -1,0 +1,404 @@
+#config_version=6
+##! mode: cryolab_delivery
+
+mode:
+    start_events: ball_started{ball==1}
+    stop_events: stop_cryolab_delivery_mode, ball_ending
+    priority: 200
+
+state_machines:
+    cryolab_delivery_state:
+        persist_state: false
+        states:
+            start:
+                events_when_started: waiting_to_start_cryolab
+#ball launch
+            panuccis:
+                events_when_started: pizza_going_out
+#enables nibbler_skillshot and ride_the_bike_shot
+#starts ride_the_bike_shot_timer
+#plays panuccis_show
+            ride_bike:
+                events_when_started: ride_bike
+            lock_bike:
+                events_when_started: lock_bike
+            i_c_weiner:
+                events_when_started: cryolab_delivery_success
+#countdown starts
+            fall_in_crypod:
+                events_when_started: fry_frozen
+        transitions:
+            - source: start
+              target: panuccis
+              events: s_shooter_lane_inactive
+            - source: panuccis
+              target: ride_bike
+              events: ride_the_bike_shot_hit
+            - source: ride_bike
+              target: lock_bike
+              events: lock_the_bike_shot_hit
+            - source: lock_bike
+              target: i_c_weiner
+              events: deliver_pizza_shot_hit
+            - source: i_c_weiner
+              target: fall_in_crypod
+              events: fall_off_chair_shot_hit
+#this is the ball 1 skillshot that skips the whole delivery + has extra awards
+            - source: panuccis
+              target: fall_in_crypod
+              events: nibbler_skillshot_hit
+
+slides:
+    cryolab_delivery_slide:
+        widgets:
+            - type: text
+              text: (player1|score)
+              number_grouping: true
+              min_digits: 2
+              font_size: 45
+              color: black
+              y: 920
+              x: 416
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: PLAYER (number)
+              y: 910
+              x: 55
+              z: 7
+              font_size: 50
+              anchor_x: left
+              anchor_y: top
+            - type: text
+              text: (ball)
+              y: 910
+              x: 416
+              z: 7
+              anchor_x: right
+              anchor_y: top
+              font_size: 50
+            - type: image
+              image: cartoon_pinball
+              x: 392
+              y: 910
+              z: 7
+              anchor_x: right
+              anchor_y: top
+            - type: image
+              image: cryolab_UI
+              z: 5
+            - type: image
+              image: panuccis_background
+              z: 1
+    cryolab_awards_slide:
+        widgets:
+            - type: image
+              image: cryolab_awards
+
+    1999_slide:
+        widgets:
+            - type: image
+              image: nye_1999
+    ride_the_bike_instructions_slide:
+        widgets:
+            - type: image
+              image: ride_the_bike_instructions
+    lock_the_bike_instructions_slide:
+        widgets:
+            - type: image
+              image: lock_the_bike_instructions
+    deliver_the_pizza_instructions_slide:
+        widgets:
+            - type: image
+              image: deliver_the_pizza_instructions
+
+
+
+slide_player:
+    mode_cryolab_delivery_started:
+        cryolab_delivery_slide:
+            target: display1
+        1999_slide:
+            target: display2
+    fry_frozen:
+        cryolab_awards_slide:
+            target: display2
+
+widgets:
+#z values:
+#    background image = 1
+#    video clips = 3
+#    UI = 5
+#    text and numbers = 7
+    cryolab_UI:
+        - type: image
+          image: cryolab_UI
+          z: 5
+    panuccis_background:
+        - type: image
+          image: panuccis_background
+          z: 1
+    panuccis_video:
+        - type: video
+          video: panuccis_clip
+          z: 3
+    ride_the_bike_background:
+        - type: image
+          image: ride_the_bike_background
+          z: 1
+    ride_the_bike_video:
+        - type: video
+          video: ride_the_bike_clip
+          z: 3
+    lock_the_bike_background:
+        - type: image
+          image: lock_the_bike_background
+          z: 1
+    lock_the_bike_video:
+        - type: video
+          video: lock_the_bike_clip
+          z: 3
+    pizza_delivered_video:
+        - type: video
+          video: pizza_delivered_clip
+          z: 3
+    to_the_future_video:
+        - type: video
+          video: to_the_future_clip
+          z: 3
+    wake_up_in_the_future_video:
+        - type: video
+          video: wake_up_in_the_future_clip
+          z: 3
+    nibbler_skillshot_video:
+        - type: video
+          video: nibbler_skillshot_clip
+          z: 3
+    cryolab_awards:
+        - type: image
+          image: cryolab_awards
+          z: 1
+
+shots:
+    ride_the_bike_shot:
+        switches: s_left_ramp, s_left_loop, s_t_fry
+        enable_events: pizza_going_out
+        disable_events: ride_the_bike_shot_hit
+    lock_the_bike_shot:
+        switches: s_right_loop, s_right_ramp, s_r_orbit, s_t_fry
+        enable_events: ride_bike
+        disable_events:  lock_the_bike_shot_hit
+    deliver_pizza_shot:
+        switches: s_left_ramp, s_right_ramp
+        enable_events: lock_bike
+        disable_events: deliver_pizza_shot_hit
+    fall_off_chair_shot:
+        switch: s_VUK
+        enable_events: cryolab_delivery_success
+        disable_events: fry_frozen
+    nibbler_skillshot:
+        switch: s_VUK
+        enable_events: pizza_going_out
+        disable_events: timer_nibbler_skillshot_timer_complete
+
+timers:
+    nibbler_skillshot_timer:
+        start_value: 10
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: pizza_going_out
+            - action: stop
+              event: nibbler_skillshot_hit
+    ride_the_bike_shot_timer:
+        start_value: 20
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: pizza_going_out
+            - action: stop
+              event: ride_the_bike_shot_hit
+    lock_the_bike_shot_timer:
+        start_value: 20
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: ride_bike
+            - action: stop
+              event: lock_the_bike_shot_hit
+    deliver_pizza_shot_timer:
+        start_value: 20
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: lock_bike
+            - action: stop
+              event: deliver_pizza_shot_hit
+    fall_off_chair_shot_timer:
+        start_value: 50
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: cryolab_delivery_success
+            - action: stop
+              event: fall_off_chair_shot_hit
+
+event_player:
+    mode_cryolab_delivery_started:
+        delivery_started:
+        mom_zapp_off:
+    timer_ride_the_bike_shot_timer_complete: cryolab_delivery_failed
+    timer_lock_the_bike_shot_timer_complete: cryolab_delivery_failed
+    timer_deliver_pizza_shot_timer_complete: cryolab_delivery_failed
+    timer_fall_off_chair_shot_timer_complete: wake_up_in_the_future
+    cryolab_delivery_failed: wake_up_in_the_future
+
+show_player:
+    pizza_going_out:
+        panuccis_show:
+            action: play
+            loops: 0
+    ride_bike:
+        ride_the_bike_show:
+            action: play
+            loops: 0
+    lock_bike:
+        lock_the_bike_show:
+            loops: 0
+    cryolab_delivery_success:
+        pizza_delivered_show:
+            loops: 0
+    fry_frozen:
+        to_the_future_show:
+            loops: 0
+    wake_up_in_the_future:
+        wake_up_in_the_future_show:
+            loops: 0
+    timer_nibbler_skillshot_timer_started:
+        custom_rainbow_show:
+            show_tokens:
+                which: l_delivery_shot_insert
+    timer_nibbler_skillshot_timer_complete:
+        custom_rainbow_show:
+            action: stop
+    nibbler_skillshot_hit:
+        custom_rainbow_show:
+            action: stop
+        panuccis_show:
+            action: stop
+        nibbler_skillshot_show:
+            action: play
+            loops: 0
+    timer_ride_the_bike_shot_timer_started:
+        custom_flash_show:
+            show_tokens:
+                which: l_left_ramp_insert, l_left_loop_insert
+                color: orange
+    timer_ride_the_bike_shot_timer_complete:
+        custom_flash_show:
+            action: stop
+    ride_the_bike_shot_hit:
+        custom_flash_show:
+            action: stop
+        panuccis_show:
+            action: stop
+    timer_lock_the_bike_shot_timer_started:
+        custom_flash_show:
+            show_tokens:
+                which: l_right_loop_insert, l_right_ramp_insert, l_right_orbit_insert1, l_right_orbit_insert2
+                color: orange
+    timer_lock_the_bike_shot_timer_complete:
+        custom_flash_show:
+            action: stop
+    timer_ride_the_bike_shot_timer_stopped:
+        custom_flash_show:
+            action: stop
+    timer_deliver_pizza_shot_timer_started:
+        custom_flash_show:
+            show_tokens:
+                which: l_left_ramp_insert, l_right_ramp_insert
+                color: orange
+    timer_deliver_pizza_shot_timer_complete:
+        custom_flash_show:
+            action: stop
+    lock_the_bike_shot_hit:
+        ride_the_bike_show:
+            action: stop
+    deliver_pizza_shot_hit:
+        custom_flash_show:
+            action: stop
+        lock_the_bike_show:
+            action: stop
+    timer_fall_off_chair_shot_timer_started:
+        custom_flash_show:
+            show_tokens:
+                which: l_delivery_shot_insert
+                color: orange
+    timer_fall_off_chair_shot_timer_complete:
+        custom_flash_show:
+            action: stop
+    fall_off_chair_shot_hit:
+        custom_flash_show:
+            action: stop
+        pizza_delivered_show:
+            action: stop
+    ball_ending:
+        panuccis_show:
+            action: stop
+        ride_the_bike_show:
+            action: stop
+        lock_the_bike_show:
+            action: stop
+        pizza_delivered_show:
+            action: stop
+        to_the_future_show:
+            action: stop
+        wake_up_in_the_future_show:
+            action: stop
+
+variable_player:
+    ride_the_bike_shot_hit:
+        fry_xp: 1
+        score: 500
+    lock_the_bike_shot_hit:
+        fry_xp: 1
+        score: 500
+        dumped_by_michelle:
+            string: yes
+            action: set
+    deliver_pizza_shot_hit:
+        fry_xp: 3
+        score: 1000
+        cryolab_delivery_status:
+            string: success
+            action: set
+        deliveries_completed: 1
+    fall_off_chair_shot_hit:
+        fry_xp: 3
+        score: 1000
+    nibbler_skillshot_hit:
+        fry_xp: 10
+        nibbler_xp: 10
+        score: 5000
+        chose_to_be_frozen:
+            string: yes
+            action: set
+        cryolab_delivery_status:
+            string: success
+            action: set
+        deliveries_completed: 1
+#set the delivery as failed if player drains or doesn't make any of the shots in time
+    cryolab_delivery_failed:
+        cryolab_delivery_status:
+            string: failed
+            action: set
+    ball_ending:
+        cryolab_delivery_status:
+            string: failed
+            action: set

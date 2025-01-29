@@ -2,8 +2,8 @@
 ##! mode: crew_manager
 
 mode:
-    start_events: ball_started, mode_slurm_factory_stopped
-    stop_events: found_golden_cap, ball_ending
+    start_events: ball_started, mode_slurm_factory_stopped, delivery_ended
+    stop_events: found_golden_cap, ball_ending, delivery_started
     priority: 105
 
 state_machines:

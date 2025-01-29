@@ -1,0 +1,16 @@
+#show_version=6
+##! show: wake_up_in_the_future_show
+
+    - duration: 16s
+      widgets:
+          wake_up_in_the_future_video:
+              slide: cryolab_delivery_slide
+    - duration: 250ms
+      widgets:
+          wake_up_in_the_future_video:
+              action: remove
+      events:
+          delivery_ended:
+          mom_zapp_on:
+    - duration: 250ms
+      events: stop_cryolab_delivery_mode
