@@ -1,0 +1,12 @@
+#show_version=6
+##! show: nibbler_skillshot_show
+
+    - duration: 10s
+      widgets:
+          nibbler_skillshot_video:
+              slide: cryolab_delivery_slide
+    - duration: 1s
+      widgets:
+          nibbler_skillshot_video:
+              action: remove
+      events: wake_up_in_the_future

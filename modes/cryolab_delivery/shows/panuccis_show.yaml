@@ -1,0 +1,18 @@
+#show_version=6
+##! show: panuccis_show
+
+    - duration: 100ms
+      slides:
+          1999_slide:
+              action: remove  
+    - duration: 16s
+      slides:
+          ride_the_bike_instructions_slide:
+              target: display2
+      widgets:
+          panuccis_video:
+              slide: cryolab_delivery_slide
+    - duration: 1s
+      widgets:
+          panuccis_video:
+              action: remove

@@ -2,8 +2,8 @@
 ##! mode: delivery_manager
 
 mode:
-    start_events: ball_started, mode_slurm_factory_stopped
-    stop_events: found_golden_cap, ball_ending
+    start_events: ball_started, mode_slurm_factory_stopped, mode_cryolab_delivery_stopped
+    stop_events: found_golden_cap, ball_ending, mode_cryolab_delivery_started
     priority: 102
 
 state_machines:
@@ -182,7 +182,7 @@ slide_player:
             target: display1
         moon_delivery_slide:
             action: remove
-            
+
 widget_player:
     mode_moon_delivery_stopped:
         full_gauge:

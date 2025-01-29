@@ -170,21 +170,27 @@
     - time: "+1"
       slides:
           doop_warning_slide:
-              target: display2    
+              target: display2
     - time: "+5"
       shows:
           PE_commercial_show:
               loops: 0
               priority: 500
-    - time: "+35"
+    - time: "+46"
       slides:
           doop_warning_slide:
               action: remove
-    - time: "+5"
+    - time: "+1"
+      slides:
+          slurm_ad_slide:
+              target: display2
       shows:
           slurm_factory_commercial_show:
               loops: 0
               priority: 500
     - time: "+49"
+      slides:
+          slurm_ad_slide:
+              action: remove
       lights:
           l_hypnotoad_spotlight: ffffff
