@@ -80,8 +80,6 @@ shows:
           events: zoidberg_l16
         - duration: 5
           events: zoidberg_l20
-        - duration: 10
-          events: zoidberg_reset
         - duration: 1
           events: zoidberg_neutral
     zoidberg_sad_show:
@@ -121,8 +119,6 @@ shows:
           events: zoidberg_r16
         - duration: 5
           events: zoidberg_r20
-        - duration: 10
-          events: zoidberg_reset
         - duration: 1
           events: zoidberg_neutral
 
