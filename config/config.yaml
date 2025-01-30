@@ -28,8 +28,7 @@ steppers:
         number: "00427235"
         pos_max: 5000
         pos_min: -5000
-        homing_mode: switch
-        homing_switch: s_zoidberg_home
+        homing_mode: hardware
         reset_events: zoidberg_reset
         reset_position: 0
         relative_positions:
@@ -77,12 +76,7 @@ steppers:
             current_limit: 880
             max_acceleration: 10000
             max_speed: 4000000
-            starting_speed: 1000000
-
-event_player:
-    ball_ending: s_zoidberg_home_active
-    mode_attract_started: s_zoidberg_home_active
-    zoidberg_reset: s_zoidberg_home_inactive
+            starting_speed: 10000
 
 light_settings:
     default_fade_ms: 40
@@ -358,9 +352,6 @@ lights:
         tags: lamps, gi, ballguide
 
 switches:
-    s_zoidberg_home:
-        number: A2-B1-0
-        events_when_activated: zoidberg_reset
     s_left_flipper:
         number: A2-B0-6
         tags: left_flipper
@@ -845,7 +836,7 @@ player_vars:
     chose_to_be_frozen:
         value_type: str
         initial_value: "not frozen yet"
-        
+
 modes:
     - base
     - slurm_caps
