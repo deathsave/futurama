@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sleep 5
+ticcmd --halt-and-set-position 0
