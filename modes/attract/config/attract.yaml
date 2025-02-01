@@ -5,3 +5,9 @@ show_player:
         attract_loop_show:
             priority: 300
             
+light_player:
+    mode_attract_started:
+        indicator: ffffff
+        ship: ffffff
+        tubes: ffffff
+        caps: ffffff

@@ -41,6 +41,13 @@ ball_saves:
         timer_start_events: s_shooter_lane_inactive
         auto_launch: true
         balls_to_save: 1
+    zoidberg_ball_save:
+        active_time: 5s
+        hurry_up_time: 2s
+        enable_events: zoidberg_level2, zoidberg_level3, zoidberg_level4
+        timer_start_events: s_r_outlane_active
+        auto_launch: true
+        balls_to_save: 1
 
 shows:
     zoidberg_happy_show:
@@ -264,6 +271,9 @@ variable_player:
         slurm_caps_total: 1
 
 sound_player:
+    delivery_ended:
+        theme_full:
+            action: play
     delivery_started:
         theme_full:
             action: stop
