@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Good news!"
+sleep 1
+cd Futurama/
+bin/stepper_you_are_home
+sleep 1
+mpf both
