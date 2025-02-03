@@ -5,7 +5,7 @@
       widgets:
           lock_the_bike_background:
               action: remove
-    - duration: 48s
+    - duration: 46s
       widgets:
           pizza_delivered_video:
               slide: cryolab_delivery_slide
