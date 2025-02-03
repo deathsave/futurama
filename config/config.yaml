@@ -849,6 +849,11 @@ modes:
     - high_score
 
 slides:
+#z values:
+#    background image = 1
+#    video clips = 3
+#    UI = 5
+#    text and numbers = 7
     dual_screen_slide:
         - type: display
           source_display: display1
@@ -899,98 +904,114 @@ slides:
               text: (player1|score)
               number_grouping: true
               min_digits: 2
-              font_size: 45
+              font_size: 50
               color: black
-              y: 108
-              x: 413
+              y: 920
+              x: 419
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: PLAYER (number)
-              y: 365
-              x: 20
-              font_size: 50
+              y: 918
+              x: 55
+              z: 7
+              font_size: 48
               anchor_x: left
-              anchor_y: bottom
+              anchor_y: top
             - type: text
-              text: BALL (ball)
-              y: 295
-              x: 20
-              anchor_x: left
-              anchor_y: bottom
-              font_size: 50
+              text: (ball)
+              y: 918
+              x: 421
+              z: 7
+              anchor_x: right
+              anchor_y: top
+              font_size: 48
+            - type: image
+              image: cartoon_pinball
+              x: 390
+              y: 905
+              z: 7
+              anchor_x: right
+              anchor_y: top
             - type: text
               text: (player|bender_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 520
+              y: 950
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|leela_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 650
+              y: 825
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|fry_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 780
+              y: 700
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|nibbler_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 910
+              y: 575
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|professor_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 1040
+              y: 450
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|amy_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 1170
+              y: 325
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|hermes_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 1300
+              y: 250
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|zoidberg_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 1430
+              y: 125
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: image
-              image: crew_level_indicators
-              x: 450
-              y: 1080
-              anchor_x: left
-              anchor_y: top
+              image: player_and_crew_ui
+              z: 5
             - type: image
               image: base_background1
+              z: 1
     moon_delivery_slide:
         widgets:
             - type: text
