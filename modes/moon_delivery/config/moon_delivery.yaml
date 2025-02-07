@@ -221,6 +221,11 @@ sequences:
             - lunar_lander_searching
         events_when_complete: lunar_lander_found_shot_lit
 
+slide_player:
+    mode_moon_delivery_stopping:
+        moon_delivery_slide:
+            action: remove
+
 widget_player:
     moon_delivery_step1:
         moon_step1:
