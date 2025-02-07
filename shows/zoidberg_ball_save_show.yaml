@@ -1,0 +1,12 @@
+#show_version=6
+##! show: zoidberg_ball_save_show
+
+    - duration: 100ms
+      widgets:
+          zoidberg_ball_save_video:
+              action: add
+              target: display2
+    - duration: 3200ms
+      widgets:
+          zoidberg_ball_save_video:
+              action: remove

@@ -947,7 +947,7 @@ slides:
               text: (player|leela_level)
               font_size: 72
               color: black
-              y: 825
+              y: 820
               x: 1750
               z: 7
               anchor_x: right
@@ -956,7 +956,7 @@ slides:
               text: (player|fry_level)
               font_size: 72
               color: black
-              y: 700
+              y: 690
               x: 1750
               z: 7
               anchor_x: right
@@ -965,7 +965,7 @@ slides:
               text: (player|nibbler_level)
               font_size: 72
               color: black
-              y: 575
+              y: 560
               x: 1750
               z: 7
               anchor_x: right
@@ -974,7 +974,7 @@ slides:
               text: (player|professor_level)
               font_size: 72
               color: black
-              y: 450
+              y: 430
               x: 1750
               z: 7
               anchor_x: right
@@ -983,7 +983,7 @@ slides:
               text: (player|amy_level)
               font_size: 72
               color: black
-              y: 325
+              y: 300
               x: 1750
               z: 7
               anchor_x: right
@@ -992,7 +992,7 @@ slides:
               text: (player|hermes_level)
               font_size: 72
               color: black
-              y: 250
+              y: 170
               x: 1750
               z: 7
               anchor_x: right
@@ -1001,7 +1001,7 @@ slides:
               text: (player|zoidberg_level)
               font_size: 72
               color: black
-              y: 125
+              y: 40
               x: 1750
               z: 7
               anchor_x: right
@@ -1160,50 +1160,50 @@ slides:
 
 widget_player:
     player_added{num==2}:
-        player2_scoring:
+        base_player2_scoring:
             slide: base_slide
     player_added{num==3}:
-        player3_scoring:
+        base_player3_scoring:
             slide: base_slide
     player_added{num==4}:
-        player4_scoring:
+        base_player4_scoring:
             slide: base_slide
 
 widgets:
-    player2_scoring:
+    base_player2_scoring:
         - type: text
           text: (player2|score)
           number_grouping: true
           min_digits: 2
-          font_size: 45
+          font_size: 50
           color: black
-          y: 108
-          x: 875
-          z: 5
+          y: 655
+          x: 419
+          z: 7
           anchor_x: right
           anchor_y: bottom
-    player3_scoring:
+    base_player3_scoring:
         - type: text
           text: (player3|score)
           number_grouping: true
           min_digits: 2
-          font_size: 45
+          font_size: 50
           color: black
-          y: 108
-          x: 1335
-          z: 5
+          y: 410
+          x: 419
+          z: 7
           anchor_x: right
           anchor_y: bottom
-    player4_scoring:
+    base_player4_scoring:
         - type: text
           text: (player4|score)
           number_grouping: true
           min_digits: 2
-          font_size: 45
+          font_size: 50
           color: black
-          y: 108
-          x: 1795
-          z: 5
+          y: 165
+          x: 419
+          z: 7
           anchor_x: right
           anchor_y: bottom
     empty_gauge:

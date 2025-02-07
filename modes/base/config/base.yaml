@@ -138,6 +138,7 @@ light_player:
         l_left_spotlight: ffffff
 
 show_player:
+    ball_save_zoidberg_ball_save_saving_ball: zoidberg_ball_save_show
     mode_base_started:
         zoidberg_neutral_show:
             loops: -1
@@ -190,6 +191,12 @@ slide_player:
     remove_hypnotoad_slide:
         hypnotoad_slide:
             action: remove
+
+widgets:
+    zoidberg_ball_save_video:
+        type: video
+        video: im_the_hero
+        z: 9
 
 widget_player:
     mode_base_started:

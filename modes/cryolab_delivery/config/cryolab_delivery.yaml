@@ -184,13 +184,13 @@ widgets:
 
 widget_player:
     player_added{num==2}:
-        player2_scoring:
+        base_player2_scoring:
             slide: cryolab_delivery_slide
     player_added{num==3}:
-        player3_scoring:
+        base_player3_scoring:
             slide: cryolab_delivery_slide
     player_added{num==4}:
-        player4_scoring:
+        base_player4_scoring:
             slide: cryolab_delivery_slide
 
 shots:
