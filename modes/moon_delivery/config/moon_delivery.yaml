@@ -13,10 +13,13 @@ state_machines:
             start:
                 label: Start state
                 events_when_started: moon_delivery_waiting
+#move to step1 when the intro video stops
             step1:
                 events_when_started: moon_delivery_step1
+#shoot the right orbit to delivery the crate and progress to step2
             step2:
                 events_when_started: moon_delivery_step2
+#shoot whalers_shots twice to progress to step3
             step3:
                 events_when_started: moon_delivery_step3
             step4:
@@ -54,6 +57,24 @@ state_machines:
             - source: start, step2, step3, step4, step5, step6
               target: failed
               events: fail_moon_delivery
+    whalers_state:
+#need this to play the whalers_song clips in order
+        persist_state: false
+        states:
+            start:
+                label: Start state
+                events_when_started: whalers_shot_waiting
+            play_first_whalers:
+                events_when_started: play_first_whalers
+            play_second_whalers:
+                events_when_started: play_second_whalers
+        transitions:
+            - source: start
+              target: play_first_whalers
+              events: sing_a_whaling_tune
+            - source: play_first_whalers
+              target: play_second_whalers
+              events: sing_a_whaling_tune
 
 # TODO: needs update for config_version=6
 light_player:
@@ -203,8 +224,7 @@ sequences:
         events:
             - whalers_right_shot_hit, whalers_left_shot_hit
             - whalers_right_shot_hit, whalers_left_shot_hit
-            - whalers_right_shot_hit, whalers_left_shot_hit
-            - whalers_right_shot_hit, whalers_left_shot_hit
+        events_when_hit: sing_a_whaling_tune
         events_when_complete: rode_whalers
     all_farmer_escape_sequence:
         enable_events: moon_delivery_step5
@@ -458,31 +478,7 @@ sounds:
             attenuation: 1.0
             release_point: 0
             release: 10ms
-    whalers_song3:
-        ducking:
-            target: music
-            delay: 0
-            attack: 10ms
-            attenuation: 1.0
-            release_point: 0
-            release: 10ms
-    whalers_song4:
-        ducking:
-            target: music
-            delay: 0
-            attack: 10ms
-            attenuation: 1.0
-            release_point: 0
-            release: 10ms
 
-sound_pools:
-    whalers_song:
-        track: voice
-        sounds:
-            - whalers_song1
-            - whalers_song2
-            - whalers_song3
-            - whalers_song4
 
 sound_player:
     moon_delivery_step1:
@@ -500,11 +496,11 @@ sound_player:
     timer_joyride_timer_complete:
         old_moon_song:
             action: play
-    whalers_right_shot_hit:
-        whalers_song:
+    play_first_whalers:
+        whalers_song1:
             action: play
-    whalers_left_shot_hit:
-        whalers_song:
+    play_second_whalers:
+        whalers_song2:
             action: play
     s_left_loop_active: no_sound|block
     s_right_loop_active: no_sound|block
