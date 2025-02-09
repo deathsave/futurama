@@ -242,6 +242,12 @@ sequences:
         events_when_complete: lunar_lander_found_shot_lit
 
 slide_player:
+    mode_moon_delivery_started:
+        base_slide:
+            action: remove
+        moon_delivery_slide:
+            action: play
+            target: display1
     mode_moon_delivery_stopping:
         moon_delivery_slide:
             action: remove
@@ -516,6 +522,11 @@ sound_player:
 
 
 show_player:
+    mode_moon_delivery_started:
+        moon_delivery_intro_show:
+            loops: 0
+            priority: 500
+            events_when_stopped: moon_delivery_intro_show_ended
     timer_crate_delivery_timer_started:
         deliver_crate_shot_lit_show:
             loops: -1
