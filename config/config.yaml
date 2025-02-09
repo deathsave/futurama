@@ -1018,104 +1018,111 @@ slides:
               text: (player1|score)
               number_grouping: true
               min_digits: 2
-              font_size: 45
+              font_size: 50
               color: black
-              y: 108
-              x: 413
-              z: 5
+              y: 920
+              x: 419
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: PLAYER (number)
-              y: 274
-              x: 240
-              z: 5
-              font_size: 50
+              y: 918
+              x: 55
+              z: 7
+              font_size: 48
               anchor_x: left
-              anchor_y: bottom
+              anchor_y: top
             - type: text
-              text: BALL (ball)
-              y: 274
-              x: 44
-              z: 5
-              anchor_x: left
-              anchor_y: bottom
-              font_size: 50
+              text: (ball)
+              y: 918
+              x: 421
+              z: 7
+              anchor_x: right
+              anchor_y: top
+              font_size: 48
+            - type: image
+              image: cartoon_pinball
+              x: 390
+              y: 905
+              z: 7
+              anchor_x: right
+              anchor_y: top
             - type: text
               text: (player|bender_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 757
-              z: 5
+              y: 950
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|leela_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 887
-              z: 5
+              y: 820
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|fry_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 1017
-              z: 5
+              y: 690
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|nibbler_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 1147
-              z: 5
+              y: 560
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|professor_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 1277
-              z: 5
+              y: 430
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|amy_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 1407
-              z: 5
+              y: 300
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|hermes_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 1537
-              z: 5
+              y: 170
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: text
               text: (player|zoidberg_level)
-              font_size: 42
+              font_size: 72
               color: black
-              y: 856
-              x: 1667
-              z: 5
+              y: 40
+              x: 1750
+              z: 7
               anchor_x: right
               anchor_y: bottom
             - type: image
-              image: luna_park_overlay
-              z: 4
+              image: player_and_crew_ui
+              z: 5
     moon_delivery_intro_slide:
         widgets:
             - type: video
@@ -1156,21 +1163,99 @@ slides:
         widgets:
             - type: image
               image: slurm_ad
+    cryolab_delivery_slide:
+#this slide has to be here in config
+#if you have it in the mode, then the widgets for players 2-4
+#will only be added to the slide when player1 is up.
+        widgets:
+            - type: text
+              text: (player1|score)
+              number_grouping: true
+              min_digits: 2
+              font_size: 50
+              color: black
+              y: 920
+              x: 419
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: PLAYER (number)
+              y: 918
+              x: 55
+              z: 7
+              font_size: 48
+              anchor_x: left
+              anchor_y: top
+            - type: text
+              text: (ball)
+              y: 918
+              x: 421
+              z: 7
+              anchor_x: right
+              anchor_y: top
+              font_size: 48
+            - type: image
+              image: cartoon_pinball
+              x: 390
+              y: 905
+              z: 7
+              anchor_x: right
+              anchor_y: top
+            - type: image
+              image: cryolab_UI
+              z: 5
 
 
 widget_player:
     player_added{num==2}:
         base_player2_scoring:
             slide: base_slide
+        cryolab_player2_scoring:
+            slide: cryolab_delivery_slide
+        moon_player2_scoring:
+            slide: moon_delivery_slide
     player_added{num==3}:
         base_player3_scoring:
             slide: base_slide
+        cryolab_player3_scoring:
+            slide: cryolab_delivery_slide
+        moon_player3_scoring:
+            slide: moon_delivery_slide
     player_added{num==4}:
         base_player4_scoring:
             slide: base_slide
+        cryolab_player4_scoring:
+            slide: cryolab_delivery_slide
+        moon_player4_scoring:
+            slide: moon_delivery_slide
 
 widgets:
     base_player2_scoring:
+        - type: text
+          text: (player2|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 655
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
+    cryolab_player2_scoring:
+        - type: text
+          text: (player2|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 655
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
+    moon_player2_scoring:
         - type: text
           text: (player2|score)
           number_grouping: true
@@ -1194,7 +1279,55 @@ widgets:
           z: 7
           anchor_x: right
           anchor_y: bottom
+    cryolab_player3_scoring:
+        - type: text
+          text: (player3|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 410
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
+    moon_player3_scoring:
+        - type: text
+          text: (player3|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 410
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
     base_player4_scoring:
+        - type: text
+          text: (player4|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 165
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
+    cryolab_player4_scoring:
+        - type: text
+          text: (player4|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 165
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
+    moon_player4_scoring:
         - type: text
           text: (player4|score)
           number_grouping: true
