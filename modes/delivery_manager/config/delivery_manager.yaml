@@ -170,19 +170,12 @@ ball_holds:
         debug: true
 
 slide_player:
-    mode_moon_delivery_started:
-        base_slide:
-            action: remove
-        moon_delivery_slide:
-            action: play
-            target: display1
     mode_moon_delivery_stopped:
         base_slide:
             action: play
             target: display1
-        moon_delivery_slide:
-            action: remove
-
+            priority: 100
+            
 widget_player:
     mode_moon_delivery_stopped:
         full_gauge:
@@ -247,11 +240,6 @@ event_player:
     cannibalon_delivery_show_ended: use_half_tank, delivery_ended
 
 show_player:
-    mode_moon_delivery_started:
-        moon_delivery_intro_show:
-            loops: 0
-            priority: 500
-            events_when_stopped: moon_delivery_intro_show_ended
     cannibalon_delivery_start_shot_hit:
         cannibalon_delivery_show:
             loops: 0
