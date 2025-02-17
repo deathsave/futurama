@@ -18,13 +18,14 @@ class TestCryolabModePathNibblerSkillshot(MpfMachineTestCase):
         self.assertEqual(1, self.machine.playfield.balls)
 
     def _verify_cryolab_mode(self):
+        self.advance_time_and_run(3)
         self.assertModeRunning("cryolab_delivery")
         self.assertModeNotRunning("delivery_manager")
         self.assertModeNotRunning("crew_manager")
         self.assertModeNotRunning("slurm_caps")
 
     def _nibbler_skillshot(self):
-        self.hit_switch_and_run("s_VUK", 1)
+        self.hit_switch_and_run("s_VUK", 3)
         self.assertPlayerVarEqual("success", "cryolab_delivery_status")
 
     def _exit_to_base_mode(self):
