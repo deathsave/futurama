@@ -2,8 +2,8 @@
 ##! mode: slurm_caps
 
 mode:
-    start_events: mode_base_started, delivery_ended
-    stop_events: ball_ending, delivery_started
+    start_events: mode_base_started, delivery_ended, mode_cryolab_delivery_stopped
+    stop_events: ball_ending, delivery_started, mode_cryolab_delivery_started
     priority: 101
 
 shots:
