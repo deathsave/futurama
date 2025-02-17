@@ -31,5 +31,4 @@
   events: zoidberg_reset
 - duration: 1
   events: zoidberg_r6
-- duration: 5
-  events: zoidberg_reset
+
