@@ -23,6 +23,7 @@ class TestCryolabModePathNibblerSkillshot(MpfMachineTestCase):
         self.assertModeNotRunning("delivery_manager")
         self.assertModeNotRunning("crew_manager")
         self.assertModeNotRunning("slurm_caps")
+        self.assertEqual("panuccis", self.machine.state_machines.cryolab_delivery_state.state)
 
     def _nibbler_skillshot(self):
         self.hit_switch_and_run("s_VUK", 3)
