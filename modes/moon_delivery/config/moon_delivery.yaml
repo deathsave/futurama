@@ -527,6 +527,8 @@ show_player:
             loops: 0
             priority: 500
             events_when_stopped: moon_delivery_intro_show_ended
+    flipper_cradle:
+        moon_delivery_intro_show: stop
     timer_crate_delivery_timer_started:
         deliver_crate_shot_lit_show:
             loops: -1
