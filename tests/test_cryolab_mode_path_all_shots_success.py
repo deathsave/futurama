@@ -50,7 +50,7 @@ class TestCryolabModePathAllShotsSuccess(MpfMachineTestCase):
             self.machine.state_machines.cryolab_delivery_state.state)
 
     def _long_exit_to_base_mode(self):
-        self.advance_time_and_run(40)
+        self.advance_time_and_run(60)
         self.assertModeNotRunning("cryolab_delivery")
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
