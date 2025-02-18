@@ -438,6 +438,12 @@ timers:
             - action: add
               event: s_pe_platter_active
               value: 1
+    fry_shot_debounce:
+        start_value: 2
+        end_value: 0
+        direction: down
+            - action: start
+              event: base_fry_target_shot_hit
 
 shots:
     ship_spinning:
@@ -450,8 +456,8 @@ shots:
         disable_events: mode_moon_delivery_started, delivery_started
     base_fry_target_shot:
         switch: s_t_fry
-        enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended
-        disable_events: mode_moon_delivery_started, delivery_started
+        enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended, timer_fry_shot_debounce_complete
+        disable_events: mode_moon_delivery_started, delivery_started, timer_fry_shot_debounce_started
     base_bender_target_shot:
         switch: s_t_bender
         enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended
