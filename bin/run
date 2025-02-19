@@ -1,3 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-mpf both -c production
+echo "Booting MPF using production_linux config."
+CMD="source ~/.bash_profile && mpf both"
+xterm -hold -e "cd ~/futurama && bash -c '$CMD'"
