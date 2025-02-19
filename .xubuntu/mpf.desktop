@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=MPF
+Comment=Mission Pinball
+Exec=/home/professor/futurama/bin/run
+Path=/home/professor/futurama
+Terminal=false
+Type=Application
