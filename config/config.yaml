@@ -26,11 +26,9 @@ p_roc:
 steppers:
     zoidberg_stepper:
         number: "00427235"
-        pos_max: 5000
-        pos_min: -5000
+        pos_max: 500000
+        pos_min: -500000
         homing_mode: hardware
-        reset_events: zoidberg_reset
-        reset_position: 0
         relative_positions:
             -200: zoidberg_r1
             200: zoidberg_l1
