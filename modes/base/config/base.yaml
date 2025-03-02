@@ -138,7 +138,11 @@ light_player:
         l_left_spotlight: ffffff
 
 show_player:
-    ball_save_zoidberg_ball_save_saving_ball: zoidberg_ball_save_show
+    ball_save_zoidberg_ball_save_saving_ball: 
+        zoidberg_ball_save_show:
+            action: play
+            loops: 0
+            priority: 200
     mode_base_started:
         zoidberg_neutral_show:
             loops: -1
