@@ -1,6 +1,0 @@
-modes/videos/homemade_intro_silent_clip.mp4 filter=lfs diff=lfs merge=lfs -text
-modes/videos/slurm_factory_commercial_clip.mp4 filter=lfs diff=lfs merge=lfs -text
-modes/videos/scary_door_clip.mp4 filter=lfs diff=lfs merge=lfs -text
-modes/slurm_factory/videos/slurm_factory_clip1.mp4 filter=lfs diff=lfs merge=lfs -text
-modes/slurm_factory/videos/slurm_factory_clip2.mp4 filter=lfs diff=lfs merge=lfs -text
-modes/slurm_factory/videos/slurm_factory_clip4.mp4 filter=lfs diff=lfs merge=lfs -text
