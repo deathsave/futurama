@@ -1,9 +1,3 @@
-#show_version=6
-##! show: custom_flash_show
-
-    - duration: 500ms
-      lights:
-          (which): (color)
-    - duration: 500ms
-      lights:
-          (which): off
+version https://git-lfs.github.com/spec/v1
+oid sha256:a26d058de8f84e138e4786b862752eb0ba7856afbd2c4a9dd50a13b572cca6f1
+size 167

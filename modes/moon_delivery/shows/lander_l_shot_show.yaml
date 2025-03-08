@@ -1,21 +1,3 @@
-#show_version=6
-##! show: lander_l_shot_show
-
-    - time: "+200ms"
-      lights:
-          l_tube1: 670467
-    - time: "+200ms"
-      lights:
-          l_tube2: 670467
-    - time: "+200ms"
-      lights:
-          l_tube3: 670467
-    - time: "+200ms"
-      lights:
-          l_tube4: 670467
-    - time: "+200ms"
-      lights:
-          l_tube1: ffffff
-          l_tube2: ffffff
-          l_tube3: ffffff
-          l_tube4: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:290e583118b15e089b529f21096c62e46e244eb5e70f3ec2449cf2d79c80588d
+size 429

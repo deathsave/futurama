@@ -1,13 +1,3 @@
-#config_version=6
-
-show_player:
-    mode_attract_started:
-        attract_loop_show:
-            priority: 300
-            
-light_player:
-    mode_attract_started:
-        indicator: ffffff
-        ship: ffffff
-        tubes: ffffff
-        caps: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:df55e927e96e8f93db077d1516a597137fca00797698f4c1e0cf332d71cd3df4
+size 254

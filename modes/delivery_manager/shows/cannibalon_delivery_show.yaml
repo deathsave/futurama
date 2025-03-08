@@ -1,13 +1,3 @@
-#show_version=6
-##! show: cannibalon_delivery_show
-
-
-- time: 0
-  slides:
-      cannibalon_delivery_slide:
-          priority: 500
-          target: display1
-- time: "+20"
-  slides:
-      cannibalon_delivery_slide:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:39fe91fc332d1e9bfa983f125d0787e08464dcddff1a59cda6a51436968cb81b
+size 239

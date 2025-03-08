@@ -1,4 +1,3 @@
-#!/bin/bash
-
-sleep 5
-ticcmd --halt-and-set-position 0
+version https://git-lfs.github.com/spec/v1
+oid sha256:5c8ee68a641dc2a1b4e72beb81b97371deeda49562ddb2f474d892e05f80f5f8
+size 54

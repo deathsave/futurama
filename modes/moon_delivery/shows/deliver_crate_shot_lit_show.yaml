@@ -1,9 +1,3 @@
-#show_version=6
-##! show: deliver_crate_shot_lit_show
-
-    - duration: 300ms
-      lights:
-          orbit: "000000"
-    - duration: 300ms
-      lights:
-          orbit: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:f4f6ed162b3b2680f1349f5b28fc0fe355a458fb3fa01d6c84949953ba357f5d
+size 177

@@ -1,12 +1,3 @@
-#show_version=6
-##! show: crate_delivered_show
-
-- time: 0
-  slides:
-      crate_delivered_slide:
-          priority: 500
-          target: display1
-- time: 9
-  slides:
-      crate_delivered_slide:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:3e80706231c5c125c40c2850f2c4f82e5799af8306623dfaddb86522c14021e3
+size 222

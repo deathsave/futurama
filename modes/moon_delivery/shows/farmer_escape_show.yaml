@@ -1,12 +1,3 @@
-#show_version=6
-##! show: farmer_escape_show
-
-- time: 0
-  widgets:
-      farmer_escape_video:
-          slide: moon_delivery_slide
-
-- time: "+12"
-  widgets:
-      farmer_escape_video:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:66467ce20ced482f7e3b9b9eb2732f93a954b9364ff49afccd56e34410c68e0a
+size 209

@@ -1,12 +1,3 @@
-#show_version=6
-##! show: rover_escape_show
-
-- time: 0
-  widgets:
-      rover_escape_video:
-          slide: moon_delivery_slide
-
-- time: "+22"
-  widgets:
-      rover_escape_video:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:7a715ac1abac363e6fb1bb827872fe75b96a4dda1193a6d0027dc50c80943e35
+size 206

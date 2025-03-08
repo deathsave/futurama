@@ -1,21 +1,3 @@
-#show_version=6
-##! show: cap_collected_show
-
-- time: "+100ms"
-  widgets:
-      slurm_cap_count:
-          action: add
-          slide: base_slide
-      slurm_cap:
-          action: add
-          slide: base_slide
-  sounds:
-      cap_sound:
-          action: play
-
-- time: "+2"
-  widgets:
-      slurm_cap_count:
-          action: remove
-      slurm_cap:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:8ab7aae614c6113473024ff715ad77c78400ed0f7199b3a0486ba23bb16a98b3
+size 379

@@ -1,9 +1,3 @@
-#show_version=6
-##! show: lrrr_pulse_show
-
-    - duration: 500ms
-      lights:
-          l_pop_bumper: "0029ff"
-    - duration: 500ms
-      lights:
-          l_pop_bumper: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:cb9283a9f44f3bfb50a70ac98bf2927ef4e5abc408422428027aee10811d45d6
+size 179

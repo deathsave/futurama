@@ -1,11 +1,3 @@
-#show_version=6
-##! show: whalers_shots_lit_show
-
-    - duration: 300ms
-      lights:
-          l_left_loop_insert: "000000"
-          l_right_loop_insert: "000000"
-    - duration: 300ms
-      lights:
-          l_left_loop_insert: ffffff
-          l_right_loop_insert: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:ee5a740ea1762a7bfd2d9752009160134c92a941571beb4adb5bf3d285be1f68
+size 276

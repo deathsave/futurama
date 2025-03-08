@@ -1,6 +1,3 @@
-.DS_Store
-logs
-__pycache__
-
-data/*
-!data/.keep
+version https://git-lfs.github.com/spec/v1
+oid sha256:ac6d66b14b25e0cb545eff3ec823d5c62a074b210c9c934aeb345c74ba315f45
+size 47

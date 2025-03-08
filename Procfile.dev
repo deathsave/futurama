@@ -1,4 +1,3 @@
-# both mpf and mpf-mc, smart virtual,
-# text only UI and force loading / no cache
-mpf: mpf both -Xta
-monitor: mpf monitor
+version https://git-lfs.github.com/spec/v1
+oid sha256:0d8e68d5afe72a6384becf091064b6da070dc72dec73b0f1eb105fd7c1cb8c52
+size 122

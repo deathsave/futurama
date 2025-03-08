@@ -1,6 +1,3 @@
-from mpf.core.mode import Mode
-
-class Attract(Mode):
-
-    def mode_start(self, **kwargs):
-        self.platforms.pololu.pololu_ticcmd_wrapper._ticcmd(self, "--halt-and-set-position, 0")
+version https://git-lfs.github.com/spec/v1
+oid sha256:b557217962ab35e0fb139221ddd0093b031f994a5621d378a422b02db75b07ba
+size 185

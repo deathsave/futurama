@@ -1,18 +1,3 @@
-#show_version=6
-##! show: panuccis_show
-
-    - duration: 100ms
-      slides:
-          1999_slide:
-              action: remove  
-    - duration: 16s
-      slides:
-          ride_the_bike_instructions_slide:
-              target: display2
-      widgets:
-          panuccis_video:
-              slide: cryolab_delivery_slide
-    - duration: 1s
-      widgets:
-          panuccis_video:
-              action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:0be047b95ce9b567b46c3588a6ff4f128d5afc65cf3e77340caa3a8d6b7cbf27
+size 413

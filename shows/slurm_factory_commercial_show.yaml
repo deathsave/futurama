@@ -1,13 +1,3 @@
-#show_version=6
-##! show: slurm_factory_commercial_show
-
-
-- time: 0
-  slides:
-      slurm_factory_commercial_slide:
-          priority: 500
-          target: display1
-- time: "+48.5"
-  slides:
-      slurm_factory_commercial_slide:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:66e3f779d67b9469a1d1de232fa3654126cbec69a5a69d20301bc47206f46e0f
+size 256

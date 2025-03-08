@@ -1,12 +1,3 @@
-#show_version=6
-##! show: nibbler_skillshot_show
-
-    - duration: 10s
-      widgets:
-          nibbler_skillshot_video:
-              slide: cryolab_delivery_slide
-    - duration: 1s
-      widgets:
-          nibbler_skillshot_video:
-              action: remove
-      events: wake_up_in_the_future
+version https://git-lfs.github.com/spec/v1
+oid sha256:28f71c71f72acb97e8c3f0ec571c22dd22978fb7cc0e55b877cf5da6b8001d0c
+size 298

@@ -1,9 +1,3 @@
-#show_version=6
-##! show: lander_found_shot_show
-
-    - duration: 200ms
-      lights:
-          l_delivery_shot_insert: "000000"
-    - duration: 200ms
-      lights:
-          l_delivery_shot_insert: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:1bde215b1c488fcd83e34922dffeb474437f3b8202b43f7eb8c17089fb2c1e9c
+size 206

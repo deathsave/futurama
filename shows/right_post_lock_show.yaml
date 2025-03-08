@@ -1,27 +1,3 @@
-#show_version=6
-##! show: right_post_lock_show
-
-    - duration: 500ms
-      lights:
-          l_right_loop_insert: "000000"
-    - duration: 500ms
-      lights:
-          l_right_loop_insert: ffffff
-    - duration: 500ms
-      lights:
-          l_right_loop_insert: "000000"
-    - duration: 500ms
-      lights:
-          l_right_loop_insert: ffffff
-    - duration: 500ms
-      lights:
-          l_right_loop_insert: "000000"
-    - duration: 500ms
-      lights:
-          l_right_loop_insert: ffffff
-    - duration: 500ms
-      lights:
-          l_right_loop_insert: "000000"
-    - duration: 500ms
-      lights:
-          l_right_loop_insert: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:7e20085092dcc0298244624faa4810782e05a34480ffd771c323ccc205c63a32
+size 648

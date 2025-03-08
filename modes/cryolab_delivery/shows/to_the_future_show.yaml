@@ -1,16 +1,3 @@
-#show_version=6
-##! show: to_the_future_show
-
-    - duration: 5s
-      widgets:
-          to_the_future_video:
-              slide: cryolab_delivery_slide
-    - duration: 38s
-      widgets:
-        cryolab_awards:
-              slide: 1999_slide
-    - duration: 1s
-      widgets:
-          to_the_future_video:
-              action: remove
-      events: wake_up_in_the_future
+version https://git-lfs.github.com/spec/v1
+oid sha256:a32ef671971283e1b5956d86ecade34c43d9e58167a6a4378a30303dac4d813c
+size 376

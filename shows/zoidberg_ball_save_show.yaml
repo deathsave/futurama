@@ -1,12 +1,3 @@
-#show_version=6
-##! show: zoidberg_ball_save_show
-
-    - duration: 100ms
-      widgets:
-          zoidberg_ball_save_video:
-              action: add
-              target: display2
-    - duration: 3200ms
-      widgets:
-          zoidberg_ball_save_video:
-              action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:d82c81da1b0685296a8e2d3cd14a744cf0c63af17419aac910e0d1fed3ebee24
+size 284

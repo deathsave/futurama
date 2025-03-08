@@ -1,33 +1,3 @@
-#show_version=6
-##! show: ball_save_indicator_show
-
-    - duration: 500ms
-      lights:
-          l_shoot_again: "000000"
-    - duration: 500ms
-      lights:
-          l_shoot_again: ffffff
-    - duration: 500ms
-      lights:
-          l_shoot_again: "000000"
-    - duration: 500ms
-      lights:
-          l_shoot_again: ffffff
-    - duration: 500ms
-      lights:
-          l_shoot_again: "000000"
-    - duration: 500ms
-      lights:
-          l_shoot_again: ffffff
-    - duration: 500ms
-      lights:
-          l_shoot_again: "000000"
-    - duration: 500ms
-      lights:
-          l_shoot_again: ffffff
-    - duration: 500ms
-      lights:
-          l_shoot_again: "000000"
-    - duration: 500ms
-      lights:
-          l_shoot_again: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:74bdb43c6dda396fbba09c03de048a05566e65d58e130b872202ab383e3acd55
+size 742

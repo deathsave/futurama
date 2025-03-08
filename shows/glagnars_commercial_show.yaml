@@ -1,13 +1,3 @@
-#show_version=6
-##! show: glagnars_commercial_show
-
-
-- time: 0
-  slides:
-      glagnars_commercial_slide:
-          priority: 500
-          target: display1
-- time: 9
-  slides:
-      glagnars_commercial_slide:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:fa4e89fbdec774f6362353622186f1e0d058d47181e96c8eab03147936308823
+size 235

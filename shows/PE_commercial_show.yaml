@@ -1,15 +1,3 @@
-#show_version=6
-##! show: PE_commercial_show
-
-
-- time: 0
-  slides:
-      welcome_slide:
-          action: remove
-      PE_commercial_slide:
-          priority: 500
-          target: display1
-- time: "+47"
-  slides:
-      PE_commercial_slide:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:7a45acf7bae03224765b569ebc5aba6c664b8b481c4faba126602f600f913480
+size 267

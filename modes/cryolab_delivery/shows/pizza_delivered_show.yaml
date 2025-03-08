@@ -1,15 +1,3 @@
-#show_version=6
-##! show: pizza_delivered_show
-
-    - duration: 250ms
-      widgets:
-          lock_the_bike_background:
-              action: remove
-    - duration: 46s
-      widgets:
-          pizza_delivered_video:
-              slide: cryolab_delivery_slide
-    - duration: 1s
-      widgets:
-          pizza_delivered_video:
-              action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:915dadd73907676c151efb35b1fddab0b8a79d90d3868a6db3752a6b21d4af2f
+size 358

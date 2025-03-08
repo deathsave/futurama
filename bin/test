@@ -1,8 +1,3 @@
-#!/bin/bash
-
-if [ -z "$1" ]; then
-  FILES="tests/test_*.py"
-else
-  FILES="$1"
-fi
-python -m unittest $FILES
+version https://git-lfs.github.com/spec/v1
+oid sha256:3c124172a412335fb98f810a9a5d649fefc05ff62bf6fbfd1486d0ab8bdd7aff
+size 107

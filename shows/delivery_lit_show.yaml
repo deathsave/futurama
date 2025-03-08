@@ -1,9 +1,3 @@
-#show_version=6
-##! show: delivery_lit_show
-
-    - duration: 300ms
-      lights:
-          l_delivery_shot_insert: "000000"
-    - duration: 300ms
-      lights:
-          l_delivery_shot_insert: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:a76a7401b5b4a38f2477fef2a3aa877c16a3ed1b0f7db6a6cf4569c7fb3e92fe
+size 201

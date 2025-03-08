@@ -1,9 +1,3 @@
-#show_version=6
-##! show: PEHQ_pulse_show
-
-    - duration: 300ms
-      lights:
-          HQ: off
-    - duration: 300ms
-      lights:
-          HQ: white
+version https://git-lfs.github.com/spec/v1
+oid sha256:c79bc6adc58016c7c638e271112d178a86766e9e9b202da648e16b1dbbc7ca69
+size 153

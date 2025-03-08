@@ -1,13 +1,3 @@
-#show_version=6
-##! show: ball_end_score_show
-
-
-- time: 0
-  slides:
-      ball_end_score_slide:
-          priority: 500
-          target: display1
-- time: "+3"
-  slides:
-      ball_end_score_slide:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:3e8816f7343a22c71ed77f0d336bf1caf1ba1e95a411c1c3d92f563bc22b7fbe
+size 223

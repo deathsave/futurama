@@ -1,27 +1,3 @@
-#show_version=6
-##! show: tube_light_show
-
-    - duration: 50ms
-      lights:
-          l_tube1: ffffff
-          l_tube2: ffffff
-          l_tube3: ffffff
-          l_tube4: ffffff
-    - duration: 100ms
-      lights:
-          l_tube1: "000000"
-    - duration: 100ms
-      lights:
-          l_tube1: ffffff
-          l_tube2: "000000"
-    - duration: 100ms
-      lights:
-          l_tube2: ffffff
-          l_tube3: "000000"
-    - duration: 100ms
-      lights:
-          l_tube3: ffffff
-          l_tube4: "000000"
-    - duration: 50ms
-      lights:
-          l_tube4: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:3b7b0ebe42d3deb42fd60b3c6416127d3ce1b3613ec654da517249c0d03d362f
+size 577

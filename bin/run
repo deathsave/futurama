@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
-echo "Booting MPF using production_linux config."
-CMD="source ~/.bash_profile && mpf both"
-xterm -hold -e "cd ~/futurama && bash -c '$CMD'"
+version https://git-lfs.github.com/spec/v1
+oid sha256:4ba112d4600d23146d43620b4c5890bf73aae7db685175451f09060059915ead
+size 161

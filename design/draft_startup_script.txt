@@ -1,8 +1,3 @@
-#!/bin/bash
-
-echo "Good news!"
-sleep 1
-cd Futurama/
-bin/stepper_you_are_home
-sleep 1
-mpf both
+version https://git-lfs.github.com/spec/v1
+oid sha256:a87f93456c3d5e6647127960f4cee9e0c758e796f7943524916d8a13eed10986
+size 94

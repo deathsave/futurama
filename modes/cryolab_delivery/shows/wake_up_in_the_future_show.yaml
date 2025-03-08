@@ -1,16 +1,3 @@
-#show_version=6
-##! show: wake_up_in_the_future_show
-
-    - duration: 16s
-      widgets:
-          wake_up_in_the_future_video:
-              slide: cryolab_delivery_slide
-    - duration: 250ms
-      widgets:
-          wake_up_in_the_future_video:
-              action: remove
-      events:
-          delivery_ended:
-          mom_zapp_on:
-    - duration: 250ms
-      events: stop_cryolab_delivery_mode
+version https://git-lfs.github.com/spec/v1
+oid sha256:a13e27ac35cac2d6d40cf5d05d3111733611e531bf745c386d4b9a8f61dbbff7
+size 403

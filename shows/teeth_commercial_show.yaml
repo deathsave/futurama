@@ -1,13 +1,3 @@
-#show_version=6
-##! show: teeth_commercial_show
-
-
-- time: 0
-  slides:
-      teeth_commercial_slide:
-          priority: 500
-          target: display1
-- time: "+12"
-  slides:
-      teeth_commercial_slide:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:f2aff3f749353389fbc6df17fa5a6950963d07a321d889de8caf926091551053
+size 230

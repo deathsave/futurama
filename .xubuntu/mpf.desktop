@@ -1,8 +1,3 @@
-[Desktop Entry]
-Version=1.0
-Name=MPF
-Comment=Mission Pinball
-Exec=/home/professor/futurama/bin/run
-Path=/home/professor/futurama
-Terminal=false
-Type=Application
+version https://git-lfs.github.com/spec/v1
+oid sha256:ae31d0cefe32250e609a4fb8661243778b4748154b98ba067da4a26d13c8a604
+size 161

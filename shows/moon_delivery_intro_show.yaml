@@ -1,13 +1,3 @@
-#show_version=6
-##! show: moon_delivery_intro_show
-
-
-- time: 0
-  slides:
-      moon_delivery_intro_slide:
-          priority: 500
-          target: display1
-- time: "+24"
-  slides:
-      moon_delivery_intro_slide:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:ea6d109a41d2c9ad28fb156b2c378b2880234c982a71052a174db4dc0bf643f8
+size 239

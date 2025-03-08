@@ -1,24 +1,3 @@
-#show_version=6
-##! show: custom_rainbow_show
-
-    - duration: 250ms
-      lights:
-          (which): red
-    - duration: 250ms
-      lights:
-          (which): orange
-    - duration: 250ms
-      lights:
-          (which): yellow
-    - duration: 250ms
-      lights:
-          (which): blue
-    - duration: 250ms
-      lights:
-          (which): green
-    - duration: 250ms
-      lights:
-          (which): white
-    - duration: 250ms
-      lights:
-          (which): purple
+version https://git-lfs.github.com/spec/v1
+oid sha256:b2e0c27e321dc32363ee4bb7ad8fb8f920eaebdd8caed8a49cdf66a4e1185565
+size 474

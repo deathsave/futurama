@@ -1,21 +1,3 @@
-#show_version=6
-##! show: pe_platter_rotary_show
-
-    - duration: 100ms
-      lights:
-          l_PE_spinner1: "000000"
-    - duration: 100ms
-      lights:
-          l_PE_spinner1: ffffff
-          l_PE_spinner2: "000000"
-    - duration: 100ms
-      lights:
-          l_PE_spinner2: ffffff
-          l_PE_spinner3: "000000"
-    - duration: 100ms
-      lights:
-          l_PE_spinner3: ffffff
-          l_PE_spinner4: "000000"
-    - duration: 50ms
-      lights:
-          l_PE_spinner4: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:d8e8dc305db8d2958580b4df428b9f0fe87f02470f512b8707a058735d5f8b72
+size 493

@@ -1,13 +1,3 @@
-#show_version=6
-##! show: homemade_intro_show
-
-
-- time: 0
-  slides:
-      homemade_intro_slide:
-          priority: 500
-          target: display1
-- time: "+30"
-  slides:
-      homemade_intro_slide:
-          action: remove
+version https://git-lfs.github.com/spec/v1
+oid sha256:f641ab431a2f1eb5556bfa430baacacec345efc67f89e0fea6e55bced62c1c2c
+size 224

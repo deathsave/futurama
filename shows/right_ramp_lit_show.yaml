@@ -1,9 +1,3 @@
-#show_version=6
-##! show: right_ramp_lit_show
-
-    - duration: 300ms
-      lights:
-          l_right_ramp_insert: "000000"
-    - duration: 300ms
-      lights:
-          l_right_ramp_insert: ffffff
+version https://git-lfs.github.com/spec/v1
+oid sha256:a99b4b490ac51938b45178a983b305c9fe245e015ccf231f5a5b1f14104130eb
+size 197

@@ -1,17 +1,3 @@
-from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
-
-class TestBaseMode(MpfMachineTestCase):
-
-    def test_base_mode(self):
-        self._start_game()
-
-        # Test base mode integration here...
-
-    def _start_game(self):
-        self.hit_and_release_switch("s_start")
-        self.advance_time_and_run(1)
-        self.hit_and_release_switch("s_shooter_lane")
-        self.advance_time_and_run(1)
-        self.hit_and_release_switch("s_cap1")
-        self.advance_time_and_run(1)
-        self.assertEqual(1, self.machine.playfield.balls)
+version https://git-lfs.github.com/spec/v1
+oid sha256:8bac31ca44f8c80aaff6928c77b9a0a8d61df3a8c7b30541013a8d202906cd19
+size 549
