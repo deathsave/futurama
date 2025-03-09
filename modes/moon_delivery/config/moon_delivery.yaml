@@ -76,7 +76,6 @@ state_machines:
               target: play_second_whalers
               events: sing_a_whaling_tune
 
-# TODO: needs update for config_version=6
 light_player:
     moon_delivery_waiting:
         loops: ffffff
@@ -241,6 +240,11 @@ sequences:
             - lunar_lander_searching
         events_when_complete: lunar_lander_found_shot_lit
 
+slides:
+    delivery_instructions_slide:
+        widgets:
+            type: image
+            image: delivery_instructions_background
 slide_player:
     mode_moon_delivery_started:
         base_slide:
@@ -248,6 +252,9 @@ slide_player:
         moon_delivery_slide:
             action: play
             target: display1
+        delivery_instructions_slide:
+            action: play
+            target: display2
     mode_moon_delivery_stopping:
         moon_delivery_slide:
             action: remove
@@ -255,14 +262,14 @@ slide_player:
 widget_player:
     moon_delivery_step1:
         moon_step1:
-            slide: moon_delivery_slide
+            slide: delivery_instructions_slide
         luna_park_background:
             slide: moon_delivery_slide
     moon_delivery_step2:
         moon_step1:
             action: remove
         moon_step2:
-            slide: moon_delivery_slide
+            slide: delivery_instructions_slide
         whalers_background:
             slide: moon_delivery_slide
         luna_park_background:
@@ -275,7 +282,7 @@ widget_player:
         rover_background:
             slide: moon_delivery_slide
         moon_step3:
-            slide: moon_delivery_slide
+            slide: delivery_instructions_slide
     rover_escape_shot_hit:
         rover_background:
             action: remove
@@ -287,7 +294,7 @@ widget_player:
         joyride_background:
             slide: moon_delivery_slide
         moon_step4:
-            slide: moon_delivery_slide
+            slide: delivery_instructions_slide
     moon_delivery_step5:
         moon_step4:
             action: remove
@@ -296,7 +303,7 @@ widget_player:
         farmer_background:
             slide: moon_delivery_slide
         moon_step5:
-            slide: moon_delivery_slide
+            slide: delivery_instructions_slide
     all_farmer_escape:
         farmer_background:
             action: remove
@@ -308,7 +315,7 @@ widget_player:
         lander_background:
             slide: moon_delivery_slide
         moon_step6:
-            slide: moon_delivery_slide
+            slide: delivery_instructions_slide
     lunar_lander_found_shot_lit:
         lander_background:
             action: remove
@@ -321,7 +328,7 @@ widget_player:
         moon_step6:
             action: remove
         moon_steps_complete:
-            slide: moon_delivery_slide
+            slide: delivery_instructions_slide
 
 variable_player:
     deliver_crate_shot_hit:

@@ -1,6 +1,8 @@
 #show_version=6
 ##! show: nibbler_skillshot_show
-
+    - duration: 100ms
+      lights:
+          lamps: on
     - duration: 10s
       widgets:
           nibbler_skillshot_video:
