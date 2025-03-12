@@ -253,6 +253,9 @@ show_player:
     nibbler_skillshot_hit:
         custom_rainbow_show:
             action: stop
+        custom_flash_show:
+            key: ride
+            action: stop
         panuccis_show:
             action: stop
         nibbler_skillshot_show:
@@ -260,11 +263,13 @@ show_player:
             loops: 0
     timer_ride_the_bike_shot_timer_started:
         custom_flash_show:
+            key: ride
             show_tokens:
                 which: l_left_ramp_insert, l_left_loop_insert
                 color: orange
     timer_ride_the_bike_shot_timer_complete:
         custom_flash_show:
+            key: ride
             action: stop
     ride_the_bike_shot_hit:
         custom_flash_show:
