@@ -94,8 +94,7 @@ class TestMoonModeAllShotsSuccess(MpfMachineTestCase):
         self.advance_time_and_run(3)
         self.hit_and_release_switch("s_left_ramp")
         self.advance_time_and_run(3)
-        self.hit_switch_and_run("s_VUK")
-        self.advance_time_and_run(3)
+        self.hit_switch_and_run("s_VUK", 4)
         self.assertEqual("steps_complete", self.machine.state_machines.moon_delivery_state.state)
 
     def _exit_moon_to_base(self):
