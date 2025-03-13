@@ -363,6 +363,7 @@ event_player:
     lunar_lander_l_shot_hit: lunar_lander_searching
     end_moon_delivery: stop_moon_delivery_mode
     moon_delivery_success_show_ended: stop_moon_delivery_mode
+    lunar_lander_shot_hit: lander_found
 
 widgets:
     moon_step1:
