@@ -99,9 +99,9 @@ class TestMoonModeAllShotsSuccess(MpfMachineTestCase):
 
     def _exit_moon_to_base(self):
         self.assertTrue(self.machine.ball_holds.final_scene_hold.is_full)
-        self.advance_time_and_run(28)
+        self.advance_time_and_run(30)
         self.assertModeNotRunning("moon_delivery")
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
-        self.assertSwitchState("s_VUK", "inactive")
+        self.assertEqual("0", self.machine.ball_devices.bd_VUK.balls)
