@@ -47,8 +47,9 @@ class TestMoonModeAllShotsSuccess(MpfMachineTestCase):
 
     def _light_moon_delivery(self):
         self.hit_switch_and_run("s_dt_nibbler", 3)
-        self.hit_and_release_switch("s_right_ramp", 3)
-
+        self.hit_and_release_switch("s_right_ramp")
+        self.advance_time_and_run(3)
+        
     def _start_moon_delivery(self):
         self.hit_switch_and_run("s_VUK", 5)
         self.assertEqual("start", self.machine.state_machines.moon_delivery_state.state)
