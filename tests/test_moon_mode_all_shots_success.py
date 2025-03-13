@@ -104,4 +104,4 @@ class TestMoonModeAllShotsSuccess(MpfMachineTestCase):
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
-        self.assertEqual("0", self.machine.ball_devices.bd_VUK.balls)
+        self.assertEqual(0, self.machine.ball_devices.bd_VUK.balls)
