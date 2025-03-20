@@ -1,0 +1,19 @@
+#show_version=6
+##! show: escape_robot_city_show
+
+    - duration: 20s
+      widgets:
+          robot_elders_video:
+              action: remove
+          escape_robot_city_video:
+              action: add
+              slide: reusable_delivery_slide
+          escape_instructions:
+              action: add
+              slide: RH_delivery_instructions_slide
+    - duration: 20ms
+      widgets:
+          escape_robot_city_video:
+              action: remove
+    - duration: 20ms
+      events: escape_but_no_delivery
