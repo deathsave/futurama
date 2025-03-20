@@ -3,7 +3,7 @@
 
 mode:
     start_events: start_robot_homeworld_delivery
-    stop_events: stop_robot_homeworld_delivery
+    stop_events: stop_robot_homeworld_delivery, fail_robot_homeworld_delivery
     priority: 200
 
 state_machines:
@@ -61,6 +61,10 @@ state_machines:
             - source: escape
               target: deliver_lugnuts
               events: drop_package_on_robots
+#skip to escape if found bender and bender_level > 3
+            - source: find_bender
+              target: escape
+              events: bender_wants_to_escape
 
 slides:
 #use main_delivery_slide (in config) for main UI
@@ -93,6 +97,10 @@ widgets:
         type: image
         image: PE_ship_winch_lowered
         z: 1
+    robot_homeworld_intro_video:
+        type: video
+        video: robot_homeworld_intro_clip
+        z: 3
 
 
 widget_player:
@@ -102,7 +110,7 @@ widget_player:
 
 shots:
 #make sure to have blocking shots for all bose mode shots that aren't disabled
-#by crew_manager being paused why in delivery modes
+#by crew_manager being paused while in delivery modes
     lower_winch_shot:
         switches: s_pe_platter
         enable_events: lower_bender_with_winch
@@ -134,8 +142,39 @@ shots:
     robot_city_tetris_shot:
         switches: s_VUK
         enable_events: human_hunt_begins
-        disable_events: robot_elders
-
+        disable_events: robot_elders, found_bender, robot_city_tetris_shot_hit
+    left_ramp_human_hunt_shot:
+        switches: s_left_ramp
+        enable_events: human_hunt_begins
+        disable_events: human_hunt_failed, found_bender, left_ramp_human_hunt_shot_hit
+    left_loop_human_hunt_shot:
+        switches: s_left_loop
+        enable_events: human_hunt_begins
+        disable_events: human_hunt_failed, found_bender, left_loop_human_hunt_shot_hit
+    right_loop_human_hunt_shot:
+        switches: s_right_loop
+        enable_events: human_hunt_begins
+        disable_events: human_hunt_failed, found_bender, right_loop_human_hunt_shot_hit
+    right_ramp_human_hunt_shot:
+        switches: s_right_ramp
+        enable_events: human_hunt_begins
+        disable_events: human_hunt_failed, found_bender, right_ramp_human_hunt_shot_hit
+    right_orbit_human_hunt_shot:
+        switches: s_r_orbit
+        enable_events: human_hunt_begins
+        disable_events: human_hunt_failed, found_bender, right_orbit_human_hunt_shot_hit
+    right_orbit_robot_elders_shot:
+        switches: s_r_orbit
+        enable_events: robot_elders
+        disable_events: robot_elders_show_done, right_orbit_robot_elders_shot_hit
+    escape_robot_city_shot:
+        switches: s_pe_platter
+        enable_events: escape_robot_city
+        disable_events: escape_fail, drop_package_on_robots
+    lugnuts_shot:
+        switches: s_VUK
+        enable_events: light_lugnuts_shot
+        disable_events: escape_fail, lugnuts_shot_hit
 
 sequences:
     dress_both_like_robots_sequence:
@@ -153,6 +192,29 @@ sequences:
             - right_loop_infiltrate_shot_hit, right_orbit_infiltrate_shot_hit, right_ramp_infiltrate_shot_hit
         events_when_complete: infiltrate_combo_shot_hit
         disable_events: infiltrate_combo_shot_hit
+    look_for_bender_sequence:
+        enable_events: human_hunt_begins
+        events:
+            - left_ramp_human_hunt_shot_hit, left_loop_human_hunt_shot_hit, right_loop_human_hunt_shot_hit, right_ramp_human_hunt_shot_hit, right_orbit_human_hunt_shot_hit
+            - left_ramp_human_hunt_shot_hit, left_loop_human_hunt_shot_hit, right_loop_human_hunt_shot_hit, right_ramp_human_hunt_shot_hit, right_orbit_human_hunt_shot_hit
+            - left_ramp_human_hunt_shot_hit, left_loop_human_hunt_shot_hit, right_loop_human_hunt_shot_hit, right_ramp_human_hunt_shot_hit, right_orbit_human_hunt_shot_hit
+            - left_ramp_human_hunt_shot_hit, left_loop_human_hunt_shot_hit, right_loop_human_hunt_shot_hit, right_ramp_human_hunt_shot_hit, right_orbit_human_hunt_shot_hit
+        events_when_hit: looking_for_bender
+        events_when_complete: found_bender
+    escape_robot_city_sequence:
+        enable_events: escape_robot_city
+        events:
+#require 3 full rotations to complete
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+        events_when_complete: light_lugnuts_shot
 
 timers:
     lower_bender_timer:
@@ -187,7 +249,7 @@ timers:
         end_value: 0
         direction: down
         control_events:
-            - action:
+            - action: start
               event: let_the_human_hunt_begin
             - action: stop
               event: found_bender
@@ -195,8 +257,33 @@ timers:
               event: robot_city_tetris_shot_hit
             - action: restart
               event: robot_city_tetris_release
+            - action: add
+              event: looking_for_bender
+              value: 5
+    try_rescue_bender_timer:
+        start_value: 10
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: try_rescue_bender
+            - action: stop
+              event: bender_wants_to_escape
+
 event_player:
+    timer_lower_bender_timer_complete: bender_captured
+    timer_dress_up_timer_complete: fail_robot_homeworld_delivery
     timer_infiltrate_robot_city_timer_complete: infiltrate_failed
+    timer_human_hunt_timer_complete: human_hunt_failed
+    try_rescue_bender:
+        - bender_wants_to_escape{current_player.bender_level > 3}
+    timer_try_rescue_bender_timer_complete: found_bender_got_caught
+    do_not_escape_robot_elders: fail_robot_homeworld_delivery
+    right_orbit_robot_elders_shot_hit: escape_robot_elders
+    escape_but_no_delivery: stop_robot_homeworld_delivery
+    lugnuts_shot_hit: drop_package_on_robots
+
+
 
 
 show_player:
@@ -230,6 +317,25 @@ show_player:
         infiltrate_robot_city_show:
             action: stop
 
+    timer_try_rescue_bender_timer_started:
+        try_rescue_bender_show:
+            loops: 0
+            action: play
+    timer_try_rescue_bender_timer_stopped:
+        try_rescue_bender_show: stop
+    robot_elders:
+        robot_elders_show:
+            loops: 0
+            action: play
+            events_when_completed: do_not_escape_robot_elders
+    right_orbit_robot_elders_shot_hit:
+        robot_elders_show:
+            action: stop
+    escape_robot_city:
+        escape_robot_city_show:
+            loops: 0
+            action: play
+
 
 variable_player:
 #scoring and setting variables for completing or failing the mode, etc.
@@ -243,3 +349,38 @@ variable_player:
         score: machine.ramp_points * 5 * current_player.fry_multiplier
     infiltrate_combo_shot_hit:
         score: machine.ramp_points * 10 * current_player.leela_multiplier
+    robot_city_tetris_shot_hit:
+        score: crew_multiplier * 1000
+        crew_multiplier: 1
+    looking_for_bender:
+        score: (current_player.leela_multiplier + current_player.fry_multiplier) * 500
+    timer_dress_up_timer_complete:
+        robot_homeworld_delivery_status:
+            string: "fail"
+            action: set
+    do_not_escape_robot_elders:
+        robot_homeworld_delivery_status:
+            string: "fail"
+            action: set
+    bender_wants_to_escape:
+        score: current_player.bender_multiplier * current_player.fry_multiplier * current_player.leela_multiplier * 2000
+        robot_homeworld_delivery_status:
+            string: "success"
+            action: set
+        bender_xp: 25
+        leela_xp: 5
+        fry_xp: 5
+        crew_multiplier: 1
+    escape_but_no_delivery:
+        robot_homeworld_delivery_status:
+            string: "fail"
+            action: set
+    lugnuts_shot_hit:
+        robot_homeworld_delivery_status:
+            string: "success"
+            action: set
+        score: current_player.bender_multiplier * current_player.fry_multiplier * current_player.leela_multiplier * 1000
+        bender_xp: 5
+        leela_xp: 5
+        fry_xp: 5
+        crew_multiplier: 1

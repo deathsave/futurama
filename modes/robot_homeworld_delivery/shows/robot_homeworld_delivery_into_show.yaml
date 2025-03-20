@@ -1,0 +1,15 @@
+#show_version=6
+##! show: robot_homeworld_delivery_intro_show
+
+    - duration: 2s
+      lights:
+          lamps: on
+    - duration: 30s
+      widgets:
+          robot_homeworld_intro_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 50ms
+      widgets:
+          robot_homeworld_intro_video:
+              action: remove

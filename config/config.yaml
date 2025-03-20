@@ -823,6 +823,9 @@ player_vars:
     moon_delivery_status:
         value_type: str
         initial_value: "ready"
+    robot_homeworld_delivery_status:
+        value_type: str
+        initial_value: "ready"
     deliveries_completed:
         initial_value: 0
     caps_collected:
