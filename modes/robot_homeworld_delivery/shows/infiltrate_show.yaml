@@ -1,0 +1,21 @@
+#show_version=6
+##! show: infiltrate_show
+
+    - duration: 50ms
+      widgets:
+          infiltrate_instructions:
+              slide: RH_delivery_instructions_slide
+      sounds:
+          infiltrate_song:
+              action: play
+    - duration: 50s
+      widgets:
+          infiltrate_video:
+              slide: main_delivery_slide
+    - duration: 100ms
+      widgets:
+          infiltrate_video:
+              action: remove
+      sounds:
+          infiltrate_song:
+              action: stop

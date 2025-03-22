@@ -1,0 +1,16 @@
+#show_version=6
+##! show: human_hunt_show
+
+    - duration: 50ms
+      widgets:
+          human_hunt_instructions:
+              slide: RH_delivery_instructions_slide
+    - duration: 39s
+      widgets:
+          human_hunt_video:
+              slide: main_delivery_slide
+
+    - duration: 100ms
+      widgets:
+          human_hunt_video:
+              action: remove
