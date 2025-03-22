@@ -1,0 +1,15 @@
+#show_version=6
+##! show: dress_up_like_robots_show
+
+    - duration: 15s
+      widgets:
+          dress_up_video:
+              action: add
+              slide: reusable_delivery_slide
+          dress_up_instructions:
+              action: add
+              slide: RH_delivery_instructions_slide
+    - duration: 20ms
+      widgets:
+          dress_up_video:
+              action: remove

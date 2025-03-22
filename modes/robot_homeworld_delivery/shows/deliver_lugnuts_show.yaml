@@ -1,0 +1,12 @@
+#show_version=6
+##! show: deliver_lugnuts_show
+
+    - duration: 22s
+      widgets:
+          deliver_lugnuts_video:
+              slide: main_delivery_slide
+
+    - duration: 100ms
+      widgets:
+          deliver_lugnuts_video:
+              action: remove

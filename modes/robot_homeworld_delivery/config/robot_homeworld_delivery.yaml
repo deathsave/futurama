@@ -94,18 +94,108 @@ widgets:
 #    UI = 5
 #    text and numbers = 7
     ship_w_lowered_winch_BG:
-        type: image
-        image: PE_ship_winch_lowered
-        z: 1
+        - type: image
+          image: PE_ship_winch_lowered
+          z: 1
     robot_homeworld_intro_video:
-        type: video
-        video: robot_homeworld_intro_clip
-        z: 3
-
+        - type: video
+          video: robot_homeworld_intro_clip
+          z: 3
+    lower_bender_video:
+        - type: video
+          video: lower_bender_clip
+          z: 3
+    lower_bender_instructions:
+        - type: text
+          text: Lower Bender with the winch
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 920
+          z: 5
+          anchor_x: left
+          anchor_y: top
+    dress_up_video:
+        - type: video
+          video: dress_up_clip
+          z: 3
+    dress_up_instructions:
+        - type: text
+          text: Dress up like robots
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 840
+          z: 5
+          anchor_x: left
+          anchor_y: top
+    infiltrate_video:
+        - type: video
+          video: infiltrate_clip
+          z: 3
+    infiltrate_instructions:
+        - type: text
+          text: Infiltrate Robot City
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 760
+          z: 5
+          anchor_x: left
+          anchor_y: top
+    human_hunt_video:
+        - type: video
+          video: human_hunt_clip
+          z: 3
+    human_hunt_instructions:
+        - type: text
+          text: Human Hunt - avoid robots, find Bender
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 680
+          z: 5
+          anchor_x: left
+          anchor_y: top
+    rescuing_you_video:
+        - type: video
+          video: rescuing_you_clip
+          z: 3
+    dont_want_rescue_video:
+        - type: video
+          video: dont_want_rescue_clip
+          z: 3
+    robot_elders_instructions:
+        - type: text
+          text: Escape the Robot Elders
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 600
+          z: 5
+          anchor_x: left
+          anchor_y: top
+    escape_robot_city_video:
+        - type: video
+          video: escape_robot_city_clip
+          z: 5
+    escape_instructions:
+        - type: text
+          text: Escape Robot City!
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 520
+          z: 5
+          anchor_x: left
+          anchor_y: top
 
 widget_player:
 #most of this is done in shows, usually not much here
-
+    mode_robot_homeworld_delivery_started:
+        ship_w_lowered_winch_BG:
+            action: add
+            slide: reusable_delivery_slide
 
 
 shots:
@@ -260,15 +350,6 @@ timers:
             - action: add
               event: looking_for_bender
               value: 5
-    try_rescue_bender_timer:
-        start_value: 10
-        end_value: 0
-        direction: down
-        control_events:
-            - action: start
-              event: try_rescue_bender
-            - action: stop
-              event: bender_wants_to_escape
 
 event_player:
     timer_lower_bender_timer_complete: bender_captured
@@ -276,7 +357,8 @@ event_player:
     timer_infiltrate_robot_city_timer_complete: infiltrate_failed
     timer_human_hunt_timer_complete: human_hunt_failed
     try_rescue_bender:
-        - bender_wants_to_escape{current_player.bender_level > 3}
+        - bender_wants_to_escape_option{current_player.bender_level > 3}
+        - found_bender_got_caught_option{current_player.bender_level < 4}
     timer_try_rescue_bender_timer_complete: found_bender_got_caught
     do_not_escape_robot_elders: fail_robot_homeworld_delivery
     right_orbit_robot_elders_shot_hit: escape_robot_elders
@@ -299,7 +381,7 @@ show_player:
     flipper_cradle:
         robot_homeworld_delivery_intro_show: stop
     lower_bender_with_winch:
-        lower_bender_with_winch_show:
+        lower_bender_show:
             loops: 0
             action: play
     dress_up_like_robots:
@@ -310,19 +392,41 @@ show_player:
         dress_up_like_robots_show:
             action: stop
     infiltrate_robot_city:
-        infiltrate_robot_city_show:
+        infiltrate_show:
             loops: 0
             action: play
     infiltrate_combo_shot_hit:
-        infiltrate_robot_city_show:
+        infiltrate_show:
             action: stop
-
-    timer_try_rescue_bender_timer_started:
-        try_rescue_bender_show:
-            loops: 0
+    human_hunt_begins:
+        human_hunt_show:
             action: play
-    timer_try_rescue_bender_timer_stopped:
-        try_rescue_bender_show: stop
+            loops: 0
+    found_bender:
+        human_hunt_show:
+            action: stop
+    robot_city_tetris_shot_hit:
+        human_hunt_show:
+            action: stop
+            priority: 1
+        robot_city_tetris_show:
+            action: play
+            loops: 0
+            events_when_stopped: robot_city_tetris_release
+    robot_city_tetris_release:
+        human_hunt_show:
+            action: play
+            loops: 0
+    bender_wants_to_escape_option:
+        rescuing_you_show:
+            action: play
+            loops: 0
+            events_when_stopped: bender_wants_to_escape
+    found_bender_got_caught_option:
+        dont_want_rescue_show:
+            action: play
+            loops: 0
+            events_when_stopped: found_bender_got_caught
     robot_elders:
         robot_elders_show:
             loops: 0
@@ -335,6 +439,13 @@ show_player:
         escape_robot_city_show:
             loops: 0
             action: play
+    deliver_lugnuts:
+        deliver_lugnuts_show:
+            loops: 0
+            action: play
+            events_when_stopped: stop_robot_homeworld_delivery
+        escape_robot_city_show:
+            action: stop
 
 
 variable_player:
@@ -353,7 +464,10 @@ variable_player:
         score: crew_multiplier * 1000
         crew_multiplier: 1
     looking_for_bender:
+        score: (current_player.leela_multiplier + current_player.fry_multiplier) * 250
+    found_bender:
         score: (current_player.leela_multiplier + current_player.fry_multiplier) * 500
+        bender_xp: 5
     timer_dress_up_timer_complete:
         robot_homeworld_delivery_status:
             string: "fail"
@@ -364,10 +478,7 @@ variable_player:
             action: set
     bender_wants_to_escape:
         score: current_player.bender_multiplier * current_player.fry_multiplier * current_player.leela_multiplier * 2000
-        robot_homeworld_delivery_status:
-            string: "success"
-            action: set
-        bender_xp: 25
+        bender_xp: 20
         leela_xp: 5
         fry_xp: 5
         crew_multiplier: 1
