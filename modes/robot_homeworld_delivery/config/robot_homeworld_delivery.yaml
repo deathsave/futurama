@@ -67,7 +67,7 @@ state_machines:
               events: bender_wants_to_escape
 
 slides:
-#use main_delivery_slide (in config) for main UI
+#use reusable_delivery_slide (in config) for main UI
     RH_delivery_instructions_slide:
         widgets:
             - type: image
@@ -197,7 +197,6 @@ widget_player:
             action: add
             slide: reusable_delivery_slide
 
-
 shots:
 #make sure to have blocking shots for all bose mode shots that aren't disabled
 #by crew_manager being paused while in delivery modes
@@ -237,22 +236,42 @@ shots:
         switches: s_left_ramp
         enable_events: human_hunt_begins
         disable_events: human_hunt_failed, found_bender, left_ramp_human_hunt_shot_hit
+    left_ramp_avoid_robots_shot:
+        switches: s_left_ramp
+        enable_events: left_ramp_human_hunt_shot_hit
+        disable_events: human_hunt_failed, found_bender
     left_loop_human_hunt_shot:
         switches: s_left_loop
         enable_events: human_hunt_begins
         disable_events: human_hunt_failed, found_bender, left_loop_human_hunt_shot_hit
+    left_loop_avoid_robots_shot:
+        switches: s_left_loop
+        enable_events: left_loop_human_hunt_shot_hit
+        disable_events: human_hunt_failed, found_bender
     right_loop_human_hunt_shot:
         switches: s_right_loop
         enable_events: human_hunt_begins
         disable_events: human_hunt_failed, found_bender, right_loop_human_hunt_shot_hit
+    right_loop_avoid_robots_shot:
+        switches: s_right_loop
+        enable_events: right_loop_human_hunt_shot_hit
+        disable_events: human_hunt_failed, found_bender
     right_ramp_human_hunt_shot:
         switches: s_right_ramp
         enable_events: human_hunt_begins
         disable_events: human_hunt_failed, found_bender, right_ramp_human_hunt_shot_hit
+    right_ramp_avoid_robots_shot:
+        switches: s_right_ramp
+        enable_events: right_ramp_human_hunt_shot_hit
+        disable_events: human_hunt_failed, found_bender
     right_orbit_human_hunt_shot:
         switches: s_r_orbit
         enable_events: human_hunt_begins
         disable_events: human_hunt_failed, found_bender, right_orbit_human_hunt_shot_hit
+    right_orbit_avoid_robots_shot:
+        switches: s_r_orbit
+        enable_events: right_orbit_human_hunt_shot_hit
+        disable_events: human_hunt_failed, found_bender
     right_orbit_robot_elders_shot:
         switches: s_r_orbit
         enable_events: robot_elders
@@ -350,11 +369,19 @@ timers:
             - action: add
               event: looking_for_bender
               value: 5
+            - action: stop
+              event: caught_by_robots
 
 event_player:
     timer_lower_bender_timer_complete: bender_captured
     timer_dress_up_timer_complete: fail_robot_homeworld_delivery
     timer_infiltrate_robot_city_timer_complete: infiltrate_failed
+    left_ramp_avoid_robots_shot_hit: caught_by_robots
+    left_loop_avoid_robots_shot_hit: caught_by_robots
+    right_loop_avoid_robots_shot_hit: caught_by_robots
+    right_ramp_avoid_robots_shot_hit: caught_by_robots
+    right_orbit_avoid_robots_shot_hit: caught_by_robots
+    caught_by_robots: human_hunt_failed
     timer_human_hunt_timer_complete: human_hunt_failed
     try_rescue_bender:
         - bender_wants_to_escape_option{current_player.bender_level > 3}
@@ -365,8 +392,93 @@ event_player:
     escape_but_no_delivery: stop_robot_homeworld_delivery
     lugnuts_shot_hit: drop_package_on_robots
 
+sound_player:
+    caught_by_robots:
+        intruder_alert:
+            action: play
+            loops: 0
 
-
+light_player:
+#remember that the universe hates you, so everything is reversed:
+#000000 = full bright white and ffffff = off
+#also Hex color codes aren't RGB.. they're BGR, for some reason
+#also remember to use " " for values with leading zeros (to make python happy)
+#light shots for infiltrate_robot_city
+    infiltrate_robot_city:
+        l_left_ramp_insert:
+            color: "000000"
+    left_ramp_infiltrate_shot_hit:
+        l_left_ramp_insert:
+            color: ffffff
+        l_right_ramp_insert:
+            color: "000000"
+    infiltrate_failed:
+        l_left_ramp_insert:
+            color: ffffff
+        l_right_ramp_insert:
+            color: ffffff
+    infiltrate_combo_shot_hit:
+        l_right_ramp_insert:
+            color: ffffff
+#light shots for human_hunt
+    human_hunt_begins:
+        loops:
+            color: "000000"
+        l_left_ramp_insert:
+            color: "000000"
+        orbit:
+            color: "000000"
+        l_right_ramp_insert:
+            color: "000000"
+#change inserts to red as human_hunt shots turn into avoid_robots shots
+    left_ramp_human_hunt_shot_hit:
+        l_left_ramp_insert:
+            color: ffff00 #red?
+    left_loop_human_hunt_shot_hit:
+        l_left_loop_insert:
+            color: ffff00
+    right_loop_human_hunt_shot_hit:
+        l_right_loop_insert:
+            color: ffff00
+    right_ramp_human_hunt_shot_hit:
+        l_right_ramp_insert:
+            color: ffff00
+    right_orbit_human_hunt_shot_hit:
+        orbits:
+            color: ffff00
+#unlight inserts when human_hunt ends
+    human_hunt_failed:
+        loops:
+            color: ffffff
+        l_left_ramp_insert:
+            color: ffffff
+        orbit:
+            color: ffffff
+        l_right_ramp_insert:
+            color: ffffff
+    found_bender:
+        loops:
+            color: ffffff
+        l_left_ramp_insert:
+            color: ffffff
+        orbit:
+            color: ffffff
+        l_right_ramp_insert:
+            color: ffffff
+#inserts for robot_elders
+    robot_elders:
+        orbit:
+            color: "000000"
+    right_orbit_robot_elders_shot_hit:
+        orbit:
+            color: ffffff
+#lugnut shot during escape_robot_city
+    light_lugnuts_shot:
+        l_delivery_shot_insert:
+            color: "000000"
+    lugnuts_shot_hit:
+        l_delivery_shot_insert:
+            color: ffffff
 
 show_player:
 #shows should be started by events generated by state machine changes and
@@ -384,11 +496,23 @@ show_player:
         lower_bender_show:
             loops: 0
             action: play
+            priotiy: 1
+        pe_platter_rotary_show:
+            loops: -1
+            action: play
+    bender_captured:
+        pe_platter_rotary_show:
+            action: stop
     dress_up_like_robots:
+        flicker_HQ_show:
+            action: start
         dress_up_like_robots_show:
             loops: 0
             action: play
+            priority: 1
     done_dressing_up:
+        flicker_HQ_show:
+            action: stop
         dress_up_like_robots_show:
             action: stop
     infiltrate_robot_city:
@@ -402,6 +526,9 @@ show_player:
         human_hunt_show:
             action: play
             loops: 0
+    caught_by_robots:
+        human_hunt_show:
+            action: stop
     found_bender:
         human_hunt_show:
             action: stop
@@ -438,6 +565,9 @@ show_player:
     escape_robot_city:
         escape_robot_city_show:
             loops: 0
+            action: play
+        pe_platter_rotary_show:
+            loops: -1
             action: play
     deliver_lugnuts:
         deliver_lugnuts_show:
@@ -482,6 +612,8 @@ variable_player:
         leela_xp: 5
         fry_xp: 5
         crew_multiplier: 1
+    escape_robot_city_shot_hit:
+        score: ship_points * crew_multiplier * 100
     escape_but_no_delivery:
         robot_homeworld_delivery_status:
             string: "fail"
