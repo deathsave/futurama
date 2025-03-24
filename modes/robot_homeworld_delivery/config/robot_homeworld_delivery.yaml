@@ -496,7 +496,7 @@ show_player:
         lower_bender_show:
             loops: 0
             action: play
-            priotiy: 1
+            priority: 1
         pe_platter_rotary_show:
             loops: -1
             action: play
