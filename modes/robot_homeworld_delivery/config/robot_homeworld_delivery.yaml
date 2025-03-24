@@ -444,7 +444,7 @@ light_player:
         l_right_ramp_insert:
             color: ffff00
     right_orbit_human_hunt_shot_hit:
-        orbits:
+        orbit:
             color: ffff00
 #unlight inserts when human_hunt ends
     human_hunt_failed:
