@@ -505,7 +505,7 @@ show_player:
             action: stop
     dress_up_like_robots:
         flicker_HQ_show:
-            action: start
+            action: play
         dress_up_like_robots_show:
             loops: 0
             action: play
