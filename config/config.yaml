@@ -846,6 +846,7 @@ modes:
     - crew_manager
     - moon_delivery
     - cryolab_delivery
+    - robot_homeworld_delivery
     - bonus
     - high_score
 
