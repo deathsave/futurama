@@ -1,0 +1,13 @@
+#show_version=6
+##! show: rescuing_you_show
+
+    - duration: 3s
+      widgets:
+          rescuing_you_video:
+              slide: main_delivery_slide
+
+    - duration: 100ms
+      widgets:
+          rescuing_you_video:
+              action: remove
+      events: bender_wants_to_escape
