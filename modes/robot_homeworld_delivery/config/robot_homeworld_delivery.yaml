@@ -1,0 +1,629 @@
+#config_version=6
+##! mode: robot_homeworld_delivery
+
+mode:
+    start_events: start_robot_homeworld_delivery
+    stop_events: stop_robot_homeworld_delivery, fail_robot_homeworld_delivery
+    priority: 200
+
+state_machines:
+    robot_homeworld_delivery_state:
+        persist_state: false
+        states:
+            start:
+                label: Start state
+                events_when_started: robot_homeworld_delivery_waiting
+            lower_bender:
+                events_when_started: lower_bender_with_winch
+            dress_up:
+                events_when_started: dress_up_like_robots
+            infiltrate:
+                events_when_started: infiltrate_robot_city
+            human_hunt:
+                events_when_started: human_hunt_begins
+            find_bender:
+                events_when_started: try_rescue_bender
+            robot_elders:
+                events_when_started: robot_elders
+            escape:
+                events_when_started: escape_robot_city
+            deliver_lugnuts:
+                events_when_started: deliver_lugnuts
+        transitions:
+            - source: start
+              target: lower_bender
+              events: robot_homeworld_intro_done
+            - source: lower_bender
+              target: dress_up
+              events: bender_captured
+            - source: dress_up
+              target: infiltrate
+              events: done_dressing_up
+            - source: infiltrate
+              target: human_hunt
+              events: infiltrate_combo_shot_hit
+            - source: human_hunt
+              target: find_bender
+              events: found_bender
+            - source: find_bender
+              target: robot_elders
+              events: found_bender_got_caught
+#skip to robot_elders if you fail infiltrate or human_hunt
+            - source: infiltrate
+              target: robot_elders
+              events: infiltrate_failed
+            - source: human_hunt
+              target: robot_elders
+              events: human_hunt_failed
+            - source: robot_elders
+              target: escape
+              events: escape_robot_elders
+            - source: escape
+              target: deliver_lugnuts
+              events: drop_package_on_robots
+#skip to escape if found bender and bender_level > 3
+            - source: find_bender
+              target: escape
+              events: bender_wants_to_escape
+
+slides:
+#use reusable_delivery_slide (in config) for main UI
+    RH_delivery_instructions_slide:
+        widgets:
+            - type: image
+              image: RH_delivery_instructions_BG
+        target: display2
+
+slide_player:
+#setup main UI on mode start
+#call PF display slides
+    mode_robot_homeworld_delivery_started:
+        reusable_delivery_slide:
+            target: display1
+            priority: 1
+        RH_delivery_instructions_slide:
+            target: display2
+
+
+widgets:
+#use the normal UI widgets + mode specific background and videos listed here
+#list widgets for PF display
+#z values:
+#    background image = 1
+#    video clips = 3
+#    UI = 5
+#    text and numbers = 7
+    ship_w_lowered_winch_BG:
+        - type: image
+          image: PE_ship_winch_lowered
+          z: 1
+    robot_homeworld_intro_video:
+        - type: video
+          video: robot_homeworld_intro_clip
+          z: 3
+    lower_bender_video:
+        - type: video
+          video: lower_bender_clip
+          z: 3
+    lower_bender_instructions:
+        - type: text
+          text: Lower Bender with the winch
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 920
+          z: 5
+          anchor_x: left
+          anchor_y: top
+    dress_up_video:
+        - type: video
+          video: dress_up_clip
+          z: 3
+    dress_up_instructions:
+        - type: text
+          text: Dress up like robots
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 840
+          z: 5
+          anchor_x: left
+          anchor_y: top
+    infiltrate_video:
+        - type: video
+          video: infiltrate_clip
+          z: 3
+    infiltrate_instructions:
+        - type: text
+          text: Infiltrate Robot City
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 760
+          z: 5
+          anchor_x: left
+          anchor_y: top
+    human_hunt_video:
+        - type: video
+          video: human_hunt_clip
+          z: 3
+    human_hunt_instructions:
+        - type: text
+          text: Human Hunt - avoid robots, find Bender
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 680
+          z: 5
+          anchor_x: left
+          anchor_y: top
+    rescuing_you_video:
+        - type: video
+          video: rescuing_you_clip
+          z: 3
+    dont_want_rescue_video:
+        - type: video
+          video: dont_want_rescue_clip
+          z: 3
+    robot_elders_instructions:
+        - type: text
+          text: Escape the Robot Elders
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 600
+          z: 5
+          anchor_x: left
+          anchor_y: top
+    escape_robot_city_video:
+        - type: video
+          video: escape_robot_city_clip
+          z: 5
+    escape_instructions:
+        - type: text
+          text: Escape Robot City!
+          color: SpringGreen
+          font_size: 50
+          x: 190
+          y: 520
+          z: 5
+          anchor_x: left
+          anchor_y: top
+
+widget_player:
+#most of this is done in shows, usually not much here
+    mode_robot_homeworld_delivery_started:
+        ship_w_lowered_winch_BG:
+            action: add
+            slide: reusable_delivery_slide
+
+shots:
+#make sure to have blocking shots for all bose mode shots that aren't disabled
+#by crew_manager being paused while in delivery modes
+    lower_winch_shot:
+        switches: s_pe_platter
+        enable_events: lower_bender_with_winch
+        disable_events: ball_ending, timer_lower_bender_timer_complete, timer_lower_bender_timer_stopped
+    dress_fry_like_robot_shot:
+        switches: s_t_fry
+        enable_events: dress_up_like_robots
+        disable_events: timer_dress_up_timer_complete, timer_dress_up_timer_stopped, dress_fry_like_robot_shot_hit
+    dress_leela_like_robot_shot:
+        switches: s_t_leela
+        enable_events: dress_up_like_robots
+        disable_events: timer_dress_up_timer_complete, timer_dress_up_timer_stopped, dress_leela_like_robot_shot_hit
+    left_ramp_infiltrate_shot:
+        switches: s_right_ramp
+        enable_events: infiltrate_robot_city
+        disable_events: left_ramp_infiltrate_shot_hit
+    right_loop_infiltrate_shot:
+        switches: s_right_loop
+        enable_events: infiltrate_robot_city
+        disable_events: infiltrate_combo_shot_hit
+    right_ramp_infiltrate_shot:
+        switches: s_right_ramp
+        enable_events: infiltrate_robot_city
+        disable_events: infiltrate_combo_shot_hit
+    right_orbit_infiltrate_shot:
+        switches: s_r_orbit
+        enable_events: infiltrate_robot_city
+        disable_events: infiltrate_combo_shot_hit
+    robot_city_tetris_shot:
+        switches: s_VUK
+        enable_events: human_hunt_begins
+        disable_events: robot_elders, found_bender, robot_city_tetris_shot_hit
+    left_ramp_human_hunt_shot:
+        switches: s_left_ramp
+        enable_events: human_hunt_begins
+        disable_events: human_hunt_failed, found_bender, left_ramp_human_hunt_shot_hit
+    left_ramp_avoid_robots_shot:
+        switches: s_left_ramp
+        enable_events: left_ramp_human_hunt_shot_hit
+        disable_events: human_hunt_failed, found_bender
+    left_loop_human_hunt_shot:
+        switches: s_left_loop
+        enable_events: human_hunt_begins
+        disable_events: human_hunt_failed, found_bender, left_loop_human_hunt_shot_hit
+    left_loop_avoid_robots_shot:
+        switches: s_left_loop
+        enable_events: left_loop_human_hunt_shot_hit
+        disable_events: human_hunt_failed, found_bender
+    right_loop_human_hunt_shot:
+        switches: s_right_loop
+        enable_events: human_hunt_begins
+        disable_events: human_hunt_failed, found_bender, right_loop_human_hunt_shot_hit
+    right_loop_avoid_robots_shot:
+        switches: s_right_loop
+        enable_events: right_loop_human_hunt_shot_hit
+        disable_events: human_hunt_failed, found_bender
+    right_ramp_human_hunt_shot:
+        switches: s_right_ramp
+        enable_events: human_hunt_begins
+        disable_events: human_hunt_failed, found_bender, right_ramp_human_hunt_shot_hit
+    right_ramp_avoid_robots_shot:
+        switches: s_right_ramp
+        enable_events: right_ramp_human_hunt_shot_hit
+        disable_events: human_hunt_failed, found_bender
+    right_orbit_human_hunt_shot:
+        switches: s_r_orbit
+        enable_events: human_hunt_begins
+        disable_events: human_hunt_failed, found_bender, right_orbit_human_hunt_shot_hit
+    right_orbit_avoid_robots_shot:
+        switches: s_r_orbit
+        enable_events: right_orbit_human_hunt_shot_hit
+        disable_events: human_hunt_failed, found_bender
+    right_orbit_robot_elders_shot:
+        switches: s_r_orbit
+        enable_events: robot_elders
+        disable_events: robot_elders_show_done, right_orbit_robot_elders_shot_hit
+    escape_robot_city_shot:
+        switches: s_pe_platter
+        enable_events: escape_robot_city
+        disable_events: escape_fail, drop_package_on_robots
+    lugnuts_shot:
+        switches: s_VUK
+        enable_events: light_lugnuts_shot
+        disable_events: escape_fail, lugnuts_shot_hit
+
+sequences:
+    dress_both_like_robots_sequence:
+        enable_events: dress_up_like_robots
+        events:
+            - dress_fry_like_robot_shot_hit, dress_leela_like_robot_shot_hit
+            - dress_fry_like_robot_shot_hit, dress_leela_like_robot_shot_hit
+        events_when_hit: beep_boop
+        events_when_complete: done_dressing_up
+        disable_events: done_dressing_up
+    infiltrate_combo_shot:
+        enable_events: infiltrate_robot_city
+        events:
+            - left_ramp_infiltrate_shot_hit
+            - right_loop_infiltrate_shot_hit, right_orbit_infiltrate_shot_hit, right_ramp_infiltrate_shot_hit
+        events_when_complete: infiltrate_combo_shot_hit
+        disable_events: infiltrate_combo_shot_hit
+    look_for_bender_sequence:
+        enable_events: human_hunt_begins
+        events:
+            - left_ramp_human_hunt_shot_hit, left_loop_human_hunt_shot_hit, right_loop_human_hunt_shot_hit, right_ramp_human_hunt_shot_hit, right_orbit_human_hunt_shot_hit
+            - left_ramp_human_hunt_shot_hit, left_loop_human_hunt_shot_hit, right_loop_human_hunt_shot_hit, right_ramp_human_hunt_shot_hit, right_orbit_human_hunt_shot_hit
+            - left_ramp_human_hunt_shot_hit, left_loop_human_hunt_shot_hit, right_loop_human_hunt_shot_hit, right_ramp_human_hunt_shot_hit, right_orbit_human_hunt_shot_hit
+            - left_ramp_human_hunt_shot_hit, left_loop_human_hunt_shot_hit, right_loop_human_hunt_shot_hit, right_ramp_human_hunt_shot_hit, right_orbit_human_hunt_shot_hit
+        events_when_hit: looking_for_bender
+        events_when_complete: found_bender
+    escape_robot_city_sequence:
+        enable_events: escape_robot_city
+        events:
+#require 3 full rotations to complete
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+            - escape_robot_city_shot_hit
+        events_when_complete: light_lugnuts_shot
+
+timers:
+    lower_bender_timer:
+        start_value: 30
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: lower_bender_with_winch
+            - action: stop
+              event: ball_ending
+    dress_up_timer:
+        start_value: 20
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: dress_up_like_robots
+            - action: stop
+              event: done_dressing_up
+    infiltrate_robot_city_timer:
+        start_value: 30
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: infiltrate_robot_city
+            - action: stop
+              event: infiltrate_combo_shot_hit
+    human_hunt_timer:
+        start_value: 30
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: let_the_human_hunt_begin
+            - action: stop
+              event: found_bender
+            - action: stop
+              event: robot_city_tetris_shot_hit
+            - action: restart
+              event: robot_city_tetris_release
+            - action: add
+              event: looking_for_bender
+              value: 5
+            - action: stop
+              event: caught_by_robots
+
+event_player:
+    timer_lower_bender_timer_complete: bender_captured
+    timer_dress_up_timer_complete: fail_robot_homeworld_delivery
+    timer_infiltrate_robot_city_timer_complete: infiltrate_failed
+    left_ramp_avoid_robots_shot_hit: caught_by_robots
+    left_loop_avoid_robots_shot_hit: caught_by_robots
+    right_loop_avoid_robots_shot_hit: caught_by_robots
+    right_ramp_avoid_robots_shot_hit: caught_by_robots
+    right_orbit_avoid_robots_shot_hit: caught_by_robots
+    caught_by_robots: human_hunt_failed
+    timer_human_hunt_timer_complete: human_hunt_failed
+    try_rescue_bender:
+        - bender_wants_to_escape_option{current_player.bender_level > 3}
+        - found_bender_got_caught_option{current_player.bender_level < 4}
+    timer_try_rescue_bender_timer_complete: found_bender_got_caught
+    do_not_escape_robot_elders: fail_robot_homeworld_delivery
+    right_orbit_robot_elders_shot_hit: escape_robot_elders
+    escape_but_no_delivery: stop_robot_homeworld_delivery
+    lugnuts_shot_hit: drop_package_on_robots
+
+sound_player:
+    caught_by_robots:
+        intruder_alert:
+            action: play
+            loops: 0
+
+light_player:
+#remember that the universe hates you, so everything is reversed:
+#000000 = full bright white and ffffff = off
+#also Hex color codes aren't RGB.. they're BGR, for some reason
+#also remember to use " " for values with leading zeros (to make python happy)
+#light shots for infiltrate_robot_city
+    infiltrate_robot_city:
+        l_left_ramp_insert:
+            color: "000000"
+    left_ramp_infiltrate_shot_hit:
+        l_left_ramp_insert:
+            color: ffffff
+        l_right_ramp_insert:
+            color: "000000"
+    infiltrate_failed:
+        l_left_ramp_insert:
+            color: ffffff
+        l_right_ramp_insert:
+            color: ffffff
+    infiltrate_combo_shot_hit:
+        l_right_ramp_insert:
+            color: ffffff
+#light shots for human_hunt
+    human_hunt_begins:
+        loops:
+            color: "000000"
+        l_left_ramp_insert:
+            color: "000000"
+        orbit:
+            color: "000000"
+        l_right_ramp_insert:
+            color: "000000"
+#change inserts to red as human_hunt shots turn into avoid_robots shots
+    left_ramp_human_hunt_shot_hit:
+        l_left_ramp_insert:
+            color: ffff00 #red?
+    left_loop_human_hunt_shot_hit:
+        l_left_loop_insert:
+            color: ffff00
+    right_loop_human_hunt_shot_hit:
+        l_right_loop_insert:
+            color: ffff00
+    right_ramp_human_hunt_shot_hit:
+        l_right_ramp_insert:
+            color: ffff00
+    right_orbit_human_hunt_shot_hit:
+        orbit:
+            color: ffff00
+#unlight inserts when human_hunt ends
+    human_hunt_failed:
+        loops:
+            color: ffffff
+        l_left_ramp_insert:
+            color: ffffff
+        orbit:
+            color: ffffff
+        l_right_ramp_insert:
+            color: ffffff
+    found_bender:
+        loops:
+            color: ffffff
+        l_left_ramp_insert:
+            color: ffffff
+        orbit:
+            color: ffffff
+        l_right_ramp_insert:
+            color: ffffff
+#inserts for robot_elders
+    robot_elders:
+        orbit:
+            color: "000000"
+    right_orbit_robot_elders_shot_hit:
+        orbit:
+            color: ffffff
+#lugnut shot during escape_robot_city
+    light_lugnuts_shot:
+        l_delivery_shot_insert:
+            color: "000000"
+    lugnuts_shot_hit:
+        l_delivery_shot_insert:
+            color: ffffff
+
+show_player:
+#shows should be started by events generated by state machine changes and
+#stopped by shots being completed or timers completing
+#all shows should explicitly stop if the ball drains
+#all shows should start by ending other shows they might be interrupting
+    mode_robot_homeworld_delivery_started:
+        robot_homeworld_delivery_intro_show:
+            loops: 0
+            action: play
+            events_when_stopped: robot_homeworld_intro_done
+    flipper_cradle:
+        robot_homeworld_delivery_intro_show: stop
+    lower_bender_with_winch:
+        lower_bender_show:
+            loops: 0
+            action: play
+            priority: 1
+        pe_platter_rotary_show:
+            loops: -1
+            action: play
+    bender_captured:
+        pe_platter_rotary_show:
+            action: stop
+    dress_up_like_robots:
+        flicker_HQ_show:
+            action: play
+        dress_up_like_robots_show:
+            loops: 0
+            action: play
+            priority: 1
+    done_dressing_up:
+        flicker_HQ_show:
+            action: stop
+        dress_up_like_robots_show:
+            action: stop
+    infiltrate_robot_city:
+        infiltrate_show:
+            loops: 0
+            action: play
+    infiltrate_combo_shot_hit:
+        infiltrate_show:
+            action: stop
+    human_hunt_begins:
+        human_hunt_show:
+            action: play
+            loops: 0
+    caught_by_robots:
+        human_hunt_show:
+            action: stop
+    found_bender:
+        human_hunt_show:
+            action: stop
+    robot_city_tetris_shot_hit:
+        human_hunt_show:
+            action: stop
+            priority: 1
+        robot_city_tetris_show:
+            action: play
+            loops: 0
+            events_when_stopped: robot_city_tetris_release
+    robot_city_tetris_release:
+        human_hunt_show:
+            action: play
+            loops: 0
+    bender_wants_to_escape_option:
+        rescuing_you_show:
+            action: play
+            loops: 0
+            events_when_stopped: bender_wants_to_escape
+    found_bender_got_caught_option:
+        dont_want_rescue_show:
+            action: play
+            loops: 0
+            events_when_stopped: found_bender_got_caught
+    robot_elders:
+        robot_elders_show:
+            loops: 0
+            action: play
+            events_when_completed: do_not_escape_robot_elders
+    right_orbit_robot_elders_shot_hit:
+        robot_elders_show:
+            action: stop
+    escape_robot_city:
+        escape_robot_city_show:
+            loops: 0
+            action: play
+        pe_platter_rotary_show:
+            loops: -1
+            action: play
+    deliver_lugnuts:
+        deliver_lugnuts_show:
+            loops: 0
+            action: play
+            events_when_stopped: stop_robot_homeworld_delivery
+        escape_robot_city_show:
+            action: stop
+
+
+variable_player:
+#scoring and setting variables for completing or failing the mode, etc.
+    lower_winch_shot_hit:
+        score: machine.ship_points * current_player.crew_multiplier * bender_multiplier
+    dress_fry_like_robot_shot_hit:
+        score: machine.target_points * current_player.fry_multiplier * bender_multiplier
+    dress_leela_like_robot_shot_hit:
+        score: machine.target_points * current_player.leela_multiplier * bender_multiplier
+    left_ramp_infiltrate_shot_hit:
+        score: machine.ramp_points * 5 * current_player.fry_multiplier
+    infiltrate_combo_shot_hit:
+        score: machine.ramp_points * 10 * current_player.leela_multiplier
+    robot_city_tetris_shot_hit:
+        score: crew_multiplier * 1000
+        crew_multiplier: 1
+    looking_for_bender:
+        score: (current_player.leela_multiplier + current_player.fry_multiplier) * 250
+    found_bender:
+        score: (current_player.leela_multiplier + current_player.fry_multiplier) * 500
+        bender_xp: 5
+    timer_dress_up_timer_complete:
+        robot_homeworld_delivery_status:
+            string: "fail"
+            action: set
+    do_not_escape_robot_elders:
+        robot_homeworld_delivery_status:
+            string: "fail"
+            action: set
+    bender_wants_to_escape:
+        score: current_player.bender_multiplier * current_player.fry_multiplier * current_player.leela_multiplier * 2000
+        bender_xp: 20
+        leela_xp: 5
+        fry_xp: 5
+        crew_multiplier: 1
+    escape_robot_city_shot_hit:
+        score: ship_points * crew_multiplier * 100
+    escape_but_no_delivery:
+        robot_homeworld_delivery_status:
+            string: "fail"
+            action: set
+    lugnuts_shot_hit:
+        robot_homeworld_delivery_status:
+            string: "success"
+            action: set
+        score: current_player.bender_multiplier * current_player.fry_multiplier * current_player.leela_multiplier * 1000
+        bender_xp: 5
+        leela_xp: 5
+        fry_xp: 5
+        crew_multiplier: 1

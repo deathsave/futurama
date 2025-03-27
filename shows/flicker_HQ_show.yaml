@@ -1,0 +1,21 @@
+#show_version=6
+##! show: flicker_HQ_show
+
+    - duration: 100ms
+      lights:
+          l_HQ1: "000000"
+    - duration: 100ms
+      lights:
+          l_HQ1: ffffff
+          l_HQ2: "000000"
+    - duration: 100ms
+      lights:
+          l_HQ2: ffffff
+          l_HQ1: "000000"
+    - duration: 100ms
+      lights:
+          l_HQ1: ffffff
+          l_HQ2: "000000"
+    - duration: 50ms
+      lights:
+          l_HQ2: ffffff

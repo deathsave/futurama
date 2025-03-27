@@ -823,6 +823,9 @@ player_vars:
     moon_delivery_status:
         value_type: str
         initial_value: "ready"
+    robot_homeworld_delivery_status:
+        value_type: str
+        initial_value: "ready"
     deliveries_completed:
         initial_value: 0
     caps_collected:
@@ -843,6 +846,7 @@ modes:
     - crew_manager
     - moon_delivery
     - cryolab_delivery
+    - robot_homeworld_delivery
     - bonus
     - high_score
 
@@ -1203,6 +1207,117 @@ slides:
             - type: image
               image: cryolab_UI
               z: 5
+    reusable_delivery_slide:
+        widgets:
+            - type: text
+              text: (player1|score)
+              number_grouping: true
+              min_digits: 2
+              font_size: 50
+              color: black
+              y: 920
+              x: 419
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: PLAYER (number)
+              y: 918
+              x: 55
+              z: 7
+              font_size: 48
+              anchor_x: left
+              anchor_y: top
+            - type: text
+              text: (ball)
+              y: 918
+              x: 421
+              z: 7
+              anchor_x: right
+              anchor_y: top
+              font_size: 48
+            - type: image
+              image: cartoon_pinball
+              x: 390
+              y: 905
+              z: 7
+              anchor_x: right
+              anchor_y: top
+            - type: text
+              text: (player|bender_level)
+              font_size: 72
+              color: black
+              y: 950
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|leela_level)
+              font_size: 72
+              color: black
+              y: 820
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|fry_level)
+              font_size: 72
+              color: black
+              y: 690
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|nibbler_level)
+              font_size: 72
+              color: black
+              y: 560
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|professor_level)
+              font_size: 72
+              color: black
+              y: 430
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|amy_level)
+              font_size: 72
+              color: black
+              y: 300
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|hermes_level)
+              font_size: 72
+              color: black
+              y: 170
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|zoidberg_level)
+              font_size: 72
+              color: black
+              y: 40
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: image
+              image: player_and_crew_ui
+              z: 5
 
 
 widget_player:
@@ -1213,6 +1328,8 @@ widget_player:
             slide: cryolab_delivery_slide
         moon_player2_scoring:
             slide: moon_delivery_slide
+        reusable_player2_scoring:
+            slide: reusable_delivery_slide
     player_added{num==3}:
         base_player3_scoring:
             slide: base_slide
@@ -1220,6 +1337,8 @@ widget_player:
             slide: cryolab_delivery_slide
         moon_player3_scoring:
             slide: moon_delivery_slide
+        reusable_player3_scoring:
+            slide: reusable_delivery_slide
     player_added{num==4}:
         base_player4_scoring:
             slide: base_slide
@@ -1227,6 +1346,8 @@ widget_player:
             slide: cryolab_delivery_slide
         moon_player4_scoring:
             slide: moon_delivery_slide
+        reusable_player4_scoring:
+            slide: reusable_delivery_slide
 
 widgets:
     base_player2_scoring:
@@ -1254,6 +1375,18 @@ widgets:
           anchor_x: right
           anchor_y: bottom
     moon_player2_scoring:
+        - type: text
+          text: (player2|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 655
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
+    reusable_player2_scoring:
         - type: text
           text: (player2|score)
           number_grouping: true
@@ -1301,6 +1434,18 @@ widgets:
           z: 7
           anchor_x: right
           anchor_y: bottom
+    reusable_player3_scoring:
+        - type: text
+          text: (player3|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 410
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
     base_player4_scoring:
         - type: text
           text: (player4|score)
@@ -1326,6 +1471,18 @@ widgets:
           anchor_x: right
           anchor_y: bottom
     moon_player4_scoring:
+        - type: text
+          text: (player4|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 165
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
+    reusable_player4_scoring:
         - type: text
           text: (player4|score)
           number_grouping: true

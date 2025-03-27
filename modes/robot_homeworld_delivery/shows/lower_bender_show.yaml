@@ -1,0 +1,16 @@
+#show_version=6
+##! show: lower_bender_show
+
+    - duration: 50ms
+      widgets:
+          lower_bender_instructions:
+              slide: RH_delivery_instructions_slide
+    - duration: 30s
+      widgets:
+          lower_bender_video:
+              slide: main_delivery_slide
+
+    - duration: 100ms
+      widgets:
+          lower_bender_video:
+              action: remove
