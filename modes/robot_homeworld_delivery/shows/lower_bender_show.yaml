@@ -8,7 +8,7 @@
     - duration: 30s
       widgets:
           lower_bender_video:
-              slide: main_delivery_slide
+              slide: reusable_delivery_slide
 
     - duration: 100ms
       widgets:

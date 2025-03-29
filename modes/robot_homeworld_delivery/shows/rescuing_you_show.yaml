@@ -4,7 +4,7 @@
     - duration: 3s
       widgets:
           rescuing_you_video:
-              slide: main_delivery_slide
+              slide: reusable_delivery_slide
 
     - duration: 100ms
       widgets:

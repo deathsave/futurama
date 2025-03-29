@@ -71,7 +71,7 @@ slides:
     RH_delivery_instructions_slide:
         widgets:
             - type: image
-              image: RH_delivery_instructions_BG
+              image: delivery_instructions_background
         target: display2
 
 slide_player:
@@ -165,6 +165,10 @@ widgets:
         - type: video
           video: dont_want_rescue_clip
           z: 3
+    robot_elders_video:
+        - type: video
+          video: robot_elders_clip
+          z: 3
     robot_elders_instructions:
         - type: text
           text: Escape the Robot Elders
@@ -178,7 +182,7 @@ widgets:
     escape_robot_city_video:
         - type: video
           video: escape_robot_city_clip
-          z: 5
+          z: 3
     escape_instructions:
         - type: text
           text: Escape Robot City!
@@ -189,6 +193,10 @@ widgets:
           z: 5
           anchor_x: left
           anchor_y: top
+    deliver_lugnuts_video:
+        - type: video
+          video: deliver_lugnuts_clip
+          z: 3
 
 widget_player:
 #most of this is done in shows, usually not much here
@@ -392,11 +400,30 @@ event_player:
     escape_but_no_delivery: stop_robot_homeworld_delivery
     lugnuts_shot_hit: drop_package_on_robots
 
+sounds:
+    intruder_alert:
+        target: sfx
+        delay: 0
+        attack: 10ms
+        attenuation: 1.0
+        release_point: 0
+        release: 10ms
+    infiltrate_song:
+        target: music
+        delay: 0
+        attack: 10ms
+        attenuation: 1.0
+        release_point: 0
+        release: 10ms
+
 sound_player:
     caught_by_robots:
         intruder_alert:
             action: play
             loops: 0
+    stop_infiltrate_song:
+        infiltrate_song:
+            action: stop
 
 light_player:
 #remember that the universe hates you, so everything is reversed:
@@ -406,12 +433,12 @@ light_player:
 #light shots for infiltrate_robot_city
     infiltrate_robot_city:
         l_left_ramp_insert:
-            color: "000000"
+            color: "00ffff"
     left_ramp_infiltrate_shot_hit:
         l_left_ramp_insert:
             color: ffffff
         l_right_ramp_insert:
-            color: "000000"
+            color: "00ffff"
     infiltrate_failed:
         l_left_ramp_insert:
             color: ffffff
@@ -423,13 +450,13 @@ light_player:
 #light shots for human_hunt
     human_hunt_begins:
         loops:
-            color: "000000"
+            color: "00ffff"
         l_left_ramp_insert:
-            color: "000000"
+            color: "00ffff"
         orbit:
-            color: "000000"
+            color: "00ffff"
         l_right_ramp_insert:
-            color: "000000"
+            color: "00ffff"
 #change inserts to red as human_hunt shots turn into avoid_robots shots
     left_ramp_human_hunt_shot_hit:
         l_left_ramp_insert:
@@ -468,14 +495,14 @@ light_player:
 #inserts for robot_elders
     robot_elders:
         orbit:
-            color: "000000"
+            color: "00ffff"
     right_orbit_robot_elders_shot_hit:
         orbit:
             color: ffffff
 #lugnut shot during escape_robot_city
     light_lugnuts_shot:
         l_delivery_shot_insert:
-            color: "000000"
+            color: "00ffff"
     lugnuts_shot_hit:
         l_delivery_shot_insert:
             color: ffffff
@@ -519,6 +546,7 @@ show_player:
         infiltrate_show:
             loops: 0
             action: play
+            events_when_stopped: stop_infiltrate_song
     infiltrate_combo_shot_hit:
         infiltrate_show:
             action: stop
