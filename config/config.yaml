@@ -1208,6 +1208,9 @@ slides:
               image: cryolab_UI
               z: 5
     reusable_delivery_slide:
+#other than adding widgets for players 2-4 in multiplayer games, only add and
+#remove widgets from this slide in delivery modes, so the widgets are removed
+#when the mode ends and the slide is reset for the next delivery mode
         widgets:
             - type: text
               text: (player1|score)

@@ -55,6 +55,9 @@ state_machines:
             - source: full
               target: half
               events: use_half_tank
+            - source: full
+              target: half
+              events: use_full_tank
     next_delivery:
         persist_state: true
         states:
@@ -63,8 +66,6 @@ state_machines:
                 events_when_started: set_next_delivery_moon
             cannibalon:
                 events_when_started: set_next_delivery_cannibalon
-            trisol:
-                events_when_started: set_next_delivery_trisol
             robot_homeworld:
                 events_when_started: set_next_delivery_robot_homeworld
             roswell:
@@ -74,14 +75,11 @@ state_machines:
               target: cannibalon
               events: moon_delivery_done
             - source: cannibalon
-              target: trisol
-              events: stop_cannibalon_delivery_mode
-            - source: trisol
               target: robot_homeworld
-              events: stop_trisol_delivery_mode
+              events: cannibalon_delivery_done
             - source: robot_homeworld
               target: roswell
-              events: stop_robot_homeworld_delivery_mode
+              events: stop_robot_homeworld_delivery
     moon_delivery_handler:
         persist_state: true
         states:
@@ -122,13 +120,39 @@ state_machines:
               events: set_next_delivery_cannibalon
             - source: cannibalon_delivery_next
               target: cannibalon_delivery_enable
-              events: half_tank, 3quarter_tank, full_tank
+              events: full_tank
             - source: cannibalon_delivery_enable
               target: cannibalon_delivery_active
               events: cannibalon_delivery_start_shot_hit
             - source: cannibalon_delivery_active
               target: cannibalon_delivery_done
               events: cannibalon_delivery_show_ended
+    robot_homeworld_delivery_handler:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+            robot_homeworld_delivery_next:
+                events_when_started: robot_homeworld_delivery_next
+            robot_homeworld_delivery_enable:
+                events_when_started: robot_homeworld_delivery_lit
+            robot_homeworld_delivery_active:
+                events_when_started: robot_homeworld_delivery_active
+            robot_homeworld_delivery_done:
+                events_when_started: robot_homeworld_delivery_done
+        transitions:
+            - source: start
+              target: robot_homeworld_delivery_next
+              events: set_next_delivery_robot_homeworld
+            - source: robot_homeworld_delivery_next
+              target: robot_homeworld_delivery_enable
+              events: full_tank
+            - source: robot_homeworld_delivery_enable
+              target: robot_homeworld_delivery_active
+              events: robot_homeworld_delivery_start_shot_hit
+            - source: robot_homeworld_delivery_active
+              target: robot_homeworld_delivery_done
+              events: mode_robot_homeworld_delivery_stopped
 
 widgets:
     cannibalon_delivery_video:
@@ -152,6 +176,11 @@ shots:
         enable_events: cannibalon_delivery_lit
         disable_events: cannibalon_delivery_show_ended
         persist_enable: true
+    robot_homeworld_delivery_start_shot:
+        switch: s_VUK
+        enable_events: robot_homeworld_delivery_lit
+        disable_events: robot_homeworld_intro_done
+        persist_enable: true
 
 ball_holds:
     cannibalon_delivery_hold:
@@ -168,6 +197,12 @@ ball_holds:
         disable_events: moon_delivery_intro_show_ended
         release_one_events: moon_delivery_intro_show_ended
         debug: true
+    robot_homeworld_delivery_start_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: robot_homeworld_delivery_lit
+        disable_events: robot_homeworld_intro_done
+        release_one_events: robot_homeworld_intro_done 
 
 slide_player:
     mode_moon_delivery_stopped:
@@ -175,7 +210,7 @@ slide_player:
             action: play
             target: display1
             priority: 100
-            
+
 widget_player:
     mode_moon_delivery_stopped:
         full_gauge:
@@ -237,7 +272,10 @@ event_player:
     start_moon_delivery_mode: delivery_started
     mode_moon_delivery_stopped: use_half_tank, delivery_ended
     cannibalon_delivery_start_shot_hit: delivery_started
-    cannibalon_delivery_show_ended: use_half_tank, delivery_ended
+    cannibalon_delivery_show_ended: use_full_tank, delivery_ended
+    robot_homeworld_delivery_start_shot_hit: start_robot_homeworld_delivery
+    start_robot_homeworld_delivery: delivery_started
+    mode_robot_homeworld_delivery_stopped: use_full_tank, delivery_ended
 
 show_player:
     cannibalon_delivery_start_shot_hit:
@@ -254,3 +292,8 @@ show_player:
     cannibalon_delivery_lit:
         delivery_lit_show:
             loops: -1
+    robot_homeworld_delivery_lit:
+        delivery_lit_show:
+            loops: -1
+    robot_homeworld_delivery_start_shot_hit:
+        delivery_lit_show: stop
