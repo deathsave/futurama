@@ -336,7 +336,7 @@ variable_player:
     rover_escape_shot_hit:
         score: 5000
     joyride_platter_shot_hit:
-        score: 250 * current_player.fry_multiplier * current_player.leela_multiplier
+        score: 50 * current_player.fry_multiplier * current_player.leela_multiplier
     bender_farmer_escape_shot_hit:
         score: 2000 * current_player.bender_multiplier
     fry_farmer_escape_shot_hit:

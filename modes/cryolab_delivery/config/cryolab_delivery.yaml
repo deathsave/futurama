@@ -59,6 +59,10 @@ slides:
         widgets:
             - type: image
               image: nye_1999
+    2999_slide:
+        widgets:
+            - type: image
+              image: nye_2999
     ride_the_bike_instructions_slide:
         widgets:
             - type: image
@@ -82,6 +86,9 @@ slide_player:
             target: display2
     fry_frozen:
         cryolab_awards_slide:
+            target: display2
+    wake_up_in_the_future:
+        2999_slide:
             target: display2
 
 widgets:
