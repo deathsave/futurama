@@ -2,42 +2,42 @@
 ##! show: level1_left_loop_jackpot_show
 
 
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_left_loop_insert:
-              color: 0000ff
+              color: "0000ff"
               fade: 800ms
-    - time: +900ms
-      lights:
-          l_left_loop_insert:
-              color: ffffff
-              fade: 800ms
-    - time: +900ms
-      lights:
-          l_left_loop_insert:
-              color: 0000ff
-              fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_left_loop_insert:
               color: ffffff
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_left_loop_insert:
-              color: 0000ff
+              color: "0000ff"
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_left_loop_insert:
               color: ffffff
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_left_loop_insert:
-              color: 0000ff
+              color: "0000ff"
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
+      lights:
+          l_left_loop_insert:
+              color: ffffff
+              fade: 800ms
+    - time: "+900ms"
+      lights:
+          l_left_loop_insert:
+              color: "0000ff"
+              fade: 800ms
+    - time: "+900ms"
       lights:
           l_left_loop_insert:
               color: ffffff
