@@ -438,9 +438,9 @@ switches:
         number: A0-B1-5
     s_dt_professor:
         number: A0-B1-4
-    s_dt_hermes:
-        number: A0-B1-2
     s_dt_amy:
+        number: A0-B1-2
+    s_dt_hermes:
         number: A0-B1-3
     s_t_leela:
         number: A1-B0-3
@@ -458,6 +458,24 @@ switches:
         number: A1-B0-0
         tags: playfield_active
         debounce: normal
+    s_motion_detector:
+        number: A2-B1-0
+        tags: motion_detector, cabinet
+        debounce: normal
+    s_oper1:
+        number: A2-B1-1
+        tags: operator_button
+    s_oper2:
+        number: A2-B1-2
+        tags: operator_button
+    s_oper3:
+        number: A2-B1-3
+        tags: operator_button
+    s_oper4:
+        number: A2-B1-4
+        tags: operator_button
+
+
 
 coils:
     c_flipper_left_main:

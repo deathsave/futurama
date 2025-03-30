@@ -5,7 +5,7 @@
       widgets:
           zoidberg_ball_save_video:
               action: add
-              target: display2
+              slide: PFD_base_slide
     - duration: 3200ms
       widgets:
           zoidberg_ball_save_video:

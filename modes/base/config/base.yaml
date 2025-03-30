@@ -129,6 +129,13 @@ shows:
         - duration: 1
           events: zoidberg_neutral
 
+slides:
+    PFD_base_slide:
+        widgets:
+            - type: image
+              image: crew_hangout
+              z: 1
+
 light_player:
     mode_base_started:
         indicator: ffffff
@@ -138,7 +145,7 @@ light_player:
         l_left_spotlight: ffffff
 
 show_player:
-    ball_save_zoidberg_ball_save_saving_ball: 
+    ball_save_zoidberg_ball_save_saving_ball:
         zoidberg_ball_save_show:
             action: play
             loops: 0
@@ -166,9 +173,6 @@ show_player:
     ball_save_ball_start_ball_save_saving_ball:
         ball_save_indicator_show:
             loops: 0
-    balldevice_bd_right_post_ball_entered:
-        right_post_lock_show:
-            loops: 0
     s_mag_button_active:
         hypnotoad_light_pulse_show:
             loops: -1
@@ -192,6 +196,8 @@ slide_player:
     mode_base_started:
         base_slide:
             target: display1
+        PFD_base_slide:
+            target: display2
     remove_hypnotoad_slide:
         hypnotoad_slide:
             action: remove
@@ -417,20 +423,7 @@ sound_player:
         level_up:
             action: play
 
-event_player:
-    start_left_loop_lock_hurry: right_post_enable
-    timer_left_loop_lock_hurry_complete: right_post_disable
-    right_post_lock_show_stopped: post_right_down
-    post_right_down: right_post_disable
-
 timers:
-    left_loop_lock_hurry:
-        start_value: 8
-        end_value: 0
-        direction: down
-        control_events:
-            - action: start
-              event: start_left_loop_lock_hurry
     ship_spinning_timer:
         start_value: 6
         end_value: 0
