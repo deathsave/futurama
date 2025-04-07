@@ -202,11 +202,6 @@ slide_player:
         hypnotoad_slide:
             action: remove
 
-widgets:
-    zoidberg_ball_save_video:
-        type: video
-        video: im_the_hero
-        z: 9
 
 widget_player:
     mode_base_started:
@@ -288,6 +283,9 @@ variable_player:
         slurm_caps_total: 1
 
 sound_player:
+    timer_shoot_the_ball_timer_complete:
+        shoot_the_ball_sounds:
+            action: play
     delivery_ended:
         theme_full:
             action: play
@@ -442,6 +440,17 @@ timers:
         control_events:
             - action: start
               event: base_fry_target_shot_hit
+    shoot_the_ball_timer:
+        start_value: 0
+        end_value: 30
+        direction: up
+        control_events:
+            - action: restart
+              event: s_shooter_lane_active
+            - action: stop
+              event: s_shooter_lane_inactive
+            - action: restart
+              event: timer_shoot_the_ball_timer_complete
 
 shots:
     ship_spinning:

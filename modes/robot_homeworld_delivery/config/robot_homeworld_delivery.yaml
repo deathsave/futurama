@@ -198,12 +198,9 @@ widgets:
           video: deliver_lugnuts_clip
           z: 3
 
-widget_player:
+#widget_player:
 #most of this is done in shows, usually not much here
-    mode_robot_homeworld_delivery_started:
-        ship_w_lowered_winch_BG:
-            action: add
-            slide: reusable_delivery_slide
+
 
 shots:
 #make sure to have blocking shots for all bose mode shots that aren't disabled
