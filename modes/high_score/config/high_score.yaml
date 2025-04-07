@@ -35,8 +35,12 @@ high_score:
       - CALCULON: 50000
 slide_player:
   _overwrite: true
-  high_score_enter_initials: high_score_enter_initials
-  high_score_award_display: high_score_award_display
+  high_score_enter_initials:
+      high_score_enter_initials:
+          target: display1
+  high_score_award_display:
+      high_score_award_display:
+          target: display1
 slides:
   _overwrite: true
   high_score_enter_initials:
