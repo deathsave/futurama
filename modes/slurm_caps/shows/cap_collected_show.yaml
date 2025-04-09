@@ -5,10 +5,10 @@
   widgets:
       slurm_cap_count:
           action: add
-          slide: base_slide
+          slide: PFD_base_slide
       slurm_cap:
           action: add
-          slide: base_slide
+          slide: PFD_base_slide
   sounds:
       cap_sound:
           action: play
