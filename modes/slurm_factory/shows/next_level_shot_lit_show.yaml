@@ -2,42 +2,42 @@
 ##! show: next_level_shot_lit_show
 
 
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_delivery_shot_insert:
               color: ff0000
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_delivery_shot_insert:
               color: ffffff
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_delivery_shot_insert:
               color: ff0000
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_delivery_shot_insert:
               color: ffffff
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_delivery_shot_insert:
               color: ff0000
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_delivery_shot_insert:
               color: ffffff
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_delivery_shot_insert:
               color: ff0000
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           l_delivery_shot_insert:
               color: ffffff

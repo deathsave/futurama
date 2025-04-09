@@ -438,9 +438,9 @@ switches:
         number: A0-B1-5
     s_dt_professor:
         number: A0-B1-4
-    s_dt_hermes:
-        number: A0-B1-2
     s_dt_amy:
+        number: A0-B1-2
+    s_dt_hermes:
         number: A0-B1-3
     s_t_leela:
         number: A1-B0-3
@@ -458,6 +458,24 @@ switches:
         number: A1-B0-0
         tags: playfield_active
         debounce: normal
+    s_motion_detector:
+        number: A2-B1-0
+        tags: motion_detector, cabinet
+        debounce: normal
+    s_oper1:
+        number: A2-B1-1
+        tags: operator_button
+    s_oper2:
+        number: A2-B1-2
+        tags: operator_button
+    s_oper3:
+        number: A2-B1-3
+        tags: operator_button
+    s_oper4:
+        number: A2-B1-4
+        tags: operator_button
+
+
 
 coils:
     c_flipper_left_main:
@@ -1321,7 +1339,11 @@ slides:
             - type: image
               image: player_and_crew_ui
               z: 5
-
+    zoidberg_ball_save_slide:
+        widgets:
+            - type: video
+              video: im_the_hero
+              z: 9
 
 widget_player:
     player_added{num==2}:
@@ -1583,6 +1605,15 @@ images:
         load: preload
 
 sound_pools:
+    shoot_the_ball_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - this_could_take_all_day
+            - man_im_bored
+            - come_on_mon
+            - bender_trumpet
+            - did_someone_call_me
     lrrr_pop_bumper:
         type: random_force_all
         track: sfx
@@ -1608,12 +1639,14 @@ sound_pools:
             - ship_short3
             - ship_short4
             - ship_short5
+
     leela_short:
         type: random_force_all
         track: sfx
         sounds:
             - leela_short1
             - leela_short2
+            - leela_attacks
     fry_short:
         type: random_force_all
         track: sfx
@@ -1656,6 +1689,8 @@ sound_pools:
         sounds:
             - bender_short1
             - bender_short2
+            - bender_hey
+            - bender_giggles
     professor_short:
         type: random_force_all
         track: sfx
@@ -1672,10 +1707,12 @@ sound_pools:
             - hypnotoad3
     hedonismbot_sounds:
         type: random_force_all
-        track: sfx
+        track: voice
         sounds:
             - hedonismbot1
             - hedonismbot2
+            - hedonismbot_no_need_to_explain
+            - hedonismbot_how_delightful
     drain_sounds:
         type: random_force_all
         track: voice
@@ -1688,6 +1725,11 @@ sound_pools:
             - a_thing_called_showmanship
             - have_a_nice_future
             - doomed_harmony
+            - haha_you_missed
+            - these_things_happen
+            - someone_get_a_mop
+            - terrible_just_terrible
+            - youre_all_fired
     ball_save_sounds:
         type: random_force_all
         track: voice
@@ -1695,6 +1737,31 @@ sound_pools:
             - dont_giveup_crybabies
             - were_safe
             - not_gonna_be_loser
+            - dont_want_people_say_im_incompetent
+    zoidberg_level_up_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - when_i_see_two_body_parts
+    hermes_level_up_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - hermes_sweet_bongo_congo
+    professor_level_up_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - sciencing_as_fast_as
+            - professor_preposterous_twaddlecock
+    bender_topper_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - worlds_sexiest_killing_machine
+            - bender_let_us_match_wits
+            - boo_its_just_bender
+            - bender_evil_laugh1
 
 sound_player:
     s_hedonism_bot_active:

@@ -58,22 +58,21 @@ widgets:
     slurm_cap_count:
         - type: text
           text: (caps_collected)
-          font_size: 80
+          font_size: 400
           color: black
-          x: 1775
-          y: 343
           z: 6
           anchor_x: center
-          anchor_y: bottom
+          anchor_y: middle
     slurm_cap:
         - type: image
-          image: slurm_cap_overlay
+          image: slurm_cap
           z: 5
     glurmo_speaks:
         - type: image
           image: glurmo_speaks
           z: 10
           expire: 10s
+          
 widget_player:
     found_golden_cap:
         glurmo_speaks:

@@ -2,42 +2,42 @@
 ##! show: level1_right_orbit_jackpot_show
 
 
-    - time: +900ms
+    - time: "+900ms"
       lights:
           orbit:
-              color: 0000ff
+              color: "0000ff"
               fade: 800ms
-    - time: +900ms
-      lights:
-          orbit:
-              color: ffffff
-              fade: 800ms
-    - time: +900ms
-      lights:
-          orbit:
-              color: 0000ff
-              fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           orbit:
               color: ffffff
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           orbit:
-              color: 0000ff
+              color: "0000ff"
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           orbit:
               color: ffffff
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
       lights:
           orbit:
-              color: 0000ff
+              color: "0000ff"
               fade: 800ms
-    - time: +900ms
+    - time: "+900ms"
+      lights:
+          orbit:
+              color: ffffff
+              fade: 800ms
+    - time: "+900ms"
+      lights:
+          orbit:
+              color: "0000ff"
+              fade: 800ms
+    - time: "+900ms"
       lights:
           orbit:
               color: ffffff

@@ -2,11 +2,10 @@
 ##! show: zoidberg_ball_save_show
 
     - duration: 100ms
-      widgets:
-          zoidberg_ball_save_video:
-              action: add
+      slides:
+          zoidberg_ball_save_slide:
               target: display2
     - duration: 3200ms
-      widgets:
-          zoidberg_ball_save_video:
+      slides:
+          zoidberg_ball_save_slide:
               action: remove
