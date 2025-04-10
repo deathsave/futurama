@@ -56,7 +56,7 @@ state_machines:
               target: half
               events: use_half_tank
             - source: full
-              target: half
+              target: start
               events: use_full_tank
     next_delivery:
         persist_state: true
@@ -202,7 +202,7 @@ ball_holds:
         hold_devices: bd_VUK
         enable_events: robot_homeworld_delivery_lit
         disable_events: robot_homeworld_intro_done
-        release_one_events: robot_homeworld_intro_done 
+        release_one_events: robot_homeworld_intro_done
 
 slide_player:
     mode_moon_delivery_stopped:
