@@ -504,10 +504,10 @@ shots:
 
 sequence_shots:
     right_loop:
-        event_sequence: base_right_loop_enter_hit, s_left_loop
+        event_sequence: base_right_loop_enter_hit, s_left_loop_active
         sequence_timeout: 3s
     left_loop:
-        event_sequence: base_left_loop_enter_hit, s_right_loop
+        event_sequence: base_left_loop_enter_hit, s_right_loop_active
         sequence_timeout: 3s
     left_right_double_loop:
         event_sequence: left_loop_hit, right_loop_hit
