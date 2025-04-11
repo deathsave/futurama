@@ -340,6 +340,7 @@ show_player:
 
 
 variable_player:
+#TO-DO: remove all the level1 events, which shouldn't ever happen/play
     leela_level1:
         leela_level: 1
         leela_multiplier: 1

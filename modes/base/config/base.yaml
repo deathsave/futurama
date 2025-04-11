@@ -489,13 +489,25 @@ shots:
         switch: s_right_ramp
         enable_events: mode_base_started, mode_cryolab_delivery_stopped
         disable_events: mode_moon_delivery_started, mode_cryolab_delivery_started
+    base_right_loop_enter:
+        switch: s_right_loop
+        enable_events: mode_base_started, delivery_ended
+        disable_events: delivery_started
+        delay_switch:
+            s_left_loop: 3s
+    base_left_loop_enter:
+        switch: s_left_loop
+        enable_events: mode_base_started, delivery_ended
+        disable_events: delivery_started
+        delay_switch:
+            s_right_loop: 3s
 
 sequence_shots:
     right_loop:
-        switch_sequence: s_right_loop, s_left_loop
+        event_sequence: base_right_loop_enter_hit, s_left_loop_active
         sequence_timeout: 3s
     left_loop:
-        switch_sequence: s_left_loop, s_right_loop
+        event_sequence: base_left_loop_enter_hit, s_right_loop_active
         sequence_timeout: 3s
     left_right_double_loop:
         event_sequence: left_loop_hit, right_loop_hit
