@@ -120,7 +120,7 @@ class TestRobotHomeworldModeAllShotsSuccess(MpfMachineTestCase):
         self.post_event("bender_level2")
         self.post_event("bender_level3")
         self.post_event("bender_level4")
-        self.assertPlayerVarEqual("4", "bender_level")
+        self.assertPlayerVarEqual(4, "bender_level")
 
     def _light_robot_homeworld_delivery(self):
         self.assertEqual("start", self.machine.state_machines.fuel_gauge_state.state)
