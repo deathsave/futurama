@@ -391,7 +391,6 @@ event_player:
     try_rescue_bender:
         - bender_wants_to_escape_option{current_player.bender_level > 3}
         - found_bender_got_caught_option{current_player.bender_level < 4}
-    timer_try_rescue_bender_timer_complete: found_bender_got_caught
     do_not_escape_robot_elders: fail_robot_homeworld_delivery
     right_orbit_robot_elders_shot_hit: escape_robot_elders
     escape_but_no_delivery: stop_robot_homeworld_delivery
@@ -632,7 +631,7 @@ variable_player:
             string: "fail"
             action: set
     bender_wants_to_escape:
-        score: current_player.bender_multiplier * current_player.fry_multiplier * current_player.leela_multiplier * 2000
+        score: current_player.bender_multiplier + current_player.fry_multiplier + current_player.leela_multiplier * 2000
         bender_xp: 20
         leela_xp: 5
         fry_xp: 5
