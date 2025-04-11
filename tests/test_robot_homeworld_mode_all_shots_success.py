@@ -16,6 +16,8 @@ class TestRobotHomeworldModeAllShotsSuccess(MpfMachineTestCase):
         self._escape_farmer()
         self._find_lunar_lander()
         self._exit_moon_to_base()
+        self._light_cannibalon_delivery()
+        self._do_cannibalon_delivery()
         self._advance_bender_to_level_4()
         self._light_robot_homeworld_delivery()
         self._start_robot_homeworld_delivery()
@@ -115,6 +117,25 @@ class TestRobotHomeworldModeAllShotsSuccess(MpfMachineTestCase):
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
         self.assertEqual(0, self.machine.ball_devices.bd_VUK.balls)
+
+    def _light_cannibalon_delivery(self):
+        self.assertEqual("start", self.machine.state_machines.fuel_gauge_state.state)
+        self.hit_and_release_switch("s_right_ramp")
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_right_ramp")
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_right_ramp")
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_right_ramp")
+        self.advance_time_and_run(2)
+        self.assertEqual("full_tank", self.machine.state_machines.fuel_gauge_state.state)
+        self.assertEqual("cannibalon_delivery_enable", self.machine.state_machines.cannibalon_delivery_handler.state)
+
+    def _do_cannibalon_delivery(self):
+        self.hit_switch_and_run("s_VUK", 5)
+        self.assertEqual("cannibalon_delivery_active", self.machine.state_machines.cannibalon_delivery_handler.state)
+        self.advance_time_and_run(17)
+        self.assertEqual("cannibalon_delivery_done", self.machine.state_machines.cannibalon_delivery_handler.state)
 
     def _advance_bender_to_level_4(self):
         self.post_event("bender_level2")
