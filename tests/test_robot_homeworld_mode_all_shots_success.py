@@ -175,8 +175,8 @@ class TestRobotHomeworldModeAllShotsSuccess(MpfMachineTestCase):
     def _infiltrate_robot_city(self):
         self.assertEqual("infiltrate", self.machine.state_machines.robot_homeworld_delivery_state.state)
         self.hit_and_release_switch("s_left_ramp")
-        self.advance_time_and_run(1)
-        self.hit_and_release_switch("s_right_loop")
+        self.advance_time_and_run(5)
+        self.hit_and_release_switch("s_right_ramp")
         self.advance_time_and_run(5)
 
     def _human_hunt(self):
