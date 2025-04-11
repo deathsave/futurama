@@ -132,7 +132,7 @@ class TestRobotHomeworldModeAllShotsSuccess(MpfMachineTestCase):
         self.advance_time_and_run(2)
         self.hit_and_release_switch("s_right_ramp")
         self.advance_time_and_run(2)
-        self.assertEqual("full_tank", self.machine.state_machines.fuel_gauge_state.state)
+        self.assertEqual("full", self.machine.state_machines.fuel_gauge_state.state)
         self.assertEqual("robot_homeworld_delivery_enable", self.machine.state_machines.robot_homeworld_delivery_handler.state)
 
     def _start_robot_homeworld_delivery(self):
