@@ -177,7 +177,7 @@ class TestRobotHomeworldModeAllShotsSuccess(MpfMachineTestCase):
         self.hit_and_release_switch("s_left_ramp")
         self.advance_time_and_run(1)
         self.hit_and_release_switch("s_right_loop")
-        self.advance_time_and_run(3)
+        self.advance_time_and_run(5)
 
     def _human_hunt(self):
         self.assertEqual("human_hunt", self.machine.state_machines.robot_homeworld_delivery_state.state)
