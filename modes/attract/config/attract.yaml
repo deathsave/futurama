@@ -5,11 +5,26 @@ show_player:
         attract_loop_show:
             priority: 300
             loops: 0
-            events_when_completed: next_segment
-
+            events_when_completed: next_attract_show
+    next_attract_show:
+        attract_shows:
+            priority: 300
+            loops: 0
+            events_when_completed: play_attract_loop
+    play_attract_loop:
+        attract_loop_show:
+            priority: 300
+            loops: 0
+            events_when_completed: next attract_show
+            
 light_player:
     mode_attract_started:
         indicator: ffffff
         ship: ffffff
         tubes: ffffff
         caps: ffffff
+
+show_pools:
+    attract_shows:
+        shows:
+            - glagnars_commercial_show
