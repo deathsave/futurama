@@ -31,3 +31,13 @@ show_pools:
             - glagnars_commercial_show
             - slurm_factory_commercial_show
             - teeth_commercial_show
+
+slides:
+    dspc_logo_slide:
+        widgets:
+            type: image
+            image: dspc_logo
+    mpf_logo_slide:
+        widgets:
+            type: image
+            image: mpf_logo 
