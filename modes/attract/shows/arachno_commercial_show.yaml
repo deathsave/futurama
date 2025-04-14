@@ -1,0 +1,13 @@
+#show_version=6
+##! show: arachno_commercial_show
+
+
+- time: 0
+  slides:
+      arachno_commercial_slide:
+          priority: 500
+          target: display1
+- time: 10
+  slides:
+      arachno_commercial_slide:
+          action: remove

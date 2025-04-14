@@ -1775,9 +1775,6 @@ slide_player:
     init_done:
         welcome_slide:
             target: display1
-    mode_attract_started:
-        attract_started:
-            target: display1
     game_ending:
         final_score_slide:
             expire: 30s
