@@ -1,0 +1,13 @@
+#show_version=6
+##! show: scary_door_show
+
+
+- time: 0
+  slides:
+      scary_door_slide:
+          priority: 500
+          target: display1
+- time: 19
+  slides:
+      scary_door_slide:
+          action: remove

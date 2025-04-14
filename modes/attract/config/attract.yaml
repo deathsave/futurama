@@ -34,6 +34,7 @@ show_pools:
             - PE_commercial_show
             - arachno_commercial_show
             - amc_the_proposal_show
+            - scary_door_show
 
 slides:
     dspc_logo_slide:
@@ -52,3 +53,7 @@ slides:
         widgets:
             type: video
             video: amc_the_proposal
+    scary_door_slide:
+        widgets:
+            type: video
+            video: scary_door
