@@ -4,7 +4,9 @@ show_player:
     mode_attract_started:
         attract_loop_show:
             priority: 300
-            
+            loops: 0
+            events_when_completed: next_segment
+
 light_player:
     mode_attract_started:
         indicator: ffffff
