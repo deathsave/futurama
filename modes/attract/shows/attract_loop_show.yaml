@@ -168,5 +168,13 @@
                 style: attract_mode_high_score_display_score
                 y: top-680
     - time: "+10"
+      slides:
+          mpf_logo_slide:
+              target: display1
+    - time: "+10"
+      slides:
+          dspc_logo_slide:
+              target: display1
+    - time: "+10"
       lights:
           l_hypnotoad_spotlight: ffffff
