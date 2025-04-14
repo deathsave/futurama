@@ -33,6 +33,7 @@ show_pools:
             - teeth_commercial_show
             - PE_commercial_show
             - arachno_commercial_show
+            - amc_the_proposal_show
 
 slides:
     dspc_logo_slide:
@@ -47,3 +48,7 @@ slides:
         widgets:
             type: video
             video: arachno_clip
+    amc_the_proposal_slide:
+        widgets:
+            type: video
+            video: amc_the_proposal
