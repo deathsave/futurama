@@ -167,30 +167,14 @@
                 text: (machine|score9_value)
                 style: attract_mode_high_score_display_score
                 y: top-680
-    - time: "+1"
+    - time: "+10"
       slides:
-          doop_warning_slide:
-              target: display2
-    - time: "+5"
-      shows:
-          PE_commercial_show:
-              loops: 0
-              priority: 500
-    - time: "+46"
+          mpf_logo_slide:
+              target: display1
+    - time: "+7"
       slides:
-          doop_warning_slide:
-              action: remove
-    - time: "+1"
-      slides:
-          slurm_ad_slide:
-              target: display2
-      shows:
-          slurm_factory_commercial_show:
-              loops: 0
-              priority: 500
-    - time: "+49"
-      slides:
-          slurm_ad_slide:
-              action: remove
+          dspc_logo_slide:
+              target: display1
+    - time: "+7"
       lights:
           l_hypnotoad_spotlight: ffffff
