@@ -1,13 +1,13 @@
 #show_version=6
-##! show: teeth_commercial_show
+##! show: homemade_intro_show
 
 
 - time: 0
   slides:
-      teeth_commercial_slide:
+      homemade_intro_slide:
           priority: 500
           target: display1
-- time: "+12"
+- time: 30
   slides:
-      teeth_commercial_slide:
+      homemade_intro_slide:
           action: remove

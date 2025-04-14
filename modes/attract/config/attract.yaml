@@ -15,8 +15,8 @@ show_player:
         attract_loop_show:
             priority: 300
             loops: 0
-            events_when_completed: next attract_show
-            
+            events_when_completed: next_attract_show
+
 light_player:
     mode_attract_started:
         indicator: ffffff
@@ -26,5 +26,8 @@ light_player:
 
 show_pools:
     attract_shows:
+        type: random_force_all
         shows:
             - glagnars_commercial_show
+            - slurm_factory_commercial_show
+            - teeth_commercial_show
