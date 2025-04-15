@@ -334,16 +334,10 @@ show_player:
             loops: 0
     bender_level3:
         bender_level_up_show:
-
-
             loops: 0
 
 
 variable_player:
-#TO-DO: remove all the level1 events, which shouldn't ever happen/play
-    leela_level1:
-        leela_level: 1
-        leela_multiplier: 1
     leela_level2:
         leela_level: 1
         leela_multiplier: 1
@@ -364,9 +358,6 @@ variable_player:
     leela_level7:
         leela_level: 1
         leela_multiplier: 1
-    fry_level1:
-        fry_level: 1
-        fry_multiplier: 1
     fry_level2:
         fry_level: 1
         fry_multiplier: 1
@@ -387,9 +378,6 @@ variable_player:
     fry_level7:
         fry_level: 1
         fry_multiplier: 1
-    bender_level1:
-        bender_level: 1
-        bender_multiplier: 1
     bender_level2:
         bender_level: 1
         bender_multiplier: 1
@@ -410,9 +398,6 @@ variable_player:
     bender_level7:
         bender_level: 1
         bender_multiplier: 1
-    amy_level1:
-        amy_level: 1
-        amy_multiplier: 1
     amy_level2:
         amy_level: 1
         amy_multiplier: 1
@@ -433,9 +418,6 @@ variable_player:
     amy_level7:
         amy_level: 1
         amy_multiplier: 1
-    hermes_level1:
-        hermes_level: 1
-        hermes_multiplier: 1
     hermes_level2:
         hermes_level: 1
         hermes_multiplier: 1
@@ -456,9 +438,6 @@ variable_player:
     hermes_level7:
         hermes_level: 1
         hermes_multiplier: 1
-    nibbler_level1:
-        nibbler_level: 1
-        nibbler_multiplier: 1
     nibbler_level2:
         nibbler_level: 1
         nibbler_multiplier: 1
@@ -479,9 +458,6 @@ variable_player:
     nibbler_level7:
         nibbler_level: 1
         nibbler_multiplier: 1
-    zoidberg_level1:
-        zoidberg_level: 1
-        zoidberg_multiplier: 1
     zoidberg_level2:
         zoidberg_level: 1
         zoidberg_multiplier: 1
@@ -502,9 +478,6 @@ variable_player:
     zoidberg_level7:
         zoidberg_level: 1
         zoidberg_multiplier: 1
-    professor_level1:
-        proefessor_level: 1
-        professor_multiplier: 1
     professor_level2:
         professor_level: 1
         professor_multiplier: 1

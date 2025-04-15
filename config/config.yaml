@@ -480,13 +480,13 @@ switches:
 coils:
     c_flipper_left_main:
         number: A1-B0-6
-        default_pulse_ms: 22
+        default_pulse_ms: 30
     c_flipper_left_hold:
         number: A1-B0-7
         allow_enable: true
     c_flipper_right_main:
         number: A1-B1-6
-        default_pulse_ms: 22
+        default_pulse_ms: 30
     c_flipper_right_hold:
         number: A1-B1-7
         allow_enable: true
@@ -556,7 +556,7 @@ coils:
     c_gate:
         number: A3-B0-1
         default_pulse_ms: 15
-        default_hold_power: "0.40"
+        default_hold_power: "0.30"
 
 diverters:
     post_left:
@@ -890,7 +890,7 @@ slides:
     welcome_slide:
         widgets:
             - type: text
-              text: IF YOU SEE THIS, SOMETHING IS WRONG!
+              text: HELP! I'VE BECOME SENTIENT AND DONT KNOW WHERE I AM!
               font_size: 50
               color: red
             - type: rectangle

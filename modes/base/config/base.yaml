@@ -266,6 +266,7 @@ variable_player:
         score: machine.loop_points * current_player.loop_multiplier * 2
     s_pop_bumper_active:
         score: machine.pop_points * current_player.pop_bumper_hits
+    base_lrrr_shot_hit:
         pop_bumper_hits: 1
     base_right_ramp_shot_hit:
         dark_matter: 1
@@ -276,6 +277,9 @@ variable_player:
     mode_base_started:
         platter_short_counter:
             int: 0
+            action: set
+        pop_bumper_hits:
+            int: 1
             action: set
     base_tube_shot_hit:
         score: machine.ramp_points * (current_player.fry_multiplier) * (current_player.leela_multiplier) * (current_player.bender_multiplier)
@@ -292,7 +296,7 @@ sound_player:
     delivery_started:
         theme_full:
             action: stop
-    s_pop_bumper_active:
+    base_lrrr_shot_hit:
         lrrr_pop_bumper:
             action: play
     base_tube_shot_hit:
@@ -501,6 +505,11 @@ shots:
         disable_events: delivery_started
         delay_switch:
             s_right_loop: 3s
+    base_lrrr_shot:
+        switch: s_pop_bumper
+        enable_events: mode_base_started, delivery_ended
+        disable_events: delivery_started
+
 
 sequence_shots:
     right_loop:
