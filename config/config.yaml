@@ -890,7 +890,7 @@ slides:
     welcome_slide:
         widgets:
             - type: text
-              text: IF YOU SEE THIS, SOMETHING IS WRONG!
+              text: HELP! I'VE BECOME SENTIENT AND DONT KNOW WHERE I AM!
               font_size: 50
               color: red
             - type: rectangle
