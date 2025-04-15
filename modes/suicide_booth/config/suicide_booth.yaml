@@ -1,0 +1,35 @@
+#config_version=6
+##! mode: crew_manager
+
+mode:
+    start_events: light_suicide_booth
+    stop_events: ball_ending
+    priority: 115
+
+#when the mode starts, the diverter is enabled
+#the diverter fires when s_left_outlane activates
+#there is a ball hold with bd_suicide_booth that is only active during this mode
+#the ball_hold starts a sound clip when active and then
+#ejects the ball a few seconds later
+
+event_player:
+    mode_suicide_booth_started: outlane_gate_enable
+    mode_suicide_booth_stopping: outlane_gate_disable
+
+ball_holds:
+    suicide_booth_ball_hold:
+        balls_to_hold: 1
+        hold_devices: bd_suicide_booth
+        enable_events: outlane_gate_enable
+        disable_events: mode_suicide_booth_stopping
+        release_one_events: suicide_booth_eject
+
+show_player:
+    ball_hold_suicide_booth_ball_hold_full:
+        suicide_booth_eject_show:
+            loops: 0
+            priority: 500
+            
+
+
+#sound_player:
