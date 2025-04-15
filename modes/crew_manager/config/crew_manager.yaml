@@ -334,8 +334,6 @@ show_player:
             loops: 0
     bender_level3:
         bender_level_up_show:
-
-
             loops: 0
 
 
