@@ -6,5 +6,6 @@
           suicide_booth1:
               action: play
               loops: 0
+              track: voice 
     - duration: 6s
       events: suicide_booth_eject
