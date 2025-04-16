@@ -858,6 +858,7 @@ player_vars:
 
 modes:
     - base
+    - suicide_booth 
     - slurm_caps
     - slurm_factory
     - delivery_manager
