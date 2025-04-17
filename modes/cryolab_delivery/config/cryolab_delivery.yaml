@@ -150,6 +150,15 @@ widget_player:
     mode_cryolab_delivery_started:
         panuccis_background:
             slide: cryolab_delivery_slide
+
+ball_holds:
+    nibbler_skillshot_ball_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: mode_cryolab_delivery_started
+        disable_events: mode_cryolab_delivery_stopping, ball_ending
+        release_one_events: delivery_ended, flipper_cradle
+
 shots:
     ride_the_bike_shot:
         switches: s_left_ramp, s_left_loop, s_t_fry
@@ -250,6 +259,7 @@ show_player:
     wake_up_in_the_future:
         wake_up_in_the_future_show:
             loops: 0
+            events_when_stopped: delivery_ended, mom_zapp_on, stop_cryolab_delivery_mode
     timer_nibbler_skillshot_timer_started:
         custom_rainbow_show:
             show_tokens:
@@ -323,6 +333,9 @@ show_player:
             action: stop
         pizza_delivered_show:
             action: stop
+    flipper_cradle:
+        wake_up_in_the_future_show:
+            action: stop 
     ball_ending:
         panuccis_show:
             action: stop

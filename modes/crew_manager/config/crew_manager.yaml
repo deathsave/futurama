@@ -305,29 +305,21 @@ state_machines:
               events: s_dt_hermes_active{current_player.hermes_xp > machine.level_7_xp}
 
 
-
+event_player:
+    bender_level2: light_suicide_booth
 
 show_player:
-    fry_level1:
-        fry_level_up_show:
-            loops: 0
     fry_level2:
         fry_level_up_show:
             loops: 0
     fry_level3:
         fry_level_up_show:
             loops: 0
-    leela_level1:
-        leela_level_up_show:
-            loops: 0
     leela_level2:
         leela_level_up_show:
             loops: 0
     leela_level3:
         leela_level_up_show:
-            loops: 0
-    bender_level1:
-        bender_level_up_show:
             loops: 0
     bender_level2:
         bender_level_up_show:
