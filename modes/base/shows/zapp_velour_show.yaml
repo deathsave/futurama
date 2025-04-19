@@ -1,0 +1,14 @@
+#show_version=6
+##! show: zapp_velour_show
+
+
+- time: 0
+  slides:
+      zapp_velour_slide:
+          priority: 500
+          target: display2
+- time: 8.5
+  slides:
+      zapp_velour_slide:
+          action: remove
+          
