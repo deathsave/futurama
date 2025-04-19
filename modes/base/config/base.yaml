@@ -180,7 +180,7 @@ slides:
         widgets:
             - type: video
               video: mom_what_needs_to_be_done_clip
-              
+
 light_player:
     mode_base_started:
         indicator: ffffff
@@ -343,12 +343,16 @@ variable_player:
         score: machine.loop_points * current_player.loop_multiplier
     left_right_double_loop_hit:
         score: machine.loop_points * current_player.loop_multiplier * 3
+        loop_multiplier: 1
     right_left_double_loop_hit:
         score: machine.loop_points * current_player.loop_multiplier * 3
+        loop_multiplier: 1
     double_left_loop_hit:
         score: machine.loop_points * current_player.loop_multiplier * 2
+        loop_multiplier: 1
     double_right_loop_hit:
         score: machine.loop_points * current_player.loop_multiplier * 2
+        loop_multiplier: 1
     s_pop_bumper_active:
         score: machine.pop_points * current_player.pop_bumper_hits
     base_lrrr_shot_hit:
