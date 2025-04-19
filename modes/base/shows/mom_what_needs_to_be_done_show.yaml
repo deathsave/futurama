@@ -1,0 +1,13 @@
+#show_version=6
+##! show: mom_what_needs_to_be_done_show
+
+
+- time: 0
+  slides:
+      mom_what_needs_to_be_done_slide:
+          priority: 500
+          target: display2
+- time: 5
+  slides:
+      mom_what_needs_to_be_done_slide:
+          action: remove

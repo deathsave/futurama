@@ -1,0 +1,13 @@
+#show_version=6
+##! show: zapp_25_star_general_show
+
+
+- time: 0
+  slides:
+      zapp_25_star_general_slide:
+          priority: 500
+          target: display2
+- time: 13.5
+  slides:
+      zapp_25_star_general_slide:
+          action: remove

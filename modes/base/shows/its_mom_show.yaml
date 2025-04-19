@@ -1,0 +1,13 @@
+#show_version=6
+##! show: its_mom_show
+
+
+- time: 0
+  slides:
+      its_mom_slide:
+          priority: 500
+          target: display2
+- time: 8.5
+  slides:
+      its_mom_slide:
+          action: remove

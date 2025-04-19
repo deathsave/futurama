@@ -1,0 +1,13 @@
+#show_version=6
+##! show: zapp_tries_seductive_show
+
+
+- time: 0
+  slides:
+      zapp_tries_seductive_slide:
+          priority: 500
+          target: display2
+- time: 8
+  slides:
+      zapp_tries_seductive_slide:
+          action: remove
