@@ -33,6 +33,11 @@ state_machines:
             - source: ignore
               target: zapp
               events: mom_zapp_on
+#mom/zapp shot logic:
+#outside of deliveries, hitting the left ramp toggles the state machine between
+#mom and zapp and starts a timer based on the state
+#the shot is lit and light show starts when the timer does and end when
+#the shot is hit, the timer runs out, or the state machine is toggled again
 
 ball_saves:
     ball_start_ball_save:
@@ -135,7 +140,47 @@ slides:
             - type: image
               image: crew_hangout
               z: 1
-
+    the_zapp_brannigan_slide:
+        widgets:
+            - type: video
+              video: the_zapp_brannigan_clip
+    zapp_and_kif_slide:
+        widgets:
+            - type: video
+              video: zapp_and_kif_clip
+    zapp_velour_slide:
+        widgets:
+            - type: video
+              video: zapp_velour_clip
+    zapp_tries_seductive_slide:
+        widgets:
+            - type: video
+              video: zapp_tries_seductive_clip
+    zapp_25_star_general_slide:
+        widgets:
+            - type: video
+              video: zapp_25_star_general_clip
+    its_mom_slide:
+        widgets:
+            - type: video
+              video: its_mom_clip
+    moms_robot_oil_slide:
+        widgets:
+            - type: video
+              video: moms_robot_oil_clip
+    mom_suit_slide:
+        widgets:
+            - type: video
+              video: mom_suit_clip
+    mom_wont_rest_slide:
+        widgets:
+            - type: video
+              video: mom_wont_rest_clip
+    mom_what_needs_to_be_done_slide:
+        widgets:
+            - type: video
+              video: mom_what_needs_to_be_done_clip
+              
 light_player:
     mode_base_started:
         indicator: ffffff
@@ -191,6 +236,30 @@ show_player:
     base_tube_shot_hit:
         tube_light_show:
             loops: 0
+    timer_mom_shot_timer_started:
+        mom_lit_show:
+            loops: -1
+        zapp_lit_show:
+            action: stop
+    timer_mom_shot_timer_stopped:
+        mom_lit_show:
+            action: stop
+    timer_zapp_shot_timer_started:
+        zapp_lit_show:
+            loops: -1
+        mom_lit_show:
+            action: stop
+    timer_zapp_shot_timer_stopped:
+        zapp_lit_show:
+            action: stop
+    mom_shot_hit:
+        mom_shows:
+            action: play
+            loops: 0
+    zapp_shot_hit:
+        zapp_shows:
+            action: play
+            loops: 0
 
 slide_player:
     mode_base_started:
@@ -201,7 +270,6 @@ slide_player:
     remove_hypnotoad_slide:
         hypnotoad_slide:
             action: remove
-
 
 widget_player:
     mode_base_started:
@@ -222,6 +290,23 @@ widget_player:
     full_tank:
         full_gauge:
             slide: base_slide
+
+show_pools:
+    mom_shows:
+        shows:
+            - its_mom_show
+            - moms_robot_oil_show
+            - mom_suit_show
+            - mom_wont_rest_show
+            - mom_what_needs_to_be_done_show
+    zapp_shows:
+        shows:
+            - the_zapp_brannigan_show
+            - zapp_and_kif_show
+            - zapp_velour_show
+            - zapp_tries_seductive_show
+            - zapp_25_star_general_show
+
 
 variable_player:
     base_fry_target_shot_hit:
@@ -285,6 +370,12 @@ variable_player:
         score: machine.ramp_points * (current_player.fry_multiplier) * (current_player.leela_multiplier) * (current_player.bender_multiplier)
     slurm_caps_total_shot_hit:
         slurm_caps_total: 1
+    mom_shot_hit:
+        score: machine.orbit_points * current_player.mom_multiplier * current_player.professor_multiplier * 45
+        mom_multiplier: 1
+    zapp_shot_hit:
+        score: machine.orbit_points * current_player.zapp_multiplier * current_player.leela_multiplier * 45
+        zapp_multiplier: 1
 
 sound_player:
     timer_shoot_the_ball_timer_complete:
@@ -455,6 +546,31 @@ timers:
               event: s_shooter_lane_inactive
             - action: restart
               event: timer_shoot_the_ball_timer_complete
+    mom_shot_timer:
+        start_value: 30
+        end_value: 0
+        direction: down
+        control_events:
+            - action: restart
+              event: mom_shot_lit
+            - action: stop
+              event: mom_shot_hit
+            - action: stop
+              event: zapp_shot_lit
+    zapp_shot_timer:
+        start_value: 30
+        end_value: 0
+        direction: down
+        control_events:
+            - action: restart
+              event: zapp_shot_lit
+            - action: stop
+              event: zapp_shot_hit
+            - action: stop
+              event: mom_shot_lit
+
+event_player:
+    base_tube_shot_hit: mom_zapp_toggle
 
 shots:
     ship_spinning:
@@ -483,12 +599,12 @@ shots:
         disable_events: mode_cryolab_delivery_started
     mom_shot:
         switch: s_r_orbit
-        enable_events: mom_shot_lit
-        disable_events: zapp_shot_lit, mom_zapp_off
+        enable_events: timer_mom_shot_timer_started
+        disable_events: timer_mom_shot_timer_stopped, mom_zapp_off
     zapp_shot:
         switch: s_r_orbit
-        enable_events: zapp_shot_lit
-        disable_events: mom_shot_lit, mom_zapp_off
+        enable_events: timer_zapp_shot_timer_started
+        disable_events: timer_zapp_shot_timer_stopped, mom_zapp_off,
     base_right_ramp_shot:
         switch: s_right_ramp
         enable_events: mode_base_started, mode_cryolab_delivery_stopped
