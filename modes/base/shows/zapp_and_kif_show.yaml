@@ -1,0 +1,13 @@
+#show_version=6
+##! show: zapp_and_kif_show
+
+
+- time: 0
+  slides:
+      zapp_and_kif_slide:
+          priority: 500
+          target: display2
+- time: 12.5
+  slides:
+      zapp_and_kif_slide:
+          action: remove

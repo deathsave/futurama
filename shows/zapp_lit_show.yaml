@@ -1,0 +1,24 @@
+#show_version=6
+##! show: zapp_lit_show
+
+    - duration: 250ms
+      lights:
+          l_right_orbit_insert2: red
+    - duration: 250ms
+      lights:
+          l_right_orbit_insert2: orange
+    - duration: 250ms
+      lights:
+          l_right_orbit_insert2: yellow
+    - duration: 250ms
+      lights:
+          l_right_orbit_insert2: blue
+    - duration: 250ms
+      lights:
+          l_right_orbit_insert2: green
+    - duration: 250ms
+      lights:
+          l_right_orbit_insert2: white
+    - duration: 250ms
+      lights:
+          l_right_orbit_insert2: purple

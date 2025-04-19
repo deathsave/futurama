@@ -1,0 +1,13 @@
+#show_version=6
+##! show: the_zapp_brannigan_show
+
+
+- time: 0
+  slides:
+      the_zapp_brannigan_slide:
+          priority: 500
+          target: display2
+- time: 9
+  slides:
+      the_zapp_brannigan_slide:
+          action: remove

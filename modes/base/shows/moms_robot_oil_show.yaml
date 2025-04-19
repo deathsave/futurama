@@ -1,0 +1,13 @@
+#show_version=6
+##! show: moms_robot_oil_show
+
+
+- time: 0
+  slides:
+      moms_robot_oil_slide:
+          priority: 500
+          target: display2
+- time: 8.5
+  slides:
+      moms_robot_oil_slide:
+          action: remove
