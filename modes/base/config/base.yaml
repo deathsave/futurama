@@ -561,6 +561,8 @@ timers:
               event: mom_shot_hit
             - action: stop
               event: zapp_shot_lit
+            - action: stop
+              event: mom_zapp_off
     zapp_shot_timer:
         start_value: 30
         end_value: 0
