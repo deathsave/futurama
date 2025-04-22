@@ -3,7 +3,7 @@ mode_settings:
     display_delay_ms: 2000
     bonus_entries:
     - event: bonus_caps
-      score: (current_player.slurm_caps_total * 25 * (1 + current_player.fry_level))
+      score: (current_player.slurm_caps_total * 25 * current_player.fry_multiplier)
     - event: bonus_hypnotoad_saves
       score: (current_player.hypnotoad_saves * 250)
     - event: bonus_dark_matter
@@ -45,7 +45,7 @@ slides:
     hypnotoad_bonus:
         widgets:
             - type: text
-              text: Hypnotoad Saves Bonus
+              text: Hypnotoad Bonus
               font_size: 60
               color: black
               y: 774
@@ -113,9 +113,9 @@ slide_player:
     bonus_hypnotoad_saves:
         hypnotoad_bonus:
             target: display1
-    bonus_dark_matter: 
+    bonus_dark_matter:
         dark_matter_bonus:
             target: display1
-    bonus_total: 
+    bonus_total:
         bonus_total_slide:
             target: display1
