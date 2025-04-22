@@ -30,7 +30,8 @@ steppers:
         number: "00427235"
         pos_max: 500000
         pos_min: -500000
-        homing_mode: hardware
+        homing_mode: switch
+        homing_switch: s_zoidberg_home
         relative_positions:
             -200: zoidberg_r1
             200: zoidberg_l1
@@ -352,6 +353,8 @@ lights:
         tags: lamps, gi, ballguide
 
 switches:
+    s_zoidberg_home:
+        number: "00427235-TX"
     s_left_flipper:
         number: A2-B0-6
         tags: left_flipper
