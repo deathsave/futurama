@@ -1,7 +1,7 @@
 #show_version=6
 ##! show: wake_up_in_the_future_show
 
-    - duration: 17s
+    - duration: 16s
       widgets:
           wake_up_in_the_future_video:
               slide: cryolab_delivery_slide
