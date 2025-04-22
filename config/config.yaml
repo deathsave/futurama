@@ -16,7 +16,7 @@ keyboard:
     s:
         switch: s_start
     c:
-        event: flipper_cradle 
+        event: flipper_cradle
 
 hardware:
     platform: p3_roc
@@ -30,7 +30,8 @@ steppers:
         number: "00427235"
         pos_max: 500000
         pos_min: -500000
-        homing_mode: hardware
+        homing_mode: switch
+        homing_switch: s_zoidberg_home
         relative_positions:
             -200: zoidberg_r1
             200: zoidberg_l1
@@ -352,6 +353,8 @@ lights:
         tags: lamps, gi, ballguide
 
 switches:
+    s_zoidberg_home:
+        number: "00427235-TX"
     s_left_flipper:
         number: A2-B0-6
         tags: left_flipper
@@ -936,27 +939,20 @@ slides:
               anchor_y: bottom
             - type: text
               text: PLAYER (number)
-              y: 918
-              x: 55
+              y: 165
+              x: 1320
               z: 7
-              font_size: 48
+              font_size: 44
               anchor_x: left
               anchor_y: top
             - type: text
-              text: (ball)
-              y: 918
-              x: 421
+              text: BALL (ball)
+              y: 100
+              x: 1320
               z: 7
-              anchor_x: right
+              anchor_x: left
               anchor_y: top
-              font_size: 48
-            - type: image
-              image: cartoon_pinball
-              x: 390
-              y: 905
-              z: 7
-              anchor_x: right
-              anchor_y: top
+              font_size: 44
             - type: text
               text: (player|bender_level)
               font_size: 72
@@ -1033,6 +1029,9 @@ slides:
               image: player_and_crew_ui
               z: 5
             - type: image
+              image: player_and_ball_overlay
+              z: 5
+            - type: image
               image: base_background1
               z: 1
     moon_delivery_slide:
@@ -1050,27 +1049,20 @@ slides:
               anchor_y: bottom
             - type: text
               text: PLAYER (number)
-              y: 918
-              x: 55
+              y: 165
+              x: 1320
               z: 7
-              font_size: 48
+              font_size: 44
               anchor_x: left
               anchor_y: top
             - type: text
-              text: (ball)
-              y: 918
-              x: 421
+              text: BALL (ball)
+              y: 100
+              x: 1320
               z: 7
-              anchor_x: right
+              anchor_x: left
               anchor_y: top
-              font_size: 48
-            - type: image
-              image: cartoon_pinball
-              x: 390
-              y: 905
-              z: 7
-              anchor_x: right
-              anchor_y: top
+              font_size: 44
             - type: text
               text: (player|bender_level)
               font_size: 72
@@ -1145,6 +1137,9 @@ slides:
               anchor_y: bottom
             - type: image
               image: player_and_crew_ui
+              z: 5
+            - type: image
+              image: player_and_ball_overlay
               z: 5
     moon_delivery_intro_slide:
         widgets:
@@ -1204,29 +1199,25 @@ slides:
               anchor_y: bottom
             - type: text
               text: PLAYER (number)
-              y: 918
-              x: 55
+              y: 165
+              x: 1320
               z: 7
-              font_size: 48
+              font_size: 44
               anchor_x: left
               anchor_y: top
             - type: text
-              text: (ball)
-              y: 918
-              x: 421
+              text: BALL (ball)
+              y: 100
+              x: 1320
               z: 7
-              anchor_x: right
+              anchor_x: left
               anchor_y: top
-              font_size: 48
-            - type: image
-              image: cartoon_pinball
-              x: 390
-              y: 905
-              z: 7
-              anchor_x: right
-              anchor_y: top
+              font_size: 44
             - type: image
               image: cryolab_UI
+              z: 5
+            - type: image
+              image: player_and_ball_overlay
               z: 5
     reusable_delivery_slide:
 #other than adding widgets for players 2-4 in multiplayer games, only add and
@@ -1246,27 +1237,20 @@ slides:
               anchor_y: bottom
             - type: text
               text: PLAYER (number)
-              y: 918
-              x: 55
+              y: 165
+              x: 1320
               z: 7
-              font_size: 48
+              font_size: 44
               anchor_x: left
               anchor_y: top
             - type: text
-              text: (ball)
-              y: 918
-              x: 421
+              text: BALL (ball)
+              y: 100
+              x: 1320
               z: 7
-              anchor_x: right
+              anchor_x: left
               anchor_y: top
-              font_size: 48
-            - type: image
-              image: cartoon_pinball
-              x: 390
-              y: 905
-              z: 7
-              anchor_x: right
-              anchor_y: top
+              font_size: 44
             - type: text
               text: (player|bender_level)
               font_size: 72
@@ -1341,6 +1325,9 @@ slides:
               anchor_y: bottom
             - type: image
               image: player_and_crew_ui
+              z: 5
+            - type: image
+              image: player_and_ball_overlay
               z: 5
     zoidberg_ball_save_slide:
         widgets:

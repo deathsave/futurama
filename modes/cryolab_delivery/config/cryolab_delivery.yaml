@@ -200,6 +200,8 @@ timers:
               event: pizza_going_out
             - action: stop
               event: ride_the_bike_shot_hit
+            - action: stop
+              event: nibbler_skillshot_hit
     lock_the_bike_shot_timer:
         start_value: 20
         end_value: 0
@@ -335,7 +337,7 @@ show_player:
             action: stop
     flipper_cradle:
         wake_up_in_the_future_show:
-            action: stop 
+            action: stop
     ball_ending:
         panuccis_show:
             action: stop
