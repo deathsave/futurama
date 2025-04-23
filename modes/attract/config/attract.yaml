@@ -1,5 +1,8 @@
 #config_version=6
 
+#mode:
+#    code: attract.Attract
+
 show_player:
     mode_attract_started:
         attract_loop_show:
