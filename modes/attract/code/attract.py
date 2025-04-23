@@ -4,6 +4,10 @@ from mpf.modes.attract.code.attract import Attract
 class FuturamaAttract(Attract):
 
     def mode_start(self, **kwargs):
-        tic = PololuTiccmdWrapper("00427235", self.machine)
-        tic._ticcmd("--halt-and-set-position 0")
+        self._reset_tic()
         super().mode_start(**kwargs)
+
+    def _reset_tic(self):
+        print("Attract Mode Tic Stepper Reset")
+        tic = PololuTiccmdWrapper("00427235", self.machine)
+        tic.halt_and_set_position(0)
