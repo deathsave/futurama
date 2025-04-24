@@ -4,7 +4,9 @@ from mpf.modes.attract.code.attract import Attract
 class FuturamaAttract(Attract):
 
     def mode_start(self, **kwargs):
-        self._reset_tic()
+
+        if self.core.platform_controller._check_and_get_platform != "smart_virtual":
+            self._reset_tic()          
         super().mode_start(**kwargs)
 
     def _reset_tic(self):
