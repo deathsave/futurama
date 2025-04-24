@@ -5,7 +5,7 @@ class FuturamaAttract(Attract):
 
     def mode_start(self, **kwargs):
 
-        if self.machine.hardware_platforms['smart_virtual'] is None:
+        if 'smart_virtual' not in self.machine.hardware_platforms:
             self._reset_tic()
         super().mode_start(**kwargs)
 
