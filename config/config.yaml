@@ -1,5 +1,8 @@
 #config_version=6
 
+custom_code:
+    - code.zoidberg.Zoidberg
+
 virtual_platform_start_active_switches:
     - s_trough1
     - s_trough2
