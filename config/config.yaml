@@ -31,6 +31,7 @@ steppers:
         pos_max: 500000
         pos_min: -500000
         homing_mode: hardware
+        reset_events: mode_attract_started
         relative_positions:
             -200: zoidberg_r1
             200: zoidberg_l1
