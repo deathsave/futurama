@@ -307,6 +307,7 @@ state_machines:
 
 event_player:
     bender_level2: light_suicide_booth
+    light_suicide_booth: outlane_gate_enable
 
 show_player:
     fry_level2:
