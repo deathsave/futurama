@@ -334,16 +334,20 @@ variable_player:
         leela_level: 1
         leela_multiplier: 1
         crew_multiplier: 1
+        score: 500
     leela_level3:
         leela_level: 1
         leela_multiplier: 1
+        score: 1000
     leela_level4:
         leela_level: 1
         leela_multiplier: 1
+        score: 5000
     leela_level5:
         leela_level: 1
         leela_multiplier: 1
         crew_multiplier: 1
+        score: 20000
     leela_level6:
         leela_level: 1
         leela_multiplier: 1
@@ -354,16 +358,20 @@ variable_player:
         fry_level: 1
         fry_multiplier: 1
         crew_multiplier: 1
+        score: 500
     fry_level3:
         fry_level: 1
         fry_multiplier: 1
+        score: 1000
     fry_level4:
         fry_level: 1
         fry_multiplier: 1
+        score: 5000
     fry_level5:
         fry_level: 1
         fry_multiplier: 1
         crew_multiplier: 1
+        score: 20000
     fry_level6:
         fry_level: 1
         fry_multiplier: 1
@@ -374,16 +382,20 @@ variable_player:
         bender_level: 1
         bender_multiplier: 1
         crew_multiplier: 1
+        score: 500
     bender_level3:
         bender_level: 1
         bender_multiplier: 1
+        score: 1000
     bender_level4:
         bender_level: 1
         bender_multiplier: 1
+        score: 5000
     bender_level5:
         bender_level: 1
         bender_multiplier: 1
         crew_multiplier: 1
+        score: 20000
     bender_level6:
         bender_level: 1
         bender_multiplier: 1
@@ -394,16 +406,20 @@ variable_player:
         amy_level: 1
         amy_multiplier: 1
         crew_multiplier: 1
+        score: 1000
     amy_level3:
         amy_level: 1
         amy_multiplier: 1
+        score: 2000
     amy_level4:
         amy_level: 1
         amy_multiplier: 1
+        score: 10000
     amy_level5:
         amy_level: 1
         amy_multiplier: 1
         crew_multiplier: 1
+        score: 40000
     amy_level6:
         amy_level: 1
         amy_multiplier: 1
@@ -414,16 +430,20 @@ variable_player:
         hermes_level: 1
         hermes_multiplier: 1
         crew_multiplier: 1
+        score: 500
     hermes_level3:
         hermes_level: 1
         hermes_multiplier: 1
+        score: 1000
     hermes_level4:
         hermes_level: 1
         hermes_multiplier: 1
+        score: 5000
     hermes_level5:
         hermes_level: 1
         hermes_multiplier: 1
         crew_multiplier: 1
+        score: 20000
     hermes_level6:
         hermes_level: 1
         hermes_multiplier: 1
@@ -434,16 +454,20 @@ variable_player:
         nibbler_level: 1
         nibbler_multiplier: 1
         crew_multiplier: 1
+        score: 500
     nibbler_level3:
         nibbler_level: 1
         nibbler_multiplier: 1
+        score: 1000
     nibbler_level4:
         nibbler_level: 1
         nibbler_multiplier: 1
+        score: 5000
     nibbler_level5:
         nibbler_level: 1
         nibbler_multiplier: 1
         crew_multiplier: 1
+        score: 20000
     nibbler_level6:
         nibbler_level: 1
         nibbler_multiplier: 1
@@ -454,16 +478,20 @@ variable_player:
         zoidberg_level: 1
         zoidberg_multiplier: 1
         crew_multiplier: 1
+        score: 500
     zoidberg_level3:
         zoidberg_level: 1
         zoidberg_multiplier: 1
+        score: 1000
     zoidberg_level4:
         zoidberg_level: 1
         zoidberg_multiplier: 1
+        score: 5000
     zoidberg_level5:
         zoidberg_level: 1
         zoidberg_multiplier: 1
         crew_multiplier: 1
+        score: 20000
     zoidberg_level6:
         zoidberg_level: 1
         zoidberg_multiplier: 1
@@ -474,16 +502,20 @@ variable_player:
         professor_level: 1
         professor_multiplier: 1
         crew_multiplier: 1
+        score: 500
     professor_level3:
         professor_level: 1
         professor_multiplier: 1
+        score: 1000
     professor_level4:
         professor_level: 1
         professor_multiplier: 1
+        score: 5000
     professor_level5:
         professor_level: 1
         professor_multiplier: 1
         crew_multiplier: 1
+        score: 20000
     professor_level6:
         professor_level: 1
         professor_multiplier: 1
