@@ -180,6 +180,10 @@ shots:
         switch: s_VUK
         enable_events: pizza_going_out
         disable_events: timer_nibbler_skillshot_timer_complete
+    cryolab_slingshot_shot:
+        switches: s_left_sling, s_right_sling
+        enable_events: pizza_going_out
+        disable_events: nibbler_skillshot_hit
 
 timers:
     nibbler_skillshot_timer:
@@ -392,3 +396,5 @@ variable_player:
         cryolab_delivery_status:
             string: failed
             action: set
+    cryolab_slingshot_shot_hit:
+        score: 15
