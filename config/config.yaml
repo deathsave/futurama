@@ -24,6 +24,8 @@ keyboard:
         switch: s_start
     c:
         event: flipper_cradle
+    b:
+        event: light_suicide_booth
 
 hardware:
     platform: p3_roc
@@ -590,9 +592,9 @@ diverters:
     outlane_gate:
         activation_coil: c_gate
         type: hold
-        activation_switches: s_left_outlane
-        deactivate_events: close_outlane_gate, ball_ending
-        enable_events: outlane_gate_enable
+        activate_events: light_suicide_booth
+        deactivate_events: close_outlane_gate, ball_ending, delivery_started
+        enable_events: mode_base_started, delivery_ended
         disable_events: outlane_gate_disable
         targets_when_active: bd_suicide_booth
         targets_when_inactive: bd_trough
