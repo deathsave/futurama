@@ -195,6 +195,16 @@ light_player:
         loops: ffffff
     remove_hypnotoad_slide:
         l_left_spotlight: ffffff
+    player_shot_zoidberg_ball_save_shot_enabled{value==True}:
+        l_right_outlane: "000000"
+    ball_save_zoidberg_ball_save_saving_ball:
+        l_right_outlane: ffffff
+    ball_save_ball_start_ball_save_enabled:
+        l_shoot_again: "000000"
+    ball_save_ball_start_ball_save_disabled:
+        l_shoot_again: ffffff
+
+
 
 show_player:
     ball_save_zoidberg_ball_save_saving_ball:
