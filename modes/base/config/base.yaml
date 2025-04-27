@@ -43,20 +43,20 @@ ball_saves:
     ball_start_ball_save:
         active_time: "+15s"
         hurry_up_time: 6s
+        enable_events: mode_base_started
         timer_start_events: s_shooter_lane_inactive
         auto_launch: true
         balls_to_save: 1
     zoidberg_ball_save:
-        active_time: 5s
+        active_time: 6s
         hurry_up_time: 2s
-        enable_events: zoidberg_level2, zoidberg_level3, zoidberg_level4
-        timer_start_events: s_r_outlane_active
+        enable_events: zoidberg_ball_save_shot_hit
         auto_launch: true
         balls_to_save: 1
     delivery_started_ball_save:
-        active_time: 10s
+        active_time: 15s
         hurry_up_time: 5s
-        timer_start_events: delivery_started
+        enable_events: mode_moon_delivery_started, mode_robot_homeworld_delivery_started,
         auto_launch: true
         balls_to_save: 1
 
@@ -389,6 +389,9 @@ variable_player:
     zapp_shot_hit:
         score: machine.orbit_points * current_player.zapp_multiplier * current_player.leela_multiplier * 45
         zapp_multiplier: 1
+    zoidberg_ball_save_shot_hit:
+        score: 250 * current_player.zoidberg_multiplier
+        zoidberg_xp: 5
 
 sound_player:
     timer_shoot_the_ball_timer_complete:
@@ -644,7 +647,10 @@ shots:
         switches: s_right_sling, s_left_sling
         enable_events: mode_base_started, delivery_ended
         disable_events: delivery_started
-
+    zoidberg_ball_save_shot:
+        switches: s_r_outlane
+        enable_events: zoidberg_level2, zoidberg_level3, zoidberg_level4, zoidberg_level5
+        disable_events: ball_save_zoidberg_ball_save_saving_ball
 
 sequence_shots:
     right_loop:
