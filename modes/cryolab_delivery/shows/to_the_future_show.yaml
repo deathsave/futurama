@@ -5,7 +5,7 @@
       widgets:
           to_the_future_video:
               slide: cryolab_delivery_slide
-    - duration: 38s
+    - duration: 36s
       widgets:
         cryolab_awards:
               slide: 1999_slide

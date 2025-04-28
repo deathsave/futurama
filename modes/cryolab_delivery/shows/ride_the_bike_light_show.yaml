@@ -1,0 +1,11 @@
+#show_version=6
+##! show: ride_the_bike_light_show
+
+    - duration: 500ms
+      lights:
+          l_left_ramp_insert: blue
+          l_left_loop_insert: blue
+    - duration: 500ms
+      lights:
+          l_left_ramp_insert: off
+          l_left_loop_insert: off
