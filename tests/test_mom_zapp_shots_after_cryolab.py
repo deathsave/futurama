@@ -9,6 +9,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self._exit_to_base_mode()
         self._activate_mom_scene1()
         self._activate_zapp_scene1()
+        self._activate_mom_scene2()
+        self._activate_zapp_scene2()
 
 
     def _start_game(self):
@@ -62,4 +64,25 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(2, "zapp_multiplier")
-        
+
+    def _activate_mom_scene2(self):
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.assertPlayerVarEqual(2, "mom_multiplier")
+        self.hit_switch_and_run("s_VUK", 3)
+        self.hit_and_release_switch("s_left_ramp")
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_left_inlane")
+        self.assertEqual("mom", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_r_orbit")
+        self.advance_time_and_run(2)
+        self.assertPlayerVarEqual(3, "mom_multiplier")
+
+    def _activate_zapp_scene2(self):
+        self.assertPlayerVarEqual(2, "zapp_multiplier")
+        self.assertEqual("mom", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_left_ramp")
+        self.advance_time_and_run(20) #longer for testing variety
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_r_orbit")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(3, "zapp_multiplier")
