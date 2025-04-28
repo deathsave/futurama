@@ -8,6 +8,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self._nibbler_skillshot()
         self._exit_to_base_mode()
         self._activate_mom_scene1()
+        self._activate_zapp_scene1()
+
 
     def _start_game(self):
         self.hit_and_release_switch("s_start")
@@ -37,6 +39,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
 
+#there's a bit of variety to what happens before/after hitting the mom/zapp shots
+#in the following steps, this is done intentionally
     def _activate_mom_scene1(self):
         self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
         self.advance_time_and_run(30)
@@ -48,3 +52,14 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(2)
         self.assertPlayerVarEqual(2, "mom_multiplier")
+
+    def _activate_zapp_scene1(self):
+        self.assertPlayerVarEqual(1, "zapp_multiplier")
+        self.assertEqual("mom", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_left_ramp")
+        self.advance_time_and_run(2) #leaving off s_left_inlane intentionally for variety in testing
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_r_orbit")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "zapp_multiplier")
+        
