@@ -38,7 +38,7 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.assertModeRunning("slurm_caps")
 
     def _activate_mom_scene1(self):
-        self.assertEqual("Zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
         self.advance_time_and_run(30)
         self.assertPlayerVarEqual(1, "mom_multiplier")
         self.hit_and_release_switch("s_left_ramp")
