@@ -216,6 +216,9 @@ shots:
         switch: s_VUK
         enable_events: timer_lunar_lander_found_timer_started
         disable_events: timer_lunar_lander_found_timer_stopped, lunar_lander_found_shot_hit
+    moon_slingshot_shot:
+        switches: s_left_sling, s_right_sling
+
 
 sequences:
     whalers_sequence:
@@ -351,6 +354,8 @@ variable_player:
         score: 1000
     lunar_lander_found_shot_hit:
         score: 20000
+    moon_slingshot_shot_hit:
+        score: 100 * current_player.professor_multiplier
 
 event_player:
     timer_crate_delivery_timer_complete: end_moon_delivery
