@@ -11,7 +11,12 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self._activate_zapp_scene1()
         self._activate_mom_scene2()
         self._activate_zapp_scene2()
-
+        self._activate_mom_scene3()
+        self._activate_zapp_scene3()
+        self._activate_mom_scene4()
+        self._activate_zapp_scene4()
+        self._activate_mom_scene5()
+        self._activate_zapp_scene5()
 
     def _start_game(self):
         self.hit_and_release_switch("s_start")
@@ -86,3 +91,78 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(3, "zapp_multiplier")
+
+    def _activate_mom_scene3(self):
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.assertPlayerVarEqual(3, "mom_multiplier")
+        self.hit_and_release_switch("s_t_fry")
+        self.hit_and_release_switch("s_left_ramp")
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_left_inlane")
+        self.assertEqual("mom", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_r_orbit")
+        self.advance_time_and_run(2)
+        self.assertPlayerVarEqual(4, "mom_multiplier")
+
+    def _activate_zapp_scene3(self):
+        self.assertPlayerVarEqual(3, "zapp_multiplier")
+        self.assertEqual("mom", self.machine.state_machines.mom_zapp_toggle_state.state)
+        #lets toggle that back and forth again for variety in testing
+        self.hit_and_release_switch("s_left_ramp")
+        self.advance_time_and_run(2)
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_left_ramp")
+        self.hit_and_release_switch("s_left_inlane")
+        self.advance_time_and_run(2)
+        self.assertEqual("mom", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_left_ramp")
+        self.hit_and_release_switch("s_right_sling")
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_r_orbit")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(4, "zapp_multiplier")
+
+    def _activate_mom_scene4(self):
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.assertPlayerVarEqual(4, "mom_multiplier")
+        self.hit_switch_and_run("s_VUK", 3)
+        self.hit_and_release_switch("s_left_ramp")
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_left_inlane")
+        self.assertEqual("mom", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_r_orbit")
+        self.advance_time_and_run(2)
+        self.assertPlayerVarEqual(5, "mom_multiplier")
+
+    def _activate_zapp_scene4(self):
+        self.assertPlayerVarEqual(4, "zapp_multiplier")
+        self.assertEqual("mom", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_left_ramp")
+        self.advance_time_and_run(2)
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_r_orbit")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(5, "zapp_multiplier")
+
+    def _activate_mom_scene5(self):
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.assertPlayerVarEqual(5, "mom_multiplier")
+        self.hit_switch_and_run("s_VUK", 3)
+        self.hit_and_release_switch("s_left_ramp")
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_left_inlane")
+        self.assertEqual("mom", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_r_orbit")
+        self.advance_time_and_run(2)
+        self.assertPlayerVarEqual(6, "mom_multiplier")
+
+    def _activate_zapp_scene5(self):
+        self.assertPlayerVarEqual(5, "zapp_multiplier")
+        self.assertEqual("mom", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_left_ramp")
+        self.advance_time_and_run(2)
+        self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.hit_and_release_switch("s_r_orbit")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(6, "zapp_multiplier")
