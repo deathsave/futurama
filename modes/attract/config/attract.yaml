@@ -45,6 +45,16 @@ slides:
         widgets:
             type: image
             image: mpf_logo
+    titlecard_slide:
+        widgets:
+            - type: image
+              image: titlecard
+            - type: text
+              color: white
+              font_size: 64
+              text: SW Version .61
+              y: center-400
+              z: 5
     arachno_commercial_slide:
         widgets:
             type: video

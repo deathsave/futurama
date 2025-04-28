@@ -174,12 +174,12 @@ lights:
         platform_settings:
             polarity: false
         tags: lamps, gi, DTbank
-    l_left_spotlight:
+    l_hypnotoad_spotlight:
         number: 2-69-70-71
         platform_settings:
             polarity: false
         tags: lamps, spotlights
-    l_hypnotoad_spotlight:
+    l_left_spotlight:
         number: 2-66-67-68
         platform_settings:
             polarity: false
