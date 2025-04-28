@@ -561,6 +561,20 @@ timers:
         control_events:
             - action: start
               event: base_fry_target_shot_hit
+    leela_shot_debounce:
+        start_value: 2
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: base_leela_target_shot_hit
+    bender_shot_debounce:
+        start_value: 2
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: base_bender_target_shot_hit
     shoot_the_ball_timer:
         start_value: 0
         end_value: 30
@@ -615,12 +629,12 @@ shots:
         disable_events: mode_moon_delivery_started, delivery_started, timer_fry_shot_debounce_started
     base_bender_target_shot:
         switch: s_t_bender
-        enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended
-        disable_events: mode_moon_delivery_started, delivery_started
+        enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended, timer_bender_shot_debounce_complete
+        disable_events: mode_moon_delivery_started, delivery_started, timer_bender_shot_debounce_started
     base_leela_target_shot:
         switch: s_t_leela
-        enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended
-        disable_events: mode_moon_delivery_started, delivery_started
+        enable_events: mode_base_started, mode_moon_delivery_stopped, delivery_ended, timer_leela_shot_debounce_complete
+        disable_events: mode_moon_delivery_started, delivery_started, timer_leela_shot_debounce_started
     slurm_caps_total_shot:
         switches: s_cap1, s_cap2, s_cap3, s_cap4
         enable_events: mode_cryolab_delivery_stopped
