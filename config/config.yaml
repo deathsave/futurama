@@ -26,6 +26,8 @@ keyboard:
         event: flipper_cradle
     b:
         event: light_suicide_booth
+    l:
+        event: temporary_lamp_test
 
 hardware:
     platform: p3_roc
