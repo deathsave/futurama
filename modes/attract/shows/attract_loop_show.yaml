@@ -176,5 +176,9 @@
           dspc_logo_slide:
               target: display1
     - time: "+7"
+      slides:
+          titlecard_slide:
+              target: display1
+    - time: "+7"
       lights:
           l_hypnotoad_spotlight: ffffff
