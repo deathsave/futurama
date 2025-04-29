@@ -277,6 +277,13 @@ show_player:
         zapp_shows:
             action: play
             loops: 0
+    temporary_lamp_test:
+        custom_flash_show:
+            action: play
+            show_tokens:
+                which: l_right_outlane
+                color: "000000"
+            loops: 10
 
 slide_player:
     mode_base_started:
