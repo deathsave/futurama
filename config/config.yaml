@@ -24,6 +24,10 @@ keyboard:
         switch: s_start
     c:
         event: flipper_cradle
+    b:
+        event: light_suicide_booth
+    l:
+        event: temporary_lamp_test
 
 hardware:
     platform: p3_roc
@@ -172,12 +176,12 @@ lights:
         platform_settings:
             polarity: false
         tags: lamps, gi, DTbank
-    l_left_spotlight:
+    l_hypnotoad_spotlight:
         number: 2-69-70-71
         platform_settings:
             polarity: false
         tags: lamps, spotlights
-    l_hypnotoad_spotlight:
+    l_left_spotlight:
         number: 2-66-67-68
         platform_settings:
             polarity: false
@@ -490,19 +494,19 @@ switches:
 coils:
     c_flipper_left_main:
         number: A1-B0-6
-        default_pulse_ms: 30
+        default_pulse_ms: 28
     c_flipper_left_hold:
         number: A1-B0-7
         allow_enable: true
     c_flipper_right_main:
         number: A1-B1-6
-        default_pulse_ms: 30
+        default_pulse_ms: 28
     c_flipper_right_hold:
         number: A1-B1-7
         allow_enable: true
     c_plunger:
         number: A3-B0-7
-        default_pulse_ms: 18
+        default_pulse_ms: 17
     c_trough_eject:
         number: A3-B0-6
         default_pulse_ms: 20
@@ -533,22 +537,22 @@ coils:
         default_pulse_ms: 10
     c_dt_hermes_up:
         number: A1-B1-0
-        default_pulse_ms: 25
+        default_pulse_ms: 18
     c_dt_amy_up:
         number: A1-B1-1
-        default_pulse_ms: 25
+        default_pulse_ms: 18
     c_dt_professor_up:
         number: A1-B1-2
-        default_pulse_ms: 25
+        default_pulse_ms: 18
     c_dt_zoidberg_up:
         number: A1-B1-3
-        default_pulse_ms: 25
+        default_pulse_ms: 18
     c_dt_nibbler_up:
         number: A1-B1-4
-        default_pulse_ms: 25
+        default_pulse_ms: 18
     c_pop_bumper:
         number: A3-B0-2
-        default_pulse_ms: 20
+        default_pulse_ms: 18
     c_VUK:
         number: A3-B1-2
         default_pulse_ms: 15
@@ -558,15 +562,15 @@ coils:
         default_hold_power: .3
     c_magnet:
         number: A3-B1-1
-        default_pulse_ms: 20
-        default_hold_power: "0.40"
+        default_pulse_ms: 24
+        default_hold_power: "0.30"
     c_kickback:
         number: A3-B0-5
         default_pulse_ms: 20
     c_gate:
         number: A3-B0-1
-        default_pulse_ms: 15
-        default_hold_power: "0.30"
+        default_pulse_ms: 18
+        default_hold_power: "0.35"
 
 diverters:
     post_left:
@@ -590,9 +594,9 @@ diverters:
     outlane_gate:
         activation_coil: c_gate
         type: hold
-        activation_switches: s_left_outlane
-        deactivate_events: close_outlane_gate, ball_ending
-        enable_events: outlane_gate_enable
+        activate_events: light_suicide_booth
+        deactivate_events: balldevice_bd_suicide_booth_ball_eject_success, ball_ending, delivery_started
+        enable_events: mode_base_started, delivery_ended
         disable_events: outlane_gate_disable
         targets_when_active: bd_suicide_booth
         targets_when_inactive: bd_trough
@@ -736,6 +740,13 @@ sound_system:
             type: standard
             simultaneous_sounds: 1
             volume: 0.9
+            ducking:
+                target: music
+                delay: 0
+                attack: 10ms
+                attenuation: 1.0
+                release_point: 0
+                release: 10ms
         sfx:
             type: standard
             simultaneous_sounds: 8
@@ -903,10 +914,7 @@ slides:
             - type: text
               text: HELP! I'VE BECOME SENTIENT AND DONT KNOW WHERE I AM!
               font_size: 50
-              color: red
-            - type: rectangle
-              width: 240
-              height: 60
+              color: white
     attract_started:
         widgets:
             - type: image
@@ -945,7 +953,7 @@ slides:
             - type: text
               text: PLAYER (number)
               y: 165
-              x: 1320
+              x: 1130
               z: 7
               font_size: 44
               anchor_x: left
@@ -953,7 +961,7 @@ slides:
             - type: text
               text: BALL (ball)
               y: 100
-              x: 1320
+              x: 1130
               z: 7
               anchor_x: left
               anchor_y: top
@@ -1036,6 +1044,7 @@ slides:
             - type: image
               image: player_and_ball_overlay
               z: 5
+              x: center-190
             - type: image
               image: base_background1
               z: 1
@@ -1055,7 +1064,7 @@ slides:
             - type: text
               text: PLAYER (number)
               y: 165
-              x: 1320
+              x: 1130
               z: 7
               font_size: 44
               anchor_x: left
@@ -1063,7 +1072,7 @@ slides:
             - type: text
               text: BALL (ball)
               y: 100
-              x: 1320
+              x: 1130
               z: 7
               anchor_x: left
               anchor_y: top
@@ -1146,6 +1155,7 @@ slides:
             - type: image
               image: player_and_ball_overlay
               z: 5
+              x: center-190
     moon_delivery_intro_slide:
         widgets:
             - type: video
@@ -1205,7 +1215,7 @@ slides:
             - type: text
               text: PLAYER (number)
               y: 165
-              x: 1320
+              x: 1130
               z: 7
               font_size: 44
               anchor_x: left
@@ -1213,7 +1223,7 @@ slides:
             - type: text
               text: BALL (ball)
               y: 100
-              x: 1320
+              x: 1130
               z: 7
               anchor_x: left
               anchor_y: top
@@ -1224,6 +1234,7 @@ slides:
             - type: image
               image: player_and_ball_overlay
               z: 5
+              x: center-190
     reusable_delivery_slide:
 #other than adding widgets for players 2-4 in multiplayer games, only add and
 #remove widgets from this slide in delivery modes, so the widgets are removed
@@ -1243,7 +1254,7 @@ slides:
             - type: text
               text: PLAYER (number)
               y: 165
-              x: 1320
+              x: 1130
               z: 7
               font_size: 44
               anchor_x: left
@@ -1251,7 +1262,7 @@ slides:
             - type: text
               text: BALL (ball)
               y: 100
-              x: 1320
+              x: 1130
               z: 7
               anchor_x: left
               anchor_y: top
@@ -1334,6 +1345,7 @@ slides:
             - type: image
               image: player_and_ball_overlay
               z: 5
+              x: center-190
     zoidberg_ball_save_slide:
         widgets:
             - type: video

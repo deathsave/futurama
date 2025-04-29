@@ -156,8 +156,14 @@ ball_holds:
         balls_to_hold: 1
         hold_devices: bd_VUK
         enable_events: mode_cryolab_delivery_started
-        disable_events: mode_cryolab_delivery_stopping, ball_ending
+        disable_events: mode_cryolab_delivery_stopping, timer_nibbler_skillshot_timer_complete
         release_one_events: delivery_ended, flipper_cradle
+    fall_in_crypod_ball_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: deliver_pizza_shot_hit
+        disable_events: mode_cryolab_delivery_stopping
+        release_one_events: wake_up_in_the_future, flipper_cradle
 
 shots:
     ride_the_bike_shot:
@@ -180,6 +186,10 @@ shots:
         switch: s_VUK
         enable_events: pizza_going_out
         disable_events: timer_nibbler_skillshot_timer_complete
+    cryolab_slingshot_shot:
+        switches: s_left_sling, s_right_sling
+        enable_events: pizza_going_out
+        disable_events: nibbler_skillshot_hit
 
 timers:
     nibbler_skillshot_timer:
@@ -281,18 +291,13 @@ show_player:
             action: play
             loops: 0
     timer_ride_the_bike_shot_timer_started:
-        custom_flash_show:
-            key: ride
-            show_tokens:
-                which: l_left_ramp_insert, l_left_loop_insert
-                color: orange
-    timer_ride_the_bike_shot_timer_complete:
-        custom_flash_show:
-            key: ride
+        panuccis_light_show:
+            action: play
+            loops: -1
+    timer_ride_the_bike_shot_timer_stopped:
+        panuccis_light_show:
             action: stop
     ride_the_bike_shot_hit:
-        custom_flash_show:
-            action: stop
         panuccis_show:
             action: stop
     timer_lock_the_bike_shot_timer_started:
@@ -301,9 +306,6 @@ show_player:
                 which: l_right_loop_insert, l_right_ramp_insert, l_right_orbit_insert1, l_right_orbit_insert2
                 color: orange
     timer_lock_the_bike_shot_timer_complete:
-        custom_flash_show:
-            action: stop
-    timer_ride_the_bike_shot_timer_stopped:
         custom_flash_show:
             action: stop
     timer_deliver_pizza_shot_timer_started:
@@ -392,3 +394,5 @@ variable_player:
         cryolab_delivery_status:
             string: failed
             action: set
+    cryolab_slingshot_shot_hit:
+        score: 15

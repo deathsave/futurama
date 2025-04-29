@@ -289,6 +289,8 @@ shots:
         switches: s_VUK
         enable_events: light_lugnuts_shot
         disable_events: escape_fail, lugnuts_shot_hit
+    robot_homeworld_slingshot_shot:
+        switches: s_left_sling, s_right_sling
 
 sequences:
     dress_both_like_robots_sequence:
@@ -411,8 +413,20 @@ sounds:
         attenuation: 1.0
         release_point: 0
         release: 10ms
+    winch_short:
+        target: sfx
+        delay: 0
+        attack: 10ms
+        attenuation: 1.0
+        release_point: 0
+        release: 10ms
+
 
 sound_player:
+    lower_winch_shot_hit:
+        winch_short:
+            action: play
+            block: true
     caught_by_robots:
         intruder_alert:
             action: play
@@ -604,6 +618,8 @@ show_player:
 
 variable_player:
 #scoring and setting variables for completing or failing the mode, etc.
+    robot_homeworld_slingshot_shot_hit:
+        score: 300 * current_player.professor_multiplier
     lower_winch_shot_hit:
         score: machine.ship_points * current_player.crew_multiplier * bender_multiplier
     dress_fry_like_robot_shot_hit:
