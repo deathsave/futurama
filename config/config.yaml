@@ -383,9 +383,13 @@ lights:
     l_bender_mouth1:
         number: 4-66-67-68
         tags: topper
+        platform_settings:
+            polarity: false
     l_bender_mouth2:
         number: 4-69-70-71
         tags: topper
+        platform_settings:
+            polarity: false
 
 switches:
     s_left_flipper:
