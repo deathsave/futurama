@@ -527,16 +527,18 @@ switches:
 coils:
     c_flipper_left_main:
         number: A1-B0-6
-        default_pulse_ms: 28
+        default_pulse_ms: 26
     c_flipper_left_hold:
         number: A1-B0-7
         allow_enable: true
+        default_hold_power: 1
     c_flipper_right_main:
         number: A1-B1-6
-        default_pulse_ms: 28
+        default_pulse_ms: 26
     c_flipper_right_hold:
         number: A1-B1-7
         allow_enable: true
+        default_hold_power: 1
     c_plunger:
         number: A3-B0-7
         default_pulse_ms: 17
