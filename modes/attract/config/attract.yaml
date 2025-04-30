@@ -2,6 +2,9 @@
 
 show_player:
     mode_attract_started:
+        bender_topper_test_show:
+            priority: 300
+            loops: -1            
         attract_loop_show:
             priority: 300
             loops: 0
