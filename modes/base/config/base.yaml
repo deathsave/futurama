@@ -145,7 +145,7 @@ slides:
     PFD_base_slide:
         widgets:
             - type: image
-              image: crew_hangout
+              image: HQ_interior
               z: 1
     the_zapp_brannigan_slide:
         widgets:
