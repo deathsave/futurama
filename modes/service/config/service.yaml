@@ -1,0 +1,12 @@
+#config_version=6
+
+
+
+
+#    mode_attract_started:
+#        service_power_slide:
+#            action: remove
+#        service_main_menu_slide:
+#            action: remove
+#        service_home_slide:
+#            action: remove

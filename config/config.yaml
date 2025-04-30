@@ -12,22 +12,34 @@ virtual_platform_start_active_switches:
     - s_trough2
     - s_trough3
 
+settings:
+    target_points:
+        label: Target Points
+        values:
+            25: "25 (default)"
+            250: "250 (bally/williams)"
+            2500: "2500 (Stern)"
+        default: 25
+        key_type: int
+        sort: 100
+
+
 #update this as well
 keyboard:
-    shift+l:
-        event: zoidberg_left
-    shift+r:
-        event: zoidberg_right
-    shift+0:
-        event: zoidberg_reset
     s:
         switch: s_start
     c:
         event: flipper_cradle
     b:
         event: light_suicide_booth
-    l:
-        event: temporary_lamp_test
+    1:
+        switch: s_oper1
+    2:
+        switch: s_oper2
+    3:
+        switch: s_oper3
+    4:
+        switch: s_oper4
 
 hardware:
     platform: p3_roc
@@ -478,16 +490,21 @@ switches:
         debounce: normal
     s_oper1:
         number: A2-B1-1
-        tags: operator_button
+        tags: service_enter
     s_oper2:
         number: A2-B1-2
-        tags: operator_button
+        tags: service_up
     s_oper3:
         number: A2-B1-3
-        tags: operator_button
+        tags: service_down
     s_oper4:
         number: A2-B1-4
-        tags: operator_button
+        tags: service_esc
+    s_coin_door:
+        number: A2-B1-5
+        tags: service_door_open, power_off
+
+
 
 
 
@@ -878,6 +895,7 @@ player_vars:
         initial_value: "not frozen yet"
 
 modes:
+    - service
     - base
     - suicide_booth
     - slurm_caps
@@ -1351,6 +1369,20 @@ slides:
             - type: video
               video: im_the_hero
               z: 9
+    service_home_slide:
+        widgets:
+            - type: image
+              image: service_home
+              z: 5
+    service_main_menu_slide:
+        widgets:
+            - type: image
+              image: service_main_menu
+              z: 10
+    service_power_slide:
+        widgets:
+            - type: image
+              image: service_power
 
 widget_player:
     player_added{num==2}:
@@ -1582,6 +1614,15 @@ widget_styles:
         x: center+60
         number_grouping: true
         min_digits: 1
+    medium:
+        font_size: 40
+        adjust_top: 1
+        adjust_bottom: 1
+    small:
+        font_size: 30
+        adjust_top: 2
+        adjust_bottom: 3
+
 assets:
     sounds:
         default:
@@ -1786,3 +1827,21 @@ slide_player:
         final_score_slide:
             expire: 30s
             target: display1
+    service_door_opened:
+        service_home_slide:
+            target: display1
+        service_power_slide:
+            target: display2
+    service_main_menu:
+        service_main_menu_slide:
+            target: display1
+    sw_service_door_open_inactive:
+        attract_started:
+            target: display2
+        service_main_menu_slide:
+            action: remove
+        service_home_slide:
+            action: remove
+    service_mode_exited:
+        service_home_slide:
+            action: remove
