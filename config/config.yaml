@@ -1670,6 +1670,15 @@ images:
     crew_level_indicators:
         load: preload
 
+image_pools:
+    HQ_interior:
+        type: random_force_all
+        images:
+            - crew_hangout
+            - zoidbergs_office
+            - loading_ship_in_hanger
+            - watching_tv_at_work
+            - conference_table
 sound_pools:
     shoot_the_ball_sounds:
         type: random_force_all
