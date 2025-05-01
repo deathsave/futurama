@@ -169,6 +169,10 @@
                 y: top-680
     - time: "+10"
       slides:
+          doop_warning_slide:
+              target: display1
+    - time: "+10"
+      slides:
           mpf_logo_slide:
               target: display1
     - time: "+7"
