@@ -597,7 +597,7 @@ coils:
         default_hold_power: .3
     c_magnet:
         number: A3-B1-1
-        default_pulse_ms: 24
+        default_pulse_ms: 26
         default_hold_power: "0.30"
     c_kickback:
         number: A3-B0-5
