@@ -44,8 +44,8 @@ show_pools:
 slides:
     dspc_logo_slide:
         widgets:
-            type: image
-            image: dspc_logo
+            type: video
+            video: dspc_animation
     mpf_logo_slide:
         widgets:
             type: image
