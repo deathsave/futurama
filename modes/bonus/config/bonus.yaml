@@ -82,6 +82,26 @@ slides:
               anchor_y: bottom
             - type: image
               image: bonus_dark_matter_slide
+    bonus_multiplier_slide:
+        widgets:
+            - type: text
+              text: Multiplier
+              font_size: 42
+              color: black
+              y: 672
+              x: 1170
+              anchor_x: left
+              anchor_y: bottom
+            - type: text
+              text: (multiplier)X
+              font_size: 42
+              color: black
+              y: 572
+              x: 1170
+              anchor_x: left
+              anchor_y: bottom
+            - type: image
+              image: bonus_blank
     bonus_total_slide:
         widgets:
             - type: text
