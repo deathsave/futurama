@@ -306,12 +306,14 @@ state_machines:
 
 
 event_player:
-
 #crew level_up perks+prizes
     bender_level2: light_suicide_booth
     fry_level3: light_suicide_booth
     bender_level4: light_suicide_booth
     fry_level5: light_suicide_booth
+    professor_level2: start_pazuzu_ball_save
+    professor_level3: dark_matter_extra_ball
+    professor_level4: start_pazuzu_ball_save
 
 show_player:
     fry_level2:
