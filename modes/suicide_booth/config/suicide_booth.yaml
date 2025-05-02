@@ -29,7 +29,11 @@ show_player:
         suicide_booth_eject_show:
             loops: 0
             priority: 500
-            
+
+variable_player:
+    ball_hold_suicide_booth_ball_hold_full:
+        score: 1000 * (current_player.bender_multiplier + current_player.fry_multiplier) * current_player.PF_multiplier
+        bender_xp: 5
 
 
 #sound_player:

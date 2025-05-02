@@ -527,16 +527,18 @@ switches:
 coils:
     c_flipper_left_main:
         number: A1-B0-6
-        default_pulse_ms: 28
+        default_pulse_ms: 26
     c_flipper_left_hold:
         number: A1-B0-7
         allow_enable: true
+        default_hold_power: 1
     c_flipper_right_main:
         number: A1-B1-6
-        default_pulse_ms: 28
+        default_pulse_ms: 26
     c_flipper_right_hold:
         number: A1-B1-7
         allow_enable: true
+        default_hold_power: 1
     c_plunger:
         number: A3-B0-7
         default_pulse_ms: 17
@@ -570,19 +572,19 @@ coils:
         default_pulse_ms: 10
     c_dt_hermes_up:
         number: A1-B1-0
-        default_pulse_ms: 18
+        default_pulse_ms: 15
     c_dt_amy_up:
         number: A1-B1-1
-        default_pulse_ms: 18
+        default_pulse_ms: 15
     c_dt_professor_up:
         number: A1-B1-2
-        default_pulse_ms: 18
+        default_pulse_ms: 15
     c_dt_zoidberg_up:
         number: A1-B1-3
-        default_pulse_ms: 18
+        default_pulse_ms: 15
     c_dt_nibbler_up:
         number: A1-B1-4
-        default_pulse_ms: 18
+        default_pulse_ms: 15
     c_pop_bumper:
         number: A3-B0-2
         default_pulse_ms: 18
@@ -595,7 +597,7 @@ coils:
         default_hold_power: .3
     c_magnet:
         number: A3-B1-1
-        default_pulse_ms: 24
+        default_pulse_ms: 26
         default_hold_power: "0.30"
     c_kickback:
         number: A3-B0-5
@@ -818,6 +820,10 @@ machine_vars:
 
 
 player_vars:
+    PF_multiplier:
+        initial_value: 1
+    bonus_multiplier:
+        initial_value: 1
     leela_level:
         initial_value: 1
     leela_xp:
@@ -1668,6 +1674,15 @@ images:
     crew_level_indicators:
         load: preload
 
+image_pools:
+    HQ_interior:
+        type: random_force_all
+        images:
+            - crew_hangout
+            - zoidbergs_office
+            - loading_ship_in_hanger
+            - watching_tv_at_work
+            - conference_table
 sound_pools:
     shoot_the_ball_sounds:
         type: random_force_all

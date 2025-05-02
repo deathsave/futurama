@@ -306,7 +306,14 @@ state_machines:
 
 
 event_player:
+#crew level_up perks+prizes
     bender_level2: light_suicide_booth
+    fry_level3: light_suicide_booth
+    bender_level4: light_suicide_booth
+    fry_level5: light_suicide_booth
+    professor_level2: start_pazuzu_ball_save
+    professor_level3: dark_matter_extra_ball
+    professor_level4: start_pazuzu_ball_save
 
 show_player:
     fry_level2:
@@ -430,26 +437,32 @@ variable_player:
         hermes_level: 1
         hermes_multiplier: 1
         crew_multiplier: 1
+        bonus_multiplier: 1
         score: 500
     hermes_level3:
         hermes_level: 1
         hermes_multiplier: 1
+        bonus_multiplier: 2
         score: 1000
     hermes_level4:
         hermes_level: 1
         hermes_multiplier: 1
+        bonus_multiplier: 3
         score: 5000
     hermes_level5:
         hermes_level: 1
         hermes_multiplier: 1
         crew_multiplier: 1
+        bonus_multiplier: 4
         score: 20000
     hermes_level6:
         hermes_level: 1
         hermes_multiplier: 1
+        bonus_multiplier: 5
     hermes_level7:
         hermes_level: 1
         hermes_multiplier: 1
+        bonus_multiplier: 6
     nibbler_level2:
         nibbler_level: 1
         nibbler_multiplier: 1

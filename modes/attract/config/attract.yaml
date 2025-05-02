@@ -4,7 +4,7 @@ show_player:
     mode_attract_started:
         bender_topper_test_show:
             priority: 300
-            loops: -1            
+            loops: -1
         attract_loop_show:
             priority: 300
             loops: 0
@@ -38,12 +38,14 @@ show_pools:
             - arachno_commercial_show
             - amc_the_proposal_show
             - scary_door_show
-
+            - scary_door2_show
+            - morbo_linda_mom_show
+            - hypnotoad_instructions_show|3
 slides:
     dspc_logo_slide:
         widgets:
-            type: image
-            image: dspc_logo
+            type: video
+            video: dspc_animation
     mpf_logo_slide:
         widgets:
             type: image
@@ -70,3 +72,15 @@ slides:
         widgets:
             type: video
             video: scary_door
+    scary_door2_slide:
+        widgets:
+            type: video
+            video: scary_door2
+    morbo_linda_mom_slide:
+        widgets:
+            type: video
+            video: morbo_linda_mom
+    hypnotoad_instructions_slide:
+        widgets:
+            type: video
+            video: hypnotoad_instructions_clip

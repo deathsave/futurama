@@ -327,35 +327,35 @@ variable_player:
             string: success
             action: set
         deliveries_completed: 1
-        score: 2000
+        score: 2000 * current_player.PF_multiplier
     fail_moon_delivery:
         moon_delivery_status:
             string: "fail"
             action: set
     whalers_right_shot_hit:
-        score: 1000
+        score: 1000 * current_player.PF_multiplier
     whalers_left_shot_hit:
-        score: 1000
+        score: 1000 * current_player.PF_multiplier
     rover_escape_shot_hit:
-        score: 5000
+        score: 5000 * current_player.PF_multiplier
     joyride_platter_shot_hit:
-        score: 50 * current_player.fry_multiplier * current_player.leela_multiplier
+        score: 50 * current_player.fry_multiplier * current_player.leela_multiplier * current_player.PF_multiplier
     bender_farmer_escape_shot_hit:
-        score: 2000 * current_player.bender_multiplier
+        score: 2000 * current_player.bender_multiplier * current_player.PF_multiplier
     fry_farmer_escape_shot_hit:
-        score: 2000 * current_player.fry_multiplier
+        score: 2000 * current_player.fry_multiplier * current_player.PF_multiplier
     leela_farmer_escape_shot_hit:
-        score: 2000 * current_player.leela_multiplier
+        score: 2000 * current_player.leela_multiplier * current_player.PF_multiplier
     all_farmer_escape:
-        score: 10000
+        score: 10000 * current_player.PF_multiplier
     lunar_lander_r_shot_hit:
-        score: 1000
+        score: 1000 * current_player.PF_multiplier
     lunar_lander_l_shot_hit:
-        score: 1000
+        score: 1000 * current_player.PF_multiplier
     lunar_lander_found_shot_hit:
-        score: 20000
+        score: 20000 * current_player.PF_multiplier
     moon_slingshot_shot_hit:
-        score: 100 * current_player.professor_multiplier
+        score: 100 * current_player.professor_multiplier * current_player.PF_multiplier
 
 event_player:
     timer_crate_delivery_timer_complete: end_moon_delivery
