@@ -40,7 +40,7 @@ show_pools:
             - scary_door_show
             - scary_door2_show
             - morbo_linda_mom_show
-
+            - hypnotoad_instructions_show|3
 slides:
     dspc_logo_slide:
         widgets:
@@ -80,3 +80,7 @@ slides:
         widgets:
             type: video
             video: morbo_linda_mom
+    hypnotoad_instructions_slide:
+        widgets:
+            type: video
+            video: hypnotoad_instructions_clip
