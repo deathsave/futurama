@@ -306,7 +306,12 @@ state_machines:
 
 
 event_player:
+
+#crew level_up perks+prizes
     bender_level2: light_suicide_booth
+    fry_level3: light_suicide_booth
+    bender_level4: light_suicide_booth
+    fry_level5: light_suicide_booth
 
 show_player:
     fry_level2:
