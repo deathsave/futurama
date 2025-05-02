@@ -75,6 +75,10 @@ slides:
         widgets:
             - type: image
               image: deliver_the_pizza_instructions
+    nibbler_skillshot_awards_slide:
+        widgets:
+            - type: image
+              image: nibbler_skillshot_awards
 
 
 
@@ -221,6 +225,8 @@ timers:
               event: ride_bike
             - action: stop
               event: lock_the_bike_shot_hit
+            - action: stop
+              event: nibbler_skillshot_hit
     deliver_pizza_shot_timer:
         start_value: 20
         end_value: 0
