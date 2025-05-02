@@ -3,6 +3,7 @@
     - duration: 100ms
       lights:
           lamps: on
+      events: light_suicide_booth
     - duration: 10s
       widgets:
           nibbler_skillshot_video:
