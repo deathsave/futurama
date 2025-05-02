@@ -54,7 +54,7 @@ slides:
     cryolab_awards_slide:
         widgets:
             - type: image
-              image: cryolab_awards
+              image: flipper_cradle_prompt
     1999_slide:
         widgets:
             - type: image
@@ -75,6 +75,14 @@ slides:
         widgets:
             - type: image
               image: deliver_the_pizza_instructions
+    nibbler_skillshot_awards_slide:
+        widgets:
+            - type: image
+              image: nibbler_skillshot_awards
+    you_delivered_the_pizza_slide:
+        widgets:
+            - type: image
+              image: you_delivered_the_pizza
 
 
 
@@ -87,6 +95,10 @@ slide_player:
     fry_frozen:
         cryolab_awards_slide:
             target: display2
+    deliver_pizza_shot_hit:
+        you_delivered_the_pizza_slide:
+            target: display2
+            expire: 10s
     wake_up_in_the_future:
         2999_slide:
             target: display2
@@ -221,6 +233,8 @@ timers:
               event: ride_bike
             - action: stop
               event: lock_the_bike_shot_hit
+            - action: stop
+              event: nibbler_skillshot_hit
     deliver_pizza_shot_timer:
         start_value: 20
         end_value: 0
@@ -355,6 +369,7 @@ show_player:
             action: stop
 
 variable_player:
+#there is no way to light PF_multiplier in Cryolab, so none of the scoring include it
     ride_the_bike_shot_hit:
         fry_xp: 1
         score: 500

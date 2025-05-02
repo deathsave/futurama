@@ -3,12 +3,18 @@
     - duration: 100ms
       lights:
           lamps: on
+      events: light_suicide_booth
     - duration: 10s
       widgets:
           nibbler_skillshot_video:
               slide: cryolab_delivery_slide
+      slides:
+          nibbler_skillshot_awards_slide:
+              target: display2
     - duration: 1s
       widgets:
           nibbler_skillshot_video:
               action: remove
+#nibbler skillshot awards screen should be removed on its own when
+#wake up in the future starts and draws a new slide on display2
       events: wake_up_in_the_future

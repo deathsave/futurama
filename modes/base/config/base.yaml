@@ -59,6 +59,13 @@ ball_saves:
         enable_events: mode_moon_delivery_started, mode_robot_homeworld_delivery_started,
         auto_launch: true
         balls_to_save: 1
+    pazuzu_ball_save:
+        active_time: 50s
+        hurry_up_time: 10s
+        enable_events: start_pazuzu_ball_save
+        auto_launch: true
+        balls_to_save: 1
+
 
 
 shows:
@@ -145,7 +152,7 @@ slides:
     PFD_base_slide:
         widgets:
             - type: image
-              image: crew_hangout
+              image: HQ_interior
               z: 1
     the_zapp_brannigan_slide:
         widgets:
@@ -334,59 +341,59 @@ show_pools:
 
 variable_player:
     base_fry_target_shot_hit:
-        score: machine.target_points * current_player.fry_multiplier
+        score: machine.target_points * current_player.fry_multiplier * current_player.PF_multiplier
         fry_xp: 1
     base_leela_target_shot_hit:
-        score: machine.target_points * current_player.leela_multiplier
+        score: machine.target_points * current_player.leela_multiplier * current_player.PF_multiplier
         leela_xp: 1
     base_bender_target_shot_hit:
-        score: machine.target_points * current_player.bender_multiplier
+        score: machine.target_points * current_player.bender_multiplier * current_player.PF_multiplier
         bender_xp: 1
     s_dt_amy_active:
-        score: machine.DT_points * current_player.amy_multiplier
+        score: machine.DT_points * current_player.amy_multiplier * current_player.PF_multiplier
         amy_xp: 2
     s_dt_hermes_active:
-        score: machine.DT_points * current_player.hermes_multiplier
+        score: machine.DT_points * current_player.hermes_multiplier * current_player.PF_multiplier
         hermes_xp: 2
     s_dt_nibbler_active:
-        score: machine.DT_points * current_player.nibbler_multiplier
+        score: machine.DT_points * current_player.nibbler_multiplier * current_player.PF_multiplier
         nibbler_xp: 2
     s_dt_zoidberg_active:
-        score: machine.DT_points * current_player.zoidberg_multiplier
+        score: machine.DT_points * current_player.zoidberg_multiplier * current_player.PF_multiplier
         zoidberg_xp: 2
     s_dt_professor_active:
-        score: machine.DT_points * current_player.professor_multiplier
+        score: machine.DT_points * current_player.professor_multiplier * current_player.PF_multiplier
         professor_xp: 2
     s_pe_platter_active:
-        score: machine.ship_points * current_player.crew_multiplier
+        score: machine.ship_points * current_player.crew_multiplier * current_player.PF_multiplier
         platter_short_counter: 1
         platter_long_counter: 1
     right_loop_hit:
-        score: machine.loop_points * current_player.loop_multiplier
+        score: machine.loop_points * current_player.loop_multiplier * current_player.PF_multiplier
     left_loop_hit:
-        score: machine.loop_points * current_player.loop_multiplier
+        score: machine.loop_points * current_player.loop_multiplier * current_player.PF_multiplier
     left_right_double_loop_hit:
-        score: machine.loop_points * current_player.loop_multiplier * 3
+        score: machine.loop_points * current_player.loop_multiplier * 3 * current_player.PF_multiplier
         loop_multiplier: 1
     right_left_double_loop_hit:
-        score: machine.loop_points * current_player.loop_multiplier * 3
+        score: machine.loop_points * current_player.loop_multiplier * 3 * current_player.PF_multiplier
         loop_multiplier: 1
     double_left_loop_hit:
-        score: machine.loop_points * current_player.loop_multiplier * 2
+        score: machine.loop_points * current_player.loop_multiplier * 2 * current_player.PF_multiplier
         loop_multiplier: 1
     double_right_loop_hit:
-        score: machine.loop_points * current_player.loop_multiplier * 2
+        score: machine.loop_points * current_player.loop_multiplier * 2 * current_player.PF_multiplier
         loop_multiplier: 1
     s_pop_bumper_active:
-        score: machine.pop_points * current_player.pop_bumper_hits
+        score: machine.pop_points * current_player.pop_bumper_hits * current_player.PF_multiplier
     base_lrrr_shot_hit:
         pop_bumper_hits: 1
     base_right_ramp_shot_hit:
         dark_matter: 1
-        score: machine.ramp_points * current_player.nibbler_level
+        score: machine.ramp_points * current_player.nibbler_level * current_player.PF_multiplier
     hypnotoad_save_hit:
         hypnotoad_saves: 1
-        score: 1000
+        score: 1000 * current_player.PF_multiplier
     mode_base_started:
         platter_short_counter:
             int: 0
@@ -395,19 +402,19 @@ variable_player:
             int: 1
             action: set
     base_tube_shot_hit:
-        score: machine.ramp_points * (current_player.fry_multiplier) * (current_player.leela_multiplier) * (current_player.bender_multiplier)
+        score: machine.ramp_points * (current_player.fry_multiplier) * (current_player.leela_multiplier) * (current_player.bender_multiplier) * current_player.PF_multiplier
     slurm_caps_total_shot_hit:
         slurm_caps_total: 1
     base_slingshot_shot_hit:
-        score: 25 * current_player.hermes_multiplier * current_player.amy_multiplier
+        score: 25 * current_player.hermes_multiplier * current_player.amy_multiplier * current_player.PF_multiplier
     mom_shot_hit:
-        score: machine.orbit_points * current_player.mom_multiplier * current_player.professor_multiplier * 45
+        score: machine.orbit_points * current_player.mom_multiplier * current_player.professor_multiplier * 45 * current_player.PF_multiplier
         mom_multiplier: 1
     zapp_shot_hit:
-        score: machine.orbit_points * current_player.zapp_multiplier * current_player.leela_multiplier * 45
+        score: machine.orbit_points * current_player.zapp_multiplier * current_player.leela_multiplier * 45 * current_player.PF_multiplier
         zapp_multiplier: 1
     zoidberg_ball_save_shot_hit:
-        score: 250 * current_player.zoidberg_multiplier
+        score: 250 * current_player.zoidberg_multiplier * current_player.PF_multiplier
         zoidberg_xp: 5
 
 sound_player:

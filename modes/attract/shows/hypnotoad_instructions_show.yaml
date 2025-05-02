@@ -1,0 +1,19 @@
+#show_version=6
+##! show: hypnotoad_instructions_show
+
+
+- time: 0
+  slides:
+      hypnotoad_instructions_slide:
+          priority: 500
+          target: display1
+  shows:
+      hypnotoad_light_pulse_show:
+          loops: -1
+- time: 31
+  slides:
+      hypnotoad_instructions_slide:
+          action: remove
+  shows:
+      hypnotoad_light_pulse_show:
+          action: stop   

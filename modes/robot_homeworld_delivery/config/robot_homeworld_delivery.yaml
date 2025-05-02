@@ -619,24 +619,24 @@ show_player:
 variable_player:
 #scoring and setting variables for completing or failing the mode, etc.
     robot_homeworld_slingshot_shot_hit:
-        score: 300 * current_player.professor_multiplier
+        score: 300 * current_player.professor_multiplier * current_player.PF_multiplier
     lower_winch_shot_hit:
-        score: machine.ship_points * current_player.crew_multiplier * bender_multiplier
+        score: machine.ship_points * current_player.crew_multiplier * bender_multiplier * current_player.PF_multiplier
     dress_fry_like_robot_shot_hit:
-        score: machine.target_points * current_player.fry_multiplier * bender_multiplier
+        score: machine.target_points * current_player.fry_multiplier * bender_multiplier * current_player.PF_multiplier
     dress_leela_like_robot_shot_hit:
-        score: machine.target_points * current_player.leela_multiplier * bender_multiplier
+        score: machine.target_points * current_player.leela_multiplier * bender_multiplier * current_player.PF_multiplier
     left_ramp_infiltrate_shot_hit:
-        score: machine.ramp_points * 5 * current_player.fry_multiplier
+        score: machine.ramp_points * 5 * current_player.fry_multiplier * current_player.PF_multiplier
     infiltrate_combo_shot_hit:
-        score: machine.ramp_points * 10 * current_player.leela_multiplier
+        score: machine.ramp_points * 10 * current_player.leela_multiplier * current_player.PF_multiplier
     robot_city_tetris_shot_hit:
-        score: crew_multiplier * 1000
+        score: crew_multiplier * 1000 * current_player.PF_multiplier
         crew_multiplier: 1
     looking_for_bender:
-        score: (current_player.leela_multiplier + current_player.fry_multiplier) * 250
+        score: (current_player.leela_multiplier + current_player.fry_multiplier) * 250 * current_player.PF_multiplier
     found_bender:
-        score: (current_player.leela_multiplier + current_player.fry_multiplier) * 500
+        score: (current_player.leela_multiplier + current_player.fry_multiplier) * 500 * current_player.PF_multiplier
         bender_xp: 5
     timer_dress_up_timer_complete:
         robot_homeworld_delivery_status:
@@ -647,13 +647,13 @@ variable_player:
             string: "fail"
             action: set
     bender_wants_to_escape:
-        score: current_player.bender_multiplier + current_player.fry_multiplier + current_player.leela_multiplier * 2000
+        score: (current_player.bender_multiplier + current_player.fry_multiplier + current_player.leela_multiplier) * 2000 * current_player.PF_multiplier
         bender_xp: 20
         leela_xp: 5
         fry_xp: 5
         crew_multiplier: 1
     escape_robot_city_shot_hit:
-        score: ship_points * crew_multiplier * 100
+        score: ship_points * crew_multiplier * 100 * current_player.PF_multiplier
     escape_but_no_delivery:
         robot_homeworld_delivery_status:
             string: "fail"
@@ -662,7 +662,7 @@ variable_player:
         robot_homeworld_delivery_status:
             string: "success"
             action: set
-        score: current_player.bender_multiplier * current_player.fry_multiplier * current_player.leela_multiplier * 1000
+        score: current_player.bender_multiplier * current_player.fry_multiplier * current_player.leela_multiplier * 1000 * current_player.PF_multiplier
         bender_xp: 5
         leela_xp: 5
         fry_xp: 5
