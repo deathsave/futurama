@@ -369,6 +369,7 @@ show_player:
             action: stop
 
 variable_player:
+#there is no way to light PF_multiplier in Cryolab, so none of the scoring include it
     ride_the_bike_shot_hit:
         fry_xp: 1
         score: 500

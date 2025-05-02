@@ -132,25 +132,25 @@ sequences:
 
 variable_player:
     left_ramp_slurp_hit:
-        score: (1000 * current_player.fry_multiplier)
+        score: (1000 * current_player.fry_multiplier) * current_player.PF_multiplier
     level1_right_ramp_jackpot_hit:
-        score: 10000
+        score: 10000 * current_player.PF_multiplier
     level1_left_loop_jackpot_hit:
-        score: 10000
+        score: 10000 * current_player.PF_multiplier
     level1_right_loop_jackpot_hit:
-        score: 10000
+        score: 10000 * current_player.PF_multiplier
     level1_right_orbit_jackpot_hit:
-        score: 10000
+        score: 10000 * current_player.PF_multiplier
     next_level_shot_hit:
-        score: 25000
+        score: 25000 * current_player.PF_multiplier
     level2_right_ramp_jackpot_hit:
-        score: 20000
+        score: 20000 * current_player.PF_multiplier
     level2_left_loop_jackpot_hit:
-        score: 20000
+        score: 20000 * current_player.PF_multiplier
     level2_right_loop_jackpot_hit:
-        score: 20000
+        score: 20000 * current_player.PF_multiplier
     level2_right_orbit_jackpot_hit:
-        score: 20000
+        score: 20000 * current_player.PF_multiplier
 
 slides:
     slurm_factory_slide:

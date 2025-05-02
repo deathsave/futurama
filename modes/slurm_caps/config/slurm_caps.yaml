@@ -24,7 +24,7 @@ ball_holds:
 
 variable_player:
     slurm_caps_hit:
-        score: 100 * current_player.fry_multiplier
+        score: 100 * current_player.fry_multiplier * current_player.PF_multiplier
     logicblock_collecting_caps_updated:
         caps_collected:
             int: value
@@ -72,7 +72,7 @@ widgets:
           image: glurmo_speaks
           z: 10
           expire: 10s
-          
+
 widget_player:
     found_golden_cap:
         glurmo_speaks:
