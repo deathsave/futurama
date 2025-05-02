@@ -820,6 +820,8 @@ machine_vars:
 
 
 player_vars:
+    PF_multiplier:
+        initial_value: 1
     leela_level:
         initial_value: 1
     leela_xp:
