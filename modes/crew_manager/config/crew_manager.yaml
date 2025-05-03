@@ -314,6 +314,9 @@ event_player:
     professor_level2: start_pazuzu_ball_save
     professor_level3: dark_matter_extra_ball
     professor_level4: start_pazuzu_ball_save
+    amy_level2: amy_PF_multiplier_start
+    amy_level3: amy_PF_multiplier_start
+    amy_level4: amy_PF_multiplier_start
 
 show_player:
     fry_level2:
