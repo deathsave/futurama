@@ -6,7 +6,7 @@ custom_code:
 event_player:
   init_done: reset_zoidberg_stepper
 
-
+#this
 virtual_platform_start_active_switches:
     - s_trough1
     - s_trough2
