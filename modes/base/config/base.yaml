@@ -423,7 +423,9 @@ variable_player:
     timer_amy_PF_multiplier_timer_started:
         PF_multiplier: 1
     timer_amy_PF_multiplier_timer_stopped:
-        PF_multiplier: -1
+        PF_multiplier:
+            int: 1
+            action: set 
 
 sound_player:
     timer_shoot_the_ball_timer_complete:
@@ -639,8 +641,6 @@ timers:
         control_events:
             - action: restart
               event: amy_PF_multiplier_start
-            - action: stop
-              event: ball_ending
 
 
 event_player:
