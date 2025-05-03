@@ -210,6 +210,10 @@ light_player:
         l_shoot_again: "000000"
     ball_save_ball_start_ball_save_disabled:
         l_shoot_again: ffffff
+    timer_amy_PF_multiplier_timer_started:
+        l_2x: ffffff
+    timer_ship_spinning_timer_stopped:
+        l_2x: "000000"
 
 
 
@@ -416,6 +420,10 @@ variable_player:
     zoidberg_ball_save_shot_hit:
         score: 250 * current_player.zoidberg_multiplier * current_player.PF_multiplier
         zoidberg_xp: 5
+    timer_amy_PF_multiplier_timer_started:
+        PF_multiplier: 1
+    timer_amy_PF_multiplier_timer_stopped:
+        PF_multiplier: -1
 
 sound_player:
     timer_shoot_the_ball_timer_complete:
@@ -624,6 +632,16 @@ timers:
               event: zapp_shot_hit
             - action: stop
               event: mom_shot_lit
+    amy_PF_multiplier_timer:
+        start_value: 30
+        end_value: 0
+        direction: down
+        control_events:
+            - action: restart
+              event: amy_PF_multiplier_start
+            - action: stop
+              event: ball_ending
+
 
 event_player:
     base_tube_shot_hit: mom_zapp_toggle
