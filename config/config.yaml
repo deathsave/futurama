@@ -1736,12 +1736,14 @@ sound_pools:
             - fry_short4
             - fry_short5
             - fry_short6
+            - fry_great
     nibbler_short:
         type: random_force_all
         track: sfx
         sounds:
             - nibbler_short1
             - nibbler_short2
+            - nibbler_weird_growls
     zoidberg_short:
         type: random_force_all
         track: sfx
@@ -1761,7 +1763,10 @@ sound_pools:
         track: sfx
         sounds:
             - hermes_short1
-            - hermes_short2
+            - hermes_sweet_gorilla
+            - hermes_my_god
+            - hermes_lower_than_a_limbo
+
     bender_short:
         type: random_force_all
         track: sfx
@@ -1770,6 +1775,7 @@ sound_pools:
             - bender_short2
             - bender_hey
             - bender_giggles
+            - bender_what
     professor_short:
         type: random_force_all
         track: sfx
@@ -1809,6 +1815,7 @@ sound_pools:
             - someone_get_a_mop
             - terrible_just_terrible
             - youre_all_fired
+            - bender_hey_trying_to_score
     ball_save_sounds:
         type: random_force_all
         track: voice
