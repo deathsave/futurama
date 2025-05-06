@@ -2,6 +2,10 @@
 ##! show: bender_level_up_show
 
     - duration: 250ms
+      slides:
+          bender_level_up_slide:
+              target: display2
+              expire: 7s
       lights:
           HQ: 3f3f3f
           l_drain: 3f3f3f
@@ -12,6 +16,9 @@
           l_right_sling: 3f3f3f
           l_left_spotlight: 3f3f3f
     - duration: 250ms
+      widgets:
+          (level):
+              slide: bender_level_up_slide
       lights:
           HQ: ffffff
           l_drain: ffffff
@@ -22,6 +29,15 @@
           l_right_sling: ffffff
           l_left_spotlight: ffffff
     - duration: 500ms
+      widgets:
+          (points):
+              slide: bender_level_up_slide
+          (award2):
+              slide: bender_level_up_slide
+          (award3):
+              slide: bender_level_up_slide
+          (award4):
+              slide: bender_level_up_slide
       lights:
           HQ: "0029ff"
           l_drain: 3f3f3f
@@ -31,3 +47,7 @@
           l_left_sling: 3f3f3f
           l_right_sling: 3f3f3f
           l_left_spotlight: 3f3f3f
+    - duration: 5s
+      shows:
+          apron_light_show:
+              loops: 0
