@@ -322,6 +322,9 @@ show_player:
     fry_level2:
         fry_level_up_show:
             loops: 0
+            show_tokens:
+                level: fry_level_up2
+                points: 500_points
     fry_level3:
         fry_level_up_show:
             loops: 0
@@ -338,6 +341,59 @@ show_player:
         bender_level_up_show:
             loops: 0
 
+slides:
+    amy_level_up_slide:
+        widgets:
+            - type: image
+              image: amy_level_up_BG
+              z: 1
+    hermes_level_up_slide:
+        widgets:
+            - type: image
+              image: hermes_level_up_BG
+              z: 1
+    zoidberg_level_up_slide:
+        widgets:
+            - type: image
+              image: zoidberg_level_up_BG
+              z: 1
+    professor_level_up_slide:
+        widgets:
+            - type: image
+              image: professor_level_up_BG
+              z: 1
+    nibbler_level_up_slide:
+        widgets:
+            - type: image
+              image: nibbler_level_up_BG
+              z: 1
+    leela_level_up_slide:
+        widgets:
+            - type: image
+              image: leela_level_up_BG
+              z: 1
+    fry_level_up_slide:
+        widgets:
+            - type: image
+              image: fry_level_up_BG
+              z: 1
+    bender_level_up_slide:
+        widgets:
+            - type: image
+              image: bender_level_up_BG
+              z: 1
+
+widgets:
+    fry_level_up2:
+        - type: text
+          text: Fry Level 2!
+          style: level_up_header
+          z: 2
+    500_points:
+        - type: text
+          text: 500 points
+          z: 2
+          style: level_up_award1
 
 variable_player:
     leela_level2:
