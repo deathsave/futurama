@@ -1726,6 +1726,7 @@ sound_pools:
             - leela_short1
             - leela_short2
             - leela_attacks
+            - leela_got_it
     fry_short:
         type: random_force_all
         track: sfx
@@ -1736,12 +1737,16 @@ sound_pools:
             - fry_short4
             - fry_short5
             - fry_short6
+            - fry_great
     nibbler_short:
         type: random_force_all
         track: sfx
         sounds:
             - nibbler_short1
             - nibbler_short2
+            - nibbler_weird_growls
+            - nibbler_happy_purrs
+            - nibbler_anxious_whining
     zoidberg_short:
         type: random_force_all
         track: sfx
@@ -1749,6 +1754,7 @@ sound_pools:
             - zoidberg_short1
             - zoidberg_short2
             - zoidberg_short3
+            - zoidberg_disappointed_ahhh
     amy_short:
         type: random_force_all
         track: sfx
@@ -1756,12 +1762,18 @@ sound_pools:
             - amy_short1
             - amy_short2
             - amy_short3
+            - amy_what
     hermes_short:
         type: random_force_all
         track: sfx
         sounds:
             - hermes_short1
-            - hermes_short2
+            - hermes_sweet_gorilla
+            - hermes_my_god
+            - hermes_lower_than_a_limbo
+            - hermes_you_got_it_mon
+            - hermes_you_rang
+            - hermes_criminally_inefficient
     bender_short:
         type: random_force_all
         track: sfx
@@ -1770,6 +1782,7 @@ sound_pools:
             - bender_short2
             - bender_hey
             - bender_giggles
+            - bender_what
     professor_short:
         type: random_force_all
         track: sfx
@@ -1792,6 +1805,8 @@ sound_pools:
             - hedonismbot2
             - hedonismbot_no_need_to_explain
             - hedonismbot_how_delightful
+            - hedonismbot_room_for_one_more
+            - nibbler_if_youre_propositioning
     drain_sounds:
         type: random_force_all
         track: voice
@@ -1809,6 +1824,8 @@ sound_pools:
             - someone_get_a_mop
             - terrible_just_terrible
             - youre_all_fired
+            - bender_hey_trying_to_score
+            - hermes_severely_reduced_pay
     ball_save_sounds:
         type: random_force_all
         track: voice
@@ -1817,22 +1834,55 @@ sound_pools:
             - were_safe
             - not_gonna_be_loser
             - dont_want_people_say_im_incompetent
+            - fry_nothing_is_over_as_long_as
+    bender_level_up_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - bender_let_me_explain
+            - bender_now_i_get_it
+            - bender_its_all_coming_together
+            - hermes_conrad_grade_36
+    leela_level_up_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - leela_i_have_better_idea
+    nibbler_level_up_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - nibbler_im_also_an_intelligent
+            - nibbler_time_you_treated_respect
+            - nibbler_if_i_have_to_get_cute
     zoidberg_level_up_sounds:
         type: random_force_all
         track: voice
         sounds:
             - when_i_see_two_body_parts
+    amy_level_up_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - amy_its_working
+            - amy_heres_my_new_theory
+            - amy_chinese_swearing
     hermes_level_up_sounds:
         type: random_force_all
         track: voice
         sounds:
             - hermes_sweet_bongo_congo
+            - hermes_requisition_me_a_beat
+            - hermes_lifelong_love_of_bureaucracy
+            - hermes_increase_efficiency_4_percent
+            - hermes_drums1
     professor_level_up_sounds:
         type: random_force_all
         track: voice
         sounds:
             - sciencing_as_fast_as
             - professor_preposterous_twaddlecock
+            - professor_im_trying_run_business
     bender_topper_sounds:
         type: random_force_all
         track: voice
