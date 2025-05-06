@@ -32,6 +32,12 @@
       widgets:
           (points):
               slide: fry_level_up_slide
+          (award2):
+              slide: fry_level_up_slide
+          (award3):
+              slide: fry_level_up_slide
+          (award4):
+              slide: fry_level_up_slide
       lights:
           HQ: "00c8ff"
           l_drain: "00c8ff"
