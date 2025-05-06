@@ -340,9 +340,21 @@ show_player:
     leela_level2:
         leela_level_up_show:
             loops: 0
+            show_tokens:
+                level: leela_level_up2
+                points: 500_points
+                award2: leela_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: blank_award
     leela_level3:
         leela_level_up_show:
             loops: 0
+            show_tokens:
+                level: leela_level_up3
+                points: 1000_points
+                award2: leela_multiplier_plus
+                award3: blank_award
+                award4: blank_award2
     bender_level2:
         bender_level_up_show:
             loops: 0
@@ -415,6 +427,16 @@ widgets:
           text: Fry Level 3!
           style: level_up_header
           z: 2
+    leela_level_up2:
+        - type: text
+          text: Leela Level 2!
+          style: level_up_header
+          z: 2
+    leela_level_up3:
+        - type: text
+          text: Leela Level 3!
+          style: level_up_header
+          z: 2
     bender_level_up2:
         - type: text
           text: Bender Level 2!
@@ -438,6 +460,11 @@ widgets:
     fry_multiplier_plus:
         - type: text
           text: Fry Multiplier +1
+          z: 2
+          style: level_up_award2
+    leela_multiplier_plus:
+        - type: text
+          text: Leela Multiplier +1
           z: 2
           style: level_up_award2
     bender_multiplier_plus:

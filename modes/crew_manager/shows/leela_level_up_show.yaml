@@ -2,6 +2,10 @@
 ##! show: leela_level_up_show
 
     - duration: 250ms
+      slides:
+          leela_level_up_slide:
+              target: display2
+              expire: 7s
       lights:
           HQ: b4ffb4
           l_drain: b4ffb4
@@ -12,6 +16,9 @@
           l_right_sling: b4ffb4
           l_left_spotlight: b4ffb4
     - duration: 250ms
+      widgets:
+          (level):
+              slide: leela_level_up_slide
       lights:
           HQ: ffffff
           l_drain: ffffff
@@ -22,6 +29,15 @@
           l_right_sling: ffffff
           l_left_spotlight: ffffff
     - duration: 500ms
+      widgets:
+          (points):
+              slide: leela_level_up_slide
+          (award2):
+              slide: leela_level_up_slide
+          (award3):
+              slide: leela_level_up_slide
+          (award4):
+              slide: leela_level_up_slide
       lights:
           HQ: b4ffb4
           l_drain: b4ffb4
@@ -31,3 +47,7 @@
           l_left_sling: b4ffb4
           l_right_sling: b4ffb4
           l_left_spotlight: b4ffb4
+    - duration: 5s
+      shows:
+          apron_light_show:
+              loops: 0
