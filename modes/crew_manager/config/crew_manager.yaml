@@ -325,6 +325,9 @@ show_player:
             show_tokens:
                 level: fry_level_up2
                 points: 500_points
+                award2: fry_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: blank_award
     fry_level3:
         fry_level_up_show:
             loops: 0
@@ -394,6 +397,21 @@ widgets:
           text: 500 points
           z: 2
           style: level_up_award1
+    fry_multiplier_plus:
+        - type: text
+          text: Fry Multiplier +1
+          z: 2
+          style: level_up_award2
+    crew_multiplier_plus:
+        - type: text
+          text: Crew Multiplier +1
+          z: 2
+          style: level_up_award3
+    blank_award:
+        - type: text
+          text: you shouldnt see this
+          z: 0
+
 
 variable_player:
     leela_level2:
