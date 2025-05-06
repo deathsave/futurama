@@ -1943,12 +1943,6 @@ sound_player:
     s_hedonism_bot_active:
         hedonismbot_sounds:
             action: play
-    ball_ending{current_player.score > 25000 and ball == 1}: good_ball_drain_sounds
-    ball_ending{current_player.score < 25000 and ball == 1}: drain_sounds
-    ball_ending{current_player.score > 50000 and ball == 2}: good_ball_drain_sounds
-    ball_ending{current_player.score < 50000 and ball == 2}: drain_sounds
-    ball_ending{current_player.score > 75000 and ball == 3}: good_ball_drain_sounds
-    ball_ending{current_player.score < 75000 and ball == 3}: drain_sounds
 
 slide_player:
     mc_ready:
