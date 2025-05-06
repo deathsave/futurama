@@ -425,7 +425,7 @@ variable_player:
     timer_amy_PF_multiplier_timer_stopped:
         PF_multiplier:
             int: 1
-            action: set 
+            action: set
 
 sound_player:
     timer_shoot_the_ball_timer_complete:
@@ -461,8 +461,6 @@ sound_player:
     ball_will_end:
         theme_full:
             action: stop
-        drain_sounds:
-            action: play
     base_fry_target_shot_hit:
         fry_short:
             action: play
