@@ -1727,6 +1727,7 @@ sound_pools:
             - leela_short2
             - leela_attacks
             - leela_got_it
+            - leela_come_on
     fry_short:
         type: random_force_all
         track: sfx
@@ -1738,6 +1739,7 @@ sound_pools:
             - fry_short5
             - fry_short6
             - fry_great
+            - fry_fff-ahhh
     nibbler_short:
         type: random_force_all
         track: sfx
@@ -1747,6 +1749,7 @@ sound_pools:
             - nibbler_weird_growls
             - nibbler_happy_purrs
             - nibbler_anxious_whining
+            - nibbler_grumbles
     zoidberg_short:
         type: random_force_all
         track: sfx
@@ -1763,6 +1766,8 @@ sound_pools:
             - amy_short2
             - amy_short3
             - amy_what
+            - amy_why
+            - amy_whoa
     hermes_short:
         type: random_force_all
         track: sfx
@@ -1790,6 +1795,9 @@ sound_pools:
             - professor_short1
             - professor_short2
             - professor_short3
+            - professor_nonsense
+            - professor_completely_mad
+            - professor_nice
     hypnotoad_short:
         type: random_force_all
         track: sfx
@@ -1826,6 +1834,13 @@ sound_pools:
             - youre_all_fired
             - bender_hey_trying_to_score
             - hermes_severely_reduced_pay
+            - fry_time_makes_fools
+    good_ball_drain_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - professor_well_done
+            - professor_good_enough
     ball_save_sounds:
         type: random_force_all
         track: voice
@@ -1835,6 +1850,11 @@ sound_pools:
             - not_gonna_be_loser
             - dont_want_people_say_im_incompetent
             - fry_nothing_is_over_as_long_as
+    fry_level_up_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - fry_alright
     bender_level_up_sounds:
         type: random_force_all
         track: voice
@@ -1855,6 +1875,7 @@ sound_pools:
             - nibbler_im_also_an_intelligent
             - nibbler_time_you_treated_respect
             - nibbler_if_i_have_to_get_cute
+            - nibbler_i_pledge_loyalty
     zoidberg_level_up_sounds:
         type: random_force_all
         track: voice
@@ -1883,6 +1904,7 @@ sound_pools:
             - sciencing_as_fast_as
             - professor_preposterous_twaddlecock
             - professor_im_trying_run_business
+            - professor_red_tape_and_regulations
     bender_topper_sounds:
         type: random_force_all
         track: voice
@@ -1896,6 +1918,12 @@ sound_player:
     s_hedonism_bot_active:
         hedonismbot_sounds:
             action: play
+    ball_ending{current_player.score > 25000 and ball == 1}: good_ball_drain_sounds
+    ball_ending{current_player.score < 25000 and ball == 1}: drain_sounds
+    ball_ending{current_player.score > 50000 and ball == 2}: good_ball_drain_sounds
+    ball_ending{current_player.score < 50000 and ball == 2}: drain_sounds
+    ball_ending{current_player.score > 75000 and ball == 3}: good_ball_drain_sounds
+    ball_ending{current_player.score < 75000 and ball == 3}: drain_sounds   
 
 slide_player:
     mc_ready:
