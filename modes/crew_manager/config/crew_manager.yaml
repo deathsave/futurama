@@ -340,6 +340,12 @@ show_player:
     bender_level2:
         bender_level_up_show:
             loops: 0
+            show_tokens:
+                level: bender_level_up2
+                points: 500_points
+                award2: bender_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: award_suicide_booth
     bender_level3:
         bender_level_up_show:
             loops: 0
@@ -392,6 +398,11 @@ widgets:
           text: Fry Level 2!
           style: level_up_header
           z: 2
+    bender_level_up2:
+        - type: text
+          text: Bender Level 2!
+          style: level_up_header
+          z: 2
     500_points:
         - type: text
           text: 500 points
@@ -400,6 +411,11 @@ widgets:
     fry_multiplier_plus:
         - type: text
           text: Fry Multiplier +1
+          z: 2
+          style: level_up_award2
+    bender_multiplier_plus:
+        - type: text
+          text: Bender Multiplier +1
           z: 2
           style: level_up_award2
     crew_multiplier_plus:
@@ -411,7 +427,11 @@ widgets:
         - type: text
           text: you shouldnt see this
           z: 0
-
+    award_suicide_booth:
+        - type: text
+          text: Suicide Booth is lit
+          z: 2
+          style: level_up_award4
 
 variable_player:
     leela_level2:
