@@ -1,7 +1,7 @@
 from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
 from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
-class TestCryolabModePathAllShotsSuccess(MpfMachineTestCase):
+class TestCryolabModePathAllShotsSuccess(FullMachineTestCase):
 
     def test_cryolab_mode_path_all_shots_success(self):
         self._start_game()
