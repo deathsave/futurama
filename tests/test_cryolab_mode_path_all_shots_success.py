@@ -55,3 +55,5 @@ class TestCryolabModePathAllShotsSuccess(MpfMachineTestCase):
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'base_slide')
