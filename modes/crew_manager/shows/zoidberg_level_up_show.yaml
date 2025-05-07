@@ -1,0 +1,53 @@
+#show_version=6
+##! show: zoidberg_level_up_show
+
+    - duration: 250ms
+      slides:
+          zoidberg_level_up_slide:
+              target: display2
+              expire: 7s
+      lights:
+          HQ: "002c53"
+          l_drain: "002c53"
+          l_DTGI1: "002c53"
+          l_DTGI2: "002c53"
+          l_pop_bumper: "002c53"
+          l_left_sling: "002c53"
+          l_right_sling: "002c53"
+          l_left_spotlight: "002c53"
+    - duration: 250ms
+      widgets:
+          (level):
+              slide: zoidberg_level_up_slide
+      lights:
+          HQ: ffffff
+          l_drain: ffffff
+          l_DTGI1: ffffff
+          l_DTGI2: ffffff
+          l_pop_bumper: ffffff
+          l_left_sling: ffffff
+          l_right_sling: ffffff
+          l_left_spotlight: ffffff
+    - duration: 500ms
+      widgets:
+          (points):
+              slide: zoidberg_level_up_slide
+          (award2):
+              slide: zoidberg_level_up_slide
+          (award3):
+              slide: zoidberg_level_up_slide
+          (award4):
+              slide: zoidberg_level_up_slide
+      lights:
+          HQ: "002c53"
+          l_drain: "002c53"
+          l_DTGI1: "002c53"
+          l_DTGI2: "002c53"
+          l_pop_bumper: "002c53"
+          l_left_sling: "002c53"
+          l_right_sling: "002c53"
+          l_left_spotlight: "002c53"
+    - duration: 5s
+      shows:
+          apron_light_show:
+              loops: 0
