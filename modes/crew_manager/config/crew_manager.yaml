@@ -317,6 +317,7 @@ event_player:
     amy_level2: amy_PF_multiplier_start
     amy_level3: amy_PF_multiplier_start
     amy_level4: amy_PF_multiplier_start
+    nibbler_level3: nibbler_poop
 
 show_player:
     fry_level2:
@@ -373,6 +374,96 @@ show_player:
                 award2: bender_multiplier_plus
                 award3: blank_award
                 award4: blank_award2
+    nibbler_level2:
+        nibbler_level_up_show:
+            loops: 0
+            show_tokens:
+                level: nibbler_level_up2
+                points: 500_points
+                award2: nibbler_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: blank_award
+    nibbler_level3:
+        nibbler_level_up_show:
+            loops: 0
+            show_tokens:
+                level: nibbler_level_up3
+                points: 1000_points
+                award2: nibbler_multiplier_plus
+                award3: ball_of_dark_matter
+                award4: blank_award
+    amy_level2:
+        amy_level_up_show:
+            loops: 0
+            show_tokens:
+                level: amy_level_up2
+                points: 500_points
+                award2: amy_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: PF_multiplier_plus_slot4
+    amy_level3:
+        amy_level_up_show:
+            loops: 0
+            show_tokens:
+                level: amy_level_up3
+                points: 1000_points
+                award2: amy_multiplier_plus
+                award3: PF_multiplier_plus_slot3
+                award4: blank_award
+    hermes_level2:
+        hermes_level_up_show:
+            loops: 0
+            show_tokens:
+                level: hermes_level_up2
+                points: 500_points
+                award2: hermes_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: bonus_multiplier_plus_slot4
+    hermes_level3:
+        hermes_level_up_show:
+            loops: 0
+            show_tokens:
+                level: hermes_level_up3
+                points: 1000_points
+                award2: hermes_multiplier_plus
+                award3: bonus_multiplier_plus2
+                award4: blank_award
+    zoidberg_level2:
+        zoidberg_level_up_show:
+            loops: 0
+            show_tokens:
+                level: zoidberg_level_up2
+                points: 500_points
+                award2: zoidberg_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: right_outlane_save_award_slot4
+    zoidberg_level3:
+        zoidberg_level_up_show:
+            loops: 0
+            show_tokens:
+                level: zoidberg_level_up3
+                points: 1000_points
+                award2: zoidberg_multiplier_plus
+                award3: right_outlane_save_award
+                award4: blank_award
+    professor_level2:
+        professor_level_up_show:
+            loops: 0
+            show_tokens:
+                level: professor_level_up2
+                points: 500_points
+                award2: professor_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: 30_second_ball_save
+    professor_level3:
+        professor_level_up_show:
+            loops: 0
+            show_tokens:
+                level: professor_level_up3
+                points: 1000_points
+                award2: professor_multiplier_plus
+                award3: 60_second_ball_save
+                award4: blank_award
 
 slides:
     amy_level_up_slide:
@@ -417,6 +508,9 @@ slides:
               z: 1
 
 widgets:
+#because of limitations on shows and show_tokens, this is the only way I found
+#to call text to an existing slide as part of a show, unfortunately each
+#string requires its own widget, but at least some are reuseable...
     fry_level_up2:
         - type: text
           text: Fry Level 2!
@@ -447,6 +541,57 @@ widgets:
           text: Bender Level 3!
           style: level_up_header
           z: 2
+    nibbler_level_up2:
+        - type: text
+          text: Nibbler Level 2!
+          style: level_up_header
+          z: 2
+    nibbler_level_up3:
+        - type: text
+          text: Nibbler Level 3!
+          style: level_up_header
+          z: 2
+    amy_level_up2:
+        - type: text
+          text: Amy Level 2!
+          style: level_up_header
+          z: 2
+    amy_level_up3:
+        - type: text
+          text: Amy Level 3!
+          style: level_up_header
+          z: 2
+    hermes_level_up2:
+        - type: text
+          text: Hermes Level 2!
+          style: level_up_header
+          z: 2
+    hermes_level_up3:
+        - type: text
+          text: Hermes Level 3!
+          style: level_up_header
+          z: 2
+    zoidberg_level_up2:
+        - type: text
+          text: Zoidberg Level 2!
+          style: level_up_header
+          z: 2
+    zoidberg_level_up3:
+        - type: text
+          text: Zoidberg Level 3!
+          style: level_up_header
+          z: 2
+    professor_level_up2:
+        - type: text
+          text: Professor Level 2!
+          style: level_up_header
+          z: 2
+    professor_level_up3:
+        - type: text
+          text: Professor Level 3!
+          style: level_up_header
+          z: 2
+#points widgets:
     500_points:
         - type: text
           text: 500 points
@@ -457,6 +602,17 @@ widgets:
           text: 1000 points
           z: 2
           style: level_up_award1
+    5000_points:
+        - type: text
+          text: 5000 points
+          z: 2
+          style: level_up_award1
+    20000_points:
+        - type: text
+          text: 20000 points
+          z: 2
+          style: level_up_award1
+#multiplier widgets:
     fry_multiplier_plus:
         - type: text
           text: Fry Multiplier +1
@@ -472,11 +628,58 @@ widgets:
           text: Bender Multiplier +1
           z: 2
           style: level_up_award2
+    nibbler_multiplier_plus:
+        - type: text
+          text: Nibbler Multiplier +1
+          z: 2
+          style: level_up_award2
+    amy_multiplier_plus:
+        - type: text
+          text: Amy Multiplier +1
+          z: 2
+          style: level_up_award2
+    hermes_multiplier_plus:
+        - type: text
+          text: Hermes Multiplier +1
+          z: 2
+          style: level_up_award2
+    zoidberg_multiplier_plus:
+        - type: text
+          text: Zoidberg Multiplier +1
+          z: 2
+          style: level_up_award2
+    professor_multiplier_plus:
+        - type: text
+          text: Professor Multiplier +1
+          z: 2
+          style: level_up_award2
     crew_multiplier_plus:
         - type: text
           text: Crew Multiplier +1
           z: 2
           style: level_up_award3
+    PF_multiplier_plus_slot3:
+        - type: text
+          text: Playfield Multiplier +1
+          z: 2
+          style: level_up_award3
+    PF_multiplier_plus_slot4:
+        - type: text
+          text: Playfield Multiplier +1
+          z: 2
+          style: level_up_award4
+    bonus_multiplier_plus2:
+        - type: text
+          text: Bonus Multiplier +2
+          z: 2
+          style: level_up_award3
+    bonus_multiplier_plus_slot4:
+        - type: text
+          text: Bonus Multiplier +1
+          z: 2
+          style: level_up_award4
+
+#throws an error if you leave show tokens blank, so we have some blank awards:
     blank_award:
         - type: text
           text: you shouldnt see this
@@ -485,11 +688,38 @@ widgets:
         - type: text
           text: you shouldnt see this either
           z: 0
+#other widgets for specific awards:
     award_suicide_booth:
         - type: text
           text: Suicide Booth is lit
           z: 2
           style: level_up_award4
+    ball_of_dark_matter:
+        - type: text
+          text: 1 ball of Dark Matter
+          z: 2
+          style: level_up_award3
+    right_outlane_save_award:
+        - type: text
+          text: Right Outlane Save is Lit
+          z: 2
+          style: level_up_award3
+    right_outlane_save_award_slot4:
+        - type: text
+          text: Right Outlane Save is Lit
+          z: 2
+          style: level_up_award4
+    30_second_ball_save:
+        - type: text
+          text: 30 Second Ball Save
+          z: 2
+          style: level_up_award4
+    60_second_ball_save:
+        - type: text
+          text: 60 Second Ball Save
+          z: 2
+          style: level_up_award3
+
 
 variable_player:
     leela_level2:
@@ -627,6 +857,7 @@ variable_player:
         nibbler_level: 1
         nibbler_multiplier: 1
         score: 1000
+        dark_matter: 1
     nibbler_level4:
         nibbler_level: 1
         nibbler_multiplier: 1
