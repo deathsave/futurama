@@ -44,9 +44,28 @@ keyboard:
 hardware:
     platform: p3_roc
     stepper_controllers: pololu_tic
+    servo_controllers: pololu_maestro
+
+pololu_maestro:
+    port:/dev/ttyACM0
 
 p_roc:
     driverboards: pdb
+
+servos:
+    bender_eyes:
+        servo_min: 0.3
+        servo_max: 0.7
+        positions:
+            0.1: left
+            0.9: right
+        reset_position: 0.5
+        reset_events: reset_bender_eyes
+        speed_limit: 0.5
+        acceleration_limit: 0.5
+        number: 1
+#    bender_head:
+#    bender_neck    
 
 steppers:
     zoidberg_stepper:

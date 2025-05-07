@@ -24,16 +24,16 @@ state_machines:
         transitions:
             - source: start
               target: quarter
-              events: collect_dark_matter_fuel_hit
+              events: collect_dark_matter_fuel_hit, nibbler_poop
             - source: quarter
               target: half
-              events: collect_dark_matter_fuel_hit
+              events: collect_dark_matter_fuel_hit, nibbler_poop
             - source: half
               target: 3quarter
-              events: collect_dark_matter_fuel_hit
+              events: collect_dark_matter_fuel_hit, nibbler_poop
             - source: 3quarter
               target: full
-              events: collect_dark_matter_fuel_hit
+              events: collect_dark_matter_fuel_hit, nibbler_poop
             - source: full
               target: 3quarter
               events: use_dark_matter
