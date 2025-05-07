@@ -461,6 +461,12 @@ sound_player:
     ball_will_end:
         theme_full:
             action: stop
+    ball_will_end{current_player.score > ((current_player.ball) * 25000)}:
+        good_ball_drain_sounds:
+            action: play
+    ball_will_end{current_player.score < ((current_player.ball) * 25000)}:
+        drain_sounds:
+            action: play
     base_fry_target_shot_hit:
         fry_short:
             action: play

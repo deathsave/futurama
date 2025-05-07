@@ -1644,6 +1644,31 @@ widget_styles:
         font_size: 30
         adjust_top: 2
         adjust_bottom: 3
+    level_up_header:
+        font_size: 120
+        x: center+400
+        y: 850
+        color: black
+    level_up_award1:
+        font_size: 60
+        x: center+400
+        y: 650
+        color: black
+    level_up_award2:
+        font_size: 60
+        x: center+400
+        y: 575
+        color: black
+    level_up_award3:
+        font_size: 60
+        x: center+400
+        y: 500
+        color: black
+    level_up_award4:
+        font_size: 60
+        x: center+400
+        y: 425
+        color: black
 
 assets:
     sounds:
@@ -1918,12 +1943,6 @@ sound_player:
     s_hedonism_bot_active:
         hedonismbot_sounds:
             action: play
-    ball_ending{current_player.score > 25000 and ball == 1}: good_ball_drain_sounds
-    ball_ending{current_player.score < 25000 and ball == 1}: drain_sounds
-    ball_ending{current_player.score > 50000 and ball == 2}: good_ball_drain_sounds
-    ball_ending{current_player.score < 50000 and ball == 2}: drain_sounds
-    ball_ending{current_player.score > 75000 and ball == 3}: good_ball_drain_sounds
-    ball_ending{current_player.score < 75000 and ball == 3}: drain_sounds   
 
 slide_player:
     mc_ready:
