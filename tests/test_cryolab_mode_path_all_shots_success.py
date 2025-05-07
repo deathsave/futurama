@@ -1,4 +1,5 @@
 from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
+from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
 class TestCryolabModePathAllShotsSuccess(MpfMachineTestCase):
 
