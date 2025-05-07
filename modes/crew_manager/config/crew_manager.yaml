@@ -322,22 +322,174 @@ show_player:
     fry_level2:
         fry_level_up_show:
             loops: 0
+            show_tokens:
+                level: fry_level_up2
+                points: 500_points
+                award2: fry_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: blank_award
     fry_level3:
         fry_level_up_show:
             loops: 0
+            show_tokens:
+                level: fry_level_up3
+                points: 1000_points
+                award2: fry_multiplier_plus
+                award3: blank_award
+                award4: award_suicide_booth
     leela_level2:
         leela_level_up_show:
             loops: 0
+            show_tokens:
+                level: leela_level_up2
+                points: 500_points
+                award2: leela_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: blank_award
     leela_level3:
         leela_level_up_show:
             loops: 0
+            show_tokens:
+                level: leela_level_up3
+                points: 1000_points
+                award2: leela_multiplier_plus
+                award3: blank_award
+                award4: blank_award2
     bender_level2:
         bender_level_up_show:
             loops: 0
+            show_tokens:
+                level: bender_level_up2
+                points: 500_points
+                award2: bender_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: award_suicide_booth
     bender_level3:
         bender_level_up_show:
             loops: 0
+            show_tokens:
+                level: bender_level_up3
+                points: 1000_points
+                award2: bender_multiplier_plus
+                award3: blank_award
+                award4: blank_award2
 
+slides:
+    amy_level_up_slide:
+        widgets:
+            - type: image
+              image: amy_level_up_BG
+              z: 1
+    hermes_level_up_slide:
+        widgets:
+            - type: image
+              image: hermes_level_up_BG
+              z: 1
+    zoidberg_level_up_slide:
+        widgets:
+            - type: image
+              image: zoidberg_level_up_BG
+              z: 1
+    professor_level_up_slide:
+        widgets:
+            - type: image
+              image: professor_level_up_BG
+              z: 1
+    nibbler_level_up_slide:
+        widgets:
+            - type: image
+              image: nibbler_level_up_BG
+              z: 1
+    leela_level_up_slide:
+        widgets:
+            - type: image
+              image: leela_level_up_BG
+              z: 1
+    fry_level_up_slide:
+        widgets:
+            - type: image
+              image: fry_level_up_BG
+              z: 1
+    bender_level_up_slide:
+        widgets:
+            - type: image
+              image: bender_level_up_BG
+              z: 1
+
+widgets:
+    fry_level_up2:
+        - type: text
+          text: Fry Level 2!
+          style: level_up_header
+          z: 2
+    fry_level_up3:
+        - type: text
+          text: Fry Level 3!
+          style: level_up_header
+          z: 2
+    leela_level_up2:
+        - type: text
+          text: Leela Level 2!
+          style: level_up_header
+          z: 2
+    leela_level_up3:
+        - type: text
+          text: Leela Level 3!
+          style: level_up_header
+          z: 2
+    bender_level_up2:
+        - type: text
+          text: Bender Level 2!
+          style: level_up_header
+          z: 2
+    bender_level_up3:
+        - type: text
+          text: Bender Level 3!
+          style: level_up_header
+          z: 2
+    500_points:
+        - type: text
+          text: 500 points
+          z: 2
+          style: level_up_award1
+    1000_points:
+        - type: text
+          text: 1000 points
+          z: 2
+          style: level_up_award1
+    fry_multiplier_plus:
+        - type: text
+          text: Fry Multiplier +1
+          z: 2
+          style: level_up_award2
+    leela_multiplier_plus:
+        - type: text
+          text: Leela Multiplier +1
+          z: 2
+          style: level_up_award2
+    bender_multiplier_plus:
+        - type: text
+          text: Bender Multiplier +1
+          z: 2
+          style: level_up_award2
+    crew_multiplier_plus:
+        - type: text
+          text: Crew Multiplier +1
+          z: 2
+          style: level_up_award3
+    blank_award:
+        - type: text
+          text: you shouldnt see this
+          z: 0
+    blank_award2:
+        - type: text
+          text: you shouldnt see this either
+          z: 0
+    award_suicide_booth:
+        - type: text
+          text: Suicide Booth is lit
+          z: 2
+          style: level_up_award4
 
 variable_player:
     leela_level2:

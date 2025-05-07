@@ -2,6 +2,10 @@
 ##! show: fry_level_up_show
 
     - duration: 250ms
+      slides:
+          fry_level_up_slide:
+              target: display2
+              expire: 7s
       lights:
           HQ: "00c8ff"
           l_drain: "00c8ff"
@@ -12,6 +16,9 @@
           l_right_sling: "00c8ff"
           l_left_spotlight: "00c8ff"
     - duration: 250ms
+      widgets:
+          (level):
+              slide: fry_level_up_slide
       lights:
           HQ: ffffff
           l_drain: ffffff
@@ -22,6 +29,15 @@
           l_right_sling: ffffff
           l_left_spotlight: ffffff
     - duration: 500ms
+      widgets:
+          (points):
+              slide: fry_level_up_slide
+          (award2):
+              slide: fry_level_up_slide
+          (award3):
+              slide: fry_level_up_slide
+          (award4):
+              slide: fry_level_up_slide
       lights:
           HQ: "00c8ff"
           l_drain: "00c8ff"
@@ -31,3 +47,7 @@
           l_left_sling: "00c8ff"
           l_right_sling: "00c8ff"
           l_left_spotlight: "00c8ff"
+    - duration: 5s
+      shows:
+          apron_light_show:
+              loops: 0
