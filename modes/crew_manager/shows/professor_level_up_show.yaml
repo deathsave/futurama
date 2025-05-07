@@ -1,0 +1,53 @@
+#show_version=6
+##! show: professor_level_up_show
+
+    - duration: 250ms
+      slides:
+          professor_level_up_slide:
+              target: display2
+              expire: 7s
+      lights:
+          HQ: 76300f
+          l_drain: 76300f
+          l_DTGI1: 76300f
+          l_DTGI2: 76300f
+          l_pop_bumper: 76300f
+          l_left_sling: 76300f
+          l_right_sling: 76300f
+          l_left_spotlight: 76300f
+    - duration: 250ms
+      widgets:
+          (level):
+              slide: professor_level_up_slide
+      lights:
+          HQ: ffffff
+          l_drain: ffffff
+          l_DTGI1: ffffff
+          l_DTGI2: ffffff
+          l_pop_bumper: ffffff
+          l_left_sling: ffffff
+          l_right_sling: ffffff
+          l_left_spotlight: ffffff
+    - duration: 500ms
+      widgets:
+          (points):
+              slide: professor_level_up_slide
+          (award2):
+              slide: professor_level_up_slide
+          (award3):
+              slide: professor_level_up_slide
+          (award4):
+              slide: professor_level_up_slide
+      lights:
+          HQ: 76300f
+          l_drain: 76300f
+          l_DTGI1: 76300f
+          l_DTGI2: 76300f
+          l_pop_bumper: 76300f
+          l_left_sling: 76300f
+          l_right_sling: 76300f
+          l_left_spotlight: 76300f
+    - duration: 5s
+      shows:
+          apron_light_show:
+              loops: 0
