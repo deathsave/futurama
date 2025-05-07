@@ -1,5 +1,6 @@
 from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
 from mpfmc.tests.MpfMcTestCase import MpfMcTestCase
+from mpfmc.uix.slide import Slide
 
 class TestCryolabModePathAllShotsSuccess(MpfMachineTestCase):
 
@@ -56,5 +57,4 @@ class TestCryolabModePathAllShotsSuccess(MpfMachineTestCase):
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
-        self.assertEqual(self.mc.targets['display1'].current_slide_name,
-                         'base_slide')
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,'base_slide')
