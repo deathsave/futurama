@@ -62,6 +62,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.hit_and_release_switch("s_t_fry")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(2, "fry_level")
+        self.assertPlayerVarEqual(2, "fry_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'fry_level_up_slide')
         self.advance_time_and_run(8)
@@ -73,6 +74,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("fry_level3")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(3, "fry_level")
+        self.assertPlayerVarEqual(3, "fry_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'fry_level_up_slide')
         self.advance_time_and_run(8)
@@ -83,6 +85,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("leela_level2")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(2, "leela_level")
+        self.assertPlayerVarEqual(2, "leela_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'leela_level_up_slide')
         self.advance_time_and_run(8)
@@ -93,6 +96,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("leela_level3")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(3, "leela_level")
+        self.assertPlayerVarEqual(3, "leela_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'leela_level_up_slide')
         self.advance_time_and_run(8)
@@ -103,6 +107,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("bender_level2")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(2, "bender_level")
+        self.assertPlayerVarEqual(2, "bender_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'bender_level_up_slide')
         self.advance_time_and_run(8)
@@ -113,6 +118,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("bender_level3")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(3, "bender_level")
+        self.assertPlayerVarEqual(3, "bender_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'bender_level_up_slide')
         self.advance_time_and_run(8)
