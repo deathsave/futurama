@@ -158,6 +158,10 @@ class TestRobotHomeworldModeAllShotsSuccess(FullMachineTestCase):
 
     def _start_robot_homeworld_delivery(self):
         self.hit_switch_and_run("s_VUK", 20)
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'reusable_delivery_slide')
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'RH_delivery_instructions_slide')
         self.assertEqual("robot_homeworld_delivery_active", self.machine.state_machines.robot_homeworld_delivery_handler.state)
 
     def _lower_bender_with_winch(self):
@@ -215,3 +219,8 @@ class TestRobotHomeworldModeAllShotsSuccess(FullMachineTestCase):
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
         self.assertEqual(0, self.machine.ball_devices.bd_VUK.balls)
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'base_slide')
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+        self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
