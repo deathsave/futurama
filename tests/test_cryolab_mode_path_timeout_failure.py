@@ -34,3 +34,4 @@ class TestCryolabModePathTimeoutFailure(FullMachineTestCase):
                          'base_slide')
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'PFD_base_slide')
+        self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
