@@ -62,3 +62,4 @@ class TestCryolabModePathAllShotsSuccess(FullMachineTestCase):
                          'base_slide')
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'PFD_base_slide')
+        
