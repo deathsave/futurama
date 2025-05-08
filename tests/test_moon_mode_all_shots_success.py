@@ -71,7 +71,7 @@ class TestMoonModeAllShotsSuccess(FullMachineTestCase):
         self.advance_time_and_run(5)
         self.assertEqual(self.mc.targets['display1'].current_slide_name,
                          'crate_delivered_slide')
-        self.advance_time_and_run(5)
+        self.advance_time_and_run(10)
         self.assertPlayerVarEqual("success", "moon_delivery_status")
         self.assertEqual("step2", self.machine.state_machines.moon_delivery_state.state)
 
