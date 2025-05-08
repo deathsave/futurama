@@ -1,6 +1,7 @@
 from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
+from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
-class TestCryolabModePathAllShotsSuccess(MpfMachineTestCase):
+class TestCryolabModePathAllShotsSuccess(FullMachineTestCase):
 
     def test_cryolab_mode_path_all_shots_success(self):
         self._start_game()
@@ -22,6 +23,8 @@ class TestCryolabModePathAllShotsSuccess(MpfMachineTestCase):
 
     def _verify_cryolab_mode(self):
         self.advance_time_and_run(3)
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'cryolab_delivery_slide')
         self.assertModeRunning("cryolab_delivery")
         self.assertModeNotRunning("delivery_manager")
         self.assertModeNotRunning("crew_manager")
@@ -55,3 +58,8 @@ class TestCryolabModePathAllShotsSuccess(MpfMachineTestCase):
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'base_slide')
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+        

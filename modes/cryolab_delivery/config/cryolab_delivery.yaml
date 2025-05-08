@@ -354,6 +354,8 @@ show_player:
     flipper_cradle:
         wake_up_in_the_future_show:
             action: stop
+        to_the_future_show:
+            action: stop 
     ball_ending:
         panuccis_show:
             action: stop

@@ -1,6 +1,6 @@
-from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
+from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
-class TestMoonModeAllShotsSuccess(MpfMachineTestCase):
+class TestMoonModeAllShotsSuccess(FullMachineTestCase):
 
     def test_moon_mode_all_shots_success(self):
         self._start_game()
@@ -44,25 +44,40 @@ class TestMoonModeAllShotsSuccess(MpfMachineTestCase):
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'base_slide')
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+        self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
 
     def _light_moon_delivery(self):
         self.hit_switch_and_run("s_dt_nibbler", 3)
         self.hit_and_release_switch("s_right_ramp")
         self.advance_time_and_run(3)
-        
+
     def _start_moon_delivery(self):
         self.hit_switch_and_run("s_VUK", 5)
         self.assertEqual("start", self.machine.state_machines.moon_delivery_state.state)
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'moon_delivery_intro_slide')
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'delivery_instructions_slide')
+        self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
         self.post_event("flipper_cradle", 4)
         self.assertEqual("step1", self.machine.state_machines.moon_delivery_state.state)
 
     def _deliver_crate(self):
         self.hit_and_release_switch("s_r_orbit")
-        self.advance_time_and_run(11)
+        self.advance_time_and_run(5)
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'crate_delivered_slide')
+        self.advance_time_and_run(10)
         self.assertPlayerVarEqual("success", "moon_delivery_status")
         self.assertEqual("step2", self.machine.state_machines.moon_delivery_state.state)
 
     def _ride_whalers(self):
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'moon_delivery_slide')
         self.hit_and_release_switch("s_right_loop")
         self.advance_time_and_run(5)
         self.hit_and_release_switch("s_left_loop")
@@ -105,3 +120,8 @@ class TestMoonModeAllShotsSuccess(MpfMachineTestCase):
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
         self.assertEqual(0, self.machine.ball_devices.bd_VUK.balls)
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'base_slide')
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+        self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
