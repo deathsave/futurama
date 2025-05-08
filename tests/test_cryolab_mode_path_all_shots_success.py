@@ -23,6 +23,10 @@ class TestCryolabModePathAllShotsSuccess(FullMachineTestCase):
 
     def _verify_cryolab_mode(self):
         self.advance_time_and_run(3)
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'cryolab_delivery_slide')
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         '1999_slide')
         self.assertModeRunning("cryolab_delivery")
         self.assertModeNotRunning("delivery_manager")
         self.assertModeNotRunning("crew_manager")
@@ -58,3 +62,5 @@ class TestCryolabModePathAllShotsSuccess(FullMachineTestCase):
         self.assertModeRunning("slurm_caps")
         self.assertEqual(self.mc.targets['display1'].current_slide_name,
                          'base_slide')
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
