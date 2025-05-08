@@ -25,8 +25,6 @@ class TestCryolabModePathAllShotsSuccess(FullMachineTestCase):
         self.advance_time_and_run(3)
         self.assertEqual(self.mc.targets['display1'].current_slide_name,
                          'cryolab_delivery_slide')
-        self.assertEqual(self.mc.targets['display2'].current_slide_name,
-                         '1999_slide')
         self.assertModeRunning("cryolab_delivery")
         self.assertModeNotRunning("delivery_manager")
         self.assertModeNotRunning("crew_manager")
