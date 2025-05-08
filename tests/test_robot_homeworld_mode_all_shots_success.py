@@ -1,6 +1,6 @@
-from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
+from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
-class TestRobotHomeworldModeAllShotsSuccess(MpfMachineTestCase):
+class TestRobotHomeworldModeAllShotsSuccess(FullMachineTestCase):
 
     def test_robot_homeworld_mode_all_shots_success(self):
         self._start_game()
