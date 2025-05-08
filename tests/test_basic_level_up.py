@@ -129,6 +129,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("nibbler_level2")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(2, "nibbler_level")
+        self.assertPlayerVarEqual(2, "nibbler_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'nibbler_level_up_slide')
         self.advance_time_and_run(8)
@@ -139,6 +140,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("nibbler_level3")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(3, "nibbler_level")
+        self.assertPlayerVarEqual(3, "nibbler_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'nibbler_level_up_slide')
         self.advance_time_and_run(8)
@@ -149,6 +151,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("hermes_level2")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(2, "hermes_level")
+        self.assertPlayerVarEqual(2, "hermes_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'hermes_level_up_slide')
         self.advance_time_and_run(8)
@@ -159,6 +162,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("hermes_level3")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(3, "hermes_level")
+        self.assertPlayerVarEqual(3, "hermes_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'hermes_level_up_slide')
         self.advance_time_and_run(8)
@@ -169,6 +173,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("zoidberg_level2")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(2, "zoidberg_level")
+        self.assertPlayerVarEqual(2, "zoidberg_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'zoidberg_level_up_slide')
         self.advance_time_and_run(8)
@@ -179,6 +184,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("zoidberg_level3")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(3, "zoidberg_level")
+        self.assertPlayerVarEqual(3, "zoidberg_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'zoidberg_level_up_slide')
         self.advance_time_and_run(8)
@@ -189,6 +195,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("professor_level2")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(2, "professor_level")
+        self.assertPlayerVarEqual(2, "professor_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'professor_level_up_slide')
         self.advance_time_and_run(8)
@@ -199,6 +206,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("professor_level3")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(3, "professor_level")
+        self.assertPlayerVarEqual(3, "professor_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'professor_level_up_slide')
         self.advance_time_and_run(8)
@@ -209,6 +217,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("amy_level2")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(2, "amy_level")
+        self.assertPlayerVarEqual(2, "amy_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'amy_level_up_slide')
         self.advance_time_and_run(8)
@@ -219,6 +228,7 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.post_event("amy_level3")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(3, "amy_level")
+        self.assertPlayerVarEqual(3, "amy_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'amy_level_up_slide')
         self.advance_time_and_run(8)
