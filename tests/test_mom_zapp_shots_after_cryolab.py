@@ -1,6 +1,6 @@
-from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
+from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
-class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
+class TestMomZappShotsAfterCryolab(FullMachineTestCase):
 
     def test_cryolab_mode_path_nibbler_skillshot(self):
         self._start_game()
@@ -34,6 +34,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.assertModeNotRunning("crew_manager")
         self.assertModeNotRunning("slurm_caps")
         self.assertEqual("panuccis", self.machine.state_machines.cryolab_delivery_state.state)
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'cryolab_delivery_slide')
 
     def _nibbler_skillshot(self):
         self.hit_switch_and_run("s_VUK", 3)
@@ -45,6 +47,11 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'base_slide')
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+        self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
 
 #there's a bit of variety to what happens before/after hitting the mom/zapp shots
 #in the following steps, this is done intentionally
@@ -59,6 +66,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(2)
         self.assertPlayerVarEqual(2, "mom_multiplier")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'its_mom_slide')
 
     def _activate_zapp_scene1(self):
         self.assertPlayerVarEqual(1, "zapp_multiplier")
@@ -69,6 +78,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(2, "zapp_multiplier")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'the_zapp_brannigan_slide')
 
     def _activate_mom_scene2(self):
         self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
@@ -81,6 +92,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(2)
         self.assertPlayerVarEqual(3, "mom_multiplier")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'moms_robot_oil_slide')
 
     def _activate_zapp_scene2(self):
         self.assertPlayerVarEqual(2, "zapp_multiplier")
@@ -91,6 +104,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(3, "zapp_multiplier")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'zapp_and_kif_slide')
 
     def _activate_mom_scene3(self):
         self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
@@ -103,6 +118,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(2)
         self.assertPlayerVarEqual(4, "mom_multiplier")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'mom_suit_slide')
 
     def _activate_zapp_scene3(self):
         self.assertPlayerVarEqual(3, "zapp_multiplier")
@@ -122,6 +139,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(4, "zapp_multiplier")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'zapp_velour_slide')
 
     def _activate_mom_scene4(self):
         self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
@@ -134,6 +153,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(2)
         self.assertPlayerVarEqual(5, "mom_multiplier")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'mom_wont_rest_slide')
 
     def _activate_zapp_scene4(self):
         self.assertPlayerVarEqual(4, "zapp_multiplier")
@@ -144,6 +165,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(5, "zapp_multiplier")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'zapp_tries_seductive_slide')
 
     def _activate_mom_scene5(self):
         self.assertEqual("zapp", self.machine.state_machines.mom_zapp_toggle_state.state)
@@ -156,6 +179,8 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(2)
         self.assertPlayerVarEqual(6, "mom_multiplier")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'mom_what_needs_to_be_done_slide')
 
     def _activate_zapp_scene5(self):
         self.assertPlayerVarEqual(5, "zapp_multiplier")
@@ -166,3 +191,5 @@ class TestMomZappShotsAfterCryolab(MpfMachineTestCase):
         self.hit_and_release_switch("s_r_orbit")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(6, "zapp_multiplier")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'zapp_25_star_general_slide')
