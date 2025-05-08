@@ -9,6 +9,20 @@ class TestBasicLevelUp(FullMachineTestCase):
         self._exit_cryolab_to_base()
         self._fry_level2()
         self._fry_level3()
+        self._leela_level2()
+        self._leela_level3()
+        self._bender_level2()
+        self._bender_level3()
+        self._nibbler_level2()
+        self._nibbler_level3()
+        self._hermes_level2()
+        self._hermes_level3()
+        self._zoidberg_level2()
+        self._zoidberg_level3()
+        self._professor_level2()
+        self._professor_level3()
+        self._amy_level2()
+        self._amy_level3()
 
     def _start_game(self):
         self.hit_and_release_switch("s_start")
@@ -61,6 +75,146 @@ class TestBasicLevelUp(FullMachineTestCase):
         self.assertPlayerVarEqual(3, "fry_level")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'fry_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _leela_level2(self):
+        self.post_event("leela_level2")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "leela_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'leela_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _leela_level3(self):
+        self.post_event("leela_level3")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(3, "leela_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'leela_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _bender_level2(self):
+        self.post_event("bender_level2")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "bender_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'bender_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _bender_level3(self):
+        self.post_event("bender_level3")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(3, "bender_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'bender_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _nibbler_level2(self):
+        self.post_event("nibbler_level2")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "nibbler_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'nibbler_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _nibbler_level3(self):
+        self.post_event("nibbler_level3")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(3, "nibbler_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'nibbler_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _hermes_level2(self):
+        self.post_event("hermes_level2")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "hermes_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'hermes_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _hermes_level3(self):
+        self.post_event("hermes_level3")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(3, "hermes_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'hermes_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _zoidberg_level2(self):
+        self.post_event("zoidberg_level2")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "zoidberg_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'zoidberg_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _zoidberg_level3(self):
+        self.post_event("zoidberg_level3")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(3, "zoidberg_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'zoidberg_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _professor_level2(self):
+        self.post_event("professor_level2")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "professor_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'professor_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _professor_level3(self):
+        self.post_event("professor_level3")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(3, "professor_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'professor_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _amy_level2(self):
+        self.post_event("amy_level2")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "amy_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'amy_level_up_slide')
+        self.advance_time_and_run(8)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _amy_level3(self):
+        self.post_event("amy_level3")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(3, "amy_level")
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'amy_level_up_slide')
         self.advance_time_and_run(8)
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'PFD_base_slide')
