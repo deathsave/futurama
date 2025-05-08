@@ -4,7 +4,7 @@
 
 - time: 0
   slides:
-      mom_wont_rest_slidel_slide:
+      mom_wont_rest_slide:
           priority: 500
           target: display2
 - time: 9.5

@@ -1,6 +1,6 @@
-from mpf.tests.MpfMachineTestCase import MpfMachineTestCase
+from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
-class TestCryolabModePathNibblerSkillshot(MpfMachineTestCase):
+class TestCryolabModePathNibblerSkillshot(FullMachineTestCase):
 
     def test_cryolab_mode_path_nibbler_skillshot(self):
         self._start_game()
@@ -16,6 +16,8 @@ class TestCryolabModePathNibblerSkillshot(MpfMachineTestCase):
         self.hit_and_release_switch("s_cap1")
         self.advance_time_and_run(1)
         self.assertEqual(1, self.machine.playfield.balls)
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'cryolab_delivery_slide')
 
     def _verify_cryolab_mode(self):
         self.advance_time_and_run(3)
@@ -35,3 +37,7 @@ class TestCryolabModePathNibblerSkillshot(MpfMachineTestCase):
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'base_slide')
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
