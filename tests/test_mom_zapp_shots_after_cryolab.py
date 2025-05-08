@@ -120,6 +120,7 @@ class TestMomZappShotsAfterCryolab(FullMachineTestCase):
         self.assertPlayerVarEqual(4, "mom_multiplier")
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'mom_suit_slide')
+        self.advance_time_and_run(15)
 
     def _activate_zapp_scene3(self):
         self.assertPlayerVarEqual(3, "zapp_multiplier")
