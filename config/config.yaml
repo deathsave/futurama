@@ -1405,6 +1405,116 @@ slides:
               image: player_and_ball_overlay
               z: 5
               x: center-190
+    slurm_factory_slide:
+        widgets:
+            - type: text
+              text: (player1|score)
+              number_grouping: true
+              min_digits: 2
+              font_size: 50
+              color: black
+              y: 920
+              x: 419
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: PLAYER (number)
+              y: 165
+              x: 1130
+              z: 7
+              font_size: 44
+              anchor_x: left
+              anchor_y: top
+            - type: text
+              text: BALL (ball)
+              y: 100
+              x: 1130
+              z: 7
+              anchor_x: left
+              anchor_y: top
+              font_size: 44
+            - type: text
+              text: (player|bender_level)
+              font_size: 72
+              color: black
+              y: 950
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|leela_level)
+              font_size: 72
+              color: black
+              y: 820
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|fry_level)
+              font_size: 72
+              color: black
+              y: 690
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|nibbler_level)
+              font_size: 72
+              color: black
+              y: 560
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|professor_level)
+              font_size: 72
+              color: black
+              y: 430
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|amy_level)
+              font_size: 72
+              color: black
+              y: 300
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|hermes_level)
+              font_size: 72
+              color: black
+              y: 170
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: text
+              text: (player|zoidberg_level)
+              font_size: 72
+              color: black
+              y: 40
+              x: 1750
+              z: 7
+              anchor_x: right
+              anchor_y: bottom
+            - type: image
+              image: player_and_crew_ui
+              z: 5
+            - type: image
+              image: player_and_ball_overlay
+              z: 5
+              x: center-190
+            - type: video
+              video: slurm_factory_clip0
     zoidberg_ball_save_slide:
         widgets:
             - type: video
