@@ -29,7 +29,7 @@ keyboard:
     s:
         switch: s_start
     c:
-        event: flipper_cradle
+        switch: s_cap1
     b:
         event: light_suicide_booth
     1:
@@ -47,7 +47,7 @@ hardware:
     servo_controllers: pololu_maestro
 
 pololu_maestro:
-    port:/dev/ttyACM0
+    port: /dev/ttyACM0
 
 p_roc:
     driverboards: pdb
@@ -65,7 +65,7 @@ servos:
         acceleration_limit: 0.5
         number: 1
 #    bender_head:
-#    bender_neck    
+#    bender_neck
 
 steppers:
     zoidberg_stepper:
