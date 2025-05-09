@@ -31,8 +31,6 @@ state_machines:
                 events_when_started: slurm_factory_level2
             level3_jackpots:
                 events_when_started: slurm_factory_level3
-            level4_jackpots:
-                events_when_started: slurm_factory_level4
             tour_complete:
                 events_when_started: slurm_factory_tour_complete
         transitions:
@@ -46,11 +44,9 @@ state_machines:
               target: level3_jackpots
               events: next_level_shot_hit
             - source: level3_jackpots
-              target: level4_jackpots
-              events: next_level_shot_hit
-            - source: level4_jackpots
               target: tour_complete
-              events: next_level_shot_hit
+              events: slurm_factory_final_shot_hit
+
 
 timers:
     slurm_factory_release_ball_timer:
@@ -61,20 +57,36 @@ timers:
             - action: start
               event: slurm_factory_tour_begins
     slurm_factory_level1_timer:
-        start_value: 120
+        start_value: 125
         end_value: 0
         direction: down
         control_events:
             - action: start
               event: slurm_factory_tour_begins
             - action: stop
+              event: level1_jackpots_complete
+    slurm_factory_level2_timer:
+        start_value: 80
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
               event: slurm_factory_level2
+            - action: stop
+              event: level2_jackpots_complete
 
 
 shots:
+#advance mode levels
+    next_level_shot:
+        switch: s_VUK
+        enable_events: level1_jackpots_complete, level2_jackpots_complete
+        disable_events: next_level_shot_hit
+#all levels
     left_ramp_slurp:
         switch: s_left_ramp
         enable_events: pure_imagination
+#level1
     level1_right_ramp_jackpot:
         switch: s_right_ramp
         enable_events: slurm_factory_level1
@@ -91,10 +103,7 @@ shots:
         switch: s_r_orbit
         enable_events: slurm_factory_level1
         disable_events: level1_right_orbit_jackpot_hit
-    next_level_shot:
-        switch: s_VUK
-        enable_events: level1_jackpots_complete, level2_jackpots_complete
-        disable_events: next_level_shot_hit
+#level2
     level2_right_ramp_jackpot:
         switch: s_right_ramp
         enable_events: slurm_factory_level2
@@ -111,6 +120,29 @@ shots:
         switch: s_r_orbit
         enable_events: slurm_factory_level2
         disable_events: level2_right_orbit_jackpot_hit
+#level3
+    level3_right_ramp_jackpot:
+        switch: s_right_ramp
+        enable_events: slurm_factory_level3
+        disable_events: level3_right_ramp_jackpot_hit
+    level3_left_loop_jackpot:
+        switch: s_left_loop
+        enable_events: slurm_factory_level3
+        disable_events: level3_left_loop_jackpot_hit
+    level3_right_loop_jackpot:
+        switch: s_right_loop
+        enable_events: slurm_factory_level3
+        disable_events: level3_right_loop_jackpot_hit
+    level3_right_orbit_jackpot:
+        switch: s_r_orbit
+        enable_events: slurm_factory_level3
+        disable_events: level3_right_orbit_jackpot_hit
+#final shot
+    slurm_factory_final_shot:
+        switch: s_VUK
+        enable_events: level3_jackpots_complete
+        disable_events: slurm_factory_final_shot_hit
+
 
 sequences:
     level1_jackpots_sequence:
@@ -131,26 +163,58 @@ sequences:
         events_when_complete: level2_jackpots_complete
 
 variable_player:
-    left_ramp_slurp_hit:
-        score: (1000 * current_player.fry_multiplier) * current_player.PF_multiplier
-    level1_right_ramp_jackpot_hit:
-        score: 10000 * current_player.PF_multiplier
-    level1_left_loop_jackpot_hit:
-        score: 10000 * current_player.PF_multiplier
-    level1_right_loop_jackpot_hit:
-        score: 10000 * current_player.PF_multiplier
-    level1_right_orbit_jackpot_hit:
-        score: 10000 * current_player.PF_multiplier
     next_level_shot_hit:
-        score: 25000 * current_player.PF_multiplier
+        score: 2500 * current_player.crew_multiplier * current_player.PF_multiplier
+        crew_multiplier: 1
+    left_ramp_slurp_hit:
+        score: (2500 * current_player.fry_multiplier) * current_player.PF_multiplier
+        fry_xp: 10
+    level1_right_ramp_jackpot_hit:
+        score: 2500 * current_player.nibbler_multiplier * current_player.PF_multiplier
+        nibbler_xp: 5
+    level1_left_loop_jackpot_hit:
+        score: 2500 * current_player.leela_multiplier * current_player.PF_multiplier
+        leela_xp: 5
+    level1_right_loop_jackpot_hit:
+        score: 2500 * current_player.professor_multiplier * current_player.PF_multiplier
+        professor_xp: 5
+    level1_right_orbit_jackpot_hit:
+        score: 2500 * (current_player.amy_multiplier + current_player.zoidberg_multiplier + current_player.hermes_multiplier) * current_player.PF_multiplier
+        amy_xp: 5
+        hermes_xp: 5
+        zoidberg_xp: 5
     level2_right_ramp_jackpot_hit:
-        score: 20000 * current_player.PF_multiplier
+        score: 3500 * current_player.nibbler_multiplier * current_player.PF_multiplier
+        nibbler_xp: 10
     level2_left_loop_jackpot_hit:
-        score: 20000 * current_player.PF_multiplier
+        score: 3500 * current_player.leela_multiplier * current_player.PF_multiplier
+        leela_xp: 10
     level2_right_loop_jackpot_hit:
-        score: 20000 * current_player.PF_multiplier
+        score: 3500 * current_player.professor_multiplier * current_player.PF_multiplier
+        professor_xp: 10
     level2_right_orbit_jackpot_hit:
-        score: 20000 * current_player.PF_multiplier
+        score: 3500 * (current_player.amy_multiplier + current_player.zoidberg_multiplier + current_player.hermes_multiplier) * current_player.PF_multiplier
+        amy_xp: 10
+        hermes_xp: 10
+        zoidberg_xp: 10
+    level3_right_ramp_jackpot_hit:
+        score: 5000 * current_player.nibbler_multiplier * current_player.PF_multiplier
+        nibbler_xp: 15
+    level3_left_loop_jackpot_hit:
+        score: 5000 * current_player.leela_multiplier * current_player.PF_multiplier
+        leela_xp: 15
+    level3_right_loop_jackpot_hit:
+        score: 5000 * current_player.professor_multiplier * current_player.PF_multiplier
+        professor_xp: 15
+    level3_right_orbit_jackpot_hit:
+        score: 5000 * (current_player.amy_multiplier + current_player.zoidberg_multiplier + current_player.hermes_multiplier) * current_player.PF_multiplier
+        amy_xp: 15
+        hermes_xp: 15
+        zoidberg_xp: 15
+    slurm_factory_final_shot_hit:
+        score: 6000 * current_player.crew_multiplier * current_player.PF_multiplier
+        crew_multiplier: 1
+        deliveries_completed: 1
 
 slides:
     slurm_factory_slide:
@@ -267,6 +331,17 @@ slides:
             - type: video
               video: slurm_factory_clip1
 
+widgets:
+    slurm_factory_level2_video:
+        type: video
+        video: slurm_factory_level2_clip
+        z: 1
+
+widget_player:
+    slurm_factory_level2:
+        slurm_factory_level2_video:
+            slide: slurm_factory_slide
+
 slide_player:
     slurm_factory_tour_begins:
         slurm_factory_slide:
@@ -303,8 +378,74 @@ show_player:
     level1_jackpots_complete:
         next_level_shot_lit_show:
             loops: -1
+        level1_gi_show:
+            action: stop
+    slurm_factory_level2:
+        level1_right_ramp_jackpot_show:
+            loops: -1
+            speed: 1.5
+        level1_left_loop_jackpot_show:
+            loops: -1
+            speed: 1.5
+        level1_right_loop_jackpot_show:
+            loops: -1
+            speed: 1.5
+        level1_right_orbit_jackpot_show:
+            loops: -1
+            speed: 1.5
+        level1_gi_show:
+            loops: -1
+            priority: 300
+            speed: 1.5
+    level2_right_ramp_jackpot_hit:
+        level1_right_ramp_jackpot_show: stop
+    level2_left_loop_jackpot_hit:
+        level1_left_loop_jackpot_show: stop
+    level2_right_loop_jackpot_hit:
+        level1_right_loop_jackpot_show: stop
+    level2_right_orbit_jackpot_hit:
+        level1_right_orbit_jackpot_show: stop
+    level2_jackpots_complete:
+        next_level_shot_lit_show:
+            loops: -1
+            speed: 1.5
+        level1_gi_show:
+            action: stop
+#level3
+    slurm_factory_level3:
+        level1_right_ramp_jackpot_show:
+            loops: -1
+            speed: 2
+        level1_left_loop_jackpot_show:
+            loops: -1
+            speed: 2
+        level1_right_loop_jackpot_show:
+            loops: -1
+            speed: 2
+        level1_right_orbit_jackpot_show:
+            loops: -1
+            speed: 2
+        level1_gi_show:
+            loops: -1
+            priority: 300
+            speed: 2
+    level3_right_ramp_jackpot_hit:
+        level1_right_ramp_jackpot_show: stop
+    level3_left_loop_jackpot_hit:
+        level1_left_loop_jackpot_show: stop
+    level3_right_loop_jackpot_hit:
+        level1_right_loop_jackpot_show: stop
+    level3_right_orbit_jackpot_hit:
+        level1_right_orbit_jackpot_show: stop
+    level3_jackpots_complete:
+        next_level_shot_lit_show:
+            loops: -1
+            speed: 2
+        level1_gi_show:
+            action: stop
     next_level_shot_hit:
         next_level_shot_lit_show: stop
+
 
 light_player:
     slurm_factory_tour_begins:
