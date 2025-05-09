@@ -74,6 +74,15 @@ timers:
               event: slurm_factory_level2
             - action: stop
               event: level2_jackpots_complete
+    slurm_factory_level3_timer:
+        start_value: 80
+        end_value: 0
+        direction: down
+        control_events:
+            - action: start
+              event: slurm_factory_level3
+            - action: stop
+              event: level3_jackpots_complete
 
 
 shots:
@@ -146,7 +155,7 @@ shots:
 
 sequences:
     level1_jackpots_sequence:
-        enable_events: pure_imagination
+        enable_events: slurm_factory_tour_begins
         events:
             - level1_right_ramp_jackpot_hit, level1_left_loop_jackpot_hit, level1_right_loop_jackpot_hit, level1_right_orbit_jackpot_hit
             - level1_right_ramp_jackpot_hit, level1_left_loop_jackpot_hit, level1_right_loop_jackpot_hit, level1_right_orbit_jackpot_hit
@@ -161,7 +170,14 @@ sequences:
             - level2_right_ramp_jackpot_hit, level2_left_loop_jackpot_hit, level2_right_loop_jackpot_hit, level2_right_orbit_jackpot_hit
             - level2_right_ramp_jackpot_hit, level2_left_loop_jackpot_hit, level2_right_loop_jackpot_hit, level2_right_orbit_jackpot_hit
         events_when_complete: level2_jackpots_complete
-
+    level3_jackpots_sequence:
+        enable_events: slurm_factory_level3
+        events:
+            - level3_right_ramp_jackpot_hit, level3_left_loop_jackpot_hit, level3_right_loop_jackpot_hit, level3_right_orbit_jackpot_hit
+            - level3_right_ramp_jackpot_hit, level3_left_loop_jackpot_hit, level3_right_loop_jackpot_hit, level3_right_orbit_jackpot_hit
+            - level3_right_ramp_jackpot_hit, level3_left_loop_jackpot_hit, level3_right_loop_jackpot_hit, level3_right_orbit_jackpot_hit
+            - level3_right_ramp_jackpot_hit, level3_left_loop_jackpot_hit, level3_right_loop_jackpot_hit, level3_right_orbit_jackpot_hit
+        events_when_complete: level3_jackpots_complete
 variable_player:
     next_level_shot_hit:
         score: 2500 * current_player.crew_multiplier * current_player.PF_multiplier
@@ -216,128 +232,20 @@ variable_player:
         crew_multiplier: 1
         deliveries_completed: 1
 
-slides:
-    slurm_factory_slide:
-        widgets:
-            - type: text
-              text: (player1|score)
-              number_grouping: true
-              min_digits: 2
-              font_size: 50
-              color: black
-              y: 920
-              x: 419
-              z: 7
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: PLAYER (number)
-              y: 918
-              x: 55
-              z: 7
-              font_size: 48
-              anchor_x: left
-              anchor_y: top
-            - type: text
-              text: (ball)
-              y: 918
-              x: 421
-              z: 7
-              anchor_x: right
-              anchor_y: top
-              font_size: 48
-            - type: image
-              image: cartoon_pinball
-              x: 390
-              y: 905
-              z: 7
-              anchor_x: right
-              anchor_y: top
-            - type: text
-              text: (player|bender_level)
-              font_size: 72
-              color: black
-              y: 950
-              x: 1750
-              z: 7
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|leela_level)
-              font_size: 72
-              color: black
-              y: 820
-              x: 1750
-              z: 7
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|fry_level)
-              font_size: 72
-              color: black
-              y: 690
-              x: 1750
-              z: 7
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|nibbler_level)
-              font_size: 72
-              color: black
-              y: 560
-              x: 1750
-              z: 7
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|professor_level)
-              font_size: 72
-              color: black
-              y: 430
-              x: 1750
-              z: 7
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|amy_level)
-              font_size: 72
-              color: black
-              y: 300
-              x: 1750
-              z: 7
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|hermes_level)
-              font_size: 72
-              color: black
-              y: 170
-              x: 1750
-              z: 7
-              anchor_x: right
-              anchor_y: bottom
-            - type: text
-              text: (player|zoidberg_level)
-              font_size: 72
-              color: black
-              y: 40
-              x: 1750
-              z: 7
-              anchor_x: right
-              anchor_y: bottom
-            - type: image
-              image: player_and_crew_ui
-              z: 5
-            - type: video
-              video: slurm_factory_clip1
-
 widgets:
+    slurm_factory_level1_video:
+        type: video
+        video: slurm_factory_clip1
+        z: 1
     slurm_factory_level2_video:
         type: video
         video: slurm_factory_level2_clip
         z: 1
 
-widget_player:
+widget_player: 
+    pure_imagination:
+        slurm_factory_level1_video:
+            slide: slurm_factory_slide
     slurm_factory_level2:
         slurm_factory_level2_video:
             slide: slurm_factory_slide
@@ -443,7 +351,7 @@ show_player:
             speed: 2
         level1_gi_show:
             action: stop
-    next_level_shot_hit:
+    slurm_factory_final_shot_hit:
         next_level_shot_lit_show: stop
 
 
@@ -457,5 +365,6 @@ light_player:
 event_player:
     timer_slurm_factory_release_ball_timer_complete: pure_imagination
     timer_slurm_factory_level1_timer_complete: stop_slurm_factory
-    next_level_shot_hit: stop_slurm_factory
+    timer_slurm_factory_level2_timer_complete: stop_slurm_factory
+    timer_slurm_factory_level3_timer_complete: stop_slurm_factory
     multiball_slurm_factory_tour_MB_ended: stop_slurm_factory
