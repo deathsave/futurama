@@ -75,7 +75,7 @@ timers:
             - action: stop
               event: level2_jackpots_complete
     slurm_factory_level3_timer:
-        start_value: 80
+        start_value: 65
         end_value: 0
         direction: down
         control_events:
@@ -241,14 +241,26 @@ widgets:
         type: video
         video: slurm_factory_level2_clip
         z: 1
+    slurm_factory_level3_video:
+        type: video
+        video: slurm_factory_level3_clip
+        z: 1
 
-widget_player: 
+widget_player:
     pure_imagination:
         slurm_factory_level1_video:
             slide: slurm_factory_slide
     slurm_factory_level2:
+        slurm_factory_level1_video:
+            action: remove
         slurm_factory_level2_video:
             slide: slurm_factory_slide
+    slurm_factory_level3:
+        slurm_factory_level2_video:
+            action: remove
+        slurm_factory_level3_video:
+            slide: slurm_factory_slide
+
 
 slide_player:
     slurm_factory_tour_begins:
@@ -367,4 +379,5 @@ event_player:
     timer_slurm_factory_level1_timer_complete: stop_slurm_factory
     timer_slurm_factory_level2_timer_complete: stop_slurm_factory
     timer_slurm_factory_level3_timer_complete: stop_slurm_factory
+    slurm_factory_tour_complete: stop_slurm_factory
     multiball_slurm_factory_tour_MB_ended: stop_slurm_factory
