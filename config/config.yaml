@@ -645,8 +645,8 @@ diverters:
         activation_coil: c_gate
         type: hold
         activate_events: light_suicide_booth
-        deactivate_events: balldevice_bd_suicide_booth_ball_eject_success, ball_ending, delivery_started
-        enable_events: mode_base_started, delivery_ended
+        deactivate_events: balldevice_bd_suicide_booth_ball_eject_success, ball_ending,
+        enable_events: mode_base_started, 
         disable_events: outlane_gate_disable
         targets_when_active: bd_suicide_booth
         targets_when_inactive: bd_trough
