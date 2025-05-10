@@ -54,16 +54,12 @@ p_roc:
 
 servos:
     bender_eyes:
-        servo_min: 0.3
-        servo_max: 0.7
         positions:
             0.1: left
             0.9: right
         reset_position: 0.5
         reset_events: reset_bender_eyes
-        speed_limit: 0.5
-        acceleration_limit: 0.5
-        number: 1
+        number: 0
 #    bender_head:
 #    bender_neck
 
