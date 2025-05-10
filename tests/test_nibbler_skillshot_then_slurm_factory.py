@@ -47,6 +47,7 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
                          'base_slide')
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'PFD_base_slide')
+        self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
 
     def _collect_30_slurm_caps(self):
         self.assertPlayerVarEqual(0, "caps_collected")
@@ -115,10 +116,21 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(30, "caps_collected")
         self.assertTrue(self.machine.shots['start_slurm_factory_shot'].enabled)
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'base_slide')
 
     def _start_slurm_factory_mode(self):
         self.advance_time_and_run(2)
-
+        self.hit_switch_and_run("s_VUK", 5)
+        self.assertModeRunning("slurm_factory")
+        self.assertEqual(self.mc.targets['display1'].current_slide_name,
+                         'slurm_factory_slide')
+        self.assertEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.assertEqual("slurm_jackpots_waiting", self.machine.state_machines.slurm_jackpots.state)
+        self.assertModeNotRunning("delivery_manager")
+        self.assertModeNotRunning("crew_manager")
+        self.assertTrue(self.machine.ball_holds.slurm_factory_start_hold.is_full)
+        
     def _slurm_factory_level1(self):
         self.advance_time_and_run(2)
 
