@@ -44,22 +44,22 @@ keyboard:
 hardware:
     platform: p3_roc
     stepper_controllers: pololu_tic
-    servo_controllers: pololu_maestro
+#    servo_controllers: pololu_maestro
 
-pololu_maestro:
-    port: /dev/ttyACM0
+#pololu_maestro:
+#    port: /dev/ttyACM0
 
 p_roc:
     driverboards: pdb
 
-servos:
-    bender_eyes:
-        positions:
-            0.1: left
-            0.9: right
-        reset_position: 0.5
-        reset_events: reset_bender_eyes
-        number: 0
+#servos:
+#    bender_eyes:
+#        positions:
+#            0.1: left
+#            0.9: right
+#        reset_position: 0.5
+#        reset_events: reset_bender_eyes
+#        number: 0
 #    bender_head:
 #    bender_neck
 
