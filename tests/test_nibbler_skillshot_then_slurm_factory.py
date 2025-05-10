@@ -126,11 +126,11 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
         self.assertEqual(self.mc.targets['display1'].current_slide_name,
                          'slurm_factory_slide')
         self.assertEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
-        self.assertEqual("slurm_jackpots_waiting", self.machine.state_machines.slurm_jackpots.state)
+        self.assertEqual("start", self.machine.state_machines.slurm_jackpots.state)
         self.assertModeNotRunning("delivery_manager")
         self.assertModeNotRunning("crew_manager")
         self.assertTrue(self.machine.ball_holds.slurm_factory_start_hold.is_full)
-        
+
     def _slurm_factory_level1(self):
         self.advance_time_and_run(2)
 
