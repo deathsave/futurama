@@ -122,6 +122,9 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
     def _slurm_factory_level1(self):
         self.advance_time_and_run(2)
 
+    def _slurm_factory_level2(self):
+        self.advance_time_and_run(2)
+
     def _slurm_factory_level3(self):
         self.advance_time_and_run(2)
 
