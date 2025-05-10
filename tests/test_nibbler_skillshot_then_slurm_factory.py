@@ -49,7 +49,7 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
                          'PFD_base_slide')
 
     def _collect_30_slurm_caps(self):
-        self.assertPlayerVarEqual(0, "slurm_caps")
+        self.assertPlayerVarEqual(0, "caps_collected")
 #if slurm caps is running in cryolab_delivery the above step will fail
         self.hit_and_release_switch("s_cap2")
         self.advance_time_and_run(2)
@@ -60,7 +60,7 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
         self.hit_and_release_switch("s_cap3")
         self.advance_time_and_run(2)
         self.hit_and_release_switch("s_cap3")
-        self.assertPlayerVarEqual(5, "slurm_caps")
+        self.assertPlayerVarEqual(5, "caps_collected")
         self.hit_and_release_switch("s_cap2")
         self.advance_time_and_run(2)
         self.hit_and_release_switch("s_cap1")
@@ -88,7 +88,7 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
         self.hit_and_release_switch("s_cap3")
         self.advance_time_and_run(2)
         self.hit_and_release_switch("s_cap3")
-        self.assertPlayerVarEqual(20, "slurm_caps")
+        self.assertPlayerVarEqual(20, "caps_collected")
         self.hit_and_release_switch("s_cap2")
         self.advance_time_and_run(2)
         self.hit_and_release_switch("s_cap1")
@@ -107,7 +107,7 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
         self.hit_and_release_switch("s_cap3")
         self.advance_time_and_run(2)
         self.hit_and_release_switch("s_cap3")
-        self.assertPlayerVarEqual(30, "slurm_caps")
+        self.assertPlayerVarEqual(30, "caps_collected")
         self.assertEqual(true, self.machine.shots['start_slurm_factory_shot'].enabled)
 
     def _start_slurm_factory_mode(self):
