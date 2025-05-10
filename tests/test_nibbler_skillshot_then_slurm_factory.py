@@ -114,7 +114,7 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
         self.hit_and_release_switch("s_cap3")
         self.advance_time_and_run(1)
         self.assertPlayerVarEqual(30, "caps_collected")
-        self.assertEqual(true, self.machine.shots['start_slurm_factory_shot'].enabled)
+        self.assertTrue(self.machine.shots['start_slurm_factory_shot'].enabled)
 
     def _start_slurm_factory_mode(self):
         self.advance_time_and_run(2)
