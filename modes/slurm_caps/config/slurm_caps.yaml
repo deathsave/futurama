@@ -36,7 +36,7 @@ counters:
         multiple_hit_window: 200ms
         persist_state: true
         disable_on_complete: true
-        count_complete_value: 30
+        count_complete_value: 20
         events_when_complete: found_golden_cap
         reset_on_complete: false
 
