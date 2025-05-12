@@ -646,7 +646,7 @@ diverters:
         type: hold
         activate_events: light_suicide_booth
         deactivate_events: balldevice_bd_suicide_booth_ball_eject_success, ball_ending,
-        enable_events: mode_base_started, 
+        enable_events: mode_base_started,
         disable_events: outlane_gate_disable
         targets_when_active: bd_suicide_booth
         targets_when_inactive: bd_trough
@@ -691,29 +691,42 @@ drop_targets:
         switch: s_dt_nibbler
         knockdown_coil: c_dt_nibbler_down
         reset_coil: c_dt_nibbler_up
+        reset_events: reset_nibbler_target
+        max_reset_attempts: 2
     professor:
         switch: s_dt_professor
         knockdown_coil: c_dt_professor_down
         reset_coil: c_dt_professor_up
+        reset_events: reset_preofessor_target
+        max_reset_attempts: 2
     amy:
         switch: s_dt_amy
         knockdown_coil: c_dt_amy_down
         reset_coil: c_dt_amy_up
+        reset_events: reset_amy_target
+        max_reset_attempts: 2
     hermes:
         switch: s_dt_hermes
         knockdown_coil: c_dt_hermes_down
         reset_coil: c_dt_hermes_up
+        reset_events: reset_hermes_target
+        max_reset_attempts: 2
     zoidberg:
         switch: s_dt_zoidberg
         knockdown_coil: c_dt_zoidberg_down
         reset_coil: c_dt_zoidberg_up
+        reset_events: reset_zoidberg_target
+        max_reset_attempts: 2
 
 drop_target_banks:
     crew_bank:
         drop_targets: nibbler, professor, amy, hermes, zoidberg
-        reset_coils: c_dt_amy_up, c_dt_hermes_up, c_dt_nibbler_up, c_dt_professor_up, c_dt_zoidberg_up
-        reset_on_complete: 1s
-        reset_coil_max_wait_ms: 500ms
+
+show_player:
+    drop_target_bank_crew_bank_down:
+        dt_reset_all_show:
+            loops: 0
+            priority: 500
 
 autofire_coils:
     ac_slingshot_left:
