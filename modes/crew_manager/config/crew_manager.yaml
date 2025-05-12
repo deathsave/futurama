@@ -326,6 +326,90 @@ timers:
               event: drop_target_zoidberg_down
             - action: stop
               event: drop_target_nibbler_up
+    zoidberg_dt_reset_timer:
+        start_value: 15
+        end_value: 0
+        direction: down
+        control_events:
+            - action: restart
+              event: drop_target_zoidberg_down
+            - action: add
+              value: 10
+              event: drop_target_amy_down
+            - action: add
+              value: 10
+              event: drop_target_professor_down
+            - action: add
+              value: 10
+              event: drop_target_hermes_down
+            - action: add
+              value: 10
+              event: drop_target_nibbler_down
+            - action: stop
+              event: drop_target_zoidberg_up
+    professor_dt_reset_timer:
+        start_value: 15
+        end_value: 0
+        direction: down
+        control_events:
+            - action: restart
+              event: drop_target_professor_down
+            - action: add
+              value: 10
+              event: drop_target_amy_down
+            - action: add
+              value: 10
+              event: drop_target_zoidberg_down
+            - action: add
+              value: 10
+              event: drop_target_hermes_down
+            - action: add
+              value: 10
+              event: drop_target_nibbler_down
+            - action: stop
+              event: drop_target_professor_up
+    amy_dt_reset_timer:
+        start_value: 15
+        end_value: 0
+        direction: down
+        control_events:
+            - action: restart
+              event: drop_target_amy_down
+            - action: add
+              value: 10
+              event: drop_target_zoidberg_down
+            - action: add
+              value: 10
+              event: drop_target_professor_down
+            - action: add
+              value: 10
+              event: drop_target_hermes_down
+            - action: add
+              value: 10
+              event: drop_target_nibbler_down
+            - action: stop
+              event: drop_target_amy_up
+    hermes_dt_reset_timer:
+        start_value: 15
+        end_value: 0
+        direction: down
+        control_events:
+            - action: restart
+              event: drop_target_hermes_down
+            - action: add
+              value: 10
+              event: drop_target_amy_down
+            - action: add
+              value: 10
+              event: drop_target_professor_down
+            - action: add
+              value: 10
+              event: drop_target_zoidberg_down
+            - action: add
+              value: 10
+              event: drop_target_nibbler_down
+            - action: stop
+              event: drop_target_hermes_up
 
 event_player:
 #crew level_up perks+prizes
@@ -341,6 +425,10 @@ event_player:
     amy_level4: amy_PF_multiplier_start
     nibbler_level3: nibbler_poop
     timer_nibbler_dt_reset_timer_complete: reset_nibbler_target
+    timer_zoidberg_dt_reset_timer_complete: reset_zoidberg_target
+    timer_professor_dt_reset_timer_complete: reset_professor_target
+    timer_amy_dt_reset_timer_complete: reset_amy_target
+    timer_hermes_dt_reset_timer_complete: reset_hermes_target
 
 show_player:
     fry_level2:
