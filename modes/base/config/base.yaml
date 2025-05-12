@@ -2,6 +2,7 @@
 mode:
     start_events: ball_started
     priority: 100
+    events_when_started: reset_drop_targets_with_show
 
 state_machines:
   #delivery_started will set this to ignore, delivery_ended will restart it
@@ -57,6 +58,7 @@ ball_saves:
         active_time: 15s
         hurry_up_time: 5s
         enable_events: mode_moon_delivery_started, mode_robot_homeworld_delivery_started,
+        timer_start_events: s_left_ramp_active
         auto_launch: true
         balls_to_save: 1
     pazuzu_ball_save:
@@ -218,6 +220,10 @@ light_player:
 
 
 show_player:
+    reset_drop_targets_with_show:
+        dt_reset_all_show:
+            loops: 0
+            priority: 200
     ball_save_zoidberg_ball_save_saving_ball:
         zoidberg_ball_save_show:
             action: play
@@ -344,6 +350,14 @@ show_pools:
 
 
 variable_player:
+    drop_target_bank_crew_bank_down:
+        score: 111 * current_player.crew_multiplier * current_player.PF_multiplier
+        crew_multiplier: 1
+        amy_xp: 1
+        zoidberg_xp: 1
+        professor_xp: 1
+        hermes_xp: 1
+        nibbler_xp: 1
     base_fry_target_shot_hit:
         score: machine.target_points * current_player.fry_multiplier * current_player.PF_multiplier
         fry_xp: 1
