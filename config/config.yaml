@@ -697,7 +697,7 @@ drop_targets:
         switch: s_dt_professor
         knockdown_coil: c_dt_professor_down
         reset_coil: c_dt_professor_up
-        reset_events: reset_preofessor_target
+        reset_events: reset_professor_target
         max_reset_attempts: 2
     amy:
         switch: s_dt_amy
