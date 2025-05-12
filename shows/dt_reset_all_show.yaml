@@ -1,0 +1,13 @@
+#show_version=6
+##! show: dt_reset_all_show
+
+- duration: 1
+  events: reset_nibbler_target
+- duration: 1
+  events: reset_hermes_target
+- duration: 1
+  events: reset_zoidberg_target
+- duration: 1
+  events: reset_amy_target
+- duration: 1
+  events: reset_preofessor_target
