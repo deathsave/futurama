@@ -344,6 +344,14 @@ show_pools:
 
 
 variable_player:
+    drop_target_bank_crew_bank_down:
+        score: 111 * current_player.crew_multiplier * current_player.PF_multiplier
+        crew_multiplier: 1
+        amy_xp: 1
+        zoidberg_xp: 1
+        professor_xp: 1
+        hermes_xp: 1
+        nibbler_xp: 1
     base_fry_target_shot_hit:
         score: machine.target_points * current_player.fry_multiplier * current_player.PF_multiplier
         fry_xp: 1

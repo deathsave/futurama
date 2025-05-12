@@ -1,13 +1,45 @@
 #show_version=6
 ##! show: dt_reset_all_show
 
-- duration: 1
+- duration: 100ms
+  lights:
+    l_DTGI1: "000000"
+    l_DTGI2: "000000"
+- duration: 100ms
+  lights:
+    l_DTGI1: "ffffff"
+    l_DTGI2: "ffffff"
+- duration: 100ms
+  lights:
+    l_DTGI1: "000000"
+    l_DTGI2: "000000"
+- duration: 100ms
+  lights:
+    l_DTGI1: "ffffff"
+    l_DTGI2: "ffffff"
+- duration: 600ms
   events: reset_nibbler_target
-- duration: 1
+- duration: 600ms
   events: reset_hermes_target
-- duration: 1
+- duration: 600ms
   events: reset_zoidberg_target
-- duration: 1
+- duration: 600ms
   events: reset_amy_target
-- duration: 1
+- duration: 600ms
   events: reset_preofessor_target
+- duration: 100ms
+  lights:
+    l_DTGI1: "000000"
+    l_DTGI2: "000000"
+- duration: 100ms
+  lights:
+    l_DTGI1: "ffffff"
+    l_DTGI2: "ffffff"
+- duration: 100ms
+  lights:
+    l_DTGI1: "000000"
+    l_DTGI2: "000000"
+- duration: 100ms
+  lights:
+    l_DTGI1: "ffffff"
+    l_DTGI2: "ffffff"
