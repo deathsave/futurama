@@ -2,6 +2,7 @@
 mode:
     start_events: ball_started
     priority: 100
+    events_when_started: reset_drop_targets_with_show
 
 state_machines:
   #delivery_started will set this to ignore, delivery_ended will restart it
@@ -218,6 +219,10 @@ light_player:
 
 
 show_player:
+    reset_drop_targets_with_show:
+        dt_reset_all_show:
+            loops: 0
+            priority: 200
     ball_save_zoidberg_ball_save_saving_ball:
         zoidberg_ball_save_show:
             action: play
