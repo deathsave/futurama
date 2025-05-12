@@ -26,7 +26,7 @@
 - duration: 600ms
   events: reset_amy_target
 - duration: 600ms
-  events: reset_preofessor_target
+  events: reset_professor_target
 - duration: 100ms
   lights:
     l_DTGI1: "000000"
