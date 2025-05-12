@@ -264,6 +264,17 @@ event_player:
     timer_fall_off_chair_shot_timer_complete: wake_up_in_the_future
     cryolab_delivery_failed: wake_up_in_the_future
 
+sound_player:
+    s_left_loop_active: no_sound|block
+    s_right_loop_active: no_sound|block
+    s_dt_amy_active: no_sound|block
+    s_dt_hermes_active: no_sound|block
+    s_dt_professor_active: no_sound|block
+    s_dt_zoidberg_active: no_sound|block
+    s_dt_nibbler_active: no_sound|block
+    s_t_bender_active: no_sound|block
+    s_t_leela_active: no_sound|block
+    
 show_player:
     pizza_going_out:
         panuccis_show:

@@ -291,7 +291,7 @@ widget_player:
         moon_step2_r_loop:
             action: remove
         moon_step2_l_loop:
-            action: remove 
+            action: remove
         rover_background:
             slide: moon_delivery_slide
         moon_step3:
@@ -596,6 +596,11 @@ sound_player:
             action: play
     s_left_loop_active: no_sound|block
     s_right_loop_active: no_sound|block
+    s_dt_amy_active: no_sound|block
+    s_dt_hermes_active: no_sound|block
+    s_dt_professor_active: no_sound|block
+    s_dt_zoidberg_active: no_sound|block
+    s_dt_nibbler_active: no_sound|block   
     lunar_lander_found_shot_lit:
         old_moon_song:
             action: stop
