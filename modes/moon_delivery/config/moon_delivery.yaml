@@ -269,15 +269,29 @@ widget_player:
         luna_park_background:
             slide: moon_delivery_slide
     moon_delivery_step2:
+        moon_step1:
+            action: remove
         moon_step2:
             slide: delivery_instructions_slide
         whalers_background:
             slide: moon_delivery_slide
         luna_park_background:
             action: remove
+    whalers_right_shot_hit:
+        moon_step2_r_loop:
+            slide: delivery_instructions_slide
+    whalers_left_shot_hit:
+        moon_step2_l_loop:
+            slide: delivery_instructions_slide
     moon_delivery_step3:
+        moon_step2:
+            action: remove
         whalers_background:
             action: remove
+        moon_step2_r_loop:
+            action: remove
+        moon_step2_l_loop:
+            action: remove 
         rover_background:
             slide: moon_delivery_slide
         moon_step3:
@@ -290,6 +304,8 @@ widget_player:
             action: remove
         joyride_background:
             slide: moon_delivery_slide
+        moon_step3:
+            action: remove
         moon_step4:
             slide: delivery_instructions_slide
     moon_delivery_step5:
@@ -297,7 +313,18 @@ widget_player:
             action: remove
         farmer_background:
             slide: moon_delivery_slide
+        moon_step4:
+            action: remove
         moon_step5:
+            slide: delivery_instructions_slide
+    fry_farmer_escape_shot_hit:
+        moon_step5_fry:
+            slide: delivery_instructions_slide
+    leela_farmer_escape_shot_hit:
+        moon_step5_leela:
+            slide: delivery_instructions_slide
+    bender_farmer_escape_shot_hit:
+        moon_step5_bender:
             slide: delivery_instructions_slide
     all_farmer_escape:
         farmer_background:
@@ -305,11 +332,33 @@ widget_player:
     moon_delivery_step6:
         farmer_background:
             action: remove
+        moon_step5:
+            action: remove
+        moon_step5_bender:
+            action: remove
+        moon_step5_leela:
+            action: remove
+        moon_step5_fry:
+            action: remove
         lander_background:
             slide: moon_delivery_slide
         moon_step6:
             slide: delivery_instructions_slide
+    lunar_lander_r_shot_hit:
+        moon_step6_r_ramp:
+            slide: delivery_instructions_slide
+    lunar_lander_l_shot_hit:
+        moon_step6_l_ramp:
+            slide: delivery_instructions_slide
     lunar_lander_found_shot_lit:
+        moon_step6:
+            action: remove
+        moon_step6_l_ramp:
+            action: remove
+        moon_step6_r_ramp:
+            action: remove
+        moon_step6b:
+            slide: delivery_instructions_slide
         lander_background:
             action: remove
         lander_found_background:
@@ -318,7 +367,7 @@ widget_player:
         lander_found_background:
             action: remove
     moon_delivery_steps_complete:
-        moon_steps_complete:
+        moon_nice_all_extra_shots:
             slide: delivery_instructions_slide
 
 variable_player:
@@ -372,68 +421,68 @@ event_player:
 
 widgets:
     moon_step1:
-        - type: text
-          text: Deliver Crate
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 920
-          z: 5
-          anchor_x: left
-          anchor_y: top
+        - type: image
+          image: moon_step1
+          z: 3
     moon_step2:
-        - type: text
-          text: Whalers on the Moon
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 840
-          z: 5
-          anchor_x: left
-          anchor_y: top
+        - type: image
+          image: moon_step2
+          z: 3
+    moon_step2_r_loop:
+        - type: image
+          image: moon_step2_r_loop
+          z: 4
+    moon_step2_l_loop:
+        - type: image
+          image: moon_step2_l_loop
+          z: 4
     moon_step3:
-        - type: text
-          text: Lunar Rover
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 760
-          z: 5
-          anchor_x: left
-          anchor_y: top
+        - type: image
+          image: moon_step3
+          z: 3
     moon_step4:
-        - type: text
-          text: Joyride Frenzy
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 680
-          z: 5
-          anchor_x: left
-          anchor_y: top
+        - type: image
+          image: moon_step4
+          z: 3
     moon_step5:
-        - type: text
-          text: Escape the Farmer
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 600
-          z: 5
-          anchor_x: left
-          anchor_y: top
+        - type: image
+          image: moon_step5
+          z: 3
+    moon_step5_fry:
+        - type: image
+          image: moon_step5_fry
+          z: 4
+    moon_step5_leela:
+        - type: image
+          image: moon_step5_leela
+          z: 4
+    moon_step5_bender:
+        - type: image
+          image: moon_step5_bender
+          z: 4
     moon_step6:
-        - type: text
-          text: Find the Lunar Lander
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 520
-          z: 5
-          anchor_x: left
-          anchor_y: top
+        - type: image
+          image: moon_step6
+          z: 3
+    moon_step6_l_ramp:
+        - type: image
+          image: moon_step6_l_ramp
+          z: 4
+    moon_step6_r_ramp:
+        - type: image
+          image: moon_step6_r_ramp
+          z: 4
+    moon_step6b:
+        - type: image
+          image: moon_step6b
+          z: 3
     moon_steps_complete:
         - type: image
           image: moon_steps_complete
+          z: 5
+    moon_nice_all_extra_shots:
+        - type: image
+          image: moon_nice_all_extra_shots
           z: 5
     whalers_background:
         - type: video
