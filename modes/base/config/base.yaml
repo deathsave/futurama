@@ -58,6 +58,7 @@ ball_saves:
         active_time: 15s
         hurry_up_time: 5s
         enable_events: mode_moon_delivery_started, mode_robot_homeworld_delivery_started,
+        timer_start_events: s_left_ramp_active
         auto_launch: true
         balls_to_save: 1
     pazuzu_ball_save:
