@@ -196,6 +196,10 @@ slides:
         widgets:
             - type: video
               video: mom_what_needs_to_be_done_clip
+    pazuzu_ball_save_slide:
+        widgets:
+            - type: video
+              video: pazuzu_save_clip
 
 light_player:
     mode_base_started:
@@ -216,7 +220,10 @@ light_player:
         l_2x: ffffff
     timer_ship_spinning_timer_stopped:
         l_2x: "000000"
-
+    ball_save_pazuzu_ball_save_enabled:
+        l_shoot_again: "000000"
+    ball_save_pazuzu_ball_save_disabled:
+        l_shoot_again: ffffff
 
 
 show_player:
@@ -226,6 +233,11 @@ show_player:
             priority: 200
     ball_save_zoidberg_ball_save_saving_ball:
         zoidberg_ball_save_show:
+            action: play
+            loops: 0
+            priority: 200
+    ball_save_pazuzu_ball_save_saving_ball:
+        pazuzu_ball_save_show:
             action: play
             loops: 0
             priority: 200
