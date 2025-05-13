@@ -729,12 +729,9 @@ show_player:
         dt_reset_all_show:
             loops: 0
             priority: 500
-    test_light_show:
-        labelled_light_test_show:
-            loops: 2
-            priority: 500
-            show_tokens:
-                this_light: l_shoot_again
+
+
+
 
 autofire_coils:
     ac_slingshot_left:
