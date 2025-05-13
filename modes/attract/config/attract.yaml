@@ -19,6 +19,21 @@ show_player:
             priority: 300
             loops: 0
             events_when_completed: next_attract_show
+    s_hedonism_bot_active:
+        multi_labelled_light_test_show:
+            manual_advance: true
+            loops: 0
+            priority: 500
+            show_tokens:
+                l1: spotlights
+                l2: gi
+                l3: indicator
+        attract_loop_show: stop
+        attract_shows: stop
+    s_right_flipper_active:
+        multi_labelled_light_test_show: advance 
+    s_left_flipper_active:
+        multi_labelled_light_test_show: step_back
 
 light_player:
     mode_attract_started:
