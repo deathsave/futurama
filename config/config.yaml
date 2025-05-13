@@ -819,6 +819,12 @@ machine_vars:
     master_volume:
         initial_value: 0.8
 #these variables set base scoring combined with multipliers to build shot scoring
+    small_reward_points:
+        initial_value: 100
+    medium_reward_points:
+        initial_value: 500
+    large_reward_points:
+        initial_value: 1000
     ship_points:
         initial_value: 10
     pop_points:
