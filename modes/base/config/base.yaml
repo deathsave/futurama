@@ -196,6 +196,10 @@ slides:
         widgets:
             - type: video
               video: mom_what_needs_to_be_done_clip
+    pazuzu_ball_save_slide:
+        widgets:
+            - type: video
+              video: pazuzu_save_clip
 
 light_player:
     mode_base_started:
@@ -216,7 +220,10 @@ light_player:
         l_2x: ffffff
     timer_ship_spinning_timer_stopped:
         l_2x: "000000"
-
+    ball_save_pazuzu_ball_save_enabled:
+        l_shoot_again: "000000"
+    ball_save_pazuzu_ball_save_disabled:
+        l_shoot_again: ffffff
 
 
 show_player:
@@ -226,6 +233,11 @@ show_player:
             priority: 200
     ball_save_zoidberg_ball_save_saving_ball:
         zoidberg_ball_save_show:
+            action: play
+            loops: 0
+            priority: 200
+    ball_save_pazuzu_ball_save_saving_ball:
+        pazuzu_ball_save_show:
             action: play
             loops: 0
             priority: 200
@@ -391,7 +403,15 @@ variable_player:
         score: machine.ramp_points * current_player.nibbler_level * current_player.PF_multiplier
     hypnotoad_save_hit:
         hypnotoad_saves: 1
-        score: 1000 * current_player.PF_multiplier
+        score: machine.large_reward_points * current_player.PF_multiplier
+    long_right_orbit_hit:
+        score: machine.orbit_points * current_player.zapp_multiplier * current_player.mom_multiplier * current_player.PF_multiplier
+    short_right_orbit_hit:
+        score: machine.orbit_points * (current_player.zapp_multiplier + current_player.mom_multiplier) * current_player.PF_multiplier
+    base_right_inlane_shot_hit:
+        score: machine.weird_points * current_player.zoidberg_multiplier * current_player.PF_multiplier
+    base_left_inlane_shot_hit:
+        score: machine.weird_points * current_player.PF_multiplier
     mode_base_started:
         platter_short_counter:
             int: 0
@@ -705,6 +725,18 @@ shots:
         switches: s_r_outlane
         enable_events: zoidberg_level2, zoidberg_level3, zoidberg_level4, zoidberg_level5
         disable_events: ball_save_zoidberg_ball_save_saving_ball
+    base_right_inlane_shot:
+        switches: s_cap1 #s_cap1 = right inlane switch
+        delay_switch:
+            s_right_ramp: 5s
+            s_right_flipper: 3s
+    base_left_inlane_shot:
+        switches: s_left_inlane
+        delay_switch:
+            s_left_ramp: 5s
+            s_left_flipper: 3s
+
+
 
 sequence_shots:
     right_loop:
@@ -728,3 +760,9 @@ sequence_shots:
     hypnotoad_save:
         switch_sequence: s_mag_button, s_left_inlane
         sequence_timeout: 5s
+    long_right_orbit:
+        switch_sequence: s_r_orbit, s_left_loop
+        sequence_timeout: 4s
+    short_right_orbit:
+        switch_sequence: s_r_orbit, s_right_loop
+        sequence_timeout: 4s
