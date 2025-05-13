@@ -1,0 +1,16 @@
+#show_version=6
+##! show: pazuzu_ball_save_show
+
+    - duration: 100ms
+      slides:
+          pazuzu_ball_save_slide:
+              target: display2
+    - duration: 7
+      shows:
+          apron_light_show:
+              loops: 0
+              speed: 2
+    - duration: 500ms
+      slides:
+          pazuzu_ball_save_slide:
+              action: remove
