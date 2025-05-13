@@ -312,26 +312,6 @@ slide_player:
         hypnotoad_slide:
             action: remove
 
-widget_player:
-    mode_base_started:
-        empty_gauge:
-            slide: base_slide
-    empty_tank:
-        empty_gauge:
-            slide: base_slide
-    quarter_tank:
-        quarter_gauge:
-            slide: base_slide
-    half_tank:
-        half_gauge:
-            slide: base_slide
-    3quarter_tank:
-        3quarter_gauge:
-            slide: base_slide
-    full_tank:
-        full_gauge:
-            slide: base_slide
-
 show_pools:
     mom_shows:
         shows:
