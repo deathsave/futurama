@@ -238,11 +238,67 @@ widget_player:
         quarter_gauge:
             slide: base_slide
             action: remove
+#TO-DO: this doesn't work yet, but is what I'm after, and doesn't cause issues
+#so I'm leaving it for now...
+    slide_base_slide_active{current_player.fuel_level=="empty_gauge"}:
+        empty_gauge:
+            slide: base_slide
+    slide_base_slide_active{current_player.fuel_level==quarter_gauge}:
+        quarter_gauge:
+            slide: base_slide
+    slide_base_slide_active{current_player.fuel_level==half_gauge}:
+        half_gauge:
+            slide: base_slide
+    slide_base_slide_active{current_player.fuel_level=="3quarter_gauge"}:
+        3quarter_gauge:
+            slide: base_slide
+    slide_base_slide_active{current_player.fuel_level==full_gauge}:
+        full_gauge:
+            slide: base_slide
+    empty_tank:
+        empty_gauge:
+            slide: base_slide
+    quarter_tank:
+        quarter_gauge:
+            slide: base_slide
+    half_tank:
+        half_gauge:
+            slide: base_slide
+    3quarter_tank:
+        3quarter_gauge:
+            slide: base_slide
+    full_tank:
+        full_gauge:
+            slide: base_slide
+
 
 variable_player:
     cannibalon_delivery_start_shot_hit:
-        score: 5000
+        score: machine.medium_reward_points * current_player.crew_multiplier
         deliveries_completed: 1
+        fry_xp: 5
+        leela_xp: 5
+        bender_xp: 10
+    empty_tank:
+        fuel_level:
+            action: set
+            string: "empty_gauge"
+    quarter_tank:
+        fuel_level:
+            action: set
+            string: "quarter_gauge"
+    half_tank:
+        fuel_level:
+            action: set
+            string: "half_gauge"
+    3quarter_tank:
+        fuel_level:
+            action: set
+            string: "3quarter_gauge"
+    full_tank:
+        fuel_level:
+            action: set
+            string: "full_gauge"
 
 sound_player:
     quarter_tank:
