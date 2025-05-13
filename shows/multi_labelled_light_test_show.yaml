@@ -1,0 +1,32 @@
+#show_version=6
+##! show: multi_labelled_light_test_show
+
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l1)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l2)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l3)
+              priority: 100
+    - duration: 1
+      events: play_attract_loop

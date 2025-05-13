@@ -40,6 +40,8 @@ keyboard:
         switch: s_oper3
     4:
         switch: s_oper4
+    t:
+        event: test_light_show
 
 hardware:
     platform: p3_roc
@@ -728,6 +730,9 @@ show_player:
             loops: 0
             priority: 500
 
+
+
+
 autofire_coils:
     ac_slingshot_left:
         coil: c_sling_left
@@ -819,6 +824,8 @@ machine_vars:
     master_volume:
         initial_value: 0.8
 #these variables set base scoring combined with multipliers to build shot scoring
+    weird_points:
+        initial_value: 13
     small_reward_points:
         initial_value: 100
     medium_reward_points:

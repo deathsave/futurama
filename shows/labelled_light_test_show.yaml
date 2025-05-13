@@ -1,0 +1,46 @@
+#show_version=6
+##! show: labelled_light_test_show
+
+    - duration: 500ms
+      slides:
+          temporary_light_label:
+              target: display2
+              widgets:
+                  - type: text
+                    text: (this_light)
+                    font_size: 120
+      lights:
+          (this_light): on
+    - duration: 500ms
+      lights:
+          (this_light): off
+    - duration: 500ms
+      lights:
+          (this_light): on
+    - duration: 500ms
+      lights:
+          (this_light): off
+    - duration: 500ms
+      lights:
+          (this_light): on
+    - duration: 500ms
+      lights:
+          (this_light): off
+    - duration: 500ms
+      lights:
+          (this_light): orange
+    - duration: 500ms
+      lights:
+          (this_light): off
+    - duration: 500ms
+      lights:
+          (this_light): orange
+    - duration: 500ms
+      lights:
+          (this_light): off
+    - duration: 500ms
+      lights:
+          (this_light): orange
+    - duration: 5
+      lights:
+          (this_light): 82eea7
