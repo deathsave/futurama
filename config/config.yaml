@@ -325,17 +325,6 @@ lights:
         platform_settings:
             polarity: false
         tags: lamps, feature
-#maybe add this back in later if the area is too dark
-#    l_right_wedge:
-#        number: 2-42-43-44
-#        platform_settings:
-#            polarity: false
-#        tags: lamps, gi
-#    l_right_spotlight:
-#        number: 2-45-46-47
-#        platform_settings:
-#            polarity: false
-#        tags: lamps, spotlights
     l_drain:
         number: 0-18-19-20
         platform_settings:

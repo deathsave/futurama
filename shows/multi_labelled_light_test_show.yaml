@@ -28,5 +28,608 @@
               show_tokens:
                   this_light: (l3)
               priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l4)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l5)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l6)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l7)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l8)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l9)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l10)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l11)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l12)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l13)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l14)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: (l15)
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_corner1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_corner2
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_upper_wedge
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_orbit_insert2
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_orbit_insert1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_ramp_insert
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_loop_insert
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_delivery_shot_insert
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_left_loop_insert
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_left_ramp_insert
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_PE_spinner1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_PE_spinner2
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_PE_spinner3
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_PE_spinner4
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_DTGI1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_DTGI2
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_left_spotlight
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_hypnotoad_spotlight
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_VUK1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_VUK2
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_HQGI1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_HQGI2
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_HQ1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_HQ2
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_tube1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_tube2
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_tube3
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_tube4
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_shoot_again
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_2x
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_3x
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_cap1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_cap2
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_cap3
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_inlane
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_sling
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_left_sling
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_outlane
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_left_inlane
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_pop_bumper
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_zoidberg_rotor
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_right_ballguide
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_left_ballguide
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_cryopod
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_apron1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_apron2
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_apron3
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_drain
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_apron4
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_apron5
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_apron6
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_bender_r_eye
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_bender_l_eye
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_bender_mouth1
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_bender_mouth2
+              priority: 100
     - duration: 1
       events: play_attract_loop

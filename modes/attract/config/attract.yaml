@@ -25,13 +25,26 @@ show_player:
             loops: 0
             priority: 500
             show_tokens:
-                l1: spotlights
+                l1: lamps
                 l2: gi
                 l3: indicator
+                l4: spotlights
+                l5: feature
+                l6: loops
+                l7: orbit
+                l8: ship
+                l9: tubes
+                l10: DTbank
+                l11: caps
+                l12: slings
+                l13: ballguide
+                l14: apron
+                l15: topper 
+
         attract_loop_show: stop
         attract_shows: stop
     s_right_flipper_active:
-        multi_labelled_light_test_show: advance 
+        multi_labelled_light_test_show: advance
     s_left_flipper_active:
         multi_labelled_light_test_show: step_back
 
