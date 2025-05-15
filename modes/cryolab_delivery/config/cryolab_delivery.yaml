@@ -162,6 +162,9 @@ widget_player:
     mode_cryolab_delivery_started:
         panuccis_background:
             slide: cryolab_delivery_slide
+    ride_bike:
+        panuccis_background:
+            action: remove
 
 ball_holds:
     nibbler_skillshot_ball_hold:
@@ -174,26 +177,35 @@ ball_holds:
         balls_to_hold: 1
         hold_devices: bd_VUK
         enable_events: deliver_pizza_shot_hit
-        disable_events: mode_cryolab_delivery_stopping
+        disable_events: mode_cryolab_delivery_stopping,
         release_one_events: wake_up_in_the_future, flipper_cradle, mode_delivery_manager_started
+
+ball_saves:
+    cryolab_cut_scenes_ball_save:
+        active_time: 20s
+        hurry_up_time: 5s
+        enable_events: wake_up_in_the_future
+        disable_events: mode_cryolab_delivery_mode_stopping
+        auto_launch: true
+        balls_to_save: 2
 
 shots:
     ride_the_bike_shot:
         switches: s_left_ramp, s_left_loop, s_t_fry
         enable_events: pizza_going_out
-        disable_events: ride_the_bike_shot_hit
+        disable_events: ride_the_bike_shot_hit, nibbler_skillshot_hit, cryolab_delivery_failed
     lock_the_bike_shot:
         switches: s_right_loop, s_right_ramp, s_r_orbit, s_t_fry
         enable_events: ride_bike
-        disable_events:  lock_the_bike_shot_hit
+        disable_events:  lock_the_bike_shot_hit, nibbler_skillshot_hit, cryolab_delivery_failed
     deliver_pizza_shot:
         switches: s_left_ramp, s_right_ramp
         enable_events: lock_bike
-        disable_events: deliver_pizza_shot_hit
+        disable_events: deliver_pizza_shot_hit, cryolab_delivery_failed
     fall_off_chair_shot:
         switch: s_VUK
         enable_events: cryolab_delivery_success
-        disable_events: fry_frozen
+        disable_events: fry_frozen, cryolab_delivery_failed
     nibbler_skillshot:
         switch: s_VUK
         enable_events: pizza_going_out
@@ -274,7 +286,7 @@ sound_player:
     s_dt_nibbler_active: no_sound|block
     s_t_bender_active: no_sound|block
     s_t_leela_active: no_sound|block
-    
+
 show_player:
     pizza_going_out:
         panuccis_show:
