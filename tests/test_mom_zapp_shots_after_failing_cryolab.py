@@ -1,11 +1,10 @@
 from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
-class TestMomZappShotsAfterCryolab(FullMachineTestCase):
+class TestMomZappShotsAfterFailingCryolab(FullMachineTestCase):
 
-    def test_mom_zapp_shots_after_cryolab(self):
+    def test_mom_zapp_shots_after_failing_cryolab(self):
         self._start_game()
-        self._verify_cryolab_mode()
-        self._nibbler_skillshot()
+        self._verify_cryolab_mode_and_wait()
         self._exit_to_base_mode()
         self._activate_mom_scene1()
         self._activate_zapp_scene1()
@@ -27,7 +26,7 @@ class TestMomZappShotsAfterCryolab(FullMachineTestCase):
         self.advance_time_and_run(1)
         self.assertEqual(1, self.machine.playfield.balls)
 
-    def _verify_cryolab_mode(self):
+    def _verify_cryolab_mode_and_wait(self):
         self.advance_time_and_run(3)
         self.assertModeRunning("cryolab_delivery")
         self.assertModeNotRunning("delivery_manager")
@@ -36,13 +35,11 @@ class TestMomZappShotsAfterCryolab(FullMachineTestCase):
         self.assertEqual("panuccis", self.machine.state_machines.cryolab_delivery_state.state)
         self.assertEqual(self.mc.targets['display1'].current_slide_name,
                          'cryolab_delivery_slide')
-
-    def _nibbler_skillshot(self):
-        self.hit_switch_and_run("s_VUK", 3)
-        self.assertPlayerVarEqual("success", "cryolab_delivery_status")
+        self.advance_time_and_run(30)
+        self.assertPlayerVarEqual("failed", "cryolab_delivery_status")
 
     def _exit_to_base_mode(self):
-        self.advance_time_and_run(30)
+        self.advance_time_and_run(10)
         self.assertModeNotRunning("cryolab_delivery")
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
