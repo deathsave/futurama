@@ -25,13 +25,26 @@ show_player:
             loops: 0
             priority: 500
             show_tokens:
-                l1: spotlights
+                l1: lamps
                 l2: gi
                 l3: indicator
+                l4: spotlights
+                l5: feature
+                l6: loops
+                l7: orbit
+                l8: ship
+                l9: tubes
+                l10: DTbank
+                l11: caps
+                l12: slings
+                l13: ballguide
+                l14: apron
+                l15: topper
+
         attract_loop_show: stop
         attract_shows: stop
     s_right_flipper_active:
-        multi_labelled_light_test_show: advance 
+        multi_labelled_light_test_show: advance
     s_left_flipper_active:
         multi_labelled_light_test_show: step_back
 
@@ -56,6 +69,10 @@ show_pools:
             - scary_door2_show
             - morbo_linda_mom_show
             - hypnotoad_instructions_show|3
+            - morbo_and_nixon_show
+            - molten_boron_show
+            - i_dated_a_robot_show
+            - pants_full_of_shame_show
 slides:
     dspc_logo_slide:
         widgets:
@@ -99,3 +116,19 @@ slides:
         widgets:
             type: video
             video: hypnotoad_instructions_clip
+    morbo_and_nixon_slide:
+        widgets:
+            type: video
+            video: morbo_and_nixon_clip
+    molten_boron_slide:
+        widgets:
+            type: video
+            video: molten_boron_clip
+    i_dated_a_robot_slide:
+        widgets:
+            type: video
+            video: i_dated_a_robot_clip
+    pants_full_of_shame_slide:
+        widgets:
+            type: video
+            video: pants_full_of_shame_clip

@@ -1,0 +1,13 @@
+#show_version=6
+##! show: pants_full_of_shame_show
+
+
+- time: 0
+  slides:
+      pants_full_of_shame_slide:
+          priority: 500
+          target: display1
+- time: 86.5
+  slides:
+      pants_full_of_shame_slide:
+          action: remove

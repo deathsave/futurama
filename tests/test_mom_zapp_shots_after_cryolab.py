@@ -2,7 +2,7 @@ from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
 class TestMomZappShotsAfterCryolab(FullMachineTestCase):
 
-    def test_cryolab_mode_path_nibbler_skillshot(self):
+    def test_mom_zapp_shots_after_cryolab(self):
         self._start_game()
         self._verify_cryolab_mode()
         self._nibbler_skillshot()

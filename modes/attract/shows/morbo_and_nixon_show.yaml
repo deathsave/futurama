@@ -1,0 +1,13 @@
+#show_version=6
+##! show: morbo_and_nixon_show
+
+
+- time: 0
+  slides:
+      morbo_and_nixon_slide:
+          priority: 500
+          target: display1
+- time: 60
+  slides:
+      morbo_and_nixon_slide:
+          action: remove

@@ -8,7 +8,7 @@
               widgets:
                   - type: text
                     text: (this_light)
-                    font_size: 120
+                    font_size: 150
       lights:
           (this_light): on
     - duration: 500ms

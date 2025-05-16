@@ -45,9 +45,10 @@ ball_saves:
         active_time: "+15s"
         hurry_up_time: 6s
         enable_events: mode_base_started
-        timer_start_events: s_shooter_lane_inactive
+        timer_start_events: sw_playfield_active
         auto_launch: true
-        balls_to_save: 1
+        balls_to_save: 2
+        grace_period: 3s
     zoidberg_ball_save:
         active_time: 6s
         hurry_up_time: 2s
@@ -61,6 +62,7 @@ ball_saves:
         timer_start_events: s_left_ramp_active
         auto_launch: true
         balls_to_save: 1
+        grace_period: 3s
     pazuzu_ball_save:
         active_time: 50s
         hurry_up_time: 10s
