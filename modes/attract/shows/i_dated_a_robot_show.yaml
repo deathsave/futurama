@@ -1,0 +1,13 @@
+#show_version=6
+##! show: i_dated_a_robot_show
+
+
+- time: 0
+  slides:
+      i_dated_a_robot_slide:
+          priority: 500
+          target: display1
+- time: 142
+  slides:
+      i_dated_a_robot_slide:
+          action: remove
