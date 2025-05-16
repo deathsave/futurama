@@ -278,12 +278,16 @@ show_player:
     slurm_factory_level1:
         level1_right_ramp_jackpot_show:
             loops: -1
+            priority: 300
         level1_left_loop_jackpot_show:
             loops: -1
+            priority: 300
         level1_right_loop_jackpot_show:
             loops: -1
+            priority: 300
         level1_right_orbit_jackpot_show:
             loops: -1
+            priority: 300
         level1_gi_show:
             loops: -1
             priority: 300
@@ -298,21 +302,26 @@ show_player:
     level1_jackpots_complete:
         next_level_shot_lit_show:
             loops: -1
+            priority: 300
         level1_gi_show:
             action: stop
     slurm_factory_level2:
         level1_right_ramp_jackpot_show:
             loops: -1
             speed: 1.5
+            priority: 300
         level1_left_loop_jackpot_show:
             loops: -1
             speed: 1.5
+            priority: 300
         level1_right_loop_jackpot_show:
             loops: -1
             speed: 1.5
+            priority: 300
         level1_right_orbit_jackpot_show:
             loops: -1
             speed: 1.5
+            priority: 300
         level1_gi_show:
             loops: -1
             priority: 300
@@ -329,6 +338,7 @@ show_player:
         next_level_shot_lit_show:
             loops: -1
             speed: 1.5
+            priority: 300
         level1_gi_show:
             action: stop
 #level3
@@ -336,15 +346,19 @@ show_player:
         level1_right_ramp_jackpot_show:
             loops: -1
             speed: 2
+            priority: 300
         level1_left_loop_jackpot_show:
             loops: -1
             speed: 2
+            priority: 300
         level1_right_loop_jackpot_show:
             loops: -1
             speed: 2
+            priority: 300
         level1_right_orbit_jackpot_show:
             loops: -1
             speed: 2
+            priority: 300
         level1_gi_show:
             loops: -1
             priority: 300
@@ -361,6 +375,7 @@ show_player:
         next_level_shot_lit_show:
             loops: -1
             speed: 2
+            priority: 300
         level1_gi_show:
             action: stop
     slurm_factory_final_shot_hit:
