@@ -5,6 +5,8 @@ mode:
     start_events: start_moon_delivery_mode
     stop_events: stop_moon_delivery_mode, ball_ending
     priority: 200
+    events_when_started: mom_zapp_off
+    events_when_stopped: mom_zapp_on
 
 state_machines:
     moon_delivery_state:
@@ -379,7 +381,7 @@ variable_player:
         score: 2000 * current_player.PF_multiplier
     fail_moon_delivery:
         moon_delivery_status:
-            string: "fail"
+            string: "failed"
             action: set
     whalers_right_shot_hit:
         score: 1000 * current_player.PF_multiplier
@@ -405,6 +407,10 @@ variable_player:
         score: 20000 * current_player.PF_multiplier
     moon_slingshot_shot_hit:
         score: 100 * current_player.professor_multiplier * current_player.PF_multiplier
+    timer_crate_delivery_timer_complete:
+        moon_delivery_status:
+            string: "failed"
+            action: set
 
 event_player:
     timer_crate_delivery_timer_complete: end_moon_delivery
@@ -600,7 +606,7 @@ sound_player:
     s_dt_hermes_active: no_sound|block
     s_dt_professor_active: no_sound|block
     s_dt_zoidberg_active: no_sound|block
-    s_dt_nibbler_active: no_sound|block   
+    s_dt_nibbler_active: no_sound|block
     lunar_lander_found_shot_lit:
         old_moon_song:
             action: stop

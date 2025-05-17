@@ -300,6 +300,7 @@ variable_player:
             action: set
             string: "full_gauge"
 
+
 sound_player:
     quarter_tank:
         ding:
