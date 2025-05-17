@@ -72,7 +72,7 @@ class TestMomZappAfterMoonModeAllShotsSuccess(FullMachineTestCase):
                          'moon_delivery_intro_slide')
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'delivery_instructions_slide')
-        self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.assertEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
         self.post_event("flipper_cradle", 4)
         self.assertEqual("step1", self.machine.state_machines.moon_delivery_state.state)
 
