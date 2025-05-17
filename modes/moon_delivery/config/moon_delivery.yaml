@@ -104,6 +104,7 @@ timers:
               event: deliver_crate_shot_hit
     whalers_on_the_moon_timer:
         start_value: 15
+#TO-DO: remove this max_value?
         max_value: 10
         end_value: 0
         direction: down
