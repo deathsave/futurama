@@ -1,0 +1,9 @@
+#show_version=6
+##! show: fry_deliver_crate_shot_show
+
+    - duration: 500ms
+      lights:
+          l_left_ramp_insert: "00c8ff"
+    - duration: 500ms
+      lights:
+          (which): off
