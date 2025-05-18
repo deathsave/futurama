@@ -231,6 +231,10 @@ light_player:
 
 
 show_player:
+    s_hedonism_bot_active:
+        clear_VUK_show:
+            loops: 0
+            priority: 999
     reset_drop_targets_with_show:
         dt_reset_all_show:
             loops: 0
