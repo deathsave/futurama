@@ -177,7 +177,7 @@ ball_holds:
         balls_to_hold: 1
         hold_devices: bd_VUK
         enable_events: deliver_pizza_shot_hit
-        disable_events: mode_cryolab_delivery_stopping,
+        disable_events: mode_cryolab_delivery_stopping, flipper_cradle, wake_up_in_the_future
         release_one_events: wake_up_in_the_future, flipper_cradle, mode_delivery_manager_started
 
 ball_saves:
