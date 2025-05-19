@@ -217,18 +217,10 @@ light_player:
         l_right_outlane: "000000"
     ball_save_zoidberg_ball_save_saving_ball:
         l_right_outlane: ffffff
-    ball_save_ball_start_ball_save_enabled:
-        l_shoot_again: "000000"
-    ball_save_ball_start_ball_save_disabled:
-        l_shoot_again: ffffff
     timer_amy_PF_multiplier_timer_started:
         l_2x: ffffff
     timer_amy_PF_multiplier_timer_stopped:
         l_2x: "000000"
-    ball_save_pazuzu_ball_save_enabled:
-        l_shoot_again: "000000"
-    ball_save_pazuzu_ball_save_disabled:
-        l_shoot_again: ffffff
     ball_ending:
         l_2x: ffffff
 
@@ -252,6 +244,34 @@ show_player:
             action: play
             loops: 0
             priority: 200
+    ball_save_pazuzu_ball_save_enabled::
+        ball_save_indicator_show:
+            loops: -1
+            priority: 200
+    ball_save_pazuzu_ball_save_hurry_up:
+        ball_save_indicator_show:
+            action: stop
+        ball_save_hurry_up_indicator_show:
+            loops: 3
+            priority: 200
+    ball_save_pazuzu_ball_save_disabled:
+        ball_save_indicator_show:
+            action: stop
+        ball_save_hurry_up_indicator_show:
+            action: stop
+    ball_save_ball_start_ball_save_enabled:
+        ball_save_indicator_show:
+            loops: -1
+            priority: 199
+    ball_save_ball_start_ball_save_hurry_up:
+        ball_save_indicator_show:
+            action: stop
+        ball_save_hurry_up_indicator_show:
+            loops: 1
+    ball_save_ball_start_ball_save_disabled:
+        ball_save_indicator_show:
+            action: stop
+
     mode_base_started:
         zoidberg_neutral_show:
             loops: -1
