@@ -2,7 +2,7 @@
 ##! mode: cryolab_delivery
 
 mode:
-    start_events: ball_started{ball==1}
+    start_events: ball_started{ball==1 and is_extra_ball==False}
     stop_events: stop_cryolab_delivery_mode, ball_ending
     priority: 200
 
