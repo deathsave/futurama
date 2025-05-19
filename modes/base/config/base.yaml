@@ -70,6 +70,9 @@ ball_saves:
         auto_launch: true
         balls_to_save: 1
 
+extra_balls:
+    professor_extra_ball:
+        award_events: award_professor_extra_ball
 
 
 shows:
