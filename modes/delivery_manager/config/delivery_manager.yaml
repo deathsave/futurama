@@ -9,6 +9,7 @@ mode:
 state_machines:
     fuel_gauge_state:
         persist_state: true
+        starting_state: half
         states:
             start:
                 label: Start state
@@ -106,7 +107,7 @@ state_machines:
         transitions:
             - source: start
               target: moon_delivery_enable
-              events: half_tank
+              events: full_tank
             - source: moon_delivery_enable
               target: moon_delivery_active
               events: start_moon_delivery_mode
@@ -339,7 +340,7 @@ sound_player:
 event_player:
     moon_delivery_start_shot_hit: start_moon_delivery_mode
     start_moon_delivery_mode: delivery_started
-    mode_moon_delivery_stopped: use_half_tank, delivery_ended
+    mode_moon_delivery_stopped: use_full_tank, delivery_ended
     cannibalon_delivery_start_shot_hit: delivery_started
     cannibalon_delivery_show_ended: use_full_tank, delivery_ended
     robot_homeworld_delivery_start_shot_hit: start_robot_homeworld_delivery
@@ -347,9 +348,6 @@ event_player:
     mode_robot_homeworld_delivery_stopped: use_full_tank, delivery_ended
 
 show_player:
-    delivery_started:
-        right_ramp_shot_lit_show:
-            action: stop 
     cannibalon_delivery_start_shot_hit:
         cannibalon_delivery_show:
             loops: 0
