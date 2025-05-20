@@ -114,6 +114,9 @@ state_machines:
             - source: moon_delivery_active
               target: moon_delivery_done
               events: mode_moon_delivery_stopped
+            - source: moon_delivery_active
+              target: moon_delivery_done
+              events: ball_ending 
     cannibalon_delivery_handler:
         persist_state: true
         states:
