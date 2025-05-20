@@ -1,0 +1,33 @@
+#show_version=6
+##! show: right_ramp_shot_lit_show
+
+    - duration: 500ms
+      lights:
+          l_right_ramp_insert: "000000"
+    - duration: 500ms
+      lights:
+          l_right_ramp_insert: ffffff
+    - duration: 500ms
+      lights:
+          l_right_ramp_insert: "000000"
+    - duration: 500ms
+      lights:
+          l_right_ramp_insert: ffffff
+    - duration: 500ms
+      lights:
+          l_right_ramp_insert: "000000"
+    - duration: 500ms
+      lights:
+          l_right_ramp_insert: ffffff
+    - duration: 500ms
+      lights:
+          l_right_ramp_insert: "000000"
+    - duration: 500ms
+      lights:
+          l_right_ramp_insert: ffffff
+    - duration: 500ms
+      lights:
+          l_right_ramp_insert: "000000"
+    - duration: 500ms
+      lights:
+          l_right_ramp_insert: ffffff

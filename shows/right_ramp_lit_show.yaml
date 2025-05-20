@@ -1,9 +1,9 @@
 #show_version=6
 ##! show: right_ramp_lit_show
 
-    - duration: 300ms
+    - duration: 500ms
       lights:
           l_right_ramp_insert: "000000"
-    - duration: 300ms
+    - duration: 500ms
       lights:
           l_right_ramp_insert: ffffff

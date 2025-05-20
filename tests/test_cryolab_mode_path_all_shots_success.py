@@ -46,6 +46,7 @@ class TestCryolabModePathAllShotsSuccess(FullMachineTestCase):
         self.hit_switch_and_run("s_right_ramp", 3)
         self.assertEqual("i_c_weiner",
             self.machine.state_machines.cryolab_delivery_state.state)
+        self.assertPlayerVarEqual("success", "cryolab_delivery_status")
 
     def _fall_in_cryopod(self):
         self.hit_switch_and_run("s_VUK", 3)
@@ -62,4 +63,3 @@ class TestCryolabModePathAllShotsSuccess(FullMachineTestCase):
                          'base_slide')
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'PFD_base_slide')
-        

@@ -1,21 +1,18 @@
 from mpfmc.tests.FullMpfMachineTestCase import FullMachineTestCase
 
-class TestMoonModeAllShotsSuccess(FullMachineTestCase):
+class TestMoonModeSuccessFryCrateNoExtras(FullMachineTestCase):
 
-    def test_moon_mode_all_shots_success(self):
+    def test_moon_mode_success_fry_crate_no_extras(self):
         self._start_game()
         self._verify_cryolab_mode()
         self._nibbler_skillshot()
         self._exit_cryolab_to_base()
-        self._light_moon_delivery()
+        self._light_moon_delivery_and_level_fry()
         self._start_moon_delivery()
-        self._deliver_crate()
-        self._ride_whalers()
-        self._lunar_rover()
-        self._joyride()
-        self._escape_farmer()
-        self._find_lunar_lander()
+        self._fry_deliver_crate_shot_and_wait()
         self._exit_moon_to_base()
+        self._light_cannibalon_delivery()
+        self._do_cannibalon_delivery()
 
     def _start_game(self):
         self.hit_and_release_switch("s_start")
@@ -50,10 +47,15 @@ class TestMoonModeAllShotsSuccess(FullMachineTestCase):
                          'PFD_base_slide')
         self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
 
-    def _light_moon_delivery(self):
-        self.hit_switch_and_run("s_dt_nibbler", 3)
+    def _light_moon_delivery_and_level_fry(self):
+        self.hit_switch_and_run("s_dt_nibbler", 1)
+        self.assertPlayerVarEqual(1, "fry_level")
+        self.hit_and_release_switch("s_t_fry")
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "fry_level")
         self.hit_and_release_switch("s_right_ramp")
         self.advance_time_and_run(3)
+        self.assertEqual("half", self.machine.state_machines.fuel_gauge_state.state)
 
     def _start_moon_delivery(self):
         self.hit_switch_and_run("s_VUK", 5)
@@ -66,56 +68,21 @@ class TestMoonModeAllShotsSuccess(FullMachineTestCase):
         self.post_event("flipper_cradle", 4)
         self.assertEqual("step1", self.machine.state_machines.moon_delivery_state.state)
 
-    def _deliver_crate(self):
-        self.hit_and_release_switch("s_r_orbit")
+    def _fry_deliver_crate_shot_and_wait(self):
+        self.assertTrue(self.machine.shots['fry_deliver_crate_shot'].enabled)
+        self.hit_and_release_switch("s_left_ramp")
         self.advance_time_and_run(5)
         self.assertEqual(self.mc.targets['display1'].current_slide_name,
                          'crate_delivered_slide')
         self.advance_time_and_run(10)
         self.assertPlayerVarEqual("success", "moon_delivery_status")
         self.assertEqual("step2", self.machine.state_machines.moon_delivery_state.state)
-
-    def _ride_whalers(self):
-        self.assertEqual(self.mc.targets['display1'].current_slide_name,
-                         'moon_delivery_slide')
-        self.hit_and_release_switch("s_right_loop")
-        self.advance_time_and_run(5)
-        self.hit_and_release_switch("s_left_loop")
-        self.advance_time_and_run(5)
-        self.assertEqual("step3", self.machine.state_machines.moon_delivery_state.state)
-
-    def _lunar_rover(self):
-        self.advance_time_and_run(3)
-        self.hit_and_release_switch("s_right_ramp")
-        self.advance_time_and_run(24)
-        self.assertEqual("step4", self.machine.state_machines.moon_delivery_state.state)
-
-    def _joyride(self):
-        self.hit_and_release_switch("s_pe_platter")
-        self.advance_time_and_run(30)
-        self.assertEqual("step5", self.machine.state_machines.moon_delivery_state.state)
-
-    def _escape_farmer(self):
-        self.hit_and_release_switch("s_t_fry")
-        self.advance_time_and_run(2)
-        self.hit_and_release_switch("s_t_leela")
-        self.advance_time_and_run(2)
-        self.hit_and_release_switch("s_t_bender")
-        self.advance_time_and_run(14)
-        self.assertEqual("step6", self.machine.state_machines.moon_delivery_state.state)
-
-    def _find_lunar_lander(self):
-        self.hit_and_release_switch("s_right_ramp")
-        self.advance_time_and_run(3)
-        self.hit_and_release_switch("s_left_ramp")
-        self.advance_time_and_run(3)
-        self.hit_switch_and_run("s_VUK", 4)
-        self.assertEqual("steps_complete", self.machine.state_machines.moon_delivery_state.state)
+        self.advance_time_and_run(10)
 
     def _exit_moon_to_base(self):
-        self.assertTrue(self.machine.ball_holds.final_scene_hold.is_full)
-        self.advance_time_and_run(30)
+        self.advance_time_and_run(3)
         self.assertModeNotRunning("moon_delivery")
+        self.assertEqual("start", self.machine.state_machines.fuel_gauge_state.state)
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")
@@ -125,3 +92,21 @@ class TestMoonModeAllShotsSuccess(FullMachineTestCase):
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'PFD_base_slide')
         self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
+
+    def _light_cannibalon_delivery(self):
+        self.hit_and_release_switch("s_right_ramp")
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_right_ramp")
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_right_ramp")
+        self.advance_time_and_run(2)
+        self.hit_and_release_switch("s_right_ramp")
+        self.advance_time_and_run(2)
+        self.assertEqual("full", self.machine.state_machines.fuel_gauge_state.state)
+        self.assertEqual("cannibalon_delivery_enable", self.machine.state_machines.cannibalon_delivery_handler.state)
+
+    def _do_cannibalon_delivery(self):
+        self.hit_switch_and_run("s_VUK", 5)
+        self.assertEqual("cannibalon_delivery_active", self.machine.state_machines.cannibalon_delivery_handler.state)
+        self.advance_time_and_run(17)
+        self.assertEqual("cannibalon_delivery_done", self.machine.state_machines.cannibalon_delivery_handler.state)

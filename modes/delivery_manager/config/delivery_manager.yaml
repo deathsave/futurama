@@ -13,12 +13,24 @@ state_machines:
             start:
                 label: Start state
                 events_when_started: empty_tank
+                show_when_active:
+                    show: right_ramp_shot_lit_show
+                    show_tokens: None
             quarter:
                 events_when_started: quarter_tank
+                show_when_active:
+                    show: right_ramp_shot_lit_show
+                    show_tokens: None
             half:
                 events_when_started: half_tank
+                show_when_active:
+                    show: right_ramp_shot_lit_show
+                    show_tokens: None
             3quarter:
                 events_when_started: 3quarter_tank
+                show_when_active:
+                    show: right_ramp_shot_lit_show
+                    show_tokens: None
             full:
                 events_when_started: full_tank
         transitions:
@@ -163,8 +175,8 @@ widgets:
 shots:
     collect_dark_matter_fuel:
         switch: s_right_ramp
-        enable_events: mode_delivery_manager_started, mode_moon_delivery_stopped
-        disable_events: mode_moon_delivery_started
+        enable_events: mode_delivery_manager_started, mode_moon_delivery_stopped, delivery_ended
+        disable_events: mode_moon_delivery_started, delivery_started
         hit_events: s_dt_nibbler_active
     moon_delivery_start_shot:
         switch: s_VUK
@@ -240,19 +252,19 @@ widget_player:
             action: remove
 #TO-DO: this doesn't work yet, but is what I'm after, and doesn't cause issues
 #so I'm leaving it for now...
-    slide_base_slide_active{current_player.fuel_level=="empty_gauge"}:
+    playfield_active{current_player.fuel_level=="empty_gauge"}:
         empty_gauge:
             slide: base_slide
-    slide_base_slide_active{current_player.fuel_level==quarter_gauge}:
+    playfield_active{current_player.fuel_level==quarter_gauge}:
         quarter_gauge:
             slide: base_slide
-    slide_base_slide_active{current_player.fuel_level==half_gauge}:
+    playfield_active{current_player.fuel_level==half_gauge}:
         half_gauge:
             slide: base_slide
-    slide_base_slide_active{current_player.fuel_level=="3quarter_gauge"}:
+    playfield_active{current_player.fuel_level=="3quarter_gauge"}:
         3quarter_gauge:
             slide: base_slide
-    slide_base_slide_active{current_player.fuel_level==full_gauge}:
+    playfield_active{current_player.fuel_level==full_gauge}:
         full_gauge:
             slide: base_slide
     empty_tank:
@@ -300,6 +312,7 @@ variable_player:
             action: set
             string: "full_gauge"
 
+
 sound_player:
     quarter_tank:
         ding:
@@ -334,6 +347,9 @@ event_player:
     mode_robot_homeworld_delivery_stopped: use_full_tank, delivery_ended
 
 show_player:
+    delivery_started:
+        right_ramp_shot_lit_show:
+            action: stop 
     cannibalon_delivery_start_shot_hit:
         cannibalon_delivery_show:
             loops: 0

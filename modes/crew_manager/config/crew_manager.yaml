@@ -418,7 +418,7 @@ event_player:
     bender_level4: light_suicide_booth
     fry_level5: light_suicide_booth
     professor_level2: start_pazuzu_ball_save
-    professor_level3: dark_matter_extra_ball
+    professor_level3: award_professor_extra_ball
     professor_level4: start_pazuzu_ball_save
     amy_level2: amy_PF_multiplier_start
     amy_level3: amy_PF_multiplier_start
