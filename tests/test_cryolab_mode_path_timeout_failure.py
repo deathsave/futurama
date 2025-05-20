@@ -27,6 +27,7 @@ class TestCryolabModePathTimeoutFailure(FullMachineTestCase):
     def _wait_and_exit_to_base_mode(self):
         self.advance_time_and_run(40)
         self.assertModeNotRunning("cryolab_delivery")
+        self.assertPlayerVarEqual("failed", "cryolab_delivery_status")
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
         self.assertModeRunning("slurm_caps")

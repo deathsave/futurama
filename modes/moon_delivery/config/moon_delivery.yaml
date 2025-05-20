@@ -5,6 +5,8 @@ mode:
     start_events: start_moon_delivery_mode
     stop_events: stop_moon_delivery_mode, ball_ending
     priority: 200
+    events_when_started: mom_zapp_off
+    events_when_stopped: mom_zapp_on
 
 state_machines:
     moon_delivery_state:
@@ -102,6 +104,7 @@ timers:
               event: deliver_crate_shot_hit
     whalers_on_the_moon_timer:
         start_value: 15
+#TO-DO: remove this max_value?
         max_value: 10
         end_value: 0
         direction: down
@@ -170,7 +173,16 @@ timers:
 shots:
     deliver_crate_shot:
         switch: s_r_orbit
+        hit_events: amy_deliver_crate_shot_hit, fry_deliver_crate_shot_hit
         enable_events: timer_crate_delivery_timer_started
+        disable_events: timer_crate_delivery_timer_complete, timer_crate_delivery_timer_stopped
+    amy_deliver_crate_shot:
+        switch: s_right_loop
+        enable_events: qualify_amy_deliver_crate_shot
+        disable_events: timer_crate_delivery_timer_complete, timer_crate_delivery_timer_stopped
+    fry_deliver_crate_shot:
+        switch: s_left_ramp
+        enable_events: qualify_fry_deliver_crate_shot
         disable_events: timer_crate_delivery_timer_complete, timer_crate_delivery_timer_stopped
     whalers_left_shot:
         switch: s_left_loop
@@ -376,37 +388,47 @@ variable_player:
             string: success
             action: set
         deliveries_completed: 1
-        score: 2000 * current_player.PF_multiplier
+        score: machine.large_reward_points * 2 * current_player.PF_multiplier
+    fry_deliver_crate_shot_hit:
+        fry_xp: 5
+        score: machine.medium_reward_points * current_player.fry_multiplier
     fail_moon_delivery:
         moon_delivery_status:
-            string: "fail"
+            string: "failed"
             action: set
     whalers_right_shot_hit:
-        score: 1000 * current_player.PF_multiplier
+        score: machine.medium_reward_points * 2 * current_player.PF_multiplier
     whalers_left_shot_hit:
-        score: 1000 * current_player.PF_multiplier
+        score: machine.medium_reward_points * 2 * current_player.PF_multiplier
     rover_escape_shot_hit:
-        score: 5000 * current_player.PF_multiplier
+        score: (current_player.leela_multiplier + current_player.fry_multiplier) * machine.medium_reward_points * current_player.PF_multiplier
     joyride_platter_shot_hit:
-        score: 50 * current_player.fry_multiplier * current_player.leela_multiplier * current_player.PF_multiplier
+        score: machine.small_reward_points * current_player.fry_multiplier * current_player.leela_multiplier * current_player.PF_multiplier
     bender_farmer_escape_shot_hit:
-        score: 2000 * current_player.bender_multiplier * current_player.PF_multiplier
+        score: machine.medium_reward_points * 2 * current_player.bender_multiplier * current_player.PF_multiplier
     fry_farmer_escape_shot_hit:
-        score: 2000 * current_player.fry_multiplier * current_player.PF_multiplier
+        score: machine.medium_reward_points * 2 * current_player.fry_multiplier * current_player.PF_multiplier
     leela_farmer_escape_shot_hit:
-        score: 2000 * current_player.leela_multiplier * current_player.PF_multiplier
+        score: machine.medium_reward_points * 2 * current_player.leela_multiplier * current_player.PF_multiplier
     all_farmer_escape:
-        score: 10000 * current_player.PF_multiplier
+        score: machine.medium_reward_points * 3 * current_player.crew_multiplier * current_player.PF_multiplier
     lunar_lander_r_shot_hit:
-        score: 1000 * current_player.PF_multiplier
+        score: machine.large_reward_points * 2 * current_player.PF_multiplier
     lunar_lander_l_shot_hit:
-        score: 1000 * current_player.PF_multiplier
+        score: machine.large_reward_points * 2 * current_player.PF_multiplier
     lunar_lander_found_shot_hit:
-        score: 20000 * current_player.PF_multiplier
+        score: machine.large_reward_points * current_player.leela_multiplier * current_player.fry_multiplier * current_player.PF_multiplier
     moon_slingshot_shot_hit:
         score: 100 * current_player.professor_multiplier * current_player.PF_multiplier
+    timer_crate_delivery_timer_complete:
+        moon_delivery_status:
+            string: "failed"
+            action: set
 
 event_player:
+#qualify these additional shot options if crew level checks pass
+    timer_crate_delivery_timer_started{current_player.fry_level > 1}: qualify_fry_deliver_crate_shot
+    timer_crate_delivery_timer_started{current_player.amy_level > 1}: qualify_amy_deliver_crate_shot
     timer_crate_delivery_timer_complete: end_moon_delivery
     timer_whalers_on_the_moon_timer_complete: end_moon_delivery
     timer_lunar_rover_timer_complete: end_moon_delivery
@@ -600,7 +622,7 @@ sound_player:
     s_dt_hermes_active: no_sound|block
     s_dt_professor_active: no_sound|block
     s_dt_zoidberg_active: no_sound|block
-    s_dt_nibbler_active: no_sound|block   
+    s_dt_nibbler_active: no_sound|block
     lunar_lander_found_shot_lit:
         old_moon_song:
             action: stop
@@ -623,10 +645,20 @@ show_player:
     timer_crate_delivery_timer_started:
         deliver_crate_shot_lit_show:
             loops: -1
+    timer_crate_delivery_timer_started{current_player.fry_level > 1}:
+        fry_deliver_crate_shot_show:
+            loops: -1
+    timer_crate_delivery_timer_started{current_player.amy_level > 1}:
+        amy_deliver_crate_shot_show:
+            loops: -1
     timer_crate_delivery_timer_stopped:
         deliver_crate_shot_lit_show: stop
+        amy_deliver_crate_shot_show: stop
+        fry_deliver_crate_shot_show: stop
     timer_crate_delivery_timer_complete:
         deliver_crate_shot_lit_show: stop
+        amy_deliver_crate_shot_show: stop
+        fry_deliver_crate_shot_show: stop
     deliver_crate_shot_hit:
         crate_delivered_show:
             loops: 0

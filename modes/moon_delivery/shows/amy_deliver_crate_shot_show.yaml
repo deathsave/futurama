@@ -1,0 +1,9 @@
+#show_version=6
+##! show: amy_deliver_crate_shot_show
+
+    - duration: 500ms
+      lights:
+          l_right_loop_insert: "00a334"
+    - duration: 500ms
+      lights:
+          (which): off
