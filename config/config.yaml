@@ -525,6 +525,9 @@ switches:
     s_coin_door:
         number: A2-B1-5
         tags: service_door_open, power_off
+    s_tilt:
+        number: A2-B0-2
+        tags: tilt 
 
 
 

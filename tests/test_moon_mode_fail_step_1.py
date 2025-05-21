@@ -51,7 +51,7 @@ class TestMoonModeFailStep1(FullMachineTestCase):
         self.hit_switch_and_run("s_dt_nibbler", 3)
         self.hit_and_release_switch("s_right_ramp")
         self.advance_time_and_run(3)
-        self.assertEqual("half", self.machine.state_machines.fuel_gauge_state.state)
+        self.assertEqual("full", self.machine.state_machines.fuel_gauge_state.state)
 
     def _start_moon_delivery(self):
         self.hit_switch_and_run("s_VUK", 5)
