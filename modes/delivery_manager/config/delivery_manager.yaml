@@ -127,7 +127,9 @@ state_machines:
             cannibalon_delivery_next:
                 events_when_started: cannibalon_delivery_next
             cannibalon_delivery_enable:
-                events_when_started: cannibalon_delivery_lit
+                show_when_active:
+                    show: cannibalon_delivery_lit_show
+                    show_tokens: None
             cannibalon_delivery_active:
                 events_when_started: cannibalon_delivery_active
             cannibalon_delivery_done:
@@ -153,7 +155,9 @@ state_machines:
             robot_homeworld_delivery_next:
                 events_when_started: robot_homeworld_delivery_next
             robot_homeworld_delivery_enable:
-                events_when_started: robot_homeworld_delivery_lit
+                show_when_active:
+                    show: robot_homeworld_delivery_lit_show
+                    show_tokens: None
             robot_homeworld_delivery_active:
                 events_when_started: robot_homeworld_delivery_active
             robot_homeworld_delivery_done:
@@ -344,8 +348,6 @@ sound_player:
 
 event_player:
     moon_delivery_start_shot_hit: start_moon_delivery_mode
-    start_moon_delivery_mode: delivery_started
-    mode_moon_delivery_stopped: use_full_tank, delivery_ended
     cannibalon_delivery_start_shot_hit: delivery_started
     cannibalon_delivery_show_ended: use_full_tank, delivery_ended
     robot_homeworld_delivery_start_shot_hit: start_robot_homeworld_delivery

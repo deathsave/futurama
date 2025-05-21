@@ -1,0 +1,9 @@
+#show_version=6
+##! show: cannibalon_delivery_lit_show
+
+    - duration: 1
+      events: wait_for_cannibalon_delivery_lit
+    - duration: 1
+      events: cannibalon_delivery_lit
+    - duration: -1
+      events: cannibalon_delivery_has_been_lit

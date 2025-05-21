@@ -5,8 +5,10 @@ mode:
     start_events: start_moon_delivery_mode
     stop_events: stop_moon_delivery_mode, ball_ending
     priority: 200
-    events_when_started: mom_zapp_off
-    events_when_stopped: mom_zapp_on
+    events_when_started: mom_zapp_off, delivery_started
+    events_when_stopped: mom_zapp_on, delivery_ended, use_full_tank
+#use_full_tank has to be AFTER mode ends otherwise the right_ramp dark matter
+#indicator show will come back on
 
 state_machines:
     moon_delivery_state:
@@ -440,6 +442,7 @@ event_player:
     end_moon_delivery: stop_moon_delivery_mode
     moon_delivery_success_show_ended: stop_moon_delivery_mode
     lunar_lander_found_shot_hit: lander_found
+    ball_will_end: use_full_tank
 
 widgets:
     moon_step1:
