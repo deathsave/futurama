@@ -1,0 +1,9 @@
+#show_version=6
+##! show: robot_homeworld_delivery_lit_show
+
+    - duration: 1
+      events: wait_for_robot_homeworld_delivery_lit
+    - duration: 1
+      events: robot_homeworld_delivery_lit
+    - duration: -1
+      events: robot_homeworld_delivery_has_been_lit
