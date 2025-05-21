@@ -99,7 +99,9 @@ state_machines:
             start:
                 label: Start state
             moon_delivery_enable:
-                events_when_started: moon_delivery_lit
+                show_when_active:
+                    show: moon_delivery_lit_show
+                    show_tokens: None
             moon_delivery_active:
                 events_when_started: moon_delivery_active
             moon_delivery_done:
@@ -116,7 +118,7 @@ state_machines:
               events: mode_moon_delivery_stopped
             - source: moon_delivery_active
               target: moon_delivery_done
-              events: ball_ending 
+              events: ball_ending
     cannibalon_delivery_handler:
         persist_state: true
         states:
