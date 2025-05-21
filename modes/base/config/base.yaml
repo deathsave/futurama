@@ -211,6 +211,9 @@ light_player:
         indicator: ffffff
         ship: ffffff
         loops: ffffff
+    mode_slurm_factory_stopped:
+        gi: "000000"
+        apron: "000000"
     remove_hypnotoad_slide:
         l_left_spotlight: ffffff
     player_shot_zoidberg_ball_save_shot_enabled{value==True}:
