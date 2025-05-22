@@ -94,7 +94,8 @@ shots:
 #all levels
     left_ramp_slurp:
         switch: s_left_ramp
-        enable_events: pure_imagination
+        enable_events: s_left_ramp_active, slurm_factory_level2, slurm_factory_level3
+        disable_events: level1_jackpots_complete, level2_jackpots_complete
 #level1
     level1_right_ramp_jackpot:
         switch: s_right_ramp
@@ -104,10 +105,14 @@ shots:
         switch: s_left_loop
         enable_events: slurm_factory_level1
         disable_events: level1_left_loop_jackpot_hit
+        delay_switch:
+            s_right_loop: 2s
     level1_right_loop_jackpot:
         switch: s_right_loop
         enable_events: slurm_factory_level1
         disable_events: level1_right_loop_jackpot_hit
+        delay_switch:
+            s_left_loop: 2s
     level1_right_orbit_jackpot:
         switch: s_r_orbit
         enable_events: slurm_factory_level1
