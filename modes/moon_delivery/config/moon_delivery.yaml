@@ -85,7 +85,7 @@ light_player:
         loops: ffffff
         l_delivery_shot_insert: ffffff
         l_right_ramp_insert: ffffff
-        l_right_corner1: ffffff
+
 ball_holds:
     final_scene_hold:
         balls_to_hold: 1
@@ -206,6 +206,13 @@ shots:
         switch: s_pe_platter
         enable_events: timer_joyride_timer_started
         disable_events: timer_joyride_timer_complete
+    qualified_leela_farmer_escape_shot:
+        switches: s_right_loop, s_left_loop
+        enable_events: qualify_leela_farmer_escape_shot
+        disable_events: timer_escape_farmer_timer_complete, timer_escape_farmer_timer_stopped
+        delay_switch:
+            s_right_loop: 2s
+            s_left_loop: 2s
     bender_farmer_escape_shot:
         switch: s_t_bender
         enable_events: timer_escape_farmer_timer_started
@@ -245,9 +252,9 @@ sequences:
     all_farmer_escape_sequence:
         enable_events: moon_delivery_step5
         events:
-            - fry_farmer_escape_shot_hit, leela_farmer_escape_shot_hit, bender_farmer_escape_shot_hit
-            - fry_farmer_escape_shot_hit, leela_farmer_escape_shot_hit, bender_farmer_escape_shot_hit
-            - fry_farmer_escape_shot_hit, leela_farmer_escape_shot_hit, bender_farmer_escape_shot_hit
+            - fry_farmer_escape_shot_hit, leela_farmer_escape_shot_hit, bender_farmer_escape_shot_hit, qualified_leela_farmer_escape_shot_hit
+            - fry_farmer_escape_shot_hit, leela_farmer_escape_shot_hit, bender_farmer_escape_shot_hit, qualified_leela_farmer_escape_shot_hit
+            - fry_farmer_escape_shot_hit, leela_farmer_escape_shot_hit, bender_farmer_escape_shot_hit, qualified_leela_farmer_escape_shot_hit
         events_when_complete: all_farmer_escape
 
     lunar_lander_search_sequence:
@@ -412,6 +419,9 @@ variable_player:
         score: machine.medium_reward_points * 2 * current_player.fry_multiplier * current_player.PF_multiplier
     leela_farmer_escape_shot_hit:
         score: machine.medium_reward_points * 2 * current_player.leela_multiplier * current_player.PF_multiplier
+    qualified_leela_farmer_escape_shot_hit:
+        score: machine.medium_reward_points * 3 * current_player.leela_multiplier * current_player.PF_multiplier
+        leela_xp: 3
     all_farmer_escape:
         score: machine.medium_reward_points * 3 * current_player.crew_multiplier * current_player.PF_multiplier
     lunar_lander_r_shot_hit:
@@ -434,6 +444,7 @@ event_player:
     timer_crate_delivery_timer_complete: end_moon_delivery
     timer_whalers_on_the_moon_timer_complete: end_moon_delivery
     timer_lunar_rover_timer_complete: end_moon_delivery
+    timer_escape_farmer_timer_started{current_player.leela_level > 1}: qualify_leela_farmer_escape_shot
     timer_escape_farmer_timer_complete: end_moon_delivery
     timer_lunar_lander_timer_complete: end_moon_delivery
     timer_lunar_lander_found_timer_complete: end_moon_delivery
@@ -693,8 +704,12 @@ show_player:
         PEHQ_pulse_show:
             loops: -1
             priority: 500
+    qualify_leela_farmer_escape_shot:
+        qualified_leela_farmer_escape_shot_show:
+            loops: -1
     timer_escape_farmer_timer_complete:
         PEHQ_pulse_show: stop
+        qualified_leela_farmer_escape_shot_show: stop
     timer_escape_farmer_timer_stopped:
         PEHQ_pulse_show: stop
     all_farmer_escape:
