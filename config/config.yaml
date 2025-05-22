@@ -527,7 +527,7 @@ switches:
         tags: service_door_open, power_off
     s_tilt:
         number: A2-B0-2
-        tags: tilt 
+        tags: tilt
 
 
 
@@ -721,6 +721,10 @@ show_player:
         dt_reset_all_show:
             loops: 0
             priority: 500
+    ball_started{is_extra_ball==True}:
+        extra_ball_start_professor_show:
+            loops: 0
+            priority: 200
 
 
 
@@ -1548,6 +1552,11 @@ slides:
         widgets:
             - type: image
               image: service_power
+    extra_ball_start_professor_slide:
+        widgets:
+            - type: video
+              video: extra_ball_professor_clip
+              z: 1
 
 widget_player:
     player_added{num==2}:
@@ -1579,6 +1588,17 @@ widget_player:
             slide: reusable_delivery_slide
 
 widgets:
+    extra_ball_text_background:
+        - type: image
+          image: extra_ball_text_background
+          z: 3
+    extra_ball_text:
+        - type: text
+          text: PLAYER (number) SHOOT AGAIN
+          color: black
+          font_size: 150
+          y: 300
+          z: 5
     base_player2_scoring:
         - type: text
           text: (player2|score)
