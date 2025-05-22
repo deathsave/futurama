@@ -89,7 +89,7 @@ slides:
             - type: text
               color: white
               font_size: 64
-              text: SW Version .65
+              text: SW Version .66
               y: center-400
               z: 5
     arachno_commercial_slide:
