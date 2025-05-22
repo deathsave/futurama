@@ -171,7 +171,7 @@ ball_holds:
         balls_to_hold: 1
         hold_devices: bd_VUK
         enable_events: mode_cryolab_delivery_started
-        disable_events: mode_cryolab_delivery_stopping, timer_nibbler_skillshot_timer_complete
+        disable_events: mode_cryolab_delivery_stopping, timer_nibbler_skillshot_timer_complete, flipper_cradle
         release_one_events: delivery_ended, flipper_cradle, mode_delivery_manager_started
     fall_in_crypod_ball_hold:
         balls_to_hold: 1
