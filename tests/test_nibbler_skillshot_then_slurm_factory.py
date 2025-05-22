@@ -48,6 +48,7 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
         self.assertEqual(self.mc.targets['display2'].current_slide_name,
                          'PFD_base_slide')
         self.assertNotEqual("ignore", self.machine.state_machines.mom_zapp_toggle_state.state)
+        self.assertEqual("half", self.machine.state_machines.fuel_gauge_state.state)
 
     def _collect_30_slurm_caps(self):
         self.assertPlayerVarEqual(0, "caps_collected")
@@ -111,10 +112,48 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
         self.assertTrue(self.machine.ball_holds.slurm_factory_start_hold.is_full)
 
     def _slurm_factory_level1(self):
-        self.advance_time_and_run(2)
+        self.advance_time_and_run(22)
+        self.assertEqual(0, self.machine.ball_devices.bd_VUK.balls)
+        self.hit_and_release_switch("s_left_ramp")
+        self.advance_time_and_run(1)
+        self.assertEqual("level1_jackpots", self.machine.state_machines.slurm_jackpots.state)
+        self.assertTrue(self.machine.shots['level1_right_ramp_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['level1_right_loop_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['level1_right_orbit_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['level1_left_loop_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['left_ramp_slurp'].enabled)
+        self.hit_and_release_switch("s_right_loop")
+        self.advance_time_and_run(1)
+        self.hit_and_release_switch("s_left_loop")
+        self.advance_time_and_run(1)
+        self.assertTrue(self.machine.shots['level1_left_loop_jackpot'].enabled)
+        self.assertEqual(False, self.machine.shots['level1_right_loop_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['level1_right_orbit_jackpot'].enabled)
+        self.hit_and_release_switch("s_r_orbit")
+        self.advance_time_and_run(1)
+        self.assertEqual(False, self.machine.shots['level1_right_orbit_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['level1_left_loop_jackpot'].enabled)
+        self.hit_and_release_switch("s_left_loop")
+        self.advance_time_and_run(1)
+        self.assertEqual(False, self.machine.shots['level1_left_loop_jackpot'].enabled)
+        self.assertEqual(False, self.machine.shots['next_level_shot'].enabled)
+        self.assertTrue(self.machine.shots['level1_right_ramp_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['left_ramp_slurp'].enabled)
+        self.hit_and_release_switch("s_right_ramp")
+        self.advance_time_and_run(1)
+        self.assertEqual(False, self.machine.shots['level1_right_ramp_jackpot'].enabled)
+        self.assertEqual(False, self.machine.shots['left_ramp_slurp'].enabled)
+        self.assertTrue(self.machine.shots['next_level_shot'].enabled)
 
     def _slurm_factory_level2(self):
-        self.advance_time_and_run(2)
+        self.hit_switch_and_run("s_VUK", 3)
+        self.assertEqual("level2_jackpots", self.machine.state_machines.slurm_jackpots.state)
+        self.assertTrue(self.machine.shots['level2_right_ramp_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['level2_right_loop_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['level2_right_orbit_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['level2_left_loop_jackpot'].enabled)
+        self.assertTrue(self.machine.shots['left_ramp_slurp'].enabled)
+        self.assertEqual(False, self.machine.shots['next_level_shot'].enabled)
 
     def _slurm_factory_level3(self):
         self.advance_time_and_run(2)
