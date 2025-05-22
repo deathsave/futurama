@@ -1,0 +1,17 @@
+#show_version=6
+##! show: extra_ball_professor_show
+
+    - duration: 5s
+      slides:
+          extra_ball_start_professor_slide:
+              target: display1
+              expire: 10s
+    - duration: 500ms
+      widgets:
+          extra_ball_text_background:
+              slide: extra_ball_start_professor_slide
+    - duration: 4500ms
+      widgets:
+          extra_ball_text:
+              slide: extra_ball_start_professor_slide
+      sounds: good_news_everyone
