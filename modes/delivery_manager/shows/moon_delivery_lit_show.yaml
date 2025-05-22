@@ -1,0 +1,9 @@
+#show_version=6
+##! show: moon_delivery_lit_show
+
+    - duration: 1
+      events: wait_for_moon_delivery_lit
+    - duration: 1
+      events: moon_delivery_lit
+    - duration: -1
+      events: moon_delivery_has_been_lit
