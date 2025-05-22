@@ -1,0 +1,11 @@
+#show_version=6
+##! show: qualified_leela_farmer_escape_shot_show
+
+    - duration: 500ms
+      lights:
+          l_right_loop_insert: "b4ffb4"
+          l_left_loop_insert: "b4ffb4"
+    - duration: 500ms
+      lights:
+          l_right_loop_insert: off
+          l_left_loop_insert: off

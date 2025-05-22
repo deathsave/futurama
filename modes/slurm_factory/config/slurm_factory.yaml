@@ -16,7 +16,7 @@ multiballs:
       enable_events: mode_slurm_factory_started
       disable_events: multiball_slurm_factory_tour_MB_ended
       start_events: pure_imagination
-      stop_events: timer_slurm_factory_level1_timer_complete
+      stop_events: timer_slurm_factory_level1_timer_complete, timer_slurm_factory_level2_timer_complete, timer_slurm_factory_level3_timer_complete
 
 state_machines:
     slurm_jackpots:
