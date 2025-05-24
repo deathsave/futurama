@@ -424,6 +424,7 @@ event_player:
     amy_level2: amy_PF_multiplier_start
     amy_level3: amy_PF_multiplier_start
     amy_level4: amy_PF_multiplier_start
+    amy_level5: amy_PF_multiplier_start
     nibbler_level3: nibbler_poop
     timer_nibbler_dt_reset_timer_complete: reset_nibbler_target
     timer_zoidberg_dt_reset_timer_complete: reset_zoidberg_target
@@ -450,6 +451,15 @@ show_player:
                 award2: fry_multiplier_plus
                 award3: blank_award
                 award4: award_suicide_booth
+    fry_level4:
+        fry_level_up_show:
+            loops: 0
+            show_tokens:
+                level: fry_level_up4
+                points: 5000_points
+                award2: fry_multiplier_plus
+                award3: blank_award
+                award4: blank_award2
     leela_level2:
         leela_level_up_show:
             loops: 0
@@ -631,6 +641,11 @@ widgets:
     fry_level_up3:
         - type: text
           text: Fry Level 3!
+          style: level_up_header
+          z: 2
+    fry_level_up4:
+        - type: text
+          text: Fry Level 4!
           style: level_up_header
           z: 2
     leela_level_up2:
