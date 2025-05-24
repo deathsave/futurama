@@ -73,6 +73,7 @@ ball_saves:
 extra_balls:
     professor_extra_ball:
         award_events: award_professor_extra_ball
+        max_per_game: 2
 
 
 shows:
