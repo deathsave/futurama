@@ -1,0 +1,13 @@
+#show_version=6
+##! show: crew_level_instructions_show
+
+
+- time: 0
+  slides:
+      crew_level_instructions_slide:
+          priority: 500
+          target: display1
+- time: 61
+  slides:
+      crew_level_instructions_slide:
+          action: remove
