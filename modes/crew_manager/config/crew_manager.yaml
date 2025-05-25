@@ -426,6 +426,7 @@ event_player:
     amy_level4: amy_PF_multiplier_start
     amy_level5: amy_PF_multiplier_start
     nibbler_level3: nibbler_poop
+    nibbler_level4: nibbler_poop
     timer_nibbler_dt_reset_timer_complete: reset_nibbler_target
     timer_zoidberg_dt_reset_timer_complete: reset_zoidberg_target
     timer_professor_dt_reset_timer_complete: reset_professor_target
@@ -559,6 +560,24 @@ show_player:
                 award2: nibbler_multiplier_plus
                 award3: ball_of_dark_matter
                 award4: blank_award
+    nibbler_level4:
+        nibbler_level_up_show:
+            loops: 0
+            show_tokens:
+                level: nibbler_level_up4
+                points: 5000_points
+                award2: nibbler_multiplier_plus
+                award3: ball_of_dark_matter
+                award4: blank_award
+    nibbler_level5:
+        nibbler_level_up_show:
+            loops: 0
+            show_tokens:
+                level: nibbler_level_up5
+                points: 20000_points
+                award2: nibbler_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: blank_award
     amy_level2:
         amy_level_up_show:
             loops: 0
@@ -577,6 +596,25 @@ show_player:
                 award2: amy_multiplier_plus
                 award3: PF_multiplier_plus_slot3
                 award4: blank_award
+    amy_level4:
+        amy_level_up_show:
+            loops: 0
+            show_tokens:
+                level: amy_level_up4
+                points: 5000_points
+                award2: amy_multiplier_plus
+                award3: PF_multiplier_plus_slot3
+                award4: blank_award
+    amy_level5:
+        amy_level_up_show:
+            loops: 0
+            show_tokens:
+                level: amy_level_up5
+                points: 20000_points
+                award2: amy_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: PF_multiplier_plus_slot4
+
     hermes_level2:
         hermes_level_up_show:
             loops: 0
@@ -595,6 +633,24 @@ show_player:
                 award2: hermes_multiplier_plus
                 award3: bonus_multiplier_plus2
                 award4: blank_award
+    hermes_level4:
+        hermes_level_up_show:
+            loops: 0
+            show_tokens:
+                level: hermes_level_up4
+                points: 5000_points
+                award2: hermes_multiplier_plus
+                award3: bonus_multiplier_plus3
+                award4: blank_award
+    hermes_level5:
+        hermes_level_up_show:
+            loops: 0
+            show_tokens:
+                level: hermes_level_up5
+                points: 20000_points
+                award2: hermes_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: bonus_multiplier_plus4_slot4
     zoidberg_level2:
         zoidberg_level_up_show:
             loops: 0
@@ -613,6 +669,24 @@ show_player:
                 award2: zoidberg_multiplier_plus
                 award3: right_outlane_save_award
                 award4: blank_award
+    zoidberg_level4:
+        zoidberg_level_up_show:
+            loops: 0
+            show_tokens:
+                level: zoidberg_level_up4
+                points: 5000_points
+                award2: zoidberg_multiplier_plus
+                award3: right_outlane_save_award
+                award4: blank_award
+    zoidberg_level5:
+        zoidberg_level_up_show:
+            loops: 0
+            show_tokens:
+                level: zoidberg_level_up5
+                points: 20000_points
+                award2: zoidberg_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: right_outlane_save_award_slot4
     professor_level2:
         professor_level_up_show:
             loops: 0
@@ -621,7 +695,7 @@ show_player:
                 points: 500_points
                 award2: professor_multiplier_plus
                 award3: crew_multiplier_plus
-                award4: 30_second_ball_save
+                award4: 50_second_ball_save_slot4
     professor_level3:
         professor_level_up_show:
             loops: 0
@@ -629,8 +703,26 @@ show_player:
                 level: professor_level_up3
                 points: 1000_points
                 award2: professor_multiplier_plus
-                award3: 60_second_ball_save
+                award3: award_extra_ball_professor
                 award4: blank_award
+    professor_level4:
+        professor_level_up_show:
+            loops: 0
+            show_tokens:
+                level: professor_level_up4
+                points: 5000_points
+                award2: professor_multiplier_plus
+                award3: 50_second_ball_save
+                award4: blank_award
+    professor_level5:
+        professor_level_up_show:
+            loops: 0
+            show_tokens:
+                level: professor_level_up5
+                points: 20000_points
+                award2: professor_multiplier_plus
+                award3: crew_multiplier_plus
+                award4: award_extra_ball_professor_slot4
 
 slides:
     amy_level_up_slide:
@@ -748,6 +840,16 @@ widgets:
           text: Nibbler Level 3!
           style: level_up_header
           z: 2
+    nibbler_level_up4:
+        - type: text
+          text: Nibbler Level 4!
+          style: level_up_header
+          z: 2
+    nibbler_level_up5:
+        - type: text
+          text: Nibbler Level 5!
+          style: level_up_header
+          z: 2
     amy_level_up2:
         - type: text
           text: Amy Level 2!
@@ -756,6 +858,16 @@ widgets:
     amy_level_up3:
         - type: text
           text: Amy Level 3!
+          style: level_up_header
+          z: 2
+    amy_level_up4:
+        - type: text
+          text: Amy Level 4!
+          style: level_up_header
+          z: 2
+    amy_level_up5:
+        - type: text
+          text: Amy Level 5!
           style: level_up_header
           z: 2
     hermes_level_up2:
@@ -768,6 +880,16 @@ widgets:
           text: Hermes Level 3!
           style: level_up_header
           z: 2
+    hermes_level_up4:
+        - type: text
+          text: Hermes Level 4!
+          style: level_up_header
+          z: 2
+    hermes_level_up5:
+        - type: text
+          text: Hermes Level 5!
+          style: level_up_header
+          z: 2
     zoidberg_level_up2:
         - type: text
           text: Zoidberg Level 2!
@@ -778,6 +900,16 @@ widgets:
           text: Zoidberg Level 3!
           style: level_up_header
           z: 2
+    zoidberg_level_up4:
+        - type: text
+          text: Zoidberg Level 4!
+          style: level_up_header
+          z: 2
+    zoidberg_level_up5:
+        - type: text
+          text: Zoidberg Level 5!
+          style: level_up_header
+          z: 2
     professor_level_up2:
         - type: text
           text: Professor Level 2!
@@ -786,6 +918,16 @@ widgets:
     professor_level_up3:
         - type: text
           text: Professor Level 3!
+          style: level_up_header
+          z: 2
+    professor_level_up4:
+        - type: text
+          text: Professor Level 4!
+          style: level_up_header
+          z: 2
+    professor_level_up5:
+        - type: text
+          text: Professor Level 5!
           style: level_up_header
           z: 2
 #points widgets:
@@ -870,9 +1012,19 @@ widgets:
           text: Bonus Multiplier +2
           z: 2
           style: level_up_award3
+    bonus_multiplier_plus3:
+        - type: text
+          text: Bonus Multiplier +3
+          z: 2
+          style: level_up_award3
     bonus_multiplier_plus_slot4:
         - type: text
           text: Bonus Multiplier +1
+          z: 2
+          style: level_up_award4
+    bonus_multiplier_plus4_slot4:
+        - type: text
+          text: Bonus Multiplier +4
           z: 2
           style: level_up_award4
     loop_multiplier_plus_slot3:
@@ -915,17 +1067,26 @@ widgets:
           text: Right Outlane Save is Lit
           z: 2
           style: level_up_award4
-    30_second_ball_save:
+    50_second_ball_save:
         - type: text
-          text: 30 Second Ball Save
-          z: 2
-          style: level_up_award4
-    60_second_ball_save:
-        - type: text
-          text: 60 Second Ball Save
+          text: 50 Second Ball Save
           z: 2
           style: level_up_award3
-
+    50_second_ball_save_slot4:
+        - type: text
+          text: 50 Second Ball Save
+          z: 2
+          style: level_up_award4
+    award_extra_ball_professor:
+        - type: text
+          text: Extra Ball!
+          z: 2
+          style: level_up_award3
+    award_extra_ball_professor_slot4:
+        - type: text
+          text: Extra Ball!
+          z: 2
+          style: level_up_award4
 
 variable_player:
     leela_level2:
