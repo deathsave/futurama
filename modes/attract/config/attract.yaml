@@ -73,6 +73,7 @@ show_pools:
             - molten_boron_show
             - i_dated_a_robot_show
             - pants_full_of_shame_show
+            - crew_level_instructions_show|3
 slides:
     dspc_logo_slide:
         widgets:
@@ -132,3 +133,7 @@ slides:
         widgets:
             type: video
             video: pants_full_of_shame_clip
+    crew_level_instructions_slide:
+        widgets:
+            type: video
+            video: crew_level_instructions_clip
