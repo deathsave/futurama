@@ -73,6 +73,7 @@ ball_saves:
 extra_balls:
     professor_extra_ball:
         award_events: award_professor_extra_ball
+        max_per_game: 2
 
 
 shows:
@@ -759,6 +760,7 @@ shots:
         disable_events: delivery_started
     zoidberg_ball_save_shot:
         switches: s_r_outlane
+        persist_enable: true
         enable_events: zoidberg_level2, zoidberg_level3, zoidberg_level4, zoidberg_level5
         disable_events: ball_save_zoidberg_ball_save_saving_ball
     base_right_inlane_shot:
