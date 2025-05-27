@@ -40,13 +40,16 @@ show_player:
                 l13: ballguide
                 l14: apron
                 l15: topper
-
         attract_loop_show: stop
         attract_shows: stop
     s_right_flipper_active:
         multi_labelled_light_test_show: advance
     s_left_flipper_active:
         multi_labelled_light_test_show: step_back
+    test_light_show:
+        backbox_sweep_light_show:
+            loops: 2
+            action: play
 
 light_player:
     mode_attract_started:
