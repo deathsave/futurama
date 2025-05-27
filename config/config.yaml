@@ -396,7 +396,59 @@ lights:
         tags: topper
         platform_settings:
             polarity: true
-
+    l_bender_mouth3:
+        number: 4-48-49-50
+        tags: topper
+        platform_settings:
+            polarity: true
+    l_bender_mouth4:
+        number: 4-51-52-53
+        tags: topper
+        platform_settings:
+            polarity: true
+    l_backbox_top1:
+        number: 4-36-37-38
+        tags: backbox
+    l_backbox_top2:
+        number: 4-39-40-41
+        tags: backbox
+    l_backbox_top3:
+        number: 4-42-43-44
+        tags: backbox
+    l_backbox_top4:
+        number: 4-45-46-47
+        tags: backbox
+    l_backbox_top5:
+        number: 4-24-25-26
+        tags: backbox
+    l_backbox_top6:
+        number: 4-27-28-29
+        tags: backbox
+    l_backbox_top7:
+        number: 4-30-31-32
+        tags: backbox
+    l_backbox_bottom1:
+        number: 4-0-1-2
+        tags: backbox
+    l_backbox_bottom2:
+        number: 4-3-4-5
+        tags: backbox
+    l_backbox_bottom3:
+        number: 4-6-7-8
+        tags: backbox
+    l_backbox_bottom4:
+        number: 4-9-10-11
+        tags: backbox
+    l_backbox_bottom5:
+        number: 4-12-13-14
+        tags: backbox
+    l_backbox_bottom6:
+        number: 4-15-16-17
+        tags: backbox
+    l_backbox_bottom7:
+        number: 4-18-19-20
+        tags: backbox
+        
 switches:
     s_left_flipper:
         number: A2-B0-6
