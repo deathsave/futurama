@@ -171,14 +171,14 @@ ball_holds:
         balls_to_hold: 1
         hold_devices: bd_VUK
         enable_events: mode_cryolab_delivery_started
-        disable_events: mode_cryolab_delivery_stopping, timer_nibbler_skillshot_timer_complete, flipper_cradle
-        release_one_events: delivery_ended, flipper_cradle, mode_delivery_manager_started
+        disable_events: mode_cryolab_delivery_stopping, timer_nibbler_skillshot_timer_complete, skip_the_ending_fake_shot_hit
+        release_one_events: delivery_ended, skip_the_ending_fake_shot_hit, mode_delivery_manager_started
     fall_in_crypod_ball_hold:
         balls_to_hold: 1
         hold_devices: bd_VUK
         enable_events: deliver_pizza_shot_hit
-        disable_events: mode_cryolab_delivery_stopping, flipper_cradle, wake_up_in_the_future
-        release_one_events: wake_up_in_the_future, flipper_cradle, mode_delivery_manager_started
+        disable_events: mode_cryolab_delivery_stopping, skip_the_ending_fake_shot_hit, wake_up_in_the_future
+        release_one_events: wake_up_in_the_future, skip_the_ending_fake_shot_hit, mode_delivery_manager_started
 
 ball_saves:
     cryolab_cut_scenes_ball_save:
@@ -214,6 +214,11 @@ shots:
         switches: s_left_sling, s_right_sling
         enable_events: pizza_going_out
         disable_events: nibbler_skillshot_hit
+    skip_the_ending_fake_shot:
+        hit_events: flipper_cradle
+        enable_events: fry_frozen, nibbler_skillshot_hit
+        disable_events: skip_the_ending_fake_shot_hit
+
 
 timers:
     nibbler_skillshot_timer:
@@ -275,6 +280,7 @@ event_player:
     timer_deliver_pizza_shot_timer_complete: cryolab_delivery_failed
     timer_fall_off_chair_shot_timer_complete: wake_up_in_the_future
     cryolab_delivery_failed: wake_up_in_the_future
+    skip_the_ending_fake_shot_hit: stop_cryolab_delivery_mode
 
 sound_player:
     s_left_loop_active: no_sound|block
@@ -327,6 +333,13 @@ show_player:
         nibbler_skillshot_show:
             action: play
             loops: 0
+    skip_the_ending_fake_shot_hit:
+        nibbler_skillshot_show:
+            action: stop
+        to_the_future_show:
+            action: stop
+        wake_up_in_the_future_show:
+            action: stop
     timer_ride_the_bike_shot_timer_started:
         panuccis_light_show:
             action: play
@@ -373,11 +386,6 @@ show_player:
         custom_flash_show:
             action: stop
         pizza_delivered_show:
-            action: stop
-    flipper_cradle:
-        wake_up_in_the_future_show:
-            action: stop
-        to_the_future_show:
             action: stop
     ball_ending:
         panuccis_show:

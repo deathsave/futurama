@@ -1,0 +1,91 @@
+#show_version=6
+##! show: backbox_sweep_light_show
+
+
+    - duration: 500ms
+      lights:
+          backbox: ffffff
+    - duration: 250ms
+      lights:
+          l_backbox_top1: "000000"
+          l_backbox_bottom1: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top1: ffffff
+          l_backbox_bottom1: ffffff
+          l_backbox_top2: "000000"
+          l_backbox_bottom2: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top2: ffffff
+          l_backbox_bottom2: ffffff
+          l_backbox_top3: "000000"
+          l_backbox_bottom3: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top3: ffffff
+          l_backbox_bottom3: ffffff
+          l_backbox_top4: "000000"
+          l_backbox_bottom4: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top4: ffffff
+          l_backbox_bottom4: ffffff
+          l_backbox_top5: "000000"
+          l_backbox_bottom5: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top5: ffffff
+          l_backbox_bottom5: ffffff
+          l_backbox_top6: "000000"
+          l_backbox_bottom6: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top6: ffffff
+          l_backbox_bottom6: ffffff
+          l_backbox_top7: "000000"
+          l_backbox_bottom7: "000000"
+    - duration: 500ms
+      lights:
+          l_backbox_top7: ffffff
+          l_backbox_bottom7: ffffff
+    - duration: 250ms
+      lights:
+          l_backbox_top7: "000000"
+          l_backbox_bottom7: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top7: ffffff
+          l_backbox_bottom7: ffffff
+          l_backbox_top6: "000000"
+          l_backbox_bottom6: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top6: ffffff
+          l_backbox_bottom6: ffffff
+          l_backbox_top5: "000000"
+          l_backbox_bottom5: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top5: ffffff
+          l_backbox_bottom5: ffffff
+          l_backbox_top4: "000000"
+          l_backbox_bottom4: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top4: ffffff
+          l_backbox_bottom4: ffffff
+          l_backbox_top3: "000000"
+          l_backbox_bottom3: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top3: ffffff
+          l_backbox_bottom3: ffffff
+          l_backbox_top2: "000000"
+          l_backbox_bottom2: "000000"
+    - duration: 250ms
+      lights:
+          l_backbox_top2: ffffff
+          l_backbox_bottom2: ffffff
+          l_backbox_top1: "000000"
+          l_backbox_bottom1: "000000"
