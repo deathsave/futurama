@@ -176,6 +176,9 @@
           mpf_logo_slide:
               target: display1
     - time: "+7"
+      shows:
+          backbox_sweep_light_show:
+              loops: 2
       slides:
           dspc_logo_slide:
               target: display1
