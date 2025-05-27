@@ -3,7 +3,7 @@
 
 mode:
     start_events: light_suicide_booth
-    stop_events: ball_ending
+    stop_events: ball_ending, balldevice_bd_suicide_booth_ball_eject_success
     priority: 115
 
 #when the mode starts, the diverter is enabled
