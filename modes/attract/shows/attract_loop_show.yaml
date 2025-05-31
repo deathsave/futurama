@@ -175,10 +175,11 @@
       slides:
           mpf_logo_slide:
               target: display1
-    - time: "+7"
+    - time: "+10"
       shows:
           backbox_sweep_light_show:
-              loops: 2
+              loops: 11
+              speed: 2
       slides:
           dspc_logo_slide:
               target: display1
