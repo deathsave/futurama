@@ -815,7 +815,7 @@ show_player:
             priority: 200
     ball_ending:
         dt_reset_all_show:
-            loop: 0
+            loops: 0
             priority: 500
             speed: 2
 
