@@ -813,6 +813,11 @@ show_player:
         extra_ball_start_professor_show:
             loops: 0
             priority: 200
+    ball_ending:
+        dt_reset_all_show:
+            loop: 0
+            priority: 500
+            speed: 2
 
 
 
