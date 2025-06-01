@@ -106,13 +106,13 @@ shots:
         enable_events: slurm_factory_level1
         disable_events: level1_left_loop_jackpot_hit
         delay_switch:
-            s_right_loop: 2s
+            s_right_loop: 3s
     level1_right_loop_jackpot:
         switch: s_right_loop
         enable_events: slurm_factory_level1
         disable_events: level1_right_loop_jackpot_hit
         delay_switch:
-            s_left_loop: 2s
+            s_left_loop: 3s
     level1_right_orbit_jackpot:
         switch: s_r_orbit
         enable_events: slurm_factory_level1
