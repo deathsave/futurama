@@ -631,5 +631,23 @@
               show_tokens:
                   this_light: l_bender_mouth2
               priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_bender_mouth3
+              priority: 100
+    - duration: 10
+      sounds:
+          ding: play
+      shows:
+          labelled_light_test_show:
+              loops: 0
+              show_tokens:
+                  this_light: l_bender_mouth4
+              priority: 100
     - duration: 1
       events: play_attract_loop
