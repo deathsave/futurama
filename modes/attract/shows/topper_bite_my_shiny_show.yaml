@@ -1,0 +1,139 @@
+#show_version=6
+##! show: topper_bite_my_shiny_show
+
+    - time: 10ms
+      sounds:
+          bender_bite_my: play
+      lights:
+          eyes: red
+      slides:
+          titlecard_slide:
+              priority: 500
+              target: display1
+
+    - time: 90ms
+      lights:
+          l_bender_mouth1: lightyellow
+          l_bender_mouth2: ffffff
+          l_bender_mouth3: lightyellow
+          l_bender_mouth4: ffffff
+
+    - time: 120ms
+      lights:
+          l_bender_mouth3: ffffff
+          l_bender_mouth4: lightyellow
+
+    - time: 240ms
+      lights:
+          l_bender_mouth1: ffffff
+          l_bender_mouth2: lightyellow
+          l_bender_mouth3: lightyellow
+          l_bender_mouth4: ffffff
+
+    - time: 280ms
+      lights:
+          l_bender_mouth3: ffffff
+          l_bender_mouth4: lightyellow
+
+    - time: 320ms
+      lights:
+          l_bender_mouth1: lightyellow
+          l_bender_mouth3: lightyellow
+
+    - time: 900ms
+      lights:
+          l_bender_mouth2: ffffff
+
+    - time: 960ms
+      lights:
+          l_bender_mouth2: lightyellow
+          l_bender_mouth3: ffffff
+
+    - time: 1070ms
+      lights:
+          l_bender_mouth1: ffffff
+          l_bender_mouth3: lightyellow
+          l_bender_mouth4: ffffff
+
+    - time: 1250ms
+      lights:
+          l_bender_mouth1: lightyellow
+          l_bender_mouth4: lightyellow
+
+    - time: 1710ms
+      lights:
+          l_bender_mouth1: ffffff
+          l_bender_mouth2: ffffff
+
+    - time: 1900ms
+      lights:
+          l_bender_mouth1: lightyellow
+          l_bender_mouth2: lightyellow
+          l_bender_mouth3: ffffff
+          l_bender_mouth4: ffffff
+
+    - time: 2000ms
+      lights:
+          l_bender_mouth3: lightyellow
+          l_bender_mouth4: lightyellow
+
+    - time: 2100ms
+      lights:
+          l_bender_mouth2: ffffff
+
+    - time: 2210ms
+      lights:
+          l_bender_mouth2: lightyellow
+          l_bender_mouth3: ffffff
+          l_bender_mouth4: ffffff
+
+    - time: 2400ms
+      lights:
+          l_bender_mouth3: lightyellow
+          l_bender_mouth4: lightyellow
+
+    - time: 2910ms
+      lights:
+          l_bender_mouth1: ffffff
+          l_bender_mouth2: ffffff
+
+    - time: 3000ms
+      lights:
+          l_bender_mouth1: lightyellow
+          l_bender_mouth2: lightyellow
+
+    - time: 3100ms
+      lights:
+          l_bender_mouth1: ffffff
+          l_bender_mouth3: ffffff
+
+    - time: 3330ms
+      lights:
+          l_bender_mouth1: lightyellow
+          l_bender_mouth2: ffffff
+          l_bender_mouth3: lightyellow
+          l_bender_mouth4: ffffff
+
+    - time: 3410ms
+      lights:
+          l_bender_mouth1: ffffff
+          l_bender_mouth2: lightyellow
+
+    - time: 3450ms
+      lights:
+          l_bender_mouth1: lightyellow
+          l_bender_mouth2: ffffff
+          l_bender_mouth3: ffffff
+          l_bender_mouth4: lightyellow
+
+    - time: 3700ms
+      lights:
+          l_bender_mouth2: lightyellow
+          l_bender_mouth3: lightyellow
+
+    - time: 3900ms
+      lights:
+          eyes: lightyellow
+      slides:
+          titlecard_slide:
+              action: remove 
