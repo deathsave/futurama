@@ -128,7 +128,7 @@ lights:
 #0, 2, and 4, since with P3 the driver and LED boards share address space.
 
 #also: p3 flashers are polarity=true
-#all other RGB lights should be polarity=false 
+#all other RGB lights should be polarity=false
     l_right_corner1:
         number: 2-12-13-14
         platform_settings:
@@ -813,6 +813,11 @@ show_player:
         extra_ball_start_professor_show:
             loops: 0
             priority: 200
+    ball_ending:
+        dt_reset_all_show:
+            loops: 0
+            priority: 500
+            speed: 2
 
 
 
@@ -1656,6 +1661,8 @@ widget_player:
             slide: moon_delivery_slide
         reusable_player2_scoring:
             slide: reusable_delivery_slide
+        slurm_player2_scoring:
+            slide: slurm_factory_slide
     player_added{num==3}:
         base_player3_scoring:
             slide: base_slide
@@ -1665,6 +1672,8 @@ widget_player:
             slide: moon_delivery_slide
         reusable_player3_scoring:
             slide: reusable_delivery_slide
+        slurm_player3_scoring:
+            slide: slurm_factory_slide
     player_added{num==4}:
         base_player4_scoring:
             slide: base_slide
@@ -1674,6 +1683,8 @@ widget_player:
             slide: moon_delivery_slide
         reusable_player4_scoring:
             slide: reusable_delivery_slide
+        slurm_player4_scoring:
+            slide: slurm_factory_slide
 
 widgets:
     extra_ball_text_background:
@@ -1735,6 +1746,18 @@ widgets:
           z: 7
           anchor_x: right
           anchor_y: bottom
+    slurm_player2_scoring:
+        - type: text
+          text: (player2|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 655
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
     base_player3_scoring:
         - type: text
           text: (player3|score)
@@ -1783,6 +1806,18 @@ widgets:
           z: 7
           anchor_x: right
           anchor_y: bottom
+    slurm_player3_scoring:
+        - type: text
+          text: (player3|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 410
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
     base_player4_scoring:
         - type: text
           text: (player4|score)
@@ -1820,6 +1855,18 @@ widgets:
           anchor_x: right
           anchor_y: bottom
     reusable_player4_scoring:
+        - type: text
+          text: (player4|score)
+          number_grouping: true
+          min_digits: 2
+          font_size: 50
+          color: black
+          y: 165
+          x: 419
+          z: 7
+          anchor_x: right
+          anchor_y: bottom
+    slurm_player4_scoring:
         - type: text
           text: (player4|score)
           number_grouping: true

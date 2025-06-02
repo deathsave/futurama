@@ -3,7 +3,7 @@
 
     - duration: 300ms
       lights:
-          l_delivery_shot_insert: "7d1158"
+          l_delivery_shot_insert: 42f5b6
     - duration: 300ms
       lights:
           l_delivery_shot_insert: ffffff

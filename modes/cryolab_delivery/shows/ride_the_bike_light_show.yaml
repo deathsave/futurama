@@ -3,8 +3,9 @@
 
     - duration: 500ms
       lights:
-          l_left_ramp_insert: blue
-          l_left_loop_insert: blue
+#so we're calling orange... but expecting it to show up as blue 
+          l_left_ramp_insert: orange
+          l_left_loop_insert: orange
     - duration: 500ms
       lights:
           l_left_ramp_insert: off

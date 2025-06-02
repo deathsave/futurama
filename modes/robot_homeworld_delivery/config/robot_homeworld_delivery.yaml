@@ -427,6 +427,7 @@ sound_player:
         winch_short:
             action: play
             block: true
+    s_pe_platter_active: no_sound|block 
     caught_by_robots:
         intruder_alert:
             action: play
