@@ -15,6 +15,14 @@ class TestCrewLevelUp(FullMachineTestCase):
         self._fry_to_level2()
         self._leela_to_level2()
         self._suicide_booth_activation()
+        self._amy_to_level2()
+        self._runout_timer_on_PFx()
+        self._zoidberg_to_level2()
+        self._trigger_zoidberg_ball_save()
+        self._hermes_to_level2()
+        self._nibbler_to_level2()
+        self._professor_to_level2()
+
 
 
     def _start_game(self):
@@ -129,3 +137,50 @@ class TestCrewLevelUp(FullMachineTestCase):
         self.assertEqual(0, self.machine.ball_devices.bd_suicide_booth.balls)
         self.advance_time_and_run(8)
         self.assertModeNotRunning("suicide_booth")
+
+    def _amy_to_level2(self):
+        self.assertPlayerVarEqual(1, "amy_level")
+        self.assertPlayerVarEqual(1, "amy_multiplier")
+        self.assertPlayerVarEqual(4, "crew_multiplier")
+        self.post_event("amy_level2")
+        self.advance_time_and_run(1)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'amy_level_up_slide')
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "amy_level")
+        self.assertPlayerVarEqual(2, "amy_multiplier")
+        self.assertPlayerVarEqual(5, "crew_multiplier")
+        self.assertPlayerVarEqual(2, "PF_multiplier")
+        self.advance_time_and_run(9)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'PFD_base_slide')
+
+    def _runout_timer_on_PFx(self):
+        self.advance_time_and_run(25)
+        self.assertPlayerVarEqual(1, "PF_multiplier")
+
+    def _zoidberg_to_level2(self):
+        self.assertPlayerVarEqual(1, "zoidberg_level")
+        self.assertPlayerVarEqual(1, "zoidberg_multiplier")
+        self.assertPlayerVarEqual(5, "crew_multiplier")
+        self.post_event("zoidberg_level2")
+        self.advance_time_and_run(1)
+        self.assertEqual(self.mc.targets['display2'].current_slide_name,
+                         'zoidberg_level_up_slide')
+        self.advance_time_and_run(1)
+        self.assertPlayerVarEqual(2, "zoidberg_level")
+        self.assertPlayerVarEqual(2, "zoidberg_multiplier")
+        self.assertPlayerVarEqual(6, "crew_multiplier")
+
+    def _trigger_zoidberg_ball_save(self):
+        self.advance_time_and_run(1)
+
+    def _hermes_to_level2(self):
+        self.advance_time_and_run(1)
+
+    def _nibbler_to_level2(self):
+        self.advance_time_and_run(1)
+
+    def _professor_to_level2(self):
+        self.advance_time_and_run(1)
+        

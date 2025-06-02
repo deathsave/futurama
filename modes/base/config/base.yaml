@@ -214,8 +214,12 @@ light_player:
         ship: ffffff
         loops: ffffff
     mode_slurm_factory_stopped:
-        gi: "000000"
-        apron: "000000"
+        gi:
+            color: "000000"
+            priority: 111
+        apron:
+            color: "000000"
+            priority: 110
     remove_hypnotoad_slide:
         l_left_spotlight: ffffff
     player_shot_zoidberg_ball_save_shot_enabled{value==True}:
@@ -500,7 +504,7 @@ sound_player:
     left_loop_hit:
         crew_whoa2:
             action: play
-    s_pe_platter_active:
+    ship_spinning_hit:
         ship_short:
             action: play
     mode_base_started:
@@ -773,8 +777,6 @@ shots:
         delay_switch:
             s_left_ramp: 5s
             s_left_flipper: 3s
-
-
 
 sequence_shots:
     right_loop:

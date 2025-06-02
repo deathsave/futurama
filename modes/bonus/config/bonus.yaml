@@ -45,7 +45,7 @@ slides:
     hypnotoad_bonus:
         widgets:
             - type: text
-              text: Hypnotoad Bonus
+              text: Toad Bonus
               font_size: 60
               color: black
               y: 774
