@@ -504,7 +504,7 @@ sound_player:
     left_loop_hit:
         crew_whoa2:
             action: play
-    s_pe_platter_active:
+    ship_spinning_hit:
         ship_short:
             action: play
     mode_base_started:
@@ -777,8 +777,6 @@ shots:
         delay_switch:
             s_left_ramp: 5s
             s_left_flipper: 3s
-
-
 
 sequence_shots:
     right_loop:
