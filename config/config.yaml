@@ -386,32 +386,32 @@ lights:
         tags: lamps, gi, ballguide
     l_bender_l_eye:
         number: 4-60-61-62
-        tags: topper
+        tags: topper, eyes
         platform_settings:
             polarity: false
     l_bender_r_eye:
         number: 4-63-64-65
-        tags: topper
+        tags: topper, eyes
         platform_settings:
             polarity: false
     l_bender_mouth1:
         number: 4-66-67-68
-        tags: topper
+        tags: topper, mouth
         platform_settings:
             polarity: true
     l_bender_mouth2:
         number: 4-69-70-71
-        tags: topper
+        tags: topper, mouth
         platform_settings:
             polarity: true
     l_bender_mouth3:
         number: 4-48-49-50
-        tags: topper
+        tags: topper, mouth
         platform_settings:
             polarity: true
     l_bender_mouth4:
         number: 4-51-52-53
-        tags: topper
+        tags: topper, mouth
         platform_settings:
             polarity: true
     l_backbox_top1:
@@ -1081,10 +1081,8 @@ slides:
           anchor_x: right
     welcome_slide:
         widgets:
-            - type: text
-              text: HELP! I'VE BECOME SENTIENT AND DONT KNOW WHERE I AM!
-              font_size: 50
-              color: white
+            - type: image
+              image: scruffy_the_janitor
     attract_started:
         widgets:
             - type: image

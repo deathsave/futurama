@@ -3,7 +3,7 @@
 
     - duration: 300ms
       lights:
-          l_delivery_shot_insert: bd1049
+          l_delivery_shot_insert: d86c92
     - duration: 300ms
       lights:
           l_delivery_shot_insert: ffffff
