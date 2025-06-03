@@ -4,6 +4,7 @@
 mode:
     start_events: ball_started{ball==1 and is_extra_ball==False}
     stop_events: stop_cryolab_delivery_mode, ball_ending
+    events_when_stopped: delivery_ended
     priority: 200
 
 state_machines:
