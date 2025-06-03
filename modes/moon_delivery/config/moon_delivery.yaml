@@ -303,6 +303,9 @@ widget_player:
             slide: moon_delivery_slide
         luna_park_background:
             action: remove
+    timer_whalers_on_the_moon_timer_started:
+        whalers_time:
+            slide: delivery_instructions_slide
     whalers_right_shot_hit:
         moon_step2_r_loop:
             slide: delivery_instructions_slide
@@ -314,6 +317,8 @@ widget_player:
             action: remove
         whalers_background:
             action: remove
+        whalers_time:
+            action: remove
         moon_step2_r_loop:
             action: remove
         moon_step2_l_loop:
@@ -322,9 +327,14 @@ widget_player:
             slide: moon_delivery_slide
         moon_step3:
             slide: delivery_instructions_slide
+    timer_lunar_rover_timer_started:
+        rover_time:
+            slide: delivery_instructions_slide
     rover_escape_shot_hit:
         rover_background:
             action: remove
+        rover_time:
+            action: remove 
     moon_delivery_step4:
         rover_background:
             action: remove
@@ -443,8 +453,16 @@ variable_player:
             action: set
 #setting variables during timers to display timers in slides
     timer_crate_delivery_timer_tick:
-        crate_delivery_time_remaining:
+        mode_time_remaining1:
             int: device.timers.crate_delivery_timer.ticks
+            action: set
+    timer_whalers_on_the_moon_timer_tick:
+        mode_time_remaining2:
+            int: device.timers.whalers_on_the_moon_timer.ticks
+            action: set
+    timer_lunar_rover_timer_tick:
+        mode_time_remaining1:
+            int: device.timers.lunar_rover_timer.ticks
             action: set
 
 event_player:
@@ -476,12 +494,16 @@ widgets:
           z: 3
     crate_delivery_time:
         - type: text
-          text: (player|crate_delivery_time_remaining)
+          text: (player|mode_time_remaining1)
           style: delivery_mode_timer
     moon_step2:
         - type: image
           image: moon_step2
           z: 3
+    whalers_time:
+        - type: text
+          text: (player|mode_time_remaining2)
+          style: delivery_mode_timer
     moon_step2_r_loop:
         - type: image
           image: moon_step2_r_loop
@@ -494,6 +516,10 @@ widgets:
         - type: image
           image: moon_step3
           z: 3
+    rover_time:
+        - type: text
+          text: (player|mode_time_remaining1)
+          style: delivery_mode_timer
     moon_step4:
         - type: image
           image: moon_step4
