@@ -296,7 +296,7 @@ widget_player:
         moon_step1:
             action: remove
         crate_delivery_time:
-            action: remove 
+            action: remove
         moon_step2:
             slide: delivery_instructions_slide
         whalers_background:
@@ -466,6 +466,10 @@ event_player:
     ball_will_end: use_full_tank
 
 widgets:
+    moon_delivery_loading_screen:
+        - type: image
+          image: moon_delivery_loading
+          z: 3
     moon_step1:
         - type: image
           image: moon_step1
