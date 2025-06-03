@@ -481,7 +481,12 @@ variable_player:
         PF_multiplier:
             int: 1
             action: set
-
+#slurm factory mode checks amy_level when it starts and +1 PF_multiplier
+#during the mode if amy_level > 3,
+    amy_slurm_x_check{current_player.amy_level > 3}:
+        PF_mutliplier: 1
+    amy_slurm_x_reset{current_player.amy_level > 3}:
+        PF_multiplier: -1
 sound_player:
     timer_shoot_the_ball_timer_complete:
         shoot_the_ball_sounds:
