@@ -86,27 +86,27 @@ slides:
         widgets:
             - type: text
               text: Multiplier
-              font_size: 42
+              font_size: 60
               color: black
               y: 672
               x: 1170
               anchor_x: left
               anchor_y: bottom
             - type: text
-              text: (multiplier)X
-              font_size: 42
+              text: (player|bonus_multiplier)x
+              font_size: 60
               color: black
               y: 572
               x: 1170
               anchor_x: left
               anchor_y: bottom
-            - type: image
-              image: bonus_blank
+            - type: video
+              video: bonus_multiplier_clip
     bonus_total_slide:
         widgets:
             - type: text
               text: TOTAL BONUS
-              font_size: 42
+              font_size: 60
               color: black
               y: 672
               x: 1170
@@ -114,7 +114,7 @@ slides:
               anchor_y: bottom
             - type: text
               text: (score)
-              font_size: 42
+              font_size: 60
               color: black
               y: 572
               x: 1170
@@ -135,6 +135,9 @@ slide_player:
             target: display1
     bonus_dark_matter:
         dark_matter_bonus:
+            target: display1
+    bonus_subtotal:
+        bonus_multiplier_slide:
             target: display1
     bonus_total:
         bonus_total_slide:
