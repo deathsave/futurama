@@ -77,6 +77,7 @@ show_pools:
             - i_dated_a_robot_show
             - pants_full_of_shame_show
             - crew_level_instructions_show|3
+            - topper_bite_my_shiny_show|2
 slides:
     dspc_logo_slide:
         widgets:
@@ -93,7 +94,7 @@ slides:
             - type: text
               color: white
               font_size: 64
-              text: SW Version .66
+              text: SW Version .68
               y: center-400
               z: 5
     arachno_commercial_slide:
