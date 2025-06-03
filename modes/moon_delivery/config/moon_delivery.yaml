@@ -289,9 +289,14 @@ widget_player:
             slide: delivery_instructions_slide
         luna_park_background:
             slide: moon_delivery_slide
+    timer_crate_delivery_timer_started:
+        crate_delivery_time:
+            slide: delivery_instructions_slide
     moon_delivery_step2:
         moon_step1:
             action: remove
+        crate_delivery_time:
+            action: remove 
         moon_step2:
             slide: delivery_instructions_slide
         whalers_background:
@@ -436,6 +441,11 @@ variable_player:
         moon_delivery_status:
             string: "failed"
             action: set
+#setting variables during timers to display timers in slides
+    timer_crate_delivery_timer_tick:
+        crate_delivery_time_remaining:
+            int: device.timers.crate_delivery_timer.ticks
+            action: set
 
 event_player:
 #qualify these additional shot options if crew level checks pass
@@ -460,6 +470,10 @@ widgets:
         - type: image
           image: moon_step1
           z: 3
+    crate_delivery_time:
+        - type: text
+          text: (player|crate_delivery_time_remaining)
+          style: delivery_mode_timer
     moon_step2:
         - type: image
           image: moon_step2
