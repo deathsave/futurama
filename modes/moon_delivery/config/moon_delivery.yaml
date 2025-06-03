@@ -334,7 +334,7 @@ widget_player:
         rover_background:
             action: remove
         rover_time:
-            action: remove 
+            action: remove
     moon_delivery_step4:
         rover_background:
             action: remove
@@ -344,14 +344,22 @@ widget_player:
             action: remove
         moon_step4:
             slide: delivery_instructions_slide
+    timer_joyride_timer_started:
+        joyride_time:
+            slide: delivery_instructions_slide
     moon_delivery_step5:
         joyride_background:
+            action: remove
+        joyride_time:
             action: remove
         farmer_background:
             slide: moon_delivery_slide
         moon_step4:
             action: remove
         moon_step5:
+            slide: delivery_instructions_slide
+    timer_escape_farmer_timer_started:
+        escape_farmer_time:
             slide: delivery_instructions_slide
     fry_farmer_escape_shot_hit:
         moon_step5_fry:
@@ -364,6 +372,8 @@ widget_player:
             slide: delivery_instructions_slide
     all_farmer_escape:
         farmer_background:
+            action: remove
+        escape_farmer_time:
             action: remove
     moon_delivery_step6:
         farmer_background:
@@ -380,6 +390,9 @@ widget_player:
             slide: moon_delivery_slide
         moon_step6:
             slide: delivery_instructions_slide
+    timer_lunar_lander_timer_started:
+        lunar_lander_time:
+            slide: delivery_instructions_slide
     lunar_lander_r_shot_hit:
         moon_step6_r_ramp:
             slide: delivery_instructions_slide
@@ -388,6 +401,8 @@ widget_player:
             slide: delivery_instructions_slide
     lunar_lander_found_shot_lit:
         moon_step6:
+            action: remove
+        lunar_lander_time:
             action: remove
         moon_step6_l_ramp:
             action: remove
@@ -399,8 +414,12 @@ widget_player:
             action: remove
         lander_found_background:
             slide: moon_delivery_slide
+        lander_found_time:
+            slide: delivery_instructions_slide
     lunar_lander_found_shot_hit:
         lander_found_background:
+            action: remove
+        lander_found_time:
             action: remove
     moon_delivery_steps_complete:
         moon_nice_all_extra_shots:
@@ -464,6 +483,22 @@ variable_player:
         mode_time_remaining1:
             int: device.timers.lunar_rover_timer.ticks
             action: set
+    timer_joyride_timer_tick:
+        mode_time_remaining2:
+            int: device.timers.joyride_timer.ticks
+            action: set
+    timer_escape_farmer_timer_tick:
+        mode_time_remaining1:
+            int: device.timers.escape_farmer_timer.ticks
+            action: set
+    timer_lunar_lander_timer_tick:
+        mode_time_remaining2:
+            int: device.timers.lunar_lander_timer.ticks
+            action: set
+    timer_lunar_lander_found_timer_tick:
+        mode_time_remaining1:
+            int: device.timers.lunar_lander_found_timer.ticks
+            action: set
 
 event_player:
 #qualify these additional shot options if crew level checks pass
@@ -524,10 +559,18 @@ widgets:
         - type: image
           image: moon_step4
           z: 3
+    joyride_time:
+        - type: text
+          text: (player|mode_time_remaining2)
+          style: delivery_mode_timer
     moon_step5:
         - type: image
           image: moon_step5
           z: 3
+    escape_farmer_time:
+        - type: text
+          text: (player|mode_time_remaining1)
+          style: delivery_mode_timer
     moon_step5_fry:
         - type: image
           image: moon_step5_fry
@@ -552,6 +595,14 @@ widgets:
         - type: image
           image: moon_step6_r_ramp
           z: 4
+    lunar_lander_time:
+        - type: text
+          text: (player|mode_time_remaining2)
+          style: delivery_mode_timer
+    lander_found_time:
+        - type: text
+          text: (player|mode_time_remaining1)
+          style: delivery_mode_timer
     moon_step6b:
         - type: image
           image: moon_step6b
