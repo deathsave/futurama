@@ -1,19 +1,34 @@
 #show_version=6
 ##! show: bender_topper_test_show
 
-    - duration: 3s
+    - duration: 10s
       lights:
-          l_bender_mouth2: ffffff
-          l_bender_r_eye: ff0000
+          l_bender_r_eye: "000038"
+          l_bender_l_eye: "000038"
+          l_bender_mouth1: "000038"
+          l_bender_mouth2: "000038"
+          l_bender_mouth3: "000038"
+          l_bender_mouth4: "000038"
+      events: reset_bender_eyes
+    - duration: 1s
+      events: reset_bender_head
     - duration: 3s
-      lights:
-          l_bender_r_eye: ffffff
-          l_bender_l_eye: "00ff00"
+      events: eyes_left
+    - duration: 5s
+      events: eyes_right
     - duration: 3s
+      events: reset_bender_eyes
+    - duration: 2s
+      events: head_left
+    - duration: 500ms
+      events: eyes_right
       lights:
-          l_bender_l_eye: ffffff
-          l_bender_mouth1: "0000ff"
-    - duration: 3s
+          eyes: "00ffff"
+    - duration: 5s
+      sounds: bender_evil_laugh1
+    - duration: 250ms
+      events: reset_bender_head
+    - duration: 5s
+      events: reset_bender_eyes
       lights:
-          l_bender_mouth1: ffffff
-          l_bender_mouth2: "000000"
+          eyes: "000038"
