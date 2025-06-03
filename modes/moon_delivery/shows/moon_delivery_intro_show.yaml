@@ -7,7 +7,14 @@
       moon_delivery_intro_slide:
           priority: 500
           target: display1
-- time: "+24"
+- time: +1
+  widgets:
+      moon_delivery_loading_screen:
+          slide: delivery_instructions_slide
+- time: "+23"
   slides:
       moon_delivery_intro_slide:
           action: remove
+  widgets:
+      moon_delivery_loading_screen:
+          action: remove 
