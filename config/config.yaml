@@ -1060,7 +1060,10 @@ player_vars:
         initial_value: 0
     lunar_lander_time_remaining:
         initial_value: 0
-    lunar_lander_found_time_remaining:
+#reuseable values for displaying timer values         
+    mode_time_remaining1:
+        initial_value: 0
+    mode_time_remaining2:
         initial_value: 0
 
 modes:
