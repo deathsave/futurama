@@ -1047,6 +1047,21 @@ player_vars:
     chose_to_be_frozen:
         value_type: str
         initial_value: "not frozen yet"
+#moon_delivery variables for displaying timers
+    crate_delivery_time_remaining:
+        initial_value: 0
+    whalers_on_the_moon_time_remaining:
+        initial_value: 0
+    lunar_rover_time_remaining:
+        initial_value: 0
+    joyride_time_remaining:
+        initial_value: 0
+    escape_farmer_time_remaining:
+        initial_value: 0
+    lunar_lander_time_remaining:
+        initial_value: 0
+    lunar_lander_found_time_remaining:
+        initial_value: 0
 
 modes:
     - service
@@ -1967,6 +1982,12 @@ widget_styles:
         x: center+400
         y: 425
         color: black
+    delivery_mode_timer:
+        font_size: 240
+        z: 4
+        x: center-25%
+        y: center+10%
+        color: white
 
 assets:
     sounds:
