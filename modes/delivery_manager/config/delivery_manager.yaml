@@ -176,6 +176,43 @@ state_machines:
               target: robot_homeworld_delivery_done
               events: mode_robot_homeworld_delivery_stopped
 
+slides:
+    cannibalon_delivery_awards_slide:
+        widgets:
+            - type: image
+              image: cannibalon_delivery_awards
+              z: 1
+            - type: text
+              text: Cannibalon Delivery Complete!
+              y: center+350
+              z: 2
+              font_size: 120
+            - type: text
+              text: (player|cannibalon_delivery_points) points!
+              y: center+220
+              z: 2
+              font_size: 80
+            - type: text
+              text: Fry +5xp
+              y: center+120
+              z: 2
+              font_size: 80
+            - type: text
+              text: Leela +5xp
+              y: center+20
+              z: 2
+              font_size: 80
+            - type: text
+              text: Bender +10xp
+              y: center-80
+              z: 2
+              font_size: 80
+            - type: text
+              text: Crew Multiplier +1
+              y: center-180
+              z: 2
+              font_size: 80
+
 widgets:
     cannibalon_delivery_video:
         - type: video
@@ -296,11 +333,13 @@ widget_player:
 
 variable_player:
     cannibalon_delivery_start_shot_hit:
-        score: machine.medium_reward_points * current_player.crew_multiplier
+        score: machine.medium_reward_points * current_player.crew_multiplier * (current_player.fry_multiplier + current_player.leela_multiplier + current_player.bender_multiplier)
         deliveries_completed: 1
         fry_xp: 5
         leela_xp: 5
         bender_xp: 10
+        crew_multiplier: 1
+        cannibalon_delivery_points: machine.medium_reward_points * current_player.crew_multiplier * (current_player.fry_multiplier + current_player.leela_multiplier + current_player.bender_multiplier)
     empty_tank:
         fuel_level:
             action: set

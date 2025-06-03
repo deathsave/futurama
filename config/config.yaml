@@ -615,7 +615,7 @@ switches:
         tags: service_door_open, power_off
     s_tilt:
         number: A2-B0-2
-        tags: tilt
+        tags: tilt_bob
 
 
 
@@ -1031,6 +1031,8 @@ player_vars:
     moon_delivery_status:
         value_type: str
         initial_value: "ready"
+    cannibalon_delivery_points:
+        initial_value: 0
     robot_homeworld_delivery_status:
         value_type: str
         initial_value: "ready"

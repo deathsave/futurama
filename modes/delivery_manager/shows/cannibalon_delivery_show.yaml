@@ -7,7 +7,14 @@
       cannibalon_delivery_slide:
           priority: 500
           target: display1
-- time: "+20"
+- time: +1
+  slides:
+      cannibalon_delivery_awards_slide:
+          priority: 500
+          target: display2
+- time: "+19"
   slides:
       cannibalon_delivery_slide:
           action: remove
+      cannibalon_delivery_awards_slide:
+          action: remove 
