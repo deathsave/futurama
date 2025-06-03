@@ -5,8 +5,8 @@ mode:
     start_events: start_slurm_factory_shot_hit
     stop_events: ball_ending, stop_slurm_factory
     priority: 105
-    events_when_started: slurm_factory_tour_begins, mom_zapp_off
-    events_when_stopped: restart_theme_music, mom_zapp_on
+    events_when_started: slurm_factory_tour_begins, mom_zapp_off, amy_slurm_x_check
+    events_when_stopped: restart_theme_music, mom_zapp_on, amy_slurm_x_reset
 
 multiballs:
     slurm_factory_tour_MB:
@@ -106,13 +106,13 @@ shots:
         enable_events: slurm_factory_level1
         disable_events: level1_left_loop_jackpot_hit
         delay_switch:
-            s_right_loop: 3s
+            s_right_loop: 2s
     level1_right_loop_jackpot:
         switch: s_right_loop
         enable_events: slurm_factory_level1
         disable_events: level1_right_loop_jackpot_hit
         delay_switch:
-            s_left_loop: 3s
+            s_left_loop: 2s
     level1_right_orbit_jackpot:
         switch: s_r_orbit
         enable_events: slurm_factory_level1
