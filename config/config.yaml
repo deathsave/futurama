@@ -53,8 +53,8 @@ p_roc:
     pd_led_boards:
         4:
             max_servo_value: 300
-            use_servo_0: true
-            use_servo_1: true
+            use_servo_72: true
+            use_servo_73: true
 
 servos:
     bender_eyes:
