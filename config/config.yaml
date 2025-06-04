@@ -46,24 +46,32 @@ keyboard:
 hardware:
     platform: p3_roc
     stepper_controllers: pololu_tic
-#    servo_controllers: pololu_maestro
 
-#pololu_maestro:
-#    port: /dev/ttyACM0
 
 p_roc:
     driverboards: pdb
+    pd_led_boards:
+        4:
+            max_servo_value: 300
+            use_servo_0: true
+            use_servo_1: true
 
-#servos:
-#    bender_eyes:
-#        positions:
-#            0.1: left
-#            0.9: right
-#        reset_position: 0.5
-#        reset_events: reset_bender_eyes
-#        number: 0
-#    bender_head:
-#    bender_neck
+servos:
+    bender_eyes:
+        positions:
+            0.1: eyes_left
+            0.9: eyes_right
+        reset_position: 0.5
+        reset_events: reset_bender_eyes
+        number: 4-72
+    bender_head:
+        positions:
+            0.2: head_left
+            0.8: head_right
+        reset_position: 0.5
+        reset_events: reset_bender_head
+        number: 4-73
+
 
 steppers:
     zoidberg_stepper:
@@ -615,7 +623,7 @@ switches:
         tags: service_door_open, power_off
     s_tilt:
         number: A2-B0-2
-        tags: tilt
+        tags: tilt_bob
 
 
 
@@ -1031,6 +1039,8 @@ player_vars:
     moon_delivery_status:
         value_type: str
         initial_value: "ready"
+    cannibalon_delivery_points:
+        initial_value: 0
     robot_homeworld_delivery_status:
         value_type: str
         initial_value: "ready"
@@ -1045,6 +1055,24 @@ player_vars:
     chose_to_be_frozen:
         value_type: str
         initial_value: "not frozen yet"
+#moon_delivery variables for displaying timers
+    crate_delivery_time_remaining:
+        initial_value: 0
+    whalers_on_the_moon_time_remaining:
+        initial_value: 0
+    lunar_rover_time_remaining:
+        initial_value: 0
+    joyride_time_remaining:
+        initial_value: 0
+    escape_farmer_time_remaining:
+        initial_value: 0
+    lunar_lander_time_remaining:
+        initial_value: 0
+#reuseable values for displaying timer values
+    mode_time_remaining1:
+        initial_value: 0
+    mode_time_remaining2:
+        initial_value: 0
 
 modes:
     - service
@@ -1965,6 +1993,12 @@ widget_styles:
         x: center+400
         y: 425
         color: black
+    delivery_mode_timer:
+        font_size: 240
+        z: 4
+        x: center-25%
+        y: center+10%
+        color: white
 
 assets:
     sounds:
