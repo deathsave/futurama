@@ -238,6 +238,10 @@ light_player:
     player_PF_multiplier{value==5}:
         l_2x: "000000"
         l_3x: "000000"
+    suicide_booth_active:
+        l_suicide_booth: "000000"
+    suicide_booth_empty:
+        l_suicide_booth: "ffffff"
 
 
 show_player:

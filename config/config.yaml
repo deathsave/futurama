@@ -36,16 +36,16 @@ keyboard:
         event: test_light_show
     e:
         event: reset_bender_eyes
-    r:  
+    r:
         event: eyes_right
     l:
-        event: eyes_left 
+        event: eyes_left
     h:
         event: reset_bender_head
     1:
         event: head_left
-    2: 
-        event: head_right    
+    2:
+        event: head_right
 hardware:
     platform: p3_roc
     stepper_controllers: pololu_tic
@@ -310,6 +310,11 @@ lights:
         platform_settings:
             polarity: false
         tags: lamps, caps
+    l_suicide_booth:
+        number: 0-51-52-53
+        platform_settings:
+            polarity: false
+        tags: lamps, indicator 
     l_right_outlane:
         number: 0-75-76-77
         platform_settings:
