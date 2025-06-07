@@ -35,10 +35,13 @@ counters:
         count_events: slurm_caps_hit
         multiple_hit_window: 200ms
         persist_state: true
-        disable_on_complete: true
         count_complete_value: 20
         events_when_complete: found_golden_cap
         reset_on_complete: false
+        control_events:
+            - event: mode_slurm_factory_stopped
+              action: jump
+              value: -20
 
 sound_player:
     slurm_caps_hit:
@@ -57,7 +60,7 @@ sound_pools:
 widgets:
     slurm_cap_count:
         - type: text
-          text: (caps_collected)
+          text: (slurm_caps_total)
           font_size: 400
           color: black
           z: 6
