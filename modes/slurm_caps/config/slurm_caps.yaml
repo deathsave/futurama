@@ -40,8 +40,9 @@ counters:
         disable_on_complete: false
 #have to reset it too... if you just use the control_events to jump to a lower
 #number and starting counting again from there, it will count but won't post
-#the events_when_complete events
-        reset_on_complete: true
+#the events_when_complete
+        reset_on_complete: false
+        reset_events: start_slurm_factory_shot_hit
         control_events:
             - event: mode_slurm_factory_stopped
               action: jump
