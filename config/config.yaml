@@ -314,7 +314,7 @@ lights:
         number: 0-51-52-53
         platform_settings:
             polarity: false
-        tags: lamps, indicator 
+        tags: lamps, indicator
     l_right_outlane:
         number: 0-75-76-77
         platform_settings:
@@ -966,6 +966,8 @@ machine_vars:
 
 
 player_vars:
+    caps_to_golden_cap:
+        initial_value: 20
     PF_multiplier:
         initial_value: 1
     bonus_multiplier:

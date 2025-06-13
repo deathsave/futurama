@@ -35,7 +35,7 @@ counters:
         count_events: slurm_caps_hit
         multiple_hit_window: 200ms
         persist_state: true
-        count_complete_value: 20
+        count_complete_value: (player|caps_to_golden_cap)
         events_when_complete: found_golden_cap
         disable_on_complete: false
 #have to reset it too... if you just use the control_events to jump to a lower
@@ -43,10 +43,6 @@ counters:
 #the events_when_complete
         reset_on_complete: false
         reset_events: start_slurm_factory_shot_hit
-        control_events:
-            - event: mode_slurm_factory_stopped
-              action: jump
-              value: -20
 
 sound_player:
     slurm_caps_hit:
