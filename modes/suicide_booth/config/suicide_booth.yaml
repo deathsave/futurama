@@ -5,6 +5,8 @@ mode:
     start_events: light_suicide_booth
     stop_events: ball_ending, balldevice_bd_suicide_booth_ball_eject_success
     priority: 115
+    events_when_started: suicide_booth_active
+    events_when_stopped: suicide_booth_empty
 
 #when the mode starts, the diverter is enabled
 #the diverter fires when s_left_outlane activates

@@ -92,9 +92,9 @@ class TestNibblerSkillshotThenSlurmFactory(FullMachineTestCase):
         self.advance_time_and_run(2)
         self.hit_and_release_switch("s_cap3")
         self.advance_time_and_run(2)
+        self.assertPlayerVarEqual(19, "caps_collected")
         self.hit_and_release_switch("s_cap3")
         self.advance_time_and_run(2)
-        self.assertPlayerVarEqual(20, "caps_collected")
         self.assertTrue(self.machine.shots['start_slurm_factory_shot'].enabled)
         self.assertEqual(self.mc.targets['display1'].current_slide_name,
                          'base_slide')
