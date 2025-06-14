@@ -1723,6 +1723,63 @@ widget_player:
             slide: slurm_factory_slide
 
 widgets:
+    fry_2xp_widget:
+        - type: text
+          text: 2xp
+          font_size: 72
+          color: orange
+          y: 690
+          x: 1670
+          z: 9
+          anchor_x: right
+          anchor_y: bottom
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 690
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 680
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 670
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 660
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 650
+                    duration: .250s
+    fry_1xp_widget:
+        - type: text
+          text: 1xp
+          font_size: 72
+          color: orange
+          y: 690
+          x: 1670
+          z: 9
+          anchor_x: right
+          anchor_y: bottom
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 690
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 680
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 670
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 660
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 650
+                    duration: .250s
+
     extra_ball_text_background:
         - type: image
           image: extra_ball_text_background
@@ -2009,6 +2066,7 @@ widget_styles:
         x: center-25%
         y: center+10%
         color: white
+
 
 assets:
     sounds:
