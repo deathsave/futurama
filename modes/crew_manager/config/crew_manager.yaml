@@ -723,6 +723,16 @@ show_player:
                 award2: professor_multiplier_plus
                 award3: crew_multiplier_plus
                 award4: award_extra_ball_professor_slot4
+    player_fry_xp{change==1}:
+        fry_xp_show:
+            loops: 0
+            show_tokens:
+                which_fry_xp_widget: fry_1xp_widget
+    player_fry_xp{change==2}:
+        fry_xp_show:
+            loops: 0
+            show_tokens:
+                which_fry_xp_widget: fry_2xp_widget
 
 slides:
     amy_level_up_slide:
