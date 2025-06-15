@@ -723,6 +723,36 @@ show_player:
                 award2: professor_multiplier_plus
                 award3: crew_multiplier_plus
                 award4: award_extra_ball_professor_slot4
+    player_fry_xp{change==1}:
+        fry_xp_show:
+            loops: 0
+            show_tokens:
+                which_fry_xp_widget: fry_1xp_widget
+    player_fry_xp{change==2}:
+        fry_xp_show:
+            loops: 0
+            show_tokens:
+                which_fry_xp_widget: fry_2xp_widget
+    player_bender_xp{change==1}:
+        bender_xp_show:
+            loops: 0
+            show_tokens:
+                which_bender_xp_widget: bender_1xp_widget
+    player_bender_xp{change==2}:
+        bender_xp_show:
+            loops: 0
+            show_tokens:
+                which_bender_xp_widget: bender_2xp_widget
+    player_leela_xp{change==1}:
+        leela_xp_show:
+            loops: 0
+            show_tokens:
+                which_leela_xp_widget: leela_1xp_widget
+    player_leela_xp{change==2}:
+        leela_xp_show:
+            loops: 0
+            show_tokens:
+                which_leela_xp_widget: leela_2xp_widget
 
 slides:
     amy_level_up_slide:
@@ -1087,6 +1117,139 @@ widgets:
           text: Extra Ball!
           z: 2
           style: level_up_award4
+#xp_show_widgets
+    fry_2xp_widget:
+        - type: text
+          text: 2xp
+          style: fry_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 690
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 680
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 670
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 660
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 650
+                    duration: .250s
+    fry_1xp_widget:
+        - type: text
+          text: 1xp
+          style: fry_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 690
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 680
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 670
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 660
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 650
+                    duration: .250s
+    leela_2xp_widget:
+        - type: text
+          text: 2xp
+          style: leela_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 820
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 810
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 800
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 790
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 780
+                    duration: .250s
+    leela_1xp_widget:
+        - type: text
+          text: 1xp
+          style: leela_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 820
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 810
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 800
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 790
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 780
+                    duration: .250s
+    bender_2xp_widget:
+        - type: text
+          text: 2xp
+          style: bender_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 950
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 940
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 930
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 920
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 910
+                    duration: .250s
+    bender_1xp_widget:
+        - type: text
+          text: 1xp
+          style: bender_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 950
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 940
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 930
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 920
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 910
+                    duration: .250s
 
 variable_player:
     leela_level2:

@@ -1939,6 +1939,30 @@ widgets:
           image: scoreboxes_overlay
 
 widget_styles:
+    fry_xp_show_style:
+        font_size: 60
+        color: orange
+        y: 690
+        x: 1670
+        z: 9
+        anchor_x: right
+        anchor_y: bottom
+    bender_xp_show_style:
+        font_size: 60
+        color: gray
+        y: 950
+        x: 1670
+        z: 9
+        anchor_x: right
+        anchor_y: bottom
+    leela_xp_show_style:
+        font_size: 60
+        color: purple
+        y: 820
+        x: 1670
+        z: 9
+        anchor_x: right
+        anchor_y: bottom
     attract_mode_high_score_display_label:
         font_size: 40
         anchor_x: right
@@ -2009,6 +2033,7 @@ widget_styles:
         x: center-25%
         y: center+10%
         color: white
+
 
 assets:
     sounds:
