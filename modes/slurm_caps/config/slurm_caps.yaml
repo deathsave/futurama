@@ -5,6 +5,26 @@ mode:
     start_events: delivery_ended, ball_started{ball!=1}
     stop_events: ball_ending, delivery_started
     priority: 101
+    events_when_started: check_slurm_factory_ready
+
+state_machines:
+#this tracks if slurm factory mode is lit and relits the shot/disables other things
+#on ball_start if the mode has been lit but not started yet
+    slurm_factory_ready:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+                events_when_started: slurm_factory_not_ready
+            lit:
+                events_when_started: slurm_factory_is_ready
+        transitions:
+            - source: start
+              target: lit
+              events: found_golden_cap
+            - source: lit
+              target: start
+              events: start_slurm_factory_shot_hit
 
 shots:
     slurm_caps:
@@ -35,14 +55,17 @@ counters:
         count_events: slurm_caps_hit
         multiple_hit_window: 200ms
         persist_state: true
-        count_complete_value: (player|caps_to_golden_cap)
+        count_complete_value: current_player.caps_to_golden_cap
         events_when_complete: found_golden_cap
         disable_on_complete: false
 #have to reset it too... if you just use the control_events to jump to a lower
 #number and starting counting again from there, it will count but won't post
 #the events_when_complete
         reset_on_complete: false
-        reset_events: start_slurm_factory_shot_hit
+
+event_player:
+    check_slurm_factory_ready{current_player.caps_collected >= current_player.caps_to_golden_cap}: found_golden_cap
+
 
 sound_player:
     slurm_caps_hit:
