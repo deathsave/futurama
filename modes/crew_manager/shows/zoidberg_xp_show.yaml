@@ -1,0 +1,7 @@
+#show_version=6
+##! show: zoidberg_xp_show
+
+- time: .3
+  widgets:
+      (which_zoidberg_xp_widget):
+          target: display1
