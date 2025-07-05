@@ -1,0 +1,7 @@
+#show_version=6
+##! show: amy_xp_show
+
+- time: .3
+  widgets:
+      (which_amy_xp_widget):
+          target: display1

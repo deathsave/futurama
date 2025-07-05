@@ -64,6 +64,8 @@ counters:
         reset_on_complete: false
 
 event_player:
+#this relights the slurm_factory start shot when a new ball starts if the player
+#lit it the last ball but didn't start it.    
     check_slurm_factory_ready{current_player.caps_collected >= current_player.caps_to_golden_cap}: found_golden_cap
 
 

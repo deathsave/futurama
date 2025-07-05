@@ -1963,6 +1963,46 @@ widget_styles:
         z: 9
         anchor_x: right
         anchor_y: bottom
+    amy_xp_show_style:
+        font_size: 60
+        color: hotpink
+        y: 300
+        x: 1670
+        z: 9
+        anchor_x: right
+        anchor_y: bottom
+    hermes_xp_show_style:
+        font_size: 60
+        color: brown
+        y: 170
+        x: 1670
+        z: 9
+        anchor_x: right
+        anchor_y: bottom
+    nibbler_xp_show_style:
+        font_size: 60
+        color: red
+        y: 560
+        x: 1670
+        z: 9
+        anchor_x: right
+        anchor_y: bottom
+    professor_xp_show_style:
+        font_size: 60
+        color: tan
+        y: 430
+        x: 1670
+        z: 9
+        anchor_x: right
+        anchor_y: bottom
+    zoidberg_xp_show_style:
+        font_size: 60
+        color: salmon
+        y: 45
+        x: 1670
+        z: 9
+        anchor_x: right
+        anchor_y: bottom 
     attract_mode_high_score_display_label:
         font_size: 40
         anchor_x: right
