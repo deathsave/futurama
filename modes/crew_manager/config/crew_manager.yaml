@@ -753,6 +753,56 @@ show_player:
             loops: 0
             show_tokens:
                 which_leela_xp_widget: leela_2xp_widget
+    player_amy_xp{change==1}:
+        amy_xp_show:
+            loops: 0
+            show_tokens:
+                which_amy_xp_widget: amy_1xp_widget
+    player_amy_xp{change==2}:
+        amy_xp_show:
+            loops: 0
+            show_tokens:
+                which_amy_xp_widget: amy_2xp_widget
+    player_hermes_xp{change==1}:
+        hermes_xp_show:
+            loops: 0
+            show_tokens:
+                which_hermes_xp_widget: hermes_1xp_widget
+    player_hermes_xp{change==2}:
+        hermes_xp_show:
+            loops: 0
+            show_tokens:
+                which_hermes_xp_widget: hermes_2xp_widget
+    player_nibbler_xp{change==1}:
+        nibbler_xp_show:
+            loops: 0
+            show_tokens:
+                which_nibbler_xp_widget: nibbler_1xp_widget
+    player_nibbler_xp{change==2}:
+        nibbler_xp_show:
+            loops: 0
+            show_tokens:
+                which_nibbler_xp_widget: nibbler_2xp_widget
+    player_professor_xp{change==1}:
+        professor_xp_show:
+            loops: 0
+            show_tokens:
+                which_professor_xp_widget: professor_1xp_widget
+    player_professor_xp{change==2}:
+        professor_xp_show:
+            loops: 0
+            show_tokens:
+                which_professor_xp_widget: professor_2xp_widget
+    player_zoidberg_xp{change==1}:
+        zoidberg_xp_show:
+            loops: 0
+            show_tokens:
+                which_zoidberg_xp_widget: zoidberg_1xp_widget
+    player_zoidberg_xp{change==2}:
+        zoidberg_xp_show:
+            loops: 0
+            show_tokens:
+                which_zoidberg_xp_widget: zoidberg_2xp_widget
 
 slides:
     amy_level_up_slide:
@@ -1250,7 +1300,226 @@ widgets:
                   - property: opacity, y
                     value: .3, 910
                     duration: .250s
-
+    amy_2xp_widget:
+        - type: text
+          text: 2xp
+          style: amy_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 300
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 290
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 280
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 270
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 260
+                    duration: .250s
+    amy_1xp_widget:
+        - type: text
+          text: 1xp
+          style: amy_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 300
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 290
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 280
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 270
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 260
+                    duration: .250s
+    hermes_2xp_widget:
+        - type: text
+          text: 2xp
+          style: hermes_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 170
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 160
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 150
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 140
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 130
+                    duration: .250s
+    hermes_1xp_widget:
+        - type: text
+          text: 1xp
+          style: hermes_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 170
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 160
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 150
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 140
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 130
+                    duration: .250s
+    nibbler_2xp_widget:
+        - type: text
+          text: 2xp
+          style: nibbler_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 560
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 550
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 540
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 530
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 520
+                    duration: .250s
+    nibbler_1xp_widget:
+        - type: text
+          text: 1xp
+          style: nibbler_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 560
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 550
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 540
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 530
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 520
+                    duration: .250s
+    professor_2xp_widget:
+        - type: text
+          text: 2xp
+          style: professor_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 430
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 420
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 410
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 400
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 390
+                    duration: .250s
+    professor_1xp_widget:
+        - type: text
+          text: 1xp
+          style: professor_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 430
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 420
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 410
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 400
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 390
+                    duration: .250s
+    zoidberg_2xp_widget:
+        - type: text
+          text: 2xp
+          style: zoidberg_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 45
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 35
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 25
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 15
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 5
+                    duration: .250s
+    zoidberg_1xp_widget:
+        - type: text
+          text: 1xp
+          style: zoidberg_xp_show_style
+          expire: 1.5s
+          animations:
+              add_to_slide:
+                  - property: opacity, y
+                    value: 1, 45
+                    duration: .5s
+                  - property: opacity, y
+                    value: .9, 35
+                    duration: .250s
+                  - property: opacity, y
+                    value: .7, 25
+                    duration: .250s
+                  - property: opacity, y
+                    value: .5, 15
+                    duration: .250s
+                  - property: opacity, y
+                    value: .3, 5
+                    duration: .250s
 variable_player:
     leela_level2:
         leela_level: 1

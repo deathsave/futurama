@@ -1,0 +1,7 @@
+#show_version=6
+##! show: hermes_xp_show
+
+- time: .3
+  widgets:
+      (which_hermes_xp_widget):
+          target: display1
