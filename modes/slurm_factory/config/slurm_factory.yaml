@@ -6,7 +6,7 @@ mode:
     stop_events: ball_ending, stop_slurm_factory
     priority: 105
     events_when_started: slurm_factory_tour_begins, mom_zapp_off, amy_slurm_x_check
-    events_when_stopped: restart_theme_music, mom_zapp_on, amy_slurm_x_reset, reset_caps_collected
+    events_when_stopped: restart_theme_music, mom_zapp_on, amy_slurm_x_reset, reset_caps_to_golden
 
 multiballs:
     slurm_factory_tour_MB:
