@@ -497,6 +497,8 @@ variable_player:
         PF_mutliplier: 1
     amy_slurm_x_reset{current_player.amy_level > 3}:
         PF_multiplier: -1
+    reset_caps_to_golden:
+        caps_to_golden_cap: 25
 sound_player:
     timer_shoot_the_ball_timer_complete:
         shoot_the_ball_sounds:
