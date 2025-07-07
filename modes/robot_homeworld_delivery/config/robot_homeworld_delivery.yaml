@@ -427,14 +427,12 @@ sound_player:
         winch_short:
             action: play
             block: true
-    s_pe_platter_active: no_sound|block 
+    s_pe_platter_active: no_sound|block
     caught_by_robots:
         intruder_alert:
             action: play
             loops: 0
-    stop_infiltrate_song:
-        infiltrate_song:
-            action: stop
+    
 
 light_player:
 #remember that the universe hates you, so everything is reversed:
