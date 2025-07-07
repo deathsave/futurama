@@ -384,6 +384,9 @@ sound_player:
     delivery_ended:
         theme_full:
             action: play
+    stop_infiltrate_song:
+        infiltrate_song:
+            action: stop
 
 event_player:
     moon_delivery_start_shot_hit: start_moon_delivery_mode
