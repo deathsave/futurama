@@ -62,10 +62,11 @@ counters:
 #number and starting counting again from there, it will count but won't post
 #the events_when_complete
         reset_on_complete: false
+        restart_events: start_slurm_factory_shot_hit
 
 event_player:
 #this relights the slurm_factory start shot when a new ball starts if the player
-#lit it the last ball but didn't start it.    
+#lit it the last ball but didn't start it.
     check_slurm_factory_ready{current_player.caps_collected >= current_player.caps_to_golden_cap}: found_golden_cap
 
 
