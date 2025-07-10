@@ -5,8 +5,8 @@ mode:
     start_events: start_slurm_factory_shot_hit
     stop_events: ball_ending, stop_slurm_factory
     priority: 105
-    events_when_started: slurm_factory_tour_begins, mom_zapp_off, amy_slurm_x_check
-    events_when_stopped: restart_theme_music, mom_zapp_on, amy_slurm_x_reset, reset_caps_collected
+    events_when_started: slurm_factory_tour_begins, mom_zapp_off, amy_slurm_x_check, delivery_started
+    events_when_stopped: restart_theme_music, mom_zapp_on, amy_slurm_x_reset, reset_caps_to_golden, delivery_ended
 
 multiballs:
     slurm_factory_tour_MB:
