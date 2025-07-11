@@ -3,7 +3,7 @@
 show_player:
     mode_attract_started:
         bender_topper_test_show:
-            priority: 300
+            priority: 301
             loops: 0
         attract_loop_show:
             priority: 300
@@ -47,7 +47,7 @@ show_player:
     s_left_flipper_active:
         multi_labelled_light_test_show: step_back
     test_light_show:
-        backbox_sweep_light_show:
+        bender_topper_test_show:
             loops: 2
             action: play
 
