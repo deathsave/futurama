@@ -6,12 +6,14 @@ custom_code:
 event_player:
   init_done: reset_zoidberg_stepper
 
-#this
 virtual_platform_start_active_switches:
     - s_trough1
     - s_trough2
     - s_trough3
 
+game:
+    max_players: 4
+    
 settings:
     target_points:
         label: Target Points
@@ -2002,7 +2004,7 @@ widget_styles:
         x: 1670
         z: 9
         anchor_x: right
-        anchor_y: bottom 
+        anchor_y: bottom
     attract_mode_high_score_display_label:
         font_size: 40
         anchor_x: right
