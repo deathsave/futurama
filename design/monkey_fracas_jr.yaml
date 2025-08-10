@@ -1,0 +1,8 @@
+#config_version=6
+##! mode: monkey_fracas_jr
+
+mode:
+    start_events: start_video_mode
+    stop_events: end_video_mode
+    priority: 105
+    
