@@ -7,10 +7,7 @@
               action: remove
           escape_robot_city_video:
               slide: reusable_delivery_slide
-          escape_instructions:
-              slide: RH_delivery_instructions_slide
-          escape_instructions2:
-              slide: RH_delivery_instructions_slide
+      events: load_escape_instructions
     - duration: 20ms
       widgets:
           escape_robot_city_video:
