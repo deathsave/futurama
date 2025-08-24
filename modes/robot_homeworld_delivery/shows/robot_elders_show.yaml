@@ -4,15 +4,15 @@
     - duration: 40s
       widgets:
           robot_elders_video:
-              action: add
               slide: reusable_delivery_slide
           robot_elders_instructions:
-              action: add
+              slide: RH_delivery_instructions_slide
+          robot_elders_instructions2:
               slide: RH_delivery_instructions_slide
     - duration: 20ms
       widgets:
           robot_elders_video:
-              action: remove 
+              action: remove
     - duration: 20ms
       events:
           did_not_escape_robot_elders:

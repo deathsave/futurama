@@ -5,6 +5,10 @@
       widgets:
           infiltrate_instructions:
               slide: RH_delivery_instructions_slide
+          infiltrate_instructions_left_shot:
+              slide: RH_delivery_instructions_slide
+          delivery_instructions_arrow_left:
+              slide: RH_delivery_instructions_slide
       sounds:
           infiltrate_song:
               action: play

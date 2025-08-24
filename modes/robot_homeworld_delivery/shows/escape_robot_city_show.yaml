@@ -6,10 +6,10 @@
           robot_elders_video:
               action: remove
           escape_robot_city_video:
-              action: add
               slide: reusable_delivery_slide
           escape_instructions:
-              action: add
+              slide: RH_delivery_instructions_slide
+          escape_instructions2:
               slide: RH_delivery_instructions_slide
     - duration: 20ms
       widgets:

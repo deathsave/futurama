@@ -5,6 +5,8 @@
       widgets:
           lower_bender_instructions:
               slide: RH_delivery_instructions_slide
+          lower_bender_instructions2:
+              slide: RH_delivery_instructions_slide
     - duration: 30s
       widgets:
           lower_bender_video:
@@ -14,3 +16,7 @@
       widgets:
           lower_bender_video:
               action: remove
+          lower_bender_instructions:
+              action: remove
+          lower_bender_instructions2:
+              action: remove 

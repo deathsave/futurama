@@ -13,7 +13,7 @@ virtual_platform_start_active_switches:
 
 game:
     max_players: 4
-    
+
 settings:
     target_points:
         label: Target Points
@@ -2075,6 +2075,40 @@ widget_styles:
         x: center-25%
         y: center+10%
         color: white
+    delivery_text_top:
+        font_size: 96
+        z: 4
+        x: center
+        y: top-15%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
+    delivery_text_top_line2:
+        font_size: 96
+        z: 4
+        x: center
+        y: top-40%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
+    delivery_text_top_big:
+        font_size: 120
+        z: 4
+        x: center
+        y: top-15%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
+    delivery_text_top_big_line2:
+        font_size: 120
+        z: 4
+        x: center
+        y: top-50%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
+
+
 
 
 assets:
