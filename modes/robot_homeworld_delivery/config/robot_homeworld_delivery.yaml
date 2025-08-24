@@ -215,6 +215,37 @@ widgets:
           z: 3
 
 widget_player:
+    load_winch_instructions:
+        lower_bender_instructions:
+            slide: RH_delivery_instructions_slide
+            priority: 101
+        lower_bender_instructions2:
+            slide: RH_delivery_instructions_slide
+            priority: 100
+    remove_winch_instructions:
+        lower_bender_instructions:
+            priority: 101
+            action: remove
+        lower_bender_instructions2:
+            action: remove
+            priority: 100
+    load_dress_up_instructions:        
+        dress_up_instructions:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 101
+        dress_up_instructions2:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 100
+        RH_leela_target:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 99
+        RH_fry_target:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 98
     dress_fry_like_robot_shot_hit:
         RH_fry_target:
             action: remove
@@ -223,6 +254,13 @@ widget_player:
         RH_leela_target:
             action: remove
             priority: 201
+    done_dressing_up:
+        dress_up_instructions:
+            action: remove
+            priority: 101
+        dress_up_instructions2:
+            action: remove
+            priority: 100
     left_ramp_infiltrate_shot_hit:
         infiltrate_instructions_left_shot:
             action: remove

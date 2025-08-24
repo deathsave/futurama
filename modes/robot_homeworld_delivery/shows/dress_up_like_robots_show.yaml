@@ -6,18 +6,7 @@
           dress_up_video:
               action: add
               slide: reusable_delivery_slide
-          dress_up_instructions:
-              action: add
-              slide: RH_delivery_instructions_slide
-          dress_up_instructions2:
-              action: add
-              slide: RH_delivery_instructions_slide
-          RH_leela_target:
-              action: add
-              slide: RH_delivery_instructions_slide
-          RH_fry_target:
-              action: add
-              slide: RH_delivery_instructions_slide
+      events: load_dress_up_instructions    
     - duration: 20ms
       widgets:
           dress_up_video:
@@ -29,4 +18,4 @@
           RH_leela_target:
               action: remove
           RH_fry_target:
-              action: remove 
+              action: remove
