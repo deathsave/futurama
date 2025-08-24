@@ -5,6 +5,8 @@
       widgets:
           human_hunt_instructions:
               slide: RH_delivery_instructions_slide
+          human_hunt_instructions2:
+              slide: RH_delivery_instructions_slide
     - duration: 39s
       widgets:
           human_hunt_video:
