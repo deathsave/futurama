@@ -1,0 +1,206 @@
+#config_version=6
+##! mode: roswell_delivery
+
+mode:
+    start_events: start_roswell_delivery
+    stop_events: stop_roswell_delivery, fail_roswell_delivery
+    priority: 200
+
+state_machines:
+    enos_state:
+        persist_state: false
+        states:
+            start:
+                label: Start state
+                events_when_started: enos_waits
+            bayonets:
+                events_when_started: play_bayonets_show
+            knife_dodge:
+                events_when_started: play_knife_dodge_show
+            minefield:
+                events_when_started: play_minefield_show
+            atomic_test:
+                events_when_started: play_atomic_test_show
+        transitions:
+            - source: start
+              target: bayonets
+              events: enos_shot_hit
+            - source: bayonets
+              target: knife_dodge
+              events: enos_shot_hit
+            - source: knife_dodge
+              target: minefield
+              events: enos_shot_hit
+            - source: minefield
+              target: atomic_test
+              events: enos_shot_hit
+    mildred_state:
+        persist_state: false
+        states:
+            start:
+                label: Start state
+                events_when_started: mildred_waits
+            mildred_is_single:
+                events_when_started: play_mildred_is_single_show
+            walk_me_home:
+                events_when_started: play_walk_me_home_show
+            remind_me_of_enos:
+                events_when_started: play_remind_me_of_enos_show
+            hold_me:
+                events_when_started: play_hold_me_show
+            how_about_these_cookies:
+                events_when_started: play_how_about_these_cookies_show
+        transitions:
+            - source: start
+              target: mildred_is_single
+              events: enos_is_dead
+            - source: mildred_is_single
+              target: walk_me_home
+              events: mildred_shot_hit
+            - source: walk_me_home
+              target: remind_me_of_enos
+              events: mildred_shot_hit
+            - source: remind_me_of_enos
+              target: hold_me
+              events: mildred_shot_hit
+            - source: hold_me
+              target: how_about_these_cookies
+              events: mildred_shot_hit
+    zoidberg_roswell_state:
+        persist_state: false
+        states:
+            start:
+                label: Start state
+                events_when_started: zoidberg_is_busy
+            that_alien_was_zoidberg:
+                events_when_started: play_that_alien_was_zoidberg_show
+            why_come_to_earth:
+                events_when_started: play_why_come_to_earth_show
+            a_buffet:
+                events_when_started: play_a_buffet_show
+            coming_on_to_me:
+                events_when_started: play_coming_on_to_me_show
+            alien_autopsy:
+                events_when_started: play_alien_autopsy_show
+        transitions:
+            - source: start
+              target: that_alien_was_zoidberg
+              events: all_bender_pieces_found
+            - source: that_alien_was_zoidberg
+              target: why_come_to_earth
+              events: zoidberg_target_shot_hit
+            - source: why_come_to_earth
+              target: a_buffet
+              events: zoidberg_target_shot_hit
+            - source: a_buffet
+              target: coming_on_to_me
+              events: zoidberg_target_shot_hit
+            - source: coming_on_to_me
+              target: alien_autopsy
+              events: zoidberg_target_shot_hit
+
+show_player:
+    play_that_alien_was_zoidberg_show:
+        that_alien_was_zoidberg_show:
+            loops: 0
+            action: play
+    play_why_come_to_earth_show:
+        why_come_to_earth_show:
+            loops: 0
+            action: play
+    play_a_buffet_show:
+        a_buffet_show:
+            loops: 0
+            action: play
+    play_coming_on_to_me_show:
+        coming_on_to_me_show:
+            loops: 0
+            action: play
+    play_alien_autopsy_show:
+        alien_autopsy_show:
+            loops: 0
+            action: play
+            events_when_stopped: zoidberg_rescue_ready                
+    play_bayonets_show:
+        bayonets_show:
+            loops: 0
+            action: play
+    play_knife_dodge_show:
+        knife_dodge_show:
+            loops: 0
+            action: play
+    play_minefield_show:
+        minefield_show:
+            loops: 0
+            action: play
+    play_atomic_test_show:
+        atomic_test_show:
+            loops: 0
+            action: play
+            events_when_stopped: dont_sleep_with_mildred
+    play_mildred_is_single_show:
+        mildred_is_single_show:
+            loops: 0
+            action: play
+    play_walk_me_home_show:
+        walk_me_home_show:
+            loops: 0
+            action: play
+    play_remind_me_of_enos_show:
+        remind_me_of_enos_show:
+            loops: 0
+            action: play
+    play_hold_me_show:
+        hold_me_show:
+            loops: 0
+            action: play
+    play_how_about_these_cookies_show:
+        how_about_these_cookies_show:
+            loops: 0
+            action: play
+            events_when_stopped: light_you_cant_be_my_grandma
+
+shots:
+    left_bender_pieces_shot:
+        switches: s_left_ramp
+        enable_events: find_bender_pieces
+        disable_events: all_bender_pieces_found
+    right_bender_pieces_shot:
+        switches: s_right_ramp
+        enable_events: find_bender_pieces
+        disable_events: all_bender_pieces_found
+    left_microwave_shot:
+        switches: s_left_loop
+        enable_events: find_microwave
+        disable_events: steal_the_antenna_instead
+    right_microwave_shot:
+        switches: s_right_loop
+        enable_events: find_microwave
+        disable_events: steal_the_antenna_instead
+    enos_shot:
+        switches: s_t_fry
+        enable_events: dont_change_the_past
+        disable_events: enos_is_dead
+    mildred_shot:
+        switches: s_t_fry
+        enable_events: dont_sleep_with_mildred
+        disable_events: light_you_cant_be_my_grandma
+    zoidberg_target_shot:
+        switches: s_dt_zoidberg
+        enable_events: all_bender_pieces_found
+        disable_events: zoidberg_rescue_ready
+    zoidberg_pop_shot:
+        switches: s_pop_bumper
+        enable_events: all_bender_pieces_found
+        disable_events: zoidberg_rescue_ready
+    you_cant_be_my_grandma_shot:
+        switches: s_VUK
+        enable_events: light_you_cant_be_my_grandma
+        disable_events: you_cant_be_my_grandma_shot_hit
+    steal_antenna_shot:
+        switches: s_left_ramp
+        enable_events: steal_the_antenna_instead
+        disable_events: steal_antenna_shot_hit
+    back_to_the_future_shot:
+        switches: s_r_orbit
+        enable_events: steal_antenna_shot_hit
