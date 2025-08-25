@@ -5,6 +5,7 @@
       widgets:
           infiltrate_instructions:
               slide: RH_delivery_instructions_slide
+      events: load_infiltrate_instructions
       sounds:
           infiltrate_song:
               action: play
@@ -15,6 +16,16 @@
     - duration: 100ms
       widgets:
           infiltrate_video:
+              action: remove
+          infiltrate_instructions:
+              action: remove
+          infiltrate_instructions_left_shot:
+              action: remove
+          delivery_instructions_arrow_left:
+              action: remove
+          infiltrate_instructions_right_shot:
+              action: remove
+          delivery_instructions_arrow_right:
               action: remove
       sounds:
           infiltrate_song:

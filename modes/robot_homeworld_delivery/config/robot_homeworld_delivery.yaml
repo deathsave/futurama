@@ -72,6 +72,9 @@ slides:
         widgets:
             - type: image
               image: delivery_instructions_background
+            - type: image
+              image: RH_delivery_icon
+              z: 2
         target: display2
 
 slide_player:
@@ -107,28 +110,32 @@ widgets:
           z: 3
     lower_bender_instructions:
         - type: text
-          text: Lower Bender with the winch
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 920
-          z: 5
-          anchor_x: left
-          anchor_y: top
+          text: Lower Bender with Winch
+          style: delivery_text_top
+    lower_bender_instructions2:
+        - type: text
+          text: Shoot the Ship
+          style: delivery_text_top_line2
     dress_up_video:
         - type: video
           video: dress_up_clip
           z: 3
     dress_up_instructions:
         - type: text
-          text: Dress up like robots
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 840
-          z: 5
-          anchor_x: left
-          anchor_y: top
+          text: Dress Up Like Robots
+          style: delivery_text_top
+    RH_leela_target:
+        - type: image
+          image: RH_leela_target
+          z: 4
+    RH_fry_target:
+        - type: image
+          image: RH_fry_target
+          z: 4
+    dress_up_instructions2:
+        - type: text
+          text: Hit the Fry and Leela targets
+          style: delivery_text_top_line2
     infiltrate_video:
         - type: video
           video: infiltrate_clip
@@ -136,27 +143,35 @@ widgets:
     infiltrate_instructions:
         - type: text
           text: Infiltrate Robot City
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 760
-          z: 5
-          anchor_x: left
-          anchor_y: top
+          style: delivery_text_top
+    infiltrate_instructions_left_shot:
+        - type: text
+          text: Shoot any lit left shot
+          style: delivery_text_top_line2
+    delivery_instructions_arrow_left:
+        - type: image
+          image: delivery_instructions_arrow_left
+          z: 4
+    delivery_instructions_arrow_right:
+        - type: image
+          image: delivery_instructions_arrow_right
+          z: 4
+    infiltrate_instructions_right_shot:
+        - type: text
+          text: Now shoot any lit right shot
+          style: delivery_text_top_line2
     human_hunt_video:
         - type: video
           video: human_hunt_clip
           z: 3
     human_hunt_instructions:
         - type: text
-          text: Human Hunt - avoid robots, find Bender
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 680
-          z: 5
-          anchor_x: left
-          anchor_y: top
+          text: avoid robots, find Bender
+          style: delivery_text_top
+    human_hunt_instructions2:
+        - type: text
+          text: avoid red shots, shoot blue shots
+          style: delivery_text_top_line2
     rescuing_you_video:
         - type: video
           video: rescuing_you_clip
@@ -172,13 +187,11 @@ widgets:
     robot_elders_instructions:
         - type: text
           text: Escape the Robot Elders
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 600
-          z: 5
-          anchor_x: left
-          anchor_y: top
+          style: delivery_text_top
+    robot_elders_instructions2:
+        - type: text
+          text: Shoot the orbit to escape!
+          style: delivery_text_top_line2
     escape_robot_city_video:
         - type: video
           video: escape_robot_city_clip
@@ -186,19 +199,133 @@ widgets:
     escape_instructions:
         - type: text
           text: Escape Robot City!
-          color: SpringGreen
-          font_size: 50
-          x: 190
-          y: 520
-          z: 5
-          anchor_x: left
-          anchor_y: top
+          style: delivery_text_top
+    escape_instructions2:
+        - type: text
+          text: Shoot the ship to run away
+          style: delivery_text_top_line2
+    deliver_lugnuts_instructions:
+        - type: text
+          text: Quick, shoot the lit shot
+          style: delivery_text_top_big
+    deliver_lugnuts_instructions2:
+        - type: text
+          text: to deliver the lugnuts!
+          style: delivery_text_top_big_line2
     deliver_lugnuts_video:
         - type: video
           video: deliver_lugnuts_clip
           z: 3
 
-#widget_player:
+widget_player:
+    load_winch_instructions:
+        lower_bender_instructions:
+            slide: RH_delivery_instructions_slide
+            priority: 101
+        lower_bender_instructions2:
+            slide: RH_delivery_instructions_slide
+            priority: 100
+    remove_winch_instructions:
+        lower_bender_instructions:
+            priority: 101
+            action: remove
+        lower_bender_instructions2:
+            action: remove
+            priority: 100
+    load_dress_up_instructions:
+        dress_up_instructions:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 101
+        dress_up_instructions2:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 100
+        RH_leela_target:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 99
+        RH_fry_target:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 98
+    dress_fry_like_robot_shot_hit:
+        RH_fry_target:
+            action: remove
+            priority: 201
+    dress_leela_like_robot_shot_hit:
+        RH_leela_target:
+            action: remove
+            priority: 201
+    done_dressing_up:
+        dress_up_instructions:
+            action: remove
+            priority: 101
+        dress_up_instructions2:
+            action: remove
+            priority: 100
+    load_infiltrate_instructions:
+        infiltrate_instructions_left_shot:
+            slide: RH_delivery_instructions_slide
+            priority: 101
+        delivery_instructions_arrow_left:
+            slide: RH_delivery_instructions_slide
+            priority: 100
+    left_ramp_infiltrate_shot_hit:
+        infiltrate_instructions_left_shot:
+            action: remove
+            priority: 204
+        delivery_instructions_arrow_left:
+            action: remove
+            priority: 203
+        infiltrate_instructions_right_shot:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 202
+        delivery_instructions_arrow_right:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 201
+    infiltrate_combo_shot_hit:
+        infiltrate_instructions:
+            action: remove
+            priority: 102
+        infiltrate_instructions_right_shot:
+            action: remove
+            priority: 101
+        delivery_instructions_arrow_right:
+            action: remove
+            priority: 100
+    load_escape_instructions:
+        escape_instructions:
+            slide: RH_delivery_instructions_slide
+            priority: 101
+        escape_instructions2:
+            slide: RH_delivery_instructions_slide
+            priority: 100
+    light_lugnuts_shot:
+        escape_instructions:
+            action: remove
+            priority: 201
+        escape_instructions2:
+            action: remove
+            priority: 200
+        deliver_lugnuts_instructions:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 191
+        deliver_lugnuts_instructions2:
+            action: add
+            slide: RH_delivery_instructions_slide
+            priority: 190
+    escape_but_no_delivery:
+        deliver_lugnuts_instructions:
+            action: remove
+            priority: 201
+        deliver_lugnuts_instructions2:
+            action: remove
+            priority: 200
+
 #most of this is done in shows, usually not much here
 
 
@@ -218,7 +345,7 @@ shots:
         enable_events: dress_up_like_robots
         disable_events: timer_dress_up_timer_complete, timer_dress_up_timer_stopped, dress_leela_like_robot_shot_hit
     left_ramp_infiltrate_shot:
-        switches: s_right_ramp
+        switches: s_left_ramp
         enable_events: infiltrate_robot_city
         disable_events: left_ramp_infiltrate_shot_hit
     right_loop_infiltrate_shot:
@@ -432,7 +559,7 @@ sound_player:
         intruder_alert:
             action: play
             loops: 0
-    
+
 
 light_player:
 #remember that the universe hates you, so everything is reversed:
@@ -515,6 +642,10 @@ light_player:
     lugnuts_shot_hit:
         l_delivery_shot_insert:
             color: ffffff
+    escape_but_no_delivery:
+        l_delivery_shot_insert:
+            color: ffffff
+
 
 show_player:
 #shows should be started by events generated by state machine changes and
@@ -556,9 +687,14 @@ show_player:
             loops: 0
             action: play
             events_when_stopped: stop_infiltrate_song
+            priority: 101
     infiltrate_combo_shot_hit:
         infiltrate_show:
             action: stop
+            priority: 101
+        infiltrate_right_shot_show:
+            action: stop
+            priority: 100
     human_hunt_begins:
         human_hunt_show:
             action: play
