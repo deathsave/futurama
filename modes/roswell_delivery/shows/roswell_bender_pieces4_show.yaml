@@ -1,0 +1,21 @@
+#show_version=6
+##! show: roswell_bender_pieces4_show
+
+    - duration: 1500ms
+      widgets:
+          3_bender_pieces:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 3500ms
+      widgets:
+          3_bender_pieces:
+              action: remove
+              priority: 101
+          4_bender_pieces:
+              action: add
+              slide: reusable_delivery_slide
+              priority: 100
+    - duration: 100ms
+      widgets:
+          4_bender_pieces:
+              action: remove

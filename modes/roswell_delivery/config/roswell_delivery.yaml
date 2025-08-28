@@ -98,8 +98,128 @@ state_machines:
             - source: coming_on_to_me
               target: alien_autopsy
               events: zoidberg_target_shot_hit
+    bender_pieces_state:
+        persist_state: false
+        states:
+            start:
+                label: Start state
+                events_when_started: bender_fell_apart
+            1_pieces:
+                events_when_started: play_1_bender_pieces_show
+            2_pieces:
+                events_when_started: play_2_bender_pieces_show
+            3_pieces:
+                events_when_started: play_3_bender_pieces_show
+            4_pieces:
+                events_when_started: play_4_bender_pieces_show
+            5_pieces:
+                events_when_started: play_5_bender_pieces_show
+        transitions:
+            - source: start
+              target: 1_pieces
+              events: bender_piece_collected
+            - source: 1_pieces
+              target: 2_pieces
+              events: bender_piece_collected
+            - source: 2_pieces
+              target: 3_pieces
+              events: bender_piece_collected
+            - source: 3_pieces
+              target: 4_pieces
+              events: bender_piece_collected
+            - source: 4_pieces
+              target: 5_pieces
+              events: bender_piece_collected
+widgets:
+    zero_bender_pieces:
+        type: image
+        image: roswell_bender_pieces0
+        z: 3
+    1_bender_pieces:
+        type: image
+        image: roswell_bender_pieces1
+        z: 3
+    2_bender_pieces:
+        type: image
+        image: roswell_bender_pieces2
+        z: 3
+    3_bender_pieces:
+        type: image
+        image: roswell_bender_pieces3
+        z: 3
+    4_bender_pieces:
+        type: image
+        image: roswell_bender_pieces4
+        z: 3
+    5_bender_pieces:
+        type: image
+        image: roswell_bender_pieces5
+        z: 3
+    objective_bender_pieces:
+        type: text
+        text: Recover Bender's missing pieces
+        style: delivery_4slot_pos1
+    objective_microwave:
+        type: text
+        text: Find a working microwave
+        style: delivery_4slot_pos2
+    objective_dont_change_past:
+        type: text
+        text: Don't change the past!
+        style: delivery_4slot_pos3
+
 
 show_player:
+#to the past, ship crashes, zoidberg arrested
+    mode_roswell_delivery_started:
+        roswell_delivery_intro_show:
+            loops: 0
+            action: play
+#audio and posted text explaining objectives, shots lit
+    roswell_intro_done:
+        roswell_mission_objectives_show:
+            loops: 0
+            action: play
+#light show for bender pieces shots
+    load_objective_bender_pieces:
+        bender_pieces_shots_lit_show:
+            loops: -1
+            action: play
+    all_bender_pieces_found:
+        bender_pieces_shots_lit_show:
+            action: stop
+    load_objective_microwave:
+        microwave_shots_lit_show:
+            loops: -1
+            action: play
+    #need to add event that unlights microwave shots
+    load_objective_dont_change_past:
+        roswell_fry_shots_lit_show:
+            loops: -1
+            action: play
+    play_1_bender_pieces_show:
+        roswell_bender_pieces1_show:
+            loops: 0
+            action: play
+    play_2_bender_pieces_show:
+        roswell_bender_pieces2_show:
+            loops: 0
+            action: play
+    play_3_bender_pieces_show:
+        roswell_bender_pieces3_show:
+            loops: 0
+            action: play
+    play_4_bender_pieces_show:
+        roswell_bender_pieces4_show:
+            loops: 0
+            action: play
+    play_5_bender_pieces_show:
+        roswell_bender_pieces5_show:
+            loops: 0
+            action: play
+    light_you_cant_be_my_grandma:
+        roswell_fry_shots_lit_show:
+            action: stop
     play_that_alien_was_zoidberg_show:
         that_alien_was_zoidberg_show:
             loops: 0
@@ -120,7 +240,7 @@ show_player:
         alien_autopsy_show:
             loops: 0
             action: play
-            events_when_stopped: zoidberg_rescue_ready                
+            events_when_stopped: zoidberg_rescue_ready
     play_bayonets_show:
         bayonets_show:
             loops: 0
@@ -163,23 +283,31 @@ show_player:
 shots:
     left_bender_pieces_shot:
         switches: s_left_ramp
-        enable_events: find_bender_pieces
+        enable_events: load_objective_bender_pieces
         disable_events: all_bender_pieces_found
     right_bender_pieces_shot:
         switches: s_right_ramp
-        enable_events: find_bender_pieces
+        enable_events: load_objective_bender_pieces
         disable_events: all_bender_pieces_found
     left_microwave_shot:
         switches: s_left_loop
-        enable_events: find_microwave
-        disable_events: steal_the_antenna_instead
+        enable_events: load_objective_microwave
+        disable_events: hopeless_search_for_microwave
     right_microwave_shot:
         switches: s_right_loop
-        enable_events: find_microwave
+        enable_events: load_objective_microwave
+        disable_events: hopeless_search_for_microwave
+    hopeless_left_microwave_shot:
+        switches: s_left_loop
+        enable_events: hopeless_search_for_microwave
+        disable_events: steal_the_antenna_instead
+    hopeless_right_microwave_shot:
+        switches: s_right_loop
+        enable_events: hopeless_search_for_microwave
         disable_events: steal_the_antenna_instead
     enos_shot:
         switches: s_t_fry
-        enable_events: dont_change_the_past
+        enable_events: load_objective_dont_change_past
         disable_events: enos_is_dead
     mildred_shot:
         switches: s_t_fry
@@ -204,3 +332,45 @@ shots:
     back_to_the_future_shot:
         switches: s_r_orbit
         enable_events: steal_antenna_shot_hit
+
+
+sequences:
+    bender_pieces_sequence:
+        enable_events: load_objective_bender_pieces
+        events:
+            - left_bender_pieces_shot_hit, right_bender_pieces_shot_hit, extra_bender_piece
+            - left_bender_pieces_shot_hit, right_bender_pieces_shot_hit, extra_bender_piece
+            - left_bender_pieces_shot_hit, right_bender_pieces_shot_hit, extra_bender_piece
+            - left_bender_pieces_shot_hit, right_bender_pieces_shot_hit, extra_bender_piece
+            - left_bender_pieces_shot_hit, right_bender_pieces_shot_hit, extra_bender_piece
+        events_when_hit: bender_piece_collected
+        events_when_complete: all_bender_pieces_found
+    look_for_microwave_sequence:
+        enable_events: load_objective_microwave
+        events:
+            - left_microwave_shot_hit, right_microwave_shot_hit
+            - left_microwave_shot_hit, right_microwave_shot_hit
+        events_when_hit: look_for_microwave
+        events_when_complete: hopeless_search_for_microwave
+variable_player:
+    bender_piece_collected:
+        bender_xp: 3
+        score: (current_player.crew_multiplier + current_player.zoidberg_multiplier) * current_player.bender_multiplier * machine.ramp_points * current_player.PF_multiplier
+    look_for_microwave:
+        leela_xp: 3
+        professor_xp: 3
+        score: current_player.leela_multiplier * current_player.professor_multiplier * machine.loop_points * current_player.loop_multiplier * current_player.PF_multiplier
+    hopeless_left_microwave_shot_hit:
+        amy_xp: 1
+        score: current_player.leela_multiplier * machine.loop_points * current_player.PF_multiplier
+    hopeless_right_microwave_shot_hit:
+        score: current_player.leela_multiplier * machine.loop_points * current_player.PF_multiplier
+    enos_shot_hit:
+        fry_xp: 2
+        score: current_player.fry_multiplier * machine.target_points * 10 * current_player.PF_multiplier
+    mildred_shot_hit:
+        fry_xp: 3
+        score: current_player.fry_multiplier * machine.target_points * 15 * current_player.PF_multiplier
+    advance_zoidberg_adventures:
+        zoidberg_xp: 3
+        score: (current_player.zoidberg_xp + current_player.fry_multiplier) * machine.weird_points * 10 * current_player.PF_multiplier

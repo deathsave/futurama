@@ -950,9 +950,9 @@ machine_vars:
     ramp_points:
         initial_value: 100
     loop_points:
-        initial_value: 10
+        initial_value: 25
     orbit_points:
-        initial_value: 10
+        initial_value: 75
     level_2_xp:
         initial_value: 4
     level_3_xp:
