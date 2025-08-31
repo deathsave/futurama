@@ -1,0 +1,12 @@
+#show_version=6
+##! show: you_cant_be_my_grandma_show
+
+    - duration: 14s
+      widgets:
+          you_cant_be_my_grandma_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 100ms
+      widgets:
+          you_cant_be_my_grandma_video:
+            action: remove

@@ -5,4 +5,92 @@ mode:
     start_events: start_video_mode
     stop_events: end_video_mode
     priority: 105
-    
+
+state_machines:
+    ship_vert:
+        persist_state: false
+        starting_state: ship_vert_d
+        states:
+            ship_vert_d:
+                label: Start state
+                events_when_started: ship_to_vert_d
+            ship_vert_a:
+                events_when_started: ship_to_vert_a
+            ship_vert_b:
+                events_when_started: ship_to_vert_b
+            ship_vert_c:
+                events_when_started: ship_to_vert_c
+            ship_vert_e:
+                events_when_started: ship_to_vert_e
+            ship_vert_f:
+                events_when_started: ship_to_vert_f
+            ship_vert_g:
+                events_when_started: ship_to_vert_g
+        transitions:
+            - source: ship_vert_a
+              target: ship_vert_b
+              events: ship_down
+            - source: ship_vert_b
+              target: ship_vert_c
+              events: ship_down
+            - source: ship_vert_c
+              target: ship_vert_d
+              events: ship_down
+            - source: ship_vert_d
+              target: ship_vert_e
+              events: ship_down
+            - source: ship_vert_e
+              target: ship_vert_f
+              events: ship_down
+            - source: ship_vert_f
+              target: ship_vert_g
+              events: ship_down
+            - source: ship_vert_g
+              target: ship_vert_f
+              events: ship_up
+            - source: ship_vert_f
+              target: ship_vert_e
+              events: ship_up
+            - source: ship_vert_e
+              target: ship_vert_d
+              events: ship_up
+            - source: ship_vert_d
+              target: ship_vert_c
+              events: ship_up
+            - source: ship_vert_c
+              target: ship_vert_b
+              events: ship_up
+            - source: ship_vert_b
+              target: ship_vert_a
+              events: ship_up
+
+show_player:
+
+variable_player:
+#when the ship moves, it is temporarily in two vertical frames at once, so we
+#set the vert_moving to where the ship is moving but leave vert_current until
+#the moving animation/show is done
+    ship_to_vert_a:
+        ship_vert_moving:
+            string: a
+    ship_to_vert_b:
+        ship_vert_moving:
+            string: b
+    ship_to_vert_c:
+        ship_vert_moving:
+            string: c
+    ship_to_vert_d:
+        ship_vert_moving:
+            string: d
+    ship_to_vert_e:
+        ship_vert_moving:
+            string: e
+    ship_to_vert_f:
+        ship_vert_moving:
+            string: f
+    ship_to_vert_g:
+        ship_vert_moving:
+            string: g
+    ship_move_done:
+        ship_vert_current:
+            string: current_player.ship_vert_moving

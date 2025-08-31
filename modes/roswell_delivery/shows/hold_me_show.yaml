@@ -1,0 +1,12 @@
+#show_version=6
+##! show: hold_me_show
+
+    - duration: 9s
+      widgets:
+          hold_me_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 100ms
+      widgets:
+          hold_me_video:
+            action: remove

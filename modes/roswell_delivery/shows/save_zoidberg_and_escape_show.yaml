@@ -1,0 +1,21 @@
+#show_version=6
+##! show: save_zoidberg_and_escape_show
+
+    - duration: 9s
+      widgets:
+          crew_rescues_zoidberg_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          crew_rescues_zoidberg_video:
+              action: remove
+    - duration: 8s
+      widgets:
+          escape_roswell_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          escape_roswell_video:
+              action: remove

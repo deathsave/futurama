@@ -45,8 +45,6 @@ state_machines:
             walk_me_home:
                 events_when_started: play_walk_me_home_show
             remind_me_of_enos:
-                events_when_started: play_remind_me_of_enos_show
-            hold_me:
                 events_when_started: play_hold_me_show
             how_about_these_cookies:
                 events_when_started: play_how_about_these_cookies_show
@@ -58,9 +56,6 @@ state_machines:
               target: walk_me_home
               events: mildred_shot_hit
             - source: walk_me_home
-              target: remind_me_of_enos
-              events: mildred_shot_hit
-            - source: remind_me_of_enos
               target: hold_me
               events: mildred_shot_hit
             - source: hold_me
@@ -72,27 +67,37 @@ state_machines:
             start:
                 label: Start state
                 events_when_started: zoidberg_is_busy
-            that_alien_was_zoidberg:
-                events_when_started: play_that_alien_was_zoidberg_show
+            zoidberg_captured:
+                events_when_started: play_zoidberg_captured_show
+            zoidberg_hello:
+                events_when_started: play_zoidberg_hello_show
             why_come_to_earth:
                 events_when_started: play_why_come_to_earth_show
-            a_buffet:
-                events_when_started: play_a_buffet_show
+            get_me_the_president:
+                events_when_started: play_get_me_the_president_show
+            meeting_new_people:
+                events_when_started: play_meeting_new_people_show
             coming_on_to_me:
                 events_when_started: play_coming_on_to_me_show
             alien_autopsy:
                 events_when_started: play_alien_autopsy_show
         transitions:
             - source: start
-              target: that_alien_was_zoidberg
-              events: all_bender_pieces_found
-            - source: that_alien_was_zoidberg
+              target: zoidberg_captured
+              events: zoidberg_target_shot_hit
+            - source: zoidberg_captured
+              target: zoidberg_hello
+              events: zoidberg_target_shot_hit
+            - source: zoidberg_hello
               target: why_come_to_earth
               events: zoidberg_target_shot_hit
             - source: why_come_to_earth
-              target: a_buffet
+              target: get_me_the_president
               events: zoidberg_target_shot_hit
-            - source: a_buffet
+            - source: get_me_the_president
+              target: meeting_new_people
+              events: zoidberg_target_shot_hit
+            - source: meeting_new_people
               target: coming_on_to_me
               events: zoidberg_target_shot_hit
             - source: coming_on_to_me
@@ -130,6 +135,14 @@ state_machines:
             - source: 4_pieces
               target: 5_pieces
               events: bender_piece_collected
+    microwave_state:
+        persist_state: false
+        states:
+            start:
+                label: Start state
+                events_when_started: microwave_broken
+            microwave_search1:
+                events_when_started:
 widgets:
     zero_bender_pieces:
         type: image
@@ -167,6 +180,74 @@ widgets:
         type: text
         text: Don't change the past!
         style: delivery_4slot_pos3
+    enos_killed_phone_call_video:
+        type: video
+        video: enos_killed_phone_call_clip
+        z: 3
+    walk_me_home_video:
+        type: video
+        video: walk_me_home_clip
+        z: 3
+    hold_me_video:
+        type: video
+        video: hold_me_clip
+        z: 3
+    these_cookies_video:
+        type: video
+        video: these_cookies_clip
+        z: 3
+    you_cant_be_my_grandma_video:
+        type: video
+        video: you_cant_be_my
+        z: 3
+    lets_just_steal_radar_video:
+        type: video
+        video: lets_just_steal_radar_clip
+        z: 3
+    screw_history_video:
+        type: video
+        video: screw_history_clip
+        z: 3
+    steal_the_radar_antenna_video:
+        type: video
+        video: steal_the_radar_antenna_clip
+        z: 3
+    rescue_final_bender_pieces_video:
+        type: video
+        video: rescue_final_bender_pieces
+        z: 3
+    crew_rescues_zoidberg_video:
+        type: video
+        video: crew_rescues_zoidberg_clip
+        z: 3
+    zoidberg_captured_video:
+        type: video
+        video: zoidberg_captured
+        z: 3
+    zoidberg_hello_video:
+        type: video
+        video: zoidberg_hello
+        z: 3
+    why_come_to_earth_video:
+        type: video
+        vidoe: why_come_to_earth_clip
+        z: 3
+    get_me_the_president_video:
+        type: video
+        video: get_me_the_president_clip
+        z: 3
+    meeting_new_people_video:
+        type: video
+        video: meeting_new_people_clip
+        z: 3
+    coming_on_to_me_video:
+        type: video
+        video: are_you_coming_on_to_me_clip
+        z: 3
+    alien_autopsy_video:
+        type: video
+        video: alien_autopsy_clip
+        z: 3
 
 
 show_player:
@@ -197,6 +278,7 @@ show_player:
         roswell_fry_shots_lit_show:
             loops: -1
             action: play
+#bender_pieces_shows:
     play_1_bender_pieces_show:
         roswell_bender_pieces1_show:
             loops: 0
@@ -220,6 +302,7 @@ show_player:
     light_you_cant_be_my_grandma:
         roswell_fry_shots_lit_show:
             action: stop
+#zoidberg shows
     play_that_alien_was_zoidberg_show:
         that_alien_was_zoidberg_show:
             loops: 0
@@ -241,6 +324,17 @@ show_player:
             loops: 0
             action: play
             events_when_stopped: zoidberg_rescue_ready
+#leela and microwave shows
+    look_for_microwave:
+    hopeless_left_microwave_shot_hit:
+        microwave_around_here_somewhere_show:
+            loops: 0
+            action: play
+    hopeless_right_microwave_shot_hit:
+        microwave_around_here_somewhere_show:
+            loops: 0
+            action: play
+#enos shows
     play_bayonets_show:
         bayonets_show:
             loops: 0
@@ -258,16 +352,13 @@ show_player:
             loops: 0
             action: play
             events_when_stopped: dont_sleep_with_mildred
+#mildred shows
     play_mildred_is_single_show:
         mildred_is_single_show:
             loops: 0
             action: play
     play_walk_me_home_show:
         walk_me_home_show:
-            loops: 0
-            action: play
-    play_remind_me_of_enos_show:
-        remind_me_of_enos_show:
             loops: 0
             action: play
     play_hold_me_show:
@@ -279,6 +370,23 @@ show_player:
             loops: 0
             action: play
             events_when_stopped: light_you_cant_be_my_grandma
+    you_cant_be_my_grandma_shot_hit:
+        you_cant_be_my_grandma_show:
+            loops: 0
+            action: play
+            events_when_stopped: nasty_in_the_pasty
+    nasty_in_the_pasty:
+        lets_just_steal_radar_show:
+            loops: 0
+            action: play
+    wrap_it_up_shot_hit{device.state_machines.bender_pieces_state.state!=5_pieces}:
+        save_zoidberg_bender_and_escape_show:
+            loops: 0
+            action: play
+    wrap_it_up_shot_hit{device.state_machines.bender_pieces_state.state==5_pieces}:
+        save_zoidberg_and_escape_show:
+            loops: 0
+            action: play
 
 shots:
     left_bender_pieces_shot:
@@ -300,11 +408,11 @@ shots:
     hopeless_left_microwave_shot:
         switches: s_left_loop
         enable_events: hopeless_search_for_microwave
-        disable_events: steal_the_antenna_instead
+        disable_events: nasty_in_the_pasty
     hopeless_right_microwave_shot:
         switches: s_right_loop
         enable_events: hopeless_search_for_microwave
-        disable_events: steal_the_antenna_instead
+        disable_events: nasty_in_the_pasty
     enos_shot:
         switches: s_t_fry
         enable_events: load_objective_dont_change_past
@@ -313,24 +421,31 @@ shots:
         switches: s_t_fry
         enable_events: dont_sleep_with_mildred
         disable_events: light_you_cant_be_my_grandma
-    zoidberg_target_shot:
-        switches: s_dt_zoidberg
-        enable_events: all_bender_pieces_found
-        disable_events: zoidberg_rescue_ready
-    zoidberg_pop_shot:
-        switches: s_pop_bumper
-        enable_events: all_bender_pieces_found
-        disable_events: zoidberg_rescue_ready
     you_cant_be_my_grandma_shot:
         switches: s_VUK
         enable_events: light_you_cant_be_my_grandma
         disable_events: you_cant_be_my_grandma_shot_hit
+    zoidberg_target_shot:
+        switches: s_dt_zoidberg
+        enable_events: load_objective_dont_change_past
+        disable_events: play_alien_autopsy_show
+        hit_events: zoidberg_pop_shot_hit
+#helps speed up finishing zoidberg after bender shots are complete
+    zoidberg_pop_shot:
+        switches: s_pop_bumper
+        enable_events: all_bender_pieces_found
+        disable_events: play_alien_autopsy_show
+#filler shot until zoidberg pop shot is qualified
+    filler_pop_shot:
+        switches: s_pop_bumper
+        enable_events: load_objective_dont_change_past
+        disable_events: all_bender_pieces_found
     steal_antenna_shot:
-        switches: s_left_ramp
-        enable_events: steal_the_antenna_instead
-        disable_events: steal_antenna_shot_hit
-    back_to_the_future_shot:
-        switches: s_r_orbit
+        switches: s_pe_platter
+        enable_events: nasty_in_the_pasty
+        disable_events: disable_steal_antenna_shot
+    wrap_it_up_shot:
+        switches: s_VUK
         enable_events: steal_antenna_shot_hit
 
 
@@ -352,7 +467,15 @@ sequences:
             - left_microwave_shot_hit, right_microwave_shot_hit
         events_when_hit: look_for_microwave
         events_when_complete: hopeless_search_for_microwave
+
 variable_player:
+    filler_pop_shot_hit:
+        professor_xp: 1
+        score: machine.pop_points * 5 * current_player.PF_multiplier
+        pop_bumper_hits: 1
+    zoidberg_pop_shot_hit:
+        zoidberg_xp: 1
+        score: machine.pop_points * 10 * current_player.zoidberg_multiplier * current_player.PF_multiplier
     bender_piece_collected:
         bender_xp: 3
         score: (current_player.crew_multiplier + current_player.zoidberg_multiplier) * current_player.bender_multiplier * machine.ramp_points * current_player.PF_multiplier
