@@ -1,0 +1,12 @@
+#show_version=6
+##! show: mildred_is_single_show
+
+    - duration: 12s
+      widgets:
+          enos_killed_phone_call_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 100ms
+      widgets:
+          enos_killed_phone_call_video:
+            action: remove

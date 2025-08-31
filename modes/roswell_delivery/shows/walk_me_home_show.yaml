@@ -1,0 +1,12 @@
+#show_version=6
+##! show: walk_me_home_show
+
+    - duration: 4s
+      widgets:
+          walk_me_home_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 100ms
+      widgets:
+          walk_me_home_video:
+            action: remove

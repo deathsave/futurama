@@ -1,0 +1,13 @@
+#show_version=6
+##! show: steal_the_radar_antenna_show
+
+    - duration: 19s
+      widgets:
+          steal_the_radar_antenna_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      events: disable_steal_antenna_shot
+      widgets:
+          steal_the_radar_antenna_video:
+            action: remove
