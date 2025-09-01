@@ -1,0 +1,12 @@
+#show_version=6
+##! show: coming_on_to_me_show
+
+    - duration: 9s
+      widgets:
+          coming_on_to_me_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          coming_on_to_me_video:
+              action: remove

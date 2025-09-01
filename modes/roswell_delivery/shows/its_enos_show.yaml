@@ -1,0 +1,14 @@
+#show_version=6
+##! show: its_enos_show
+
+    - duration: 4s
+      widgets:
+          its_enos_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 50ms
+      events: smart_fry_leaves
+    - duration: 25ms
+      widgets:
+          its_enos_video:
+              action: remove

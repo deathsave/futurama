@@ -1,0 +1,12 @@
+#show_version=6
+##! show: zoidberg_hello_show
+
+    - duration: 6s
+      widgets:
+          zoidberg_hello_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          zoidberg_hello_video:
+              action: remove

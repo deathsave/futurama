@@ -1,0 +1,12 @@
+#show_version=6
+##! show: meeting_new_people_show
+
+    - duration: 9s
+      widgets:
+          meeting_new_people_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          meeting_new_people_video:
+              action: remove
