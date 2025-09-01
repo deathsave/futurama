@@ -1,0 +1,12 @@
+#show_version=6
+##! show: atomic_test_show
+
+    - duration: 19s
+      widgets:
+          atomic_test_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          atomic_test_video:
+              action: remove

@@ -13,25 +13,40 @@ state_machines:
             start:
                 label: Start state
                 events_when_started: enos_waits
+            its_enos:
+                events_when_started: play_its_enos_show
             bayonets:
                 events_when_started: play_bayonets_show
-            knife_dodge:
-                events_when_started: play_knife_dodge_show
+            this_place_dangerous:
+                events_when_started: play_this_place_dangerous_show
             minefield:
                 events_when_started: play_minefield_show
+            knife_dodge:
+                events_when_started: play_knife_dodge_show
+            stay_put:
+                events_when_started: play_stay_put_show
             atomic_test:
                 events_when_started: play_atomic_test_show
         transitions:
             - source: start
+              target: its_enos
+              events: enos_shot_hit
+            - source: its_enos
               target: bayonets
               events: enos_shot_hit
             - source: bayonets
-              target: knife_dodge
+              target: this_place_dangerous
               events: enos_shot_hit
-            - source: knife_dodge
+            - source: this_place_dangerous
               target: minefield
               events: enos_shot_hit
             - source: minefield
+              target: knife_dodge
+              events: enos_shot_hit
+            - source: knife_dodge
+              target: stay_put
+              events: enos_shot_hit
+            - source: stay_put
               target: atomic_test
               events: enos_shot_hit
     mildred_state:
@@ -44,7 +59,7 @@ state_machines:
                 events_when_started: play_mildred_is_single_show
             walk_me_home:
                 events_when_started: play_walk_me_home_show
-            remind_me_of_enos:
+            hold_me:
                 events_when_started: play_hold_me_show
             how_about_these_cookies:
                 events_when_started: play_how_about_these_cookies_show
@@ -144,6 +159,7 @@ state_machines:
             microwave_search1:
                 events_when_started:
 widgets:
+#bender widgets
     zero_bender_pieces:
         type: image
         image: roswell_bender_pieces0
@@ -168,6 +184,7 @@ widgets:
         type: image
         image: roswell_bender_pieces5
         z: 3
+#objective widgets
     objective_bender_pieces:
         type: text
         text: Recover Bender's missing pieces
@@ -180,6 +197,39 @@ widgets:
         type: text
         text: Don't change the past!
         style: delivery_4slot_pos3
+#enos widgets
+    its_enos_video:
+        type: video
+        video: its_enos_clip
+        z: 3
+    bayonets_video:
+        type: video
+        video: bayonets_clip
+        z: 3
+    this_place_dangerous_video:
+        type: video
+        video: this_place_dangerous_clip
+        z: 3
+    minefield_video:
+        type: video
+        video: minefield_clip
+        z: 3
+    knife_dodge_video:
+        type: video
+        video: knife_dodge_clip
+        z: 3
+    stay_put_video:
+        type: video
+        video: stay_put_clip
+        z: 3
+    atomic_test_video:
+        type: video
+        video: you_are_out_of_here_clip
+        z: 3
+    you_ever_get_the_feeling_video:
+        type: video
+        video: you_ever_get_the_feeling_clip
+#mildred widgets
     enos_killed_phone_call_video:
         type: video
         video: enos_killed_phone_call_clip
@@ -200,6 +250,7 @@ widgets:
         type: video
         video: you_cant_be_my
         z: 3
+#finale widgets
     lets_just_steal_radar_video:
         type: video
         video: lets_just_steal_radar_clip
@@ -303,16 +354,24 @@ show_player:
         roswell_fry_shots_lit_show:
             action: stop
 #zoidberg shows
-    play_that_alien_was_zoidberg_show:
-        that_alien_was_zoidberg_show:
+    play_zoidberg_captured_show:
+        zoidberg_captured_show:
+            loops: 0
+            action: play
+    play_zoidberg_hello_show:
+        zoidberg_hello_show:
             loops: 0
             action: play
     play_why_come_to_earth_show:
         why_come_to_earth_show:
             loops: 0
             action: play
-    play_a_buffet_show:
-        a_buffet_show:
+    play_get_me_the_president_show:
+        get_me_the_president_show:
+            loops: 0
+            action: play
+    play_meeting_new_people_show:
+        meeting_new_people_show:
             loops: 0
             action: play
     play_coming_on_to_me_show:
@@ -335,23 +394,39 @@ show_player:
             loops: 0
             action: play
 #enos shows
+    play_its_enos_show:
+        its_enos_show:
+            loops: 0
+            action: play
     play_bayonets_show:
         bayonets_show:
             loops: 0
             action: play
-    play_knife_dodge_show:
-        knife_dodge_show:
+    play_this_place_dangerous_show:
+        this_place_dangerous_show:
             loops: 0
             action: play
     play_minefield_show:
         minefield_show:
             loops: 0
             action: play
+    play_knife_dodge_show:
+        knife_dodge_show:
+            loops: 0
+            action: play
+    play_stay_put_show:
+        stay_put_show:
+            loops: 0
+            action: play
     play_atomic_test_show:
         atomic_test_show:
             loops: 0
             action: play
-            events_when_stopped: dont_sleep_with_mildred
+            events_when_stopped: enos_is_dead
+    enos_secret_shot_hit:
+        you_ever_get_the_feeling_show:
+            loops: 0
+            action: play
 #mildred shows
     play_mildred_is_single_show:
         mildred_is_single_show:
@@ -397,6 +472,14 @@ shots:
         switches: s_right_ramp
         enable_events: load_objective_bender_pieces
         disable_events: all_bender_pieces_found
+    left_fry_ramp_shot:
+        switches: s_left_ramp
+        enable_events: light_fry_ramp_shots
+        disable_events:
+    right_fry_ramp_shot:
+        switches: s_right_ramp
+        enable_events: light_fry_ramp_shots
+        disable_events:
     left_microwave_shot:
         switches: s_left_loop
         enable_events: load_objective_microwave
@@ -417,10 +500,12 @@ shots:
         switches: s_t_fry
         enable_events: load_objective_dont_change_past
         disable_events: enos_is_dead
+        hit_events: right_fry_ramp_shot_hit, left_fry_ramp_shot_hit
     mildred_shot:
         switches: s_t_fry
-        enable_events: dont_sleep_with_mildred
+        enable_events: enos_is_dead
         disable_events: light_you_cant_be_my_grandma
+        hit_events: right_fry_ramp_shot_hit, left_fry_ramp_shot_hit
     you_cant_be_my_grandma_shot:
         switches: s_VUK
         enable_events: light_you_cant_be_my_grandma
@@ -448,7 +533,6 @@ shots:
         switches: s_VUK
         enable_events: steal_antenna_shot_hit
 
-
 sequences:
     bender_pieces_sequence:
         enable_events: load_objective_bender_pieces
@@ -468,6 +552,20 @@ sequences:
         events_when_hit: look_for_microwave
         events_when_complete: hopeless_search_for_microwave
 
+event_player:
+#conditional based on crew level:
+
+#makes collecting bender pieces easier if bender_level is high enough
+    right_bender_pieces_shot_hit{current_player.bender_level >3}: extra_bender_piece
+
+#shortcut qualifiers
+    all_bender_pieces_found{current_player.bender_level > 4}: bender_wants_to_leave
+    all_bender_pieces_found{current_player.bender_level < 5}: light_fry_ramp_shots
+    hopeless_search_for_microwave{current_player.leela_level > 4}: leela_wants_to_leave
+    zoidberg_rescue_ready{current_player.zoidberg_level > 4}: zoidberg_wants_to_leave
+    enos_is_dead{current_player.fry_level > 4 or current_player.professor_level > 4}: professor_wants_to_leave
+    smart_fry_leaves{current_player.fry_level > 5}: fry_wants_to_leave
+
 variable_player:
     filler_pop_shot_hit:
         professor_xp: 1
@@ -479,6 +577,9 @@ variable_player:
     bender_piece_collected:
         bender_xp: 3
         score: (current_player.crew_multiplier + current_player.zoidberg_multiplier) * current_player.bender_multiplier * machine.ramp_points * current_player.PF_multiplier
+    extra_bender_piece:
+        score: current_player.PF_multiplier * (current_player.bender_level + current_player.crew_multiplier) * machine.ramp_points * 50
+        bender_xp: 2
     look_for_microwave:
         leela_xp: 3
         professor_xp: 3

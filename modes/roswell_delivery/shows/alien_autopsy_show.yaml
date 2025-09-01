@@ -1,0 +1,12 @@
+#show_version=6
+##! show: alien_autopsy_show
+
+    - duration: 5s
+      widgets:
+          alien_autopsy_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          alien_autopsy_video:
+              action: remove

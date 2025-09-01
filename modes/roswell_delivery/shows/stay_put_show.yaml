@@ -1,0 +1,12 @@
+#show_version=6
+##! show: stay_put_show
+
+    - duration: 15s
+      widgets:
+          stay_put_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          stay_put_video:
+              action: remove

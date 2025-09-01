@@ -1,0 +1,12 @@
+#show_version=6
+##! show: this_place_dangerous_show
+
+    - duration: 4s
+      widgets:
+          this_place_dangerous_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          this_place_dangerous_video:
+              action: remove

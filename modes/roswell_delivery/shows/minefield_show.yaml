@@ -1,0 +1,12 @@
+#show_version=6
+##! show: minefield_show
+
+    - duration: 7s
+      widgets:
+          minefield_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          minefield_video:
+              action: remove

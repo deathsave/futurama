@@ -1,0 +1,13 @@
+#show_version=6
+##! show: knife_dodge_show
+
+    - duration: 10s
+      widgets:
+          knife_dodge_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          knife_dodge_video:
+              action: remove
+    
