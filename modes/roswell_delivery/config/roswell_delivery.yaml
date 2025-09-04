@@ -1,9 +1,25 @@
 #config_version=6
 ##! mode: roswell_delivery
 
+
+#######mode overview#######
+
+#intro video
+#objectives announced: rescue bender's body, find a microwave, don't change past
+#each objective announced enables shots and light shows and state machines
+
+#once bender pieces are all found, ramps start progressing fry's story instead
+
+#if enos is dead, all bender pieces are found and zoidberg progression is all done before
+#fry sleeps with mildred, then skip to "lets_just_steal_radar_show"
+
+#20 seconds to shoot the ship while they steal the radar antenna,
+#then the escape shot is lit, and hitting that ends the mode
+
+
 mode:
     start_events: start_roswell_delivery
-    stop_events: stop_roswell_delivery, fail_roswell_delivery
+    stop_events: stop_roswell_delivery, fail_roswell_delivery, ball_ending
     priority: 200
 
 state_machines:
@@ -156,8 +172,28 @@ state_machines:
             start:
                 label: Start state
                 events_when_started: microwave_broken
-            microwave_search1:
-                events_when_started:
+            yo_holmes:
+                events_when_started: play_yo_holmes_show
+            ax_you_again:
+                events_when_started: play_ax_you_again_show
+            settle_in:
+                events_when_started: play_settle_in_show
+            could_steal_microwave:
+                events_when_started: play_could_steal_microwave_show
+        transitions:
+            - source: start
+              target: yo_holmes
+              events: left_microwave_shot_hit, right_microwave_shot_hit
+            - source: yo_holmes
+              target: ax_you_again
+              events: left_microwave_shot_hit, right_microwave_shot_hit
+            - source: ax_you_again
+              target: settle_in
+              events: left_microwave_shot_hit, right_microwave_shot_hit
+            - source: settle_in
+              target: could_steal_microwave
+              events: left_microwave_shot_hit, right_microwave_shot_hit
+
 widgets:
 #bender widgets
     zero_bender_pieces:
@@ -197,6 +233,23 @@ widgets:
         type: text
         text: Don't change the past!
         style: delivery_4slot_pos3
+#microwave widgets
+    yo_holmes_video:
+        type: video
+        video: yo_holmes_clip
+        z: 3
+    ax_you_again_video:
+        type: video
+        video: ax_you_again_clip
+        z: 3
+    settle_in_video:
+        type: video
+        video: settle_in_clip
+        z: 3
+    could_steal_microwave_video:
+        type: video
+        video: could_steal_microwave_clip
+        z: 3
 #enos widgets
     its_enos_video:
         type: video
@@ -271,6 +324,7 @@ widgets:
         type: video
         video: crew_rescues_zoidberg_clip
         z: 3
+#zoidberg widgets
     zoidberg_captured_video:
         type: video
         video: zoidberg_captured
@@ -384,7 +438,19 @@ show_player:
             action: play
             events_when_stopped: zoidberg_rescue_ready
 #leela and microwave shows
-    look_for_microwave:
+    play_yo_holmes_show:
+        yo_holmes_show:
+            loops: 0
+    play_ax_you_again_show:
+        ax_you_again_show:
+            loops: 0
+    play_settle_in_show:
+        settle_in_show:
+            loops: 0
+    play_could_steal_microwave_show:
+        could_steal_microwave_show:
+            loops: 0
+            events_when_stopped: hopeless_search_for_microwave
     hopeless_left_microwave_shot_hit:
         microwave_around_here_somewhere_show:
             loops: 0
@@ -450,10 +516,16 @@ show_player:
             loops: 0
             action: play
             events_when_stopped: nasty_in_the_pasty
+    no_nasty_in_the_pasty:
+        lets_just_steal_radar_show:
+            loops: 0
+            action: play
+            events_when_stopped: disable_steal_antenna_shot
     nasty_in_the_pasty:
         lets_just_steal_radar_show:
             loops: 0
             action: play
+            events_when_stopped: disable_steal_antenna_shot
     wrap_it_up_shot_hit{device.state_machines.bender_pieces_state.state!=5_pieces}:
         save_zoidberg_bender_and_escape_show:
             loops: 0
@@ -467,59 +539,59 @@ shots:
     left_bender_pieces_shot:
         switches: s_left_ramp
         enable_events: load_objective_bender_pieces
-        disable_events: all_bender_pieces_found
+        disable_events: all_bender_pieces_found, no_nasty_in_the_pasty, nasty_in_the_pasty
     right_bender_pieces_shot:
         switches: s_right_ramp
         enable_events: load_objective_bender_pieces
-        disable_events: all_bender_pieces_found
+        disable_events: all_bender_pieces_found, no_nasty_in_the_pasty, nasty_in_the_pasty
     left_fry_ramp_shot:
         switches: s_left_ramp
         enable_events: light_fry_ramp_shots
-        disable_events:
+        disable_events: nasty_in_the_pasty, no_nasty_in_the_pasty
     right_fry_ramp_shot:
         switches: s_right_ramp
         enable_events: light_fry_ramp_shots
-        disable_events:
+        disable_events: nasty_in_the_pasty, no_nasty_in_the_pasty
     left_microwave_shot:
         switches: s_left_loop
         enable_events: load_objective_microwave
-        disable_events: hopeless_search_for_microwave
+        disable_events: hopeless_search_for_microwave, nasty_in_the_pasty
     right_microwave_shot:
         switches: s_right_loop
         enable_events: load_objective_microwave
-        disable_events: hopeless_search_for_microwave
+        disable_events: hopeless_search_for_microwave, nasty_in_the_pasty
     hopeless_left_microwave_shot:
         switches: s_left_loop
         enable_events: hopeless_search_for_microwave
-        disable_events: nasty_in_the_pasty
+        disable_events: nasty_in_the_pasty, no_nasty_in_the_pasty
     hopeless_right_microwave_shot:
         switches: s_right_loop
         enable_events: hopeless_search_for_microwave
-        disable_events: nasty_in_the_pasty
+        disable_events: nasty_in_the_pasty, no_nasty_in_the_pasty
     enos_shot:
         switches: s_t_fry
         enable_events: load_objective_dont_change_past
-        disable_events: enos_is_dead
+        disable_events: enos_is_dead, no_nasty_in_the_pasty
         hit_events: right_fry_ramp_shot_hit, left_fry_ramp_shot_hit
     mildred_shot:
         switches: s_t_fry
         enable_events: enos_is_dead
-        disable_events: light_you_cant_be_my_grandma
+        disable_events: light_you_cant_be_my_grandma, no_nasty_in_the_pasty
         hit_events: right_fry_ramp_shot_hit, left_fry_ramp_shot_hit
     you_cant_be_my_grandma_shot:
         switches: s_VUK
         enable_events: light_you_cant_be_my_grandma
-        disable_events: you_cant_be_my_grandma_shot_hit
+        disable_events: you_cant_be_my_grandma_shot_hit, no_nasty_in_the_pasty
     zoidberg_target_shot:
         switches: s_dt_zoidberg
         enable_events: load_objective_dont_change_past
-        disable_events: play_alien_autopsy_show
+        disable_events: play_alien_autopsy_show, nasty_in_the_pasty, no_nasty_in_the_pasty
         hit_events: zoidberg_pop_shot_hit
 #helps speed up finishing zoidberg after bender shots are complete
     zoidberg_pop_shot:
         switches: s_pop_bumper
         enable_events: all_bender_pieces_found
-        disable_events: play_alien_autopsy_show
+        disable_events: play_alien_autopsy_show, nasty_in_the_pasty, no_nasty_in_the_pasty
 #filler shot until zoidberg pop shot is qualified
     filler_pop_shot:
         switches: s_pop_bumper
@@ -527,7 +599,7 @@ shots:
         disable_events: all_bender_pieces_found
     steal_antenna_shot:
         switches: s_pe_platter
-        enable_events: nasty_in_the_pasty
+        enable_events: nasty_in_the_pasty, no_nasty_in_the_pasty
         disable_events: disable_steal_antenna_shot
     wrap_it_up_shot:
         switches: s_VUK
@@ -565,8 +637,17 @@ event_player:
     zoidberg_rescue_ready{current_player.zoidberg_level > 4}: zoidberg_wants_to_leave
     enos_is_dead{current_player.fry_level > 4 or current_player.professor_level > 4}: professor_wants_to_leave
     smart_fry_leaves{current_player.fry_level > 5}: fry_wants_to_leave
+    fry_wants_to_leave: no_nasty_in_the_pasty
+    bender_wants_to_leave: no_nasty_in_the_pasty
+    leela_wants_to_leave: no_nasty_in_the_pasty
+    zoidberg_wants_to_leave: no_nasty_in_the_pasty
+    professor_wants_to_leave: no_nasty_in_the_pasty
 
 variable_player:
+    load_objective_dont_change_past:
+        mode_counter_value1:
+            action: set
+            int: 1
     filler_pop_shot_hit:
         professor_xp: 1
         score: machine.pop_points * 5 * current_player.PF_multiplier
@@ -598,3 +679,5 @@ variable_player:
     advance_zoidberg_adventures:
         zoidberg_xp: 3
         score: (current_player.zoidberg_xp + current_player.fry_multiplier) * machine.weird_points * 10 * current_player.PF_multiplier
+    steal_antenna_shot_hit:
+        mode_counter_value1: 1

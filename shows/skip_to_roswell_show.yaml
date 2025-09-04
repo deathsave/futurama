@@ -1,0 +1,11 @@
+#show_version=6
+##! show: skip_to_roswell_show
+
+    - duration: 200ms
+      events: stop_cryolab_delivery_mode
+    - duration: 50ms
+      events: testing_skip_moon_delivery
+    - duration: 50ms
+      events: testing_skip_cannibalon_delivery
+    - duration: 50ms
+      events: testing_skip_robot_homeworld

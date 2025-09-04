@@ -1085,6 +1085,9 @@ player_vars:
         initial_value: 0
     mode_time_remaining2:
         initial_value: 0
+    mode_counter_value1:
+        initial_value: 1
+
 
 modes:
     - service

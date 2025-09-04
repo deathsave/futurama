@@ -1,0 +1,12 @@
+#show_version=6
+##! show: could_steal_microwave_show
+
+    - duration: 6s
+      widgets:
+          could_steal_microwave_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          could_steal_microwave_video:
+              action: remove
