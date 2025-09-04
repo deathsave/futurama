@@ -1,0 +1,12 @@
+#show_version=6
+##! show: yo_holmes_show
+
+    - duration: 6s
+      widgets:
+          yo_holmes_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          yo_holmes_video:
+              action: remove

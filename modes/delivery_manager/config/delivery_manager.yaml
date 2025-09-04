@@ -119,6 +119,9 @@ state_machines:
             - source: moon_delivery_active
               target: moon_delivery_done
               events: ball_ending
+            - source: start
+              target: moon_delivery_done
+              events: testing_skip_moon_delivery
     cannibalon_delivery_handler:
         persist_state: true
         states:
@@ -147,6 +150,9 @@ state_machines:
             - source: cannibalon_delivery_active
               target: cannibalon_delivery_done
               events: cannibalon_delivery_show_ended
+            - source: cannibalon_delivery_next
+              target: cannibalon_delivery_done
+              events: testing_skip_cannibalon_delivery
     robot_homeworld_delivery_handler:
         persist_state: true
         states:
@@ -175,6 +181,38 @@ state_machines:
             - source: robot_homeworld_delivery_active
               target: robot_homeworld_delivery_done
               events: mode_robot_homeworld_delivery_stopped
+            - source: robot_homeworld_delivery_next
+              target: robot_homeworld_delivery_done
+              events: testing_skip_robot_homeworld
+    roswell_delivery_handler:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+            roswell_delivery_next:
+                events_when_started: roswell_delivery_next
+            roswell_delivery_enable:
+                show_when_active:
+                    show: roswell_delivery_lit_show
+                    show_tokens: None
+            roswell_delivery_active:
+                events_when_started: roswell_delivery_active
+            roswell_delivery_done:
+                events_when_started: roswell_delivery_done
+        transitions:
+            - source: start
+              target: roswell_delivery_next
+              events: set_next_delivery_roswell
+            - source: roswell_delivery_next
+              target: roswell_delivery_enable
+              events: full_tank
+            - source: roswell_delivery_enable
+              target: roswell_delivery_active
+              events: roswell_delivery_start_shot_hit
+            - source: roswell_delivery_active
+              target: roswell_delivery_done
+              events: mode_roswell_delivery_stopped
+
 
 slides:
     cannibalon_delivery_awards_slide:

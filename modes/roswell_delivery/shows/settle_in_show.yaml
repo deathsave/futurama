@@ -1,0 +1,12 @@
+#show_version=6
+##! show: settle_in_show
+
+    - duration: 6s
+      widgets:
+          settle_in_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          settle_in_video:
+              action: remove

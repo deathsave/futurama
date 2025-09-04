@@ -1,0 +1,12 @@
+#show_version=6
+##! show: ax_you_again_show
+
+    - duration: 6s
+      widgets:
+          ax_you_again_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          ax_you_again_video:
+              action: remove
