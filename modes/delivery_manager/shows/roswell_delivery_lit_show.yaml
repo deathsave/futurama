@@ -1,0 +1,9 @@
+#show_version=6
+##! show: roswell_delivery_lit_show
+
+    - duration: 1
+      events: wait_for_roswell_delivery_lit
+    - duration: 1
+      events: roswell_delivery_lit
+    - duration: -1
+      events: roswell_delivery_has_been_lit

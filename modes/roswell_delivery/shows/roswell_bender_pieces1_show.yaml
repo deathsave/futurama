@@ -11,11 +11,11 @@
           zero_bender_pieces:
               action: remove
               priority: 101
-          1_bender_pieces:
+          one_bender_pieces:
               action: add
               slide: reusable_delivery_slide
               priority: 100
     - duration: 100ms
       widgets:
-          1_bender_pieces:
+          one_bender_pieces:
               action: remove

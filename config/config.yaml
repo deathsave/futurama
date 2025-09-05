@@ -48,6 +48,8 @@ keyboard:
         event: head_left
     2:
         event: head_right
+    m:
+        event: test_roswell
 hardware:
     platform: p3_roc
     stepper_controllers: pololu_tic
@@ -171,7 +173,7 @@ lights:
         number: 2-48-49-50
         platform_settings:
             polarity: true
-        tags: lamps, indicator
+        tags: lamps, indicator, ramps
     l_left_loop_insert:
         number: 2-51-52-53
         platform_settings:
@@ -186,7 +188,7 @@ lights:
         number: 2-42-43-44
         platform_settings:
             polarity: true
-        tags: lamps, indicator
+        tags: lamps, indicator, ramps
     l_right_loop_insert:
         number: 2-45-46-47
         platform_settings:
@@ -1100,6 +1102,7 @@ modes:
     - moon_delivery
     - cryolab_delivery
     - robot_homeworld_delivery
+    - roswell_delivery
     - bonus
     - high_score
 

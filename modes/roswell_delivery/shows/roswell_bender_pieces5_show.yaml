@@ -3,19 +3,19 @@
 
     - duration: 1500ms
       widgets:
-          4_bender_pieces:
+          four_bender_pieces:
               action: add
               slide: reusable_delivery_slide
     - duration: 3500ms
       widgets:
-          4_bender_pieces:
+          four_bender_pieces:
               action: remove
               priority: 101
-          5_bender_pieces:
+          five_bender_pieces:
               action: add
               slide: reusable_delivery_slide
               priority: 100
     - duration: 100ms
       widgets:
-          5_bender_pieces:
+          five_bender_pieces:
               action: remove
