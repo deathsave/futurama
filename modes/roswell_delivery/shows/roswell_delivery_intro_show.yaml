@@ -1,0 +1,12 @@
+#show_version=6
+##! show: roswell_delivery_intro_show
+
+    - duration: 8s
+      widgets:
+          roswell_delivery_intro_p2:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          roswell_delivery_intro_p2:
+              action: remove

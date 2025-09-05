@@ -92,7 +92,7 @@ state_machines:
               events: cannibalon_delivery_done
             - source: robot_homeworld
               target: roswell
-              events: stop_robot_homeworld_delivery
+              events: robot_homeworld_delivery_done
     moon_delivery_handler:
         persist_state: true
         states:
@@ -278,6 +278,11 @@ shots:
         enable_events: robot_homeworld_delivery_lit
         disable_events: robot_homeworld_intro_done
         persist_enable: true
+    roswell_delivery_start_shot:
+        switch: s_VUK
+        enable_events: roswell_delivery_lit
+        disable_events: roswell_intro_done
+        persist_enable: true
 
 ball_holds:
     cannibalon_delivery_hold:
@@ -300,6 +305,12 @@ ball_holds:
         enable_events: robot_homeworld_delivery_lit
         disable_events: robot_homeworld_intro_done
         release_one_events: robot_homeworld_intro_done
+    roswell_delivery_start_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: roswell_delivery_lit
+        disable_events: roswell_intro_done
+        release_one_events: roswell_intro_done
 
 slide_player:
     mode_moon_delivery_stopped:
@@ -433,6 +444,11 @@ event_player:
     robot_homeworld_delivery_start_shot_hit: start_robot_homeworld_delivery
     start_robot_homeworld_delivery: delivery_started
     mode_robot_homeworld_delivery_stopped: use_full_tank, delivery_ended
+    roswell_delivery_start_shot_hit: start_roswell_delivery
+    mode_roswell_delivery_started: use_full_tank, delivery_started
+    mode_roswell_delivery_stopped: delivery_ended
+
+
 
 show_player:
     cannibalon_delivery_start_shot_hit:
@@ -454,3 +470,9 @@ show_player:
             loops: -1
     robot_homeworld_delivery_start_shot_hit:
         delivery_lit_show: stop
+    roswell_delivery_lit:
+        delivery_lit_show:
+            loops: 0
+    roswell_delivery_start_shot_hit:
+        delivery_lit_show:
+            loops: 0
