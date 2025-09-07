@@ -194,7 +194,43 @@ state_machines:
               target: could_steal_microwave
               events: left_microwave_shot_hit, right_microwave_shot_hit
 
+slide_player:
+    mode_roswell_delivery_started:
+        reusable_delivery_slide:
+            action: play
+            target: display1
+            priority: 300
+        roswell_PF_slide:
+            action: play
+            target: display2
+            priority: 199
+
+widget_player:
+    load_objective_bender_pieces:
+        objective_bender_pieces:
+            slide: roswell_PF_slide
+            action: add
+    load_objective_microwave:
+        objective_microwave:
+            slide: roswell_PF_slide
+            action: add
+    load_objective_dont_change_past:
+        objective_dont_change_past:
+            slide: roswell_PF_slide
+            action: add
+
+slides:
+    roswell_PF_slide:
+        widgets:
+            - type: image
+              image: roswell_delivery_instructions_BG
+              z: 3
+
 widgets:
+    roswell_delivery_BG:
+        type: image
+        image: roswell_delivery_instructions_BG
+        z: 3
     roswell_delivery_intro_p2:
         type: video
         video: roswell_delivery_intro_part2
@@ -207,23 +243,23 @@ widgets:
     one_bender_pieces:
         type: image
         image: roswell_bender_pieces1
-        z: 3
+        z: 4
     two_bender_pieces:
         type: image
         image: roswell_bender_pieces2
-        z: 3
+        z: 5
     three_bender_pieces:
         type: image
         image: roswell_bender_pieces3
-        z: 3
+        z: 6
     four_bender_pieces:
         type: image
         image: roswell_bender_pieces4
-        z: 3
+        z: 7
     five_bender_pieces:
         type: image
         image: roswell_bender_pieces5
-        z: 3
+        z: 8
 #objective widgets
     objective_bender_pieces:
         type: text
@@ -305,7 +341,7 @@ widgets:
         z: 3
     you_cant_be_my_grandma_video:
         type: video
-        video: you_cant_be_my
+        video: you_cant_be_my_clip
         z: 3
 #finale widgets
     lets_just_steal_radar_video:
@@ -319,7 +355,7 @@ widgets:
     steal_the_radar_antenna_video:
         type: video
         video: steal_the_radar_antenna_clip
-        z: 3
+        z: 9
     rescue_final_bender_pieces_video:
         type: video
         video: rescue_final_bender_pieces
@@ -361,6 +397,29 @@ widgets:
 sounds:
     leela_microwave_somewhere:
         target: voice
+    roswell_music_loop:
+        target: music
+    steal_antenna_music:
+        target: music
+    roswell_delivery_objectives:
+        target: voice
+
+
+sound_player:
+    hopeless_right_microwave_shot_hit:
+        leela_microwave_somewhere:
+            action: play
+    hopeless_left_microwave_shot_hit:
+        leela_microwave_somewhere:
+            action: play
+    start_roswell_music:
+        roswell_music_loop:
+            action: play
+            loops: -1
+    you_cant_be_my_grandma_shot_hit:
+        roswell_music_loop:
+            action: stop
+
 
 
 show_player:
@@ -375,6 +434,7 @@ show_player:
         roswell_mission_objectives_show:
             loops: 0
             action: play
+            events_when_stopped: start_roswell_music
 #light show for bender pieces shots
     load_objective_bender_pieces:
         bender_pieces_shots_lit_show:
@@ -462,14 +522,7 @@ show_player:
         could_steal_microwave_show:
             loops: 0
             events_when_stopped: hopeless_search_for_microwave
-    hopeless_left_microwave_shot_hit:
-        microwave_around_here_somewhere_show:
-            loops: 0
-            action: play
-    hopeless_right_microwave_shot_hit:
-        microwave_around_here_somewhere_show:
-            loops: 0
-            action: play
+
 #enos shows
     play_its_enos_show:
         its_enos_show:
@@ -531,9 +584,14 @@ show_player:
         lets_just_steal_radar_show:
             loops: 0
             action: play
-            events_when_stopped: disable_steal_antenna_shot
+            events_when_stopped: play_steal_the_radar_antenna_show
     nasty_in_the_pasty:
         lets_just_steal_radar_show:
+            loops: 0
+            action: play
+            events_when_stopped: play_steal_the_radar_antenna_show
+    play_steal_the_radar_antenna_show:
+        steal_the_radar_antenna_show:
             loops: 0
             action: play
             events_when_stopped: disable_steal_antenna_shot
@@ -614,7 +672,7 @@ shots:
         disable_events: disable_steal_antenna_shot
     wrap_it_up_shot:
         switches: s_VUK
-        enable_events: steal_antenna_shot_hit
+        enable_events: disable_steal_antenna_shot
 
 sequences:
     bender_pieces_sequence:
