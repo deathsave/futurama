@@ -1,12 +1,14 @@
 #show_version=6
 ##! show: mildred_is_single_show
 
-    - duration: 12s
+    - duration: 6s
+      events: clear_background
       widgets:
           enos_killed_phone_call_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 100ms
+      events: set_background_joes_malts
       widgets:
           enos_killed_phone_call_video:
             action: remove

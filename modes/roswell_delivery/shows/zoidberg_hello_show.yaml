@@ -2,11 +2,13 @@
 ##! show: zoidberg_hello_show
 
     - duration: 6s
+      events: clear_background
       widgets:
           zoidberg_hello_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 25ms
+      events: set_background_roswell_base
       widgets:
           zoidberg_hello_video:
               action: remove

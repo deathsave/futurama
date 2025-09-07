@@ -210,15 +210,76 @@ widget_player:
         objective_bender_pieces:
             slide: roswell_PF_slide
             action: add
+    all_bender_pieces_found:
+        objective_bender_pieces:
+            action: remove
     load_objective_microwave:
         objective_microwave:
             slide: roswell_PF_slide
             action: add
+    objective_microwave_change:
+        objective_microwave:
+            action: remove
+            priority: 101
+        objective_microwave_red:
+            action: add
+            slide: roswell_PF_slide
+            priority: 100
     load_objective_dont_change_past:
         objective_dont_change_past:
             slide: roswell_PF_slide
             action: add
-
+    enos_is_dead:
+        objective_dont_change_past:
+            action: remove
+            priority: 101
+        objective_dont_change_past_red:
+            action: add
+            priority: 100
+            slide: roswell_PF_slide
+    clear_background:
+        roswell_base_background:
+            action: remove
+            priority: 100
+        roswell_base_day_background:
+            action: remove
+            priority: 101
+        roswell_crashed_ship_background:
+            action: remove
+            priority: 102
+        roswell_joes_malts_background:
+            action: remove
+            priority: 103
+        roswell_mildred_background:
+            action: remove
+            priority: 104
+        roswell_sears_background:
+            action: remove
+            priority: 105
+    set_background_roswell_base:
+        roswell_base_background:
+            action: add
+            slide: reusable_delivery_slide
+    set_background_roswell_base_day:
+        roswell_base_day_background:
+            action: add
+            slide: reusable_delivery_slide
+    set_background_crashed_ship:
+        roswell_crashed_ship_background:
+            action: add
+            slide: reusable_delivery_slide
+    set_background_joes_malts:
+        roswell_joes_malts_background:
+            action: add
+            slide: reusable_delivery_slide
+    set_background_sears:
+        roswell_sears_background:
+            action: add
+            slide: reusable_delivery_slide
+    set_background_mildred:
+        roswell_mildred_background:
+            action: add
+            slide: reusable_delivery_slide
 slides:
     roswell_PF_slide:
         widgets:
@@ -227,10 +288,29 @@ slides:
               z: 3
 
 widgets:
+#backgrounds
     roswell_delivery_BG:
         type: image
         image: roswell_delivery_instructions_BG
         z: 3
+    roswell_base_background:
+        type: image
+        image: roswell_base_bg
+    roswell_base_day_background:
+        type: image
+        image: roswell_base_day_bg
+    roswell_crashed_ship_background:
+        type: image
+        image: roswell_crashed_ship_bg
+    roswell_joes_malts_background:
+        type: image
+        image: roswell_joes_malts_bg
+    roswell_mildred_background:
+        type: image
+        image: roswell_mildred_bg
+    roswell_sears_background:
+        type: image
+        image: roswell_sears_bg
     roswell_delivery_intro_p2:
         type: video
         video: roswell_delivery_intro_part2
@@ -269,10 +349,18 @@ widgets:
         type: text
         text: Find a working microwave
         style: delivery_4slot_pos2
+    objective_microwave_red:
+        type: text
+        text: Steal the microwave radar antenna!
+        style: delivery_4slot_pos2_red
     objective_dont_change_past:
         type: text
         text: Don't change the past!
         style: delivery_4slot_pos3
+    objective_dont_change_past_red:
+        type: text
+        text: DON'T CHANGE THE PAST!
+        style: delivery_4slot_pos3_red
 #microwave widgets
     yo_holmes_video:
         type: video
@@ -364,6 +452,10 @@ widgets:
         type: video
         video: crew_rescues_zoidberg_clip
         z: 3
+    escape_roswell_video:
+        type: video
+        video: escape_roswell_clip
+        z: 3
 #zoidberg widgets
     zoidberg_captured_video:
         type: video
@@ -404,6 +496,13 @@ sounds:
     roswell_delivery_objectives:
         target: voice
 
+sound_pools:
+    roswell_ball_drain_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - mildred_its_all_so_sad
+            - fry_no_chance_zombie
 
 sound_player:
     hopeless_right_microwave_shot_hit:
@@ -419,6 +518,7 @@ sound_player:
     you_cant_be_my_grandma_shot_hit:
         roswell_music_loop:
             action: stop
+    ball_will_end: roswell_ball_drain_sounds|block
 
 
 
@@ -585,21 +685,25 @@ show_player:
             loops: 0
             action: play
             events_when_stopped: play_steal_the_radar_antenna_show
+            priority: 101
+        bender_pieces_shots_lit_show:
+            action: stop
+            priority: 100 
     nasty_in_the_pasty:
         lets_just_steal_radar_show:
             loops: 0
             action: play
             events_when_stopped: play_steal_the_radar_antenna_show
+            priority: 101
+        bender_pieces_shots_lit_show:
+            action: stop
+            priority: 100
     play_steal_the_radar_antenna_show:
         steal_the_radar_antenna_show:
             loops: 0
             action: play
             events_when_stopped: disable_steal_antenna_shot
-    wrap_it_up_shot_hit{device.state_machines.bender_pieces_state.state!=five_pieces}:
-        save_zoidberg_bender_and_escape_show:
-            loops: 0
-            action: play
-    wrap_it_up_shot_hit{device.state_machines.bender_pieces_state.state==five_pieces}:
+    wrap_it_up_shot_hit:
         save_zoidberg_and_escape_show:
             loops: 0
             action: play
@@ -690,6 +794,8 @@ sequences:
         events:
             - left_microwave_shot_hit, right_microwave_shot_hit
             - left_microwave_shot_hit, right_microwave_shot_hit
+            - left_microwave_shot_hit, right_microwave_shot_hit
+            - left_microwave_shot_hit, right_microwave_shot_hit
         events_when_hit: look_for_microwave
         events_when_complete: hopeless_search_for_microwave
 
@@ -711,6 +817,10 @@ event_player:
     leela_wants_to_leave: no_nasty_in_the_pasty
     zoidberg_wants_to_leave: no_nasty_in_the_pasty
     professor_wants_to_leave: no_nasty_in_the_pasty
+
+#decide which exit video to play
+    wrap_it_up_shot_hit{current_player.roswell_bender_pieces_found!=yes}: zoidberg_bender_escape
+    wrap_it_up_shot_hit{current_player.roswell_bender_pieces_found==yes}: zoidberg_escape
 
 variable_player:
     load_objective_dont_change_past:
@@ -750,3 +860,14 @@ variable_player:
         score: (current_player.zoidberg_xp + current_player.fry_multiplier) * machine.weird_points * 10 * current_player.PF_multiplier
     steal_antenna_shot_hit:
         mode_counter_value1: 1
+    all_bender_pieces_found:
+        bender_xp: 5
+        score: current_player.bender_multiplier * current_player.PF_multiplier * machine.medium_reward_points * 5
+        roswell_bender_pieces_found:
+            action: set
+            string: yes
+    roswell_delivery_success:
+        roswell_delivery_status:
+            action: set
+            string: success
+        deliveries_completed: 1

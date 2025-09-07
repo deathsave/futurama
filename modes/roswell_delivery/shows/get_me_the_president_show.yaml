@@ -2,12 +2,13 @@
 ##! show: get_me_the_president_show
 
     - duration: 6s
+      events: clear_background
       widgets:
           get_me_the_president_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 25ms
+      events: set_background_roswell_base
       widgets:
           get_me_the_president_video:
               action: remove
-      

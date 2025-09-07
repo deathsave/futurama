@@ -1,13 +1,14 @@
 #show_version=6
 ##! show: knife_dodge_show
 
-    - duration: 10s
+    - duration: 6s
+      events: clear_background
       widgets:
           knife_dodge_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 25ms
+      events: set_background_joes_malts
       widgets:
           knife_dodge_video:
               action: remove
-    

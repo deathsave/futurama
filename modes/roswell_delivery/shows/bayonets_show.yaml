@@ -1,12 +1,14 @@
 #show_version=6
 ##! show: bayonets_show
 
-    - duration: 13s
+    - duration: 5s
+      events: clear_background
       widgets:
           bayonets_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 25ms
+      events: set_background_roswell_base_day
       widgets:
           bayonets_video:
               action: remove
