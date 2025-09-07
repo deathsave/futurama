@@ -2,11 +2,13 @@
 ##! show: hold_me_show
 
     - duration: 9s
+      events: clear_background
       widgets:
           hold_me_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 100ms
+      events: set_background_mildred
       widgets:
           hold_me_video:
             action: remove

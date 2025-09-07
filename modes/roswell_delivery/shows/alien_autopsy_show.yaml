@@ -2,11 +2,14 @@
 ##! show: alien_autopsy_show
 
     - duration: 5s
+      events: clear_background
       widgets:
           alien_autopsy_video:
               action: add
               slide: reusable_delivery_slide
+
     - duration: 25ms
+      events: set_background_roswell_base_day
       widgets:
           alien_autopsy_video:
               action: remove

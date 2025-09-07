@@ -2,11 +2,13 @@
 ##! show: ax_you_again_show
 
     - duration: 6s
+      events: clear_background
       widgets:
           ax_you_again_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 25ms
+      events: set_background_sears
       widgets:
           ax_you_again_video:
               action: remove

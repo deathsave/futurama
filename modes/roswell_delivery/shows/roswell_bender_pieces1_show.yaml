@@ -2,17 +2,19 @@
 ##! show: roswell_bender_pieces1_show
 
     - duration: 1500ms
+      events: clear_background
       widgets:
           zero_bender_pieces:
               action: add
               slide: reusable_delivery_slide
     - duration: 3500ms
-      widgets:          
+      widgets:
           one_bender_pieces:
               action: add
               slide: reusable_delivery_slide
               priority: 100
     - duration: 100ms
+      events: set_background_roswell_base
       widgets:
           zero_bender_pieces:
               action: remove

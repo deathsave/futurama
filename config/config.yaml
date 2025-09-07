@@ -1062,6 +1062,13 @@ player_vars:
         initial_value: 0
     caps_collected:
         initial_value: 0
+#roswell_variables
+    roswell_bender_pieces_found:
+        value_type: str
+        initial_value:  "no"
+    roswell_delivery_status:
+        value_type: str
+        initial_value: "ready"
 #cryolab delivery variables used later for random effect
     dumped_by_michelle:
         value_type: str
@@ -2129,6 +2136,14 @@ widget_styles:
         anchor_x: center
         anchor_y: top
         color: SpringGreen
+    delivery_4slot_pos2_red:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-30%
+        anchor_x: center
+        anchor_y: top
+        color: red
     delivery_4slot_pos3:
         font_size: 90
         z: 4
@@ -2137,6 +2152,14 @@ widget_styles:
         anchor_x: center
         anchor_y: top
         color: SpringGreen
+    delivery_4slot_pos3_red:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-48%
+        anchor_x: center
+        anchor_y: top
+        color: red
     delivery_4slot_pos4:
         font_size: 90
         z: 4
@@ -2177,6 +2200,10 @@ images:
         load: preload
     crew_level_indicators:
         load: preload
+
+sounds:
+    no_sound:
+        track: sfx
 
 image_pools:
     HQ_interior:

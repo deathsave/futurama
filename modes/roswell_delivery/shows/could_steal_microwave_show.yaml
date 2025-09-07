@@ -2,11 +2,13 @@
 ##! show: could_steal_microwave_show
 
     - duration: 6s
+      events: clear_background
       widgets:
           could_steal_microwave_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 25ms
+      events: set_background_joes_malts
       widgets:
           could_steal_microwave_video:
               action: remove

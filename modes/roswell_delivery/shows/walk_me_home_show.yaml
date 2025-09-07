@@ -2,11 +2,13 @@
 ##! show: walk_me_home_show
 
     - duration: 4s
+      events: clear_background
       widgets:
           walk_me_home_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 100ms
+      events: set_background_mildred
       widgets:
           walk_me_home_video:
             action: remove

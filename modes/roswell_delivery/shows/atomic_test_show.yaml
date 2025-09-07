@@ -2,11 +2,13 @@
 ##! show: atomic_test_show
 
     - duration: 19s
+      events: clear_background
       widgets:
           atomic_test_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 25ms
+      events: set_background_joes_malts
       widgets:
           atomic_test_video:
               action: remove

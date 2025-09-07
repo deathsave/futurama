@@ -2,11 +2,13 @@
 ##! show: coming_on_to_me_show
 
     - duration: 9s
+      events: clear_background
       widgets:
           coming_on_to_me_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 25ms
+      events: set_background_roswell_base_day
       widgets:
           coming_on_to_me_video:
               action: remove

@@ -2,6 +2,7 @@
 ##! show: its_enos_show
 
     - duration: 4s
+      events: clear_background
       widgets:
           its_enos_video:
               action: add
@@ -9,6 +10,7 @@
     - duration: 50ms
       events: smart_fry_leaves
     - duration: 25ms
+      events: set_background_roswell_base_day
       widgets:
           its_enos_video:
               action: remove

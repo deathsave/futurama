@@ -2,6 +2,7 @@
 ##! show: save_zoidberg_and_escape_show
 
     - duration: 9s
+      events: roswell_delivery_success
       widgets:
           crew_rescues_zoidberg_video:
               action: add
@@ -19,3 +20,5 @@
       widgets:
           escape_roswell_video:
               action: remove
+    - duration: 25ms
+      events: stop_roswell_delivery

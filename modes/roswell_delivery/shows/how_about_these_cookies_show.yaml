@@ -2,11 +2,13 @@
 ##! show: how_about_these_cookies_show
 
     - duration: 7s
+      events: clear_background
       widgets:
           these_cookies_video:
               action: add
               slide: reusable_delivery_slide
     - duration: 100ms
+      events: set_background_mildred
       widgets:
           these_cookies_video:
             action: remove
