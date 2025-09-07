@@ -1,7 +1,7 @@
 #show_version=6
 ##! show: lets_just_steal_radar_show
 
-    - duration: 5s
+    - duration: 6s
       widgets:
           lets_just_steal_radar_video:
               action: add
@@ -10,7 +10,7 @@
       widgets:
           lets_just_steal_radar_video:
             action: remove
-    - duration: 3s
+    - duration: 4s
       widgets:
           screw_history_video:
               action: add

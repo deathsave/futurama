@@ -8,14 +8,14 @@
               slide: reusable_delivery_slide
     - duration: 3500ms
       widgets:
-          three_bender_pieces:
-              action: remove
-              priority: 101
           four_bender_pieces:
               action: add
               slide: reusable_delivery_slide
               priority: 100
     - duration: 100ms
       widgets:
+          three_bender_pieces:
+              action: remove
+              priority: 101
           four_bender_pieces:
               action: remove

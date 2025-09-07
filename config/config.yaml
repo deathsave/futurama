@@ -2113,6 +2113,38 @@ widget_styles:
         anchor_x: center
         anchor_y: top
         color: SpringGreen
+    delivery_4slot_pos1:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-12%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
+    delivery_4slot_pos2:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-30%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
+    delivery_4slot_pos3:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-48%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
+    delivery_4slot_pos4:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-66%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
 
 
 
