@@ -20,7 +20,9 @@
 mode:
     start_events: start_roswell_delivery
     stop_events: stop_roswell_delivery, fail_roswell_delivery, ball_ending
-    priority: 200
+    events_when_started: set_sound_pool_roswell
+    events_when_stopped: set_sound_pool_base
+    priority: 300
 
 state_machines:
     enos_state:
@@ -451,11 +453,11 @@ widgets:
     crew_rescues_zoidberg_video:
         type: video
         video: crew_rescues_zoidberg_clip
-        z: 3
+        z: 4
     escape_roswell_video:
         type: video
         video: escape_roswell_clip
-        z: 3
+        z: 4
 #zoidberg widgets
     zoidberg_captured_video:
         type: video
@@ -496,14 +498,6 @@ sounds:
     roswell_delivery_objectives:
         target: voice
 
-sound_pools:
-    roswell_ball_drain_sounds:
-        type: random_force_all
-        track: voice
-        sounds:
-            - mildred_its_all_so_sad
-            - fry_no_chance_zombie
-
 sound_player:
     hopeless_right_microwave_shot_hit:
         leela_microwave_somewhere:
@@ -518,7 +512,12 @@ sound_player:
     you_cant_be_my_grandma_shot_hit:
         roswell_music_loop:
             action: stop
-    ball_will_end: roswell_ball_drain_sounds|block
+    ball_will_end:
+        roswell_music_loop:
+            action: stop
+        roswell_ball_drain_sounds:
+            block: true
+
 
 
 
@@ -622,7 +621,6 @@ show_player:
         could_steal_microwave_show:
             loops: 0
             events_when_stopped: hopeless_search_for_microwave
-
 #enos shows
     play_its_enos_show:
         its_enos_show:
@@ -688,7 +686,10 @@ show_player:
             priority: 101
         bender_pieces_shots_lit_show:
             action: stop
-            priority: 100 
+            priority: 100
+        microwave_shots_lit_show:
+            action: stop
+            priority: 99
     nasty_in_the_pasty:
         lets_just_steal_radar_show:
             loops: 0
@@ -698,6 +699,9 @@ show_player:
         bender_pieces_shots_lit_show:
             action: stop
             priority: 100
+        microwave_shots_lit_show:
+            action: stop
+            priority: 99
     play_steal_the_radar_antenna_show:
         steal_the_radar_antenna_show:
             loops: 0

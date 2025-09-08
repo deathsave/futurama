@@ -1,9 +1,9 @@
 #show_version=6
 ##! show: roswell_mission_objectives_show
 
-    - duration: 50ms
+    - duration: 100ms
       sounds: roswell_delivery_objectives
-    - duration: 4s
+    - duration: 6s
       events: load_objective_bender_pieces
     - duration: 7s
       events: load_objective_microwave
