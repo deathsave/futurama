@@ -127,6 +127,7 @@ slide_player:
     mode_bonus_started:
         bonus_start_slide:
             target: display1
+            force: true
     bonus_caps:
         slurm_bonus:
             target: display1

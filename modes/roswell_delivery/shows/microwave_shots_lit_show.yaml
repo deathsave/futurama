@@ -1,0 +1,15 @@
+#show_version=6
+##! show: microwave_shots_lit_show
+
+    - duration: 300ms
+      lights:
+          loops: "00ffff"
+    - duration: 300ms
+      lights:
+          loops: 88ffff
+    - duration: 300ms
+      lights:
+          loops: eeffff
+    - duration: 300ms
+      lights:
+          loops: 99ffff

@@ -1,0 +1,14 @@
+#show_version=6
+##! show: yo_holmes_show
+
+    - duration: 6s
+      events: clear_background
+      widgets:
+          yo_holmes_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      events: set_background_sears
+      widgets:
+          yo_holmes_video:
+              action: remove

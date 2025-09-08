@@ -48,6 +48,8 @@ keyboard:
         event: head_left
     2:
         event: head_right
+    m:
+        event: test_roswell
 hardware:
     platform: p3_roc
     stepper_controllers: pololu_tic
@@ -171,7 +173,7 @@ lights:
         number: 2-48-49-50
         platform_settings:
             polarity: true
-        tags: lamps, indicator
+        tags: lamps, indicator, ramps
     l_left_loop_insert:
         number: 2-51-52-53
         platform_settings:
@@ -186,7 +188,7 @@ lights:
         number: 2-42-43-44
         platform_settings:
             polarity: true
-        tags: lamps, indicator
+        tags: lamps, indicator, ramps
     l_right_loop_insert:
         number: 2-45-46-47
         platform_settings:
@@ -950,9 +952,9 @@ machine_vars:
     ramp_points:
         initial_value: 100
     loop_points:
-        initial_value: 10
+        initial_value: 25
     orbit_points:
-        initial_value: 10
+        initial_value: 75
     level_2_xp:
         initial_value: 4
     level_3_xp:
@@ -968,6 +970,9 @@ machine_vars:
 
 
 player_vars:
+    custom_drain_sound_pool:
+        value_type: str
+        initial_value: "base"
     caps_to_golden_cap:
         initial_value: 20
     PF_multiplier:
@@ -1060,6 +1065,13 @@ player_vars:
         initial_value: 0
     caps_collected:
         initial_value: 0
+#roswell_variables
+    roswell_bender_pieces_found:
+        value_type: str
+        initial_value:  "no"
+    roswell_delivery_status:
+        value_type: str
+        initial_value: "ready"
 #cryolab delivery variables used later for random effect
     dumped_by_michelle:
         value_type: str
@@ -1085,6 +1097,9 @@ player_vars:
         initial_value: 0
     mode_time_remaining2:
         initial_value: 0
+    mode_counter_value1:
+        initial_value: 1
+
 
 modes:
     - service
@@ -1097,6 +1112,7 @@ modes:
     - moon_delivery
     - cryolab_delivery
     - robot_homeworld_delivery
+    - roswell_delivery
     - bonus
     - high_score
 
@@ -2107,6 +2123,54 @@ widget_styles:
         anchor_x: center
         anchor_y: top
         color: SpringGreen
+    delivery_4slot_pos1:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-12%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
+    delivery_4slot_pos2:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-30%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
+    delivery_4slot_pos2_red:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-30%
+        anchor_x: center
+        anchor_y: top
+        color: red
+    delivery_4slot_pos3:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-48%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
+    delivery_4slot_pos3_red:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-48%
+        anchor_x: center
+        anchor_y: top
+        color: red
+    delivery_4slot_pos4:
+        font_size: 90
+        z: 4
+        x: center
+        y: top-66%
+        anchor_x: center
+        anchor_y: top
+        color: SpringGreen
 
 
 
@@ -2139,6 +2203,10 @@ images:
         load: preload
     crew_level_indicators:
         load: preload
+
+sounds:
+    no_sound:
+        track: sfx
 
 image_pools:
     HQ_interior:
@@ -2379,6 +2447,12 @@ sound_pools:
             - bender_let_us_match_wits
             - boo_its_just_bender
             - bender_evil_laugh1
+    roswell_ball_drain_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - mildred_its_all_so_sad
+            - fry_no_chance_zombie
 
 sound_player:
     s_hedonism_bot_active:
