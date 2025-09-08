@@ -970,6 +970,9 @@ machine_vars:
 
 
 player_vars:
+    custom_drain_sound_pool:
+        value_type: str
+        initial_value: "base"
     caps_to_golden_cap:
         initial_value: 20
     PF_multiplier:
@@ -2444,6 +2447,12 @@ sound_pools:
             - bender_let_us_match_wits
             - boo_its_just_bender
             - bender_evil_laugh1
+    roswell_ball_drain_sounds:
+        type: random_force_all
+        track: voice
+        sounds:
+            - mildred_its_all_so_sad
+            - fry_no_chance_zombie
 
 sound_player:
     s_hedonism_bot_active:

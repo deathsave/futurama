@@ -409,6 +409,11 @@ variable_player:
         fuel_level:
             action: set
             string: "full_gauge"
+    set_sound_pool_roswell:
+        custom_drain_sound_pool:
+            action: set
+            string: "roswell"
+
 
 
 sound_player:
@@ -445,8 +450,8 @@ event_player:
     start_robot_homeworld_delivery: delivery_started
     mode_robot_homeworld_delivery_stopped: use_full_tank, delivery_ended
     roswell_delivery_start_shot_hit: start_roswell_delivery
-    mode_roswell_delivery_started: use_full_tank, delivery_started
-    mode_roswell_delivery_stopped: delivery_ended
+    mode_roswell_delivery_started: delivery_started
+    mode_roswell_delivery_stopped: delivery_ended, use_full_tank
 
 
 

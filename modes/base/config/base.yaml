@@ -248,7 +248,7 @@ show_player:
     test_roswell:
         skip_to_roswell_show:
             loops: 0
-            priority: 200 
+            priority: 200
     s_hedonism_bot_active:
         clear_VUK_show:
             loops: 0
@@ -378,6 +378,13 @@ slide_player:
     remove_hypnotoad_slide:
         hypnotoad_slide:
             action: remove
+    ball_ending:
+        reusable_delivery_slide:
+            action: remove
+            priority: 101
+        roswell_PF_slide:
+            action: remove
+            priority: 100
 
 show_pools:
     mom_shows:
@@ -474,6 +481,9 @@ variable_player:
         pop_bumper_hits:
             int: 1
             action: set
+        custom_drain_sound_pool:
+            action: set
+            string: "base"
     base_tube_shot_hit:
         score: machine.ramp_points * (current_player.fry_multiplier) * (current_player.leela_multiplier) * (current_player.bender_multiplier) * current_player.PF_multiplier
     slurm_caps_total_shot_hit:
@@ -503,6 +513,12 @@ variable_player:
         PF_multiplier: -1
     reset_caps_to_golden:
         caps_to_golden_cap: 25
+    set_sound_pool_base:
+        custom_drain_sound_pool:
+            action: set
+            string: "base"
+
+
 sound_player:
     timer_shoot_the_ball_timer_complete:
         shoot_the_ball_sounds:
@@ -537,10 +553,10 @@ sound_player:
     ball_will_end:
         theme_full:
             action: stop
-    ball_will_end{current_player.score > ((current_player.ball) * 25000)}:
+    ball_will_end{current_player.custom_drain_sound_pool=="base" and (current_player.score > ((current_player.ball) * 25000))}:
         good_ball_drain_sounds:
             action: play
-    ball_will_end{current_player.score < ((current_player.ball) * 25000)}:
+    ball_will_end{current_player.custom_drain_sound_pool=="base" and (current_player.score < ((current_player.ball) * 25000))}:
         drain_sounds:
             action: play
     base_fry_target_shot_hit:
