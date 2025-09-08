@@ -1,0 +1,16 @@
+#show_version=6
+##! show: steal_the_radar_antenna_show
+
+    - duration: 19s
+      events: clear_background
+      widgets:
+          steal_the_radar_antenna_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      events: set_background_roswell_base_day
+      widgets:
+          steal_the_radar_antenna_video:
+            action: remove
+    - duration: 25ms
+      events: disable_steal_antenna_shot

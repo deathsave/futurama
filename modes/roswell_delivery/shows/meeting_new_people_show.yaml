@@ -1,0 +1,14 @@
+#show_version=6
+##! show: meeting_new_people_show
+
+    - duration: 9s
+      events: clear_background
+      widgets:
+          meeting_new_people_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      events: set_background_roswell_base
+      widgets:
+          meeting_new_people_video:
+              action: remove

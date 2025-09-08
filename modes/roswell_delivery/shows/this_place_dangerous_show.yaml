@@ -1,0 +1,14 @@
+#show_version=6
+##! show: this_place_dangerous_show
+
+    - duration: 2500ms
+      events: clear_background
+      widgets:
+          this_place_dangerous_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      events: set_background_roswell_base_day
+      widgets:
+          this_place_dangerous_video:
+              action: remove

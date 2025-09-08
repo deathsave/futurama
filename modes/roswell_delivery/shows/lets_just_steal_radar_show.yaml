@@ -1,0 +1,24 @@
+#show_version=6
+##! show: lets_just_steal_radar_show
+
+    - duration: 6s
+      events: clear_background
+      widgets:
+          lets_just_steal_radar_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      widgets:
+          lets_just_steal_radar_video:
+            action: remove
+      events: objective_microwave_change
+    - duration: 4s
+      widgets:
+          screw_history_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      events: set_background_roswell_base_day
+      widgets:
+          screw_history_video:
+            action: remove

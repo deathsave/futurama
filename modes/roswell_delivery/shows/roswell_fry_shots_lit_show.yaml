@@ -1,0 +1,19 @@
+#show_version=6
+##! show: roswell_fry_shots_lit_show
+
+    - duration: 300ms
+      lights:
+          l_HQ1: 009eff
+          l_HQ2: 009eff
+    - duration: 300ms
+      lights:
+          l_HQ1: 884fff
+          l_HQ2: 884fff
+    - duration: 300ms
+      lights:
+          l_HQ1: ffffff
+          l_HQ2: ffffff
+    - duration: 300ms
+      lights:
+          l_HQ1: 884fff
+          l_HQ2: 884fff

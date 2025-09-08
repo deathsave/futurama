@@ -1,0 +1,15 @@
+#show_version=6
+##! show: bender_pieces_shots_lit_show
+
+    - duration: 300ms
+      lights:
+          ramps: "00ffff"
+    - duration: 300ms
+      lights:
+          ramps: 88ffff
+    - duration: 300ms
+      lights:
+          ramps: eeffff
+    - duration: 300ms
+      lights:
+          ramps: 99ffff

@@ -1,0 +1,14 @@
+#show_version=6
+##! show: roswell_delivery_intro_show
+    - duration: 1s
+      events: pause_to_load_slide
+    - duration: 8s
+      widgets:
+          roswell_delivery_intro_p2:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      events: set_background_crashed_ship
+      widgets:
+          roswell_delivery_intro_p2:
+              action: remove

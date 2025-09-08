@@ -1,0 +1,14 @@
+#show_version=6
+##! show: minefield_show
+
+    - duration: 5s
+      events: clear_background
+      widgets:
+          minefield_video:
+              action: add
+              slide: reusable_delivery_slide
+    - duration: 25ms
+      events: set_background_joes_malts
+      widgets:
+          minefield_video:
+              action: remove
