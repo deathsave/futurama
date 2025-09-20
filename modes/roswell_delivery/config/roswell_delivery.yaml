@@ -733,18 +733,26 @@ shots:
         switches: s_left_loop
         enable_events: load_objective_microwave
         disable_events: hopeless_search_for_microwave, nasty_in_the_pasty
+        delay_switch:
+            s_right_loop: 2s
     right_microwave_shot:
         switches: s_right_loop
         enable_events: load_objective_microwave
         disable_events: hopeless_search_for_microwave, nasty_in_the_pasty
+        delay_switch:
+            s_left_loop: 2s
     hopeless_left_microwave_shot:
         switches: s_left_loop
         enable_events: hopeless_search_for_microwave
         disable_events: nasty_in_the_pasty, no_nasty_in_the_pasty
+        delay_switch:
+            s_right_loop: 2s
     hopeless_right_microwave_shot:
         switches: s_right_loop
         enable_events: hopeless_search_for_microwave
         disable_events: nasty_in_the_pasty, no_nasty_in_the_pasty
+        delay_switch:
+            s_left_loop: 2s
     enos_shot:
         switches: s_t_fry
         enable_events: load_objective_dont_change_past
@@ -864,6 +872,12 @@ variable_player:
         score: (current_player.zoidberg_xp + current_player.fry_multiplier) * machine.weird_points * 10 * current_player.PF_multiplier
     steal_antenna_shot_hit:
         mode_counter_value1: 1
+    nasty_in_the_pasty:
+        fry_multiplier: 1
+        score: current_player.PF_multiplier * current_player.fry_multiplier * 6996
+        did_nasty_in_the_pasty:
+            action: set
+            string: yes
     all_bender_pieces_found:
         bender_xp: 5
         score: current_player.bender_multiplier * current_player.PF_multiplier * machine.medium_reward_points * 5
