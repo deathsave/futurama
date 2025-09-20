@@ -1072,6 +1072,9 @@ player_vars:
     roswell_delivery_status:
         value_type: str
         initial_value: "ready"
+    did_nasty_in_the_pasty:
+        value_type: str
+        initial_value: "no"
 #cryolab delivery variables used later for random effect
     dumped_by_michelle:
         value_type: str
