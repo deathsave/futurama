@@ -411,6 +411,15 @@ timers:
             - action: stop
               event: drop_target_hermes_up
 
+timed_switches:
+    crew_status:
+        switches: s_right_flipper
+        time: 5s
+        events_when_active: show_expanded_crew_status
+        events_when_released: hide_expanded_crew_status
+
+widget_player:
+
 event_player:
 #crew level_up perks+prizes
     bender_level2: light_suicide_booth
@@ -1520,6 +1529,11 @@ widgets:
                   - property: opacity, y
                     value: .3, 5
                     duration: .250s
+#extended crew status widgets
+    extended_crew_status_bars:
+        - type: image
+          image: right_side_crew_indiccators_extender 
+
 variable_player:
     leela_level2:
         leela_level: 1

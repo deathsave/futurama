@@ -317,7 +317,7 @@ lights:
     l_suicide_booth:
         number: 0-51-52-53
         platform_settings:
-            polarity: false
+            polarity: true
         tags: lamps, indicator
     l_right_outlane:
         number: 0-75-76-77
