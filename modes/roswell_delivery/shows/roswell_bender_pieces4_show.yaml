@@ -1,23 +1,24 @@
 #show_version=6
 ##! show: roswell_bender_pieces4_show
 
-    - duration: 1500ms
+    - duration: 1000ms
       events: clear_background
-      widgets:
+      slides:
           three_bender_pieces:
-              action: add
-              slide: reusable_delivery_slide
-    - duration: 3500ms
-      widgets:
-          four_bender_pieces:
-              action: add
-              slide: reusable_delivery_slide
-              priority: 100
-    - duration: 100ms
-      events: set_background_roswell_base_day
-      widgets:
+              action: play
+              target: display1
+              priority: 200
+    - duration: 3000ms
+      slides:
           three_bender_pieces:
               action: remove
-              priority: 101
+              priority: 210
+          four_bender_pieces:
+              action: play
+              target: display1
+              priority: 200
+    - duration: 100ms
+      events: set_background_roswell_base_day
+      slides:
           four_bender_pieces:
               action: remove
