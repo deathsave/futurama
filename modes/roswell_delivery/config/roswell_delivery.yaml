@@ -574,9 +574,7 @@ show_player:
         roswell_bender_pieces5_show:
             loops: 0
             action: play
-    light_you_cant_be_my_grandma:
-        roswell_fry_shots_lit_show:
-            action: stop
+
 #zoidberg shows
     play_zoidberg_captured_show:
         zoidberg_captured_show:
@@ -673,7 +671,15 @@ show_player:
             loops: 0
             action: play
             events_when_stopped: light_you_cant_be_my_grandma
+    light_you_cant_be_my_grandma:
+        roswell_fry_shots_lit_show:
+            action: stop
+        you_cant_be_my_grandma_lit_show:
+            loops: -1
+            action: play
     you_cant_be_my_grandma_shot_hit:
+        you_cant_be_my_grandma_lit_show:
+            action: stop 
         you_cant_be_my_grandma_show:
             loops: 0
             action: play
