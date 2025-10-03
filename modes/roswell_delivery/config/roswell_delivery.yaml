@@ -288,6 +288,36 @@ slides:
             - type: image
               image: roswell_delivery_instructions_BG
               z: 3
+    zero_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces0
+              z: 3
+    one_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces1
+              z: 4
+    two_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces2
+              z: 5
+    three_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces3
+              z: 6
+    four_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces4
+              z: 7
+    five_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces5
+              z: 8
 
 widgets:
 #backgrounds
@@ -317,31 +347,6 @@ widgets:
         type: video
         video: roswell_delivery_intro_part2
         z: 3
-#bender widgets
-    zero_bender_pieces:
-        type: image
-        image: roswell_bender_pieces0
-        z: 3
-    one_bender_pieces:
-        type: image
-        image: roswell_bender_pieces1
-        z: 4
-    two_bender_pieces:
-        type: image
-        image: roswell_bender_pieces2
-        z: 5
-    three_bender_pieces:
-        type: image
-        image: roswell_bender_pieces3
-        z: 6
-    four_bender_pieces:
-        type: image
-        image: roswell_bender_pieces4
-        z: 7
-    five_bender_pieces:
-        type: image
-        image: roswell_bender_pieces5
-        z: 8
 #objective widgets
     objective_bender_pieces:
         type: text
@@ -555,22 +560,27 @@ show_player:
         roswell_bender_pieces1_show:
             loops: 0
             action: play
+            priority: 200
     play_two_bender_pieces_show:
         roswell_bender_pieces2_show:
             loops: 0
             action: play
+            priority: 200
     play_three_bender_pieces_show:
         roswell_bender_pieces3_show:
             loops: 0
             action: play
+            priority: 200
     play_four_bender_pieces_show:
         roswell_bender_pieces4_show:
             loops: 0
             action: play
+            priority: 200
     play_five_bender_pieces_show:
         roswell_bender_pieces5_show:
             loops: 0
             action: play
+            priority: 200 
 #zoidberg shows
     play_zoidberg_captured_show:
         zoidberg_captured_show:
