@@ -17,6 +17,7 @@
               action: add
               slide: reusable_delivery_slide
     - duration: 25ms
+      events: release_escape_roswell_ball_hold
       widgets:
           escape_roswell_video:
               action: remove
