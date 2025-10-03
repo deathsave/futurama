@@ -518,9 +518,6 @@ sound_player:
         roswell_ball_drain_sounds:
             block: true
 
-
-
-
 show_player:
 #to the past, ship crashes, zoidberg arrested
     mode_roswell_delivery_started:
@@ -574,7 +571,6 @@ show_player:
         roswell_bender_pieces5_show:
             loops: 0
             action: play
-
 #zoidberg shows
     play_zoidberg_captured_show:
         zoidberg_captured_show:
@@ -679,7 +675,7 @@ show_player:
             action: play
     you_cant_be_my_grandma_shot_hit:
         you_cant_be_my_grandma_lit_show:
-            action: stop 
+            action: stop
         you_cant_be_my_grandma_show:
             loops: 0
             action: play
@@ -709,14 +705,26 @@ show_player:
             action: stop
             priority: 99
     play_steal_the_radar_antenna_show:
+        pe_platter_rotary_show:
+            loops: -1
+            action: play
+            speed: 1.5
         steal_the_radar_antenna_show:
             loops: 0
             action: play
             events_when_stopped: disable_steal_antenna_shot
+    disable_steal_antenna_shot:
+        pe_platter_rotary_show:
+            action: stop
     wrap_it_up_shot_hit:
         save_zoidberg_and_escape_show:
             loops: 0
             action: play
+    flipper_cradle:
+        you_cant_be_my_grandma_show:
+            action: stop
+        save_zoidberg_and_escape_show:
+            action: stop
 
 shots:
     left_bender_pieces_shot:
@@ -795,6 +803,21 @@ shots:
     wrap_it_up_shot:
         switches: s_VUK
         enable_events: disable_steal_antenna_shot
+
+ball_holds:
+    mildred_ball_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: light_you_cant_be_my_grandma
+        disable_events: nasty_in_the_pasty, no_nasty_in_the_pasty
+        release_one_events: nasty_in_the_pasty, flipper_cradle
+
+    escape_roswell_ball_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: disable_steal_antenna_shot
+        disable_events: release_escape_roswell_ball_hold
+        release_one_events: release_escape_roswell_ball_hold, flipper_cradle
 
 sequences:
     bender_pieces_sequence:
