@@ -212,9 +212,6 @@ widget_player:
         objective_bender_pieces:
             slide: roswell_PF_slide
             action: add
-    all_bender_pieces_found:
-        objective_bender_pieces:
-            action: remove
     load_objective_microwave:
         objective_microwave:
             slide: roswell_PF_slide
@@ -231,6 +228,10 @@ widget_player:
         objective_dont_change_past:
             slide: roswell_PF_slide
             action: add
+    add_checkmark_for_bender_pieces:
+        bender_pieces_checkmark:
+            slide: roswell_PF_slide
+            action: add
     enos_is_dead:
         objective_dont_change_past:
             action: remove
@@ -238,6 +239,10 @@ widget_player:
         objective_dont_change_past_red:
             action: add
             priority: 100
+            slide: roswell_PF_slide
+    nasty_in_the_pasty:
+        dont_change_past_fail:
+            action: add
             slide: roswell_PF_slide
     clear_background:
         roswell_base_background:
@@ -282,6 +287,7 @@ widget_player:
         roswell_mildred_background:
             action: add
             slide: reusable_delivery_slide
+            
 slides:
     roswell_PF_slide:
         widgets:
@@ -368,6 +374,14 @@ widgets:
         type: text
         text: DON'T CHANGE THE PAST!
         style: delivery_4slot_pos3_red
+    bender_pieces_checkmark:
+        type: image
+        image: bender_pieces_found_check
+        z: 4
+    dont_change_past_fail:
+        type: image
+        image: dont_change_past_fail_line
+        z: 4
 #microwave widgets
     yo_holmes_video:
         type: video
@@ -580,7 +594,7 @@ show_player:
         roswell_bender_pieces5_show:
             loops: 0
             action: play
-            priority: 200 
+            priority: 200
 #zoidberg shows
     play_zoidberg_captured_show:
         zoidberg_captured_show:
