@@ -690,23 +690,23 @@ coils:
     c_dt_hermes_up:
         number: A1-B1-0
         default_pulse_ms: 30
-        default_pulse_power: .5
+        default_pulse_power: .8
     c_dt_amy_up:
         number: A1-B1-1
         default_pulse_ms: 30
-        default_pulse_power: .5
+        default_pulse_power: .8
     c_dt_professor_up:
         number: A1-B1-2
         default_pulse_ms: 30
-        default_pulse_power: .5
+        default_pulse_power: .8
     c_dt_zoidberg_up:
         number: A1-B1-3
         default_pulse_ms: 30
-        default_pulse_power: .5
+        default_pulse_power: .8
     c_dt_nibbler_up:
         number: A1-B1-4
         default_pulse_ms: 30
-        default_pulse_power: .5
+        default_pulse_power: .8
     c_pop_bumper:
         number: A3-B0-2
         default_pulse_ms: 18
