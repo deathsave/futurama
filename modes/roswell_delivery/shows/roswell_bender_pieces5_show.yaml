@@ -16,9 +16,11 @@
           five_bender_pieces:
               action: play
               target: display1
-              priority: 200 
-    - duration: 100ms
+              priority: 200
+    - duration: 50ms
       events: set_background_roswell_base_day
+    - duration: 50ms
+      events: add_checkmark_for_bender_pieces
       slides:
           five_bender_pieces:
               action: remove
