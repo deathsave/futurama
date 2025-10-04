@@ -381,6 +381,8 @@ widget_player:
 
 
 variable_player:
+    moon_delivery_start_shot_hit:
+        score: (current_player.deliveries_completed + 1) * 1000
     cannibalon_delivery_start_shot_hit:
         score: machine.medium_reward_points * current_player.crew_multiplier * (current_player.fry_multiplier + current_player.leela_multiplier + current_player.bender_multiplier)
         deliveries_completed: 1
@@ -389,6 +391,10 @@ variable_player:
         bender_xp: 10
         crew_multiplier: 1
         cannibalon_delivery_points: machine.medium_reward_points * current_player.crew_multiplier * (current_player.fry_multiplier + current_player.leela_multiplier + current_player.bender_multiplier)
+    robot_homeworld_delivery_start_shot_hit:
+        score: (current_player.deliveries_completed + 1) * 2000
+    roswell_delivery_start_shot_hit:
+        score: (current_player.deliveries_completed + 1) * 3000
     empty_tank:
         fuel_level:
             action: set

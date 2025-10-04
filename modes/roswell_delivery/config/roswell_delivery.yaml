@@ -212,9 +212,6 @@ widget_player:
         objective_bender_pieces:
             slide: roswell_PF_slide
             action: add
-    all_bender_pieces_found:
-        objective_bender_pieces:
-            action: remove
     load_objective_microwave:
         objective_microwave:
             slide: roswell_PF_slide
@@ -231,6 +228,10 @@ widget_player:
         objective_dont_change_past:
             slide: roswell_PF_slide
             action: add
+    add_checkmark_for_bender_pieces:
+        bender_pieces_checkmark:
+            slide: roswell_PF_slide
+            action: add
     enos_is_dead:
         objective_dont_change_past:
             action: remove
@@ -238,6 +239,10 @@ widget_player:
         objective_dont_change_past_red:
             action: add
             priority: 100
+            slide: roswell_PF_slide
+    nasty_in_the_pasty:
+        dont_change_past_fail:
+            action: add
             slide: roswell_PF_slide
     clear_background:
         roswell_base_background:
@@ -282,12 +287,43 @@ widget_player:
         roswell_mildred_background:
             action: add
             slide: reusable_delivery_slide
+            
 slides:
     roswell_PF_slide:
         widgets:
             - type: image
               image: roswell_delivery_instructions_BG
               z: 3
+    zero_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces0
+              z: 3
+    one_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces1
+              z: 4
+    two_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces2
+              z: 5
+    three_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces3
+              z: 6
+    four_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces4
+              z: 7
+    five_bender_pieces:
+        widgets:
+            - type: image
+              image: roswell_bender_pieces5
+              z: 8
 
 widgets:
 #backgrounds
@@ -317,31 +353,6 @@ widgets:
         type: video
         video: roswell_delivery_intro_part2
         z: 3
-#bender widgets
-    zero_bender_pieces:
-        type: image
-        image: roswell_bender_pieces0
-        z: 3
-    one_bender_pieces:
-        type: image
-        image: roswell_bender_pieces1
-        z: 4
-    two_bender_pieces:
-        type: image
-        image: roswell_bender_pieces2
-        z: 5
-    three_bender_pieces:
-        type: image
-        image: roswell_bender_pieces3
-        z: 6
-    four_bender_pieces:
-        type: image
-        image: roswell_bender_pieces4
-        z: 7
-    five_bender_pieces:
-        type: image
-        image: roswell_bender_pieces5
-        z: 8
 #objective widgets
     objective_bender_pieces:
         type: text
@@ -363,6 +374,14 @@ widgets:
         type: text
         text: DON'T CHANGE THE PAST!
         style: delivery_4slot_pos3_red
+    bender_pieces_checkmark:
+        type: image
+        image: bender_pieces_found_check
+        z: 4
+    dont_change_past_fail:
+        type: image
+        image: dont_change_past_fail_line
+        z: 4
 #microwave widgets
     yo_holmes_video:
         type: video
@@ -518,9 +537,6 @@ sound_player:
         roswell_ball_drain_sounds:
             block: true
 
-
-
-
 show_player:
 #to the past, ship crashes, zoidberg arrested
     mode_roswell_delivery_started:
@@ -558,25 +574,27 @@ show_player:
         roswell_bender_pieces1_show:
             loops: 0
             action: play
+            priority: 200
     play_two_bender_pieces_show:
         roswell_bender_pieces2_show:
             loops: 0
             action: play
+            priority: 200
     play_three_bender_pieces_show:
         roswell_bender_pieces3_show:
             loops: 0
             action: play
+            priority: 200
     play_four_bender_pieces_show:
         roswell_bender_pieces4_show:
             loops: 0
             action: play
+            priority: 200
     play_five_bender_pieces_show:
         roswell_bender_pieces5_show:
             loops: 0
             action: play
-    light_you_cant_be_my_grandma:
-        roswell_fry_shots_lit_show:
-            action: stop
+            priority: 200
 #zoidberg shows
     play_zoidberg_captured_show:
         zoidberg_captured_show:
@@ -673,7 +691,15 @@ show_player:
             loops: 0
             action: play
             events_when_stopped: light_you_cant_be_my_grandma
+    light_you_cant_be_my_grandma:
+        roswell_fry_shots_lit_show:
+            action: stop
+        you_cant_be_my_grandma_lit_show:
+            loops: -1
+            action: play
     you_cant_be_my_grandma_shot_hit:
+        you_cant_be_my_grandma_lit_show:
+            action: stop
         you_cant_be_my_grandma_show:
             loops: 0
             action: play
@@ -703,14 +729,26 @@ show_player:
             action: stop
             priority: 99
     play_steal_the_radar_antenna_show:
+        pe_platter_rotary_show:
+            loops: -1
+            action: play
+            speed: 1.5
         steal_the_radar_antenna_show:
             loops: 0
             action: play
             events_when_stopped: disable_steal_antenna_shot
+    disable_steal_antenna_shot:
+        pe_platter_rotary_show:
+            action: stop
     wrap_it_up_shot_hit:
         save_zoidberg_and_escape_show:
             loops: 0
             action: play
+    flipper_cradle:
+        you_cant_be_my_grandma_show:
+            action: stop
+        save_zoidberg_and_escape_show:
+            action: stop
 
 shots:
     left_bender_pieces_shot:
@@ -789,6 +827,21 @@ shots:
     wrap_it_up_shot:
         switches: s_VUK
         enable_events: disable_steal_antenna_shot
+
+ball_holds:
+    mildred_ball_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: light_you_cant_be_my_grandma
+        disable_events: nasty_in_the_pasty, no_nasty_in_the_pasty
+        release_one_events: nasty_in_the_pasty, flipper_cradle
+
+    escape_roswell_ball_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: disable_steal_antenna_shot
+        disable_events: release_escape_roswell_ball_hold
+        release_one_events: release_escape_roswell_ball_hold, flipper_cradle
 
 sequences:
     bender_pieces_sequence:
