@@ -1,0 +1,9 @@
+#show_version=6
+##! show: you_cant_be_my_grandma_lit_show
+
+    - duration: 300ms
+      lights:
+          l_delivery_shot_insert: 00c8ff
+    - duration: 300ms
+      lights:
+          l_delivery_shot_insert: ffffff
