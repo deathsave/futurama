@@ -414,7 +414,7 @@ timers:
 timed_switches:
     crew_status:
         switches: s_right_flipper
-        time: 5s
+        time: 3s
         events_when_active: show_expanded_crew_status
         events_when_released: hide_expanded_crew_status
 
@@ -1529,10 +1529,6 @@ widgets:
                   - property: opacity, y
                     value: .3, 5
                     duration: .250s
-#extended crew status widgets
-    extended_crew_status_bars:
-        - type: image
-          image: right_side_crew_indiccators_extender 
 
 variable_player:
     leela_level2:
