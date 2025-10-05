@@ -1,0 +1,40 @@
+#config_version=6
+##! mode: moon_delivery
+
+mode:
+    start_events: show_expanded_crew_status
+    stop_events: crew_status_hidden, ball_ending
+    priority: 190
+
+show_player:
+    mode_crew_status_started:
+        expand_crew_status_show:
+            loops: 0
+            action: play
+    hide_expanded_crew_status:
+        hide_expanded_crew_status_show:
+            loops: 0
+            action: play
+
+widgets:
+    expanded_crew_status:
+        - type: image
+          image: right_side_crew_indicators_extender
+          anchor_x: left
+          x: 1685
+          z: 8
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1500
+                    duration: 1s
+              hide_crew_status:
+                  - property: x
+                    value: 1685
+                    duration: 1s
+
+widget_player:
+    expand_crew_status:
+        expanded_crew_status:
+            action: add
+            slide: base_slide
