@@ -4,3 +4,4 @@
     - duration: 100ms
       events: expand_crew_status
     - duration: 100ms
+      events: add_crew_xp_to_level_up
