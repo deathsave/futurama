@@ -12,7 +12,11 @@ show_player:
             loops: 0
             action: play
     hide_expanded_crew_status:
+        expand_crew_status_show:
+            action: stop
+            priority: 201
         hide_expanded_crew_status_show:
+            priority: 200
             loops: 0
             action: play
 
@@ -32,9 +36,135 @@ widgets:
                   - property: x
                     value: 1685
                     duration: 1s
+    leela_xp_to_level2:
+        - type: text
+          text: (player|leela_xp)/(machine|level_2_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+    leela_xp_to_level3:
+        - type: text
+          text: (player|leela_xp)/(machine|level_3_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+    leela_xp_to_level4:
+        - type: text
+          text: (player|leela_xp)/(machine|level_4_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+    leela_xp_to_level5:
+        - type: text
+          text: (player|leela_xp)/(machine|level_5_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+    leela_xp_to_level6:
+        - type: text
+          text: (player|leela_xp)/(machine|level_6_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+    leela_xp_to_level7:
+        - type: text
+          text: (player|leela_xp)/(machine|level_7_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+    leela_xp_to_level8:
+        - type: text
+          text: MAX
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+    fry_xp_to_level2:
+        - type: text
+          text: (player|fry_xp)/(machine|level_2_xp)
+          font_size: 50
+          x: 1535
+          y: 735
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+    fry_xp_to_level3:
+        - type: text
+          text: (player|fry_xp)/(machine|level_3_xp)
+          font_size: 50
+          x: 1535
+          y: 735
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+    fry_xp_to_level4:
+        - type: text
+          text: (player|fry_xp)/(machine|level_4_xp)
+          font_size: 50
+          x: 1535
+          y: 735
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
 
 widget_player:
     expand_crew_status:
         expanded_crew_status:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 1}:
+        leela_xp_to_level2:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 2}:
+        leela_xp_to_level3:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 3}:
+        leela_xp_to_level4:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 4}:
+        leela_xp_to_level5:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 5}:
+        leela_xp_to_level6:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 6}:
+        leela_xp_to_level7:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 7}:
+        leela_xp_to_level8:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.fry_level == 1}:
+        fry_xp_to_level2:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.fry_level == 2}:
+        fry_xp_to_level3:
             action: add
             slide: base_slide
