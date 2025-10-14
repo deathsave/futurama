@@ -1,0 +1,9 @@
+#show_version=6
+##! show: expand_crew_status_show
+
+    - duration: 100ms
+      events: expand_crew_status
+    - duration: 1s
+      events: wait_for_slide
+    - duration: 100ms
+      events: add_crew_xp_to_level_up

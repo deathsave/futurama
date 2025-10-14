@@ -1,0 +1,7 @@
+#show_version=6
+##! show: hide_expanded_crew_status_show
+
+    - duration: 1500ms
+      events: hide_crew_status
+    - duration: 100ms
+      events: crew_status_hidden

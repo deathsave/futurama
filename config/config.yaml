@@ -972,6 +972,12 @@ machine_vars:
         initial_value: 100
     level_7_xp:
         initial_value: 250
+    level_8_xp:
+        initial_value: 500
+    level_9_xp:
+        initial_value: 1000
+    level_10_xp:
+        initial_value: 2000
 
 
 player_vars:
@@ -1117,6 +1123,7 @@ modes:
     - slurm_factory
     - delivery_manager
     - crew_manager
+    - crew_status
     - moon_delivery
     - cryolab_delivery
     - robot_homeworld_delivery
@@ -2179,7 +2186,6 @@ widget_styles:
         anchor_x: center
         anchor_y: top
         color: SpringGreen
-
 
 
 
