@@ -1,0 +1,941 @@
+#config_version=6
+##! mode: moon_delivery
+
+mode:
+    start_events: show_expanded_crew_status
+    stop_events: crew_status_hidden, ball_ending
+    priority: 190
+
+show_player:
+    mode_crew_status_started:
+        expand_crew_status_show:
+            loops: 0
+            action: play
+    hide_expanded_crew_status:
+        expand_crew_status_show:
+            action: stop
+            priority: 201
+        hide_expanded_crew_status_show:
+            priority: 200
+            loops: 0
+            action: play
+
+widgets:
+    expanded_crew_status:
+        - type: image
+          image: right_side_crew_indicators_extender
+          anchor_x: left
+          x: 1685
+          z: 8
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1500
+                    duration: 1s
+              hide_crew_status:
+                  - property: x
+                    value: 1685
+                    duration: 1s
+    bender_xp_to_level2:
+        - type: text
+          text: (player|bender_xp)/(machine|level_2_xp)
+          font_size: 50
+          x: 1535
+          y: 995
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    bender_xp_to_level3:
+        - type: text
+          text: (player|bender_xp)/(machine|level_3_xp)
+          font_size: 50
+          x: 1535
+          y: 995
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    bender_xp_to_level4:
+        - type: text
+          text: (player|bender_xp)/(machine|level_4_xp)
+          font_size: 50
+          x: 1535
+          y: 995
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    bender_xp_to_level5:
+        - type: text
+          text: (player|bender_xp)/(machine|level_5_xp)
+          font_size: 50
+          x: 1535
+          y: 995
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    bender_xp_to_level6:
+        - type: text
+          text: (player|bender_xp)/(machine|level_6_xp)
+          font_size: 50
+          x: 1535
+          y: 995
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    bender_xp_to_level7:
+        - type: text
+          text: (player|bender_xp)/(machine|level_7_xp)
+          font_size: 50
+          x: 1535
+          y: 995
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    bender_xp_to_level8:
+        - type: text
+          text: MAX
+          font_size: 50
+          x: 1535
+          y: 995
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    leela_xp_to_level2:
+        - type: text
+          text: (player|leela_xp)/(machine|level_2_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    leela_xp_to_level3:
+        - type: text
+          text: (player|leela_xp)/(machine|level_3_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    leela_xp_to_level4:
+        - type: text
+          text: (player|leela_xp)/(machine|level_4_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    leela_xp_to_level5:
+        - type: text
+          text: (player|leela_xp)/(machine|level_5_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    leela_xp_to_level6:
+        - type: text
+          text: (player|leela_xp)/(machine|level_6_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    leela_xp_to_level7:
+        - type: text
+          text: (player|leela_xp)/(machine|level_7_xp)
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    leela_xp_to_level8:
+        - type: text
+          text: MAX
+          font_size: 50
+          x: 1535
+          y: 863
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    fry_xp_to_level2:
+        - type: text
+          text: (player|fry_xp)/(machine|level_2_xp)
+          font_size: 50
+          x: 1535
+          y: 735
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    fry_xp_to_level3:
+        - type: text
+          text: (player|fry_xp)/(machine|level_3_xp)
+          font_size: 50
+          x: 1535
+          y: 735
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    fry_xp_to_level4:
+        - type: text
+          text: (player|fry_xp)/(machine|level_4_xp)
+          font_size: 50
+          x: 1535
+          y: 735
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    fry_xp_to_level5:
+        - type: text
+          text: (player|fry_xp)/(machine|level_5_xp)
+          font_size: 50
+          x: 1535
+          y: 735
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    fry_xp_to_level6:
+        - type: text
+          text: (player|fry_xp)/(machine|level_6_xp)
+          font_size: 50
+          x: 1535
+          y: 735
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    fry_xp_to_level7:
+        - type: text
+          text: (player|fry_xp)/(machine|level_7_xp)
+          font_size: 50
+          x: 1535
+          y: 735
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    fry_xp_to_level8:
+        - type: text
+          text: MAX
+          font_size: 50
+          x: 1535
+          y: 735
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    nibbler_xp_to_level2:
+        - type: text
+          text: (player|nibbler_xp)/(machine|level_2_xp)
+          font_size: 50
+          x: 1535
+          y: 608
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    nibbler_xp_to_level3:
+        - type: text
+          text: (player|nibbler_xp)/(machine|level_3_xp)
+          font_size: 50
+          x: 1535
+          y: 608
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    nibbler_xp_to_level4:
+        - type: text
+          text: (player|nibbler_xp)/(machine|level_4_xp)
+          font_size: 50
+          x: 1535
+          y: 608
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    nibbler_xp_to_level5:
+        - type: text
+          text: (player|nibbler_xp)/(machine|level_5_xp)
+          font_size: 50
+          x: 1535
+          y: 608
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    nibbler_xp_to_level6:
+        - type: text
+          text: (player|nibbler_xp)/(machine|level_6_xp)
+          font_size: 50
+          x: 1535
+          y: 608
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    nibbler_xp_to_level7:
+        - type: text
+          text: (player|nibbler_xp)/(machine|level_7_xp)
+          font_size: 50
+          x: 1535
+          y: 608
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    nibbler_xp_to_level8:
+        - type: text
+          text: MAX
+          font_size: 50
+          x: 1535
+          y: 608
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    professor_xp_to_level2:
+        - type: text
+          text: (player|professor_xp)/(machine|level_2_xp)
+          font_size: 50
+          x: 1535
+          y: 478
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    professor_xp_to_level3:
+        - type: text
+          text: (player|professor_xp)/(machine|level_3_xp)
+          font_size: 50
+          x: 1535
+          y: 478
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    professor_xp_to_level4:
+        - type: text
+          text: (player|professor_xp)/(machine|level_4_xp)
+          font_size: 50
+          x: 1535
+          y: 478
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    professor_xp_to_level5:
+        - type: text
+          text: (player|professor_xp)/(machine|level_5_xp)
+          font_size: 50
+          x: 1535
+          y: 478
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    professor_xp_to_level6:
+        - type: text
+          text: (player|professor_xp)/(machine|level_6_xp)
+          font_size: 50
+          x: 1535
+          y: 478
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    professor_xp_to_level7:
+        - type: text
+          text: (player|professor_xp)/(machine|level_7_xp)
+          font_size: 50
+          x: 1535
+          y: 478
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    professor_xp_to_level8:
+        - type: text
+          text: (player|professor_xp)/(machine|level_8_xp)
+          font_size: 50
+          x: 1535
+          y: 478
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    amy_xp_to_level2:
+        - type: text
+          text: (player|amy_xp)/(machine|level_2_xp)
+          font_size: 50
+          x: 1535
+          y: 349
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    amy_xp_to_level3:
+        - type: text
+          text: (player|amy_xp)/(machine|level_3_xp)
+          font_size: 50
+          x: 1535
+          y: 349
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    amy_xp_to_level4:
+        - type: text
+          text: (player|amy_xp)/(machine|level_4_xp)
+          font_size: 50
+          x: 1535
+          y: 349
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    amy_xp_to_level5:
+        - type: text
+          text: (player|amy_xp)/(machine|level_5_xp)
+          font_size: 50
+          x: 1535
+          y: 349
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    amy_xp_to_level6:
+        - type: text
+          text: (player|amy_xp)/(machine|level_6_xp)
+          font_size: 50
+          x: 1535
+          y: 349
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    amy_xp_to_level7:
+        - type: text
+          text: (player|amy_xp)/(machine|level_7_xp)
+          font_size: 50
+          x: 1535
+          y: 349
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    amy_xp_to_level8:
+        - type: text
+          text: (player|amy_xp)/(machine|level_8_xp)
+          font_size: 50
+          x: 1535
+          y: 349
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    hermes_xp_to_level2:
+        - type: text
+          text: (player|hermes_xp)/(machine|level_2_xp)
+          font_size: 50
+          x: 1535
+          y: 220
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    hermes_xp_to_level3:
+        - type: text
+          text: (player|hermes_xp)/(machine|level_3_xp)
+          font_size: 50
+          x: 1535
+          y: 220
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    hermes_xp_to_level4:
+        - type: text
+          text: (player|hermes_xp)/(machine|level_4_xp)
+          font_size: 50
+          x: 1535
+          y: 220
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    hermes_xp_to_level5:
+        - type: text
+          text: (player|hermes_xp)/(machine|level_5_xp)
+          font_size: 50
+          x: 1535
+          y: 220
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    hermes_xp_to_level6:
+        - type: text
+          text: (player|hermes_xp)/(machine|level_6_xp)
+          font_size: 50
+          x: 1535
+          y: 220
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    hermes_xp_to_level7:
+        - type: text
+          text: (player|hermes_xp)/(machine|level_7_xp)
+          font_size: 50
+          x: 1535
+          y: 220
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    hermes_xp_to_level8:
+        - type: text
+          text: (player|hermes_xp)/(machine|level_8_xp)
+          font_size: 50
+          x: 1535
+          y: 220
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    zoidberg_xp_to_level2:
+        - type: text
+          text: (player|zoidberg_xp)/(machine|level_2_xp)
+          font_size: 50
+          x: 1535
+          y: 91
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    zoidberg_xp_to_level3:
+        - type: text
+          text: (player|zoidberg_xp)/(machine|level_3_xp)
+          font_size: 50
+          x: 1535
+          y: 91
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    zoidberg_xp_to_level4:
+        - type: text
+          text: (player|zoidberg_xp)/(machine|level_4_xp)
+          font_size: 50
+          x: 1535
+          y: 91
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    zoidberg_xp_to_level5:
+        - type: text
+          text: (player|zoidberg_xp)/(machine|level_5_xp)
+          font_size: 50
+          x: 1535
+          y: 91
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    zoidberg_xp_to_level6:
+        - type: text
+          text: (player|zoidberg_xp)/(machine|level_6_xp)
+          font_size: 50
+          x: 1535
+          y: 91
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    zoidberg_xp_to_level7:
+        - type: text
+          text: (player|zoidberg_xp)/(machine|level_7_xp)
+          font_size: 50
+          x: 1535
+          y: 91
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    zoidberg_xp_to_level8:
+        - type: text
+          text: (player|zoidberg_xp)/(machine|level_8_xp)
+          font_size: 50
+          x: 1535
+          y: 91
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+
+widget_player:
+    expand_crew_status:
+        expanded_crew_status:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.bender_level == 1}:
+        bender_xp_to_level2:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.bender_level == 2}:
+        bender_xp_to_level3:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.bender_level == 3}:
+        bender_xp_to_level4:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.bender_level == 4}:
+        bender_xp_to_level5:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.bender_level == 5}:
+        bender_xp_to_level6:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.bender_level == 6}:
+        bender_xp_to_level7:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.bender_level == 7}:
+        bender_xp_to_level8:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 1}:
+        leela_xp_to_level2:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 2}:
+        leela_xp_to_level3:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 3}:
+        leela_xp_to_level4:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 4}:
+        leela_xp_to_level5:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 5}:
+        leela_xp_to_level6:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 6}:
+        leela_xp_to_level7:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.leela_level == 7}:
+        leela_xp_to_level8:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.fry_level == 1}:
+        fry_xp_to_level2:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.fry_level == 2}:
+        fry_xp_to_level3:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.fry_level == 3}:
+        fry_xp_to_level4:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.fry_level == 4}:
+        fry_xp_to_level5:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.fry_level == 5}:
+        fry_xp_to_level6:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.fry_level == 6}:
+        fry_xp_to_level7:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.fry_level == 7}:
+        fry_xp_to_level8:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.nibbler_level == 1}:
+        nibbler_xp_to_level2:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.nibbler_level == 2}:
+        nibbler_xp_to_level3:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.nibbler_level == 3}:
+        nibbler_xp_to_level4:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.nibbler_level == 4}:
+        nibbler_xp_to_level5:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.nibbler_level == 5}:
+        nibbler_xp_to_level6:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.nibbler_level == 6}:
+        nibbler_xp_to_level7:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.nibbler_level == 7}:
+        nibbler_xp_to_level8:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.professor_level == 1}:
+        professor_xp_to_level2:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.professor_level == 2}:
+        professor_xp_to_level3:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.professor_level == 3}:
+        professor_xp_to_level4:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.professor_level == 4}:
+        professor_xp_to_level5:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.professor_level == 5}:
+        professor_xp_to_level6:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.professor_level == 6}:
+        professor_xp_to_level7:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.professor_level == 7}:
+        professor_xp_to_level8:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.amy_level == 1}:
+        amy_xp_to_level2:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.amy_level == 2}:
+        amy_xp_to_level3:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.amy_level == 3}:
+        amy_xp_to_level4:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.amy_level == 4}:
+        amy_xp_to_level5:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.amy_level == 5}:
+        amy_xp_to_level6:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.amy_level == 6}:
+        amy_xp_to_level7:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.amy_level == 7}:
+        amy_xp_to_level8:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.hermes_level == 1}:
+        hermes_xp_to_level2:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.hermes_level == 2}:
+        hermes_xp_to_level3:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.hermes_level == 3}:
+        hermes_xp_to_level4:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.hermes_level == 4}:
+        hermes_xp_to_level5:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.hermes_level == 5}:
+        hermes_xp_to_level6:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.hermes_level == 6}:
+        hermes_xp_to_level7:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.hermes_level == 7}:
+        hermes_xp_to_level8:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.zoidberg_level == 1}:
+        zoidberg_xp_to_level2:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.zoidberg_level == 2}:
+        zoidberg_xp_to_level3:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.zoidberg_level == 3}:
+        zoidberg_xp_to_level4:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.zoidberg_level == 4}:
+        zoidberg_xp_to_level5:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.zoidberg_level == 5}:
+        zoidberg_xp_to_level6:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.zoidberg_level == 6}:
+        zoidberg_xp_to_level7:
+            action: add
+            slide: base_slide
+    add_crew_xp_to_level_up{current_player.zoidberg_level == 7}:
+        zoidberg_xp_to_level8:
+            action: add
+            slide: base_slide
+    hide_crew_status:
+        bender_xp_to_level2:
+            action: remove
+        bender_xp_to_level3:
+            action: remove
+        bender_xp_to_level4:
+            action: remove
+        bender_xp_to_level5:
+            action: remove
+        bender_xp_to_level6:
+            action: remove
+        bender_xp_to_level7:
+            action: remove
+        bender_xp_to_level8:
+            action: remove
+        leela_xp_to_level2:
+            action: remove
+        leela_xp_to_level3:
+            action: remove
+        leela_xp_to_level4:
+            action: remove
+        leela_xp_to_level5:
+            action: remove
+        leela_xp_to_level6:
+            action: remove
+        leela_xp_to_level7:
+            action: remove
+        leela_xp_to_level8:
+            action: remove
+        fry_xp_to_level2:
+            action: remove
+        fry_xp_to_level3:
+            action: remove
+        fry_xp_to_level4:
+            action: remove
+        fry_xp_to_level5:
+            action: remove
+        fry_xp_to_level6:
+            action: remove
+        fry_xp_to_level7:
+            action: remove
+        fry_xp_to_level8:
+            action: remove
+        nibbler_xp_to_level2:
+            action: remove
+        nibbler_xp_to_level3:
+            action: remove
+        nibbler_xp_to_level4:
+            action: remove
+        nibbler_xp_to_level5:
+            action: remove
+        nibbler_xp_to_level6:
+            action: remove
+        nibbler_xp_to_level7:
+            action: remove
+        nibbler_xp_to_level8:
+            action: remove
+        professor_xp_to_level2:
+            action: remove
+        professor_xp_to_level3:
+            action: remove
+        professor_xp_to_level4:
+            action: remove
+        professor_xp_to_level5:
+            action: remove
+        professor_xp_to_level6:
+            action: remove
+        professor_xp_to_level7:
+            action: remove
+        professor_xp_to_level8:
+            action: remove
+        amy_xp_to_level2:
+            action: remove
+        amy_xp_to_level3:
+            action: remove
+        amy_xp_to_level4:
+            action: remove
+        amy_xp_to_level5:
+            action: remove
+        amy_xp_to_level6:
+            action: remove
+        amy_xp_to_level7:
+            action: remove
+        amy_xp_to_level8:
+            action: remove
+        hermes_xp_to_level2:
+            action: remove
+        hermes_xp_to_level3:
+            action: remove
+        hermes_xp_to_level4:
+            action: remove
+        hermes_xp_to_level5:
+            action: remove
+        hermes_xp_to_level6:
+            action: remove
+        hermes_xp_to_level7:
+            action: remove
+        hermes_xp_to_level8:
+            action: remove
+        zoidberg_xp_to_level2:
+            action: remove
+        zoidberg_xp_to_level3:
+            action: remove
+        zoidberg_xp_to_level4:
+            action: remove
+        zoidberg_xp_to_level5:
+            action: remove
+        zoidberg_xp_to_level6:
+            action: remove
+        zoidberg_xp_to_level7:
+            action: remove
+        zoidberg_xp_to_level8:
+            action: remove
