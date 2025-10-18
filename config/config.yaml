@@ -2210,7 +2210,46 @@ widget_styles:
         anchor_x: left
         anchor_y: bottom
         color: black
-
+    nibbler_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 553
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    professor_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 424
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    amy_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 295
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    hermes_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 166
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    zoidberg_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 37
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
 
 assets:
     sounds:
