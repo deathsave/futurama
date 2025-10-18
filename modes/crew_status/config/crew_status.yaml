@@ -596,7 +596,84 @@ widgets:
           anchor_x: left
           anchor_y: bottom
           color: black
-
+    bender_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1550
+          y: 978
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    leela_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1550
+          y: 849
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    fry_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1550
+          y: 720
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    bender_next_level2_award:
+        - type: text
+          text: Suicide Booth
+          style: bender_next_level_award
+    bender_next_level3_award:
+        - type: text
+          text: 1000 points
+          style: bender_next_level_award
+    bender_next_level4_award:
+        - type: text
+          text: Suicide Booth
+          style: bender_next_level_award
+    bender_next_level5_award:
+        - type: text
+          text: Crew Multiplier+
+          style: bender_next_level_award
+    leela_next_level2_award:
+        - type: text
+          text: Crew Multiplier+
+          style: leela_next_level_award
+    leela_next_level3_award:
+        - type: text
+          text: Loop Multiplier+
+          style: leela_next_level_award
+    leela_next_level4_award:
+        - type: text
+          text: Loop Multiplier+
+          style: leela_next_level_award
+    leela_next_level5_award:
+        - type: text
+          text: Crew Multiplier+
+          style: leela_next_level_award
+    fry_next_level2_award:
+        - type: text
+          text: Crew Multiplier+
+          style: fry_next_level_award
+    fry_next_level3_award:
+        - type: text
+          text: Suicide Booth
+          style: fry_next_level_award
+    fry_next_level4_award:
+        - type: text
+          text: 5000 points
+          style: fry_next_level_award
+    fry_next_level5_award:
+        - type: text
+          text: Suicide Booth
+          style: fry_next_level_award
 widget_player:
     expand_crew_status:
         expanded_crew_status:
@@ -826,6 +903,64 @@ widget_player:
         zoidberg_xp_to_level8:
             action: add
             slide: base_slide
+    add_crew_next_level_up_awards:
+        bender_next_level_header:
+            action: add
+            slide: base_slide
+        leela_next_level_header:
+            action: add
+            slide: base_slide
+        fry_next_level_header:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.bender_level == 1}:
+        bender_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.bender_level == 2}:
+        bender_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.bender_level == 3}:
+        bender_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.bender_level == 4}:
+        bender_next_level5_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.leela_level == 1}:
+        leela_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.leela_level == 2}:
+        leela_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.leela_level == 3}:
+        leela_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.leela_level == 4}:
+        leela_next_level5_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.fry_level == 1}:
+        fry_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.fry_level == 2}:
+        fry_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.fry_level == 3}:
+        fry_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.fry_level == 4}:
+        fry_next_level5_award:
+            action: add
+            slide: base_slide
     hide_crew_status:
         bender_xp_to_level2:
             action: remove
@@ -938,4 +1073,34 @@ widget_player:
         zoidberg_xp_to_level7:
             action: remove
         zoidberg_xp_to_level8:
+            action: remove
+        bender_next_level_header:
+            action: remove
+        leela_next_level_header:
+            action: remove
+        fry_next_level_header:
+            action: remove
+        bender_next_level2_award:
+            action: remove
+        bender_next_level3_award:
+            action: remove
+        bender_next_level4_award:
+            action: remove
+        bender_next_level5_award:
+            action: remove
+        leela_next_level2_award:
+            action: remove
+        leela_next_level3_award:
+            action: remove
+        leela_next_level4_award:
+            action: remove
+        leela_next_level5_award:
+            action: remove
+        fry_next_level2_award:
+            action: remove
+        fry_next_level3_award:
+            action: remove
+        fry_next_level4_award:
+            action: remove
+        fry_next_level5_award:
             action: remove
