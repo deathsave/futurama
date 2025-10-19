@@ -391,7 +391,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_2_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -401,7 +401,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_3_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -411,7 +411,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_4_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -421,7 +421,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_5_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -431,7 +431,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_6_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -441,7 +441,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_7_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -451,7 +451,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_8_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -461,7 +461,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_2_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -471,7 +471,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_3_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -481,7 +481,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_4_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -491,7 +491,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_5_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -501,7 +501,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_6_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -511,7 +511,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_7_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -521,7 +521,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_8_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -531,7 +531,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_2_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -541,7 +541,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_3_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -551,7 +551,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_4_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -561,7 +561,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_5_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -571,7 +571,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_6_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -581,7 +581,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_7_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -591,7 +591,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_8_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -600,7 +600,7 @@ widgets:
         - type: text
           text: Award at next level-
           font_size: 20
-          x: 1550
+          x: 1552
           y: 978
           z: 9
           anchor_x: left
@@ -610,7 +610,7 @@ widgets:
         - type: text
           text: Award at next level-
           font_size: 20
-          x: 1550
+          x: 1552
           y: 849
           z: 9
           anchor_x: left
@@ -620,7 +620,7 @@ widgets:
         - type: text
           text: Award at next level-
           font_size: 20
-          x: 1550
+          x: 1552
           y: 720
           z: 9
           anchor_x: left
@@ -630,7 +630,7 @@ widgets:
         - type: text
           text: Award at next level-
           font_size: 20
-          x: 1550
+          x: 1552
           y: 591
           z: 9
           anchor_x: left
@@ -640,7 +640,7 @@ widgets:
         - type: text
           text: Award at next level-
           font_size: 20
-          x: 1550
+          x: 1552
           y: 462
           z: 9
           anchor_x: left
@@ -650,8 +650,8 @@ widgets:
         - type: text
           text: Award at next level-
           font_size: 20
-          x: 1550
-          y: 333
+          x: 1552
+          y: 332
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -660,8 +660,8 @@ widgets:
         - type: text
           text: Award at next level-
           font_size: 20
-          x: 1550
-          y: 204
+          x: 1552
+          y: 202
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -670,8 +670,8 @@ widgets:
         - type: text
           text: Award at next level-
           font_size: 20
-          x: 1550
-          y: 75
+          x: 1552
+          y: 73
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -758,19 +758,19 @@ widgets:
           style: professor_next_level_award
     amy_next_level2_award:
         - type: text
-          text: Shot Multiplier+
+          text: Playfield X +1
           style: amy_next_level_award
     amy_next_level3_award:
         - type: text
-          text: Shot Multiplier+
+          text: Playfield X +1
           style: amy_next_level_award
     amy_next_level4_award:
         - type: text
-          text: Shot Multiplier+
+          text: Playfield X +1
           style: amy_next_level_award
     amy_next_level5_award:
         - type: text
-          text: Shot_Multiplier+
+          text: Playfield X +1
           style: amy_next_level_award
     hermes_next_level2_award:
         - type: text
@@ -1305,6 +1305,16 @@ widget_player:
         leela_next_level_header:
             action: remove
         fry_next_level_header:
+            action: remove
+        nibbler_next_level_header:
+            action: remove
+        professor_next_level_header:
+            action: remove
+        amy_next_level_header:
+            action: remove
+        hermes_next_level_header:
+            action: remove
+        zoidberg_next_level_header:
             action: remove
         bender_next_level2_award:
             action: remove
