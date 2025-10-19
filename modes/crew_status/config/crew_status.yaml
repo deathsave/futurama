@@ -391,7 +391,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_2_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -401,7 +401,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_3_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -411,7 +411,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_4_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -421,7 +421,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_5_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -431,7 +431,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_6_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -441,7 +441,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_7_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -451,7 +451,7 @@ widgets:
           text: (player|amy_xp)/(machine|level_8_xp)
           font_size: 50
           x: 1535
-          y: 349
+          y: 348
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -461,7 +461,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_2_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -471,7 +471,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_3_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -481,7 +481,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_4_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -491,7 +491,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_5_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -501,7 +501,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_6_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -511,7 +511,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_7_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -521,7 +521,7 @@ widgets:
           text: (player|hermes_xp)/(machine|level_8_xp)
           font_size: 50
           x: 1535
-          y: 220
+          y: 218
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -531,7 +531,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_2_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -541,7 +541,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_3_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -551,7 +551,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_4_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -561,7 +561,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_5_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -571,7 +571,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_6_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -581,7 +581,7 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_7_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
@@ -591,11 +591,219 @@ widgets:
           text: (player|zoidberg_xp)/(machine|level_8_xp)
           font_size: 50
           x: 1535
-          y: 91
+          y: 89
           z: 9
           anchor_x: left
           anchor_y: bottom
           color: black
+    bender_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1552
+          y: 978
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    leela_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1552
+          y: 849
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    fry_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1552
+          y: 720
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    nibbler_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1552
+          y: 591
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    professor_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1552
+          y: 462
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    amy_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1552
+          y: 332
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    hermes_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1552
+          y: 202
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    zoidberg_next_level_header:
+        - type: text
+          text: Award at next level-
+          font_size: 20
+          x: 1552
+          y: 73
+          z: 9
+          anchor_x: left
+          anchor_y: bottom
+          color: black
+    bender_next_level2_award:
+        - type: text
+          text: Suicide Booth
+          style: bender_next_level_award
+    bender_next_level3_award:
+        - type: text
+          text: 1000 points
+          style: bender_next_level_award
+    bender_next_level4_award:
+        - type: text
+          text: Suicide Booth
+          style: bender_next_level_award
+    bender_next_level5_award:
+        - type: text
+          text: Crew Multiplier+
+          style: bender_next_level_award
+    leela_next_level2_award:
+        - type: text
+          text: Crew Multiplier+
+          style: leela_next_level_award
+    leela_next_level3_award:
+        - type: text
+          text: Loop Multiplier+
+          style: leela_next_level_award
+    leela_next_level4_award:
+        - type: text
+          text: Loop Multiplier+
+          style: leela_next_level_award
+    leela_next_level5_award:
+        - type: text
+          text: Crew Multiplier+
+          style: leela_next_level_award
+    fry_next_level2_award:
+        - type: text
+          text: Crew Multiplier+
+          style: fry_next_level_award
+    fry_next_level3_award:
+        - type: text
+          text: Suicide Booth
+          style: fry_next_level_award
+    fry_next_level4_award:
+        - type: text
+          text: 5000 points
+          style: fry_next_level_award
+    fry_next_level5_award:
+        - type: text
+          text: Suicide Booth
+          style: fry_next_level_award
+    nibbler_next_level2_award:
+        - type: text
+          text: Crew Multiplier+
+          style: nibbler_next_level_award
+    nibbler_next_level3_award:
+        - type: text
+          text: 1000 points
+          style: nibbler_next_level_award
+    nibbler_next_level4_award:
+        - type: text
+          text: 5000 points
+          style: nibbler_next_level_award
+    nibbler_next_level5_award:
+        - type: text
+          text: Crew Multiplier+
+          style: nibbler_next_level_award
+    professor_next_level2_award:
+        - type: text
+          text: Ball Save
+          style: professor_next_level_award
+    professor_next_level3_award:
+        - type: text
+          text: Extra Ball
+          style: professor_next_level_award
+    professor_next_level4_award:
+        - type: text
+          text: Ball Save
+          style: professor_next_level_award
+    professor_next_level5_award:
+        - type: text
+          text: Extra Ball
+          style: professor_next_level_award
+    amy_next_level2_award:
+        - type: text
+          text: Playfield X +1
+          style: amy_next_level_award
+    amy_next_level3_award:
+        - type: text
+          text: Playfield X +1
+          style: amy_next_level_award
+    amy_next_level4_award:
+        - type: text
+          text: Playfield X +1
+          style: amy_next_level_award
+    amy_next_level5_award:
+        - type: text
+          text: Playfield X +1
+          style: amy_next_level_award
+    hermes_next_level2_award:
+        - type: text
+          text: Bonus X +1
+          style: hermes_next_level_award
+    hermes_next_level3_award:
+        - type: text
+          text: Bonus X +2
+          style: hermes_next_level_award
+    hermes_next_level4_award:
+        - type: text
+          text: Bonus X +3
+          style: hermes_next_level_award
+    hermes_next_level5_award:
+        - type: text
+          text: Bonus X +4
+          style: hermes_next_level_award
+    zoidberg_next_level2_award:
+        - type: text
+          text: Rotor Ball Save
+          style: zoidberg_next_level_award
+    zoidberg_next_level3_award:
+        - type: text
+          text: Rotor Ball Save
+          style: zoidberg_next_level_award
+    zoidberg_next_level4_award:
+        - type: text
+          text: Rotor Ball Save
+          style: zoidberg_next_level_award
+    zoidberg_next_level5_award:
+        - type: text
+          text: Rotor Ball Save
+          style: zoidberg_next_level_award
 
 widget_player:
     expand_crew_status:
@@ -826,6 +1034,159 @@ widget_player:
         zoidberg_xp_to_level8:
             action: add
             slide: base_slide
+    add_crew_next_level_up_awards:
+        bender_next_level_header:
+            action: add
+            slide: base_slide
+        leela_next_level_header:
+            action: add
+            slide: base_slide
+        fry_next_level_header:
+            action: add
+            slide: base_slide
+        nibbler_next_level_header:
+            action: add
+            slide: base_slide
+        professor_next_level_header:
+            action: add
+            slide: base_slide
+        amy_next_level_header:
+            action: add
+            slide: base_slide
+        hermes_next_level_header:
+            action: add
+            slide: base_slide
+        zoidberg_next_level_header:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.bender_level == 1}:
+        bender_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.bender_level == 2}:
+        bender_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.bender_level == 3}:
+        bender_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.bender_level == 4}:
+        bender_next_level5_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.leela_level == 1}:
+        leela_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.leela_level == 2}:
+        leela_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.leela_level == 3}:
+        leela_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.leela_level == 4}:
+        leela_next_level5_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.fry_level == 1}:
+        fry_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.fry_level == 2}:
+        fry_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.fry_level == 3}:
+        fry_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.fry_level == 4}:
+        fry_next_level5_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.nibbler_level == 1}:
+        nibbler_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.nibbler_level == 2}:
+        nibbler_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.nibbler_level == 3}:
+        nibbler_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.nibbler_level == 4}:
+        nibbler_next_level5_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.professor_level == 1}:
+        professor_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.professor_level == 2}:
+        professor_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.professor_level == 3}:
+        professor_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.professor_level == 4}:
+        professor_next_level5_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.amy_level == 1}:
+        amy_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.amy_level == 2}:
+        amy_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.amy_level == 3}:
+        amy_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.amy_level == 4}:
+        amy_next_level5_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.hermes_level == 1}:
+        hermes_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.hermes_level == 2}:
+        hermes_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.hermes_level == 3}:
+        hermes_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.hermes_level == 4}:
+        hermes_next_level5_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.zoidberg_level == 1}:
+        zoidberg_next_level2_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.zoidberg_level == 2}:
+        zoidberg_next_level3_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.zoidberg_level == 3}:
+        zoidberg_next_level4_award:
+            action: add
+            slide: base_slide
+    add_crew_next_level_up_awards{current_player.zoidberg_level == 4}:
+        zoidberg_next_level5_award:
+            action: add
+            slide: base_slide
     hide_crew_status:
         bender_xp_to_level2:
             action: remove
@@ -938,4 +1299,84 @@ widget_player:
         zoidberg_xp_to_level7:
             action: remove
         zoidberg_xp_to_level8:
+            action: remove
+        bender_next_level_header:
+            action: remove
+        leela_next_level_header:
+            action: remove
+        fry_next_level_header:
+            action: remove
+        nibbler_next_level_header:
+            action: remove
+        professor_next_level_header:
+            action: remove
+        amy_next_level_header:
+            action: remove
+        hermes_next_level_header:
+            action: remove
+        zoidberg_next_level_header:
+            action: remove
+        bender_next_level2_award:
+            action: remove
+        bender_next_level3_award:
+            action: remove
+        bender_next_level4_award:
+            action: remove
+        bender_next_level5_award:
+            action: remove
+        leela_next_level2_award:
+            action: remove
+        leela_next_level3_award:
+            action: remove
+        leela_next_level4_award:
+            action: remove
+        leela_next_level5_award:
+            action: remove
+        fry_next_level2_award:
+            action: remove
+        fry_next_level3_award:
+            action: remove
+        fry_next_level4_award:
+            action: remove
+        fry_next_level5_award:
+            action: remove
+        nibbler_next_level2_award:
+            action: remove
+        nibbler_next_level3_award:
+            action: remove
+        nibbler_next_level4_award:
+            action: remove
+        nibbler_next_level5_award:
+            action: remove
+        professor_next_level2_award:
+            action: remove
+        professor_next_level3_award:
+            action: remove
+        professor_next_level4_award:
+            action: remove
+        professor_next_level5_award:
+            action: remove
+        amy_next_level2_award:
+            action: remove
+        amy_next_level3_award:
+            action: remove
+        amy_next_level4_award:
+            action: remove
+        amy_next_level5_award:
+            action: remove
+        hermes_next_level2_award:
+            action: remove
+        hermes_next_level3_award:
+            action: remove
+        hermes_next_level4_award:
+            action: remove
+        hermes_next_level5_award:
+            action: remove
+        zoidberg_next_level2_award:
+            action: remove
+        zoidberg_next_level3_award:
+            action: remove
+        zoidberg_next_level4_award:
+            action: remove
+        zoidberg_next_level5_award:
             action: remove
