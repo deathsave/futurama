@@ -5,5 +5,7 @@
       events: expand_crew_status
     - duration: 1s
       events: wait_for_slide
-    - duration: 100ms
+    - duration: 10ms
       events: add_crew_xp_to_level_up
+    - duration: 10ms
+      events: add_crew_next_level_up_awards

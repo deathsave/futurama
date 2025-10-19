@@ -2186,8 +2186,70 @@ widget_styles:
         anchor_x: center
         anchor_y: top
         color: SpringGreen
-
-
+    bender_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 940
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    leela_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 811
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    fry_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 682
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    nibbler_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 553
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    professor_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 424
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    amy_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 294
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    hermes_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 164
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
+    zoidberg_next_level_award:
+        font_size: 32
+        x: 1575
+        y: 35
+        z: 9
+        anchor_x: left
+        anchor_y: bottom
+        color: black
 
 assets:
     sounds:
