@@ -2229,7 +2229,7 @@ widget_styles:
     amy_next_level_award:
         font_size: 32
         x: 1575
-        y: 295
+        y: 294
         z: 9
         anchor_x: left
         anchor_y: bottom
@@ -2237,7 +2237,7 @@ widget_styles:
     hermes_next_level_award:
         font_size: 32
         x: 1575
-        y: 166
+        y: 164
         z: 9
         anchor_x: left
         anchor_y: bottom
@@ -2245,7 +2245,7 @@ widget_styles:
     zoidberg_next_level_award:
         font_size: 32
         x: 1575
-        y: 37
+        y: 35
         z: 9
         anchor_x: left
         anchor_y: bottom
