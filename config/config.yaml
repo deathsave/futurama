@@ -637,7 +637,11 @@ switches:
         number: A2-B0-2
         tags: tilt_bob
 
-
+timed_switches:
+    hold_hedonism_bot_button:
+        switches: s_hedonism_bot
+        time: 3s
+        events_when_active: start_light_test
 
 
 
@@ -727,7 +731,7 @@ coils:
     c_gate:
         number: A3-B0-1
         default_pulse_ms: 18
-        default_hold_power: "0.35"
+        default_hold_power: "0.40"
 
 diverters:
     post_left:
@@ -1950,10 +1954,12 @@ widgets:
     empty_gauge:
         - type: image
           image: empty_gauge
+          x: 300
           z: 5
     quarter_gauge:
         - type: image
           image: quarter_gauge
+          x: 300
           z: 6
     half_gauge:
         - type: image
@@ -1962,10 +1968,12 @@ widgets:
     3quarter_gauge:
         - type: image
           image: 3quarter_gauge
+          x: 300
           z: 8
     full_gauge:
         - type: image
           image: full_gauge
+          x: 300
           z: 9
     centered_scoreboxes:
         - type: image
