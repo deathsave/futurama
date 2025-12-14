@@ -19,7 +19,7 @@ show_player:
             priority: 300
             loops: 0
             events_when_completed: next_attract_show
-    s_hedonism_bot_active:
+    start_light_test:
         multi_labelled_light_test_show:
             manual_advance: true
             loops: 0
