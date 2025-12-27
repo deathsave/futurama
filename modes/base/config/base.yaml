@@ -39,6 +39,41 @@ state_machines:
 #mom and zapp and starts a timer based on the state
 #the shot is lit and light show starts when the timer does and end when
 #the shot is hit, the timer runs out, or the state machine is toggled again
+    PF_multiplier_state:
+        starting_state: one
+        persist_state: false
+        states:
+            one:
+                label: Start state
+                events_when_started: set_PF_multiplier_1
+            two:
+                events_when_started: set_PF_multiplier_2
+                show_when_active: PF_multiplier_2_show
+            three:
+                events_when_started: set_PF_multiplier_3
+                show_when_active: PF_multiplier_3_show
+            five:
+                events_when_started: set_PF_multiplier_5
+                show_when_active: PF_multiplier_5_show
+        transitions:
+            - source: one
+              target: two
+              events: advance_PF_multiplier
+            - source: two
+              target: three
+              events: advance_PF_multiplier
+            - source: three
+              target: five
+              events: advance_PF_multiplier
+            - source: five
+              target: three
+              events: timer_PF_multiplier_timer_complete
+            - source: three
+              target: two
+              events: timer_PF_multiplier_timer_complete
+            - source: two
+              target: one
+              events: timer_PF_multiplier_timer_complete
 
 ball_saves:
     ball_start_ball_save:
@@ -77,6 +112,30 @@ extra_balls:
 
 
 shows:
+    PF_multiplier_2_show:
+        - duration: 300ms
+          lights:
+              l_2x: on
+        - duration: 300ms
+          lights:
+              l_2x: off
+    PF_multiplier_3_show:
+        - duration: 300ms
+          lights:
+              l_3x: on
+        - duration: 300ms
+          lights:
+              l_3x: off
+    PF_multiplier_5_show:
+        - duration: 300ms
+          lights:
+              l_2x: on
+              l_3x: on
+        - duration: 300ms
+          lights:
+              l_2x: off
+              l_3x: off
+
     zoidberg_happy_show:
         - duration: 5
           events: zoidberg_r5
@@ -499,6 +558,22 @@ variable_player:
     zoidberg_ball_save_shot_hit:
         score: 250 * current_player.zoidberg_multiplier * current_player.PF_multiplier
         zoidberg_xp: 5
+    set_PF_multiplier_1:
+        PF_multiplier:
+            int: 1
+            action: set
+    set_PF_multiplier_2:
+        PF_multiplier:
+            int: 2
+            action: set
+    set_PF_multiplier_3:
+        PF_multiplier:
+            int: 3
+            action: set
+    set_PF_multiplier_5:
+        PF_multiplier:
+            int: 5
+            action: set
     timer_amy_PF_multiplier_timer_started:
         PF_multiplier: 1
     timer_amy_PF_multiplier_timer_stopped:
@@ -730,14 +805,24 @@ timers:
               event: zapp_shot_hit
             - action: stop
               event: mom_shot_lit
-    amy_PF_multiplier_timer:
+    amy_PF_multiplier_timer: #delete me once PF_mutliplier is cleaned up
         start_value: 30
         end_value: 0
         direction: down
         control_events:
             - action: restart
               event: amy_PF_multiplier_start
-
+    PF_multiplier_timer:
+        start_value: 30 + (current_player.amy_level * 7)
+        end_value: 0
+        direction: down
+        control_events:
+            - action: restart
+              event: set_PF_multiplier_2
+            - action: restart
+              events: set_PF_multiplier_3
+            - action: restart
+              events: set_PF_multiplier_5
 
 event_player:
     base_tube_shot_hit: mom_zapp_toggle
