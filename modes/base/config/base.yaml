@@ -48,13 +48,19 @@ state_machines:
                 events_when_started: set_PF_multiplier_1
             two:
                 events_when_started: set_PF_multiplier_2
-                show_when_active: PF_multiplier_2_show
+                show_when_active:
+                    show: PF_multiplier_2_show
+                    show_tokens: None
             three:
                 events_when_started: set_PF_multiplier_3
-                show_when_active: PF_multiplier_3_show
+                show_when_active:
+                    show: PF_multiplier_3_show
+                    show_tokens: None
             five:
                 events_when_started: set_PF_multiplier_5
-                show_when_active: PF_multiplier_5_show
+                show_when_active:
+                    show: PF_multiplier_5_show
+                    show_tokens: None
         transitions:
             - source: one
               target: two
@@ -574,12 +580,6 @@ variable_player:
         PF_multiplier:
             int: 5
             action: set
-    timer_amy_PF_multiplier_timer_started:
-        PF_multiplier: 1
-    timer_amy_PF_multiplier_timer_stopped:
-        PF_multiplier:
-            int: 1
-            action: set
 #slurm factory mode checks amy_level when it starts and +1 PF_multiplier
 #during the mode if amy_level > 3,
     amy_slurm_x_check{current_player.amy_level > 3}:
@@ -805,24 +805,17 @@ timers:
               event: zapp_shot_hit
             - action: stop
               event: mom_shot_lit
-    amy_PF_multiplier_timer: #delete me once PF_mutliplier is cleaned up
-        start_value: 30
-        end_value: 0
-        direction: down
-        control_events:
-            - action: restart
-              event: amy_PF_multiplier_start
     PF_multiplier_timer:
-        start_value: 30 + (current_player.amy_level * 7)
+        start_value: 23 + (current_player.amy_level * 7)
         end_value: 0
         direction: down
         control_events:
             - action: restart
               event: set_PF_multiplier_2
             - action: restart
-              events: set_PF_multiplier_3
+              event: set_PF_multiplier_3
             - action: restart
-              events: set_PF_multiplier_5
+              event: set_PF_multiplier_5
 
 event_player:
     base_tube_shot_hit: mom_zapp_toggle
