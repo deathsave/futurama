@@ -183,6 +183,7 @@ sequences:
             - level3_right_ramp_jackpot_hit, level3_left_loop_jackpot_hit, level3_right_loop_jackpot_hit, level3_right_orbit_jackpot_hit
             - level3_right_ramp_jackpot_hit, level3_left_loop_jackpot_hit, level3_right_loop_jackpot_hit, level3_right_orbit_jackpot_hit
         events_when_complete: level3_jackpots_complete
+        
 variable_player:
     next_level_shot_hit:
         score: 2500 * current_player.crew_multiplier * current_player.PF_multiplier

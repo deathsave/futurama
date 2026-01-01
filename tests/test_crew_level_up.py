@@ -156,7 +156,7 @@ class TestCrewLevelUp(FullMachineTestCase):
                          'PFD_base_slide')
 
     def _runout_timer_on_PFx(self):
-        self.advance_time_and_run(25)
+        self.advance_time_and_run(30)
         self.assertPlayerVarEqual(1, "PF_multiplier")
 
     def _zoidberg_to_level2(self):
@@ -183,4 +183,3 @@ class TestCrewLevelUp(FullMachineTestCase):
 
     def _professor_to_level2(self):
         self.advance_time_and_run(1)
-        

@@ -430,10 +430,10 @@ event_player:
     professor_level3: award_professor_extra_ball
     professor_level4: start_pazuzu_ball_save
     professor_level5: award_professor_extra_ball
-    amy_level2: amy_PF_multiplier_start
-    amy_level3: amy_PF_multiplier_start
-    amy_level4: amy_PF_multiplier_start
-    amy_level5: amy_PF_multiplier_start
+    amy_level2: advance_PF_multiplier
+    amy_level3: advance_PF_multiplier
+    amy_level4: advance_PF_multiplier
+    amy_level5: advance_PF_multiplier
     nibbler_level3: nibbler_poop
     nibbler_level4: nibbler_poop
     timer_nibbler_dt_reset_timer_complete: reset_nibbler_target

@@ -3,11 +3,15 @@
 
 
 - time: 0
+  sounds:
+      blank_voice_track: play
   slides:
       moms_robot_oil_slide:
           priority: 500
           target: display2
 - time: 8.5
+  sounds:
+      blank_voice_track: stop 
   slides:
       moms_robot_oil_slide:
           action: remove
