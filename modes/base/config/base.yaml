@@ -291,18 +291,6 @@ light_player:
         l_right_outlane: "000000"
     ball_save_zoidberg_ball_save_saving_ball:
         l_right_outlane: ffffff
-    player_PF_multiplier{value==1}:
-        l_2x: ffffff
-        l_3x: ffffff
-    player_PF_multiplier{value==2}:
-        l_2x: "000000"
-        l_3x: ffffff
-    player_PF_multiplier{value==3}:
-        l_2x: ffffff
-        l_3x: "000000"
-    player_PF_multiplier{value==5}:
-        l_2x: "000000"
-        l_3x: "000000"
     suicide_booth_active:
         l_suicide_booth: "000000"
     suicide_booth_empty:

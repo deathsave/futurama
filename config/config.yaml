@@ -930,7 +930,7 @@ sound_system:
                 target: music
                 delay: 0
                 attack: 10ms
-                attenuation: 1.0
+                attenuation: .3
                 release_point: 0
                 release: 10ms
         sfx:
