@@ -3,11 +3,15 @@
 
 
 - time: 0
+  sounds:
+      blank_voice_track: play
   slides:
       the_zapp_brannigan_slide:
           priority: 500
           target: display2
 - time: 9
+  sounds:
+      blank_voice_track: stop 
   slides:
       the_zapp_brannigan_slide:
           action: remove

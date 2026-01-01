@@ -3,11 +3,15 @@
 
 
 - time: 0
+  sounds:
+      blank_voice_track: play
   slides:
       zapp_25_star_general_slide:
           priority: 500
           target: display2
 - time: 13.5
+  sounds:
+      blank_voice_track: stop 
   slides:
       zapp_25_star_general_slide:
           action: remove
