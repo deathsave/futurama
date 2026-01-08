@@ -2,9 +2,6 @@
 
 show_player:
     mode_attract_started:
-        bender_topper_test_show:
-            priority: 300
-            loops: 0
         attract_loop_show:
             priority: 300
             loops: 0
@@ -94,7 +91,7 @@ slides:
             - type: text
               color: white
               font_size: 64
-              text: SW Version .68
+              text: SW Version .71
               y: center-400
               z: 5
     arachno_commercial_slide:
