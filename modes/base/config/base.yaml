@@ -5,6 +5,28 @@ mode:
     events_when_started: reset_drop_targets_with_show
 
 state_machines:
+    normal_skillshots_state_machine:
+        starting_state: waiting
+        persist_state: true
+        states:
+            waiting:
+                label: Start state
+                events_when_started: skillshots_disabled_until_next ball
+            skillshots_enabled:
+                events_when_started: skillshots_waiting_for_plunge
+            skillshots_active:
+                events_when_started: start_skillshot_timer
+        transitions:
+            - source: waiting
+              target: skillshots_enabled
+              events: ball_started{ball!=1}
+            - source: skillshots_enabled
+              target: skillshots_active
+              events: s_shooter_lane_inactive
+            - source: skillshots_active
+              target: waiting
+              events: timer_skillshot_timeout_timer_complete, timer_skillshot_timeout_timer_stopped
+
   #delivery_started will set this to ignore, delivery_ended will restart it
     mom_zapp_toggle_state:
         starting_state: mom
@@ -271,6 +293,28 @@ slides:
         widgets:
             - type: video
               video: pazuzu_save_clip
+    right_skillshot_slide:
+        widgets:
+            - type: text
+              text: HQ Skillshot!
+              style: level_up_header
+              z: 2
+            - type: text
+              text: (player|professor_level * 5000) Points!
+              style: level_up_award1
+              z: 2
+            - type: text
+              text: "+5xp For All Office Staff"
+              style: level_up_award2
+              z: 2
+            - type: text
+              text: "(Zoidberg, Hermes, Amy and the Professor)"
+              style: level_up_award3
+              z: 2
+            - type: image
+              image: generic_display2_BG
+              z: 1
+
 
 
 light_player:
@@ -298,6 +342,10 @@ light_player:
 
 
 show_player:
+    right_skillshot_hit:
+        right_skillshot_show:
+            loops: 0
+            priority: 200
     test_roswell:
         skip_to_roswell_show:
             loops: 0
@@ -457,6 +505,15 @@ show_pools:
 
 
 variable_player:
+    left_skillshot_hit:
+        score: 1000 * current_player.leela_multiplier
+        leela_xp: 5
+    right_skillshot_hit:
+        score: 5000 * current_player.professor_level
+        professor_xp: 5
+        hermes_xp: 5
+        amy_xp: 5
+        zoidberg_xp: 5
     drop_target_bank_crew_bank_down:
         score: 111 * current_player.crew_multiplier * current_player.PF_multiplier
         crew_multiplier: 1
@@ -769,6 +826,17 @@ timers:
               event: s_shooter_lane_inactive
             - action: restart
               event: timer_shoot_the_ball_timer_complete
+    skillshot_timeout_timer:
+        start_value: 5
+        end_value: 0
+        direction: down
+        control_events:
+            - action: restart
+              event: start_skillshot_timer
+            - action: stop
+              event: left_skillshot_hit
+            - action: stop
+              event: right_skillshot_hit
     mom_shot_timer:
         start_value: 30
         end_value: 0
@@ -809,6 +877,14 @@ event_player:
     base_tube_shot_hit: mom_zapp_toggle
 
 shots:
+    left_skillshot:
+        switch: s_left_loop
+        enable_events: start_skillshot_timer
+        disable_events: timer_skillshot_timeout_timer_stopped, timer_skillshot_timeout_timer_complete
+    right_skillshot:
+        switch: s_right_loop
+        enable_events: start_skillshot_timer
+        disable_events: timer_skillshot_timeout_timer_stopped, timer_skillshot_timeout_timer_complete
     ship_spinning:
         switch: s_pe_platter
         enable_events: timer_ship_spinning_timer_stopped, mode_base_started, delivery_ended
