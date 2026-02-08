@@ -19,7 +19,7 @@ state_machines:
         transitions:
             - source: waiting
               target: skillshots_enabled
-              events: ball_started{ball!=1}
+              events: mode_base_started{ball!=1}
             - source: skillshots_enabled
               target: skillshots_active
               events: s_shooter_lane_inactive
@@ -297,19 +297,19 @@ slides:
         widgets:
             - type: text
               text: HQ Skillshot!
-              style: level_up_header
+              style: PFD_announcement_header
               z: 2
             - type: text
-              text: (player|professor_level * 5000) Points!
-              style: level_up_award1
+              text: 5000 points!
+              style: PFD_announcement_line1
               z: 2
             - type: text
               text: "+5xp For All Office Staff"
-              style: level_up_award2
+              style: PFD_announcement_line2
               z: 2
             - type: text
               text: "(Zoidberg, Hermes, Amy and the Professor)"
-              style: level_up_award3
+              style: PFD_announcement_line3
               z: 2
             - type: image
               image: generic_display2_BG
