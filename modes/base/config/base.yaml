@@ -506,7 +506,7 @@ show_pools:
 
 variable_player:
     left_skillshot_hit:
-        score: 1000 * current_player.leela_multiplier
+        score: machine.weird_points * current_player.leela_multiplier
         leela_xp: 5
     right_skillshot_hit:
         score: 5000 * current_player.professor_level
@@ -514,6 +514,9 @@ variable_player:
         hermes_xp: 5
         amy_xp: 5
         zoidberg_xp: 5
+    lrr_skillshot_hit:
+        score: 2500 
+        crew_multiplier: 1
     drop_target_bank_crew_bank_down:
         score: 111 * current_player.crew_multiplier * current_player.PF_multiplier
         crew_multiplier: 1
@@ -837,6 +840,8 @@ timers:
               event: left_skillshot_hit
             - action: stop
               event: right_skillshot_hit
+            - action: stop
+              event: lrr_skillshot_hit
     mom_shot_timer:
         start_value: 30
         end_value: 0
@@ -885,6 +890,11 @@ shots:
         switch: s_right_loop
         enable_events: start_skillshot_timer
         disable_events: timer_skillshot_timeout_timer_stopped, timer_skillshot_timeout_timer_complete
+    lrr_skillshot:
+        switch: s_pop_bumper
+        enable_events: start_skillshot_timer
+        disable_events: timer_skillshot_timeout_timer_stopped, timer_skillshot_timeout_timer_complete
+#super skillshot by dodging lrr from a ahort plunge and shooting the left ramp
     ship_spinning:
         switch: s_pe_platter
         enable_events: timer_ship_spinning_timer_stopped, mode_base_started, delivery_ended
