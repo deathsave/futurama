@@ -126,6 +126,14 @@ ball_saves:
         auto_launch: true
         balls_to_save: 1
         grace_period: 3s
+    post_cryolab_ball_save:
+        active_time: 5s
+        hurry_up_time: 2s
+        enable_events: mode_cryolab_delivery_stopped
+        timer_start_events: sw_playfield_active
+        auto_launch: true
+        balls_to_save: 1
+        grace_period: 2s
     pazuzu_ball_save:
         active_time: 50s
         hurry_up_time: 10s
@@ -515,7 +523,7 @@ variable_player:
         amy_xp: 5
         zoidberg_xp: 5
     lrr_skillshot_hit:
-        score: 2500 
+        score: 2500
         crew_multiplier: 1
     drop_target_bank_crew_bank_down:
         score: 111 * current_player.crew_multiplier * current_player.PF_multiplier
