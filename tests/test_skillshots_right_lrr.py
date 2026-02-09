@@ -34,6 +34,7 @@ class TestSkillshotsRightLrr(FullMachineTestCase):
 
     def _exit_to_base_mode(self):
         self.advance_time_and_run(30)
+        self.hit_and_release_switch("s_left_ramp")
         self.assertModeNotRunning("cryolab_delivery")
         self.assertModeRunning("delivery_manager")
         self.assertModeRunning("crew_manager")
