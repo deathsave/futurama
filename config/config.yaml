@@ -660,7 +660,7 @@ coils:
         default_hold_power: 1
     c_plunger:
         number: A3-B0-7
-        default_pulse_ms: 17
+        default_pulse_ms: 22
     c_trough_eject:
         number: A3-B0-6
         default_pulse_ms: 24
