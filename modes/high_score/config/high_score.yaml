@@ -66,7 +66,7 @@ slides:
       font_size: 60
       max_chars: 10
       x: center
-      y: center-80
+      y: center-100
       shift_left_event: s_left_flipper_active
       shift_right_event: s_right_flipper_active
       select_event: s_start_active
@@ -76,7 +76,7 @@ slides:
       text: '<       >'
       font_size: 60
       x: center
-      y: center-80
+      y: center-100
       color: ff0000
     - type: text
       text: ''
