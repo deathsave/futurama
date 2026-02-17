@@ -643,8 +643,6 @@ timed_switches:
         time: 3s
         events_when_active: start_light_test
 
-
-
 coils:
     c_flipper_left_main:
         number: A1-B0-6
@@ -662,7 +660,7 @@ coils:
         default_hold_power: 1
     c_plunger:
         number: A3-B0-7
-        default_pulse_ms: 17
+        default_pulse_ms: 22
     c_trough_eject:
         number: A3-B0-6
         default_pulse_ms: 24
@@ -2258,7 +2256,26 @@ widget_styles:
         anchor_x: left
         anchor_y: bottom
         color: black
-
+    PFD_announcement_header:
+        font_size: 180
+        x: center
+        y: 875
+        color: black
+    PFD_announcement_line1:
+        font_size: 110
+        x: center
+        y: 650
+        color: black
+    PFD_announcement_line2:
+        font_size: 110
+        x: center
+        y: 525
+        color: black
+    PFD_announcement_line3:
+        font_size: 70
+        x: center
+        y: 400
+        color: black
 assets:
     sounds:
         default:
