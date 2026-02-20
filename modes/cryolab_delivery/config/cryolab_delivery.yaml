@@ -226,13 +226,14 @@ timed_switches:
         time: 2s
         events_when_active: left_flipper_held
         events_when_released: left_flipper_released
-        
+
 sequences:
     skip_cryolab_sequence:
         enable_events: mode_cryolab_delivery_started
         events:
             - left_flipper_held
             - s_shooter_lane_inactive
+        restart_events: left_flipper_released
         events_when_complete: stop_cryolab_delivery_mode
 
 timers:
