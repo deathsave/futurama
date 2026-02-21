@@ -1,0 +1,9 @@
+#show_version=6
+##! show: fantasy_planet_delivery_lit_show
+
+    - duration: 1
+      events: wait_for_fantasy_planet_delivery_lit
+    - duration: 1
+      events: fantasy_planet_delivery_lit
+    - duration: -1
+      events: fantasy_planet_delivery_has_been_lit

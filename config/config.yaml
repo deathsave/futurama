@@ -1073,6 +1073,8 @@ player_vars:
         initial_value: "ready"
     cannibalon_delivery_points:
         initial_value: 0
+    fantasy_planet_delivery_points:
+        initial_value: 0
     robot_homeworld_delivery_status:
         value_type: str
         initial_value: "ready"
