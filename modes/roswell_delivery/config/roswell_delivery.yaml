@@ -287,7 +287,7 @@ widget_player:
         roswell_mildred_background:
             action: add
             slide: reusable_delivery_slide
-            
+
 slides:
     roswell_PF_slide:
         widgets:
@@ -942,3 +942,7 @@ variable_player:
             action: set
             string: success
         deliveries_completed: 1
+    ball_ending:
+        roswell_delivery_status:
+            action: set
+            string: "failed"
