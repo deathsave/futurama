@@ -190,6 +190,9 @@ state_machines:
             - source: robot_homeworld_delivery_next
               target: robot_homeworld_delivery_done
               events: testing_skip_robot_homeworld
+            - source: robot_homeworld_delivery_active
+              target: robot_homeworld_delivery_done
+              events: ball_ending
     roswell_delivery_handler:
         persist_state: true
         states:
@@ -218,6 +221,9 @@ state_machines:
             - source: roswell_delivery_active
               target: roswell_delivery_done
               events: mode_roswell_delivery_stopped
+            - source: roswell_delivery_active
+              target: roswell_delivery_done
+              events: ball_ending
     fantasy_planet_delivery_handler:
         persist_state: true
         states:
@@ -284,7 +290,7 @@ slides:
               y: center-180
               z: 2
               font_size: 80
-    fantasy_planet_awards_slide:
+    fantasy_planet_delivery_awards_slide:
         widgets:
             - type: image
               image: fantasy_planet_awards
@@ -293,7 +299,7 @@ slides:
               text: Fantasy Planet Delivery Complete!
               y: center+350
               z: 2
-              font_size: 120
+              font_size: 110
             - type: text
               text: (player|fantasy_planet_delivery_points) points!
               y: center+220
@@ -323,7 +329,7 @@ slides:
         widgets:
             - type: video
               video: fantasy_planet_delivery_clip
-              
+
 widgets:
     cannibalon_delivery_video:
         - type: video
