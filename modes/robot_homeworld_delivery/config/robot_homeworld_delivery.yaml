@@ -753,6 +753,10 @@ show_player:
 
 variable_player:
 #scoring and setting variables for completing or failing the mode, etc.
+    ball_ending:
+        robot_homeworld_delivery_status:
+            string: "failed"
+            action: set
     robot_homeworld_slingshot_shot_hit:
         score: 300 * current_player.professor_multiplier * current_player.PF_multiplier
     lower_winch_shot_hit:
@@ -775,11 +779,11 @@ variable_player:
         bender_xp: 5
     timer_dress_up_timer_complete:
         robot_homeworld_delivery_status:
-            string: "fail"
+            string: "failed"
             action: set
     do_not_escape_robot_elders:
         robot_homeworld_delivery_status:
-            string: "fail"
+            string: "failed"
             action: set
     bender_wants_to_escape:
         score: (current_player.bender_multiplier + current_player.fry_multiplier + current_player.leela_multiplier) * 2000 * current_player.PF_multiplier
@@ -791,7 +795,7 @@ variable_player:
         score: ship_points * crew_multiplier * 100 * current_player.PF_multiplier
     escape_but_no_delivery:
         robot_homeworld_delivery_status:
-            string: "fail"
+            string: "failed"
             action: set
     lugnuts_shot_hit:
         robot_homeworld_delivery_status:

@@ -1,0 +1,20 @@
+#show_version=6
+##! show: fantasy_planet_delivery_show
+
+
+- time: 0
+  slides:
+      fantasy_planet_delivery_slide:
+          priority: 500
+          target: display1
+- time: +1
+  slides:
+      fantasy_planet_delivery_awards_slide:
+          priority: 500
+          target: display2
+- time: "+16"
+  slides:
+      fantasy_planet_delivery_slide:
+          action: remove
+      fantasy_planet_delivery_awards_slide:
+          action: remove

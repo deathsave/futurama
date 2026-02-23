@@ -660,7 +660,7 @@ coils:
         default_hold_power: 1
     c_plunger:
         number: A3-B0-7
-        default_pulse_ms: 22
+        default_pulse_ms: 30
     c_trough_eject:
         number: A3-B0-6
         default_pulse_ms: 24
@@ -674,21 +674,23 @@ coils:
         number: A3-B1-3
         default_pulse_ms: 10
         default_hold_power: .3
-    c_dt_hermes_down:
-        number: A1-B0-0
-        default_pulse_ms: 10
-    c_dt_amy_down:
-        number: A1-B0-1
-        default_pulse_ms: 10
-    c_dt_professor_down:
-        number: A1-B0-2
-        default_pulse_ms: 10
-    c_dt_zoidberg_down:
-        number: A1-B0-3
-        default_pulse_ms: 10
-    c_dt_nibbler_down:
-        number: A1-B0-4
-        default_pulse_ms: 10
+#DT knockdown coils removed summer 2025 to stabilize the assembly
+#I also just didn't end up wanting to do anything with them
+#    c_dt_hermes_down:
+#        number: A1-B0-0
+#        default_pulse_ms: 10
+#    c_dt_amy_down:
+#        number: A1-B0-1
+#        default_pulse_ms: 10
+#    c_dt_professor_down:
+#        number: A1-B0-2
+#        default_pulse_ms: 10
+#    c_dt_zoidberg_down:
+#        number: A1-B0-3
+#        default_pulse_ms: 10
+#    c_dt_nibbler_down:
+#        number: A1-B0-4
+#        default_pulse_ms: 10
     c_dt_hermes_up:
         number: A1-B1-0
         default_pulse_ms: 30
@@ -798,31 +800,31 @@ ball_devices:
 drop_targets:
     nibbler:
         switch: s_dt_nibbler
-        knockdown_coil: c_dt_nibbler_down
+#        knockdown_coil: c_dt_nibbler_down
         reset_coil: c_dt_nibbler_up
         reset_events: reset_nibbler_target
         max_reset_attempts: 2
     professor:
         switch: s_dt_professor
-        knockdown_coil: c_dt_professor_down
+#        knockdown_coil: c_dt_professor_down
         reset_coil: c_dt_professor_up
         reset_events: reset_professor_target
         max_reset_attempts: 2
     amy:
         switch: s_dt_amy
-        knockdown_coil: c_dt_amy_down
+#        knockdown_coil: c_dt_amy_down
         reset_coil: c_dt_amy_up
         reset_events: reset_amy_target
         max_reset_attempts: 2
     hermes:
         switch: s_dt_hermes
-        knockdown_coil: c_dt_hermes_down
+#        knockdown_coil: c_dt_hermes_down
         reset_coil: c_dt_hermes_up
         reset_events: reset_hermes_target
         max_reset_attempts: 2
     zoidberg:
         switch: s_dt_zoidberg
-        knockdown_coil: c_dt_zoidberg_down
+#        knockdown_coil: c_dt_zoidberg_down
         reset_coil: c_dt_zoidberg_up
         reset_events: reset_zoidberg_target
         max_reset_attempts: 2
@@ -1070,6 +1072,8 @@ player_vars:
         value_type: str
         initial_value: "ready"
     cannibalon_delivery_points:
+        initial_value: 0
+    fantasy_planet_delivery_points:
         initial_value: 0
     robot_homeworld_delivery_status:
         value_type: str

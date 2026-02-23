@@ -220,6 +220,21 @@ shots:
         enable_events: fry_frozen, nibbler_skillshot_hit
         disable_events: skip_the_ending_fake_shot_hit
 
+timed_switches:
+    left_flipper_hold_cryo:
+        switches: s_left_flipper
+        time: 2s
+        events_when_active: left_flipper_held
+        events_when_released: left_flipper_released
+
+sequences:
+    skip_cryolab_sequence:
+        enable_events: mode_cryolab_delivery_started
+        events:
+            - left_flipper_held
+            - s_shooter_lane_inactive
+        restart_events: left_flipper_released
+        events_when_complete: stop_cryolab_delivery_mode
 
 timers:
     nibbler_skillshot_timer:
