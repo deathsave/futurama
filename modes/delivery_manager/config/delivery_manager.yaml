@@ -83,6 +83,8 @@ state_machines:
                 events_when_started: set_next_delivery_robot_homeworld
             roswell:
                 events_when_started: set_next_delivery_roswell
+            fantasy_planet:
+                events_when_started: set_next_delivery_fantasy_planet
         transitions:
             - source: start
               target: cannibalon
@@ -93,6 +95,10 @@ state_machines:
             - source: robot_homeworld
               target: roswell
               events: robot_homeworld_delivery_done
+            - source: roswell
+              target: fantasy_planet
+              events: roswell_delivery_done
+
     moon_delivery_handler:
         persist_state: true
         states:
@@ -184,6 +190,9 @@ state_machines:
             - source: robot_homeworld_delivery_next
               target: robot_homeworld_delivery_done
               events: testing_skip_robot_homeworld
+            - source: robot_homeworld_delivery_active
+              target: robot_homeworld_delivery_done
+              events: ball_ending
     roswell_delivery_handler:
         persist_state: true
         states:
@@ -212,6 +221,37 @@ state_machines:
             - source: roswell_delivery_active
               target: roswell_delivery_done
               events: mode_roswell_delivery_stopped
+            - source: roswell_delivery_active
+              target: roswell_delivery_done
+              events: ball_ending
+    fantasy_planet_delivery_handler:
+        persist_state: true
+        states:
+            start:
+                label: Start state
+            fantasy_planet_delivery_next:
+                events_when_started: fantasy_planet_delivery_next
+            fantasy_planet_delivery_enable:
+                show_when_active:
+                    show: fantasy_planet_delivery_lit_show
+                    show_tokens: None
+            fantasy_planet_delivery_active:
+                events_when_started: fantasy_planet_delivery_active
+            fantasy_planet_delivery_done:
+                events_when_started: fantasy_planet_delivery_done
+        transitions:
+            - source: start
+              target: fantasy_planet_delivery_next
+              events: set_next_delivery_fantasy_planet
+            - source: fantasy_planet_delivery_next
+              target: fantasy_planet_delivery_enable
+              events: full_tank
+            - source: fantasy_planet_delivery_enable
+              target: fantasy_planet_delivery_active
+              events: fantasy_planet_delivery_start_shot_hit
+            - source: fantasy_planet_delivery_active
+              target: fantasy_planet_delivery_done
+              events: fantasy_planet_delivery_show_ended
 
 
 slides:
@@ -250,6 +290,45 @@ slides:
               y: center-180
               z: 2
               font_size: 80
+    fantasy_planet_delivery_awards_slide:
+        widgets:
+            - type: image
+              image: fantasy_planet_awards
+              z: 1
+            - type: text
+              text: Fantasy Planet Delivery Complete!
+              y: center+350
+              z: 2
+              font_size: 110
+            - type: text
+              text: (player|fantasy_planet_delivery_points) points!
+              y: center+220
+              z: 2
+              font_size: 80
+            - type: text
+              text: Amy XP+
+              y: center+120
+              z: 2
+              font_size: 80
+            - type: text
+              text: Zoidberg XP+
+              y: center+20
+              z: 2
+              font_size: 80
+            - type: text
+              text: Hermes XP+
+              y: center-80
+              z: 2
+              font_size: 80
+            - type: text
+              text: Crew Multiplier +1
+              y: center-180
+              z: 2
+              font_size: 80
+    fantasy_planet_delivery_slide:
+        widgets:
+            - type: video
+              video: fantasy_planet_delivery_clip
 
 widgets:
     cannibalon_delivery_video:
@@ -283,6 +362,11 @@ shots:
         enable_events: roswell_delivery_lit
         disable_events: roswell_intro_done
         persist_enable: true
+    fantasy_planet_delivery_start_shot:
+        switch: s_VUK
+        enable_events: fantasy_planet_delivery_lit
+        disable_events: fantasy_planet_delivery_show_ended
+        persist_enable: true
 
 ball_holds:
     cannibalon_delivery_hold:
@@ -291,6 +375,12 @@ ball_holds:
         enable_events: cannibalon_delivery_lit
         disable_events: cannibalon_delivery_show_ended
         release_one_events: cannibalon_delivery_show_ended
+        debug: true
+    fantasy_planet_delivery_hold:
+        hold_devices: bd_VUK
+        enable_events: fantasy_planet_delivery_lit
+        disable_events: fantasy_planet_delivery_show_ended
+        release_one_events: fantasy_planet_delivery_show_ended
         debug: true
     moon_delivery_start_hold:
         balls_to_hold: 1
@@ -384,13 +474,22 @@ variable_player:
     moon_delivery_start_shot_hit:
         score: (current_player.deliveries_completed + 1) * 1000
     cannibalon_delivery_start_shot_hit:
-        score: machine.medium_reward_points * current_player.crew_multiplier * (current_player.fry_multiplier + current_player.leela_multiplier + current_player.bender_multiplier)
+        score: machine.medium_reward_points * (current_player.deliveries_completed + current_player.crew_multiplier) * (current_player.fry_multiplier + current_player.leela_multiplier + current_player.bender_multiplier)
         deliveries_completed: 1
         fry_xp: 5
         leela_xp: 5
         bender_xp: 10
         crew_multiplier: 1
         cannibalon_delivery_points: machine.medium_reward_points * current_player.crew_multiplier * (current_player.fry_multiplier + current_player.leela_multiplier + current_player.bender_multiplier)
+    fantasy_planet_delivery_start_shot_hit:
+        score: current_player.deliveries_completed * machine.medium_reward_points * current_player.crew_multiplier * (current_player.hermes_multiplier + current_player.zoidberg_multiplier + current_player.amy_multiplier)
+        deliveries_completed: 1
+        amy_xp: 5 * current_player.amy_multiplier
+        zoidberg_xp: 5 * current_player.zoidberg_multiplier
+        hermes_xp: 5 * current_player.hermes_multiplier
+        crew_multiplier: 1
+        fantasy_planet_delivery_points: current_player.deliveries_completed * machine.medium_reward_points * current_player.crew_multiplier * (current_player.hermes_multiplier + current_player.zoidberg_multiplier + current_player.amy_multiplier)
+
     robot_homeworld_delivery_start_shot_hit:
         score: (current_player.deliveries_completed + 1) * 2000
     roswell_delivery_start_shot_hit:
@@ -456,8 +555,10 @@ event_player:
     start_robot_homeworld_delivery: delivery_started
     mode_robot_homeworld_delivery_stopped: use_full_tank, delivery_ended
     roswell_delivery_start_shot_hit: start_roswell_delivery
-    mode_roswell_delivery_started: delivery_started
-    mode_roswell_delivery_stopped: delivery_ended, use_full_tank
+    mode_roswell_delivery_started: delivery_started, use_full_tank
+    mode_roswell_delivery_stopped: delivery_ended
+    fantasy_planet_delivery_start_shot_hit: delivery_started
+    fantasy_planet_delivery_show_ended: use_full_tank, delivery_ended
 
 
 
@@ -468,12 +569,21 @@ show_player:
             priority: 500
             events_when_stopped: cannibalon_delivery_show_ended
         delivery_lit_show: stop
+    fantasy_planet_delivery_start_shot_hit:
+        fantasy_planet_delivery_show:
+            loops: 0
+            priority: 500
+            events_when_stopped: fantasy_planet_delivery_show_ended
+        delivery_lit_show: stop
     moon_delivery_lit:
         delivery_lit_show:
             loops: -1
     moon_delivery_start_shot_hit:
         delivery_lit_show: stop
     cannibalon_delivery_lit:
+        delivery_lit_show:
+            loops: -1
+    fantasy_planet_delivery_lit:
         delivery_lit_show:
             loops: -1
     robot_homeworld_delivery_lit:
@@ -486,4 +596,8 @@ show_player:
             loops: 0
     roswell_delivery_start_shot_hit:
         delivery_lit_show:
+            loops: 0
+#reset drop target banks after delivery ends
+    delivery_ended:
+        dt_reset_all_show:
             loops: 0
