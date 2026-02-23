@@ -1,0 +1,13 @@
+#show_version=6
+##! show: deliveries_instructions_show
+
+
+- time: 0
+  slides:
+      deliveries_instructions_slide:
+          priority: 500
+          target: display1
+- time: 65
+  slides:
+      deliveries_instructions_slide:
+          action: remove

@@ -74,7 +74,7 @@ show_pools:
             - i_dated_a_robot_show
             - pants_full_of_shame_show
             - crew_level_instructions_show|3
-            - topper_bite_my_shiny_show|2
+            - deliveries_instructions_show|3
 slides:
     dspc_logo_slide:
         widgets:
@@ -91,7 +91,7 @@ slides:
             - type: text
               color: white
               font_size: 64
-              text: SW Version .72
+              text: SW Version .75
               y: center-400
               z: 5
     arachno_commercial_slide:
@@ -118,6 +118,10 @@ slides:
         widgets:
             type: video
             video: hypnotoad_instructions_clip
+    deliveries_instructions_slide:
+        widgets:
+            type: video
+            video: deliveries_instructions_clip
     morbo_and_nixon_slide:
         widgets:
             type: video
