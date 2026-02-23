@@ -574,6 +574,7 @@ show_player:
             loops: 0
             priority: 500
             events_when_stopped: fantasy_planet_delivery_show_ended
+        delivery_lit_show: stop
     moon_delivery_lit:
         delivery_lit_show:
             loops: -1
@@ -595,4 +596,8 @@ show_player:
             loops: 0
     roswell_delivery_start_shot_hit:
         delivery_lit_show:
+            loops: 0
+#reset drop target banks after delivery ends
+    delivery_ended:
+        dt_reset_all_show:
             loops: 0
