@@ -51,8 +51,8 @@ jobs:
         pip install --upgrade \
           pip setuptools wheel build coveralls pillow
         pip install --upgrade Cython==0.29.36
-        pip install mpf==0.57.3
-        pip install mpf-mc==0.57.1
+        pip install mpf
+        pip install mpf-mc
     - name: Test
       run: |
         source ~/.bash_profile
