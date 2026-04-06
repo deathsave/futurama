@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! command -v HandBrakeCLI >/dev/null 2>&1; then
+  echo "HandBrakeCLI not found. Install HandBrake CLI and try again." >&2
+  exit 1
+fi
+
+preset="Fast 1080p30"
+
+while IFS= read -r -d '' file; do
+  temp_output="${file%.*}.tmp-encode.mp4"
+
+  echo "Compressing: ${file}"
+  HandBrakeCLI \
+    -i "${file}" \
+    -o "${temp_output}" \
+    --preset "${preset}" \
+    -q 24 \
+    --rate 24 \
+    --pfr \
+    --optimize \
+    </dev/null
+
+  if [[ ! -s "${temp_output}" ]]; then
+    echo "Encode failed, skipping: ${file}" >&2
+    rm -f "${temp_output}"
+    continue
+  fi
+
+  mv "${temp_output}" "${file}"
+done < <(find . -type f -iname "*.mp4" ! -name "*.tmp-encode.mp4" -print0)
+
+echo "Done."
