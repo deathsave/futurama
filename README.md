@@ -1,4 +1,7 @@
-# Futurama-pinball
+Futurama Pinball
+================
+
+[![Futurama Pinball](https://github.com/deathsave/futurama/actions/workflows/python-app.yml/badge.svg)](https://github.com/deathsave/futurama/actions/workflows/python-app.yml)
 
 Futurama Pinball Documentation
 
