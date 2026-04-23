@@ -1,0 +1,8 @@
+#show_version=6
+##! show: good_laser1_show
+
+- time: "+0"
+  widgets:
+      good_laser1_widget:
+          action: add
+          slide: monkey_fracas_slide

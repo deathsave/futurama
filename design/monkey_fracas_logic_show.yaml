@@ -1,0 +1,155 @@
+#show_version=6
+##! show: monkey_fracas_logic_show
+
+    - time: "+1s"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events: check_hits
