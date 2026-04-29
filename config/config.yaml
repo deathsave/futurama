@@ -670,10 +670,6 @@ coils:
     c_sling_right:
         number: A3-B0-4
         default_pulse_ms: 8
-    c_post_right:
-        number: A3-B1-3
-        default_pulse_ms: 10
-        default_hold_power: .3
 #DT knockdown coils removed summer 2025 to stabilize the assembly
 #I also just didn't end up wanting to do anything with them
 #    c_dt_hermes_down:
@@ -717,10 +713,6 @@ coils:
     c_VUK:
         number: A3-B1-2
         default_pulse_ms: 15
-    c_post_left:
-        number: A3-B1-4
-        default_pulse_ms: 10
-        default_hold_power: .3
     c_magnet:
         number: A3-B1-1
         default_pulse_ms: 26
@@ -734,24 +726,6 @@ coils:
         default_hold_power: "0.40"
 
 diverters:
-    post_left:
-        activation_coil: c_post_left
-        type: hold
-        activation_switches: s_right_loop
-        deactivate_events: post_left_down, ball_ending
-        enable_events: left_post_enable
-        disable_events: left_post_disable, ball_ending
-        targets_when_active: bd_left_post
-        targets_when_inactive: playfield
-    post_right:
-        activation_coil: c_post_right
-        type: hold
-        activation_switches: s_left_loop
-        deactivate_events: post_right_down, ball_ending
-        enable_events: right_post_enable
-        disable_events: right_post_disable, ball_ending
-        targets_when_active: bd_right_post
-        targets_when_inactive: playfield
     outlane_gate:
         activation_coil: c_gate
         type: hold
@@ -781,16 +755,6 @@ ball_devices:
         ball_switches: s_VUK
         eject_coil: c_VUK
         eject_timeouts: 2s
-    bd_left_post:
-        ball_switches: s_left_loop
-        eject_targets: playfield
-        entrance_count_delay: 2000ms
-        mechanical_eject: true
-    bd_right_post:
-        ball_switches: s_right_loop
-        eject_targets: playfield
-        entrance_count_delay: 2000ms
-        mechanical_eject: true
     bd_suicide_booth:
         ball_switches: s_suicide_booth
         eject_targets: playfield
