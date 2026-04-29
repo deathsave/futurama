@@ -1,0 +1,476 @@
+#config_version=6
+##! mode: monkey_fracas_jr
+
+#this mode uses the following player variables:
+#ship_vert_current
+#ship_vert_moving
+#good_laser1_vert
+#good_laser1_pos
+#good_laser1_status
+#good_laser2_vert
+#good_laser2_pos
+#good_laser2_status
+#good_laser3_vert
+#good_laser3_pos
+#good_laser3_status
+#good_laser4_vert
+#good_laser4_pos
+#good_laser4_status
+#bad_laser1
+#bad_laser2
+#bad_laser3
+#enemy_vert
+#enemy_horiz
+#enemy_pos
+#next_laser_variable
+
+mode:
+    start_events: start_video_mode
+    stop_events: end_video_mode
+    priority: 500
+
+state_machines:
+    good_laser1_state:
+        persist_state: false
+        starting_state: ready
+        states:
+            ready:
+                label: Start state
+                events_when_started: good_laser1_ready
+            fired:
+                events_when_started: good_laser1_fired
+        transitions:
+            - source: ready
+              target: fired
+              events: fire_good_laser1
+            - source: fired
+              target: ready
+              events: reload_good_laser1
+    good_laser2_state:
+        persist_state: false
+        starting_state: ready
+        states:
+            ready:
+                label: Start state
+                events_when_started: good_laser2_ready
+            fired:
+                events_when_started: good_laser2_fired
+        transitions:
+            - source: ready
+              target: fired
+              events: fire_good_laser2
+            - source: fired
+              target: ready
+              events: reload_good_laser2
+    good_laser3_state:
+        persist_state: false
+        starting_state: ready
+        states:
+            ready:
+                label: Start state
+                events_when_started: good_laser3_ready
+            fired:
+                events_when_started: good_laser3_fired
+        transitions:
+            - source: ready
+              target: fired
+              events: fire_good_laser3
+            - source: fired
+              target: ready
+              events: reload_good_laser3
+    good_laser4_state:
+        persist_state: false
+        starting_state: ready
+        states:
+            ready:
+                label: Start state
+                events_when_started: good_laser4_ready
+            fired:
+                events_when_started: good_laser4_fired
+        transitions:
+            - source: ready
+              target: fired
+              events: fire_good_laser4
+            - source: fired
+              target: ready
+              events: reload_good_laser4
+    next_laser:
+        persist_state: false
+        starting_state: good_laser1
+        states:
+            good_laser1:
+                label: Start state
+                events_when_started: next_laser1
+            good_laser2:
+                events_when_started: next_laser2
+            good_laser3:
+                events_when_started: next_laser3
+            good_laser4:
+                events_when_started: next_laser4
+        transitions:
+            - source: good_laser1
+              target: good_laser2
+              events: fire_good_laser1
+            - source: good_laser2
+              target: good_laser3
+              events: fire_good_laser2
+            - source: good_laser3
+              target: good_laser4
+              events: fire_good_laser3
+            - source: good_laser4
+              target: good_laser1
+              events: fire_good_laser4
+    laser_charge_level:
+        persist_state: false
+        starting_state: four
+        states:
+            four:
+                label: Start state
+                events_when_started: laser_charge4
+            three:
+                events_when_started: laser_charge3
+            two:
+                events_when_started: laser_charge2
+            one:
+                events_when_started: laser_charge1
+            zero:
+                events_when_started: laser_charge0
+        transitions:
+            - source: four
+              target: three
+              events: fire_good_laser1, fire_good_laser2, fire_good_laser3, fire_good_laser4
+            - source: three
+              target: two
+              events: fire_good_laser1, fire_good_laser2, fire_good_laser3, fire_good_laser4
+            - source: two
+              target: one
+              events: fire_good_laser1, fire_good_laser2, fire_good_laser3, fire_good_laser4
+            - source: one
+              target: zero
+              events: fire_good_laser1, fire_good_laser2, fire_good_laser3, fire_good_laser4
+            - source: zero
+              target: one
+              events: reload_good_laser1, reload_good_laser2, reload_good_laser3, reload_good_laser4
+            - source: one
+              target: two
+              events: reload_good_laser1, reload_good_laser2, reload_good_laser3, reload_good_laser4
+            - source: two
+              target: three
+              events: reload_good_laser1, reload_good_laser2, reload_good_laser3, reload_good_laser4
+            - source: three
+              target: four
+              events: reload_good_laser1, reload_good_laser2, reload_good_laser3, reload_good_laser4
+
+    ship_vert:
+        persist_state: false
+        starting_state: ship_vert_d
+        states:
+            ship_vert_d:
+                label: Start state
+                events_when_started: ship_to_vert_d
+            ship_vert_a:
+                events_when_started: ship_to_vert_a
+            ship_vert_b:
+                events_when_started: ship_to_vert_b
+            ship_vert_c:
+                events_when_started: ship_to_vert_c
+            ship_vert_e:
+                events_when_started: ship_to_vert_e
+            ship_vert_f:
+                events_when_started: ship_to_vert_f
+            ship_vert_g:
+                events_when_started: ship_to_vert_g
+        transitions:
+            - source: ship_vert_a
+              target: ship_vert_b
+              events: ship_down
+            - source: ship_vert_b
+              target: ship_vert_c
+              events: ship_down
+            - source: ship_vert_c
+              target: ship_vert_d
+              events: ship_down
+            - source: ship_vert_d
+              target: ship_vert_e
+              events: ship_down
+            - source: ship_vert_e
+              target: ship_vert_f
+              events: ship_down
+            - source: ship_vert_f
+              target: ship_vert_g
+              events: ship_down
+            - source: ship_vert_g
+              target: ship_vert_f
+              events: ship_up
+            - source: ship_vert_f
+              target: ship_vert_e
+              events: ship_up
+            - source: ship_vert_e
+              target: ship_vert_d
+              events: ship_up
+            - source: ship_vert_d
+              target: ship_vert_c
+              events: ship_up
+            - source: ship_vert_c
+              target: ship_vert_b
+              events: ship_up
+            - source: ship_vert_b
+              target: ship_vert_a
+              events: ship_up
+
+event_player:
+#laser charge limits player to 4 lasers on the screen at a time
+#pushing the right flipper button will request a laser
+#a state machine tracks which laser to fire next, they each have their own show
+#if there are already 4 lasers active on the screen, it does not but make a
+#"wimpy" noise to remind the player they can't do that and it didn't work
+    request_laser_hit{current_player.next_laser_variable=="good_laser1"}: request_laser1
+    request_laser1{current_player.good_laser1_status=="ready"}: fire_good_laser1
+    request_laser_hit{current_player.next_laser_variable=="good_laser2"}: request_laser2
+    request_laser2{current_player.good_laser2_status=="ready"}: fire_good_laser2
+    request_laser_hit{current_player.next_laser_variable=="good_laser3"}: request_laser3
+    request_laser3{current_player.good_laser3_status=="ready"}: fire_good_laser3
+    request_laser_hit{current_player.next_laser_variable=="good_laser4"}: request_laser4
+    request_laser4{current_player.good_laser4_status=="ready"}: fire_good_laser4
+    check_hits{current_player.enemy_pos==current_player.good_laser1_pos}: enemy_hit
+    check_hits{current_player.enemy_pos==current_player.good_laser2_pos}: enemy_hit
+    check_hits{current_player.enemy_pos==current_player.good_laser3_pos}: enemy_hit
+    check_hits{current_player.enemy_pos==current_player.good_laser4_pos}: enemy_hit
+    check_impacts_a{current_player.ship_vert_moving==a}: impact_a
+    check_impacts_b{current_player.ship_vert_moving==b}: impact_b
+    check_impacts_c{current_player.ship_vert_moving==c}: impact_c
+    check_impacts_d{current_player.ship_vert_moving==d}: impact_d
+    check_impacts_e{current_player.ship_vert_moving==e}: impact_e
+    check_impacts_f{current_player.ship_vert_moving==f}: impact_f
+    check_impacts_g{current_player.ship_vert_moving==g}: impact_g
+    check_impacts_a{current_player.ship_vert_current==a}: impact_a
+    check_impacts_b{current_player.ship_vert_current==b}: impact_b
+    check_impacts_c{current_player.ship_vert_current==c}: impact_c
+    check_impacts_d{current_player.ship_vert_current==d}: impact_d
+    check_impacts_e{current_player.ship_vert_current==e}: impact_e
+    check_impacts_f{current_player.ship_vert_current==f}: impact_f
+    check_impacts_g{current_player.ship_vert_current==g}: impact_g
+
+shots:
+#need to setup blocking for all of these switches
+    request_laser:
+        switches: s_right_flipper
+    ship_up:
+        switches: s_left_flipper
+    ship_down:
+        switches: s_mag_button
+
+
+sound_player:
+    fire_good_laser1:
+        pew-pew:
+            action: play
+    fire_good_laser2:
+        pew-pew:
+            action: play
+    fire_good_laser3:
+        pew-pew:
+            action: play
+    fire_good_laser4:
+        pew-pew:
+            action: play
+    request_laser1{current_player.good_laser1_status=="fired"}:
+        no_charge:
+            action: play
+    request_laser2{current_player.good_laser2_status=="fired"}:
+        no_charge:
+            action: play
+    request_laser3{current_player.good_laser3_status=="fired"}:
+        no_charge:
+            action: play
+    request_laser4{current_player.good_laser4_status=="fired"}:
+        no_charge:
+            action: play
+
+show_player:
+    fire_good_laser1:
+        good_laser1_show:
+            loops: 0
+            show_tokens:
+                laser1_vert_pos: current_player.ship_vert_moving
+    fire_good_laser2:
+        good_laser2_show:
+            loops: 0
+    fire_good_laser3:
+        good_laser3_show:
+            loops: 0
+    fire_good_laser4:
+        good_laser4_show:
+            loops: 0
+    good_laser1_hit:
+        good_laser1_show:
+            action: stop
+    good_laser2_hit:
+        good_laser2_show:
+            action: stop
+    good_laser3_hit:
+        good_laser3_show:
+            action: stop
+    good_laser4_hit:
+        good_laser4_show:
+            action: stop
+
+slides:
+    monkey_fracas_jr_slide:
+        widgets:
+            - type: image
+              image: monkey_fracas_title_bg
+              z: 1
+widgets:
+# middle vert pos is y=475
+    monkey_fracas_title:
+        - type: image
+          image: monkey_fracas_jr_title
+          z: 2
+    monkey_fracas_space_bg:
+        - type: video
+          video: monkey_fracas_bg
+          z: 3
+    good_laser1_widget:
+        - type: image
+          image: laser1_image
+          y: current_player.good_laser1_vert
+          x: 440
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    your_ship_widget:
+        - type: image
+          image: your_ship
+          z: 7
+          animations:
+              ship_to_vert_a:
+                  - property: y
+                    value: middle+417
+                    duration: 1s
+              ship_to_vert_b:
+                  - property: y
+                    value: middle+278
+                    duration: 1s
+              ship_to_vert_c:
+                  - property: y
+                    value: middle+139
+                    duration: 1s
+              ship_to_vert_d:
+                  - property: y
+                    value: middle
+                    duration: 1s
+              ship_to_vert_e:
+                  - property: y
+                    value: middle-139
+                    duration: 1s
+              ship_to_vert_f:
+                  - property: y
+                    value: middle-278
+                    duration: 1s
+              ship_to_vert_g:
+                  - property: y
+                    value: middle-417
+                    duration: 1s
+
+    laser_charge0_widget:
+        - type: image
+          image: laser_charge0
+          z: 4
+    laser_charge1_widget:
+        - type: image
+          image: laser_charge1
+          z: 4
+    laser_charge2_widget:
+        - type: image
+          image: laser_charge2
+          z: 4
+    laser_charge3_widget:
+        - type: image
+          image: laser_charge3
+          z: 4
+    laser_charge4_widget:
+        - type: image
+          image: laser_charge4
+          z: 4
+
+widget_player:
+    laser_charge0:
+        laser_charge0_widget:
+            target: monkey_fracas_jr_slide
+        laser_charge1_widget:
+            action: remove
+    laser_charge1:
+        laser_charge0_widget:
+            action: remove
+        laser_charge1_widget:
+            target: monkey_fracas_jr_slide
+        laser_charge2_widget:
+            action: remove
+    laser_charge2:
+        laser_charge1_widget:
+            action: remove
+        laser_charge2_widget:
+            target: monkey_fracas_jr_slide
+        laser_charge3_widget:
+            action: remove
+    laser_charge3:
+        laser_charge2_widget:
+            action: remove
+        laser_charge3_widget:
+            target: monkey_fracas_jr_slide
+        laser_charge4_widget:
+            action: remove
+    laser_charge4:
+        laser_charge3_widget:
+            action: remove
+        laser_charge4_widget:
+            target: monkey_fracas_jr_slide
+
+    lrrr_attack1_widget:
+        - type: image
+          image: orange_laser1
+      #    x: need to figure out what column 20 is in x
+      #    y: need to figure out the x is for row c
+      #    animations: (need to get x value for attack objects end point)
+
+
+variable_player:
+#when the ship moves, it is temporarily in two vertical frames at once, so we
+#set the vert_moving to where the ship is moving but leave vert_current until
+#the moving animation/show is done
+    "{device.state_machines.next_laser.state}":
+        next_laser_variable:
+            action: set
+            string: "(value)"
+    "{device.state_machines.good_laser1_state.state}":
+        good_laser1_status:
+            action: set
+            string: "(value)"
+    ship_to_vert_a:
+        ship_vert_moving:
+            string: a
+    ship_to_vert_b:
+        ship_vert_moving:
+            string: b
+    ship_to_vert_c:
+        ship_vert_moving:
+            string: c
+    ship_to_vert_d:
+        ship_vert_moving:
+            string: d
+    ship_to_vert_e:
+        ship_vert_moving:
+            string: e
+    ship_to_vert_f:
+        ship_vert_moving:
+            string: f
+    ship_to_vert_g:
+        ship_vert_moving:
+            string: g
+    ship_move_done:
+        ship_vert_current:
+            string: current_player.ship_vert_moving
