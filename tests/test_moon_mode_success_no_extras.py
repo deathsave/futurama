@@ -72,7 +72,7 @@ class TestMoonModeSuccessNoExtras(FullMachineTestCase):
         self.advance_time_and_run(10)
         self.assertPlayerVarEqual("success", "moon_delivery_status")
         self.assertEqual("step2", self.machine.state_machines.moon_delivery_state.state)
-        self.advance_time_and_run(10)
+        self.advance_time_and_run(30)
 
     def _exit_moon_to_base(self):
         self.advance_time_and_run(3)

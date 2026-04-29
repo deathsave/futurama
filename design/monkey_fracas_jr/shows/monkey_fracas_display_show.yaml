@@ -1,0 +1,18 @@
+#show_version=6
+##! show: monkey_fracas_display_show
+
+    - time: "+1s"
+      widgets:
+          monkey_fracas_title:
+              action: add
+              slide: monkey_fracas_jr_slide
+    - time: "+3s"
+      widgets:
+          monkey_fracas_title:
+              action: remove
+    - time: "+500ms"
+      events: draw_space_bg
+    - time: "+50ms"
+      events: draw_your_ship
+    - time: "+500ms"
+      events: start_logic_show

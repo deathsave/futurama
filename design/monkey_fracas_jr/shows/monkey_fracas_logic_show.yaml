@@ -1,6 +1,8 @@
 #show_version=6
 ##! show: monkey_fracas_logic_show
 
+    - time: "+2s"
+      events: launch_meteor1
     - time: "+1s"
       events: check_hits
     - time: "+50ms"
@@ -149,7 +151,7 @@
       events: check_hits
     - time: "+50ms"
       events: check_hits
-    - time: "+50ms"
+    - time: "+10s"
       events: check_hits
     - time: "+50ms"
-      events: check_hits
+      events: start_good_game_over

@@ -27,6 +27,7 @@
 mode:
     start_events: start_video_mode
     stop_events: end_video_mode
+    events_when_started: start_display_show
     priority: 500
 
 state_machines:
@@ -236,20 +237,29 @@ event_player:
     check_hits{current_player.enemy_pos==current_player.good_laser2_pos}: enemy_hit
     check_hits{current_player.enemy_pos==current_player.good_laser3_pos}: enemy_hit
     check_hits{current_player.enemy_pos==current_player.good_laser4_pos}: enemy_hit
-    check_impacts_a{current_player.ship_vert_moving==a}: impact_a
-    check_impacts_b{current_player.ship_vert_moving==b}: impact_b
-    check_impacts_c{current_player.ship_vert_moving==c}: impact_c
-    check_impacts_d{current_player.ship_vert_moving==d}: impact_d
-    check_impacts_e{current_player.ship_vert_moving==e}: impact_e
-    check_impacts_f{current_player.ship_vert_moving==f}: impact_f
-    check_impacts_g{current_player.ship_vert_moving==g}: impact_g
-    check_impacts_a{current_player.ship_vert_current==a}: impact_a
-    check_impacts_b{current_player.ship_vert_current==b}: impact_b
-    check_impacts_c{current_player.ship_vert_current==c}: impact_c
-    check_impacts_d{current_player.ship_vert_current==d}: impact_d
-    check_impacts_e{current_player.ship_vert_current==e}: impact_e
-    check_impacts_f{current_player.ship_vert_current==f}: impact_f
-    check_impacts_g{current_player.ship_vert_current==g}: impact_g
+    check_impacts_a{current_player.ship_vert_moving==a or current_player.ship_vert_current==a}:
+        - impact_a
+        - start_bad_game_over
+    check_impacts_b{current_player.ship_vert_moving==b or current_player.ship_vert_current==b}:
+        - impact_b
+        - start_bad_game_over
+    check_impacts_c{current_player.ship_vert_moving==c or current_player.ship_vert_current==c}:
+        - impact_c
+        - start_bad_game_over
+    check_impacts_d{current_player.ship_vert_moving==d or current_player.ship_vert_current==d}:
+        - impact_d
+        - start_bad_game_over
+    check_impacts_e{current_player.ship_vert_moving==e or current_player.ship_vert_current==e}:
+        - impact_e
+        - start_bad_game_over
+    check_impacts_f{current_player.ship_vert_moving==f or current_player.ship_vert_current==f}:
+        - impact_f
+        - start_bad_game_over
+    check_impacts_g{current_player.ship_vert_moving==g or current_player.ship_vert_current==g}:
+        - impact_g
+        - start_bad_game_over
+    
+
 
 shots:
 #need to setup blocking for all of these switches
@@ -288,6 +298,12 @@ sound_player:
             action: play
 
 show_player:
+    start_display_show:
+        monkey_fracas_display_show:
+            loops: 0
+    start_logic_show:
+        monkey_fracas_logic_show:
+            loops: 0
     fire_good_laser1:
         good_laser1_show:
             loops: 0
@@ -312,6 +328,17 @@ show_player:
         good_laser3_show:
             action: stop
     good_laser4_hit:
+        good_laser4_show:
+            action: stop
+    mfj_game_over:
+        monkey_fracas_logic_show:
+            action: stop
+        good_laser1_show:
+            action: stop
+        good_laser2_show:
+            action: stop
+        good_laser3_show:
+            action: stop
         good_laser4_show:
             action: stop
 
@@ -396,6 +423,12 @@ widgets:
         - type: image
           image: laser_charge4
           z: 4
+    lrrr_attack1_widget:
+        - type: image
+          image: orange_laser1
+      #    x: need to figure out what column 20 is in x
+      #    y: need to figure out the x is for row c
+      #    animations: (need to get x value for attack objects end point)
 
 widget_player:
     laser_charge0:
@@ -429,13 +462,13 @@ widget_player:
             action: remove
         laser_charge4_widget:
             target: monkey_fracas_jr_slide
+    draw_space_bg:
+        monkey_fracas_space_bg:
+            target: monkey_fracas_jr_slide
+    draw_your_ship:
+        your_ship_widget:
+            target: monkey_fracas_jr_slide
 
-    lrrr_attack1_widget:
-        - type: image
-          image: orange_laser1
-      #    x: need to figure out what column 20 is in x
-      #    y: need to figure out the x is for row c
-      #    animations: (need to get x value for attack objects end point)
 
 
 variable_player:

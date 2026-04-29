@@ -105,9 +105,7 @@ timers:
             - action: stop
               event: deliver_crate_shot_hit
     whalers_on_the_moon_timer:
-        start_value: 15
-#TO-DO: remove this max_value?
-        max_value: 10
+        start_value: 30
         end_value: 0
         direction: down
         control_events:
@@ -292,6 +290,11 @@ widget_player:
     timer_crate_delivery_timer_started:
         crate_delivery_time:
             slide: delivery_instructions_slide
+    timer_crate_delivery_timer_stopped:
+        crate_delivery_time:
+            action: remove
+        moon_step1:
+            action: remove 
     moon_delivery_step2:
         moon_step1:
             action: remove
@@ -623,6 +626,7 @@ widgets:
           z: 1
           anchor_x: left
           anchor_y: bottom
+          end_behavior: loop
     rover_escape_video:
         - type: video
           video: lunar_rover_escape_clip
@@ -756,7 +760,7 @@ show_player:
             loops: -1
     timer_crate_delivery_timer_started{current_player.fry_level > 1}:
         fry_deliver_crate_shot_show:
-            loops: -1
+            loops: -1 #why loop it?
     timer_crate_delivery_timer_started{current_player.amy_level > 1}:
         amy_deliver_crate_shot_show:
             loops: -1
