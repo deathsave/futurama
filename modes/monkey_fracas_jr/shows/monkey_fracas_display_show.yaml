@@ -14,5 +14,7 @@
       events: draw_space_bg
     - time: "+50ms"
       events: draw_your_ship
+    - time: "+50ms"
+      events: show_mfj_score 
     - time: "+500ms"
       events: start_logic_show

@@ -23,6 +23,7 @@
 #enemy_horiz
 #enemy_pos
 #next_laser_variable
+#mfj_score
 
 mode:
     start_events: start_video_mode
@@ -258,7 +259,7 @@ event_player:
     check_impacts_g{current_player.ship_vert_moving==g or current_player.ship_vert_current==g}:
         - impact_g
         - start_bad_game_over
-    
+
 
 
 shots:
@@ -312,12 +313,18 @@ show_player:
     fire_good_laser2:
         good_laser2_show:
             loops: 0
+            show_tokens:
+                laser2_vert_pos: current_player.ship_vert_moving
     fire_good_laser3:
         good_laser3_show:
             loops: 0
+            show_tokens:
+                laser3_vert_pos: current_player.ship_vert_moving
     fire_good_laser4:
         good_laser4_show:
             loops: 0
+            show_tokens:
+                laser4_vert_pos: current_player.ship_vert_moving
     good_laser1_hit:
         good_laser1_show:
             action: stop
@@ -341,6 +348,10 @@ show_player:
             action: stop
         good_laser4_show:
             action: stop
+    start_good_game_over:
+        good_game_over_show:
+            loops: 0
+
 
 slides:
     monkey_fracas_jr_slide:
@@ -348,6 +359,42 @@ slides:
             - type: image
               image: monkey_fracas_title_bg
               z: 1
+            - type: image
+              image: video_mode_sectors_overlay
+              z: 4
+    monkey_fracas_jr_2nd_screen:
+        widgets:
+            - type: image
+              image: monkey_fracas_jr_title
+              z: 1
+    good_game_over_slide:
+        widgets:
+            - type: image
+              image: monkey_fracas_title_bg
+              z: 1
+            - type: text
+              text: GAME OVER
+              z: 3
+              y: middle+30%
+              font_name: pixelmix
+              font_size: 100
+              color: green
+            - type: text
+              text: "-Video Mode Final Score-"
+              z: 3
+              y: middle
+              font_name: pixelmix
+              font_size: 60
+              color: white
+            - type: text
+              text: (player|mfj_score)
+              z: 3
+              y: middle-30%
+              font_name: pixelmix
+              font_size: 80
+              color: white
+
+
 widgets:
 # middle vert pos is y=475
     monkey_fracas_title:
@@ -429,45 +476,59 @@ widgets:
       #    x: need to figure out what column 20 is in x
       #    y: need to figure out the x is for row c
       #    animations: (need to get x value for attack objects end point)
+    mfj_score_widget:
+        - type: text
+          text: (player|mfj_score)
+          x: 1200
+          y: 100
+          z: 15
+          font_name: pixelmix
+          number_grouping: true
+          min_digits: 2
+          font_size: 40
+          color: white
 
 widget_player:
     laser_charge0:
         laser_charge0_widget:
-            target: monkey_fracas_jr_slide
+            slide: monkey_fracas_jr_slide
         laser_charge1_widget:
             action: remove
     laser_charge1:
         laser_charge0_widget:
             action: remove
         laser_charge1_widget:
-            target: monkey_fracas_jr_slide
+            slide: monkey_fracas_jr_slide
         laser_charge2_widget:
             action: remove
     laser_charge2:
         laser_charge1_widget:
             action: remove
         laser_charge2_widget:
-            target: monkey_fracas_jr_slide
+            slide: monkey_fracas_jr_slide
         laser_charge3_widget:
             action: remove
     laser_charge3:
         laser_charge2_widget:
             action: remove
         laser_charge3_widget:
-            target: monkey_fracas_jr_slide
+            slide: monkey_fracas_jr_slide
         laser_charge4_widget:
             action: remove
     laser_charge4:
         laser_charge3_widget:
             action: remove
         laser_charge4_widget:
-            target: monkey_fracas_jr_slide
+            slide: monkey_fracas_jr_slide
     draw_space_bg:
         monkey_fracas_space_bg:
-            target: monkey_fracas_jr_slide
+            slide: monkey_fracas_jr_slide
     draw_your_ship:
         your_ship_widget:
-            target: monkey_fracas_jr_slide
+            slide: monkey_fracas_jr_slide
+    show_mfj_score:
+        mfj_score_widget:
+            slide: monkey_fracas_slide
 
 
 
@@ -507,3 +568,5 @@ variable_player:
     ship_move_done:
         ship_vert_current:
             string: current_player.ship_vert_moving
+    enemy_hit:
+        mfj_score: 50

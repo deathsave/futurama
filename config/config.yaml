@@ -836,13 +836,19 @@ flippers:
         main_coil: c_flipper_left_main
         hold_coil: c_flipper_left_hold
         activation_switch: s_left_flipper
+        enable_events: ball_started, mode_monkey_fracas_jr_stopped
+        disable_events: ball_ending, mode_monkey_fracas_jr_started
     right_flipper:
         main_coil: c_flipper_right_main
         hold_coil: c_flipper_right_hold
         activation_switch: s_right_flipper
+        enable_events: ball_started, mode_monkey_fracas_jr_stopped
+        disable_events: ball_ending, mode_monkey_fracas_jr_started
     hypnotoad_magnet_flipper:
         main_coil: c_magnet
         activation_switch: s_mag_button
+        enable_events: ball_started, mode_monkey_fracas_jr_stopped
+        disable_events: ball_ending, mode_monkey_fracas_jr_started
 
 kivy_config:
     kivy:
@@ -1083,6 +1089,75 @@ player_vars:
         initial_value: 0
     mode_counter_value1:
         initial_value: 1
+#monkey fracas jr variables
+    ship_vert_current:
+        value_type: str
+        initial_value: "d"
+    ship_vert_moving:
+        value_type: str
+        initial_value: "d"
+    good_laser1_vert:
+        value_type: str
+        initial_value: "d"
+    good_laser1_pos:
+        value_type: str
+        initial_value: "d0"
+    good_laser1_status:
+        value_type: str
+        initial_value: "ready"
+    good_laser2_vert:
+        value_type: str
+        initial_value: "d"
+    good_laser2_pos:
+        value_type: str
+        initial_value: "d0"
+    good_laser2_status:
+        value_type: str
+        initial_value: "ready"
+    good_laser3_vert:
+        value_type: str
+        initial_value: "d"
+    good_laser3_pos:
+        value_type: str
+        initial_value: "d0"
+    good_laser3_status:
+        value_type: str
+        initial_value: "ready"
+    good_laser4_vert:
+        value_type: str
+        initial_value: "d"
+    good_laser4_pos:
+        value_type: str
+        initial_value: "d0"
+    good_laser4_status:
+        value_type: str
+        initial_value: "ready"
+    bad_laser1:
+        value_type: str
+        initial_value: "d22"
+    bad_laser2:
+        value_type: str
+        initial_value: "d22"
+    bad_laser3:
+        value_type: str
+        initial_value: "d22"
+    enemy_vert:
+        value_type: str
+        initial_value: "d"
+    enemy_horiz:
+        value_type: str
+        initial_value: "22"
+    enemy_pos:
+        value_type: str
+        initial_value: "d22"
+    next_laser_variable:
+        value_type: str
+        initial_value: "good_laser1"
+    mfj_score:
+        initial_value: 0
+
+
+
 
 
 modes:
@@ -1098,6 +1173,7 @@ modes:
     - cryolab_delivery
     - robot_homeworld_delivery
     - roswell_delivery
+    - monkey_fracas_jr
     - bonus
     - high_score
 

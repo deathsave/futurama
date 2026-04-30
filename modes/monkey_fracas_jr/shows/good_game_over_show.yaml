@@ -1,0 +1,11 @@
+#show_version=6
+##! show: good_game_over_show
+
+    - time: "+1s"
+      slides:
+          good_game_over_slide:
+              target: display1
+    - time: "+5s"
+      slides:
+          good_game_over_show:
+              action: remove 
