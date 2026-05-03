@@ -28,7 +28,8 @@
 mode:
     start_events: start_video_mode
     stop_events: end_video_mode
-    events_when_started: start_display_show
+    events_when_started: start_display_show, mom_zapp_off, delivery_started
+    events_when_stopped: restart_theme_music, mom_zapp_on, delivery_ended
     priority: 500
 
 state_machines:
@@ -185,40 +186,40 @@ state_machines:
         transitions:
             - source: ship_vert_a
               target: ship_vert_b
-              events: ship_down
+              events: ship_down_hit
             - source: ship_vert_b
               target: ship_vert_c
-              events: ship_down
+              events: ship_down_hit
             - source: ship_vert_c
               target: ship_vert_d
-              events: ship_down
+              events: ship_down_hit
             - source: ship_vert_d
               target: ship_vert_e
-              events: ship_down
+              events: ship_down_hit
             - source: ship_vert_e
               target: ship_vert_f
-              events: ship_down
+              events: ship_down_hit
             - source: ship_vert_f
               target: ship_vert_g
-              events: ship_down
+              events: ship_down_hit
             - source: ship_vert_g
               target: ship_vert_f
-              events: ship_up
+              events: ship_up_hit
             - source: ship_vert_f
               target: ship_vert_e
-              events: ship_up
+              events: ship_up_hit
             - source: ship_vert_e
               target: ship_vert_d
-              events: ship_up
+              events: ship_up_hit
             - source: ship_vert_d
               target: ship_vert_c
-              events: ship_up
+              events: ship_up_hit
             - source: ship_vert_c
               target: ship_vert_b
-              events: ship_up
+              events: ship_up_hit
             - source: ship_vert_b
               target: ship_vert_a
-              events: ship_up
+              events: ship_up_hit
 
 event_player:
 #laser charge limits player to 4 lasers on the screen at a time
@@ -297,6 +298,11 @@ sound_player:
     request_laser4{current_player.good_laser4_status=="fired"}:
         no_charge:
             action: play
+
+slide_player:
+    mode_monkey_fracas_jr_started:
+        monkey_fracas_jr_slide:
+            target: display1
 
 show_player:
     start_display_show:
@@ -420,34 +426,35 @@ widgets:
         - type: image
           image: your_ship
           z: 7
+          anchor_y: middle
           animations:
               ship_to_vert_a:
                   - property: y
-                    value: middle+417
+                    value: 957
                     duration: 1s
               ship_to_vert_b:
                   - property: y
-                    value: middle+278
+                    value: 818
                     duration: 1s
               ship_to_vert_c:
                   - property: y
-                    value: middle+139
+                    value: 679
                     duration: 1s
               ship_to_vert_d:
                   - property: y
-                    value: middle
+                    value: 540
                     duration: 1s
               ship_to_vert_e:
                   - property: y
-                    value: middle-139
+                    value: 401
                     duration: 1s
               ship_to_vert_f:
                   - property: y
-                    value: middle-278
+                    value: 262
                     duration: 1s
               ship_to_vert_g:
                   - property: y
-                    value: middle-417
+                    value: 323
                     duration: 1s
 
     laser_charge0_widget:
@@ -528,7 +535,7 @@ widget_player:
             slide: monkey_fracas_jr_slide
     show_mfj_score:
         mfj_score_widget:
-            slide: monkey_fracas_slide
+            slide: monkey_fracas_jr_slide
 
 
 
@@ -546,27 +553,35 @@ variable_player:
             string: "(value)"
     ship_to_vert_a:
         ship_vert_moving:
+            action: set
             string: a
     ship_to_vert_b:
         ship_vert_moving:
+            action: set
             string: b
     ship_to_vert_c:
         ship_vert_moving:
+            action: set
             string: c
     ship_to_vert_d:
         ship_vert_moving:
+            action: set
             string: d
     ship_to_vert_e:
         ship_vert_moving:
+            action: set
             string: e
     ship_to_vert_f:
         ship_vert_moving:
+            action: set
             string: f
     ship_to_vert_g:
         ship_vert_moving:
+            action: set
             string: g
     ship_move_done:
         ship_vert_current:
+            action: set
             string: current_player.ship_vert_moving
     enemy_hit:
         mfj_score: 50

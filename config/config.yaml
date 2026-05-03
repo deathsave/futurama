@@ -38,18 +38,16 @@ keyboard:
         event: test_light_show
     e:
         event: reset_bender_eyes
-    r:
-        event: eyes_right
-    l:
-        event: eyes_left
-    h:
-        event: reset_bender_head
-    1:
-        event: head_left
-    2:
-        event: head_right
     m:
         event: test_roswell
+    v:
+        event: start_video_mode
+    u:
+        switch: s_left_flipper
+    d:
+        switch: s_mag_button
+    f:
+        switch: s_right_flipper
 hardware:
     platform: p3_roc
     stepper_controllers: pololu_tic

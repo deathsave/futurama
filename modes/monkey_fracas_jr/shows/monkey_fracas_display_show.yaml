@@ -2,6 +2,8 @@
 ##! show: monkey_fracas_display_show
 
     - time: "+1s"
+      events: running_mfj_title_screen
+    - time: "+1s"
       widgets:
           monkey_fracas_title:
               action: add
@@ -15,6 +17,6 @@
     - time: "+50ms"
       events: draw_your_ship
     - time: "+50ms"
-      events: show_mfj_score 
+      events: show_mfj_score
     - time: "+500ms"
       events: start_logic_show
