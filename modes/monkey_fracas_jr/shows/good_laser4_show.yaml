@@ -1,100 +1,100 @@
 #show_version=6
 ##! show: good_laser4_show
 
-    - time: "+0s"
+    - time: "+100ms"
       widgets:
-          good_laser4_widget:
+          (laservert):
               action: add
-              slide: monkey_fracas_slide
+              slide: monkey_fracas_jr_slide
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "5"
+              string: "5"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "6"
+              string: "6"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "7"
+              string: "7"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "8"
+              string: "8"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "9"
+              string: "9"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "10"
+              string: "10"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "11"
+              string: "11"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "12"
+              string: "12"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "13"
+              string: "13"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "14"
+              string: "14"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "15"
+              string: "15"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "16"
+              string: "16"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "17"
+              string: "17"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "18"
+              string: "18"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "19"
+              string: "19"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "20"
+              string: "20"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "21"
+              string: "21"
     - time: "+100ms"
       variables:
           good_laser4_pos:
               action: set
-              string: (laser4_vert_pos) + "22"
+              string: "22"
     - time: "+100ms"
       widgets:
           good_laser4_widget:

@@ -1096,7 +1096,7 @@ player_vars:
         initial_value: "d"
     good_laser1_vert:
         value_type: str
-        initial_value: "d"
+        initial_value: "waiting"
     good_laser1_pos:
         value_type: str
         initial_value: "d0"
@@ -1105,7 +1105,7 @@ player_vars:
         initial_value: "ready"
     good_laser2_vert:
         value_type: str
-        initial_value: "d"
+        initial_value: "waiting"
     good_laser2_pos:
         value_type: str
         initial_value: "d0"
@@ -1114,7 +1114,7 @@ player_vars:
         initial_value: "ready"
     good_laser3_vert:
         value_type: str
-        initial_value: "d"
+        initial_value: "waiting"
     good_laser3_pos:
         value_type: str
         initial_value: "d0"
@@ -1123,7 +1123,7 @@ player_vars:
         initial_value: "ready"
     good_laser4_vert:
         value_type: str
-        initial_value: "d"
+        initial_value: "waiting"
     good_laser4_pos:
         value_type: str
         initial_value: "d0"

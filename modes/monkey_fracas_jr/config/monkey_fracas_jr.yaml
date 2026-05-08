@@ -4,17 +4,17 @@
 #this mode uses the following player variables:
 #ship_vert_current
 #ship_vert_moving
-#good_laser1_vert
-#good_laser1_pos
+#good_laser1_vert -set based on ship_vert when fired
+#good_laser1_pos -advanced by laserx_show
 #good_laser1_status
-#good_laser2_vert
-#good_laser2_pos
+#good_laser2_vert -set based on ship_vert when fired
+#good_laser2_pos -advanced by laserx_show
 #good_laser2_status
-#good_laser3_vert
-#good_laser3_pos
+#good_laser3_vert -set based on ship_vert when fired
+#good_laser3_pos -advanced by laserx_show
 #good_laser3_status
-#good_laser4_vert
-#good_laser4_pos
+#good_laser4_vert -set based on ship_vert when fired
+#good_laser4_pos -advanced by laserx_show
 #good_laser4_status
 #bad_laser1
 #bad_laser2
@@ -235,10 +235,14 @@ event_player:
     request_laser3{current_player.good_laser3_status=="ready"}: fire_good_laser3
     request_laser_hit{current_player.next_laser_variable=="good_laser4"}: request_laser4
     request_laser4{current_player.good_laser4_status=="ready"}: fire_good_laser4
-    check_hits{current_player.enemy_pos==current_player.good_laser1_pos}: enemy_hit
-    check_hits{current_player.enemy_pos==current_player.good_laser2_pos}: enemy_hit
-    check_hits{current_player.enemy_pos==current_player.good_laser3_pos}: enemy_hit
-    check_hits{current_player.enemy_pos==current_player.good_laser4_pos}: enemy_hit
+    check_hits{current_player.enemy_vert==current_player.good_laser1_vert}: verify_laser1_hit
+    verify_laser1_hit{current_player.enemy_horiz==current_player.good_laser1_pos}: enemy_hit
+    check_hits{current_player.enemy_vert==current_player.good_laser2_vert}: verify_laser2_hit
+    verify_laser2_hit{current_player.enemy_horiz==current_player.good_laser2_pos}: enemy_hit
+    check_hits{current_player.enemy_vert==current_player.good_laser3_vert}: verify_laser3_hit
+    verify_laser3_hit{current_player.enemy_horiz==current_player.good_laser3_pos}: enemy_hit
+    check_hits{current_player.enemy_vert==current_player.good_laser4_vert}: verify_laser4_hit
+    verify_laser4_hit{current_player.enemy_horiz==current_player.good_laser4_pos}: enemy_hit
     check_impacts_a{current_player.ship_vert_moving==a or current_player.ship_vert_current==a}:
         - impact_a
         - start_bad_game_over
@@ -311,26 +315,146 @@ show_player:
     start_logic_show:
         monkey_fracas_logic_show:
             loops: 0
-    fire_good_laser1:
+    fire_good_laser1{current_player.ship_vert_moving_vert=="a"}:
         good_laser1_show:
             loops: 0
             show_tokens:
-                laser1_vert_pos: current_player.ship_vert_moving
-    fire_good_laser2:
+                laservert: laser1_a
+    fire_good_laser1{current_player.ship_vert_moving_vert=="b"}:
+        good_laser1_show:
+            loops: 0
+            show_tokens:
+                laservert: laser1_b
+    fire_good_laser1{current_player.ship_vert_moving_vert=="c"}:
+        good_laser1_show:
+            loops: 0
+            show_tokens:
+                laservert: laser1_c
+    fire_good_laser1{current_player.ship_vert_moving_vert=="d"}:
+        good_laser1_show:
+            loops: 0
+            show_tokens:
+                laservert: laser1_d
+    fire_good_laser1{current_player.ship_vert_moving_vert=="e"}:
+        good_laser1_show:
+            loops: 0
+            show_tokens:
+                laservert: laser1_e
+    fire_good_laser1{current_player.ship_vert_moving_vert=="f"}:
+        good_laser1_show:
+            loops: 0
+            show_tokens:
+                laservert: laser1_f
+    fire_good_laser1{current_player.ship_vert_moving_vert=="g"}:
+        good_laser1_show:
+            loops: 0
+            show_tokens:
+                laservert: laser1_g
+    fire_good_laser2{current_player.ship_vert_moving_vert=="a"}:
         good_laser2_show:
             loops: 0
             show_tokens:
-                laser2_vert_pos: current_player.ship_vert_moving
-    fire_good_laser3:
+                laservert: laser2_a
+    fire_good_laser2{current_player.ship_vert_moving_vert=="b"}:
+        good_laser2_show:
+            loops: 0
+            show_tokens:
+                laservert: laser2_b
+    fire_good_laser2{current_player.ship_vert_moving_vert=="c"}:
+        good_laser2_show:
+            loops: 0
+            show_tokens:
+                laservert: laser2_c
+    fire_good_laser2{current_player.ship_vert_moving_vert=="d"}:
+        good_laser2_show:
+            loops: 0
+            show_tokens:
+                laservert: laser2_d
+    fire_good_laser2{current_player.ship_vert_moving_vert=="e"}:
+        good_laser2_show:
+            loops: 0
+            show_tokens:
+                laservert: laser2_e
+    fire_good_laser2{current_player.ship_vert_moving_vert=="f"}:
+        good_laser2_show:
+            loops: 0
+            show_tokens:
+                laservert: laser2_f
+    fire_good_laser2{current_player.ship_vert_moving_vert=="g"}:
+        good_laser2_show:
+            loops: 0
+            show_tokens:
+                laservert: laser2_g
+    fire_good_laser3{current_player.ship_vert_moving_vert=="a"}:
         good_laser3_show:
             loops: 0
             show_tokens:
-                laser3_vert_pos: current_player.ship_vert_moving
-    fire_good_laser4:
+                laservert: laser3_a
+    fire_good_laser3{current_player.ship_vert_moving_vert=="b"}:
+        good_laser3_show:
+            loops: 0
+            show_tokens:
+                laservert: laser3_b
+    fire_good_laser3{current_player.ship_vert_moving_vert=="c"}:
+        good_laser3_show:
+            loops: 0
+            show_tokens:
+                laservert: laser3_c
+    fire_good_laser3{current_player.ship_vert_moving_vert=="d"}:
+        good_laser3_show:
+            loops: 0
+            show_tokens:
+                laservert: laser3_d
+    fire_good_laser3{current_player.ship_vert_moving_vert=="e"}:
+        good_laser3_show:
+            loops: 0
+            show_tokens:
+                laservert: laser3_e
+    fire_good_laser3{current_player.ship_vert_moving_vert=="f"}:
+        good_laser3_show:
+            loops: 0
+            show_tokens:
+                laservert: laser3_f
+    fire_good_laser3{current_player.ship_vert_moving_vert=="g"}:
+        good_laser3_show:
+            loops: 0
+            show_tokens:
+                laservert: laser3_g
+    fire_good_laser4{current_player.ship_vert_moving_vert=="a"}:
         good_laser4_show:
             loops: 0
             show_tokens:
-                laser4_vert_pos: current_player.ship_vert_moving
+                laservert: laser4_a
+    fire_good_laser4{current_player.ship_vert_moving_vert=="b"}:
+        good_laser4_show:
+            loops: 0
+            show_tokens:
+                laservert: laser4_b
+    fire_good_laser4{current_player.ship_vert_moving_vert=="c"}:
+        good_laser4_show:
+            loops: 0
+            show_tokens:
+                laservert: laser4_c
+    fire_good_laser4{current_player.ship_vert_moving_vert=="d"}:
+        good_laser4_show:
+            loops: 0
+            show_tokens:
+                laservert: laser4_d
+    fire_good_laser4{current_player.ship_vert_moving_vert=="e"}:
+        good_laser4_show:
+            loops: 0
+            show_tokens:
+                laservert: laser4_e
+    fire_good_laser4{current_player.ship_vert_moving_vert=="f"}:
+        good_laser4_show:
+            loops: 0
+            show_tokens:
+                laservert: laser4_f
+    fire_good_laser4{current_player.ship_vert_moving_vert=="g"}:
+        good_laser4_show:
+            loops: 0
+            show_tokens:
+                laservert: laser4_g
     good_laser1_hit:
         good_laser1_show:
             action: stop
@@ -415,7 +539,6 @@ widgets:
         - type: image
           image: laser1_image
           y: current_player.good_laser1_vert
-          x: 440
           z: 5
           animations:
               add_to_slide:
@@ -454,9 +577,288 @@ widgets:
                     duration: 1s
               ship_to_vert_g:
                   - property: y
-                    value: 323
+                    value: 123
                     duration: 1s
-
+    laser1_a:
+        - type: image
+          image: laser1_image
+          y: 957
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser1_b:
+        - type: image
+          image: laser1_image
+          y: 818
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser1_c:
+        - type: image
+          image: laser1_image
+          y: 679
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser1_d:
+        - type: image
+          image: laser1_image
+          y: 540
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser1_e:
+        - type: image
+          image: laser1_image
+          y: 401
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser1_f:
+        - type: image
+          image: laser1_image
+          y: 262
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser1_g:
+        - type: image
+          image: laser1_image
+          y: 123
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser2_a:
+        - type: image
+          image: laser2_image
+          y: 957
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser2_b:
+        - type: image
+          image: laser2_image
+          y: 818
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser2_c:
+        - type: image
+          image: laser2_image
+          y: 679
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser2_d:
+        - type: image
+          image: laser2_image
+          y: 540
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser2_e:
+        - type: image
+          image: laser2_image
+          y: 401
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser2_f:
+        - type: image
+          image: laser2_image
+          y: 262
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser2_g:
+        - type: image
+          image: laser2_image
+          y: 123
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser3_a:
+        - type: image
+          image: laser3_image
+          y: 957
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser3_b:
+        - type: image
+          image: laser3_image
+          y: 818
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser3_c:
+        - type: image
+          image: laser3_image
+          y: 679
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser3_d:
+        - type: image
+          image: laser3_image
+          y: 540
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser3_e:
+        - type: image
+          image: laser3_image
+          y: 401
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser3_f:
+        - type: image
+          image: laser3_image
+          y: 262
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser3_g:
+        - type: image
+          image: laser3_image
+          y: 123
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s    
+    laser4_a:
+        - type: image
+          image: laser4_image
+          y: 957
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser4_b:
+        - type: image
+          image: laser4_image
+          y: 818
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser4_c:
+        - type: image
+          image: laser4_image
+          y: 679
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser4_d:
+        - type: image
+          image: laser4_image
+          y: 540
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser4_e:
+        - type: image
+          image: laser4_image
+          y: 401
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser4_f:
+        - type: image
+          image: laser4_image
+          y: 262
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
+    laser4_g:
+        - type: image
+          image: laser4_image
+          y: 123
+          z: 5
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: 1864
+                    duration: 1.8s
     laser_charge0_widget:
         - type: image
           image: laser_charge0
@@ -583,5 +985,27 @@ variable_player:
         ship_vert_current:
             action: set
             string: current_player.ship_vert_moving
+#sets laser vert variables correctly when laser is requested
+    request_laser1:
+        good_laser1_vert:
+            action: set
+            string: current_player.ship_vert_moving
+#reset laser vert once shot is off screen and recycled
+    reload_good_laser1:
+        good_laser1_vert:
+            action: set
+            string: waiting
+    reload_good_laser2:
+        good_laser2_vert:
+            action: set
+            string: waiting
+    reload_good_laser3:
+        good_laser3_vert:
+            action: set
+            string: waiting
+    reload_good_laser4:
+        good_laser4_vert:
+            action: set
+            string: waiting
     enemy_hit:
         mfj_score: 50
