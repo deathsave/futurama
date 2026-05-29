@@ -48,6 +48,8 @@ keyboard:
         switch: s_mag_button
     f:
         switch: s_right_flipper
+    o:
+        event: test_obstacle1
 hardware:
     platform: p3_roc
     stepper_controllers: pololu_tic
@@ -1145,9 +1147,21 @@ player_vars:
     enemy_horiz:
         value_type: str
         initial_value: "22"
+    enemy_horiz2:
+        value_type: str
+        initial_value: "22"
+    enemy_horiz3:
+        value_type: str
+        initial_value: "22"
     enemy_pos:
         value_type: str
-        initial_value: "d22"
+        initial_value: "d"
+    enemy_pos_2:
+        value_type: str
+        initial_value: "h"
+    enemy_pos_3:
+        value_type: str
+        initial_value: "h"
     next_laser_variable:
         value_type: str
         initial_value: "good_laser1"

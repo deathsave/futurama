@@ -86,6 +86,14 @@ light_player:
         l_delivery_shot_insert: ffffff
         l_right_ramp_insert: ffffff
 
+ball_saves:
+    moon_start_ball_save:
+        active_time: 20s
+        hurry_up_time: 5s
+        enable_events: moon_delivery_intro_show_ended
+        auto_launch: true
+        balls_to_save: 2
+
 ball_holds:
     final_scene_hold:
         balls_to_hold: 1
@@ -294,7 +302,7 @@ widget_player:
         crate_delivery_time:
             action: remove
         moon_step1:
-            action: remove 
+            action: remove
     moon_delivery_step2:
         moon_step1:
             action: remove
@@ -838,4 +846,11 @@ show_player:
             events_when_stopped: moon_delivery_success_show_ended
     ball_ending:
         crate_delivered_show:
+            action: stop
+    ball_save_moon_start_ball_save_enabled:
+        ball_save_indicator_show:
+            action: play
+            loops: -1
+    ball_save_moon_start_ball_save_disabled:
+        ball_save_indicator_show:
             action: stop

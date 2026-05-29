@@ -315,142 +315,142 @@ show_player:
     start_logic_show:
         monkey_fracas_logic_show:
             loops: 0
-    fire_good_laser1{current_player.ship_vert_moving_vert=="a"}:
+    fire_good_laser1{current_player.ship_vert_moving=="a"}:
         good_laser1_show:
             loops: 0
             show_tokens:
                 laservert: laser1_a
-    fire_good_laser1{current_player.ship_vert_moving_vert=="b"}:
+    fire_good_laser1{current_player.ship_vert_moving=="b"}:
         good_laser1_show:
             loops: 0
             show_tokens:
                 laservert: laser1_b
-    fire_good_laser1{current_player.ship_vert_moving_vert=="c"}:
+    fire_good_laser1{current_player.ship_vert_moving=="c"}:
         good_laser1_show:
             loops: 0
             show_tokens:
                 laservert: laser1_c
-    fire_good_laser1{current_player.ship_vert_moving_vert=="d"}:
+    fire_good_laser1{current_player.ship_vert_moving=="d"}:
         good_laser1_show:
             loops: 0
             show_tokens:
                 laservert: laser1_d
-    fire_good_laser1{current_player.ship_vert_moving_vert=="e"}:
+    fire_good_laser1{current_player.ship_vert_moving=="e"}:
         good_laser1_show:
             loops: 0
             show_tokens:
                 laservert: laser1_e
-    fire_good_laser1{current_player.ship_vert_moving_vert=="f"}:
+    fire_good_laser1{current_player.ship_vert_moving=="f"}:
         good_laser1_show:
             loops: 0
             show_tokens:
                 laservert: laser1_f
-    fire_good_laser1{current_player.ship_vert_moving_vert=="g"}:
+    fire_good_laser1{current_player.ship_vert_moving=="g"}:
         good_laser1_show:
             loops: 0
             show_tokens:
                 laservert: laser1_g
-    fire_good_laser2{current_player.ship_vert_moving_vert=="a"}:
+    fire_good_laser2{current_player.ship_vert_moving=="a"}:
         good_laser2_show:
             loops: 0
             show_tokens:
                 laservert: laser2_a
-    fire_good_laser2{current_player.ship_vert_moving_vert=="b"}:
+    fire_good_laser2{current_player.ship_vert_moving=="b"}:
         good_laser2_show:
             loops: 0
             show_tokens:
                 laservert: laser2_b
-    fire_good_laser2{current_player.ship_vert_moving_vert=="c"}:
+    fire_good_laser2{current_player.ship_vert_moving=="c"}:
         good_laser2_show:
             loops: 0
             show_tokens:
                 laservert: laser2_c
-    fire_good_laser2{current_player.ship_vert_moving_vert=="d"}:
+    fire_good_laser2{current_player.ship_vert_moving=="d"}:
         good_laser2_show:
             loops: 0
             show_tokens:
                 laservert: laser2_d
-    fire_good_laser2{current_player.ship_vert_moving_vert=="e"}:
+    fire_good_laser2{current_player.ship_vert_moving=="e"}:
         good_laser2_show:
             loops: 0
             show_tokens:
                 laservert: laser2_e
-    fire_good_laser2{current_player.ship_vert_moving_vert=="f"}:
+    fire_good_laser2{current_player.ship_vert_moving=="f"}:
         good_laser2_show:
             loops: 0
             show_tokens:
                 laservert: laser2_f
-    fire_good_laser2{current_player.ship_vert_moving_vert=="g"}:
+    fire_good_laser2{current_player.ship_vert_moving=="g"}:
         good_laser2_show:
             loops: 0
             show_tokens:
                 laservert: laser2_g
-    fire_good_laser3{current_player.ship_vert_moving_vert=="a"}:
+    fire_good_laser3{current_player.ship_vert_moving=="a"}:
         good_laser3_show:
             loops: 0
             show_tokens:
                 laservert: laser3_a
-    fire_good_laser3{current_player.ship_vert_moving_vert=="b"}:
+    fire_good_laser3{current_player.ship_vert_moving=="b"}:
         good_laser3_show:
             loops: 0
             show_tokens:
                 laservert: laser3_b
-    fire_good_laser3{current_player.ship_vert_moving_vert=="c"}:
+    fire_good_laser3{current_player.ship_vert_moving=="c"}:
         good_laser3_show:
             loops: 0
             show_tokens:
                 laservert: laser3_c
-    fire_good_laser3{current_player.ship_vert_moving_vert=="d"}:
+    fire_good_laser3{current_player.ship_vert_moving=="d"}:
         good_laser3_show:
             loops: 0
             show_tokens:
                 laservert: laser3_d
-    fire_good_laser3{current_player.ship_vert_moving_vert=="e"}:
+    fire_good_laser3{current_player.ship_vert_moving=="e"}:
         good_laser3_show:
             loops: 0
             show_tokens:
                 laservert: laser3_e
-    fire_good_laser3{current_player.ship_vert_moving_vert=="f"}:
+    fire_good_laser3{current_player.ship_vert_moving=="f"}:
         good_laser3_show:
             loops: 0
             show_tokens:
                 laservert: laser3_f
-    fire_good_laser3{current_player.ship_vert_moving_vert=="g"}:
+    fire_good_laser3{current_player.ship_vert_moving=="g"}:
         good_laser3_show:
             loops: 0
             show_tokens:
                 laservert: laser3_g
-    fire_good_laser4{current_player.ship_vert_moving_vert=="a"}:
+    fire_good_laser4{current_player.ship_vert_moving=="a"}:
         good_laser4_show:
             loops: 0
             show_tokens:
                 laservert: laser4_a
-    fire_good_laser4{current_player.ship_vert_moving_vert=="b"}:
+    fire_good_laser4{current_player.ship_vert_moving=="b"}:
         good_laser4_show:
             loops: 0
             show_tokens:
                 laservert: laser4_b
-    fire_good_laser4{current_player.ship_vert_moving_vert=="c"}:
+    fire_good_laser4{current_player.ship_vert_moving=="c"}:
         good_laser4_show:
             loops: 0
             show_tokens:
                 laservert: laser4_c
-    fire_good_laser4{current_player.ship_vert_moving_vert=="d"}:
+    fire_good_laser4{current_player.ship_vert_moving=="d"}:
         good_laser4_show:
             loops: 0
             show_tokens:
                 laservert: laser4_d
-    fire_good_laser4{current_player.ship_vert_moving_vert=="e"}:
+    fire_good_laser4{current_player.ship_vert_moving=="e"}:
         good_laser4_show:
             loops: 0
             show_tokens:
                 laservert: laser4_e
-    fire_good_laser4{current_player.ship_vert_moving_vert=="f"}:
+    fire_good_laser4{current_player.ship_vert_moving=="f"}:
         good_laser4_show:
             loops: 0
             show_tokens:
                 laservert: laser4_f
-    fire_good_laser4{current_player.ship_vert_moving_vert=="g"}:
+    fire_good_laser4{current_player.ship_vert_moving=="g"}:
         good_laser4_show:
             loops: 0
             show_tokens:
@@ -588,6 +588,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser1_b:
         - type: image
@@ -598,6 +599,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser1_c:
         - type: image
@@ -608,6 +610,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser1_d:
         - type: image
@@ -618,6 +621,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser1_e:
         - type: image
@@ -628,6 +632,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser1_f:
         - type: image
@@ -638,6 +643,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser1_g:
         - type: image
@@ -648,6 +654,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser2_a:
         - type: image
@@ -658,6 +665,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser2_b:
         - type: image
@@ -668,6 +676,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser2_c:
         - type: image
@@ -678,6 +687,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser2_d:
         - type: image
@@ -688,6 +698,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser2_e:
         - type: image
@@ -698,6 +709,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser2_f:
         - type: image
@@ -708,6 +720,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser2_g:
         - type: image
@@ -718,6 +731,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser3_a:
         - type: image
@@ -728,6 +742,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser3_b:
         - type: image
@@ -738,6 +753,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser3_c:
         - type: image
@@ -748,6 +764,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser3_d:
         - type: image
@@ -758,6 +775,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser3_e:
         - type: image
@@ -768,6 +786,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser3_f:
         - type: image
@@ -778,6 +797,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser3_g:
         - type: image
@@ -788,7 +808,8 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
-                    duration: 1.8s    
+                    relative: True
+                    duration: 1.8s
     laser4_a:
         - type: image
           image: laser4_image
@@ -798,6 +819,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser4_b:
         - type: image
@@ -808,6 +830,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser4_c:
         - type: image
@@ -818,6 +841,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser4_d:
         - type: image
@@ -828,6 +852,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser4_e:
         - type: image
@@ -838,6 +863,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser4_f:
         - type: image
@@ -848,6 +874,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser4_g:
         - type: image
@@ -858,6 +885,7 @@ widgets:
               add_to_slide:
                   - property: x
                     value: 1864
+                    relative: True
                     duration: 1.8s
     laser_charge0_widget:
         - type: image
@@ -896,11 +924,25 @@ widgets:
           min_digits: 2
           font_size: 40
           color: white
+    planet_obstacle4:
+        - type: image
+          image: planet_obstacle4
+          anchor_x: left
+          x: 300
+          z: 7
+          animations:
+              add_to_slide:
+                  - property: x
+                    value: -2100
+                    relative: True
+                    duration: 2100ms
+                    #15-18 steps to impact to impact
 
 widget_player:
     laser_charge0:
         laser_charge0_widget:
             slide: monkey_fracas_jr_slide
+            priority: 10
         laser_charge1_widget:
             action: remove
     laser_charge1:
@@ -908,27 +950,34 @@ widget_player:
             action: remove
         laser_charge1_widget:
             slide: monkey_fracas_jr_slide
+            priority: 10
         laser_charge2_widget:
             action: remove
+            priority: 1
     laser_charge2:
         laser_charge1_widget:
             action: remove
         laser_charge2_widget:
             slide: monkey_fracas_jr_slide
+            priority: 10
         laser_charge3_widget:
             action: remove
+            priority: 1
     laser_charge3:
         laser_charge2_widget:
             action: remove
         laser_charge3_widget:
             slide: monkey_fracas_jr_slide
+            priority: 10
         laser_charge4_widget:
             action: remove
+            priority: 1
     laser_charge4:
         laser_charge3_widget:
             action: remove
         laser_charge4_widget:
             slide: monkey_fracas_jr_slide
+            priority: 10
     draw_space_bg:
         monkey_fracas_space_bg:
             slide: monkey_fracas_jr_slide
@@ -938,7 +987,14 @@ widget_player:
     show_mfj_score:
         mfj_score_widget:
             slide: monkey_fracas_jr_slide
-
+    launch_meteor1:
+        planet_obstacle4:
+            action: add
+            priority: 11
+    remove_meteor1:
+        planet_obstacle4:
+            action: remove
+            priority: 11
 
 
 variable_player:
@@ -1009,3 +1065,120 @@ variable_player:
             string: waiting
     enemy_hit:
         mfj_score: 50
+#events for setting enemy variables
+    set_enemy_pos_a:
+        enemy_pos:
+            action: set
+            string: a
+    set_enemy_pos_b:
+        enemy_pos:
+            action: set
+            string: b
+    set_enemy_pos_c:
+        enemy_pos:
+            action: set
+            string: c
+    set_enemy_pos_d:
+        enemy_pos:
+            action: set
+            string: d
+    set_enemy_pos_e:
+        enemy_pos:
+            action: set
+            string: e
+    set_enemy_pos_f:
+        enemy_pos:
+            action: set
+            string: f
+    set_enemy_pos_g:
+        enemy_pos:
+            action: set
+            string: g
+    set_enemy_horiz_22:
+        enemy_horiz:
+            action: set
+            string: "22"
+    set_enemy_horiz_21:
+        enemy_horiz:
+            action: set
+            string: "21"
+    set_enemy_horiz_20:
+        enemy_horiz:
+            action: set
+            string: "20"
+    set_enemy_horiz_19:
+        enemy_horiz:
+            action: set
+            string: "19"
+    set_enemy_horiz_18:
+        enemy_horiz:
+            action: set
+            string: "18"
+    set_enemy_horiz_17:
+        enemy_horiz:
+            action: set
+            string: "17"
+    set_enemy_horiz_16:
+        enemy_horiz:
+            action: set
+            string: "16"
+    set_enemy_horiz_15:
+        enemy_horiz:
+            action: set
+            string: "15"
+    set_enemy_horiz_14:
+        enemy_horiz:
+            action: set
+            string: "14"
+    set_enemy_horiz_13:
+        enemy_horiz:
+            action: set
+            string: "13"
+    set_enemy_horiz_12:
+        enemy_horiz:
+            action: set
+            string: "12"
+    set_enemy_horiz_11:
+        enemy_horiz:
+            action: set
+            string: "11"
+    set_enemy_horiz_10:
+        enemy_horiz:
+            action: set
+            string: "10"
+    set_enemy_horiz_9:
+        enemy_horiz:
+            action: set
+            string: "9"
+    set_enemy_horiz_8:
+        enemy_horiz:
+            action: set
+            string: "8"
+    set_enemy_horiz_7:
+        enemy_horiz:
+            action: set
+            string: "7"
+    set_enemy_horiz_6:
+        enemy_horiz:
+            action: set
+            string: "6"
+    set_enemy_horiz_5:
+        enemy_horiz:
+            action: set
+            string: "5"
+    set_enemy_horiz_4:
+        enemy_horiz:
+            action: set
+            string: "4"
+    set_enemy_horiz_3:
+        enemy_horiz:
+            action: set
+            string: "3"
+    set_enemy_horiz_2:
+        enemy_horiz:
+            action: set
+            string: "2"
+    set_enemy_horiz_1:
+        enemy_horiz:
+            action: set
+            string: "1"

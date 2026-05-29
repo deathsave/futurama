@@ -1,0 +1,10 @@
+#show_version=6
+##! show: planet_obstacle1_show
+
+    - time: "+0s"
+      widgets:
+          planet_obstacle1:
+              action: add
+              slide: monkey_fracas_jr_slide
+    - time: "+10s"
+      events: how_does_it_look

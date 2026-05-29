@@ -121,7 +121,7 @@ ball_saves:
     delivery_started_ball_save:
         active_time: 15s
         hurry_up_time: 5s
-        enable_events: mode_moon_delivery_started, mode_robot_homeworld_delivery_started,
+        enable_events: mode_robot_homeworld_delivery_started, mode_roswell_delivery_started
         timer_start_events: s_left_ramp_active
         auto_launch: true
         balls_to_save: 1
@@ -332,7 +332,7 @@ light_player:
         loops: ffffff
     mode_slurm_factory_stopped:
         gi:
-            color: "000000"
+            color: "000000"  #PROBLEM
             priority: 111
         apron:
             color: "000000"
@@ -366,6 +366,7 @@ show_player:
         dt_reset_all_show:
             loops: 0
             priority: 200
+#ball save shows
     ball_save_zoidberg_ball_save_saving_ball:
         zoidberg_ball_save_show:
             action: play
@@ -402,6 +403,13 @@ show_player:
             loops: 1
             priority: 204
     ball_save_ball_start_ball_save_disabled:
+        ball_save_indicator_show:
+            action: stop
+    ball_save_delivery_started_ball_save_enabled:
+        ball_save_indicator_show:
+            action: play
+            loops: -1
+    ball_save_delivery_started_ball_save_disabled:
         ball_save_indicator_show:
             action: stop
 
