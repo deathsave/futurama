@@ -416,6 +416,14 @@ show_player:
             action: stop
         wake_up_in_the_future_show:
             action: stop
+#ball save shows
+    ball_save_cryolab_cut_scenes_ball_save_enabled:
+        ball_save_indicator_show:
+            action: play
+            loops: -1
+    ball_save_cryolab_cut_scenes_ball_save_disabled:
+        ball_save_indicator_show:
+            action: stop 
 
 variable_player:
 #there is no way to light PF_multiplier in Cryolab, so none of the scoring include it

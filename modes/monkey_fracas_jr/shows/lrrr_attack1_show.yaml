@@ -1,4 +1,4 @@
-show_version=6
+#show_version=6
 ##! show: lrrr_attack1_show
 
     - time: "+0s"
@@ -15,4 +15,4 @@ show_version=6
     - time: "+200ms"
       widgets:
           lrrr_attack1_widget:
-              action: remove 
+              action: remove

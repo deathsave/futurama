@@ -1,0 +1,102 @@
+#show_version=6
+##! show: good_laser2_show
+
+  - time: "+100ms"
+    widgets:
+        (laservert):
+            action: add
+            slide: monkey_fracas_jr_slide
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "5"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "6"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "7"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "8"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "9"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "10"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "11"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "12"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "13"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "14"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "15"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "16"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "17"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "18"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "19"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "20"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "21"
+  - time: "+100ms"
+    variables:
+        good_laser2_pos:
+            action: set
+            string: "22"
+  - time: "+100ms"
+    widgets:
+        good_laser2_widget:
+            action: remove
+    events: reload_good_laser2

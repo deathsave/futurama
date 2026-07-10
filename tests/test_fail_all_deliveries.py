@@ -143,6 +143,7 @@ class TestFailAllDeliveries(FullMachineTestCase):
     def _start_roswell_delivery(self):
         self.hit_switch_and_run("s_VUK", 20)
         self.assertEqual("roswell_delivery_active", self.machine.state_machines.roswell_delivery_handler.state)
+        self.hit_and_release_switch("s_left_ramp")
         self.assertModeRunning("roswell_delivery")
         self.assertPlayerVarEqual("no", "did_nasty_in_the_pasty")
 

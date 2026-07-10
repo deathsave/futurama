@@ -1,0 +1,13 @@
+#show_version=6
+##! show: good_game_over_show
+
+    - time: "+1s"
+      slides:
+          good_game_over_slide:
+              target: display1
+    - time: "+5s"
+      slides:
+          good_game_over_slide:
+              action: remove
+    - time: "+1s"
+      events: end_video_mode

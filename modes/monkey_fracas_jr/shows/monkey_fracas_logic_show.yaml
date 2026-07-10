@@ -1,0 +1,161 @@
+#show_version=6
+##! show: monkey_fracas_logic_show
+
+    - time: "+2s"
+      events:
+          - launch_meteor1
+          - set_enemy_pos_d
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_22
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_21
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_20
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_19
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_18
+#+500ms from launch
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_17
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_16
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_15
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_14
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_13
+#+500ms
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_12
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_11
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_10
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_9
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_8
+#+500ms
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_7
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_6
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_5
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_4
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_3
+#+500ms
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_2
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - set_enemy_horiz_1
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+          - remove_meteor1
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+    - time: "+50ms"
+      events: check_hits
+    - time: "+50ms"
+      events:
+          - check_hits
+    - time: "+50ms"
+      events: start_good_game_over
