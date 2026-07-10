@@ -1048,6 +1048,9 @@ player_vars:
     robot_homeworld_delivery_status:
         value_type: str
         initial_value: "ready"
+    slurm_factory_tour_status:
+        value_type: str
+        initial_value: "waiting"
     deliveries_completed:
         initial_value: 0
     caps_collected:
