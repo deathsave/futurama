@@ -47,6 +47,15 @@ state_machines:
               target: tour_complete
               events: slurm_factory_final_shot_hit
 
+ball_saves:
+    slurm_factory_started_ball_save:
+        active_time: 15s
+        hurry_up_time: 5s
+        enable_events: mode_slurm_factory_started
+        timer_start_events: pure_imagination
+        auto_launch: true
+        balls_to_save: 1
+        grace_period: 3s
 
 timers:
     slurm_factory_release_ball_timer:
@@ -183,7 +192,7 @@ sequences:
             - level3_right_ramp_jackpot_hit, level3_left_loop_jackpot_hit, level3_right_loop_jackpot_hit, level3_right_orbit_jackpot_hit
             - level3_right_ramp_jackpot_hit, level3_left_loop_jackpot_hit, level3_right_loop_jackpot_hit, level3_right_orbit_jackpot_hit
         events_when_complete: level3_jackpots_complete
-        
+
 variable_player:
     next_level_shot_hit:
         score: 2500 * current_player.crew_multiplier * current_player.PF_multiplier
@@ -281,6 +290,13 @@ sound_player:
         theme_full: stop
 
 show_player:
+    ball_save_slurm_factory_started_ball_save_enabled:
+        ball_save_indicator_show:
+            action: play
+            loops: -1
+    ball_save_slurm_factory_started_ball_save_disabled:
+        ball_save_indicator_show:
+            action: stop
     slurm_factory_level1:
         level1_right_ramp_jackpot_show:
             loops: -1
