@@ -18,12 +18,14 @@ state_machines:
                 events_when_started: slurm_factory_not_ready
             lit:
                 events_when_started: slurm_factory_is_ready
+            disabled:
+                events_when_started: slurm_factory_tour_disabled
         transitions:
             - source: start
               target: lit
               events: found_golden_cap
             - source: lit
-              target: start
+              target: disabled
               events: start_slurm_factory_shot_hit
 
 shots:
@@ -34,14 +36,6 @@ shots:
         enable_events: found_golden_cap
         disable_events: pure_imagination
 
-ball_holds:
-    slurm_factory_start_hold:
-        balls_to_hold: 1
-        hold_devices: bd_VUK
-        enable_events: found_golden_cap
-        disable_events: pure_imagination
-        release_one_events: pure_imagination
-
 variable_player:
     slurm_caps_hit:
         score: 100 * current_player.fry_multiplier * current_player.PF_multiplier
@@ -49,6 +43,14 @@ variable_player:
         caps_collected:
             int: value
             action: set
+    slurm_factory_is_ready:
+        slurm_factory_tour_status:
+            action: set
+            string: "ready"
+    slurm_factory_tour_disabled:
+        slurm_factory_tour_status:
+            action: set
+            string: "disabled"
 
 counters:
     collecting_caps:
@@ -62,12 +64,11 @@ counters:
 #number and starting counting again from there, it will count but won't post
 #the events_when_complete
         reset_on_complete: false
-        restart_events: start_slurm_factory_shot_hit
 
 event_player:
 #this relights the slurm_factory start shot when a new ball starts if the player
 #lit it the last ball but didn't start it.
-    check_slurm_factory_ready{current_player.caps_collected >= current_player.caps_to_golden_cap}: found_golden_cap
+    check_slurm_factory_ready{current_player.slurm_factory_tour_status == "ready"}: found_golden_cap
 
 
 sound_player:

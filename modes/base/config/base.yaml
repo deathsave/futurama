@@ -103,6 +103,14 @@ state_machines:
               target: one
               events: timer_PF_multiplier_timer_complete
 
+ball_holds:
+    slurm_factory_start_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: found_golden_cap
+        disable_events: pure_imagination
+        release_one_events: pure_imagination
+        
 ball_saves:
     ball_start_ball_save:
         active_time: "+15s"

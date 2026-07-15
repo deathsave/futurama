@@ -939,6 +939,8 @@ widgets:
                     #15-18 steps to impact to impact
 
 widget_player:
+#laser_charge is the meter that shows how many "shots" of the laser
+#are available
     laser_charge0:
         laser_charge0_widget:
             slide: monkey_fracas_jr_slide
