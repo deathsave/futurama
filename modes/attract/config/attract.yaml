@@ -97,48 +97,60 @@ slides:
     arachno_commercial_slide:
         widgets:
             type: video
+            volume: 0
             video: arachno_clip
     amc_the_proposal_slide:
         widgets:
             type: video
+            volume: 0
             video: amc_the_proposal
     scary_door_slide:
         widgets:
             type: video
+            volume: 0
             video: scary_door
     scary_door2_slide:
         widgets:
             type: video
+            volume: 0
             video: scary_door2
     morbo_linda_mom_slide:
         widgets:
             type: video
+            volume: 0
             video: morbo_linda_mom
     hypnotoad_instructions_slide:
         widgets:
             type: video
+            volume: 0
             video: hypnotoad_instructions_clip
     deliveries_instructions_slide:
         widgets:
             type: video
+            volume: 0
             video: deliveries_instructions_clip
     morbo_and_nixon_slide:
         widgets:
             type: video
+            volume: 0
             video: morbo_and_nixon_clip
     molten_boron_slide:
         widgets:
             type: video
+            volume: 0
             video: molten_boron_clip
     i_dated_a_robot_slide:
         widgets:
             type: video
+            volume: 0
             video: i_dated_a_robot_clip
     pants_full_of_shame_slide:
         widgets:
             type: video
+            volume: 0
             video: pants_full_of_shame_clip
     crew_level_instructions_slide:
         widgets:
             type: video
+            volume: 0
             video: crew_level_instructions_clip

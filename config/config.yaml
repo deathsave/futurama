@@ -911,6 +911,12 @@ sound_system:
 machine_vars:
     master_volume:
         initial_value: 0.8
+#currently does not work, need to use this to call slides with matching volume
+#set instead of trying to plug the variable into the widget settings, which
+#doesn't work
+    attract_volume:
+        initial_value: 0.1
+        value_type: float
 #these variables set base scoring combined with multipliers to build shot scoring
     weird_points:
         initial_value: 13
