@@ -110,7 +110,7 @@ ball_holds:
         enable_events: found_golden_cap
         disable_events: pure_imagination
         release_one_events: pure_imagination
-        
+
 ball_saves:
     ball_start_ball_save:
         active_time: "+15s"
@@ -809,7 +809,27 @@ sound_player:
         level_up:
             action: play
 
+timed_switches:
+    button_hold_game_over:
+        switches: s_start
+        time: 5s
+        events_when_active: end_game
+
+
 timers:
+    timeout_game_over_timer:
+        start_value: 0
+        end_value: 240
+        direction: up
+        control_events:
+            - action: restart
+              event: mode_base_started{machine.enable_timeout_game_over=="true"}
+            - action: reset
+              event: s_left_flipper_active
+            - action: reset
+              event: s_right_flipper_active
+            - action: reset
+              event: sw_playfield_active
     ship_spinning_timer:
         start_value: 6
         end_value: 0
@@ -904,6 +924,7 @@ timers:
 
 event_player:
     base_tube_shot_hit: mom_zapp_toggle
+    timer_timeout_game_over_timer_complete: end_game
 
 shots:
     left_skillshot:
