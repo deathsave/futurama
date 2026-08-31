@@ -917,6 +917,10 @@ machine_vars:
     attract_volume:
         initial_value: 0.1
         value_type: float
+#if enabled, ends game after 4 minutes of inactivity
+    enable_timeout_game_over:
+        initial_value: "true"
+        value_type: str
 #these variables set base scoring combined with multipliers to build shot scoring
     weird_points:
         initial_value: 13
