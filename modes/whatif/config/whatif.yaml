@@ -1,0 +1,363 @@
+#config_version=6
+##! mode: whatif
+
+mode:
+    start_events: light_whatif
+    stop_events: found_golden_cap, whatif_timeout, ball_ending, whatif_show_over
+    priority: 103
+
+ball_holds:
+    whatif_hold:
+        balls_to_hold: 1
+        hold_devices: bd_VUK
+        enable_events: mode_whatif_started
+        disable_events: whatif_show_over
+        release_one_events: whatif_show_over
+
+shots:
+    whatif_shot:
+        switch: s_VUK
+
+random_event_player:
+    whatif_shot_hit:
+        events:
+            - whatif_1_dark_matter
+            #- whatif_5_slurm_caps #award using show
+            #- whatif_3_slurm_caps #award using show
+            #- whatif_1_slurm_cap #award using show
+            #- whatif_PF_multiplier #award with event_player
+            - whatif_5_amy_xp
+            - whatif_5_zoidberg_xp
+            - whatif_5_professor_xp
+            - whatif_5_hermes_xp
+            - whatif_5_nibbler_xp
+            - whatif_5_fry_xp
+            #- whatif_5_bender_xp
+            #- whatif_5_leela_xp
+            - whatif_full_tank
+            #- whatif_crew_multiplier
+            #- whatif_69_points
+            #- whatif_1000_points
+            #- whatif_10k_points
+            #- whatif_50k_points
+            - whatif_suicide_booth #award with event_player
+            #- whatif_zoidberg_ball_save #award with event_player
+            #- whatif_15s_ball_save #award with event_player
+            - whatif_extra_ball
+            #- whatif_1x_bonus_multiplier
+            #- whatif_2x_bonus_multiplier
+            #- whatif_3x_bonus_multiplier
+
+show_player:
+    mode_whatif_started:
+        custom_rainbow_show:
+            action: play
+            loops: -1
+            show_tokens:
+                which: l_delivery_shot_insert
+    whatif_suicide_booth:
+        whatif_suicide_booth_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_1_dark_matter:
+        whatif_1_dark_matter_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_5_nibbler_xp:
+        whatif_5_nibbler_xp_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_5_amy_xp:
+        whatif_5_amy_xp_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_extra_ball:
+        whatif_extra_ball_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_5_zoidberg_xp:
+        whatif_5_zoidberg_xp_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_5_professor_xp:
+        whatif_5_professor_xp_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_5_hermes_xp:
+        whatif_5_hermes_xp_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_5_fry_xp:
+        whatif_5_fry_xp_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_full_tank:
+        whatif_full_tank_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+
+
+slides:
+    whatif_1_dark_matter_slide:
+        widgets:
+            - type: video
+              video: whatif_dark_matter_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: 1 BALL OF DARK MATTER"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_suicide_booth_slide:
+        widgets:
+            - type: video
+              video: whatif_suicide_booth_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: SUICIDE BOOTH LIT"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_5_nibbler_xp_slide:
+        widgets:
+            - type: video
+              video: whatif_nibbler_receipts_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: +5 NIBBLER XP"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_5_amy_xp_slide:
+        widgets:
+            - type: video
+              video: whatif_virtual_skeeball_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: +5 AMY XP"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_5_zoidberg_xp_slide:
+        widgets:
+            - type: video
+              video: whatif_dr_z_homeowner_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: +5 ZOIDBERG XP"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_extra_ball_slide:
+        widgets:
+            - type: video
+              video: whatif_extra_ball_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: EXTRA BALL!"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_5_professor_xp_slide:
+        widgets:
+            - type: video
+              video: whatif_assorted_lengths_wire_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: +5 PROFESSOR XP"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_5_hermes_xp_slide:
+        widgets:
+            - type: video
+              video: whatif_hermes_calculator_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: +5 HERMES XP"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_5_fry_xp_slide:
+        widgets:
+            - type: video
+              video: whatif_fry_time_code_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: +5 FRY XP"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_full_tank_slide:
+        widgets:
+            - type: video
+              video: whatif_full_tank_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: SHIP FUEL TANK FULL"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+
+shows:
+    whatif_1_dark_matter_show:
+        - duration: 11s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_1_dark_matter_slide:
+                  target: display1
+    whatif_suicide_booth_show:
+        - duration: 11s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_suicide_booth_slide:
+                  target: display1
+    whatif_5_nibbler_xp_show:
+        - duration: 10s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_5_nibbler_xp_slide:
+                  target: display1
+    whatif_5_amy_xp_show:
+        - duration: 12s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_5_amy_xp_slide:
+                  target: display1
+    whatif_5_zoidberg_xp_show:
+        - duration: 10s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_5_zoidberg_xp_slide:
+                  target: display1
+    whatif_5_professor_xp_show:
+        - duration: 10s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_5_professor_xp_slide:
+                  target: display1
+    whatif_extra_ball_show:
+        - duration: 12s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_extra_ball_slide:
+                  target: display1
+    whatif_5_hermes_xp_show:
+        - duration: 13s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_5_hermes_xp_slide:
+                  target: display1
+
+    whatif_5_fry_xp_show:
+        - duration: 9s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_5_fry_xp_slide:
+                  target: display1
+    whatif_full_tank_show:
+        - duration: 11s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_full_tank_slide:
+                  target: display1

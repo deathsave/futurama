@@ -585,9 +585,11 @@ switches:
     s_left_loop:
         number: A1-B1-5
         type: NC
+        tags: loop
     s_right_loop:
         number: A1-B1-3
         type: NC
+        tags: loop
     s_dt_nibbler:
         number: A0-B1-6
     s_dt_zoidberg:
@@ -1194,6 +1196,7 @@ modes:
     - delivery_manager
     - crew_manager
     - crew_status
+    - whatif 
     - moon_delivery
     - cryolab_delivery
     - robot_homeworld_delivery
