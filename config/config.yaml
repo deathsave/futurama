@@ -585,9 +585,11 @@ switches:
     s_left_loop:
         number: A1-B1-5
         type: NC
+        tags: loop
     s_right_loop:
         number: A1-B1-3
         type: NC
+        tags: loop
     s_dt_nibbler:
         number: A0-B1-6
     s_dt_zoidberg:
@@ -917,6 +919,10 @@ machine_vars:
     attract_volume:
         initial_value: 0.1
         value_type: float
+#if enabled, ends game after 4 minutes of inactivity
+    enable_timeout_game_over:
+        initial_value: "true"
+        value_type: str
 #these variables set base scoring combined with multipliers to build shot scoring
     weird_points:
         initial_value: 13
@@ -1190,6 +1196,7 @@ modes:
     - delivery_manager
     - crew_manager
     - crew_status
+    - whatif 
     - moon_delivery
     - cryolab_delivery
     - robot_homeworld_delivery
