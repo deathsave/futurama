@@ -22,18 +22,18 @@ random_event_player:
     whatif_shot_hit:
         events:
             - whatif_1_dark_matter
-            #- whatif_5_slurm_caps #award using show
-            #- whatif_3_slurm_caps #award using show
-            #- whatif_1_slurm_cap #award using show
-            #- whatif_PF_multiplier #award with event_player
+            - whatif_5_slurm_caps #award using show
+            - whatif_3_slurm_caps #award using show
+            - whatif_1_slurm_cap #award using show
+            - whatif_PF_multiplier #award with event_player
             - whatif_5_amy_xp
             - whatif_5_zoidberg_xp
             - whatif_5_professor_xp
             - whatif_5_hermes_xp
             - whatif_5_nibbler_xp
             - whatif_5_fry_xp
-            #- whatif_5_bender_xp
-            #- whatif_5_leela_xp
+            - whatif_5_bender_xp
+            - whatif_5_leela_xp
             - whatif_full_tank
             #- whatif_crew_multiplier
             #- whatif_69_points
@@ -55,6 +55,30 @@ show_player:
             loops: -1
             show_tokens:
                 which: l_delivery_shot_insert
+    whatif_5_slurm_caps:
+        whatif_5_slurm_caps_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_3_slurm_caps:
+        whatif_3_slurm_caps_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_1_slurm_cap:
+        whatif_1_slurm_cap_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_PF_multiplier:
+        whatif_PF_multiplier_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_5_bender_xp:
+        whatif_5_bender_xp_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_5_leela_xp:
+        whatif_5_leela_xp_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
     whatif_suicide_booth:
         whatif_suicide_booth_show:
             loops: 0
@@ -98,6 +122,120 @@ show_player:
 
 
 slides:
+    whatif_5_slurm_caps_slide:
+        widgets:
+            - type: video
+              video: whatif_5_slurm_caps_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: 5 SLURM CAPS"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_3_slurm_caps_slide:
+        widgets:
+            - type: video
+              video: whatif_3_slurm_caps_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: 3 SLURM CAPS"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_1_slurm_cap_slide:
+        widgets:
+            - type: video
+              video: whatif_1_slurm_cap_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: 1 SLURM CAP"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_PF_multiplier_slide:
+        widgets:
+            - type: video
+              video: whatif_causes_superpowers_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: ADVANCE PLAYFIELD MULTIPLIER"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_5_bender_xp_slide:
+        widgets:
+            - type: video
+              video: whatif_robot_best_friend_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: +5 BENDER XP"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_5_leela_xp_slide:
+        widgets:
+            - type: video
+              video: whatif_leela_kicks_ass_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: +5 LEELA XP"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
     whatif_1_dark_matter_slide:
         widgets:
             - type: video
@@ -296,6 +434,66 @@ shows:
               blank_voice_track: play
           slides:
               whatif_1_dark_matter_slide:
+                  target: display1
+    whatif_5_slurm_caps_show:
+        - duration: 7s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_5_slurm_caps_slide:
+                  target: display1
+        - duration: 200ms
+          events: slurm_caps_hit
+        - duration: 200ms
+          events: slurm_caps_hit
+        - duration: 200ms
+          events: slurm_caps_hit
+        - duration: 200ms
+          events: slurm_caps_hit
+        - duration: 200ms
+          events: slurm_caps_hit
+    whatif_3_slurm_caps_show:
+        - duration: 12s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_3_slurm_caps_slide:
+                  target: display1
+        - duration: 200ms
+          events: slurm_caps_hit
+        - duration: 200ms
+          events: slurm_caps_hit
+        - duration: 200ms
+          events: slurm_caps_hit
+    whatif_1_slurm_cap_show:
+        - duration: 8s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_1_slurm_cap_slide:
+                  target: display1
+        - duration: 200ms
+          events: slurm_caps_hit
+    whatif_5_bender_xp_show:
+        - duration: 9500ms
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_5_bender_xp_slide:
+                  target: display1
+    whatif_5_leela_xp_show:
+        - duration: 9s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_5_leela_xp_slide:
+                  target: display1
+    whatif_PF_multiplier_show:
+        - duration: 10s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_PF_multiplier_slide:
                   target: display1
     whatif_suicide_booth_show:
         - duration: 11s
