@@ -21,10 +21,10 @@ shots:
 random_event_player:
     whatif_shot_hit:
         events:
-            - whatif_1_dark_matter
-            - whatif_5_slurm_caps #award using show
-            - whatif_3_slurm_caps #award using show
-            - whatif_1_slurm_cap #award using show
+            - whatif_1_dark_matter #doesn't seem to work yet
+            - whatif_5_slurm_caps #doesn't work yet
+            - whatif_3_slurm_caps #doesn't work yet
+            - whatif_1_slurm_cap #doesn't work yet
             - whatif_PF_multiplier #award with event_player
             - whatif_5_amy_xp
             - whatif_5_zoidberg_xp
@@ -34,16 +34,16 @@ random_event_player:
             - whatif_5_fry_xp
             - whatif_5_bender_xp
             - whatif_5_leela_xp
-            - whatif_full_tank
-            #- whatif_crew_multiplier
-            #- whatif_69_points
+            - whatif_full_tank #doesn't seem to work yet
+            - whatif_crew_multiplier
+            #- whatif_777_points
             #- whatif_1000_points
-            #- whatif_10k_points
+            - whatif_10k_points
             #- whatif_50k_points
             - whatif_suicide_booth #award with event_player
             #- whatif_zoidberg_ball_save #award with event_player
             #- whatif_15s_ball_save #award with event_player
-            - whatif_extra_ball
+            - whatif_extra_ball #doesn't seem to work yet
             #- whatif_1x_bonus_multiplier
             #- whatif_2x_bonus_multiplier
             #- whatif_3x_bonus_multiplier
@@ -119,6 +119,15 @@ show_player:
         whatif_full_tank_show:
             loops: 0
             events_when_stopped: whatif_show_over
+    whatif_crew_multiplier:
+        whatif_crew_multiplier_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+    whatif_10k_points:
+        whatif_10k_points_show:
+            loops: 0
+            events_when_stopped: whatif_show_over
+
 
 
 slides:
@@ -192,7 +201,7 @@ slides:
               z: 1
             - type: text
               font_size: 80
-              text: "AWARD: ADVANCE PLAYFIELD MULTIPLIER"
+              text: "AWARD: +1 PLAYFIELD MULTIPLIER"
               z: 2
               y: bottom+70
               x: center
@@ -426,6 +435,44 @@ slides:
               x: center
               anchor_y: bottom
               color: white
+    whatif_crew_multiplier_slide:
+        widgets:
+            - type: video
+              video: whatif_turbocharged_compressor_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: +1 CREW MULTIPLIER"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
+    whatif_10k_points_slide:
+        widgets:
+            - type: video
+              video: whatif_pimparoo_clip
+            - type: rectangle
+              width: 1920
+              height: 216
+              y: 0
+              anchor_y: bottom
+              color: black
+              z: 1
+            - type: text
+              font_size: 80
+              text: "AWARD: 10,000 points"
+              z: 2
+              y: bottom+70
+              x: center
+              anchor_y: bottom
+              color: white
 
 shows:
     whatif_1_dark_matter_show:
@@ -558,4 +605,18 @@ shows:
               blank_voice_track: play
           slides:
               whatif_full_tank_slide:
+                  target: display1
+    whatif_crew_multiplier_show:
+        - duration: 9s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_crew_multiplier_slide:
+                  target: display1
+    whatif_10k_points_show:
+        - duration: 9s
+          sounds:
+              blank_voice_track: play
+          slides:
+              whatif_10k_points_slide:
                   target: display1
