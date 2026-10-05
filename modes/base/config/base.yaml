@@ -338,7 +338,27 @@ slides:
               image: generic_display2_BG
               z: 1
 
-
+widgets:
+    PEHQ_pan1:
+        - type: video
+          video: PEHQ_pan1
+          z: 1
+    PEHQ_pan2:
+        - type: video
+          video: PEHQ_pan2
+          z: 1
+    PEHQ_pan3:
+        - type: video
+          video: PEHQ_pan3
+          z: 1
+    PEHQ_pan4:
+        - type: video
+          video: PEHQ_pan4
+          z: 1
+    PEHQ_pan5:
+        - type: video
+          video: PEHQ_pan5
+          z: 1
 
 light_player:
     mode_base_started:
@@ -517,6 +537,32 @@ slide_player:
         roswell_PF_slide:
             action: remove
             priority: 100
+
+random_event_player:
+    mode_base_started:
+        events:
+            - load_base_background1
+            - load_base_background2
+            - load_base_background3
+            - load_base_background4
+            - load_base_background5
+
+widget_player:
+    load_base_background1:
+        PEHQ_pan1:
+            slide: base_slide
+    load_base_background2:
+        PEHQ_pan2:
+            slide: base_slide
+    load_base_background3:
+        PEHQ_pan3:
+            slide: base_slide
+    load_base_background4:
+        PEHQ_pan4:
+            slide: base_slide
+    load_base_background5:
+        PEHQ_pan5:
+            slide: base_slide
 
 show_pools:
     mom_shows:
