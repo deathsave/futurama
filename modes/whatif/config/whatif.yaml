@@ -507,11 +507,11 @@ shows:
               whatif_3_slurm_caps_slide:
                   target: display1
         - duration: 200ms
-          events: slurm_caps_hit
+          events: fake_slurm_caps_hit
         - duration: 200ms
-          events: slurm_caps_hit
+          events: fake_slurm_caps_hit
         - duration: 200ms
-          events: slurm_caps_hit
+          events: fake_slurm_caps_hit
     whatif_1_slurm_cap_show:
         - duration: 8s
           sounds:
@@ -520,7 +520,7 @@ shows:
               whatif_1_slurm_cap_slide:
                   target: display1
         - duration: 200ms
-          events: slurm_caps_hit
+          events: fake_slurm_caps_hit
     whatif_5_bender_xp_show:
         - duration: 9500ms
           sounds:

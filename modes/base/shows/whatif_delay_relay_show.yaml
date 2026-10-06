@@ -1,0 +1,7 @@
+#show_version=6
+##! show: whatif_award_relay_5_slurm_caps_show:
+
+    - duration: 4s
+      events: waiting_for_whatif_to_end
+    - duration: 1s
+      events: relight_whatif_enabler

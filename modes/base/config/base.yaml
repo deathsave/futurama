@@ -520,6 +520,27 @@ show_player:
                 which: l_right_outlane
                 color: "000000"
             loops: 10
+#whatif_relay_shows
+    whatif_show_over:
+        whatif_delay_relay_show:
+            action: play
+            loops: 0
+    whatif_1_dark_matter:
+        whatif_award_relay_1_dark_matter_show:
+            action: play
+            loops: 0
+    whatif_1_slurm_cap:
+        whatif_award_relay_1_slurm_cap_show:
+            action: play
+            loops: 0
+    whatif_3_slurm_caps:
+        whatif_award_relay_3_slurm_caps_show:
+            action: play
+            loops: 0
+    whatif_5_slurm_caps:
+        whatif_award_relay_5_slurm_caps_show:
+            action: play
+            loops: 0
 
 slide_player:
     mode_base_started:
@@ -720,8 +741,6 @@ variable_player:
 #whatif awards
     whatif_enabler_sequence_hit:
         score: 5000 * current_player.deliveries_completed * current_player.PF_multiplier
-    whatif_1_dark_matter:
-        dark_matter: 1
     whatif_5_amy_xp:
         amy_xp: 5
     whatif_5_zoidberg_xp:
@@ -1011,6 +1030,20 @@ timers:
               event: set_PF_multiplier_3
             - action: restart
               event: set_PF_multiplier_5
+    whatif_enabler_timer:
+        start_value: 10 + (current_player.deliveries_completed * 5)
+        end_value: 0
+        direction: down
+        control_events:
+            - action: restart
+              event: base_tube_shot_hit
+            - action: restart
+              event: light_whatif
+            - action: stop
+              event: delivery_started
+            - action: stop
+              event: whatif_shot_hit
+
 
 event_player:
     base_tube_shot_hit: mom_zapp_toggle
@@ -1019,7 +1052,7 @@ event_player:
     whatif_suicide_booth: light_suicide_booth
     whatif_zoidberg_ball_save: light_zoidberg_lane_save
     whatif_15s_ball_save: award_15s_ball_save
-    whatif_enabler_sequence_hit: light_whatif
+    timer_whatif_enabler_timer_complete: whatif_timeout
 
 shots:
     left_skillshot:
@@ -1135,6 +1168,13 @@ sequence_shots:
     short_right_orbit:
         switch_sequence: s_r_orbit, s_right_loop
         sequence_timeout: 4s
+
+sequences:
     whatif_enabler_sequence:
-        event_sequence: base_tube_shot_hit, s_left_loop_active
-        sequence_timeout: 12s
+        events:
+            - base_tube_shot_hit
+            - s_left_loop_active
+        reset_events: timer_whatif_enabler_timer_stopped
+        disable_events: delivery_started, mode_whatif_started
+        enable_events: delivery_ended, mode_base_started, relight_whatif_enabler
+        events_when_complete: light_whatif
