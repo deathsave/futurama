@@ -423,13 +423,17 @@ show_player:
             loops: -1
     ball_save_cryolab_cut_scenes_ball_save_disabled:
         ball_save_indicator_show:
-            action: stop 
+            action: stop
 
 variable_player:
 #there is no way to light PF_multiplier in Cryolab, so none of the scoring include it
     ride_the_bike_shot_hit:
         fry_xp: 1
         score: 500
+    s_right_ramp_active:
+        score: machine.ramp_points * 10
+    s_left_ramp_active:
+        score: machine.ramp_points * 10
     lock_the_bike_shot_hit:
         fry_xp: 1
         score: 500

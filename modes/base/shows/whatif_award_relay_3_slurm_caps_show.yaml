@@ -1,0 +1,11 @@
+#show_version=6
+##! show: whatif_award_relay_3_slurm_caps_show:
+
+    - duration: 10s
+      events: waiting_for_whatif_to_end
+    - duration: 1s
+      events: slurm_caps_hit
+    - duration: 1s
+      events: slurm_caps_hit
+    - duration: 1s
+      events: slurm_caps_hit

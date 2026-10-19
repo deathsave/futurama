@@ -814,9 +814,6 @@ show_player:
             priority: 500
             speed: 2
 
-
-
-
 autofire_coils:
     ac_slingshot_left:
         coil: c_sling_left
@@ -965,7 +962,6 @@ machine_vars:
     level_10_xp:
         initial_value: 2000
 
-
 player_vars:
     custom_drain_sound_pool:
         value_type: str
@@ -1029,6 +1025,8 @@ player_vars:
     crew_multiplier:
         initial_value: 1
     loop_multiplier:
+        initial_value: 1
+    ramp_multiplier:
         initial_value: 1
     zapp_multiplier:
         initial_value: 1
@@ -1183,10 +1181,6 @@ player_vars:
     mfj_score:
         initial_value: 0
 
-
-
-
-
 modes:
     - service
     - base
@@ -1196,7 +1190,7 @@ modes:
     - delivery_manager
     - crew_manager
     - crew_status
-    - whatif 
+    - whatif
     - moon_delivery
     - cryolab_delivery
     - robot_homeworld_delivery
@@ -1358,9 +1352,12 @@ slides:
               image: player_and_ball_overlay
               z: 5
               x: center-190
-            - type: image
-              image: base_background1
-              z: 1
+#            - type: video
+#              video: HQ_exterior
+#              z: 1
+#doesn't work, will have to figure out another way to call the video pool
+#"HE_exterior"
+
     moon_delivery_slide:
         widgets:
             - type: text
@@ -2381,6 +2378,15 @@ sounds:
     no_sound:
         track: sfx
 
+video_pools:
+    HQ_exterior:
+        type: random_force_all
+        videos:
+            - PEHQ_pan1
+            - PEHQ_pan2
+            - PEHQ_pan3
+            - PEHQ_pan4
+            - PEHQ_pan5
 image_pools:
     HQ_interior:
         type: random_force_all
@@ -2612,6 +2618,7 @@ sound_pools:
             - professor_preposterous_twaddlecock
             - professor_im_trying_run_business
             - professor_red_tape_and_regulations
+            - professor_examine_your_brain
     bender_topper_sounds:
         type: random_force_all
         track: voice
@@ -2620,6 +2627,8 @@ sound_pools:
             - bender_let_us_match_wits
             - boo_its_just_bender
             - bender_evil_laugh1
+#if you drain the ball in roswell_delivery, one of these sounds will play
+#instead of the default drain sounds
     roswell_ball_drain_sounds:
         type: random_force_all
         track: voice

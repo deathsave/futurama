@@ -46,7 +46,7 @@ state_machines:
               events: collect_dark_matter_fuel_hit, nibbler_poop
             - source: 3quarter
               target: full
-              events: collect_dark_matter_fuel_hit, nibbler_poop
+              events: collect_dark_matter_fuel_hit, nibbler_poop, delayed_whatif_full_tank_award
             - source: full
               target: 3quarter
               events: use_dark_matter
@@ -71,6 +71,16 @@ state_machines:
             - source: full
               target: start
               events: use_full_tank
+#for whatif_full_tank_award:
+            - source: start
+              target: full
+              events: delayed_whatif_full_tank_award
+            - source: quarter
+              target: full
+              events: delayed_whatif_full_tank_award
+            - source: half
+              target: full
+              events: delayed_whatif_full_tank_award
     next_delivery:
         persist_state: true
         states:
@@ -472,6 +482,8 @@ widget_player:
 
 
 variable_player:
+    collect_dark_matter_fuel_hit:
+        score: current_player.ramp_multiplier * 1000 * current_player.PF_multiplier
     moon_delivery_start_shot_hit:
         score: (current_player.deliveries_completed + 1) * 1000
     cannibalon_delivery_start_shot_hit:
