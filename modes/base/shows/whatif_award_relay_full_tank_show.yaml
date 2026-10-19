@@ -1,0 +1,7 @@
+#show_version=6
+##! show: whatif_award_relay_full_tank_show
+
+    - duration: 12s
+      events: waiting_for_whatif_to_end
+    - duration: 1s
+      events: delayed_whatif_full_tank_award

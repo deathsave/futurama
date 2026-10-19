@@ -21,10 +21,10 @@ shots:
 random_event_player:
     whatif_shot_hit:
         events:
-            - whatif_1_dark_matter #doesn't seem to work yet
-            - whatif_5_slurm_caps #doesn't work yet
-            - whatif_3_slurm_caps #doesn't work yet
-            - whatif_1_slurm_cap #doesn't work yet
+            - whatif_1_dark_matter
+            - whatif_5_slurm_caps
+            - whatif_3_slurm_caps
+            - whatif_1_slurm_cap
             - whatif_PF_multiplier #award with event_player
             - whatif_5_amy_xp
             - whatif_5_zoidberg_xp
@@ -47,6 +47,13 @@ random_event_player:
             #- whatif_1x_bonus_multiplier
             #- whatif_2x_bonus_multiplier
             #- whatif_3x_bonus_multiplier
+            #- whatif_1_loop_multiplier
+            #- whatif_3_loop_multiplier
+            #- whatif_5_loop_multiplier
+            #- whatif_1_ramp_multiplier
+            #- whatif_3_ramp_multiplier
+            #- whatif_5_ramp_multiplier
+
 
 show_player:
     mode_whatif_started:
@@ -489,16 +496,6 @@ shows:
           slides:
               whatif_5_slurm_caps_slide:
                   target: display1
-        - duration: 200ms
-          events: slurm_caps_hit
-        - duration: 200ms
-          events: slurm_caps_hit
-        - duration: 200ms
-          events: slurm_caps_hit
-        - duration: 200ms
-          events: slurm_caps_hit
-        - duration: 200ms
-          events: slurm_caps_hit
     whatif_3_slurm_caps_show:
         - duration: 12s
           sounds:
@@ -506,12 +503,6 @@ shows:
           slides:
               whatif_3_slurm_caps_slide:
                   target: display1
-        - duration: 200ms
-          events: fake_slurm_caps_hit
-        - duration: 200ms
-          events: fake_slurm_caps_hit
-        - duration: 200ms
-          events: fake_slurm_caps_hit
     whatif_1_slurm_cap_show:
         - duration: 8s
           sounds:
@@ -519,8 +510,6 @@ shows:
           slides:
               whatif_1_slurm_cap_slide:
                   target: display1
-        - duration: 200ms
-          events: fake_slurm_caps_hit
     whatif_5_bender_xp_show:
         - duration: 9500ms
           sounds:

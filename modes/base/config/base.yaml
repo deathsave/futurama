@@ -541,6 +541,10 @@ show_player:
         whatif_award_relay_5_slurm_caps_show:
             action: play
             loops: 0
+    whatif_full_tank:
+        whatif_award_relay_full_tank_show:
+            action: play
+            loops: 0
 
 slide_player:
     mode_base_started:
@@ -616,7 +620,7 @@ variable_player:
         score: 2500
         crew_multiplier: 1
     drop_target_bank_crew_bank_down:
-        score: 111 * current_player.crew_multiplier * current_player.PF_multiplier
+        score: 250 * current_player.crew_multiplier * current_player.PF_multiplier
         crew_multiplier: 1
         amy_xp: 1
         zoidberg_xp: 1
@@ -673,7 +677,7 @@ variable_player:
         pop_bumper_hits: 1
     base_right_ramp_shot_hit:
         dark_matter: 1
-        score: machine.ramp_points * current_player.nibbler_level * current_player.PF_multiplier
+        score: machine.ramp_points * current_player.ramp_multiplier * current_player.nibbler_level * current_player.PF_multiplier
     hypnotoad_save_hit:
         hypnotoad_saves: 1
         score: machine.large_reward_points * current_player.PF_multiplier
@@ -696,7 +700,7 @@ variable_player:
             action: set
             string: "base"
     base_tube_shot_hit:
-        score: machine.ramp_points * (current_player.fry_multiplier) * (current_player.leela_multiplier) * (current_player.bender_multiplier) * current_player.PF_multiplier
+        score: machine.ramp_points * current_player.ramp_multiplier * current_player.fry_multiplier * (current_player.leela_multiplier) * (current_player.bender_multiplier) * current_player.PF_multiplier
     slurm_caps_total_shot_hit:
         slurm_caps_total: 1
     base_slingshot_shot_hit:
@@ -729,7 +733,7 @@ variable_player:
 #slurm factory mode checks amy_level when it starts and +1 PF_multiplier
 #during the mode if amy_level > 3,
     amy_slurm_x_check{current_player.amy_level > 3}:
-        PF_mutliplier: 1
+        PF_multiplier: 1
     amy_slurm_x_reset{current_player.amy_level > 3}:
         PF_multiplier: -1
     reset_caps_to_golden:

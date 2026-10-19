@@ -814,9 +814,6 @@ show_player:
             priority: 500
             speed: 2
 
-
-
-
 autofire_coils:
     ac_slingshot_left:
         coil: c_sling_left
@@ -965,7 +962,6 @@ machine_vars:
     level_10_xp:
         initial_value: 2000
 
-
 player_vars:
     custom_drain_sound_pool:
         value_type: str
@@ -1029,6 +1025,8 @@ player_vars:
     crew_multiplier:
         initial_value: 1
     loop_multiplier:
+        initial_value: 1
+    ramp_multiplier:
         initial_value: 1
     zapp_multiplier:
         initial_value: 1
@@ -1182,10 +1180,6 @@ player_vars:
         initial_value: "good_laser1"
     mfj_score:
         initial_value: 0
-
-
-
-
 
 modes:
     - service
@@ -2634,7 +2628,7 @@ sound_pools:
             - boo_its_just_bender
             - bender_evil_laugh1
 #if you drain the ball in roswell_delivery, one of these sounds will play
-#instead of the default drain sounds            
+#instead of the default drain sounds
     roswell_ball_drain_sounds:
         type: random_force_all
         track: voice
